@@ -13,5 +13,5 @@ namespace simkernel::utils
   }
 
   template<typename T>
-  [[nodiscard]] auto type_name(const T& t) -> string { return detail::demangle(typeid(t).name()); }
+  [[nodiscard]] auto type_name() -> string { return detail::demangle(typeid(T).name()); }
 }
