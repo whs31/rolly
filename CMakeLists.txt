@@ -41,10 +41,11 @@ target_sources(${PROJECT_NAME}
     include/simkernel/utils/enum.h
     include/simkernel/utils/noexcept.h
     include/simkernel/utils/ranges.h
+    include/simkernel/utils/rtti.h
   PRIVATE
     src/c++/global/logconfig.c++
+    src/c++/utils/rtti.c++
 )
-
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
   add_library(fmt::fmt ALIAS fmt)
