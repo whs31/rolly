@@ -32,6 +32,7 @@ target_sources(${PROJECT_NAME}
     include/simkernel/global/log.h
     include/simkernel/global/logconfig.h
     include/simkernel/global/expected.h
+    include/simkernel/global/result.h
 
     include/simkernel/pattern/iobservable.h
     include/simkernel/pattern/iobserver.h
@@ -44,7 +45,6 @@ target_sources(${PROJECT_NAME}
     src/c++/global/logconfig.c++
 )
 
-add_subdirectory(libs/expected)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
   add_library(fmt::fmt ALIAS fmt)
@@ -54,7 +54,6 @@ target_link_libraries(${PROJECT_NAME}
   PUBLIC
     fmt
     spdlog::spdlog
-    tl::expected
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC include PRIVATE src/c++)

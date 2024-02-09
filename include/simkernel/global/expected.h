@@ -1,8 +1,8 @@
 #pragma once
 
-#include <tl/expected.hpp>
+//#include <tl/expected.hpp>
+#include <simkernel/global/result.h>
 
-namespace simkernel { using namespace tl; }
-namespace simkernel::types { using namespace tl; }
+namespace simkernel::types { using simkernel::expected; }
 
 // todo: own expected
