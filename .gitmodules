@@ -1,0 +1,6 @@
+[submodule "cmake"]
+	path = cmake
+	url = http://213.170.107.251/gitlab/test/simulator/cmake.git
+[submodule "libs/expected"]
+	path = libs/expected
+	url = http://213.170.107.251/gitlab/test/utility/expected.git
