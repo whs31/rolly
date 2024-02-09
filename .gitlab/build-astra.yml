@@ -1,0 +1,16 @@
+build astra:
+  tags: [alse]
+  stage: build
+
+  before_script:
+    - whoami
+
+  script:
+    - mkdir -p target
+    - cd target
+    - cmake-alse -GNinja -DCMAKE_BUILD_TYPE=Release ..
+    - ninja
+
+  artifacts:
+    paths: [ target/*.a ]
+    expire_in: 1 hour
