@@ -19,15 +19,25 @@ check_language_features()
   # fmt
 find_package_verbose(spdlog REQUIRED)
 
-## this is not good and anti-pattern but idgaf im tired of writing million lines of filepaths
-#file(GLOB_RECURSE DLM_LIBRARY_SOURCES "src/c++/*.c++" "src/c++/*.h")
-#file(GLOB_RECURSE DLM_LIBRARY_INCLUDES "include/dlm/*.h")
-
-
 add_library(${PROJECT_NAME} STATIC)
 add_library(sim::kernel ALIAS ${PROJECT_NAME})
 
-# target_sources(${PROJECT_NAME} PUBLIC ${DLM_LIBRARY_INCLUDES} PRIVATE ${DLM_LIBRARY_SOURCES})
+target_sources(${PROJECT_NAME}
+  PUBLIC
+    include/simkernel/global.h
+    include/simkernel/os.h
+
+    include/simkernel/global/definitions.h
+    include/simkernel/global/types.h
+    include/simkernel/global/log.h
+    include/simkernel/global/logconfig.h
+    include/simkernel/global/expected.h
+
+    include/simkernel/pattern/iobservable.h
+    include/simkernel/pattern/iobserver.h
+  PRIVATE
+    src/c++/global/logconfig.c++
+)
 
 add_subdirectory(libs/expected)
 
