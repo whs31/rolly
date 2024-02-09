@@ -1,5 +1,6 @@
 #pragma once
 
+#include <limits>
 #include <simkernel/global/types.h>
 #include <simkernel/global/definitions.h>
 
@@ -32,4 +33,20 @@ namespace simkernel::os
     }
   }
 
+  using std::numeric_limits;
+
+  template<typename T>
+  auto swap_endian(T u) -> T
+  {
+    static_assert(numeric_limits<unsigned char>::digits == 8, "unsigned char is not 8 bits");
+    union
+    {
+      T u;
+      simkernel::types::u8 c[sizeof(T)];
+    } source{}, dest{};
+    source.u = u;
+    for(size_t k = 0; k < sizeof(T); k++)
+      dest.c[k] = source.c[sizeof(T) - k - 1];
+    return dest.u;
+  }
 }

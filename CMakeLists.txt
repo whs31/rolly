@@ -35,6 +35,11 @@ target_sources(${PROJECT_NAME}
 
     include/simkernel/pattern/iobservable.h
     include/simkernel/pattern/iobserver.h
+
+    include/simkernel/utils/elapsed.h
+    include/simkernel/utils/enum.h
+    include/simkernel/utils/noexcept.h
+    include/simkernel/utils/ranges.h
   PRIVATE
     src/c++/global/logconfig.c++
 )
