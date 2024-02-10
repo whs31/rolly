@@ -26,6 +26,7 @@ target_sources(${PROJECT_NAME}
   PUBLIC
     include/simkernel/global.h
     include/simkernel/os.h
+    include/simkernel/traits.h
 
     include/simkernel/global/definitions.h
     include/simkernel/global/types.h
