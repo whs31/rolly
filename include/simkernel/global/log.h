@@ -1,6 +1,10 @@
 #pragma once
 
+#ifndef SPDLOG_ACTIVE_LEVEL
 #define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_TRACE
+#endif
+
+#include <string>
 #include <spdlog/spdlog.h>
 
 #if 0
@@ -140,6 +144,12 @@ namespace simkernel::log
   using spdlog::warn;
   using spdlog::error;
   using spdlog::critical;
+
+  using namespace std::string_view_literals;
+
+  constexpr auto line_up = "\033[A"sv;
+  constexpr auto line_clear = "\033[2K"sv;
+  constexpr auto rewrite = fmt::format("{}{}\r", line_up, line_clear);
 }
 
 namespace llog = simkernel::log;
