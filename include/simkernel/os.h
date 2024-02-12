@@ -29,7 +29,7 @@ namespace simkernel::os
     {
       case OperatingSystem::Windows: return '\\';
       case OperatingSystem::Linux: return '/';
-      default: $unreachable();
+      default: simkernel::unreachable();
     }
   }
 

@@ -5,12 +5,16 @@
  * \brief Макросы библиотеки SimKernel
  */
 
+#if 0
+
 /**
  * \ingroup macros
  * \brief Помечает переменную как неиспользуемую
  * \details Убирает предупреждения компиляторов и статических анализаторов
  * о неиспользуемой переменной.
  * \param var Переменная
+ * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь используется аттрибут
+ * `[[maybe_unused]]`.
  */
 #define $unused(var) \
   (void)(var)
@@ -37,6 +41,9 @@
  * Если код, отмеченный таким образом, все же будет выполнен, то будет
  * вызвано исключение.
  * \throw std::runtime_error
+ * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь используется встроенная
+ * стандартная функция `std::unreachable` (**с С++23 и выше), либо ее полный аналог `simkernel::unreachable`.
+ * \see simkernel::unreachable
  */
 #define $unreachable() \
   throw std::runtime_error("unreachable code reached");
@@ -48,11 +55,28 @@
  * Если код, отмеченный таким образом, все же будет выполнен, то будет
  * вызвано исключение.
  * \throw std::runtime_error
+ * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь необходимо явно написать
+ * выброс исключения, или любой другой способ завершения программы/вызова ошибки.
  */
 #define $unimplemented() \
   throw std::runtime_error("unimplemented code");
 
+#endif
 /**
  * \brief Основное пространство имен библиотеки SimKernel
  */
-namespace simkernel {}
+namespace simkernel
+{
+  /**
+   * \brief Вызывает неопределенное поведение.
+   * \details https://en.cppreference.com/w/cpp/utility/unreachable
+   */
+  [[noreturn]] inline auto unreachable() -> void
+  {
+    #if defined(_MSC_VER) && !defined(__clang__) // MSVC
+    __assume(false);
+    #else // GCC, Clang
+    __builtin_unreachable();
+    #endif
+  }
+}
