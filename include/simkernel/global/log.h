@@ -149,7 +149,8 @@ namespace simkernel::log
 
   constexpr auto line_up = "\033[A"sv;
   constexpr auto line_clear = "\033[2K"sv;
-  constexpr auto rewrite = fmt::format("{}{}\r", line_up, line_clear);
+  constexpr auto rewrite = "\033[A\033[2K\r"sv;
+  constexpr auto clean = "\033[2K\r"sv;
 }
 
 namespace llog = simkernel::log;
