@@ -5,3 +5,4 @@
 #include <simkernel/global/logconfig.h>
 #include <simkernel/global/types.h>
 #include <simkernel/global/expected.h>
+#include <simkernel/global/sourcelocation.h>

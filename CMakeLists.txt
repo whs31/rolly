@@ -34,6 +34,7 @@ target_sources(${PROJECT_NAME}
     include/simkernel/global/logconfig.h
     include/simkernel/global/expected.h
     include/simkernel/global/result.h
+    include/simkernel/global/sourcelocation.h
 
     include/simkernel/pattern/iobservable.h
     include/simkernel/pattern/iobserver.h

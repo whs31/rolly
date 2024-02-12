@@ -36,7 +36,8 @@ namespace simkernel::log
 
     spdlog::set_default_logger(move(logger));
     spdlog::set_level(spdlog::level::trace);
-    spdlog::set_pattern("[%=5!o] %^[%=7!l] thread [%t] %-20!s:%-3!#: %v %$");
+    //spdlog::set_pattern("[%=5!o] %^[%=7!l] thread [%t] %-20!s:%-3!#: %v %$");
+    spdlog::set_pattern("[%=5!o] %^[%=7!l] thread [%t] %v %$");
     spdlog::flush_on(spdlog::level::debug);
 
     spdlog::info("-----------------------------------------");

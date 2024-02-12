@@ -40,7 +40,7 @@ namespace simkernel::pattern
   template<typename... T>
   auto IObservable<T...>::notify(T... args) const -> void
   {
-    $trace("notifying {} observers");
+    llog::trace("notifying {} observers");
     for(const auto observer : this->m_observers)
       observer->update(args...);
   }

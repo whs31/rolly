@@ -3,6 +3,8 @@
 #define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_TRACE
 #include <spdlog/spdlog.h>
 
+#if 0
+
 /**
  * \ingroup macros
  * \brief Выводит форматированное сообщение с уровнем логгирования **Trace**.
@@ -17,7 +19,10 @@
  * ```sh
  * Hello, world!
  * ```
- * \see https://github.com/gabime/spdlog
+ * https://github.com/gabime/spdlog
+ * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь используется функция
+ * `simkernel::log::trace`, а для добавления имени функции - `simkernel::source_location`.
+ * \see simkernel::log::trace
  */
 #define $trace(...) SPDLOG_TRACE(__VA_ARGS__)
 
@@ -35,7 +40,10 @@
  * ```sh
  * Hello, world!
  * ```
- * \see https://github.com/gabime/spdlog
+ * https://github.com/gabime/spdlog
+ * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь используется функция
+ * `simkernel::log::debug`, а для добавления имени функции - `simkernel::source_location`.
+ * \see simkernel::log::debug
  */
 #define $debug(...) SPDLOG_DEBUG(__VA_ARGS__)
 
@@ -53,7 +61,10 @@
  * ```sh
  * Hello, world!
  * ```
- * \see https://github.com/gabime/spdlog
+ * https://github.com/gabime/spdlog
+ * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь используется функция
+ * `simkernel::log::info`, а для добавления имени функции - `simkernel::source_location`.
+ * \see simkernel::log::info
  */
 #define $info(...) SPDLOG_INFO(__VA_ARGS__)
 
@@ -71,7 +82,10 @@
  * ```sh
  * Hello, world!
  * ```
- * \see https://github.com/gabime/spdlog
+ * https://github.com/gabime/spdlog
+ * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь используется функция
+ * `simkernel::log::warn`, а для добавления имени функции - `simkernel::source_location`.
+ * \see simkernel::log::warn
  */
 #define $warn(...) SPDLOG_WARN(__VA_ARGS__)
 
@@ -89,7 +103,10 @@
  * ```sh
  * Hello, world!
  * ```
- * \see https://github.com/gabime/spdlog
+ * https://github.com/gabime/spdlog
+ * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь используется функция
+ * `simkernel::log::critical`, а для добавления имени функции - `simkernel::source_location`.
+ * \see simkernel::log::critical
  */
 #define $critical(...) SPDLOG_CRITICAL(__VA_ARGS__)
 
@@ -106,6 +123,23 @@
  * ```sh
  * Hello, world!
  * ```
- * \see https://github.com/gabime/spdlog
+ * https://github.com/gabime/spdlog
+ * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь используется функция
+ * `simkernel::log::error`, а для добавления имени функции - `simkernel::source_location`.
+ * \see simkernel::log::error
  */
 #define $error(...) SPDLOG_ERROR(__VA_ARGS__)
+
+#endif
+
+namespace simkernel::log
+{
+  using spdlog::trace;
+  using spdlog::debug;
+  using spdlog::info;
+  using spdlog::warn;
+  using spdlog::error;
+  using spdlog::critical;
+}
+
+namespace llog = simkernel::log;
