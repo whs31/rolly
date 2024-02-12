@@ -11,10 +11,21 @@ namespace simkernel::log
 
   struct LogFileConfiguration
   {
+    enum class LogLevel
+    {
+      Trace,
+      Debug,
+      Info,
+      Warn,
+      Error,
+      Critical
+    };
+
     [[nodiscard]] auto initialize() -> bool;
 
     string filename;
     usize max_size;
     usize max_files;
+    LogLevel level;
   };
 }
