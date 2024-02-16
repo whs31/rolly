@@ -64,13 +64,8 @@ target_link_libraries(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} PUBLIC include PRIVATE src/c++)
 target_add_metadata_definitions(${PROJECT_NAME})
 
-install(TARGETS ${PROJECT_NAME}
-  EXPORT ${PROJECT_NAME}-targets
-  LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib
-  RUNTIME DESTINATION bin
-  INCLUDES DESTINATION include
-)
+install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/lib)
+install(DIRECTORY include/ DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/include)
 
 set(POST_BUILD_COMMENT "[${PROJECT_NAME}] build finished successfully (static library)")
 add_custom_command(TARGET ${PROJECT_NAME}
