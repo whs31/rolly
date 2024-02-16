@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(simkernel
+project(leaf
   VERSION 0.2.0
   DESCRIPTION "Kernel library for simulator project and beyond"
   HOMEPAGE_URL "com.radar-mms.uav"
@@ -11,7 +11,7 @@ include(GNUInstallDirs)
 include(FetchContent)
 include(cmake/all.cmake)
 
-pragma_once()
+include_guard(GLOBAL)
 
 set_language_standard(20)
 check_language_features()
@@ -22,30 +22,31 @@ check_language_features()
 find_package_verbose(spdlog REQUIRED)
 
 add_library(${PROJECT_NAME} STATIC)
-add_library(sim::kernel ALIAS ${PROJECT_NAME})
+add_library(${PROJECT_NAME}::kernel ALIAS ${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
   PUBLIC
-    include/sim/kernel/global.h
-    include/sim/kernel/os.h
-    include/sim/kernel/traits.h
+    include/leaf/global.h
+    include/leaf/os.h
+    include/leaf/traits.h
 
-    include/sim/kernel/global/definitions.h
-    include/sim/kernel/global/types.h
-    include/sim/kernel/global/log.h
-    include/sim/kernel/global/logconfig.h
-    include/sim/kernel/global/expected.h
-    include/sim/kernel/global/result.h
-    include/sim/kernel/global/sourcelocation.h
+    include/leaf/global/definitions.h
+    include/leaf/global/types.h
+    include/leaf/global/log.h
+    include/leaf/global/logconfig.h
+    include/leaf/global/expected.h
+    include/leaf/global/result.h
+    include/leaf/global/sourcelocation.h
 
-    include/sim/kernel/pattern/iobservable.h
-    include/sim/kernel/pattern/iobserver.h
+    include/leaf/pattern/iobservable.h
+    include/leaf/pattern/iobserver.h
 
-    include/sim/kernel/utils/elapsed.h
-    include/sim/kernel/utils/enum.h
-    include/sim/kernel/utils/noexcept.h
-    include/sim/kernel/utils/ranges.h
-    include/sim/kernel/utils/rtti.h
+    include/leaf/utils/elapsed.h
+    include/leaf/utils/enum.h
+    include/leaf/utils/noexcept.h
+    include/leaf/utils/ranges.h
+    include/leaf/utils/rtti.h
+
   PRIVATE
     src/c++/global/logconfig.c++
     src/c++/utils/rtti.c++

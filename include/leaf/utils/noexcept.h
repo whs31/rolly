@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace sim::utils
+namespace leaf::utils
 {
   using std::unique_ptr;
   using std::shared_ptr;

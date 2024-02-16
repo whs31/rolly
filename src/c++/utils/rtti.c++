@@ -1,15 +1,17 @@
-#include <sim/kernel/utils/rtti.h>
+#include <leaf/utils/rtti.h>
 
 #ifdef __GNUG__
 # include <cstdlib>
 # include <memory>
 # include <cxxabi.h>
+#endif
 
 using std::unique_ptr;
 using std::free;
 
-namespace sim::utils
+namespace leaf::utils
 {
+  #ifdef __GNUG__
   auto detail::demangle(const char* name) -> string
   {
     auto status = -4;
@@ -19,8 +21,7 @@ namespace sim::utils
     };
     return status == 0 ? res.get() : name;
   }
-
-#else
+  #else
   auto detail::demangle(const char* name) -> string { return name }
-#endif
+  #endif
 }

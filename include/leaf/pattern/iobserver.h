@@ -1,6 +1,6 @@
 #pragma once
 
-namespace sim::pattern
+namespace leaf::pattern
 {
   template<typename... T>
   class IObserver

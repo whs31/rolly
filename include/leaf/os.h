@@ -1,13 +1,13 @@
 #pragma once
 
 #include <limits>
-#include <sim/kernel/global/types.h>
-#include <sim/kernel/global/definitions.h>
+#include <leaf/global/types.h>
+#include <leaf/global/definitions.h>
 
 /**
  * \brief Пространство имен для функций и классов, связанных с платформами, ОС и архитектурой
  */
-namespace sim::os
+namespace leaf::os
 {
   enum class OperatingSystem
   {
@@ -29,7 +29,7 @@ namespace sim::os
     {
       case OperatingSystem::Windows: return '\\';
       case OperatingSystem::Linux: return '/';
-      default: sim::unreachable();
+      default: unreachable();
     }
   }
 
@@ -42,7 +42,7 @@ namespace sim::os
     union
     {
       T u;
-      sim::types::u8 c[sizeof(T)];
+      types::u8 c[sizeof(T)];
     } source{}, dest{};
     source.u = u;
     for(size_t k = 0; k < sizeof(T); k++)

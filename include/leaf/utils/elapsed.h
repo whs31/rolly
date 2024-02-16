@@ -2,7 +2,7 @@
 
 #include <chrono>
 
-namespace sim::utils
+namespace leaf::utils
 {
   struct ElapsedTimer
   {

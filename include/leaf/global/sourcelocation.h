@@ -3,9 +3,9 @@
 #include <cstdint>
 #include <iosfwd>
 #include <fmt/format.h>
-#include <sim/kernel/global/types.h>
+#include <leaf/global/types.h>
 
-namespace sim
+namespace leaf
 {
   struct source_location
   {

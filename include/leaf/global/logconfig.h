@@ -1,10 +1,10 @@
 #pragma once
 
 #include <string>
-#include <sim/kernel/global/types.h>
+#include <leaf/global/types.h>
 
 /// \brief Пространство имен для классов и функций, связанных с логгером
-namespace sim::log
+namespace leaf::log
 {
   using std::string;
   using types::usize;

@@ -3,7 +3,7 @@
 #include <string>
 #include <typeinfo>
 
-namespace sim::utils
+namespace leaf::utils
 {
   using std::string;
 
