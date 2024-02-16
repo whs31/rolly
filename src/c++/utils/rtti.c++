@@ -1,4 +1,4 @@
-#include <simkernel/utils/rtti.h>
+#include <sim/kernel/utils/rtti.h>
 
 #ifdef __GNUG__
 # include <cstdlib>
@@ -8,7 +8,7 @@
 using std::unique_ptr;
 using std::free;
 
-namespace simkernel::utils
+namespace sim::utils
 {
   auto detail::demangle(const char* name) -> string
   {

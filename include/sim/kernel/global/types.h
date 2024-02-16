@@ -6,7 +6,7 @@
 /**
  * \brief Пространство имен с алиасами для типов данных.
  */
-namespace simkernel::types
+namespace sim::types
 {
   using u8 = uint8_t;             ///< 8-bit беззнаковое целое
   using u16 = uint16_t;           ///< 16-bit беззнаковое целое

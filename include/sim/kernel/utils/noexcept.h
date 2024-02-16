@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace simkernel::utils
+namespace sim::utils
 {
   using std::unique_ptr;
   using std::shared_ptr;

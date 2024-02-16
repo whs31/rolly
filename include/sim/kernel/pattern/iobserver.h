@@ -1,6 +1,6 @@
 #pragma once
 
-namespace simkernel::pattern
+namespace sim::pattern
 {
   template<typename... T>
   class IObserver

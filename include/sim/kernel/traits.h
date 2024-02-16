@@ -2,7 +2,7 @@
 
 #include <concepts>
 
-namespace simkernel::traits
+namespace sim::traits
 {
   template<typename T>
   concept FloatingPoint = std::floating_point<T>;

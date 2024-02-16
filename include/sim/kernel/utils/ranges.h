@@ -6,7 +6,7 @@
 
 #include <ranges>
 
-namespace simkernel::utils::ranges
+namespace sim::utils::ranges
 {
   namespace detail
   {

@@ -65,7 +65,7 @@
 /**
  * \brief Основное пространство имен библиотеки SimKernel
  */
-namespace simkernel
+namespace sim
 {
   /**
    * \brief Вызывает неопределенное поведение.

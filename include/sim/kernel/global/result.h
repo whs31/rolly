@@ -11,7 +11,7 @@
 #include <type_traits>
 #include <utility>
 
-namespace simkernel
+namespace sim
 {
   template <class T, class E>
   class expected;

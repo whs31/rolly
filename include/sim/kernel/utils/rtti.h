@@ -3,7 +3,7 @@
 #include <string>
 #include <typeinfo>
 
-namespace simkernel::utils
+namespace sim::utils
 {
   using std::string;
 

@@ -136,7 +136,7 @@
 
 #endif
 
-namespace simkernel::log
+namespace sim::log
 {
   using spdlog::trace;
   using spdlog::debug;
@@ -153,4 +153,4 @@ namespace simkernel::log
   constexpr auto clean = "\033[2K\r"sv;
 }
 
-namespace llog = simkernel::log;
+namespace llog = sim::log;

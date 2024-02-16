@@ -1,11 +1,11 @@
 #pragma once
 
-#include <iosfwd>
 #include <cstdint>
+#include <iosfwd>
 #include <fmt/format.h>
-#include <simkernel/global/types.h>
+#include <sim/kernel/global/types.h>
 
-namespace simkernel
+namespace sim
 {
   struct source_location
   {

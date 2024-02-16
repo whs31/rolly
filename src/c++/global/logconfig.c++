@@ -2,19 +2,19 @@
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/rotating_file_sink.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
-#include <simkernel/global/logconfig.h>
-#include <simkernel/global/definitions.h>
+#include <sim/kernel/global/logconfig.h>
+#include <sim/kernel/global/definitions.h>
 
 using std::vector;
 using std::shared_ptr;
 using std::string_view;
 using namespace std::string_view_literals;
-using namespace simkernel::types;
+using namespace sim::types;
 
 constexpr auto DEFAULT_LOGGER_NAME = ""sv; // NOLINT(*-redundant-string-init)
 auto NO_REINIT_FLAG = false;
 
-namespace simkernel::log
+namespace sim::log
 {
   auto LogFileConfiguration::initialize() -> bool
   {
@@ -41,10 +41,10 @@ namespace simkernel::log
       case LogLevel::Trace: spdlog::set_level(spdlog::level::trace); break;
       case LogLevel::Debug: spdlog::set_level(spdlog::level::debug); break;
       case LogLevel::Info: spdlog::set_level(spdlog::level::info); break;
-      case LogLevel::Warn: spdlog::set_level(spdlog::level::warn); break;
+      case LogLevel::Warn: [[fallthrough]];
       case LogLevel::Error: spdlog::set_level(spdlog::level::warn); break;
       case LogLevel::Critical: spdlog::set_level(spdlog::level::critical); break;
-      default: simkernel::unreachable();
+      default: sim::unreachable();
     }
 
     //spdlog::set_pattern("[%=5!o] %^[%=7!l] thread [%t] %-20!s:%-3!#: %v %$");

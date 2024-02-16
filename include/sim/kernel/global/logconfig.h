@@ -1,13 +1,13 @@
 #pragma once
 
 #include <string>
-#include <simkernel/global/types.h>
+#include <sim/kernel/global/types.h>
 
 /// \brief Пространство имен для классов и функций, связанных с логгером
-namespace simkernel::log
+namespace sim::log
 {
   using std::string;
-  using simkernel::types::usize;
+  using types::usize;
 
   struct LogFileConfiguration
   {

@@ -1,10 +1,10 @@
 #pragma once
 
 #include <list>
-#include <simkernel/global.h>
-#include <simkernel/pattern/iobserver.h>
+#include <sim/kernel/global.h>
+#include <sim/kernel/pattern/iobserver.h>
 
-namespace simkernel::pattern
+namespace sim::pattern
 {
   using std::list;
 
