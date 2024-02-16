@@ -2,11 +2,10 @@
 
 /**
  * \defgroup macros Макросы
- * \brief Макросы библиотеки SimKernel
+ * \brief Макросы библиотеки Leaf
  */
 
-#if 0
-
+//#ifdef DOXYGEN
 /**
  * \ingroup macros
  * \brief Помечает переменную как неиспользуемую
@@ -42,8 +41,8 @@
  * вызвано исключение.
  * \throw std::runtime_error
  * \deprecated Макросы - это плохо. Мы больше не используем макросы. Вместо этого макроса теперь используется встроенная
- * стандартная функция `std::unreachable` (**с С++23 и выше), либо ее полный аналог `simkernel::unreachable`.
- * \see simkernel::unreachable
+ * стандартная функция `std::unreachable` (**с С++23** и выше), либо ее полный аналог `leaf::unreachable`.
+ * \see leaf::unreachable
  */
 #define $unreachable() \
   throw std::runtime_error("unreachable code reached");
@@ -61,7 +60,7 @@
 #define $unimplemented() \
   throw std::runtime_error("unimplemented code");
 
-#endif
+//#endif
 /**
  * \brief Основное пространство имен библиотеки SimKernel
  */

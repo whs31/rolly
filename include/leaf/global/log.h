@@ -7,7 +7,7 @@
 #include <string>
 #include <spdlog/spdlog.h>
 
-#if 0
+//#ifdef DOXYGEN
 
 /**
  * \ingroup macros
@@ -134,7 +134,7 @@
  */
 #define $error(...) SPDLOG_ERROR(__VA_ARGS__)
 
-#endif
+//#endif
 
 namespace leaf::log
 {
