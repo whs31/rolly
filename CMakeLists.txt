@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 
+include_guard(GLOBAL)
+
 project(leaf
   VERSION 0.2.0
   DESCRIPTION "Kernel library for simulator project and beyond"
@@ -10,8 +12,6 @@ project(leaf
 include(GNUInstallDirs)
 include(FetchContent)
 include(cmake/all.cmake)
-
-include_guard(GLOBAL)
 
 set_language_standard(20)
 check_language_features()
