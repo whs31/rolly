@@ -5,8 +5,6 @@ variables:
 
 include:
   - local: /.gitlab/build-astra.yml
-  - local: /.gitlab/build-ubuntu.yml
-  - local: /.gitlab/build-windows.yml
   - local: /.gitlab/doxygen.yml
 
 stages:
