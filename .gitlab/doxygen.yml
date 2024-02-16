@@ -3,7 +3,7 @@ doxygen:
     tags: [doxygen]
     stage: documentation
     script:
-      - cd ../
+      # - cd ../
       - doxygen -u
       - doxygen
       - mkdir -p /usr/share/nginx/html/site/sites-available/$CI_PROJECT_NAME
