@@ -87,17 +87,25 @@ install(DIRECTORY
   DESTINATION 
   ${CMAKE_INSTALL_INCLUDEDIR}
 )
-export(TARGETS
-  ${PROJECT_NAME}
+export(TARGETS ${PROJECT_NAME}
   NAMESPACE leaf::
   FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+)
+write_basic_package_version_file("${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+  VERSION ${PROJECT_VERSION}
+  COMPATIBILITY AnyNewerVersion
 )
 install(EXPORT
   ${PROJECT_NAME}Config
   DESTINATION "${CMAKE_INSTALL_DATADIR}/leaf/cmake"
   NAMESPACE leaf::
 )
-#
+install(FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
+  DESTINATION "${CMAKE_INSTALL_DATADIR}/leaf/cmake"
+  COMPONENT development
+)
+############################################################################
 
 set(POST_BUILD_COMMENT "[${PROJECT_NAME}] build finished successfully (static library)")
 add_custom_command(TARGET ${PROJECT_NAME}
