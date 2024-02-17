@@ -73,8 +73,6 @@ target_include_directories(${PROJECT_NAME}
 target_add_metadata_definitions(${PROJECT_NAME})
 
 # export
-##get_target_property(LEAF_PUBLIC_HEADERS ${PROJECT_NAME} INTERFACE_SOURCES)
-##set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${LEAF_PUBLIC_HEADERS}")
 install(TARGETS ${PROJECT_NAME}
   EXPORT ${PROJECT_NAME}Config
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
@@ -95,6 +93,11 @@ write_basic_package_version_file("${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Con
   VERSION ${PROJECT_VERSION}
   COMPATIBILITY AnyNewerVersion
 )
+#configure_package_config_file(
+#  "${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}Config.cmake.in"
+#  "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+#  INSTALL_DESTINATION "${CMAKE_INSTALL_DATADIR}/leaf/cmake"
+#)
 install(EXPORT
   ${PROJECT_NAME}Config
   DESTINATION "${CMAKE_INSTALL_DATADIR}/leaf/cmake"
