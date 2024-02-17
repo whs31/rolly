@@ -3,14 +3,15 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.2.0
+  VERSION 0.3.0
   DESCRIPTION "Kernel library for simulator project and beyond"
   HOMEPAGE_URL "com.radar-mms.uav"
   LANGUAGES C CXX
 )
 
 include(GNUInstallDirs)
-include(FetchContent)
+include(GenerateExportHeader)
+include(CMakePackageConfigHelpers)
 include(cmake/all.cmake)
 
 set_language_standard(20)
@@ -26,26 +27,26 @@ add_library(${PROJECT_NAME}::kernel ALIAS ${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
   PUBLIC
-    include/leaf/global.h
-    include/leaf/os.h
-    include/leaf/traits.h
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global.h> $<INSTALL_INTERFACE:include/leaf/global.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/os.h> $<INSTALL_INTERFACE:include/leaf/os.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/traits.h> $<INSTALL_INTERFACE:include/leaf/traits.h>
 
-    include/leaf/global/definitions.h
-    include/leaf/global/types.h
-    include/leaf/global/log.h
-    include/leaf/global/logconfig.h
-    include/leaf/global/expected.h
-    include/leaf/global/result.h
-    include/leaf/global/sourcelocation.h
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/definitions.h> $<INSTALL_INTERFACE:include/leaf/global/definitions.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/types.h> $<INSTALL_INTERFACE:include/leaf/global/types.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/log.h> $<INSTALL_INTERFACE:include/leaf/global/log.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/logconfig.h> $<INSTALL_INTERFACE:include/leaf/global/logconfig.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/expected.h> $<INSTALL_INTERFACE:include/leaf/global/expected.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/result.h> $<INSTALL_INTERFACE:include/leaf/global/result.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/sourcelocation.h> $<INSTALL_INTERFACE:include/leaf/global/sourcelocation.h>
 
-    include/leaf/pattern/iobservable.h
-    include/leaf/pattern/iobserver.h
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/pattern/iobservable.h> $<INSTALL_INTERFACE:include/leaf/pattern/iobservable.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/pattern/iobserver.h> $<INSTALL_INTERFACE:include/leaf/pattern/iobserver.h>
 
-    include/leaf/utils/elapsed.h
-    include/leaf/utils/enum.h
-    include/leaf/utils/noexcept.h
-    include/leaf/utils/ranges.h
-    include/leaf/utils/rtti.h
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/elapsed.h> $<INSTALL_INTERFACE:include/leaf/utils/elapsed.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/enum.h> $<INSTALL_INTERFACE:include/leaf/utils/enum.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/noexcept.h> $<INSTALL_INTERFACE:include/leaf/utils/noexcept.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/ranges.h> $<INSTALL_INTERFACE:include/leaf/utils/ranges.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/rtti.h> $<INSTALL_INTERFACE:include/leaf/utils/rtti.h>
 
   PRIVATE
     src/c++/global/logconfig.c++
@@ -62,11 +63,37 @@ target_link_libraries(${PROJECT_NAME}
     spdlog::spdlog
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC include PRIVATE src/c++)
+target_include_directories(${PROJECT_NAME}
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+  PRIVATE
+    src/c++
+)
 target_add_metadata_definitions(${PROJECT_NAME})
 
-install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/lib)
-install(DIRECTORY include/ DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/target/include)
+# export
+get_target_property(LEAF_PUBLIC_HEADERS ${PROJECT_NAME} INTERFACE_SOURCES)
+set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${LEAF_PUBLIC_HEADERS}")
+install(TARGETS ${PROJECT_NAME}
+  EXPORT ${PROJECT_NAME}Config
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+  PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/leaf
+)
+export(TARGETS
+  ${PROJECT_NAME}
+  NAMESPACE leaf::
+  FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+)
+install(EXPORT
+  ${PROJECT_NAME}Config
+  DESTINATION "${CMAKE_INSTALL_DATADIR}/leaf/cmake"
+  NAMESPACE leaf::
+)
+#
 
 set(POST_BUILD_COMMENT "[${PROJECT_NAME}] build finished successfully (static library)")
 add_custom_command(TARGET ${PROJECT_NAME}
