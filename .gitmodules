@@ -3,7 +3,7 @@
 	url = ../cmake.git
 [submodule "libs/fmtlib"]
 	path = libs/fmtlib
-	url = ../../utility/fmtlib
+	url = http://uav.radar-mms.com/gitlab/test/utility/fmtlib
 [submodule "libs/spdlog"]
 	path = libs/spdlog
-	url = ../../utility/spdlog
+	url = http://uav.radar-mms.com/gitlab/test/utility/spdlog
