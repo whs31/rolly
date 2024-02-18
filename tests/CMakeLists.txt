@@ -1,4 +1,4 @@
-find_package(GTest REQUIRED)
+find_package(GTest REQUIRED CONFIG)
 enable_testing()
 
 add_executable(${PROJECT_NAME}-test)
@@ -8,5 +8,10 @@ target_sources(${PROJECT_NAME}-test
   ${CMAKE_CURRENT_SOURCE_DIR}/test-main.c++
 )
 
-target_link_libraries(${PROJECT_NAME}-test GTest::gtest GTest::gtest_main ${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME}-test
+  PRIVATE
+    GTest::gtest
+    GTest::gtest_main
+    ${PROJECT_NAME}
+)
 
