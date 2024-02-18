@@ -20,7 +20,10 @@ include(cmake/all.cmake)
 set_language_standard(20)
 check_language_features()
 
-find_package(spdlog REQUIRED CONFIG)
+#find_package(spdlog REQUIRED CONFIG)
+
+add_subdirectory(libs/fmtlib)
+add_subdirectory(libs/spdlog)
 
 add_library(${PROJECT_NAME} STATIC)
 add_library(${PROJECT_NAME}::leaf ALIAS ${PROJECT_NAME})
@@ -98,7 +101,7 @@ set(config_targets_file "leafConfigTargets.cmake")
 set(version_config_file "${CMAKE_CURRENT_BINARY_DIR}/leafConfigVersion.cmake")
 set(export_dest_dir "${libdir}/cmake/leaf")
 
-install(TARGETS leaf
+install(TARGETS leaf fmt spdlog
   EXPORT leaf
   ARCHIVE DESTINATION ${libdir}
   LIBRARY DESTINATION ${libdir}
@@ -109,7 +112,7 @@ install(DIRECTORY
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf> $<INSTALL_INTERFACE:include/leaf> ;
   DESTINATION ${incdir}
 )
-export(TARGETS leaf
+export(TARGETS leaf fmt spdlog
   NAMESPACE leaf::
   FILE "${CMAKE_CURRENT_BINARY_DIR}/${config_targets_file}"
 )
