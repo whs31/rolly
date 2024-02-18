@@ -11,14 +11,11 @@
 
 Подключение в свой проект:
 ```cmake
-cmake_minimum_required(VERSION 3.28)
+cmake_minimum_required(VERSION 3.10)
 project(test)
 
 set(CMAKE_CXX_STANDARD 20)
 
-include(CMakeFindDependencyMacro)
-
-find_dependency(spdlog REQUIRED)
 find_package(leaf 0.3.0 REQUIRED)
 
 add_executable(test main.cpp)

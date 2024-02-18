@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.3.0
+  VERSION 0.3.1
   DESCRIPTION "Kernel library for simulator project and beyond"
   HOMEPAGE_URL "com.radar-mms.uav"
   LANGUAGES C CXX
@@ -20,10 +20,10 @@ check_language_features()
 # On target system the following packages must be present in %PATH%:
   # spdlog
   # fmt
-find_package_verbose(spdlog REQUIRED)
+find_package(spdlog REQUIRED CONFIG)
 
 add_library(${PROJECT_NAME} STATIC)
-add_library(${PROJECT_NAME}::kernel ALIAS ${PROJECT_NAME})
+add_library(${PROJECT_NAME}::leaf ALIAS ${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
   PUBLIC
@@ -72,41 +72,45 @@ target_include_directories(${PROJECT_NAME}
 )
 target_add_metadata_definitions(${PROJECT_NAME})
 
-# export
-install(TARGETS ${PROJECT_NAME}
-  EXPORT ${PROJECT_NAME}Config
+# export targets
+set(project_config_in "${CMAKE_CURRENT_LIST_DIR}/leafConfig.cmake.in")
+set(project_config_out "${CMAKE_CURRENT_BINARY_DIR}/leafConfig.cmake")
+set(config_targets_file "leafConfigTargets.cmake")
+set(version_config_file "${CMAKE_CURRENT_BINARY_DIR}/leafConfigVersion.cmake")
+set(export_dest_dir "${CMAKE_INSTALL_LIBDIR}/cmake/leaf")
+
+install(TARGETS leaf
+  EXPORT leaf
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 install(DIRECTORY 
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf> $<INSTALL_INTERFACE:include/leaf> 
-  DESTINATION 
-  ${CMAKE_INSTALL_INCLUDEDIR}
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf> $<INSTALL_INTERFACE:include/leaf> ;
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
-export(TARGETS ${PROJECT_NAME}
+export(TARGETS leaf
   NAMESPACE leaf::
-  FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+  FILE "${CMAKE_CURRENT_BINARY_DIR}/${config_targets_file}"
 )
-write_basic_package_version_file("${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+install(EXPORT leaf
+  DESTINATION "${export_dest_dir}"
+  NAMESPACE leaf::
+  FILE "${config_targets_file}"
+)
+configure_package_config_file(
+  "${project_config_in}" "${project_config_out}"
+  INSTALL_DESTINATION "${export_dest_dir}"
+)
+write_basic_package_version_file(
+  "${version_config_file}"
   VERSION ${PROJECT_VERSION}
   COMPATIBILITY AnyNewerVersion
 )
-#configure_package_config_file(
-#  "${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}Config.cmake.in"
-#  "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-#  INSTALL_DESTINATION "${CMAKE_INSTALL_DATADIR}/leaf/cmake"
-#)
-install(EXPORT
-  ${PROJECT_NAME}Config
-  DESTINATION "${CMAKE_INSTALL_DATADIR}/leaf/cmake"
-  NAMESPACE leaf::
-)
 install(FILES
-  ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
-  DESTINATION "${CMAKE_INSTALL_DATADIR}/leaf/cmake"
-  COMPONENT development
+  "${project_config_out}" "${version_config_file}"
+  DESTINATION "${export_dest_dir}"
 )
 ############################################################################
 
