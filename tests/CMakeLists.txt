@@ -1,4 +1,4 @@
-find_package(GTest REQUIRED CONFIG)
+find_package(GTest REQUIRED)
 enable_testing()
 
 add_executable(${PROJECT_NAME}-test)
