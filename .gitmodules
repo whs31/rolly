@@ -3,7 +3,7 @@
 	url = ../cmake.git
 [submodule "libs/spd"]
 	path = libs/spd
-	url = ../../utility/spdlog.git
+	url = ../spdlog.git
 [submodule "libs/fmt"]
 	path = libs/fmt
-	url = ../../utility/fmtlib.git
+	url = ../fmtlib.git
