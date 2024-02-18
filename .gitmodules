@@ -1,3 +1,6 @@
 [submodule "cmake"]
 	path = cmake
 	url = ../cmake.git
+[submodule "libs/spd"]
+	path = libs/spd
+	url = ../../utility/spdlog.git
