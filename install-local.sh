@@ -7,5 +7,5 @@ cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DLOCAL_INSTALL=ON ../.. &&
 echo "building release version..." &&
 cmake --build . &&
 echo "installing release version..." &&
-sudo cmake --install . &&
+cmake --install . &&
 echo "done!"
