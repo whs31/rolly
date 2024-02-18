@@ -10,6 +10,7 @@ project(leaf
 )
 
 option(INTEGRATION_TESTS "Enable integration tests" OFF)
+option(LOCAL_INSTALL "Enable local install" OFF)
 
 include(GNUInstallDirs)
 include(GenerateExportHeader)
@@ -77,22 +78,34 @@ if(INTEGRATION_TESTS)
 endif()
 
 # export targets
+if(NOT LOCAL_INSTALL)
+  set(libdir "${CMAKE_INSTALL_LIBDIR}")
+  set(incdir "${CMAKE_INSTALL_INCLUDEDIR}")
+  set(bindir "${CMAKE_INSTALL_BINDIR}")
+  message(STATUS "Installing system-wide into ${libdir}")
+else()
+  set(libdir "$ENV{HOME}/cmake-installs/lib")
+  set(incdir "$ENV{HOME}/cmake-installs/include")
+  set(bindir "$ENV{HOME}/cmake-installs/bin")
+  message(STATUS "Installing locally into ${libdir}")
+endif()
+
 set(project_config_in "${CMAKE_CURRENT_LIST_DIR}/leafConfig.cmake.in")
 set(project_config_out "${CMAKE_CURRENT_BINARY_DIR}/leafConfig.cmake")
 set(config_targets_file "leafConfigTargets.cmake")
 set(version_config_file "${CMAKE_CURRENT_BINARY_DIR}/leafConfigVersion.cmake")
-set(export_dest_dir "${CMAKE_INSTALL_LIBDIR}/cmake/leaf")
+set(export_dest_dir "${libdir}/cmake/leaf")
 
 install(TARGETS leaf
   EXPORT leaf
-  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-  INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+  ARCHIVE DESTINATION ${libdir}
+  LIBRARY DESTINATION ${libdir}
+  RUNTIME DESTINATION ${bindir}
+  INCLUDES DESTINATION ${incdir}
 )
 install(DIRECTORY 
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf> $<INSTALL_INTERFACE:include/leaf> ;
-  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+  DESTINATION ${incdir}
 )
 export(TARGETS leaf
   NAMESPACE leaf::
@@ -126,3 +139,4 @@ add_custom_command(TARGET ${PROJECT_NAME}
 )
 
 unset(INTEGRATION_TESTS CACHE)
+unset(LOCAL_INSTALL CACHE)
