@@ -5,6 +5,7 @@
 #include <functional>
 #include <type_traits>
 #include <utility>
+#include <fmt/format.h>
 
 namespace leaf
 {
@@ -95,9 +96,18 @@ namespace leaf
   }
 
   template <class E>
-  unexpected<typename std::decay<E>::type> make_unexpected(E &&e)
-  {
-    return unexpected<typename std::decay<E>::type>(std::forward<E>(e));
+  unexpected<std::decay_t<E>> make_unexpected(E &&e) {
+    return unexpected<std::decay_t<E>>(std::forward<E>(e));
+  }
+
+  template<typename E>
+  auto Err(E&& e) -> unexpected<std::decay_t<E>> {
+    return unexpected<std::decay_t<E>>(std::forward<E>(e));
+  }
+
+  template<typename... Args>
+  auto Err(std::string_view format, Args&&... args) -> unexpected<std::decay_t<std::string>> {
+    return unexpected<std::decay_t<std::string>>(fmt::format(format, std::forward<Args>(args)...));
   }
 
   struct unexpect_t
@@ -1519,17 +1529,23 @@ namespace leaf
 
     template <
       class U = T,
-      detail::enable_if_t<!std::is_convertible<U &&, T>::value> * = nullptr,
+      detail::enable_if_t<!std::is_convertible_v<U&&, T>> * = nullptr,
       detail::expected_enable_forward_value<T, E, U> * = nullptr>
     explicit constexpr expected(U &&v)
       : expected(in_place, std::forward<U>(v)) {}
 
     template <
       class U = T,
-      detail::enable_if_t<std::is_convertible<U &&, T>::value> * = nullptr,
+      detail::enable_if_t<std::is_convertible_v<U&&, T>> * = nullptr,
       detail::expected_enable_forward_value<T, E, U> * = nullptr>
     constexpr expected(U &&v)
       : expected(in_place, std::forward<U>(v)) {}
+
+    template <
+      class U = T,
+      detail::enable_if_t<std::is_convertible_v<U&&, T>> * = nullptr,
+      detail::expected_enable_forward_value<T, E, U> * = nullptr>
+    constexpr auto Ok(U&& v) const noexcept { return expected(in_place, std::forward<U>(v)); }
 
     template <
       class U = T, class G = T,
