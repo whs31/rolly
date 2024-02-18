@@ -10,8 +10,7 @@ integration test astra:
     - cd target
     - cmake-alse -GNinja -DCMAKE_BUILD_TYPE=Release -DINTEGRATION_TESTS=ON ..
     - cmake --build .
-    - ls -la
-    - ./leaf-test --gtest_output=xml --platform linuxfb
+    - ./tests/leaf-test --gtest_output=xml --platform linuxfb
 
   artifacts:
     reports:
