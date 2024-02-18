@@ -61,7 +61,7 @@ endif()
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
     fmt
-    spdlog::spdlog_header_only
+    spdlog::spdlog
 )
 
 target_include_directories(${PROJECT_NAME}
