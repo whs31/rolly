@@ -1,0 +1,18 @@
+integration test astra:
+  tags: [alse]
+  allow_failure: true
+  stage: integration-test
+  needs:
+    - job: build astra
+
+  script:
+    - mkdir -p target
+    - cd target
+    - cmake-alse -GNinja -DCMAKE_BUILD_TYPE=Release -DINTEGRATION_TESTS=ON ..
+    - cmake --build .
+    - ./leaf-test --gtest_output=xml --platform linuxfb
+
+  artifacts:
+    reports:
+      junit:
+        - target/*.xml

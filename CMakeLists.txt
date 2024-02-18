@@ -9,6 +9,8 @@ project(leaf
   LANGUAGES C CXX
 )
 
+option(INTEGRATION_TESTS "Enable integration tests" OFF)
+
 include(GNUInstallDirs)
 include(GenerateExportHeader)
 include(CMakePackageConfigHelpers)
@@ -70,6 +72,10 @@ target_include_directories(${PROJECT_NAME}
 )
 target_add_metadata_definitions(${PROJECT_NAME})
 
+if(INTEGRATION_TESTS)
+  add_subdirectory(tests)
+endif()
+
 # export targets
 set(project_config_in "${CMAKE_CURRENT_LIST_DIR}/leafConfig.cmake.in")
 set(project_config_out "${CMAKE_CURRENT_BINARY_DIR}/leafConfig.cmake")
@@ -118,3 +124,5 @@ add_custom_command(TARGET ${PROJECT_NAME}
   COMMAND ;
   COMMENT "${POST_BUILD_COMMENT}"
 )
+
+unset(INTEGRATION_TESTS CACHE)
