@@ -17,9 +17,6 @@ include(cmake/all.cmake)
 set_language_standard(20)
 check_language_features()
 
-# On target system the following packages must be present in %PATH%:
-  # spdlog
-  # fmt
 find_package(spdlog REQUIRED CONFIG)
 
 add_library(${PROJECT_NAME} STATIC)

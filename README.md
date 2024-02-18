@@ -8,6 +8,8 @@
 - `cmake -DCMAKE_BUILD_TYPE=Release ..`
 - `cmake --build .`
 - `sudo cmake --install .`
+Или:
+- `chmod +x install.sh && ./install.sh`
 
 Подключение в свой проект:
 ```cmake
@@ -16,8 +18,13 @@ project(test)
 
 set(CMAKE_CXX_STANDARD 20)
 
-find_package(leaf 0.3.0 REQUIRED)
+find_package(leaf 0.3.1 REQUIRED)
 
 add_executable(test main.cpp)
 target_link_libraries(test leaf::leaf)
 ```
+
+### Зависимости
+##### Системные библиотеки:
+- `spdlog` - библиотека для логгинга сообщений в файл/stdout
+- `fmtlib` - библиотека для форматирования строк
