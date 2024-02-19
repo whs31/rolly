@@ -1,9 +1,0 @@
-[submodule "cmake"]
-	path = cmake
-	url = ../cmake.git
-[submodule "libs/spd"]
-	path = libs/spd
-	url = ../spdlog.git
-[submodule "libs/fmt"]
-	path = libs/fmt
-	url = ../fmtlib.git

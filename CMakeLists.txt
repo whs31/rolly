@@ -20,12 +20,8 @@ include(cmake/all.cmake)
 set_language_standard(20)
 check_language_features()
 
-# find_package(spdlog REQUIRED CONFIG)
+find_package(spdlog REQUIRED CONFIG)
 
-add_subdirectory(libs/fmt)
-set(SPDLOG_FMT_EXTERNAL ON)
-set(SPDLOG_FMT_EXTERNAL ON PARENT_SCOPE)
-add_subdirectory(libs/spd)
 add_library(${PROJECT_NAME} STATIC)
 add_library(${PROJECT_NAME}::leaf ALIAS ${PROJECT_NAME})
 
@@ -58,13 +54,9 @@ target_sources(${PROJECT_NAME}
     src/c++/utils/rtti.c++
 )
 
-if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-  add_library(fmt::fmt ALIAS fmt)
-endif()
-
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
-    fmt
+    $<$<NOT:$<PLATFORM_ID:Windows>>:fmt>
     spdlog::spdlog
 )
 
@@ -103,7 +95,7 @@ set(config_targets_file "leafConfigTargets.cmake")
 set(version_config_file "${CMAKE_CURRENT_BINARY_DIR}/leafConfigVersion.cmake")
 set(export_dest_dir "${libdir}/cmake/leaf")
 
-install(TARGETS leaf spdlog fmt
+install(TARGETS leaf
   EXPORT leaf
   ARCHIVE DESTINATION ${libdir}
   LIBRARY DESTINATION ${libdir}
@@ -114,7 +106,7 @@ install(DIRECTORY
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf> $<INSTALL_INTERFACE:include/leaf> ;
   DESTINATION ${incdir}
 )
-export(TARGETS leaf spdlog fmt
+export(TARGETS leaf
   NAMESPACE leaf::
   FILE "${CMAKE_CURRENT_BINARY_DIR}/${config_targets_file}"
 )
