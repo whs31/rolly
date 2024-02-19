@@ -7,7 +7,7 @@ build astra:
 
   script:
     - mkdir -p tmp && cd tmp
-#    - cd /local_libs
+    - ls -la /local_libs
     - git clone --recurse-submodules http://gitlab-ci-token:${CI_JOB_TOKEN}@uav.radar-mms.com/gitlab/test/essentials/fmtlib.git
     - cd fmtlib
     - cmake -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --install .
