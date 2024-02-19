@@ -4,6 +4,7 @@ build astra:
 
   before_script:
     - whoami
+    - env
 
   script:
     - mkdir -p tmp && cd tmp
