@@ -1,31 +1,18 @@
-build astra:
+dependencies astra:
   tags: [alse]
-  stage: build
-  needs:
-    - job: dependencies astra
+  stage: dependencies
+
+  before_script:
+    - env
 
   script:
     - mkdir -p tmp && cd tmp
-    - ls -la /local_libs
     - git clone --recurse-submodules http://gitlab-ci-token:${CI_JOB_TOKEN}@uav.radar-mms.com/gitlab/test/essentials/fmtlib.git
     - cd fmtlib
     - cmake -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
-    - find /local_libs
-    - cd ../../ && rm -rf tmp
-
-    - mkdir -p tmp && cd tmp
-    - ls -la /local_libs
+    - cd ..
     - git clone --recurse-submodules http://gitlab-ci-token:${CI_JOB_TOKEN}@uav.radar-mms.com/gitlab/test/essentials/spdlog.git
     - cd spdlog
     - cmake -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
-    - find /local_libs
-    - cd ../../ && rm -rf tmp
-
-    - mkdir -p target
-    - cd target
-    - cmake-alse -GNinja -DCMAKE_BUILD_TYPE=Release ..
-    - ninja
-
-  artifacts:
-    paths: [ target/*.a ]
-    expire_in: 1 hour
+    - cd ../..
+    - rm -rf tmp

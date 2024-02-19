@@ -4,12 +4,14 @@ variables:
   PKG_VER: 0.0.0
 
 include:
+  - local: /.gitlab/dependencies-astra.yml
   - local: /.gitlab/build-astra.yml
   - local: /.gitlab/build-windows.yml
   - local: /.gitlab/integration-test-astra.yml
   - local: /.gitlab/doxygen.yml
 
 stages:
+  - dependencies
   - build
   - integration-test
   - documentation
