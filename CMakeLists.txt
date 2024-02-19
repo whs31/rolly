@@ -76,6 +76,7 @@ target_include_directories(${PROJECT_NAME}
     src/c++
 )
 target_add_metadata_definitions(${PROJECT_NAME})
+enable_static_crt()
 
 if(INTEGRATION_TESTS)
   add_subdirectory(tests)
