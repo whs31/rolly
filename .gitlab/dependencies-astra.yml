@@ -9,10 +9,10 @@ dependencies astra:
     - mkdir -p tmp && cd tmp
     - git clone --recurse-submodules http://gitlab-ci-token:${CI_JOB_TOKEN}@uav.radar-mms.com/gitlab/test/essentials/fmtlib.git
     - cd fmtlib
-    - cmake -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
+    - cmake-alse -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
     - cd ..
     - git clone --recurse-submodules http://gitlab-ci-token:${CI_JOB_TOKEN}@uav.radar-mms.com/gitlab/test/essentials/spdlog.git
     - cd spdlog
-    - cmake -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
+    - cmake-alse -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
     - cd ../..
     - rm -rf tmp
