@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.3.2
+  VERSION 0.3.3
   DESCRIPTION "Kernel library for simulator project and beyond"
   HOMEPAGE_URL "com.radar-mms.uav"
   LANGUAGES C CXX
