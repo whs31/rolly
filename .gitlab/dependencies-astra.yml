@@ -1,18 +1,21 @@
 dependencies astra:
   tags: [alse]
   stage: dependencies
+  cache:
+    key: $CI_JOB_NAME
+    paths:
+      - cached-libs
 
   before_script:
     - env
 
   script:
-    - mkdir -p tmp && cd tmp
+    - mkdir -p cached-libs && cd cached-libs
     - git clone --recurse-submodules http://gitlab-ci-token:${CI_JOB_TOKEN}@uav.radar-mms.com/gitlab/test/essentials/fmtlib.git
     - cd fmtlib
-    - cmake-alse -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
+    - cmake-alse -GNinja -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
     - cd ..
     - git clone --recurse-submodules http://gitlab-ci-token:${CI_JOB_TOKEN}@uav.radar-mms.com/gitlab/test/essentials/spdlog.git
     - cd spdlog
-    - cmake-alse -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
+    - cmake-alse -GNinja -DCMAKE_INSTALL_PREFIX=/local_libs . && cmake --build . && cmake --install .
     - cd ../..
-    - rm -rf tmp
