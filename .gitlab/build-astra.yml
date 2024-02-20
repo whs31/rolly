@@ -1,14 +1,11 @@
 build astra:
   tags: [alse]
   stage: build
-  needs:
-    - job: dependencies astra
 
   script:
-    - mkdir -p target
-    - cd target
+    - mkdir -p target && cd target
     - cmake-alse -GNinja -DCMAKE_BUILD_TYPE=Release ..
-    - ninja
+    - cmake-alse --build .
 
   artifacts:
     paths: [ target/*.a ]

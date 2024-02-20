@@ -10,7 +10,6 @@ include:
   - local: /.gitlab/doxygen.yml
 
 stages:
-  - dependencies
   - build
   - integration-test
   - documentation
