@@ -27,8 +27,6 @@ include:
       - when: always
   - local: /.gitlab/doxygen.yml
   - local: /.gitlab/install.yml
-    when:  
-      on-success: build astra
 
 
 
