@@ -26,10 +26,6 @@ include:
         when: never
       - when: always
   - local: /.gitlab/doxygen.yml
-    rules:
-      - if: $CI_PIPELINE_SOURCE == "trigger"
-        when: never
-      - when: always
   - local: /.gitlab/install.yml
 
 
