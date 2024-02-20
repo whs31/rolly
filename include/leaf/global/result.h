@@ -107,7 +107,7 @@ namespace leaf
 
   template<typename... Args>
   auto Err(std::string_view format, Args&&... args) -> unexpected<std::decay_t<std::string>> {
-    return unexpected<std::decay_t<std::string>>(fmt::format(format, std::forward<Args>(args)...));
+    return unexpected<std::decay_t<std::string>>(fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
   }
 
   struct unexpect_t
