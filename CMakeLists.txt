@@ -5,7 +5,7 @@ include_guard(GLOBAL)
 project(leaf
   VERSION 0.3.3
   DESCRIPTION "Kernel library for simulator project and beyond"
-  HOMEPAGE_URL "com.radar-mms.uav"
+  HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
 )
 

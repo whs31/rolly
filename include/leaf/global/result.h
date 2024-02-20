@@ -7,6 +7,7 @@
 #include <utility>
 #include <fmt/format.h>
 
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
 namespace leaf
 {
   template <class T, class E>
@@ -2258,3 +2259,4 @@ namespace leaf
     lhs.swap(rhs);
   }
 }
+#endif
