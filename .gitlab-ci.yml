@@ -8,7 +8,7 @@ include:
   - local: /.gitlab/build-windows.yml
   - local: /.gitlab/integration-test-astra.yml
     needs: 
-      stages: ['build']
+      stage: 'build'
   - local: /.gitlab/doxygen.yml
   - local: /.gitlab/install.yml
 
