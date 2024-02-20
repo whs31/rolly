@@ -6,8 +6,8 @@ variables:
 stages:
   - build
   - integration-test
-  - documentation
   - install
+  - documentation
   
 include:
   - local: /.gitlab/build-astra.yml
