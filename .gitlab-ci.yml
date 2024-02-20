@@ -1,27 +1,14 @@
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
   GIT_DEPTH: 100
-  PKG_VER: 0.0.0
-
-
-stages:
-  - build
-  - integration-test
-  - documentation
-  - install
-
-install:
-  needs:
-    stages: ['build', 'integration-test']
-
-integration-test: 
-  needs:
-    stages: ['build']
-
+  PKG_VER: 0.0.0  
 
 include:
   - local: /.gitlab/build-astra.yml
   - local: /.gitlab/build-windows.yml
   - local: /.gitlab/integration-test-astra.yml
+    needs: 
+      stages: ['build']
   - local: /.gitlab/doxygen.yml
+  - local: /.gitlab/install.yml
 
