@@ -5,7 +5,7 @@
 namespace leaf::conversion
 {
   template<typename From, typename To>
-  [[nodiscard]] auto into(From) -> To { static_assert(false, "unknown conversion"); }
+  [[nodiscard]] auto into(From) -> To { throw std::runtime_error("unimplemented conversion"); }
 
   template<> [[nodiscard]] auto into(const types::u8 from) -> std::string { return std::to_string(from); }
   template<> [[nodiscard]] auto into(const types::i8 from) -> std::string { return std::to_string(from); }
