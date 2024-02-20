@@ -40,7 +40,7 @@ namespace leaf::pattern
   template<typename... T>
   auto IObservable<T...>::notify(T... args) const -> void
   {
-    llog::trace("notifying {} observers");
+    llog::trace("notifying {} observers", this->m_observers.size());
     for(const auto observer : this->m_observers)
       observer->update(args...);
   }
