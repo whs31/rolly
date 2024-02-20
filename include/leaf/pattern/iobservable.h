@@ -15,7 +15,7 @@ namespace leaf::pattern
     public:
       auto subscribe(IObserver<T...>* observer) -> void;
       auto unsubscribe(IObserver<T...>* observer) -> void;
-      auto notify(T... args) const -> void;
+      auto notify(T... args) -> void;
 
       auto operator+=(IObserver<T...>* observer) -> void;
       auto operator-=(IObserver<T...>* observer) -> void;
@@ -39,7 +39,7 @@ namespace leaf::pattern
   }
 
   template<typename... T>
-  auto IObservable<T...>::notify(T... args) const -> void
+  auto IObservable<T...>::notify(T... args) -> void
   {
     llog::trace("notifying {} observers of type {} ({})",
       this->m_observers.size(),
