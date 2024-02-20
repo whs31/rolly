@@ -7,7 +7,9 @@ stages:
   - build
   - integration-test
   - documentation
-  - install
+  - install:
+    needs:
+    - stage: build
 
 include:
   - local: /.gitlab/build-astra.yml
@@ -33,11 +35,6 @@ include:
         when: never
       - when: always
   - local: /.gitlab/install.yml
-
-
-install:
-    needs:
-    - stage: build
 
 
 
