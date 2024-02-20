@@ -3,6 +3,7 @@
 #include <list>
 #include <leaf/global.h>
 #include <leaf/pattern/iobserver.h>
+#include <leaf/utils/rtti.h>
 
 namespace leaf::pattern
 {
@@ -27,20 +28,24 @@ namespace leaf::pattern
   auto IObservable<T...>::subscribe(IObserver<T...>* observer) -> void
   {
     this->m_observers.push_back(observer);
-    $trace("subscriber added, {} total", this->m_observers.size());
+    llog::trace("subscriber added, {} total ({})", this->m_observers.size(), utils::type_name<decltype(this)>());
   }
 
   template<typename... T>
   auto IObservable<T...>::unsubscribe(IObserver<T...>* observer) -> void
   {
     this->m_observers.remove(observer);
-    $trace("subscriber removed, {} total", this->m_observers.size());
+    llog::trace("subscriber removed, {} total ({})", this->m_observers.size(), utils::type_name<decltype(this)>());
   }
 
   template<typename... T>
   auto IObservable<T...>::notify(T... args) const -> void
   {
-    llog::trace("notifying {} observers", this->m_observers.size());
+    llog::trace("notifying {} observers of type {} ({})",
+      this->m_observers.size(),
+      utils::type_name<IObserver<T...>*>(),
+      utils::type_name<decltype(this)>()
+    );
     for(const auto observer : this->m_observers)
       observer->update(args...);
   }
