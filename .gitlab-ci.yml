@@ -3,6 +3,12 @@ variables:
   GIT_DEPTH: 100
   PKG_VER: 0.0.0  
 
+stages:
+  - build
+  - integration-test
+  - documentation
+  - install
+
 include:
   - local: /.gitlab/build-astra.yml
     rules:
@@ -34,9 +40,5 @@ install:
     - stage: build
 
 
-stages:
-  - build
-  - integration-test
-  - documentation
-  - install
+
 
