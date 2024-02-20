@@ -1,4 +1,4 @@
 include:
   - project: 'test/essentials/ci'
     ref: main
-    file: 'install-alse.yml'
+    file: 'install/alse/install-alse.yml'
