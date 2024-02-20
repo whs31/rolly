@@ -28,3 +28,10 @@ include:
       - when: always
   - local: /.gitlab/install.yml
 
+
+stages:
+  - build
+  - integration-test
+  - documentation
+  - install
+
