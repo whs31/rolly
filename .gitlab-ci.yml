@@ -13,3 +13,4 @@ stages:
   - build
   - integration-test
   - documentation
+  - install

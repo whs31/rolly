@@ -1,0 +1,21 @@
+install-alse-1:
+  tags: [alse-first]
+  when: manual
+  stage: install
+  script:
+    - mkdir -p target && cd target
+    - mkdir -p install-release && cd install-release
+    - cmake-alse -GNinja -DCMAKE_INSTALL_PREFIX=/local_libs ../..
+    - cmake-alse --build .
+    - cmake-alse --install .
+
+install-alse-2:
+  tags: [alse-second]
+  when: manual
+  stage: install
+  script:
+    - mkdir -p target && cd target
+    - mkdir -p install-release && cd install-release
+    - cmake-alse -GNinja -DCMAKE_INSTALL_PREFIX=/local_libs ../..
+    - cmake-alse --build .
+    - cmake-alse --install .
