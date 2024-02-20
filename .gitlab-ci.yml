@@ -5,10 +5,26 @@ variables:
 
 include:
   - local: /.gitlab/build-astra.yml
+    rules:
+      - if: $CI_PIPELINE_SOURCE == "trigger"
+        when: never
+      - when: always
   - local: /.gitlab/build-windows.yml
+    rules:
+      - if: $CI_PIPELINE_SOURCE == "trigger"
+        when: never
+      - when: always
   - local: /.gitlab/integration-test-astra.yml
+    rules:
+      - if: $CI_PIPELINE_SOURCE == "trigger"
+        when: never
+      - when: always
     needs: 
       stage: 'build'
   - local: /.gitlab/doxygen.yml
+    rules:
+      - if: $CI_PIPELINE_SOURCE == "trigger"
+        when: never
+      - when: always
   - local: /.gitlab/install.yml
 
