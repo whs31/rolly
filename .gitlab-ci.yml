@@ -29,6 +29,11 @@ include:
   - local: /.gitlab/install.yml
 
 
+install:
+    needs:
+    - stage: build
+
+
 stages:
   - build
   - integration-test
