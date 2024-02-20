@@ -11,9 +11,6 @@ project(leaf
 
 option(INTEGRATION_TESTS "Enable integration tests" OFF)
 
-include(GNUInstallDirs)
-include(GenerateExportHeader)
-include(CMakePackageConfigHelpers)
 include(cmake/all.cmake)
 
 set_language_standard(20)
@@ -78,56 +75,6 @@ if(INTEGRATION_TESTS)
   )
 endif()
 
-# export targets
-
-message(STATUS "[${PROJECT_NAME}] installing in prefix: ${CMAKE_INSTALL_PREFIX}")
-set(project_config_in "${CMAKE_CURRENT_LIST_DIR}/leafConfig.cmake.in")
-set(project_config_out "${CMAKE_CURRENT_BINARY_DIR}/leafConfig.cmake")
-set(config_targets_file "leafConfigTargets.cmake")
-set(version_config_file "${CMAKE_CURRENT_BINARY_DIR}/leafConfigVersion.cmake")
-set(export_dest_dir "${CMAKE_INSTALL_LIBDIR}/cmake/leaf")
-
-install(TARGETS leaf
-  EXPORT leaf
-  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-  INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-install(DIRECTORY 
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf> $<INSTALL_INTERFACE:include/leaf> ;
-  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-export(TARGETS leaf
-  NAMESPACE leaf::
-  FILE "${CMAKE_CURRENT_BINARY_DIR}/${config_targets_file}"
-)
-install(EXPORT leaf
-  DESTINATION "${export_dest_dir}"
-  NAMESPACE leaf::
-  FILE "${config_targets_file}"
-)
-configure_package_config_file(
-  "${project_config_in}" "${project_config_out}"
-  INSTALL_DESTINATION "${export_dest_dir}"
-)
-write_basic_package_version_file(
-  "${version_config_file}"
-  VERSION ${PROJECT_VERSION}
-  COMPATIBILITY AnyNewerVersion
-)
-install(FILES
-  "${project_config_out}" "${version_config_file}"
-  DESTINATION "${export_dest_dir}"
-)
-############################################################################
-
-set(POST_BUILD_COMMENT "[${PROJECT_NAME}] build finished successfully (static library)")
-add_custom_command(TARGET ${PROJECT_NAME}
-  POST_BUILD
-  COMMAND ;
-  COMMENT "${POST_BUILD_COMMENT}"
-)
+target_install_library(${PROJECT_NAME} NAME leaf NAMESPACE leaf)
 
 unset(INTEGRATION_TESTS CACHE)
-unset(LOCAL_INSTALL CACHE)
