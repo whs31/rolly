@@ -67,13 +67,14 @@ target_include_directories(${PROJECT_NAME}
   PRIVATE
     src/c++
 )
-target_add_metadata_definitions(${PROJECT_NAME})
+
+target_add_metadata_definitions(${PROJECT_NAME} COMPANY "whs31")
 enable_static_crt()
 
 if(INTEGRATION_TESTS)
   target_add_integration_tests(${PROJECT_NAME}
     TESTS
-    tests/test-main.c++
+      tests/test-main.c++
   )
 endif()
 
