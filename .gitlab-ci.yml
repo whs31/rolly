@@ -3,14 +3,25 @@ variables:
   GIT_DEPTH: 100
   PKG_VER: 0.0.0
 
-include:
-  - local: /.gitlab/build-astra.yml
-  - local: /.gitlab/build-windows.yml
-  - local: /.gitlab/integration-test-astra.yml
-  - local: /.gitlab/doxygen.yml
 
 stages:
   - build
   - integration-test
   - documentation
   - install
+
+install:
+  needs:
+    stages: ['build', 'integration-test']
+
+integration-test: 
+  needs:
+    stages: ['build']
+
+
+include:
+  - local: /.gitlab/build-astra.yml
+  - local: /.gitlab/build-windows.yml
+  - local: /.gitlab/integration-test-astra.yml
+  - local: /.gitlab/doxygen.yml
+
