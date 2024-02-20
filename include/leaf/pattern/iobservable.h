@@ -46,7 +46,7 @@ namespace leaf::pattern
       utils::type_name<IObserver<T...>*>(),
       utils::type_name<decltype(this)>()
     );
-    for(const auto observer : this->m_observers)
+    for(auto observer : this->m_observers)
       observer->update(args...);
   }
 
