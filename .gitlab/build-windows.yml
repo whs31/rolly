@@ -5,9 +5,12 @@ build windows:
   script:
     - mkdir -p target
     - cd target
-    - mingw64-cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF ..
+    - mingw64-cmake -GNinja -DCMAKE_BUILD_TYPE=Release \
+                    -Dfmt_DIR=/local_libs/lib/cmake/fmt \
+                    -Dspdlog_DIR=/local_libs/lib/cmake/spdlog \
+                    -DBUILD_SHARED_LIBS=OFF ..
     - cmake --build .
-
+    
   artifacts:
     paths: [ target/*.dll ]
     expire_in: 1 hour
