@@ -2,8 +2,6 @@ doxygen:
   stage: build
   tags: [doxygen]
   stage: documentation
-  needs:
-    - job: build astra
   script:
     # - cd ../
     - doxygen -u
