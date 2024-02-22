@@ -11,26 +11,20 @@ stages:
   
 include:
   - local: /.gitlab/build-astra.yml
-    # rules:
-    #   - if: $CI_PIPELINE_SOURCE == "trigger-install-alse"
-    #     when: never
-    #   - if: $CI_PIPELINE_SOURCE == "trigger-install-windows"
-    #     when: never
-    #   - when: always
+    rules:
+  - if: $CI_PIPELINE_SOURCE == "trigger-install-windows"
+    when: never
+  - when: always
   - local: /.gitlab/build-windows.yml
-    # rules:
-    #   - if: $CI_PIPELINE_SOURCE == "trigger-install-alse"
-    #     when: never
-    #   - if: $CI_PIPELINE_SOURCE == "trigger-install-windows"
-    #     when: never
-    #   - when: always
+    rules:
+      - if: $CI_PIPELINE_SOURCE == "trigger-install-alse"
+        when: never
+      - when: always
   - local: /.gitlab/integration-test-astra.yml
-    # rules:
-    #   - if: $CI_PIPELINE_SOURCE == "trigger-install-alse"
-    #     when: never
-    #   - if: $CI_PIPELINE_SOURCE == "trigger-install-windows"
-    #     when: never
-    #   - when: always
+    rules:
+      - if: $CI_PIPELINE_SOURCE == "trigger-install-windows"
+        when: never
+      - when: always
   - local: /.gitlab/doxygen.yml
   - local: /.gitlab/install.yml
 
