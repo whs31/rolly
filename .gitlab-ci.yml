@@ -20,6 +20,15 @@ include:
       - if: $CI_PIPELINE_SOURCE == "trigger-install-alse"
         when: never
       - when: always
+
+  - project: 'test/essentials/ci'
+    ref: main
+    file: 'build/alse/build-alse-strict.yml'
+
+  - project: 'test/essentials/ci'
+    ref: main
+    file: 'build/windows/build-windows-strict.yml'
+
   - local: /.gitlab/integration-test-astra.yml
     rules:
       - if: $CI_PIPELINE_SOURCE == "trigger-install-windows"
