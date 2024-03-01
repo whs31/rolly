@@ -1,0 +1,8 @@
+[package]
+name = "leaf"
+version = { major = 0, minor = 3, patch = 3 }
+authors = ["whs31 <whs31@github.io>"]
+description = "Core library of simulator namespace and beyond"
+
+[dependencies]
+cmake = { version = { major = 0, minor = 1, patch = 1 }, distribution = "sources" }
