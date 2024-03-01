@@ -4,12 +4,32 @@ variables:
   PKG_VER: 0.0.0  
 
 stages:
+  - poppy-generate
+  - poppy-upload
+
   - build
   - integration-test
   - install
   - documentation
   
 include:
+  - project: 'test/essentials/ci'
+    ref: main
+    file: 'poppy/any-src-artifacts.yml'
+
+  - project: 'test/essentials/ci'
+    ref: main
+    file: 'poppy/alse-static-artifacts.yml'
+
+  - project: 'test/essentials/ci'
+    ref: main
+    file: 'poppy/windows-static-artifacts.yml'
+
+  - project: 'test/essentials/ci'
+    ref: main
+    file: 'poppy/upload-artifactory.yml'
+
+
   - local: /.gitlab/build-astra.yml
     rules:
       - if: $CI_PIPELINE_SOURCE == "trigger-install-windows"
@@ -20,6 +40,7 @@ include:
       - if: $CI_PIPELINE_SOURCE == "trigger-install-alse"
         when: never
       - when: always
+
 
   - project: 'test/essentials/ci'
     ref: main
