@@ -12,6 +12,7 @@ stages:
   - install
   - documentation
   
+  
 include:
   - project: 'test/essentials/ci'
     ref: main
