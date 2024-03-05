@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.3.3
+  VERSION 0.3.4
   DESCRIPTION "Kernel library for simulator project and beyond"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
@@ -11,7 +11,7 @@ project(leaf
 
 option(INTEGRATION_TESTS "Enable integration tests" OFF)
 
-include(cmake/all.cmake)
+include(dependencies/all.cmake)
 
 set_language_standard(20)
 check_language_features()
