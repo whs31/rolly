@@ -3,7 +3,9 @@ variables:
   GIT_DEPTH: 100
   PKG_VER: 0.0.0  
 
+
 stages: 
+  # - test
   - build
   - poppy
 
