@@ -4,8 +4,8 @@ variables:
   PKG_VER: 0.0.0  
 
 stages: 
-  build
-  poppy
+  - build
+  - poppy
 
 include:
   - project: 'test/essentials/ci'
