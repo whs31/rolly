@@ -5,10 +5,17 @@ variables:
 
 
 stages: 
-  # - test
+  - test
   - build
   - poppy
 
+test:
+  stage: test
+  tags: [alse]
+  script: 
+    - echo $ARTIFACTORY_KEY
+    - echo $ARTIFACTORY_REFERENCE_KEY
+    - echo $ARTIFACTORY_USER
 
 include:
   - project: 'test/essentials/ci'
