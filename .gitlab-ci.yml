@@ -15,7 +15,7 @@ test:
   script: 
     - echo $ARTIFACTORY_KEY
     - echo $ARTIFACTORY_REFERENCE_KEY
-    - echo $ARTIFACTORY_USER
+    - echo "${ARTIFACTORY_USER}_a"
 
 include:
   - project: 'test/essentials/ci'
