@@ -1,14 +1,10 @@
 [package]
 name = "leaf"
+version = "0.3.5"
 authors = ["whs31 <whs31@github.io>"]
 description = "Core library of simulator namespace and beyond"
 
-[package.version]
-major = 0
-minor = 3
-patch = 4
-
 [dependencies]
-cmake = { version = { major = 0, minor = 1, patch = 2 }, distribution = "sources" }
-fmt = { version = { major = 10, minor = 1, patch = 1 }, distribution = "static" }
-spdlog = { version = { major = 1, minor = 13, patch = 0 }, distribution = "static" }
+cmake = { version = "0.1.2", distribution = "sources" }
+fmt = { version = "10.1.1", distribution = "static" }
+spdlog = { version = "1.13.0", distribution = "static" }
