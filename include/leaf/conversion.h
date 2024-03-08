@@ -36,26 +36,3 @@ namespace leaf::conversion
   template<> [[nodiscard]] auto into(const types::f32 from) -> std::string { return std::to_string(from); }
   template<> [[nodiscard]] auto into(const types::f64 from) -> std::string { return std::to_string(from); }
 }
-
-#include <unordered_map>
-#include <algorithm>
-#include <ranges>
-#include <vector>
-using namespace std;
-class Solution {
-  public:
-  int maxFrequencyElements(vector<int>& nums) {
-    unordered_map<int, size_t> frequencies;
-    for(const auto num : nums) {
-      if(frequencies.contains(num))
-        ++frequencies[num];
-      else
-        frequencies[num] = 1;
-    }
-    const auto max = ranges::max_element(frequencies.cbegin(), frequencies.cend(), [](const auto& lhs, const auto& rhs) {
-      return lhs.second < rhs.second;
-    });
-    for
-    return max->first * max->second;
-  }
-};
