@@ -56,6 +56,8 @@ namespace leaf
         optional<types::usize> max_file_count
       );
 
+      ~Logger();
+
       bool initialized;
   };
 

@@ -19,14 +19,10 @@ using namespace leaf::types;
 
 namespace leaf
 {
-  Logger::Logger(
-    string_view logger_name, const string_view log_pattern,
-    Level level, const Target target,
-    optional<string_view> log_file_name,
-    optional<types::f32> max_file_size_mb,
-    optional<types::usize> max_file_count
-  )
-    : initialized(false)
+  Logger::Logger(string_view logger_name, const string_view log_pattern, Level level, const Target target,
+                 optional<string_view> log_file_name, optional<types::f32> max_file_size_mb,
+                 optional<types::usize> max_file_count)
+      : initialized(false)
   {
     if(this->initialized)
     {
@@ -34,7 +30,8 @@ namespace leaf
       return;
     }
 
-    if(log_pattern.empty()) {
+    if(log_pattern.empty())
+    {
       llog::warn("no log pattern provided to logger {}", logger_name);
       return;
     }
@@ -47,30 +44,29 @@ namespace leaf
       switch(bitmask bitand mask)
       {
         case utils::to_underlying(Target::File):
-          if(not log_file_name.has_value()) {
+          if(not log_file_name.has_value())
+          {
             llog::error("no log file name provided to logger {}", logger_name);
             return;
           }
-          if(not max_file_size_mb.has_value()) {
+          if(not max_file_size_mb.has_value())
+          {
             llog::error("no max file size provided to logger {}", logger_name);
             return;
           }
-          if(not max_file_count.has_value()) {
+          if(not max_file_count.has_value())
+          {
             llog::error("no max file count provided to logger {}", logger_name);
             return;
           }
-          sinks.push_back(
-            make_shared<spdlog::sinks::rotating_file_sink_mt>(
-              string(*log_file_name),
-              *max_file_size_mb * 1024 * 1024,
-              *max_file_count
-            )
-          );
+          sinks.push_back(make_shared<spdlog::sinks::rotating_file_sink_mt>(
+              string(*log_file_name), *max_file_size_mb * 1024 * 1024, *max_file_count));
           break;
         case utils::to_underlying(Target::Stdout):
           sinks.push_back(make_shared<spdlog::sinks::stdout_color_sink_mt>());
           break;
-        default: unreachable();
+        default:
+          unreachable();
       }
       bitmask &= compl mask;
       mask <<= 1;
@@ -97,4 +93,9 @@ namespace leaf
     l->flush();
     this->initialized = true;
   }
-}
+  Logger::~Logger()
+  {
+    llog::debug("shutting down loggers");
+    spdlog::shutdown();
+  }
+} // namespace leaf
