@@ -3,12 +3,9 @@ variables:
   GIT_DEPTH: 100
   PKG_VER: 0.0.0  
 
-
 stages: 
-  # - test
   - build
   - poppy
-
 
 include:
   - project: 'test/essentials/ci'
@@ -17,5 +14,3 @@ include:
     inputs:
       build_windows_static: 'true'
       build_alse_static: 'true'
-
-
