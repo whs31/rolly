@@ -1,6 +1,6 @@
 [package]
 name = "leaf"
-version = "0.3.6"
+version = "0.3.7"
 authors = ["whs31 <whs31@github.io>"]
 description = "Core library of simulator namespace and beyond"
 
@@ -8,3 +8,4 @@ description = "Core library of simulator namespace and beyond"
 cmake = { version = "0.1.2", distribution = "sources" }
 fmt = { version = "10.1.1", distribution = "static" }
 spdlog = { version = "1.13.0", distribution = "static" }
+magicenum = { version = "0.9.5", distribution = "static" }

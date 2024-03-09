@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.3.6
+  VERSION 0.4.0
   DESCRIPTION "Kernel library for simulator project and beyond"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
@@ -18,6 +18,7 @@ set_language_standard(20)
 check_language_features()
 
 find_package(spdlog REQUIRED CONFIG)
+find_package(magic_enum REQUIRED)
 
 add_library(${PROJECT_NAME} STATIC)
 add_library(${PROJECT_NAME}::leaf ALIAS ${PROJECT_NAME})
@@ -29,6 +30,9 @@ target_sources(${PROJECT_NAME}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/traits.h> $<INSTALL_INTERFACE:include/leaf/traits.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/math.h> $<INSTALL_INTERFACE:include/leaf/math.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/conversion.h> $<INSTALL_INTERFACE:include/leaf/conversion.h>
+
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/logger.h> $<INSTALL_INTERFACE:include/leaf/logger.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/leaf.h> $<INSTALL_INTERFACE:include/leaf/leaf.h>
 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/definitions.h> $<INSTALL_INTERFACE:include/leaf/global/definitions.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/types.h> $<INSTALL_INTERFACE:include/leaf/global/types.h>
@@ -49,6 +53,7 @@ target_sources(${PROJECT_NAME}
 
   PRIVATE
     src/c++/global/logconfig.c++
+    src/c++/logger.c++
     src/c++/utils/rtti.c++
 )
 
@@ -56,6 +61,8 @@ target_link_libraries(${PROJECT_NAME}
   PUBLIC
     #$<$<NOT:$<PLATFORM_ID:Windows>>:fmt>
     spdlog::spdlog
+  PRIVATE
+    magic_enum::magic_enum
 )
 
 target_include_directories(${PROJECT_NAME}
