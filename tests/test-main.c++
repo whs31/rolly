@@ -2,12 +2,41 @@
 #include <leaf/global.h>
 #include <leaf/conversion.h>
 #include <leaf/logger.h>
+#include <leaf/pattern/iobservable.h>
 
 TEST(Spdlog, Basic)
 {
   llog::error("error message from spdlog");
 
   ASSERT_EQ(1, 1);
+}
+
+class TestObservable : public leaf::pattern::IObservable<>
+{
+  public:
+    TestObservable() { this->notify(); }
+};
+
+auto test_empty_variadic_args = 0;
+class TestObserver final : public leaf::pattern::IObserver<>
+{
+  public:
+    TestObserver() = default;
+
+    virtual auto update() -> void override
+    {
+      printf("update triggered!");
+      test_empty_variadic_args = 1;
+    }
+};
+
+TEST(Observable, EmptyVariadicArgs)
+{
+  auto observable = TestObservable();
+  auto observer = TestObserver();
+  observable += &observer;
+  observable.notify();
+  EXPECT_EQ(test_empty_variadic_args, 1);
 }
 
 TEST(Logger, Basic)
