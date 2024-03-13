@@ -7,6 +7,7 @@ namespace leaf
   using std::string;
   using std::string_view;
   using std::optional;
+  using std::shared_ptr;
   using namespace std::string_view_literals;
 
   // todo: better documentation
@@ -82,7 +83,7 @@ namespace leaf
       auto with_max_file_size_mb(types::f32 max_file_size_mb) -> LoggerBuilder&;
       auto with_max_file_count(types::usize max_file_count) -> LoggerBuilder&;
 
-      [[nodiscard]] auto build() const -> expected<Logger, string>;
+      [[nodiscard]] auto build() const -> expected<shared_ptr<Logger>, string>;
 
     private:
       string name;

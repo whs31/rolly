@@ -17,6 +17,8 @@ using std::move;
 using namespace std::chrono_literals;
 using namespace leaf::types;
 
+using std::make_shared;
+
 namespace leaf
 {
   Logger::Logger(string_view logger_name, const string_view log_pattern, Level level, const Target target,
@@ -137,7 +139,7 @@ namespace leaf
     return *this;
   }
 
-  auto LoggerBuilder::build() const -> expected<Logger, string>
+  auto LoggerBuilder::build() const -> expected<shared_ptr<Logger>, string>
   {
     if(this->name.empty())
       return Err("no logger name provided");
@@ -152,7 +154,7 @@ namespace leaf
       if(not this->max_file_count.has_value())
         return Err("no max file count provided, but target is set to log to file");
     }
-    return Logger(
+    return make_shared<Logger>(
       this->name,
       this->pattern,
       this->level,
