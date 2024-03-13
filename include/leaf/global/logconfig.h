@@ -17,7 +17,7 @@ namespace leaf::log
    * Основное предназначение этого класса - быстрая настройка логгера для отладки (например, для тестов).
    * \version 3.0.0
    */
-  struct LogFileConfiguration
+  struct [[deprecated("Use leaf::Logger + leaf::LoggerBuilder instead")]] LogFileConfiguration
   {
     /// \brief Уровень логгирования
     enum class LogLevel

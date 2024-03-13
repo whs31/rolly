@@ -12,15 +12,19 @@ TEST(Spdlog, Basic)
 
 TEST(Logger, Basic)
 {
-  const auto logger = leaf::Logger(
-    "test-logger",
-    leaf::Logger::DefaultPatterns::SimpleWithThreadInfo,
-    leaf::Logger::Level::Trace,
-    leaf::Logger::Target::Stdout | leaf::Logger::Target::File,
-    "test.log",
-    10.0f,
-    1
-  );
+  const auto logger = leaf::LoggerBuilder()
+    .with_name("test-log-builder-logger")
+    .with_pattern(leaf::Logger::DefaultPatterns::SimpleWithThreadInfo)
+    .with_level(leaf::Logger::Level::Trace)
+    .with_target(leaf::Logger::Target::Stdout | leaf::Logger::Target::File)
+    .with_log_file_name("test.log")
+    .with_max_file_count(1)
+    .with_max_file_size_mb(10.0f)
+    .build()
+    .map_error([](auto error) {
+      llog::error(error);
+      return 1;
+    }).value();
 
   llog::trace("trace message");
   llog::debug("debug message");

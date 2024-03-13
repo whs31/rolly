@@ -98,4 +98,68 @@ namespace leaf
     llog::debug("shutting down loggers");
     spdlog::shutdown();
   }
+  LoggerBuilder::LoggerBuilder() = default;
+
+  auto LoggerBuilder::with_name(const string_view name) -> LoggerBuilder& {
+    this->name = name;
+    return *this;
+  }
+
+  auto LoggerBuilder::with_pattern(const string_view pattern) -> LoggerBuilder& {
+    this->pattern = pattern;
+    return *this;
+  }
+
+  auto LoggerBuilder::with_level(const Logger::Level level) -> LoggerBuilder& {
+    this->level = level;
+    return *this;
+  }
+
+  auto LoggerBuilder::with_target(const Logger::Target target) -> LoggerBuilder& {
+    this->target = target;
+    return *this;
+  }
+
+  auto LoggerBuilder::with_log_file_name(string_view log_file_name) -> LoggerBuilder& {
+    this->log_file_name = log_file_name;
+    return *this;
+  }
+
+  auto LoggerBuilder::with_max_file_size_mb(types::f32 max_file_size_mb) -> LoggerBuilder&
+  {
+    this->max_file_size_mb = max_file_size_mb;
+    return *this;
+  }
+
+  auto LoggerBuilder::with_max_file_count(types::usize max_file_count) -> LoggerBuilder&
+  {
+    this->max_file_count = max_file_count;
+    return *this;
+  }
+
+  auto LoggerBuilder::build() const -> expected<Logger, string>
+  {
+    if(this->name.empty())
+      return Err("no logger name provided");
+    if(this->pattern.empty())
+      return Err("no log pattern provided");
+    if((this->target bitand Logger::Target::File) == Logger::Target::File)
+    {
+      if(not this->log_file_name.has_value())
+        return Err("no log file name provided, but target is set to log to file");
+      if(not this->max_file_size_mb.has_value())
+        return Err("no max file size provided, but target is set to log to file");
+      if(not this->max_file_count.has_value())
+        return Err("no max file count provided, but target is set to log to file");
+    }
+    return Logger(
+      this->name,
+      this->pattern,
+      this->level,
+      this->target,
+      this->log_file_name,
+      this->max_file_size_mb,
+      this->max_file_count
+    );
+  }
 } // namespace leaf

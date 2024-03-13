@@ -64,4 +64,33 @@ namespace leaf
   inline auto operator|(const Logger::Target& lhs, const Logger::Target& rhs) -> Logger::Target {
     return static_cast<Logger::Target>(static_cast<int>(lhs) | static_cast<int>(rhs));
   }
+
+  inline auto operator&(const Logger::Target& lhs, const Logger::Target& rhs) -> Logger::Target {
+    return static_cast<Logger::Target>(static_cast<int>(lhs) & static_cast<int>(rhs));
+  }
+
+  class LoggerBuilder final
+  {
+    public:
+      LoggerBuilder();
+
+      auto with_name(string_view name) -> LoggerBuilder&;
+      auto with_pattern(string_view pattern) -> LoggerBuilder&;
+      auto with_level(Logger::Level level) -> LoggerBuilder&;
+      auto with_target(Logger::Target target) -> LoggerBuilder&;
+      auto with_log_file_name(string_view log_file_name) -> LoggerBuilder&;
+      auto with_max_file_size_mb(types::f32 max_file_size_mb) -> LoggerBuilder&;
+      auto with_max_file_count(types::usize max_file_count) -> LoggerBuilder&;
+
+      [[nodiscard]] auto build() const -> expected<Logger, string>;
+
+    private:
+      string name;
+      string pattern;
+      Logger::Level level;
+      Logger::Target target;
+      optional<string> log_file_name;
+      optional<types::f32> max_file_size_mb;
+      optional<types::usize> max_file_count;
+  };
 }

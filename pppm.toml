@@ -1,6 +1,6 @@
 [package]
 name = "leaf"
-version = "0.4.2"
+version = "0.4.3"
 authors = ["whs31 <whs31@github.io>"]
 description = "Core library of simulator namespace and beyond"
 
