@@ -35,7 +35,7 @@ TEST(Observable, EmptyVariadicArgs)
   auto observable = TestObservable();
   auto observer = TestObserver();
   observable += &observer;
-  observable.notify();
+  compl observable;
   observable -= &observer;
   EXPECT_EQ(test_empty_variadic_args, 1);
 }

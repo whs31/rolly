@@ -19,6 +19,7 @@ namespace leaf::pattern
 
       auto operator+=(IObserver<T...>* observer) -> void;
       auto operator-=(IObserver<T...>* observer) -> void;
+      auto operator~() -> void;
 
     private:
       list<IObserver<T...>*> m_observers;
@@ -53,7 +54,12 @@ namespace leaf::pattern
   template<typename... T>
   auto IObservable<T...>::operator+=(IObserver<T...>* observer) -> void { this->subscribe(observer); }
 
-  template<typename... T>
-  auto IObservable<T...>::operator-=(IObserver<T...>* observer) -> void { this->unsubscribe(observer); }
+  template <typename... T>
+  auto IObservable<T...>::operator-=(IObserver<T...> *observer) -> void
+  {
+    this->unsubscribe(observer);
+  }
+  template <typename... T>
+  auto IObservable<T...>::operator~() -> void { this->notify(); }
 }
 
