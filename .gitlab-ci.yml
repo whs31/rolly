@@ -4,6 +4,7 @@ variables:
   PKG_VER: 0.0.0  
 
 stages: 
+  - tests
   - build
   - poppy
 
@@ -14,3 +15,4 @@ include:
     inputs:
       build_windows_static: 'true'
       build_alse_static: 'true'
+      integration_tests: 'true'
