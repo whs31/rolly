@@ -1,8 +1,8 @@
 [package]
 name = "leaf"
-version = "0.4.3"
+version = "0.4.4"
 authors = ["whs31 <whs31@github.io>"]
-description = "Core library of simulator namespace and beyond"
+description = "Coreutils library for C++"
 
 [dependencies]
 cmake = { version = "0.1.3", distribution = "sources" }

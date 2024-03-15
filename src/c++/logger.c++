@@ -97,10 +97,14 @@ namespace leaf
   }
   Logger::~Logger()
   {
-    llog::debug("shutting down loggers");
+    llog::trace("logger: closing");
     spdlog::shutdown();
   }
-  LoggerBuilder::LoggerBuilder() = default;
+
+  LoggerBuilder::LoggerBuilder()
+    : level(Logger::Level::Info),
+      target(Logger::Target::Stdout)
+  {}
 
   auto LoggerBuilder::with_name(const string_view name) -> LoggerBuilder& {
     this->name = name;

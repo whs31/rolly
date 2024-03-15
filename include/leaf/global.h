@@ -7,4 +7,5 @@
 #include <leaf/global/expected.h>
 #include <leaf/global/sourcelocation.h>
 
-
+/// \brief Альтернативный алиас на пространство имен `leaf`.
+namespace lf = leaf;

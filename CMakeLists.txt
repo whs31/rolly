@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.4.3
-  DESCRIPTION "Kernel library for simulator project and beyond"
+  VERSION 0.4.4
+  DESCRIPTION "Coreutils library for C++"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
 )
