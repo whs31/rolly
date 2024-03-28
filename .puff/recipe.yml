@@ -1,0 +1,5 @@
+---
+shared:
+  toolchain:
+    cmake:
+      generator: Ninja
