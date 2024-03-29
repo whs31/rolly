@@ -8,7 +8,7 @@ description = "Coreutils library for C++"
 license = "MIT"
 
 [needs]
-cmake = "^0.1.3"
-fmt = "^10.1.1"
-spdlog = "^1.13.0"
-magicenum = "^0.9.5"
+cmake = "^0.1.3@static"
+fmt = "^10.1.1@static"
+spdlog = "^1.13.0@static"
+magicenum = "^0.9.5@static"

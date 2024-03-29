@@ -1,5 +1,5 @@
 ---
-shared:
+static:
   toolchain:
     cmake:
       generator: Ninja
