@@ -12,7 +12,7 @@ linux static:
   tags: [alse]
   script: 
     - puff install . --fresh
-    - cmake -S . -B target-linux-x86_64-static -G Ninja -DCMAKE_BUILD_TYPE=Release -DFMT_MASTER_PROJECT=OFF -DCMAKE_PREFIX_PATH=dependencies
+    - cmake-alse -S . -B target-linux-x86_64-static -G Ninja -DCMAKE_BUILD_TYPE=Release -DFMT_MASTER_PROJECT=OFF -DCMAKE_PREFIX_PATH=dependencies
     - cmake --build target-linux-x86_64-static --config Release
     - cmake --install target-linux-x86_64-static --prefix target-linux-x86_64-static/export
     - cp -r .puff target-linux-x86_64-static/export/.puff
