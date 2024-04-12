@@ -1,18 +1,62 @@
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
   GIT_DEPTH: 100
-  PKG_VER: 0.0.0  
+  PKG_VER: 0.0.0
 
 stages: 
-  - tests
   - build
-  - poppy
+  - publish
 
-include:
-  - project: 'test/essentials/ci'
-    ref: main
-    file: 'poppy/poppy.yml'
-    inputs:
-      build_windows_static: 'true'
-      build_alse_static: 'true'
-      integration_tests: 'true'
+linux static:
+  stage: build
+  tags: [alse]
+  script: 
+    - puff install . --fresh
+    - cmake-alse -S . -B target-linux-x86_64-static -G Ninja -DCMAKE_BUILD_TYPE=Release -DFMT_MASTER_PROJECT=OFF -DCMAKE_PREFIX_PATH=dependencies
+    - cmake --build target-linux-x86_64-static --config Release
+    - cmake --install target-linux-x86_64-static --prefix target-linux-x86_64-static/export
+    - cp -r .puff target-linux-x86_64-static/export/.puff
+    - cp Puff.toml target-linux-x86_64-static/export/Puff.toml
+
+  artifacts:
+    paths:
+      - target-linux-x86_64-static/export
+    expire_in: 1 hour
+
+windows static:
+  stage: build
+  tags: [windows-arch]
+  script:
+    - puff install . --fresh --os windows
+    - x86_64-w64-mingw32-cmake -S . -B target-windows-x86_64-static -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=./dependencies -DBUILD_SHARED_LIBS=OFF -DMINGW_ADDITIONAL_LIBDIR=./dependencies
+    - cmake --build target-windows-x86_64-static --config Release
+    - cmake --install target-windows-x86_64-static --prefix target-windows-x86_64-static/export
+    - cp -r .puff target-windows-x86_64-static/export/.puff
+    - cp Puff.toml target-windows-x86_64-static/export/Puff.toml
+
+  artifacts:
+    paths:
+      - target-windows-x86_64-static/export
+    expire_in: 1 hour
+
+publish:
+  stage: publish
+  tags: [alse]
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: always
+    - when: manual
+  needs:
+    - job: linux static
+      artifacts: true
+    - job: windows static
+      artifacts: true
+  script:
+    - puff publish --name "puff-main" --dist sources
+    - mkdir -p target
+    - cp -r target-linux-x86_64-static/export target/export
+    - puff publish --name "puff-main" --dist static --arch x86_64 --os linux 
+    - rm -rf target/export
+    - cp -r target-windows-x86_64-static/export target/export
+    - puff publish --name "puff-main" --dist static --arch x86_64 --os windows
+
