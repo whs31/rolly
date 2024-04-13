@@ -5,7 +5,7 @@ from conan.tools.build import check_min_cppstd
 from conan.tools.files import copy, rmdir
 
 
-class SpdlogRecipe(ConanFile):
+class LeafRecipe(ConanFile):
     name = "leaf"
     version = "0.5.0"
     description = "Coreutils library for C++"
@@ -25,7 +25,7 @@ class SpdlogRecipe(ConanFile):
 
     def requirements(self):
         self.requires("fmt/[^10.1.0]")
-        self.requires("spdlog/[^1.10.0]")
+        self.requires("spdlog/1.13.0")
         self.requires("magic_enum/[^0.9.0]")
 
     def layout(self):

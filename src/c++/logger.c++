@@ -1,7 +1,7 @@
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/rotating_file_sink.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
-#include <magic_enum.hpp>
+#include <magic_enum/magic_enum.hpp>
 #include <leaf/logger.h>
 #include <leaf/conversion.h>
 #include <leaf/utils/enum.h>
