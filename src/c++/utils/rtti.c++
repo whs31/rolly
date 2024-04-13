@@ -1,9 +1,13 @@
 #include <leaf/utils/rtti.h>
 
+#include <cstdlib>
+#include <memory>
 #ifdef __GNUG__
-# include <cstdlib>
-# include <memory>
 # include <cxxabi.h>
+#else 
+# include <windows.h>
+# include <DbgHelp.h> 
+#pragma comment(lib, "dbghelp.lib")
 #endif
 
 using std::unique_ptr;
@@ -22,6 +26,14 @@ namespace leaf::utils
     return status == 0 ? res.get() : name;
   }
   #else
-  auto detail::demangle(const char* name) -> string { return name }
+  auto detail::demangle(const char* name) -> string 
+  { 
+    constexpr max_name_length = DWORD(1024);
+    char undecorated[max_name_length];
+
+    if(UnDecorateSymbolName(name, undecorated, max_name_length, UNDNAME_COMPLETE))  
+      return std::string(undecorated);
+    return std::string(name);
+  }
   #endif
 }
