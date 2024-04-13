@@ -10,7 +10,6 @@ class LeafRecipe(ConanFile):
     version = "0.5.0"
     description = "Coreutils library for C++"
     author = "whs31 <whs31@github.io>"
-    url = "https://github.com/gabime/spdlog"
     topics = ("logging", "header-only")
 
     settings = "os", "arch", "compiler", "build_type"
@@ -33,7 +32,7 @@ class LeafRecipe(ConanFile):
 
     def validate(self):
         if self.settings.get_safe("compiler.cppstd"):
-            check_min_cppstd(self, 14)
+            check_min_cppstd(self, 20)
         deps = CMakeDeps(self)
 
     def generate(self):

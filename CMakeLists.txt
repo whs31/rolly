@@ -121,7 +121,7 @@ if(INTEGRATION_TESTS)
   )
 endif()
 
-set(PROJECT_NAMESPACE leaf)
+set(PROJECT_NAMESPACE leaf::)
 message(STATUS "[${PROJECT_NAME}] installing ${PROJECT_NAME} in namespace ${PROJECT_NAMESPACE}")
 include(GNUInstallDirs)
 include(GenerateExportHeader)
