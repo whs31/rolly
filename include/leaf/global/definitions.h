@@ -60,6 +60,18 @@
 #define $unimplemented() \
   throw std::runtime_error("unimplemented code");
 
+#if defined(_WIN32)
+# if defined(LEAF_LIBRARY)
+#  define LEAF_EXPORT __declspec(dllexport)
+# elif defined(LEAF_STATIC_LIBRARY)
+#  define LEAF_EXPORT
+# else
+#  define LEAF_EXPORT __declspec(dllimport)
+# endif
+#else
+# define LEAF_EXPORT
+#endif
+
 //#endif
 /**
  * \brief Основное пространство имен библиотеки SimKernel

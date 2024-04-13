@@ -22,7 +22,7 @@ namespace leaf
    * \param max_file_size_mb - максимальный размер лог-файла в мегабайтах (необходимо задавать только если одна из целей логгирования - файл)
    * \param max_file_count - максимальное количество лог-файлов (необходимо задавать только если одна из целей логгирования - файл)
    */
-  class Logger final
+  class LEAF_EXPORT Logger final
   {
     public:
       struct DefaultPatterns
@@ -70,7 +70,7 @@ namespace leaf
     return static_cast<Logger::Target>(static_cast<int>(lhs) & static_cast<int>(rhs));
   }
 
-  class LoggerBuilder final
+  class LEAF_EXPORT LoggerBuilder final
   {
     public:
       LoggerBuilder();

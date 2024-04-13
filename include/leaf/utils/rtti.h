@@ -2,6 +2,7 @@
 
 #include <string>
 #include <typeinfo>
+#include <leaf/global/definitions.h>
 
 namespace leaf::utils
 {
@@ -9,7 +10,7 @@ namespace leaf::utils
 
   namespace detail
   {
-    [[nodiscard]] auto demangle(const char* name) -> string;
+    LEAF_EXPORT [[nodiscard]] auto demangle(const char* name) -> string;
   }
 
   template<typename T>

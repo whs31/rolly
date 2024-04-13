@@ -94,6 +94,15 @@ target_link_libraries(${PROJECT_NAME}
 
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src/c++)
 
+if(BUILD_SHARED_LIBS)
+  message(STATUS "[${PROJECT_NAME}] adding shared export symbols: LEAF_LIBRARY")
+  set_target_properties(${PROJECT_NAME} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+  target_compile_definitions(${PROJECT_NAME} PUBLIC -DLEAF_LIBRARY=1)
+else()
+  message(STATUS "[${PROJECT_NAME}] adding static export symbols: LEAF_STATIC_LIBRARY")
+  target_compile_definitions(${PROJECT_NAME} PUBLIC -DLEAF_STATIC_LIBRARY=1)
+endif()
+
 message(STATUS "[${PROJECT_NAME}] setting metadata definitions:")
 message(STATUS "[${PROJECT_NAME}] - PROJECT_NAME: ${PROJECT_NAME}")
 message(STATUS "[${PROJECT_NAME}] - PROJECT_VERSION: ${PROJECT_VERSION}")

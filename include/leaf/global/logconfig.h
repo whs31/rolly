@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <leaf/global/definitions.h>
 #include <leaf/global/types.h>
 
 /// \brief Пространство имен для классов и функций, связанных с логгером
@@ -17,7 +18,7 @@ namespace leaf::log
    * Основное предназначение этого класса - быстрая настройка логгера для отладки (например, для тестов).
    * \version 3.0.0
    */
-  struct [[deprecated("Use leaf::Logger + leaf::LoggerBuilder instead")]] LogFileConfiguration
+  struct LEAF_EXPORT [[deprecated("Use leaf::Logger + leaf::LoggerBuilder instead")]] LogFileConfiguration
   {
     /// \brief Уровень логгирования
     enum class LogLevel
