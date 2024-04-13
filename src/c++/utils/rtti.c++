@@ -28,7 +28,7 @@ namespace leaf::utils
   #else
   auto detail::demangle(const char* name) -> string 
   { 
-    constexpr max_name_length = DWORD(1024);
+    constexpr auto max_name_length = DWORD(1024);
     char undecorated[max_name_length];
 
     if(UnDecorateSymbolName(name, undecorated, max_name_length, UNDNAME_COMPLETE))  
