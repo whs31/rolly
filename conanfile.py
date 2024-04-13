@@ -6,10 +6,8 @@ from conan.tools.files import copy, rmdir
 
 
 class SpdlogRecipe(ConanFile):
-    requires = "fmt/10.1.1"
-
     name = "leaf"
-    version = "0.4.6"
+    version = "0.5.0"
     description = "Coreutils library for C++"
     author = "whs31 <whs31@github.io>"
     url = "https://github.com/gabime/spdlog"
@@ -25,6 +23,11 @@ class SpdlogRecipe(ConanFile):
 
     exports_sources = "*"
 
+    def requirements(self):
+        self.requires("fmt/[^10.1.0]")
+        self.requires("spdlog/[^1.10.0]")
+        self.requires("magic_enum/[^0.9.0]")
+
     def layout(self):
         cmake_layout(self)
 
@@ -37,6 +40,7 @@ class SpdlogRecipe(ConanFile):
         deps = CMakeDeps(self)
         deps.generate()
         tc = CMakeToolchain(self)
+        tc.cache_variables["BUILD_SHARED_LIBS"] = self.options.shared
         tc.generate()
 
     def build(self):
@@ -45,7 +49,6 @@ class SpdlogRecipe(ConanFile):
         cmake.build()
 
     def package(self):
-        copy(self, pattern="LICENSE", src=self.source_folder, dst=os.path.join(self.package_folder, "licenses"))
         cmake = CMake(self)
         cmake.install()
         rmdir(self, os.path.join(self.package_folder, "lib", "cmake"))
@@ -54,7 +57,7 @@ class SpdlogRecipe(ConanFile):
         rmdir(self, os.path.join(self.package_folder, "share"))
 
     def package_info(self):
-        target = "spdlog"
-        self.cpp_info.set_property("cmake_file_name", "spdlog")
-        self.cpp_info.set_property("cmake_target_name", f"spdlog::{target}")
-        self.cpp_info.set_property("pkg_config_name",  "spdlog")
+        target = "leaf"
+        self.cpp_info.set_property("cmake_file_name", target)
+        self.cpp_info.set_property("cmake_target_name", f"{target}::{target}")
+        self.cpp_info.set_property("pkg_config_name",  target)
