@@ -23,8 +23,8 @@ class LeafRecipe(ConanFile):
     exports_sources = "*"
 
     def requirements(self):
-        self.requires("fmt/[^10.1.0]")
-        self.requires("spdlog/1.13.0")
+        self.requires("fmt/[^10.1.0]", transitive_headers = True)
+        self.requires("spdlog/1.13.0", transitive_headers = True)
         self.requires("magic_enum/[^0.9.0]")
 
     def layout(self):
