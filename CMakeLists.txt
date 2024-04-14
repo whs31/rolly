@@ -45,7 +45,7 @@ else()
   message(STATUS "[${PROJECT_NAME}] checking dollar macro... OK!")
 endif()
 
-find_package(spdlog REQUIRED CONFIG)
+find_package(spdlog REQUIRED)
 find_package(magic_enum REQUIRED)
 
 add_library(${PROJECT_NAME})
