@@ -23,9 +23,9 @@ class LeafRecipe(ConanFile):
     exports_sources = "*"
 
     def requirements(self):
-        self.requires("fmt/[^10.1.0]", transitive_headers = True)
-        self.requires("spdlog/1.13.0", transitive_headers = True)
-        self.requires("magic_enum/[^0.9.0]")
+        self.requires("fmt/[^10.1.0]", transitive_headers = True, transitive_libs=True)
+        self.requires("spdlog/1.13.0", transitive_headers = True, transitive_libs=True)
+        self.requires("magic_enum/[^0.9.0]", transitive_libs=True)
 
     def layout(self):
         cmake_layout(self)
@@ -60,4 +60,3 @@ class LeafRecipe(ConanFile):
         self.cpp_info.set_property("cmake_file_name", target)
         self.cpp_info.set_property("cmake_target_name", f"{target}::{target}")
         self.cpp_info.set_property("pkg_config_name",  target)
-        self.cpp_info.requires = ["fmt::fmt", "spdlog::spdlog", "magic_enum::magic_enum"]
