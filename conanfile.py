@@ -60,3 +60,4 @@ class LeafRecipe(ConanFile):
         self.cpp_info.set_property("cmake_file_name", target)
         self.cpp_info.set_property("cmake_target_name", f"{target}::{target}")
         self.cpp_info.set_property("pkg_config_name",  target)
+        self.cpp_info.system_libs = ["fmt", "spdlog", "magic_enum"]
