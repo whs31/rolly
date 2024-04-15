@@ -56,8 +56,7 @@ class LeafRecipe(ConanFile):
         rmdir(self, os.path.join(self.package_folder, "share"))
 
     def package_info(self):
-        target = "leaf"
-        self.cpp_info.set_property("cmake_file_name", target)
-        self.cpp_info.set_property("cmake_target_name", f"{target}::{target}")
-        self.cpp_info.set_property("pkg_config_name",  target)
-        self.cpp_info.system_libs = ["fmt", "spdlog"]
+        self.cpp_info.set_property("cmake_file_name", "leaf")
+        self.cpp_info.set_property("cmake_target_name", "leaf::leaf")
+        self.cpp_info.libs = ["leaf"]
+        self.cpp_info.requires = ["fmt::fmt", "magic_enum::magic_enum", "spdlog::spdlog"]
