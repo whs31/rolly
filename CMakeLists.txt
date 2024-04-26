@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.5.0
+  VERSION 0.6.0
   DESCRIPTION "Coreutils library for C++"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
@@ -65,10 +65,11 @@ target_sources(${PROJECT_NAME}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/definitions.h> $<INSTALL_INTERFACE:include/leaf/global/definitions.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/types.h> $<INSTALL_INTERFACE:include/leaf/global/types.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/log.h> $<INSTALL_INTERFACE:include/leaf/global/log.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/logconfig.h> $<INSTALL_INTERFACE:include/leaf/global/logconfig.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/expected.h> $<INSTALL_INTERFACE:include/leaf/global/expected.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/result.h> $<INSTALL_INTERFACE:include/leaf/global/result.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/sourcelocation.h> $<INSTALL_INTERFACE:include/leaf/global/sourcelocation.h>
+
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/definitions/platform.h> $<INSTALL_INTERFACE:include/leaf/definitions/platform.h>
 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/pattern/iobservable.h> $<INSTALL_INTERFACE:include/leaf/pattern/iobservable.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/pattern/iobserver.h> $<INSTALL_INTERFACE:include/leaf/pattern/iobserver.h>
@@ -80,9 +81,8 @@ target_sources(${PROJECT_NAME}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/rtti.h> $<INSTALL_INTERFACE:include/leaf/utils/rtti.h>
 
   PRIVATE
-    src/c++/global/logconfig.c++
-    src/c++/logger.c++
-    src/c++/utils/rtti.c++
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/logger.c++
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/utils/rtti.c++
 )
 
 target_link_libraries(${PROJECT_NAME}
@@ -102,12 +102,6 @@ else()
   message(STATUS "[${PROJECT_NAME}] adding static export symbols: LEAF_STATIC_LIBRARY")
   target_compile_definitions(${PROJECT_NAME} PUBLIC -DLEAF_STATIC_LIBRARY=1)
 endif()
-
-message(STATUS "[${PROJECT_NAME}] setting metadata definitions:")
-message(STATUS "[${PROJECT_NAME}] - PROJECT_NAME: ${PROJECT_NAME}")
-message(STATUS "[${PROJECT_NAME}] - PROJECT_VERSION: ${PROJECT_VERSION}")
-message(STATUS "[${PROJECT_NAME}] - PROJECT_COMPANY: whs31")
-message(STATUS "[${PROJECT_NAME}] - PROJECT_DOMAIN: ${PROJECT_HOMEPAGE_URL}")
 
 message(STATUS "[${PROJECT_NAME}] compile integration tests status: ${INTEGRATION_TESTS}")
 if(INTEGRATION_TESTS)

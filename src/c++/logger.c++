@@ -19,21 +19,18 @@ using namespace leaf::types;
 
 using std::make_shared;
 
-namespace leaf
-{
-  Logger::Logger(string_view logger_name, const string_view log_pattern, Level level, const Target target,
-                 optional<string_view> log_file_name, optional<types::f32> max_file_size_mb,
-                 optional<types::usize> max_file_count)
-      : initialized(false)
+namespace leaf {
+  Logger::Logger(string_view logger_name, const string_view log_pattern, Level level,
+                 const Target target, optional<string_view> log_file_name,
+                 optional<types::f32> max_file_size_mb, optional<types::usize> max_file_count)
+    : initialized(false)
   {
-    if(this->initialized)
-    {
+    if (this->initialized) {
       llog::warn("logger {} already initialized", logger_name);
       return;
     }
 
-    if(log_pattern.empty())
-    {
+    if (log_pattern.empty()) {
       llog::warn("no log pattern provided to logger {}", logger_name);
       return;
     }
@@ -41,34 +38,28 @@ namespace leaf
     vector<spdlog::sink_ptr> sinks;
     auto bitmask = utils::to_underlying(target);
     auto mask = 1;
-    while(bitmask)
-    {
-      switch(bitmask bitand mask)
-      {
+    while (bitmask) {
+      switch (bitmask bitand mask) {
         case utils::to_underlying(Target::File):
-          if(not log_file_name.has_value())
-          {
+          if (not log_file_name.has_value()) {
             llog::error("no log file name provided to logger {}", logger_name);
             return;
           }
-          if(not max_file_size_mb.has_value())
-          {
+          if (not max_file_size_mb.has_value()) {
             llog::error("no max file size provided to logger {}", logger_name);
             return;
           }
-          if(not max_file_count.has_value())
-          {
+          if (not max_file_count.has_value()) {
             llog::error("no max file count provided to logger {}", logger_name);
             return;
           }
           sinks.push_back(make_shared<spdlog::sinks::rotating_file_sink_mt>(
-              string(*log_file_name), *max_file_size_mb * 1024 * 1024, *max_file_count));
+            string(*log_file_name), *max_file_size_mb * 1024 * 1024, *max_file_count));
           break;
         case utils::to_underlying(Target::Stdout):
           sinks.push_back(make_shared<spdlog::sinks::stdout_color_sink_mt>());
           break;
-        default:
-          unreachable();
+        default: unreachable();
       }
       bitmask &= compl mask;
       mask <<= 1;
@@ -85,11 +76,11 @@ namespace leaf
     llog::debug("logger {} initialized", logger_name);
     llog::debug("logger {} level: {}", logger_name, string(magic_enum::enum_name(level)));
     llog::debug("logger {} target: {}", logger_name, string(magic_enum::enum_name(target)));
-    if(log_file_name.has_value())
+    if (log_file_name.has_value())
       llog::debug("logger {} log file: {}", logger_name, string(*log_file_name));
-    if(max_file_size_mb.has_value())
+    if (max_file_size_mb.has_value())
       llog::debug("logger {} max file size: {}", logger_name, *max_file_size_mb);
-    if(max_file_count.has_value())
+    if (max_file_count.has_value())
       llog::debug("logger {} max file count: {}", logger_name, *max_file_count);
 
     l->flush();
@@ -102,31 +93,37 @@ namespace leaf
   }
 
   LoggerBuilder::LoggerBuilder()
-    : level(Logger::Level::Info),
-      target(Logger::Target::Stdout)
-  {}
+    : level(Logger::Level::Info)
+    , target(Logger::Target::Stdout)
+  {
+  }
 
-  auto LoggerBuilder::with_name(const string_view name) -> LoggerBuilder& {
+  auto LoggerBuilder::with_name(const string_view name) -> LoggerBuilder&
+  {
     this->name = name;
     return *this;
   }
 
-  auto LoggerBuilder::with_pattern(const string_view pattern) -> LoggerBuilder& {
+  auto LoggerBuilder::with_pattern(const string_view pattern) -> LoggerBuilder&
+  {
     this->pattern = pattern;
     return *this;
   }
 
-  auto LoggerBuilder::with_level(const Logger::Level level) -> LoggerBuilder& {
+  auto LoggerBuilder::with_level(const Logger::Level level) -> LoggerBuilder&
+  {
     this->level = level;
     return *this;
   }
 
-  auto LoggerBuilder::with_target(const Logger::Target target) -> LoggerBuilder& {
+  auto LoggerBuilder::with_target(const Logger::Target target) -> LoggerBuilder&
+  {
     this->target = target;
     return *this;
   }
 
-  auto LoggerBuilder::with_log_file_name(string_view log_file_name) -> LoggerBuilder& {
+  auto LoggerBuilder::with_log_file_name(string_view log_file_name) -> LoggerBuilder&
+  {
     this->log_file_name = log_file_name;
     return *this;
   }
@@ -145,27 +142,19 @@ namespace leaf
 
   auto LoggerBuilder::build() const -> expected<shared_ptr<Logger>, string>
   {
-    if(this->name.empty())
+    if (this->name.empty())
       return Err("no logger name provided");
-    if(this->pattern.empty())
+    if (this->pattern.empty())
       return Err("no log pattern provided");
-    if((this->target bitand Logger::Target::File) == Logger::Target::File)
-    {
-      if(not this->log_file_name.has_value())
+    if ((this->target bitand Logger::Target::File) == Logger::Target::File) {
+      if (not this->log_file_name.has_value())
         return Err("no log file name provided, but target is set to log to file");
-      if(not this->max_file_size_mb.has_value())
+      if (not this->max_file_size_mb.has_value())
         return Err("no max file size provided, but target is set to log to file");
-      if(not this->max_file_count.has_value())
+      if (not this->max_file_count.has_value())
         return Err("no max file count provided, but target is set to log to file");
     }
-    return make_shared<Logger>(
-      this->name,
-      this->pattern,
-      this->level,
-      this->target,
-      this->log_file_name,
-      this->max_file_size_mb,
-      this->max_file_count
-    );
+    return make_shared<Logger>(this->name, this->pattern, this->level, this->target,
+                               this->log_file_name, this->max_file_size_mb, this->max_file_count);
   }
 } // namespace leaf

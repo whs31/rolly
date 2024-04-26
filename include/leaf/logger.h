@@ -10,7 +10,6 @@ namespace leaf
   using std::shared_ptr;
   using namespace std::string_view_literals;
 
-  // todo: better documentation
   /**
    * \brief Класс-конфигуратор логгера.
    * \details Создает новый логгер с указанными параметрами и задает его как логгер по умолчанию.

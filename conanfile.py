@@ -2,15 +2,15 @@ import os
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, cmake_layout, CMakeDeps
 from conan.tools.build import check_min_cppstd
-from conan.tools.files import copy, rmdir
+from conan.tools.files import rmdir
 
 
 class LeafRecipe(ConanFile):
     name = "leaf"
-    version = "0.5.0"
-    description = "Coreutils library for C++"
+    version = "0.6.0"
+    description = "Coreutils library for C++ (poor man's Google::Abseil)"
     author = "whs31 <whs31@github.io>"
-    topics = ("logging", "header-only")
+    topics = ("logging", "coreutils", "utility")
 
     settings = "os", "arch", "compiler", "build_type"
     options = {
@@ -22,6 +22,10 @@ class LeafRecipe(ConanFile):
 
     exports_sources = "*"
 
+    @property
+    def _min_cppstd(self):
+        return "20" 
+
     def requirements(self):
         self.requires("fmt/[^10.1.0]", transitive_headers = True, transitive_libs=True)
         self.requires("spdlog/1.13.0", transitive_headers = True, transitive_libs=True)
@@ -32,8 +36,11 @@ class LeafRecipe(ConanFile):
 
     def validate(self):
         if self.settings.get_safe("compiler.cppstd"):
-            check_min_cppstd(self, 20)
-        deps = CMakeDeps(self)
+            check_min_cppstd(self, self._min_cppstd)
+
+    def configure(self):
+        self.options["spdlog/*"].shared = True
+        self.options["fmt/*"].shared = True
 
     def generate(self):
         deps = CMakeDeps(self)

@@ -14,8 +14,7 @@ using namespace leaf::types;
 constexpr auto DEFAULT_LOGGER_NAME = ""sv; // NOLINT(*-redundant-string-init)
 auto NO_REINIT_FLAG = false;
 
-namespace leaf::log
-{
+namespace leaf::log {
   auto LogFileConfiguration::initialize() -> bool
   {
     using std::make_shared;
@@ -23,21 +22,18 @@ namespace leaf::log
     using std::end;
     using std::move;
 
-    if(NO_REINIT_FLAG)
+    if (NO_REINIT_FLAG)
       return false;
 
     vector<spdlog::sink_ptr> sinks;
     sinks.push_back(make_shared<spdlog::sinks::stdout_color_sink_st>());
     sinks.push_back(make_shared<spdlog::sinks::rotating_file_sink_st>(
-      string(this->filename),
-      this->max_size,
-      this->max_files
-    ));
-    const auto logger = make_shared<spdlog::logger>(DEFAULT_LOGGER_NAME.data(), begin(sinks), end(sinks));
+      string(this->filename), this->max_size, this->max_files));
+    const auto logger =
+      make_shared<spdlog::logger>(DEFAULT_LOGGER_NAME.data(), begin(sinks), end(sinks));
 
     spdlog::set_default_logger(logger);
-    switch(this->level)
-    {
+    switch (this->level) {
       case LogLevel::Trace: spdlog::set_level(spdlog::level::trace); break;
       case LogLevel::Debug: spdlog::set_level(spdlog::level::debug); break;
       case LogLevel::Info: spdlog::set_level(spdlog::level::info); break;
@@ -47,7 +43,7 @@ namespace leaf::log
       default: leaf::unreachable();
     }
 
-    //spdlog::set_pattern("[%=5!o] %^[%=7!l] thread [%t] %-20!s:%-3!#: %v %$");
+    // spdlog::set_pattern("[%=5!o] %^[%=7!l] thread [%t] %-20!s:%-3!#: %v %$");
     spdlog::set_pattern("[%=5!o] %^[%=7!l] thread [%t] %v %$");
     spdlog::flush_on(spdlog::level::debug);
 
@@ -58,4 +54,4 @@ namespace leaf::log
     NO_REINIT_FLAG = true;
     return true;
   }
-}
+} // namespace leaf::log
