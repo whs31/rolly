@@ -2,8 +2,10 @@
 
 #include <leaf/global/result.h>
 
-namespace leaf::inline types {
-  using leaf::expected;
+namespace leaf { // NOLINT(*-concat-nested-namespaces)
+  inline namespace types {
+    using leaf::expected;
+  }
 }
 
 // todo: own expected
