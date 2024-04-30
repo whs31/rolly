@@ -18,9 +18,9 @@ namespace leaf
   template <typename T>
   requires (not traits::Array<T>) and traits::Object<T>
   [[nodiscard("do not discard result of make_unique or wrap_unique calls")]]
-  auto wrap_unique(T* ptr) noexcept(noexcept(make_unique_nothrow<T>(ptr))) -> std::unique_ptr<T>
+  auto wrap_unique(T* ptr) noexcept(noexcept(std::unique_ptr<T>(ptr))) -> std::unique_ptr<T>
   {
-    return make_unique_nothrow<T>(ptr);
+    return std::unique_ptr<T>(ptr);
   }
 
   template <typename T, typename D>
