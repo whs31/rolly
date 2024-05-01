@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.6.2
+  VERSION 0.6.3
   DESCRIPTION "Coreutils library for C++"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX

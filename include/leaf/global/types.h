@@ -30,17 +30,17 @@ namespace leaf // NOLINT(*-concat-nested-namespaces)
    */
   inline namespace literals
   {
-    auto operator"" _u8(unsigned long long int value) { return u8(value); }
-    auto operator"" _u16(unsigned long long int value) { return u16(value); }
-    auto operator"" _u32(unsigned long long int value) { return u32(value); }
-    auto operator"" _u64(unsigned long long int value) { return u64(value); }
-    auto operator"" _i8(unsigned long long int value) { return i8(value); }
-    auto operator"" _i16(unsigned long long int value) { return i16(value); }
-    auto operator"" _i32(unsigned long long int value) { return i32(value); }
-    auto operator"" _i64(unsigned long long int value) { return i64(value); }
-    auto operator"" _sz(unsigned long long int value) { return usize(value); }
-    auto operator"" _iptr(unsigned long long int value) { return isize(value); }
-    auto operator"" _uptr(unsigned long long int value) { return usize(value); }
-    auto operator"" _ptrdiff(unsigned long long int value) { return ptrdiff_t(value); }
+    inline auto operator"" _u8(unsigned long long int value) { return u8(value); }
+    inline auto operator"" _u16(unsigned long long int value) { return u16(value); }
+    inline auto operator"" _u32(unsigned long long int value) { return u32(value); }
+    inline auto operator"" _u64(unsigned long long int value) { return u64(value); }
+    inline auto operator"" _i8(unsigned long long int value) { return i8(value); }
+    inline auto operator"" _i16(unsigned long long int value) { return i16(value); }
+    inline auto operator"" _i32(unsigned long long int value) { return i32(value); }
+    inline auto operator"" _i64(unsigned long long int value) { return i64(value); }
+    inline auto operator"" _sz(unsigned long long int value) { return usize(value); }
+    inline auto operator"" _iptr(unsigned long long int value) { return isize(value); }
+    inline auto operator"" _uptr(unsigned long long int value) { return usize(value); }
+    inline auto operator"" _ptrdiff(unsigned long long int value) { return ptrdiff_t(value); }
   }
 } // namespace leaf::inline types
