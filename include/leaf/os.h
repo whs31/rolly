@@ -12,7 +12,7 @@ namespace leaf::os {
   enum class operating_system
   {
     windows,
-    linux,
+    gnu_linux,
     darwin,
     android,
     cygwin,
@@ -110,7 +110,7 @@ namespace leaf::os {
 #if defined(leaf_os_windows)
     return operating_system::windows;
 #elif defined(leaf_os_linux)
-    return operating_system::linux;
+    return operating_system::gnu_linux;
 #elif defined(leaf_os_darwin)
     return operating_system::darwin;
 #elif defined(leaf_os_android)
