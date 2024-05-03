@@ -224,11 +224,86 @@ namespace std
 
 namespace leaf
 {
+  /**
+   * \brief Запрещает указателю или умному указателю иметь нулевое значение и отключает неявные преобразования.
+   * \details Предоставляет строгую (<i>т.е. имеющую явный конструктор из <tt>T</tt></i>) обёртку для <tt>leaf::NonNullRelaxed<T></tt>.
+   * Рекомендуется использовать вместо <tt>leaf::NonNullRelaxed<T></tt>.
+   *
+   * \note Не добавляет стоимости времени исполнения для <tt>T</tt> (<i>zero-cost abstraction</i>).
+   * \tparam T
+   */
   template <typename T>
   class NonNull : public NonNullRelaxed<T>
   {
-    
+   public:
+    template <typename U, typename = std::enable_if_t<std::is_convertible_v<U, T>>>
+    constexpr explicit NonNull(U&& u)
+      : NonNullRelaxed<T>(std::forward<U>(u))
+    {}
+
+    template <typename = std::enable_if_t<not std::is_same_v<std::nullptr_t, T>>>
+    constexpr explicit NonNull(T u)
+      : NonNullRelaxed<T>(u)
+    {}
+
+    template <typename U, typename = std::enable_if_t<std::is_convertible_v<U, T>>>
+    constexpr NonNull(NonNullRelaxed<U> const& other)
+      : NonNullRelaxed<T>(other)
+    {}
+
+    template <typename U, typename = std::enable_if_t<std::is_convertible_v<U, T>>>
+    constexpr NonNull(NonNull<U> const& other)
+      : NonNullRelaxed<T>(other)
+    {}
+
+    NonNull(NonNull&& other) noexcept(std::is_nothrow_copy_constructible_v<T>) = default;
+    NonNull(NonNull const& other) = default;
+    auto operator=(NonNull const& other) -> NonNull& = default;
+
+    #pragma clang diagnostic push
+    #pragma ide diagnostic ignored "HidingNonVirtualFunction"
+    auto operator=(NonNullRelaxed<T> const& other) -> NonNull&
+    {
+      NonNullRelaxed<T>::operator=(other);
+      return *this;
+    }
+
+    NonNull(std::nullptr_t) = delete;
+    auto operator=(std::nullptr_t) -> NonNull& = delete;
+    auto operator++() -> NonNull& = delete;
+    auto operator++(int) -> NonNull& = delete;
+    auto operator--() -> NonNull& = delete;
+    auto operator--(int) -> NonNull& = delete;
+    auto operator+=(std::ptrdiff_t) -> NonNull& = delete;
+    auto operator-=(std::ptrdiff_t) -> NonNull& = delete;
+    auto operator[](std::ptrdiff_t) const -> void = delete;
+
+    #pragma clang diagnostic pop
   };
+
+  template <typename T, typename U>
+  auto operator-(NonNull<T> const& lhs, NonNull<U> const& rhs) -> std::ptrdiff_t = delete;
+
+  template <typename T>
+  auto operator-(NonNull<T> const& lhs, std::ptrdiff_t) -> NonNull<T> = delete;
+
+  template <typename T>
+  auto operator+(NonNull<T> const& lhs, NonNull<T> const& rhs) -> std::ptrdiff_t = delete;
+
+  template <typename T>
+  auto operator+(NonNull<T> const& lhs, std::ptrdiff_t) -> NonNull<T> = delete;
+
+  template <typename T>
+  auto make_non_null(T&& t) noexcept
+  {
+    return NonNull<std::remove_cv_t<std::remove_reference_t<T>>>{std::forward<T>(t)};
+  }
+}
+
+namespace std
+{
+  template <typename T>
+  struct hash<leaf::NonNull<T>> : leaf::NonNullRelaxedHash<leaf::NonNull<T>> {};
 }
 
 #pragma clang diagnostic pop
