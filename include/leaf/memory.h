@@ -39,7 +39,7 @@ namespace leaf
     using value_or_reference_return_t = std::conditional_t<
       sizeof(T) < 2 * sizeof(void*) and std::is_trivially_copy_constructible_v<T>,
       T const,
-      T&
+      T const&
     >;
   }
 
