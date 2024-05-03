@@ -7,7 +7,7 @@ from conan.tools.files import rmdir
 
 class LeafRecipe(ConanFile):
     name = "leaf"
-    version = "0.7.1"
+    version = "0.7.2"
     description = "Coreutils library for C++ (poor man's Google::Abseil)"
     author = "whs31 <whs31@github.io>"
     topics = ("logging", "coreutils", "utility")

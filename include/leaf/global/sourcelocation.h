@@ -13,10 +13,10 @@ namespace leaf {
    * ```cpp
    * int main() {
        llog::debug("I am called from {}, {}:{} in file {}!",
-         leaf::current_source_location.function_name(),
-         leaf::current_source_location.line(),
-         leaf::current_source_location.column(),
-         leaf::current_source_location.file_name()
+         leaf::source_location::current().function_name(),
+         leaf::source_location::current().line(),
+         leaf::source_location::current().column(),
+         leaf::source_location::current().file_name()
        );
        llog::debug("I am called from {}", leaf::current_source_location);
      }
@@ -33,6 +33,32 @@ namespace leaf {
   {
    private:
     constexpr static auto UNKNOWN = "(unknown)";
+
+    #if not defined(__apple_build_version__) and defined(__clang__) and (__clang_major__ >= 9)
+    static constexpr auto current(
+      char const* file = __builtin_FILE(),
+      char const* function = __builtin_FUNCTION(),
+      uint_least32_t line = __builtin_LINE(),
+      uint_least32_t column = __builtin_COLUMN()
+    ) noexcept -> source_location
+    #elif defined(__GNUC__) and (__GNUC__ > 4 or (__GNUC__ == 4 and __GNUC_MINOR__ >= 8))
+    static constexpr auto current(
+      char const* file = __builtin_FILE(),
+      char const* function = __builtin_FUNCTION(),
+      uint_least32_t line = __builtin_LINE(),
+      uint_least32_t column = 0
+    ) noexcept -> source_location
+    #else
+    static constexpr auto current(
+      char const* file = UNKNOWN,
+      char const* function = UNKNOWN,
+      uint_least32_t line = 0,
+      uint_least32_t column = 0
+    ) noexcept -> source_location
+    #endif
+    {
+      return {file, line, function, column};
+    }
 
     const char* m_file;
     const char* m_function;
@@ -82,13 +108,6 @@ namespace leaf {
     /// \brief Номер столбца. Если компилятор не поддерживает столбцы, возвращает 0
     [[nodiscard]] constexpr auto column() const noexcept { return this->m_column; }
   };
-
-  /**
-   * \ingroup macros
-   * \brief Предоставляет информацию о точке, в которой вызвана функция
-   */
-#define current_source_location                                                                    \
-  source_location(__builtin_FILE(), __builtin_LINE(), __builtin_FUNCTION())
 
   /// \brief Адаптер std::ostream для source_location
   template <class E, class T>

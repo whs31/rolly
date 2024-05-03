@@ -7,23 +7,20 @@ stages:
   - build
   - publish
 
-linux static:
+linux:
   stage: build
   tags: [alse]
   script: 
-    - puff install . --fresh
-    - cmake-alse -S . -B target-linux-x86_64-static -G Ninja -DCMAKE_BUILD_TYPE=Release -DFMT_MASTER_PROJECT=OFF -DCMAKE_PREFIX_PATH=dependencies
-    - cmake --build target-linux-x86_64-static --config Release
-    - cmake --install target-linux-x86_64-static --prefix target-linux-x86_64-static/export
-    - cp -r .puff target-linux-x86_64-static/export/.puff
-    - cp Puff.toml target-linux-x86_64-static/export/Puff.toml
+    - conan install . -b "missing"
+    - cmake . -G Ninja -DCMAKE_TOOLCHAIN_FILE=./build/Release/generators/conan_toolchain.cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Release
+    - cmake --build build/Release --config Release
 
   artifacts:
     paths:
-      - target-linux-x86_64-static/export
+      - build/Debug
     expire_in: 1 hour
 
-windows static:
+windows:
   stage: build
   tags: [windows-arch]
   script:
@@ -47,16 +44,10 @@ publish:
       when: always
     - when: manual
   needs:
-    - job: linux static
-      artifacts: true
-    - job: windows static
-      artifacts: true
+    - job: linux
+      artifacts: false
+    - job: windows
+      artifacts: false
   script:
-    - puff publish --name "puff-main" --dist sources
-    - mkdir -p target
-    - cp -r target-linux-x86_64-static/export target/export
-    - puff publish --name "puff-main" --dist static --arch x86_64 --os linux 
-    - rm -rf target/export
-    - cp -r target-windows-x86_64-static/export target/export
-    - puff publish --name "puff-main" --dist static --arch x86_64 --os windows
+    - echo "Publishing to conan repo"
 
