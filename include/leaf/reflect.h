@@ -1,5 +1,8 @@
 #pragma once
 
+// requires GCC 12.1 min
+#if 0
+
 #if !defined(__cpp_rvalue_references)
 # error "[error][reflect] __cpp_rvalue_references not supported!"
 #elif !defined(__cpp_decltype)
@@ -61,22 +64,15 @@
 #define REFLECT_ENUM_MAX 1024
 #endif
 
-namespace
-{
-  template <bool C>
-  struct REFLECT_FWD_LIKE { template <typename T> using type = std::remove_reference_t<T>&&; };
 
-  template <>
-  struct REFLECT_FWD_LIKE<true> { template <typename T> using type = std::remove_reference_t<T>&; };
-}
+namespace {
+  template<bool Cond> struct REFLECT_FWD_LIKE { template<class T> using type = std::remove_reference_t<T>&&; };
+  template<> struct REFLECT_FWD_LIKE<true> { template<class T> using type = std::remove_reference_t<T>&; };
+} // to speed up compilation times
 
 #define REFLECT_FWD(...) static_cast<decltype(__VA_ARGS__)&&>(__VA_ARGS__)
 #define REFLECT_FWD_LIKE(T, ...) static_cast<typename ::REFLECT_FWD_LIKE<::std::is_lvalue_reference_v<T>>::template type<decltype(__VA_ARGS__)>>(__VA_ARGS__)
-struct REFLECT_STRUCT {
-  void* MEMBER;
-  enum class ENUM { VALUE };
-};
-
+struct  REFLECT_STRUCT { void* MEMBER; enum class ENUM { VALUE }; }; // has to be in the global namespace
 namespace leaf::reflect
 {
   namespace detail
@@ -1153,4 +1149,6 @@ static_assert(([]<auto expect = [](const bool cond) { return std::array{true}[no
     expect(f._1 == value[0] and f._2 == value[1]);
   }
 }(), true));
+#endif
+
 #endif

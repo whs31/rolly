@@ -5,6 +5,10 @@
 #include <fmt/format.h>
 #include <leaf/global/types.h>
 
+#if defined(__cpp_lib_source_location) && __cpp_lib_source_location >= 201907L
+# include <source_location>
+#endif
+
 namespace leaf {
   /**
    * \brief Предоставляет информацию о месте вызова функции
@@ -36,21 +40,21 @@ namespace leaf {
 
    public:
     #if not defined(__apple_build_version__) and defined(__clang__) and (__clang_major__ >= 9)
-    static constexpr auto current(
+    static consteval auto current(
       char const* file = __builtin_FILE(),
       char const* function = __builtin_FUNCTION(),
       uint_least32_t line = __builtin_LINE(),
       uint_least32_t column = __builtin_COLUMN()
     ) noexcept -> source_location
     #elif defined(__GNUC__) and (__GNUC__ > 4 or (__GNUC__ == 4 and __GNUC_MINOR__ >= 8))
-    static constexpr auto current(
+    static consteval auto current(
       char const* file = __builtin_FILE(),
       char const* function = __builtin_FUNCTION(),
       uint_least32_t line = __builtin_LINE(),
       uint_least32_t column = 0
     ) noexcept -> source_location
     #else
-    static constexpr auto current(
+    static consteval auto current(
       char const* file = UNKNOWN,
       char const* function = UNKNOWN,
       uint_least32_t line = 0,
@@ -76,8 +80,7 @@ namespace leaf {
       , m_function(UNKNOWN)
       , m_line(0)
       , m_column(0)
-    {
-    }
+    {}
 
     /**
      * \brief Создает объект source_location
