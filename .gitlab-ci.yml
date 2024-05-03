@@ -45,4 +45,7 @@ publish:
       artifacts: false
   script:
     - echo "Publishing to conan repo"
+    - conan create . -b "missing"
+    - conan upload "leaf" -r "radar" -c
+    - echo "Done"
 
