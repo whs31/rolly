@@ -21,7 +21,10 @@ namespace leaf
     struct is_comparable_to_nullptr : std::false_type {};
 
     template <typename T>
-    struct is_comparable_to_nullptr<T, std::void_t<decltype(std::declval<T>() == nullptr)>> : std::true_type {};
+    struct is_comparable_to_nullptr<
+      T,
+      std::enable_if_t<std::is_convertible<decltype(std::declval<T>() != nullptr), bool>::value>
+    > : std::true_type {};
 
     /**
      * \brief Возвращает объект по константному значению или константной ссылке в зависимости от размера типа.
@@ -60,9 +63,20 @@ namespace leaf
     return ptr ? std::shared_ptr<T>(std::move(ptr)) : std::shared_ptr<T>();
   }
 
+  /**
+   * \brief Запрещает указателю или умному указателю иметь нулевое значение.
+   * \details Если <tt>T</tt> - указатель на объект (т.е. <tt>T == U*</tt>), то:<br>
+   * - разрешено создание из <tt>U*</tt><br>
+   * - запрещено создание из <tt>std::nullptr_t</tt><br>
+   * - запрещен конструктор по умолчанию<br>
+   * - выполняется валидация невозможности создания из нулевого <tt>U*</tt><br>
+   * - разрешено неявное преобразование в <tt>U*</tt><br>
+   * \note Не добавляет стоимости времени исполнения для <tt>T</tt> (<i>zero-cost abstraction</i>).
+   * \tparam T
+   */
   template <typename T>
   class NonNullRelaxed
   {
-
+    static_assert(detail::is_comparable_to_nullptr<T>::value, "T must be comparable to nullptr");
   };
 }
