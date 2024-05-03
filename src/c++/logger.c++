@@ -5,6 +5,7 @@
 #include <leaf/logger.h>
 #include <leaf/conversion.h>
 #include <leaf/utils/enum.h>
+#include <leaf/reflect.h>
 
 using std::string;
 using std::vector;

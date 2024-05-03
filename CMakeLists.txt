@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.7.2
+  VERSION 0.7.3
   DESCRIPTION "Coreutils library for C++"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
@@ -58,12 +58,12 @@ target_sources(${PROJECT_NAME}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/traits.h> $<INSTALL_INTERFACE:include/leaf/traits.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/math.h> $<INSTALL_INTERFACE:include/leaf/math.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/conversion.h> $<INSTALL_INTERFACE:include/leaf/conversion.h>
-
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/logger.h> $<INSTALL_INTERFACE:include/leaf/logger.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/leaf.h> $<INSTALL_INTERFACE:include/leaf/leaf.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/memory.h> $<INSTALL_INTERFACE:include/leaf/memory.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/casts.h> $<INSTALL_INTERFACE:include/leaf/casts.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/assert.h> $<INSTALL_INTERFACE:include/leaf/assert.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/reflect.h> $<INSTALL_INTERFACE:include/leaf/reflect.h>
 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/definitions.h> $<INSTALL_INTERFACE:include/leaf/global/definitions.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/types.h> $<INSTALL_INTERFACE:include/leaf/global/types.h>

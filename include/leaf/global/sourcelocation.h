@@ -34,6 +34,7 @@ namespace leaf {
    private:
     constexpr static auto UNKNOWN = "(unknown)";
 
+   public:
     #if not defined(__apple_build_version__) and defined(__clang__) and (__clang_major__ >= 9)
     static constexpr auto current(
       char const* file = __builtin_FILE(),
@@ -60,6 +61,7 @@ namespace leaf {
       return {file, line, function, column};
     }
 
+   private:
     const char* m_file;
     const char* m_function;
     uint_least32_t m_line;
