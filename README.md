@@ -12,16 +12,17 @@
 #### Сборка вручную
 Сборка и установка библиотеки в системные папки:
 ```shell
-cmake -B target -S . -DCMAKE_BUILD_TYPE="Release" -DBUILD_SHARED_LIBS=ON
-cmake --build target --config "Release"
-sudo cmake --install target
+conan install . -b "missing" - s "build_type=Release"
+cmake --preset "conan-release" .
+cmake --build build/Release
+sudo cmake --install build/Release
 ```
 
 #### Conan
 По умолчанию будет использоваться динамическая библиотека.
 ```py
 def requirements(self):
-    self.requires("leaf/[^0.6.0]", transitive_headers = True, transitive_libs=True)
+    self.requires("leaf/[^0.7.0]", transitive_headers = True, transitive_libs=True)
 ```
 
 #### CMake
