@@ -11,20 +11,24 @@ linux:
   stage: build
   tags: [alse]
   script: 
+    - echo "$(conan inspect . | grep "name: (\S+)")"
     - conan install . -b "missing"
     - cmake . -B target -G Ninja -DCMAKE_TOOLCHAIN_FILE=./build/Release/generators/conan_toolchain.cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Release
     - cmake --build target
+    - cmake --install target --prefix target/export
 
   artifacts:
     paths:
-      - target
+      - target/export
     expire_in: 1 hour
 
 windows:
   stage: build
   tags: [windows-arch]
+  allows_failure: true
   script:
     - echo "Building Windows"
+    - exit 1
 
   artifacts:
     paths:
@@ -46,6 +50,6 @@ publish:
   script:
     - echo "Publishing to conan repo"
     - conan create . -b "missing"
-    - conan upload "leaf" -r "radar" -c
+    - conan upload "$(conan inspect . | grep "name: (\S+)")" -r "radar" -c
     - echo "Done"
 
