@@ -11,7 +11,7 @@ linux:
   stage: build
   tags: [alse]
   script: 
-    - echo "$(conan inspect . | grep name. (\S+))"
+    - echo "$(conan inspect . | grep "name. (\S+)")"
     - conan install . -b "missing"
     - cmake . -B target -G Ninja -DCMAKE_TOOLCHAIN_FILE=./build/Release/generators/conan_toolchain.cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Release
     - cmake --build target
@@ -50,6 +50,6 @@ publish:
   script:
     - echo "Publishing to conan repo"
     - conan create . -b "missing"
-    - conan upload "$(conan inspect . | grep name. (\S+))" -r "radar" -c
+    - conan upload "$(conan inspect . | grep "name. (\S+)")" -r "radar" -c
     - echo "Done"
 
