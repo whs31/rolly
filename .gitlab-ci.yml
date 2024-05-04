@@ -25,7 +25,7 @@ linux:
 windows:
   stage: build
   tags: [windows-arch]
-  allows_failure: true
+  allow_failure: true
   script:
     - echo "Building Windows"
     - exit 1
