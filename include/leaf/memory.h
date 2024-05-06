@@ -21,7 +21,7 @@ namespace leaf
   namespace detail
   {
     template <typename T>
-    concept CanBeStoredInUniquePtr = (not traits::Array<T>) and traits::Object<T>;
+    concept CanBeStoredInUniquePtr = (not trait::Array<T>) and trait::Object<T>;
 
     template <typename T, typename = void>
     struct is_comparable_to_nullptr : std::false_type {};
