@@ -22,7 +22,7 @@ sudo cmake --install build/Release
 По умолчанию будет использоваться динамическая библиотека.
 ```py
 def requirements(self):
-    self.requires("leaf/[^0.7.0]", transitive_headers = True, transitive_libs=True)
+    self.requires("leaf/[>=0.8.0]", transitive_headers = True, transitive_libs=True)
 ```
 
 #### CMake

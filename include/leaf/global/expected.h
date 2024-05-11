@@ -2,6 +2,7 @@
 
 #include <string>
 #include <optional>
+#include <type_traits>
 #include <leaf/global/result.h>
 
 // note: this will break lf::Err.
@@ -25,10 +26,14 @@ namespace leaf { // NOLINT(*-concat-nested-namespaces)
 #endif
     using std::optional;
 
-    template <typename T>
+    // void if args are empty, T otherwise
+    template <typename T = void>
     using Result = expected<T, std::string>;
 
-    namespace pmr {
+    static_assert(std::is_same_v<Result<>, expected<void, std::string>>);
+
+    namespace pmr
+    {
       template <typename T, typename E>
       using Result = expected<T, E>;
     }
@@ -37,19 +42,21 @@ namespace leaf { // NOLINT(*-concat-nested-namespaces)
     using Option = optional<T>;
 
     template <typename E>
-    auto Error(E&& e) -> unexpected<std::decay_t<E>> {
+    [[nodiscard]] auto Error(E&& e) -> unexpected<std::decay_t<E>> {
       return unexpected<std::decay_t<E>>(std::forward<E>(e));
     }
 
     template<typename... Args>
-    auto Error(std::string_view format, Args&&... args) -> unexpected<std::decay_t<std::string>> {
+    [[nodiscard]] auto Error(std::string_view format, Args&&... args) -> unexpected<std::decay_t<std::string>> {
       return unexpected<std::decay_t<std::string>>(fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
     }
 
     template <class T>
-    auto Ok(T&& t) -> expected<std::decay_t<T>, std::string> {
+    [[nodiscard]] auto Ok(T&& t) -> expected<std::decay_t<T>, std::string> {
       return expected<std::decay_t<T>, std::string>(std::forward<T>(t));
     }
+
+    [[nodiscard]] inline auto Ok() -> expected<void, std::string> { return {}; }
 
     template <class T>
     auto Some(T&& t) -> optional<std::decay_t<T>> {
