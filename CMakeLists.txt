@@ -114,6 +114,7 @@ if(INTEGRATION_TESTS)
   target_sources(${PROJECT_NAME}-test PRIVATE
     tests/test-main.c++
     tests/test-expected.cc
+    tests/test-panic.cc
   )
 
   target_link_libraries(${PROJECT_NAME}-test

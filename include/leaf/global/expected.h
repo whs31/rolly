@@ -18,7 +18,7 @@
 
 namespace leaf { // NOLINT(*-concat-nested-namespaces)
   inline namespace types {
-#if defined(__cpp_lib_expected) and (__cpp_lib_expected >= 202211L)
+#if 0//defined(__cpp_lib_expected) and (__cpp_lib_expected >= 202211L)
     using std::expected;
     using std::unexpected;
 #else

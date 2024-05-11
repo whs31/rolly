@@ -147,26 +147,26 @@ namespace leaf {
     return *this;
   }
 
-  auto LoggerBuilder::with_default(bool const default_) -> LoggerBuilder& {
-    this->default_ = default_;
+  auto LoggerBuilder::with_default(bool const d) -> LoggerBuilder& {
+    this->default_ = d;
     return *this;
   }
 
   auto LoggerBuilder::build() const -> Result<shared_ptr<Logger>>
   {
     if(this->name.empty())
-      return Err("no logger name provided");
+      return Error("no logger name provided");
     if(this->pattern.empty())
-      return Err("no log pattern provided");
+      return Error("no log pattern provided");
     if((this->target bitand Logger::Target::File) == Logger::Target::File) {
       if(not this->log_file_name.has_value())
-        return Err("no log file name provided, but target is set to log to file");
+        return Error("no log file name provided, but target is set to log to file");
       if(not this->max_file_size_mb.has_value())
-        return Err("no max file size provided, but target is set to log to file");
+        return Error("no max file size provided, but target is set to log to file");
       if(not this->max_file_count.has_value())
-        return Err("no max file count provided, but target is set to log to file");
+        return Error("no max file count provided, but target is set to log to file");
     }
-    return make_shared<Logger>(
+    return Ok(make_shared<Logger>(
       this->default_,
       this->name,
       this->pattern,
@@ -175,6 +175,6 @@ namespace leaf {
       this->log_file_name,
       this->max_file_size_mb,
       this->max_file_count
-    );
+    ));
   }
 } // namespace leaf

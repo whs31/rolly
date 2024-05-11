@@ -102,12 +102,12 @@ namespace leaf
   }
 
   template<typename E>
-  auto Err(E&& e) -> unexpected<std::decay_t<E>> {
+  [[deprecated("Use 'Error' instead")]] auto Err(E&& e) -> unexpected<std::decay_t<E>> {
     return unexpected<std::decay_t<E>>(std::forward<E>(e));
   }
 
   template<typename... Args>
-  auto Err(std::string_view format, Args&&... args) -> unexpected<std::decay_t<std::string>> {
+  [[deprecated("Use 'Error' instead")]] auto Err(std::string_view format, Args&&... args) -> unexpected<std::decay_t<std::string>> {
     return unexpected<std::decay_t<std::string>>(fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
   }
 
@@ -1392,14 +1392,14 @@ namespace leaf
     template <class... Args,
               detail::enable_if_t<std::is_constructible<T, Args &&...>::value> * =
                   nullptr>
-    constexpr expected(in_place_t, Args &&... args)
+    explicit constexpr expected(in_place_t, Args &&... args)
       : impl_base(in_place, std::forward<Args>(args)...),
         ctor_base(detail::default_constructor_tag{}) {}
 
     template <class U, class... Args,
               detail::enable_if_t<std::is_constructible<
                 T, std::initializer_list<U> &, Args &&...>::value> * = nullptr>
-    constexpr expected(in_place_t, std::initializer_list<U> il, Args &&... args)
+    explicit constexpr expected(in_place_t, std::initializer_list<U> il, Args &&... args)
       : impl_base(in_place, il, std::forward<Args>(args)...),
         ctor_base(detail::default_constructor_tag{}) {}
 
@@ -1417,7 +1417,7 @@ namespace leaf
       detail::enable_if_t<std::is_constructible<E, const G &>::value> * =
           nullptr,
       detail::enable_if_t<std::is_convertible<const G &, E>::value> * = nullptr>
-    constexpr expected(unexpected<G> const &e)
+    explicit constexpr expected(unexpected<G> const &e)
       : impl_base(unexpect, e.value()),
         ctor_base(detail::default_constructor_tag{}) {}
 
@@ -1442,14 +1442,14 @@ namespace leaf
     template <class... Args,
               detail::enable_if_t<std::is_constructible<E, Args &&...>::value> * =
                   nullptr>
-    constexpr explicit expected(unexpect_t, Args &&... args)
+    constexpr expected(unexpect_t, Args &&... args)
       : impl_base(unexpect, std::forward<Args>(args)...),
         ctor_base(detail::default_constructor_tag{}) {}
 
     template <class U, class... Args,
               detail::enable_if_t<std::is_constructible<
                 E, std::initializer_list<U> &, Args &&...>::value> * = nullptr>
-    constexpr explicit expected(unexpect_t, std::initializer_list<U> il,
+    constexpr expected(unexpect_t, std::initializer_list<U> il,
                                 Args &&... args)
       : impl_base(unexpect, il, std::forward<Args>(args)...),
         ctor_base(detail::default_constructor_tag{}) {}
