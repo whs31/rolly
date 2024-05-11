@@ -42,6 +42,7 @@ TEST(Observable, EmptyVariadicArgs)
 TEST(Logger, Basic)
 {
   const auto logger = leaf::LoggerBuilder()
+    .with_default(true)
     .with_name("test-log-builder-logger")
     .with_pattern(leaf::Logger::DefaultPatterns::SimpleWithThreadInfo)
     .with_level(leaf::Logger::Level::Trace)

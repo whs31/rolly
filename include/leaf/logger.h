@@ -6,13 +6,13 @@ namespace leaf
 {
   using std::string;
   using std::string_view;
-  using std::optional;
   using std::shared_ptr;
   using namespace std::string_view_literals;
 
   /**
    * \brief Класс-конфигуратор логгера.
    * \details Создает новый логгер с указанными параметрами и задает его как логгер по умолчанию.
+   * \param default_ Является ли логгер логгером по умолчанию
    * \param logger_name Имя логгера
    * \param log_pattern Паттерн логгирования. Можно задать как кастомную строку, так и паттерн по умолчанию - см. Logger::DefaultPatterns
    * \param level Уровень логгирования. См. Logger::Level
@@ -47,18 +47,26 @@ namespace leaf
       };
 
       explicit Logger(
+        bool default_,
         string_view logger_name,
         string_view log_pattern,
         Level level,
         Target target,
-        optional<string_view> log_file_name,
-        optional<types::f32> max_file_size_mb,
-        optional<types::usize> max_file_count
+        Option<string_view> log_file_name,
+        Option<f32> max_file_size_mb,
+        Option<usize> max_file_count
       );
 
       ~Logger();
 
       bool initialized;
+
+      [[nodiscard]] inline auto logger() const -> shared_ptr<spdlog::logger> { return this->m_logger; }
+      auto make_default() const -> void;
+
+     private:
+      shared_ptr<spdlog::logger> m_logger;
+      string m_logger_name_mt;
   };
 
   inline auto operator|(const Logger::Target& lhs, const Logger::Target& rhs) -> Logger::Target {
@@ -74,6 +82,7 @@ namespace leaf
     public:
       LoggerBuilder();
 
+      auto with_default(bool default_) -> LoggerBuilder&;
       auto with_name(string_view name) -> LoggerBuilder&;
       auto with_pattern(string_view pattern) -> LoggerBuilder&;
       auto with_level(Logger::Level level) -> LoggerBuilder&;
@@ -82,15 +91,16 @@ namespace leaf
       auto with_max_file_size_mb(types::f32 max_file_size_mb) -> LoggerBuilder&;
       auto with_max_file_count(types::usize max_file_count) -> LoggerBuilder&;
 
-      [[nodiscard]] auto build() const -> expected<shared_ptr<Logger>, string>;
+      [[nodiscard]] auto build() const -> Result<shared_ptr<Logger>>;
 
     private:
+      bool default_;
       string name;
       string pattern;
       Logger::Level level;
       Logger::Target target;
-      optional<string> log_file_name;
-      optional<types::f32> max_file_size_mb;
-      optional<types::usize> max_file_count;
+      Option<string> log_file_name;
+      Option<f32> max_file_size_mb;
+      Option<usize> max_file_count;
   };
 }
