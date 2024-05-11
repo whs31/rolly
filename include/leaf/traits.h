@@ -60,7 +60,13 @@ namespace leaf::trait
     {
       [[nodiscard]] virtual auto debug_str() const -> T = 0;
     };
-  }
+
+    template <typename T>
+    struct Into
+    {
+      [[nodiscard]] virtual auto into() const -> T = 0;
+    };
+  };
 
   inline namespace c
   {
@@ -69,6 +75,9 @@ namespace leaf::trait
 
     template <typename T, typename S>
     concept Debug = std::is_base_of_v<trait::i::Debug<S>, T>;
+
+    template <typename T, typename S>
+    concept Into = std::is_base_of_v<trait::i::Into<S>, T>;
   }
 }
 

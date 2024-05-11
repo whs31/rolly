@@ -5,11 +5,12 @@
 #include <fmt/format.h>
 #include <leaf/global/types.h>
 
-#if defined(__cpp_lib_source_location) && __cpp_lib_source_location >= 201907L
+#if defined(__cpp_lib_source_location)
 # include <source_location>
 #endif
 
-namespace leaf {
+namespace leaf
+{
   /**
    * \brief Предоставляет информацию о месте вызова функции
    * \details Класс представляет из себя портированную версию C++20 std::source_location.
@@ -33,6 +34,9 @@ namespace leaf {
    * ```
    * \version 3.0.0
    */
+#if defined(__cpp_lib_source_location)
+  using source_location = std::source_location;
+#else
   struct source_location
   {
    private:
@@ -130,6 +134,7 @@ namespace leaf {
     }
     return os;
   }
+#endif
 } // namespace leaf
 
 /// \brief Адаптер fmt::formatter для source_location

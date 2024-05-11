@@ -48,10 +48,10 @@ namespace leaf
     constexpr explicit unexpected(std::initializer_list<U> l, Args &&... args)
       : m_val(l, std::forward<Args>(args)...) {}
 
-    constexpr const E &value() const & { return m_val; }
+    [[nodiscard]] constexpr const E &value() const & { return m_val; }
     constexpr E &value() & { return m_val; }
     constexpr E &&value() && { return std::move(m_val); }
-    constexpr const E &&value() const && { return std::move(m_val); }
+    [[nodiscard]] constexpr const E &&value() const && { return std::move(m_val); }
 
     private:
     E m_val;

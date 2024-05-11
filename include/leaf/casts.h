@@ -1,7 +1,6 @@
 #pragma once
 
 #include <exception>
-#include <leaf/global.h>
 
 namespace leaf
 {
