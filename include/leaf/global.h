@@ -11,10 +11,10 @@ namespace lf = leaf;
 
 namespace leaf
 {
-  [[noreturn]] inline auto panic(std::string_view message) -> void
+  [[noreturn]] inline auto panic(std::string_view message, source_location location = source_location::current()) -> void
   {
-    log::critical("panic in file `{}` line {}", lf::source_location::current().file_name(), lf::source_location::current().line());
-    log::critical("in function `{}`", lf::source_location::current().function_name());
+    log::critical("panic in file `{}` line {}", location.file_name(), location.line());
+    log::critical("in function `{}`", location.function_name());
     log::critical("reason: {}", message);
     log::critical("terminate will be called now.");
     std::terminate();

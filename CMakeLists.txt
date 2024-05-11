@@ -72,6 +72,8 @@ target_sources(${PROJECT_NAME}
 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/definitions/platform.h> $<INSTALL_INTERFACE:include/leaf/definitions/platform.h>
 
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/rs/result.h> $<INSTALL_INTERFACE:include/leaf/rs/result.h>
+
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/pattern/iobservable.h> $<INSTALL_INTERFACE:include/leaf/pattern/iobservable.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/pattern/iobserver.h> $<INSTALL_INTERFACE:include/leaf/pattern/iobserver.h>
 
