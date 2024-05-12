@@ -17,10 +17,6 @@
 #define LEAF_EXPORT
 #endif
 
-// #endif
-/**
- * \brief Основное пространство имен библиотеки SimKernel
- */
 namespace leaf {
   /**
    * \brief Вызывает неопределенное поведение.

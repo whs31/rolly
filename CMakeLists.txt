@@ -53,6 +53,13 @@ add_library(${PROJECT_NAME}::leaf ALIAS ${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
   PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/export.h> $<INSTALL_INTERFACE:include/lf/detail/export.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/platform.h> $<INSTALL_INTERFACE:include/lf/detail/platform.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/types.h> $<INSTALL_INTERFACE:include/lf/detail/types.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/corefn.h> $<INSTALL_INTERFACE:include/lf/detail/corefn.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/os.h> $<INSTALL_INTERFACE:include/lf/detail/os.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/backports.h> $<INSTALL_INTERFACE:include/lf/detail/backports.h>
+
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global.h> $<INSTALL_INTERFACE:include/leaf/global.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/os.h> $<INSTALL_INTERFACE:include/leaf/os.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/traits.h> $<INSTALL_INTERFACE:include/leaf/traits.h>
