@@ -1,6 +1,3 @@
-# CLion folders
-.idea
-
 # Build artifacts
 cmake-build-*
 build*/
