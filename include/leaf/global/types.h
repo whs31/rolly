@@ -24,16 +24,6 @@ namespace leaf // NOLINT(*-concat-nested-namespaces)
     using f32 = float;        ///< 32-bit число с плавающей точкой (`float`)
     using f64 = double;       ///< 64-bit число с плавающей точкой (`double`)
     using f128 = long double; ///< 128-bit число с плавающей точкой (`long double`)
-
-    template <std::destructible T>
-    using Option = std::optional<T>;
-
-    template <std::destructible T>
-    auto Some(T&& t) -> Option<std::decay_t<T>> {
-      return Option<std::decay_t<T>>(std::forward<T>(t));
-    }
-
-    inline constexpr auto None = std::nullopt;
   }
 
   /**

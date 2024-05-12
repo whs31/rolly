@@ -47,6 +47,7 @@ endif()
 
 find_package(spdlog REQUIRED)
 find_package(magic_enum REQUIRED)
+find_package(tl-expected REQUIRED)
 
 add_library(${PROJECT_NAME})
 add_library(${PROJECT_NAME}::leaf ALIAS ${PROJECT_NAME})
@@ -100,6 +101,7 @@ target_sources(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
     spdlog::spdlog
+    tl::expected
   PRIVATE
     magic_enum::magic_enum
 )

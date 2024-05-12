@@ -2,6 +2,21 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <optional>
+#include <type_traits>
+#include <fmt/format.h>
+
+#if defined(__cpp_lib_expected) and (__cpp_lib_expected >= 202211L)
+# if __has_include(<expected>)
+#   include <expected>
+# elif __has_include(<experimental/expected>)
+#   include <experimental/expected>
+# else
+#   include <tl/expected.hpp>
+# endif
+#else
+# include <tl/expected.hpp>
+#endif
 
 namespace lf // NOLINT(*-concat-nested-namespaces)
 {
@@ -21,6 +36,102 @@ namespace lf // NOLINT(*-concat-nested-namespaces)
     using f32 = float;        ///< Float with 32-bit precision
     using f64 = double;       ///< Float with 64-bit precision
     using f128 = long double; ///< Float with 128-bit precision
+
+    /**
+     * \brief Safe alias for <tt>std::optional</tt>.
+     * \details Defaults to <tt>std::optional</tt> if available, otherwise <tt>std::experimental::optional</tt>.
+     * Example usage with helper functions:
+     * \code {{.cpp}
+        template <typename T>
+        auto first(std::vector<T> const& vec) -> Option<T> {
+          if(vec.empty())
+           return None;
+          return Some(vec.front());
+        }
+     * \endcode
+     * \sa https://en.cppreference.com/w/cpp/utility/optional
+     */
+    template <std::destructible T>
+    using Option = std::optional<T>;
+
+    /// \brief Helper function for <tt>Option</tt>.
+    template <std::destructible T>
+    auto Some(T&& t) -> Option<std::decay_t<T>> {
+      return Option<std::decay_t<T>>(std::forward<T>(t));
+    }
+
+    /// \brief Helper function for <tt>Option</tt>.
+    inline constexpr auto None = std::nullopt;
+
+    namespace detail
+    {
+      #if defined(__cpp_lib_expected) and (__cpp_lib_expected >= 202211L)
+      using std::expected;
+      using std::unexpected;
+      #else
+      using tl::expected;
+      using tl::unexpected;
+      #endif
+    }
+
+    /// \brief Namespace for more flexible extensions of provided types.
+    namespace flex
+    {
+      /// \brief Expected type with custom error type.
+      template <typename T, typename E>
+      using Result = detail::expected<T, E>;
+    }
+
+    /**
+     * \brief Expected type with default error type (<tt>std::string</tt>).
+     * \details Provides result type, which defaults to <tt>std::expected</tt>, if
+     * available, or <tt>tl::expected</tt>/<tt>std::experimental::expected</tt> otherwise.
+     *
+     * Example usage with void return type:
+     * \code {.cpp}
+      using namespace lf::types;
+
+      auto returns_void(int x) -> Result<> {
+        if(x > 0)
+          return Error("x is positive, should be negative ({})", x);
+        return Ok();
+      }
+     * \endcode
+     *
+     * Example usage with non-void return type:
+     * \code {.cpp}
+      using namespace lf::types;
+      auto divide_by_then_sqrt(float a, float x) -> Result<float> {
+        if(x == 0)
+          return Error("division by zero");
+        return Ok(a / x).map(std::sqrt);
+      }
+     */
+    template <typename T = void>
+    using Result = detail::expected<T, std::string>;
+
+    static_assert(std::is_same_v<Result<>, detail::expected<void, std::string>>);
+
+    /// \brief Helper function for <tt>Result</tt>.
+    template <typename E>
+    [[nodiscard]] auto Error(E&& e) -> detail::unexpected<std::decay_t<E>> {
+      return unexpected<std::decay_t<E>>(std::forward<E>(e));
+    }
+
+    /// \brief Helper function for <tt>Result</tt>.
+    template<typename... Args>
+    [[nodiscard]] auto Error(std::string_view format, Args&&... args) -> detail::unexpected<std::decay_t<std::string>> {
+      return unexpected<std::decay_t<std::string>>(fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
+    }
+
+    /// \brief Helper function for <tt>Result</tt>.
+    template <class T>
+    [[nodiscard]] auto Ok(T&& t) -> Result<std::decay_t<T>> {
+      return expected<std::decay_t<T>, std::string>(std::forward<T>(t));
+    }
+
+    /// \brief Helper function for <tt>Result</tt>.
+    [[nodiscard]] inline auto Ok() -> Result<> { return {}; }
   }
 
   /// \brief Inline namespace for literal operators.
