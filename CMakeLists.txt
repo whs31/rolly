@@ -101,7 +101,7 @@ if(INTEGRATION_TESTS)
 
   add_executable(${PROJECT_NAME}-test)
   target_sources(${PROJECT_NAME}-test PRIVATE
-    tests/test-main.c++
+    tests/test-main.cc
     tests/test-expected.cc
     tests/test-panic.cc
   )
