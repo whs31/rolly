@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.8.1
+  VERSION 1.0.0
   DESCRIPTION "Coreutils library for C++"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
@@ -62,6 +62,9 @@ target_sources(${PROJECT_NAME}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/backports.h> $<INSTALL_INTERFACE:include/lf/detail/backports.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/traits.h> $<INSTALL_INTERFACE:include/lf/detail/traits.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/log.h> $<INSTALL_INTERFACE:include/lf/detail/log.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/assert.h> $<INSTALL_INTERFACE:include/lf/detail/assert.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/math.h> $<INSTALL_INTERFACE:include/lf/detail/math.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/memory.h> $<INSTALL_INTERFACE:include/lf/detail/memory.h>
 
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/detail/rtti.cc
