@@ -29,6 +29,9 @@ namespace lf::trait
     concept Ptr = std::is_pointer_v<T>;
 
     template <typename T>
+    concept Enum = std::is_enum_v<T>;
+
+    template <typename T>
     concept AnyStringSlice = std::is_same_v<T, std::string_view>
       or std::is_same_v<T, std::wstring_view>
       or std::is_same_v<T, std::u16string_view>

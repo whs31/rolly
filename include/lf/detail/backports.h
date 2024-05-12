@@ -1,9 +1,11 @@
 #pragma once
 
 #include <cstdint>
+#include <ranges>
 #include <iosfwd>
 #include <fmt/format.h>
 #include <lf/detail/os.h>
+#include <lf/detail/traits.h>
 
 #if defined(__cpp_lib_source_location)
 # include <source_location>
@@ -11,6 +13,42 @@
 
 namespace lf
 {
+  /// \brief std::ranges backports namespace.
+  namespace ranges
+  {
+    using namespace std::ranges;
+
+    namespace detail
+    {
+      template <typename C>
+      struct to_helper {};
+
+      template <typename C, range R>
+      requires std::convertible_to<range_value_t<R>, typename C::value_type>
+      auto operator|(R&& r, to_helper<C>) -> C
+      {
+        return C { r.begin(), r.end() };
+      }
+    } // namespace detail
+
+    /**
+     * \brief The overloads of the range conversion function construct a new non-view object from a source range.
+     * \details This is an alias to <tt>std::ranges::to</tt>.
+     * \sa https://en.cppreference.com/w/cpp/ranges/to
+     * \sa to
+     */
+    template <range C> requires (not view<C>)
+    auto collect() { return detail::to_helper<C> {}; }
+
+    /**
+     * \brief The overloads of the range conversion function construct a new non-view object from a source range.
+     * \sa https://en.cppreference.com/w/cpp/ranges/to
+     * \sa collect
+     */
+    template <range C> requires (not view<C>)
+    auto to() { return detail::to_helper<C> {}; }
+  }
+
   /**
    * \brief Invokes undefined behavior.
    * \details https://en.cppreference.com/w/cpp/utility/unreachable
@@ -22,6 +60,20 @@ namespace lf
     #else
       __builtin_unreachable();
     #endif
+  }
+
+  /**
+   * \brief Converts enum type to its underlying type.
+   * \details This is backport of C++20 (23) std::to_underlying.
+   * \tparam T Enum type. Must be an enum type.
+   * \param t Enum value
+   * \return Underlying value of the enum
+   * \sa https://en.cppreference.com/w/cpp/utility/to_underlying
+   */
+  template <trait::Enum T>
+  constexpr auto to_underlying(T t) noexcept -> std::underlying_type_t<T>
+  {
+    return static_cast<std::underlying_type_t<T>>(t);
   }
 
   /**
