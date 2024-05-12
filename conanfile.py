@@ -72,4 +72,4 @@ class LeafRecipe(ConanFile):
         self.cpp_info.set_property("cmake_file_name", "leaf")
         self.cpp_info.set_property("cmake_target_name", "leaf::leaf")
         self.cpp_info.libs = ["leaf"]
-        self.cpp_info.requires = ["fmt::fmt", "magic_enum::magic_enum", "spdlog::spdlog"]
+        self.cpp_info.requires = ["fmt::fmt", "magic_enum::magic_enum", "spdlog::spdlog", "tl-expected::tl-expected"]
