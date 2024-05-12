@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
-#include <leaf/leaf.h>
+#include <lf/leaf.h>
 
 TEST(Panic, Basic)
 {
-  ASSERT_DEATH(leaf::panic("test panic"), "terminate called without an active exception");
+  ASSERT_DEATH(lf::panic("test panic"), "terminate called without an active exception");
 }

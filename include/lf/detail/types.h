@@ -80,6 +80,12 @@ namespace lf // NOLINT(*-concat-nested-namespaces)
       /// \brief Expected type with custom error type.
       template <typename T, typename E>
       using Result = detail::expected<T, E>;
+
+      /// \brief Helper function for <tt>Result<T, E></tt>.
+      template <typename E>
+      [[nodiscard]] auto Error(E&& e) -> detail::unexpected<std::decay_t<E>> {
+        return detail::unexpected<std::decay_t<E>>(std::forward<E>(e));
+      }
     }
 
     /**
@@ -113,21 +119,15 @@ namespace lf // NOLINT(*-concat-nested-namespaces)
     static_assert(std::is_same_v<Result<>, detail::expected<void, std::string>>);
 
     /// \brief Helper function for <tt>Result</tt>.
-    template <typename E>
-    [[nodiscard]] auto Error(E&& e) -> detail::unexpected<std::decay_t<E>> {
-      return unexpected<std::decay_t<E>>(std::forward<E>(e));
-    }
-
-    /// \brief Helper function for <tt>Result</tt>.
     template<typename... Args>
     [[nodiscard]] auto Error(std::string_view format, Args&&... args) -> detail::unexpected<std::decay_t<std::string>> {
-      return unexpected<std::decay_t<std::string>>(fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
+      return detail::unexpected<std::decay_t<std::string>>(fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
     }
 
     /// \brief Helper function for <tt>Result</tt>.
     template <class T>
-    [[nodiscard]] auto Ok(T&& t) -> Result<std::decay_t<T>> {
-      return expected<std::decay_t<T>, std::string>(std::forward<T>(t));
+    [[nodiscard]] auto Ok(T&& t) -> detail::expected<std::decay_t<T>, std::string> {
+      return detail::expected<std::decay_t<T>, std::string>(std::forward<T>(t));
     }
 
     /// \brief Helper function for <tt>Result</tt>.

@@ -2,23 +2,19 @@
 #include <spdlog/sinks/rotating_file_sink.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <magic_enum/magic_enum.hpp>
-#include <leaf/logger.h>
-#include <leaf/utils/enum.h>
+#include <lf/logger.h>
 
 using std::string;
 using std::vector;
 using std::shared_ptr;
 using std::string_view;
-using std::make_shared;
 using std::begin;
 using std::end;
 using std::move;
 using namespace std::chrono_literals;
-using namespace leaf::types;
 
-using std::make_shared;
-
-namespace leaf {
+namespace lf
+{
   Logger::Logger(
     bool const default_,
     string_view const logger_name,
@@ -38,11 +34,11 @@ namespace leaf {
     }
 
     vector<spdlog::sink_ptr> sinks;
-    auto bitmask = utils::to_underlying(target);
+    auto bitmask = to_underlying(target);
     auto mask = 1;
     while (bitmask) {
       switch (bitmask bitand mask) {
-        case utils::to_underlying(Target::File):
+        case to_underlying(Target::File):
           if (not log_file_name.has_value()) {
             llog::error("no log file name provided to logger {}", logger_name);
             return;
@@ -55,11 +51,11 @@ namespace leaf {
             llog::error("no max file count provided to logger {}", logger_name);
             return;
           }
-          sinks.push_back(make_shared<spdlog::sinks::rotating_file_sink_mt>(
+          sinks.push_back(lf::make_shared<spdlog::sinks::rotating_file_sink_mt>(
             string(*log_file_name), *max_file_size_mb * 1024 * 1024, *max_file_count));
           break;
-        case utils::to_underlying(Target::Stdout):
-          sinks.push_back(make_shared<spdlog::sinks::stdout_color_sink_mt>());
+        case to_underlying(Target::Stdout):
+          sinks.push_back(lf::make_shared<spdlog::sinks::stdout_color_sink_mt>());
           break;
         default: unreachable();
       }
@@ -67,7 +63,7 @@ namespace leaf {
       mask <<= 1;
     }
 
-    const auto l = make_shared<spdlog::logger>(logger_name.data(), begin(sinks), end(sinks));
+    const auto l = lf::make_shared<spdlog::logger>(logger_name.data(), begin(sinks), end(sinks));
     if(default_)
       spdlog::set_default_logger(l);
     l->set_level(static_cast<spdlog::level::level_enum>(level));
@@ -166,7 +162,7 @@ namespace leaf {
       if(not this->max_file_count.has_value())
         return Error("no max file count provided, but target is set to log to file");
     }
-    return Ok(make_shared<Logger>(
+    return Ok(lf::make_shared<Logger>(
       this->default_,
       this->name,
       this->pattern,
