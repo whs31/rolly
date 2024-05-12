@@ -132,6 +132,10 @@ namespace lf // NOLINT(*-concat-nested-namespaces)
 
     /// \brief Helper function for <tt>Result</tt>.
     [[nodiscard]] inline auto Ok() -> Result<> { return {}; }
+
+    /// \brief Shortcut for <tt>std::reference_wrapper</tt>.
+    template <typename T>
+    using Ref = std::reference_wrapper<T>;
   }
 
   /// \brief Inline namespace for literal operators.
