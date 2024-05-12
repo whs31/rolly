@@ -1,5 +1,0 @@
----
-static:
-  toolchain:
-    cmake:
-      generator: Ninja

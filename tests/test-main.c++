@@ -1,7 +1,5 @@
 #include <gtest/gtest.h>
-#include <leaf/global.h>
-#include <leaf/logger.h>
-#include <leaf/pattern/iobservable.h>
+#include <lf/logger.h>
 
 TEST(Spdlog, Basic)
 {
@@ -10,43 +8,14 @@ TEST(Spdlog, Basic)
   ASSERT_EQ(1, 1);
 }
 
-class TestObservable : public leaf::pattern::IObservable<>
-{
-  public:
-    TestObservable() { this->notify(); }
-};
-
-auto test_empty_variadic_args = 0;
-class TestObserver final : public leaf::pattern::IObserver<>
-{
-  public:
-    TestObserver() = default;
-
-    virtual auto update() -> void override
-    {
-      printf("update triggered!");
-      test_empty_variadic_args = 1;
-    }
-};
-
-TEST(Observable, EmptyVariadicArgs)
-{
-  auto observable = TestObservable();
-  auto observer = TestObserver();
-  observable += &observer;
-  compl observable;
-  observable -= &observer;
-  EXPECT_EQ(test_empty_variadic_args, 1);
-}
-
 TEST(Logger, Basic)
 {
-  const auto logger = leaf::LoggerBuilder()
+  const auto logger = lf::LoggerBuilder()
     .with_default(true)
     .with_name("test-log-builder-logger")
-    .with_pattern(leaf::Logger::DefaultPatterns::SimpleWithThreadInfo)
-    .with_level(leaf::Logger::Level::Trace)
-    .with_target(leaf::Logger::Target::Stdout | leaf::Logger::Target::File)
+    .with_pattern(lf::Logger::DefaultPatterns::SimpleWithThreadInfo)
+    .with_level(lf::Logger::Level::Trace)
+    .with_target(lf::Logger::Target::Stdout | lf::Logger::Target::File)
     .with_log_file_name("test.log")
     .with_max_file_count(1)
     .with_max_file_size_mb(10.0f)

@@ -7,7 +7,7 @@
 #include <string>
 #include <spdlog/spdlog.h>
 
-namespace leaf::log
+namespace lf::log
 {
   using spdlog::trace;
   using spdlog::debug;
@@ -15,13 +15,6 @@ namespace leaf::log
   using spdlog::warn;
   using spdlog::error;
   using spdlog::critical;
-
-  using namespace std::string_view_literals;
-
-  constexpr auto line_up = "\033[A"sv;
-  constexpr auto line_clear = "\033[2K"sv;
-  constexpr auto rewrite = "\033[A\033[2K\r"sv;
-  constexpr auto clean = "\033[2K\r"sv;
 
   [[nodiscard]] inline auto default_logger() -> std::shared_ptr<spdlog::logger> {
     return spdlog::default_logger();
@@ -56,6 +49,6 @@ namespace leaf::log
   auto critical(spdlog::logger* logger, std::string_view format, Args&&... args) -> void {
     logger->critical(format, std::forward<Args>(args)...);
   }
-} // namespace leaf::log
+} // namespace lf::log
 
-namespace llog = leaf::log;
+namespace llog = lf::log;

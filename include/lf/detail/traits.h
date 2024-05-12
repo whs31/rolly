@@ -9,7 +9,7 @@
 class QString;
 class QStringView;
 
-namespace leaf::trait
+namespace lf::trait
 {
   inline namespace c
   {
@@ -27,6 +27,9 @@ namespace leaf::trait
 
     template <typename T>
     concept Ptr = std::is_pointer_v<T>;
+
+    template <typename T>
+    concept Enum = std::is_enum_v<T>;
 
     template <typename T>
     concept AnyStringSlice = std::is_same_v<T, std::string_view>
@@ -55,7 +58,7 @@ namespace leaf::trait
     };
 
     template <typename T>
-    requires AnyString<T> or AnyStringSlice<T>
+      requires AnyString<T> or AnyStringSlice<T>
     struct Debug
     {
       [[nodiscard]] virtual auto debug_str() const -> T = 0;
@@ -84,7 +87,7 @@ namespace leaf::trait
 #define implements_display(type, string_type)                                                         \
 template <>                                                                                           \
 struct formatter<type> {                                                                              \
-  static_assert(leaf::trait::c::Display<type, string_type>, "fmt_implements_display: type must implement i::Display");  \
+  static_assert(lf::trait::c::Display<type, string_type>, "fmt_implements_display: type must implement i::Display");  \
   template <typename ParseContext>                                                                    \
   constexpr auto parse(ParseContext& ctx) { return ctx.begin(); }                                     \
                                                                                                       \
@@ -97,7 +100,7 @@ struct formatter<type> {                                                        
 #define implements_debug(type, string_type)                                                           \                                                           \
 template <>                                                                                           \
 struct formatter<type> {                                                                              \
-  static_assert(leaf::trait::c::Debug<type, string_type>, "fmt_implements_debug: type must implement i::Debug");   \
+  static_assert(lf::trait::c::Debug<type, string_type>, "fmt_implements_debug: type must implement i::Debug");   \
   template <typename ParseContext>                                                                    \
   constexpr auto parse(ParseContext& ctx) { return ctx.begin(); }                                     \
                                                                                                       \

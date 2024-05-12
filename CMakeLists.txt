@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 0.8.1
+  VERSION 1.0.0
   DESCRIPTION "Coreutils library for C++"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
@@ -47,50 +47,37 @@ endif()
 
 find_package(spdlog REQUIRED)
 find_package(magic_enum REQUIRED)
+find_package(tl-expected REQUIRED)
 
 add_library(${PROJECT_NAME})
 add_library(${PROJECT_NAME}::leaf ALIAS ${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
   PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global.h> $<INSTALL_INTERFACE:include/leaf/global.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/os.h> $<INSTALL_INTERFACE:include/leaf/os.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/traits.h> $<INSTALL_INTERFACE:include/leaf/traits.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/math.h> $<INSTALL_INTERFACE:include/leaf/math.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/logger.h> $<INSTALL_INTERFACE:include/leaf/logger.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/leaf.h> $<INSTALL_INTERFACE:include/leaf/leaf.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/memory.h> $<INSTALL_INTERFACE:include/leaf/memory.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/casts.h> $<INSTALL_INTERFACE:include/leaf/casts.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/assert.h> $<INSTALL_INTERFACE:include/leaf/assert.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/export.h> $<INSTALL_INTERFACE:include/lf/detail/export.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/platform.h> $<INSTALL_INTERFACE:include/lf/detail/platform.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/types.h> $<INSTALL_INTERFACE:include/lf/detail/types.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/corefn.h> $<INSTALL_INTERFACE:include/lf/detail/corefn.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/os.h> $<INSTALL_INTERFACE:include/lf/detail/os.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/backports.h> $<INSTALL_INTERFACE:include/lf/detail/backports.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/traits.h> $<INSTALL_INTERFACE:include/lf/detail/traits.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/log.h> $<INSTALL_INTERFACE:include/lf/detail/log.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/assert.h> $<INSTALL_INTERFACE:include/lf/detail/assert.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/math.h> $<INSTALL_INTERFACE:include/lf/detail/math.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/memory.h> $<INSTALL_INTERFACE:include/lf/detail/memory.h>
 
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/definitions.h> $<INSTALL_INTERFACE:include/leaf/global/definitions.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/types.h> $<INSTALL_INTERFACE:include/leaf/global/types.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/log.h> $<INSTALL_INTERFACE:include/leaf/global/log.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/expected.h> $<INSTALL_INTERFACE:include/leaf/global/expected.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/result.h> $<INSTALL_INTERFACE:include/leaf/global/result.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/global/sourcelocation.h> $<INSTALL_INTERFACE:include/leaf/global/sourcelocation.h>
-
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/definitions/platform.h> $<INSTALL_INTERFACE:include/leaf/definitions/platform.h>
-
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/rs/result.h> $<INSTALL_INTERFACE:include/leaf/rs/result.h>
-
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/pattern/iobservable.h> $<INSTALL_INTERFACE:include/leaf/pattern/iobservable.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/pattern/iobserver.h> $<INSTALL_INTERFACE:include/leaf/pattern/iobserver.h>
-
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/elapsed.h> $<INSTALL_INTERFACE:include/leaf/utils/elapsed.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/enum.h> $<INSTALL_INTERFACE:include/leaf/utils/enum.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/noexcept.h> $<INSTALL_INTERFACE:include/leaf/utils/noexcept.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/ranges.h> $<INSTALL_INTERFACE:include/leaf/utils/ranges.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf/utils/rtti.h> $<INSTALL_INTERFACE:include/leaf/utils/rtti.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/leaf.h> $<INSTALL_INTERFACE:include/lf/leaf.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/logger.h> $<INSTALL_INTERFACE:include/lf/logger.h>
 
   PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/logger.c++
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/utils/rtti.c++
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/detail/rtti.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/logger.cc
 )
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
     spdlog::spdlog
+    tl::expected
   PRIVATE
     magic_enum::magic_enum
 )
@@ -164,7 +151,7 @@ install(TARGETS ${PROJECT_NAME}
   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
-install(DIRECTORY $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/leaf> $<INSTALL_INTERFACE:include/leaf> ; DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(DIRECTORY $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf> $<INSTALL_INTERFACE:include/lf> ; DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 export(TARGETS ${PROJECT_NAME} NAMESPACE ${PROJECT_NAMESPACE} FILE "${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_TARGETS_FILE}")
 install(EXPORT ${PROJECT_NAME}
   DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR}

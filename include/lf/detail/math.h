@@ -3,10 +3,11 @@
 #include <cmath>
 #include <limits>
 #include <numbers>
-#include <leaf/global.h>
-#include <leaf/traits.h>
+#include <lf/detail/export.h>
+#include <lf/detail/traits.h>
 
-namespace leaf {
+namespace lf
+{
   template <trait::Num T>
   [[nodiscard]] constexpr auto eq(T a, T b) -> bool
   {
@@ -41,4 +42,4 @@ namespace leaf {
     using std::log;
     return log(num) / log(base);
   }
-} // namespace leaf
+} // namespace lf

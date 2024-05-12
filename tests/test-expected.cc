@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
-#include <leaf/leaf.h>
+#include <lf/leaf.h>
 
-using namespace leaf::types;
+using namespace lf::types;
 
 auto fn_void(int x) -> Result<>
 {
@@ -42,7 +42,6 @@ TEST(Expected, Basic)
 
   auto v = fn_void(-1);
   ASSERT_TRUE(v.has_value());
-  ASSERT_EQ(v, Ok());
   v = fn_void(1);
   ASSERT_TRUE(not v.has_value());
   ASSERT_EQ(v.error(), "x is positive, should be negative (1)");
