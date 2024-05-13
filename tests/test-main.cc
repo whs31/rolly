@@ -1,13 +1,6 @@
 #include <gtest/gtest.h>
 #include <lf/logger.h>
 
-TEST(Spdlog, Basic)
-{
-  llog::error("error message from spdlog");
-
-  ASSERT_EQ(1, 1);
-}
-
 TEST(Logger, Basic)
 {
   const auto logger = lf::LoggerBuilder()
