@@ -40,7 +40,7 @@ test:
 
   artifacts:
     reports:
-      junit: target/leaf-test.xml
+      junit: leaf-test.xml
 
 windows:
   stage: build
