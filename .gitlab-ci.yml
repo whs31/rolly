@@ -34,7 +34,7 @@ test:
   script:
     - echo "Testing"
     - conan install . -b "missing" -s "build_type=Debug" -o "leaf/*:test=True"
-    - cmake . -B target -G Ninja -DCMAKE_TOOLCHAIN_FILE=./build/Debug/generators/conan_toolchain.cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Debug
+    - cmake . -B target -G Ninja -DCMAKE_TOOLCHAIN_FILE=./build/Debug/generators/conan_toolchain.cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Debug -DINTEGRATION_TESTS=ON
     - cmake --build target
     - ./target/leaf-test --gtest_color=yes --gtest_output=xml --gtest_shuffle --gtest_repeat=1 --platform=linuxfb
 
