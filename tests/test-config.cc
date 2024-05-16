@@ -102,4 +102,6 @@ TEST(Config, ConfigurationFile)
   ASSERT_EQ(config.values.ip_address.port, 45555);
   ASSERT_EQ(config.values.ip_address.sock_mode.tcp, false);
   ASSERT_EQ(config.values.ip_address.sock_mode.udp, true);
+
+  fs::remove_all(fs::current_path() / "test-cfg");
 }

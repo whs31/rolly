@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 1.1.0
+  VERSION 1.1.1
   DESCRIPTION "Coreutils library for C++"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
@@ -69,10 +69,12 @@ target_sources(${PROJECT_NAME}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/leaf.h> $<INSTALL_INTERFACE:include/lf/leaf.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/logger.h> $<INSTALL_INTERFACE:include/lf/logger.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/config.h> $<INSTALL_INTERFACE:include/lf/config.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/directories.h> $<INSTALL_INTERFACE:include/lf/directories.h>
 
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/detail/rtti.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/logger.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/directories.cc
 )
 
 target_link_libraries(${PROJECT_NAME}
