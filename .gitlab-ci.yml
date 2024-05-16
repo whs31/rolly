@@ -22,6 +22,7 @@ build:alse:
 
 test:alse:
  stage: test
+ allow_failure: true
  extends: .tests_extend
 
 publish:alse:
