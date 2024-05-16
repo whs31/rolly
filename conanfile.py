@@ -7,7 +7,7 @@ from conan.tools.files import rmdir
 
 class LeafRecipe(ConanFile):
     name = "leaf"
-    version = "1.0.3"
+    version = "1.1.0"
     description = "Coreutils library for C++ (poor man's Google::Abseil)"
     author = "whs31 <whs31@github.io>"
     topics = ("logging", "coreutils", "utility")
@@ -35,6 +35,7 @@ class LeafRecipe(ConanFile):
         self.requires("magic_enum/[^0.9.0]", transitive_libs=True)
         if self.options.test:
             self.requires("gtest/1.14.0")
+            self.requires("tomlplusplus/[^3.0.0]", transitive_headers = True, transitive_libs=True)
 
     def layout(self):
         cmake_layout(self)

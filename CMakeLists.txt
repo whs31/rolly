@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(leaf
-  VERSION 1.0.3
+  VERSION 1.1.0
   DESCRIPTION "Coreutils library for C++"
   HOMEPAGE_URL "io.whs31.leaf"
   LANGUAGES C CXX
@@ -68,6 +68,7 @@ target_sources(${PROJECT_NAME}
 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/leaf.h> $<INSTALL_INTERFACE:include/lf/leaf.h>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/logger.h> $<INSTALL_INTERFACE:include/lf/logger.h>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/config.h> $<INSTALL_INTERFACE:include/lf/config.h>
 
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/detail/rtti.cc
@@ -97,6 +98,7 @@ message(STATUS "[${PROJECT_NAME}] compile integration tests status: ${INTEGRATIO
 
 if(INTEGRATION_TESTS)
   find_package(GTest REQUIRED)
+  find_package(tomlplusplus REQUIRED)
   enable_testing()
 
   add_executable(${PROJECT_NAME}-test)
@@ -104,6 +106,8 @@ if(INTEGRATION_TESTS)
     tests/test-main.cc
     tests/test-expected.cc
     tests/test-panic.cc
+    tests/test-casts.cc
+    tests/test-config.cc
   )
 
   target_link_libraries(${PROJECT_NAME}-test
@@ -111,6 +115,7 @@ if(INTEGRATION_TESTS)
       ${PROJECT_NAME}
       GTest::GTest
       GTest::Main
+      tomlplusplus::tomlplusplus
   )
 
   if(WIN32)
