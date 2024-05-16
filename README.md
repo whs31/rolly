@@ -16,6 +16,7 @@
 - ![fmt logo](https://avatars.githubusercontent.com/u/7280830?s=16&v=4)[**fmt**](https://github.com/fmtlib/fmt) - библиотека для форматирования строк (proposal для `std::format`) (**MIT**)
 - ![spdlog logo](https://avatars.githubusercontent.com/u/6052198?s=16&v=4)[**spdlog**](https://github.com/gabime/spdlog) - реализация гибкого логгера на основе *fmt* (**MIT**)
 - ![magic enum logo](https://avatars.githubusercontent.com/u/7997966?s=16&v=4)[**magic_enum**](https://github.com/Neargye/magic_enum) - рефлексия для перечислений (**MIT**)
+- ![](https://avatars.githubusercontent.com/u/1856614?s=16&v=4)[**tl-expected**](https://github.com/TartanLlama/expected) - имплементация `std::expected` для С++14 (**MIT**)
 
 ### Лицензии
 
