@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include <memory>
 
-#ifdef LF_COMPILER_GNU
+#if defined(LF_COMPILER_GNU) || defined(LF_COMPILER_CLANG)
 # include <cxxabi.h>
 #else
 # include <windows.h>
@@ -17,7 +17,7 @@ using std::free;
 
 namespace lf::rtti
 {
-  #ifdef LF_COMPILER_GNU
+  #if defined(LF_COMPILER_GNU) || defined(LF_COMPILER_CLANG)
   auto demangle(const char* name) -> std::string
   {
     auto status = -4;
@@ -26,7 +26,7 @@ namespace lf::rtti
     return status == 0 ? res.get() : name;
   }
   #else
-  auto detail::demangle(const char* name) -> std::string
+  auto demangle(const char* name) -> std::string
   {
     constexpr auto max_name_length = DWORD(1024);
     char undecorated[max_name_length];
