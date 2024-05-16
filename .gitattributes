@@ -6,3 +6,4 @@
 *.sh linguist-detectable=true
 *.toml linguist-detectable=true
 *.csv linguist-detectable=true
+*.md linguist-detectable=true
