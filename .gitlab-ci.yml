@@ -1,76 +1,29 @@
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-  GIT_DEPTH: 100
-  PKG_VER: 0.0.0
-
-stages: 
+---
+stages:
   - build
   - test
   - publish
 
-linux:
-  stage: build
-  tags: [alse]
-  script: 
-    - conan install . -b "missing"
-    - cmake . -B target -G Ninja -DCMAKE_TOOLCHAIN_FILE=./build/Release/generators/conan_toolchain.cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Release
-    - cmake --build target
-    - cmake --install target --prefix target/export
+include:
+  - project: "developers/v2/libs/essentials/ci"
+    ref: main
+    file:
+      - 'linux/conan.yml'
+      - 'utils/variables.yml'
 
-  artifacts:
-    paths:
-      - target/export
-    expire_in: 1 hour
-
-test:
-  stage: test
-  tags: [alse]
-  allow_failure: true
-  needs:
-    - job: linux
-      artifacts: false
-    - job: windows
-      artifacts: false
+local_variables:
+  extends: .variables_core_job
   script:
-    - echo "Testing"
-    - conan install . -b "missing" -s "build_type=Debug" -o "leaf/*:test=True"
-    - cmake . -B target -G Ninja -DCMAKE_TOOLCHAIN_FILE=./build/Debug/generators/conan_toolchain.cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Debug -DINTEGRATION_TESTS=ON
-    - cmake --build target
-    - ./target/leaf-test --gtest_color=yes --gtest_output=xml --gtest_shuffle --gtest_repeat=1 --platform=linuxfb
+    - !reference [.svariables, conan_project_name]
 
-  artifacts:
-    reports:
-      junit: leaf-test.xml
-
-windows:
+build:alse:
   stage: build
-  tags: [windows-arch]
-  allow_failure: true
-  script:
-    - echo "Building Windows"
-    - exit 1
+  extends: .build_extend
 
-  artifacts:
-    paths:
-      - target
-    expire_in: 1 hour
+test:alse:
+ stage: test
+ extends: .tests_extend
 
-publish:
+publish:alse:
   stage: publish
-  tags: [alse]
-  rules:
-    - if: $CI_COMMIT_TAG
-      when: always
-    - when: manual
-  needs:
-    - job: linux
-      artifacts: false
-    - job: windows
-      artifacts: false
-  script:
-    - echo "Publishing to conan repo"
-    - conan create . -b "missing"
-    #- conan upload "$(conan inspect . | grep "name. (\S+)")" -r "radar" -c
-    - conan upload "leaf" -r "radar" -c
-    - echo "Done"
-
+  extends: .publish_extend
