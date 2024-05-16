@@ -6,7 +6,7 @@
 #include <type_traits>
 #include <fmt/format.h>
 
-#if defined(__cpp_lib_expected) and (__cpp_lib_expected >= 202211L)
+#if 0 //defined(__cpp_lib_expected) and (__cpp_lib_expected >= 202211L)
 # if __has_include(<expected>)
 #   include <expected>
 # elif __has_include(<experimental/expected>)
@@ -65,7 +65,7 @@ namespace lf // NOLINT(*-concat-nested-namespaces)
 
     namespace detail
     {
-      #if defined(__cpp_lib_expected) and (__cpp_lib_expected >= 202211L)
+      #if 0//defined(__cpp_lib_expected) and (__cpp_lib_expected >= 202211L)
       using std::expected;
       using std::unexpected;
       #else
