@@ -26,7 +26,7 @@ namespace lf::directories
    * MacOS:   /Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App
    * \endcode
    */
-  class project_dirs
+  class LF_EXPORT project_dirs
   {
    public:
     explicit project_dirs(
