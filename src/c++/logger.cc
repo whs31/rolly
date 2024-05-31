@@ -22,13 +22,14 @@ namespace lf
     Level const level,
     Target const target,
     Option<string_view> const log_file_name,
+    Option<std::filesystem::path> const& log_folder,
     Option<f32> const max_file_size_mb,
     Option<usize> const max_file_count
   )
     : initialized(false)
     , m_logger_name_mt(logger_name)
   {
-    if (log_pattern.empty()) {
+    if(log_pattern.empty()) {
       llog::warn("no log pattern provided to logger {}", logger_name);
       return;
     }
@@ -36,23 +37,35 @@ namespace lf
     vector<spdlog::sink_ptr> sinks;
     auto bitmask = to_underlying(target);
     auto mask = 1;
-    while (bitmask) {
-      switch (bitmask bitand mask) {
+    auto const folder = [log_folder, &logger_name]() {
+      if(not log_folder.has_value()) {
+        llog::trace("no log folder provided to logger {}, assuming current directory", logger_name);
+        return std::filesystem::current_path();
+      }
+      return *log_folder;
+    }();
+    if(not exists(folder)) {
+      llog::trace("log folder provided to logger {} does not exist, creating new", logger_name);
+      create_directories(folder);
+    }
+    while(bitmask) {
+      switch(bitmask bitand mask) {
         case to_underlying(Target::File):
-          if (not log_file_name.has_value()) {
+          if(not log_file_name.has_value()) {
             llog::error("no log file name provided to logger {}", logger_name);
             return;
           }
-          if (not max_file_size_mb.has_value()) {
+          if(not max_file_size_mb.has_value()) {
             llog::error("no max file size provided to logger {}", logger_name);
             return;
           }
-          if (not max_file_count.has_value()) {
+          if(not max_file_count.has_value()) {
             llog::error("no max file count provided to logger {}", logger_name);
             return;
           }
+
           sinks.push_back(lf::make_shared<spdlog::sinks::rotating_file_sink_mt>(
-            string(*log_file_name), *max_file_size_mb * 1024 * 1024, *max_file_count));
+            (folder / *log_file_name).string(), *max_file_size_mb * 1024 * 1024, *max_file_count));
           break;
         case to_underlying(Target::Stdout):
           sinks.push_back(lf::make_shared<spdlog::sinks::stdout_color_sink_mt>());
@@ -63,24 +76,27 @@ namespace lf
       mask <<= 1;
     }
 
-    const auto l = lf::make_shared<spdlog::logger>(logger_name.data(), begin(sinks), end(sinks));
+    auto const l = lf::make_shared<spdlog::logger>(logger_name.data(), begin(sinks), end(sinks));
     if(default_)
       spdlog::set_default_logger(l);
     l->set_level(static_cast<spdlog::level::level_enum>(level));
     l->set_pattern(string(log_pattern));
-
     l->flush_on(spdlog::level::debug);
     spdlog::flush_every(1s);
 
-    llog::debug("logger {} initialized", logger_name);
-    llog::debug("logger {} level: {}", logger_name, string(magic_enum::enum_name(level)));
-    llog::debug("logger {} target: {}", logger_name, string(magic_enum::enum_name(target)));
-    if (log_file_name.has_value())
-      llog::debug("logger {} log file: {}", logger_name, string(*log_file_name));
-    if (max_file_size_mb.has_value())
-      llog::debug("logger {} max file size: {}", logger_name, *max_file_size_mb);
-    if (max_file_count.has_value())
-      llog::debug("logger {} max file count: {}", logger_name, *max_file_count);
+    llog::debug("logger {} initialized with level {} and target {}",
+      logger_name,
+      string(magic_enum::enum_name(level)),
+      string(magic_enum::enum_name(target))
+    );
+    llog::trace("logger {} logs folder: {}", logger_name, folder.string());
+    if(log_file_name.has_value())
+      llog::trace("logger {} is logging to file `{}` (max file size: {}, max file count: {})",
+        logger_name,
+        string(*log_file_name),
+        max_file_size_mb ? std::to_string(*max_file_size_mb) : "unlimited",
+        max_file_count ? std::to_string(*max_file_count) : "unlimited"
+      );
 
     l->flush();
     this->initialized = true;
@@ -137,14 +153,18 @@ namespace lf
     return *this;
   }
 
-  auto LoggerBuilder::with_max_file_count(types::usize m) -> LoggerBuilder&
-  {
+  auto LoggerBuilder::with_max_file_count(types::usize m) -> LoggerBuilder& {
     this->max_file_count = m;
     return *this;
   }
 
   auto LoggerBuilder::with_default(bool const d) -> LoggerBuilder& {
     this->default_ = d;
+    return *this;
+  }
+
+  auto LoggerBuilder::with_log_folder(const std::filesystem::path& l) -> LoggerBuilder& {
+    this->log_folder = l;
     return *this;
   }
 
@@ -169,6 +189,7 @@ namespace lf
       this->level,
       this->target,
       this->log_file_name,
+      this->log_folder,
       this->max_file_size_mb,
       this->max_file_count
     ));

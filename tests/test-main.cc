@@ -8,6 +8,7 @@ TEST(Logger, Basic)
     .with_name("test-log-builder-logger")
     .with_pattern(lf::Logger::DefaultPatterns::SimpleWithThreadInfo)
     .with_level(lf::Logger::Level::Trace)
+    .with_log_folder(R"(C:\Users\User\AppData\Roaming\d2a\logs)")
     .with_target(lf::Logger::Target::Stdout | lf::Logger::Target::File)
     .with_log_file_name("test.log")
     .with_max_file_count(1)
@@ -25,7 +26,7 @@ TEST(Logger, Basic)
   llog::error("error message");
   llog::critical("fatal message");
 
-  ASSERT_EQ(1, 1);
+  GTEST_SUCCEED();
 }
 
 auto main(int argc, char** argv) -> int

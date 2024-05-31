@@ -1,5 +1,6 @@
 #pragma once
 
+#include <filesystem>
 #include <lf/leaf.h>
 
 namespace lf
@@ -48,6 +49,7 @@ namespace lf
       Level level,
       Target target,
       Option<std::string_view> log_file_name,
+      Option<std::filesystem::path> const& log_folder,
       Option<f32> max_file_size_mb,
       Option<usize> max_file_count
     );
@@ -83,6 +85,7 @@ namespace lf
     auto with_level(Logger::Level level) -> LoggerBuilder&;
     auto with_target(Logger::Target target) -> LoggerBuilder&;
     auto with_log_file_name(std::string_view log_file_name) -> LoggerBuilder&;
+    auto with_log_folder(std::filesystem::path const& log_folder) -> LoggerBuilder&;
     auto with_max_file_size_mb(types::f32 max_file_size_mb) -> LoggerBuilder&;
     auto with_max_file_count(types::usize max_file_count) -> LoggerBuilder&;
 
@@ -95,6 +98,7 @@ namespace lf
     Logger::Level level;
     Logger::Target target;
     Option<std::string> log_file_name;
+    Option<std::filesystem::path> log_folder;
     Option<f32> max_file_size_mb;
     Option<usize> max_file_count;
   };
