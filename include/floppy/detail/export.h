@@ -60,7 +60,7 @@ namespace floppy { // NOLINT(*-concat-nested-namespaces)
 
       /// \brief Creates version object from string.
       /// \param version Version number as a string.
-      constexpr explicit version(std::string_view version) noexcept
+      constexpr explicit version(std::string_view version)
       {
         auto major = version.substr(0, version.find('.'));
         auto minor = version.substr(version.find('.') + 1, version.find('.', version.find('.') + 1));

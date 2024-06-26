@@ -21,5 +21,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 -- NOTE: Third party dependency used by this software --
-This software depends on the fmt lib (MIT License),
-and users must comply to its license: https://raw.githubusercontent.com/fmtlib/fmt/master/LICENSE
+This software depends on the following libraries:
+    - fmt lib (MIT License)
+    - spdlog lib (MIT License)
+    - gtest lib (BSD License)
+
+and users must comply to its licenses:
+    - https://raw.githubusercontent.com/fmtlib/fmt/master/LICENSE
+    - https://github.com/gabime/spdlog/blob/master/LICENSE
+    - https://github.com/google/googletest/blob/master/googletest/LICENSE
+
+-- END NOTE --

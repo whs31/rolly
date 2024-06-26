@@ -182,8 +182,8 @@ namespace floppy
       }
 
      private:
-      const char* m_file;
-      const char* m_function;
+      char const* m_file;
+      char const* m_function;
       uint_least32_t m_line;
       uint_least32_t m_column;
 

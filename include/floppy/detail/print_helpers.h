@@ -41,9 +41,8 @@ namespace floppy::print_helpers
 
 /// \brief Prints a message to the console with google test style.
 /// \headerfile floppy/floppy.h
-/// \ingroup macros
 /// \ingroup helpers
-/// \details Use this macro to print messages in google test style.
+/// \details Use this function to print messages in google test style.
 /// Example:
 /// \code {.cpp}
 /// GTEST_PRINT("Hello, {}!", "World");
@@ -54,4 +53,9 @@ namespace floppy::print_helpers
 /// [          ] Hello, World!
 /// [          ] Hello, 42!
 /// \endcode
-#define GTEST_PRINT(...) ::floppy::print_helpers::detail::google_test_print(__VA_ARGS__)
+/// \note Since version <b>1.2.2</b>, this macro is replaced with template constexpr function. This is
+/// the reason it has all upper case name.
+template <typename... Args>
+[[maybe_unused]] constexpr auto GTEST_PRINT(fmt::format_string<Args...> format, Args&&... args) -> void { // NOLINT(*-identifier-naming)
+  ::floppy::print_helpers::detail::google_test_print(format, std::forward<Args>(args)...);
+}

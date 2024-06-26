@@ -5,6 +5,7 @@
 #include <experimental/propagate_const>
 #include <floppy/detail/export.h>
 #include <floppy/detail/formatters.h>
+#include <floppy/detail/memory.h>
 
 /// \brief Namespace with traits for custom types and classes.
 namespace floppy::traits
@@ -143,7 +144,7 @@ namespace floppy::traits
   /// \endcode
   /// \tparam T Underlying type.
   template <typename T>
-  using pimpl = std::experimental::propagate_const<std::unique_ptr<T>>;
+  using pimpl = std::experimental::propagate_const<box<T>>;
 
   /// \brief Implementation details of traits.
   namespace detail
