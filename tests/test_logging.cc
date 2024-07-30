@@ -5,14 +5,15 @@ TEST(Logging, Simple)
 {
   namespace log = floppy::log;
   spdlog::set_level(spdlog::level::trace);
-  log::log(log::level::trace, "Hello, {}!", "Floppy");
-  log::log(log::level::debug, "Hello, {}!", "Floppy");
-  log::log(log::level::info, "Hello, {}!", "Floppy");
-  log::log(log::level::warn, "Hello, {}!", "Floppy");
-  log::log(log::level::err, "Hello, {}!", "Floppy");
-  log::error("Hello, {}!", "Floppy");
-  log::warn("Hello, {}!", "Floppy");
-  log::info("Hello, {}!", "Floppy");
-  log::debug("Hello, {}!", "Floppy");
-  log::trace("Hello, {}!", "Floppy");
+  auto str = std::string_view("Floppy");
+  log::log(log::level::trace, "Hello, {}!", str);
+  log::log(log::level::debug, "Hello, {}!", str);
+  log::log(log::level::info, "Hello, {}!", str);
+  log::log(log::level::warn, "Hello, {}!", str);
+  log::log(log::level::err, "Hello, {}!", str);
+  log::error("Hello, {}!", str);
+  log::warn("Hello, {}!", str);
+  log::info("Hello, {}!", str);
+  log::debug("Hello, {}!", str);
+  log::trace("Hello, {}!", str);
 }

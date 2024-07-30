@@ -1,9 +1,3 @@
-[submodule "extern/3rd-party/fmt"]
-	path = extern/3rd-party/fmt
-	url = https://github.com/fmtlib/fmt
-[submodule "extern/winapi20"]
-	path = extern/winapi20
-	url = https://github.com/whs31/winapi20
 [submodule "doxygen/preset"]
 	path = doxygen/preset
-	url = https://github.com/tmp-name-org/doxygen-preset.git
+	url = https://github.com/maybe-unused/doxygen-preset.git

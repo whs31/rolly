@@ -5,6 +5,7 @@
 #include <optional>
 #include <type_traits>
 #include <fmt/format.h>
+#include <tl/expected.hpp>
 
 namespace floppy // NOLINT(*-concat-nested-namespaces)
 {
@@ -48,6 +49,63 @@ namespace floppy // NOLINT(*-concat-nested-namespaces)
     /// \sa https://en.cppreference.com/w/cpp/utility/optional
     template <std::destructible T>
     using option = std::optional<T>;
+
+    /// \brief Types implementation details.
+    namespace detail
+    {
+      using tl::expected;
+      using tl::unexpected;
+    } // namespace detail
+
+    /// \brief Expected type with default error type (<tt>std::string</tt>).
+    /// \details Provides result type, which defaults to <tt>std::expected</tt>, if
+    /// available, or <tt>tl::expected</tt>/<tt>std::experimental::expected</tt> otherwise.
+    ///
+    /// Example usage with void return type:
+    /// \code {.cpp}
+    /// using namespace fl::types;
+    ///
+    /// auto returns_void(int x) -> result<> {
+    ///   if(x > 0)
+    ///     return error("x is positive, should be negative ({})", x);
+    ///   return Ok();
+    /// }
+    /// \endcode
+    ///
+    /// Example usage with non-void return type:
+    /// \code {.cpp}
+    /// using namespace fl::types;
+    /// auto divide_by_then_sqrt(float a, float x) -> result<f32> {
+    ///   if(x == 0)
+    ///     return error("division by zero");
+    ///   return ok(a / x).map(std::sqrt);
+    /// }
+    /// \endcode
+    template <typename T = void>
+    using result = detail::expected<T, std::string>;
+
+    static_assert(std::is_same_v<result<>, detail::expected<void, std::string>>);
+
+    /// \brief Helper function for <tt>result</tt>.
+    /// \headerfile floppy/floppy.h
+    /// \ingroup aliases
+    template<typename... Args>
+    [[nodiscard]] auto error(std::string_view format, Args&&... args) -> detail::unexpected<std::decay_t<std::string>> {
+      return detail::unexpected<std::decay_t<std::string>>(fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
+    }
+
+    /// \brief Helper function for <tt>result</tt>.
+    /// \headerfile floppy/floppy.h
+    /// \ingroup aliases
+    template <class T>
+    [[nodiscard]] auto ok(T&& t) -> detail::expected<std::decay_t<T>, std::string> {
+      return detail::expected<std::decay_t<T>, std::string>(std::forward<T>(t));
+    }
+
+    /// \brief Helper function for <tt>result</tt>.
+    /// \headerfile floppy/floppy.h
+    /// \ingroup aliases
+    [[nodiscard]] inline auto ok() -> result<> { return {}; }
 
     /// \brief Helper function for \ref option.
     /// \headerfile floppy/floppy.h

@@ -1,6 +1,6 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = Floppy
-PROJECT_NUMBER         = 1.2.2
+PROJECT_NUMBER         = 1.2.5
 PROJECT_BRIEF          = "Extensions for C++ stdlib"
 PROJECT_LOGO           = ./doxygen/images/logo-tmp.png
 PROJECT_ICON           = ./doxygen/images/logo-tmp.png

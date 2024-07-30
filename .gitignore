@@ -39,3 +39,5 @@ target
 .export
 
 .idea/QtSettings.xml
+
+.idea/.name

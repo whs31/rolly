@@ -24,11 +24,13 @@ SOFTWARE.
 This software depends on the following libraries:
     - fmt lib (MIT License)
     - spdlog lib (MIT License)
+    - tl-expected lib (MIT License)
     - gtest lib (BSD License)
 
 and users must comply to its licenses:
     - https://raw.githubusercontent.com/fmtlib/fmt/master/LICENSE
     - https://github.com/gabime/spdlog/blob/master/LICENSE
+    - https://github.com/TartanLlama/tl-expected/blob/master/LICENSE
     - https://github.com/google/googletest/blob/master/googletest/LICENSE
 
 -- END NOTE --

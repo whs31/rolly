@@ -6,9 +6,20 @@
 #include <algorithm>
 #include <floppy/detail/predefs.h>
 #include <floppy/detail/platform.h>
-#if defined(FLOPPY_OS_WINDOWS)
-# include <winapi20/winapi.h>
-#endif
+
+#if defined(_WIN32)
+# include <windows.h>
+# if defined(_MSC_VER)
+#   if defined(__amd64__) || defined(__amd64) || defined(__x86_64__) || defined(__x86_64) || defined(_M_X64) || defined(_M_AMD64)
+#     define _AMD64_
+#   elif defined(i386) || defined(__i386) || defined(__i386__) || defined(__i386__) || defined(_M_IX86)
+#     define _X86_
+#   elif defined(__arm__) || defined(_M_ARM) || defined(_M_ARMT)
+#     define _ARM_
+#   endif // __amd64__
+# endif // _MSC_VER
+# include <Shlobj.h>
+#endif // _WIN32
 
 using std::string;
 using std::string_view;
@@ -17,6 +28,20 @@ namespace fs = std::filesystem;
 
 namespace
 {
+#if defined(_WIN32)
+  [[nodiscard]] auto known_folder_path(::KNOWNFOLDERID id) -> fs::path {
+    auto* buf = ::PWSTR();
+    auto const result = ::SHGetKnownFolderPath(id, 0, nullptr, &buf);
+    if(result != S_OK) {
+      ::CoTaskMemFree(buf);
+      throw std::system_error(std::make_error_code(static_cast<std::errc>(result)));
+    }
+    auto const path = fs::path(buf);
+    ::CoTaskMemFree(buf);
+    return path;
+  }
+#endif // _WIN32
+
   auto split(const string& input) -> vector<string> {
     auto buffer = std::istringstream(input);
     return {std::istream_iterator<string>(buffer), std::istream_iterator<string>()};
@@ -78,8 +103,8 @@ namespace floppy::filesystem
     } else if constexpr(current_platform.operating_system == platform::operating_system::windows) {
       auto const path = fs::path(organization) / application;
       #if defined(FLOPPY_OS_WINDOWS)
-        auto const appdata_roaming = winapi::shell::known_folder_path(winapi::shell::FolderID::RoamingAppData);
-        auto const appdata_local = winapi::shell::known_folder_path(winapi::shell::FolderID::LocalAppData);
+        auto const appdata_roaming = ::known_folder_path(FOLDERID_RoamingAppData);
+        auto const appdata_local = ::known_folder_path(FOLDERID_LocalAppData);
         this->m_project_path = path;
         this->m_cache_dir = appdata_local / path / "cache";
         this->m_config_dir = appdata_roaming / path / "config";

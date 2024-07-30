@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef Q_MOC_RUN
+
 namespace floppy
 {
   template <auto F, typename T> requires serialization::serializable_and_deserializable<F, T, char>
@@ -133,3 +135,5 @@ namespace floppy
     log::trace("config: file ({} bytes) written to path: {}", content.size(), this->path().string());
   }
 } // namespace floppy
+
+#endif // Q_MOC_RUN

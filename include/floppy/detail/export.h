@@ -10,14 +10,14 @@
 #   define FLOPPY_EXPORT __declspec(dllexport)
 # elif defined(FLOPPY_STATIC_LIBRARY)
 #   define FLOPPY_EXPORT
-# else
+# else // defined(FLOPPY_LIBRARY)
 #   define FLOPPY_EXPORT __declspec(dllimport)
-# endif
-#else
+# endif // defined(FLOPPY_LIBRARY)
+#else // defined(_WIN32)
 # define FLOPPY_EXPORT
-#endif
+#endif // defined(_WIN32)
 
-#define _stringify$(x) #x // NOLINT(*-macro-usage)
+#define _stringify$(x) #x // NOLINT(*-macro-usage, *-identifier-naming)
 #define stringify$(x) _stringify$(x) // NOLINT(*-macro-usage)
 
 /// \brief Main namespace for the library.
@@ -34,7 +34,7 @@ namespace floppy { // NOLINT(*-concat-nested-namespaces)
       constexpr auto stoi_impl(char const* str, int value = 0) -> int {
         return *str ? is_digit(*str)
           ? stoi_impl(str + 1, (*str - '0') + value * 10)
-          : throw "compile-time-error: not a digit" : value;
+          : throw "compile time error: not a digit" : value;
       }
 
       /// \internal
@@ -154,14 +154,15 @@ namespace floppy { // NOLINT(*-concat-nested-namespaces)
         FLOPPY_PROJECT_VERSION_MINOR,
         FLOPPY_PROJECT_VERSION_PATCH
       ),
-#else
+#else // defined(FLOPPY_PROJECT_VERSION_MAJOR)
       version(0, 0, 0),
-#endif
+#endif // defined(FLOPPY_PROJECT_VERSION_MAJOR)
+
 #if defined(FLOPPY_TARGET_NAME)
       std::string_view(stringify$(FLOPPY_TARGET_NAME)),
-#else
+#else // defined(FLOPPY_TARGET_NAME)
       std::string_view("floppy"),
-#endif
+#endif // defined(FLOPPY_TARGET_NAME)
       "io.github.whs31",
       "whs31"
     );
@@ -194,7 +195,7 @@ namespace floppy { // NOLINT(*-concat-nested-namespaces)
     static_assert(floppy_meta.name() == std::string_view(stringify$(FLOPPY_TARGET_NAME)), "project name isn't the same");
     static_assert(floppy_meta.domain() == "io.github.whs31", "project domain isn't the same");
     static_assert(floppy_meta.organization() == "whs31", "project organization isn't the same");
-#endif
+#endif // defined(FLOPPY_TARGET_NAME)
   } // namespace meta
 } // namespace floppy
 
@@ -211,16 +212,32 @@ namespace fl = floppy; // NOLINT(*-unused-alias-decls)
 /// \ingroup macros
 /// \brief Flag defined if <b>Qt::Core</b> library is available and linked.
 # define FL_QT_CORE
-#endif
+#endif // defined(QT_CORE_LIB)
 
 #if defined(QT_GUI_LIB) || __has_include("qpainter.h") || __has_include("qguiapplication.h") || defined(DOXYGEN_GENERATING_OUTPUT)
 /// \ingroup macros
 /// \brief Flag defined if <b>Qt::Gui</b> library is available and linked.
 # define FL_QT_GUI
-#endif
+#endif // defined(QT_GUI_LIB)
 
 #if defined(DOXYGEN_GENERATING_OUTPUT)
 /// \ingroup macros
 /// \brief Flag defined if documentation is being generated.
 # define FL_DOC
-#endif
+#endif // defined(DOXYGEN_GENERATING_OUTPUT)
+
+#if defined(NDEBUG) || defined(QT_NO_DEBUG)
+# define FL_NO_DEBUG
+#else // defined(NDEBUG) || defined(QT_NO_DEBUG)
+# define FL_DEBUG
+#endif // defined(NDEBUG)  || defined(QT_NO_DEBUG)
+
+/// \def FL_NO_DEBUG
+/// \brief Flag defined if debug mode is disabled.
+/// \details This macro disables some runtime checks, which are enabled in debug mode.
+/// Be sure to test your code in debug mode to avoid unexpected behavior.
+/// \ingroup macros
+
+/// \def FL_DEBUG
+/// \brief Flag defined if debug mode is enabled.
+/// \ingroup macros

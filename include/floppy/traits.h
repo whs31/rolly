@@ -1,11 +1,8 @@
 #pragma once
 
-#include <memory>
 #include <iostream>
 #include <experimental/propagate_const>
-#include <floppy/detail/export.h>
-#include <floppy/detail/formatters.h>
-#include <floppy/detail/memory.h>
+#include <floppy/floppy.h>
 
 /// \brief Namespace with traits for custom types and classes.
 namespace floppy::traits
@@ -223,20 +220,27 @@ namespace floppy
   }
 } // namespace floppy
 
+/// \struct fmt::formatter
+/// \tparam T Type to format. Must satisfy <code>std::convertible_to<std::string>></code>.
 /// \brief Formatter for types which can be easily converted to string.
-template <std::convertible_to<std::string> T>
-struct [[maybe_unused]] fmt::formatter<T>
-{
-  /// \brief Required by <tt>fmt</tt>.
-  template <typename ParseContext>
-  constexpr auto parse(ParseContext& ctx) const { return ctx.begin();}
-
-  /// \brief Required by <tt>fmt</tt>.
-  template <typename FormatContext>
-  constexpr auto format(T const& c, FormatContext& ctx) const {
-    return format_to(ctx.out(), "{}", static_cast<std::string>(c));
-  }
-};
+/// \details Removed reference implementation:
+/// \code {.cpp}
+/// template <std::convertible_to<std::string> T>
+/// struct [[maybe_unused]] fmt::formatter<T>
+/// {
+///   /// \brief Required by <tt>fmt</tt>.
+///   template <typename ParseContext>
+///   constexpr auto parse(ParseContext& ctx) const { return ctx.begin();}
+///
+///   /// \brief Required by <tt>fmt</tt>.
+///   template <typename FormatContext>
+///   constexpr auto format(T const& c, FormatContext& ctx) const {
+///     return format_to(ctx.out(), "{}", static_cast<std::string>(c));
+///   }
+/// };
+/// \endcode
+/// \headerfile floppy/traits.h
+/// \deprecated Removed due to ambiguity with <tt>fmt</tt> impaired with <tt>spdlog</tt> library.
 
 /// \brief Formatter for types which derives from <tt>formattable_base<char></tt>.
 template <floppy::traits::detail::derived_from_formattable<char> T>

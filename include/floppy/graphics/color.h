@@ -10,7 +10,7 @@
 #include <floppy/traits.h>
 
 #if defined(FL_QT_GUI) || defined(FL_DOC)
-#  include <qcolor.h>
+# include <qcolor.h>
 #endif
 
 
@@ -21,13 +21,13 @@ namespace floppy::gfx
   namespace detail
   {
     [[nodiscard]] constexpr auto hex_to_dec(char const c) -> i32 {
-      return (c >= '0' and c <= '9')
-        ? c - '0'
-        : ((c >= 'a' and c <= 'f')
-          ? c - 'a' + 10
-          : (c >= 'A' and c <= 'F')
-             ? c - 'A' + 10
-             : throw std::invalid_argument("invalid hex character"));
+      if (c >= '0' and c <= '9')
+        return c - '0';
+      if (c >= 'a' and c <= 'f') 
+        return c - 'a' + 10;
+      if (c >= 'A' and c <= 'F') 
+        return c - 'A' + 10;
+      throw std::invalid_argument("invalid hex character");
     }
 
     template <typename T> constexpr auto min(T&& v) -> T { return std::forward<T>(v); }
@@ -120,7 +120,7 @@ namespace floppy::gfx
   class color : public traits::formattable<color, char>
   {
     template <concepts::num T = u8>
-    static constexpr auto mask = static_cast<T>(std::numeric_limits<u8>::max());
+    static constexpr floppy::concepts::num auto mask = static_cast<T>(std::numeric_limits<u8>::max());
 
    public:
     /// \brief HSL color representation.
@@ -202,7 +202,7 @@ namespace floppy::gfx
       /// \param s Saturation
       /// \param l Lightness
       /// \param a Alpha
-      constexpr hsla_t(u16 h, f32 s, f32 l, f32 a)
+      constexpr hsla_t(const u16 h, const f32 s, const f32 l, const f32 a)
         : h(h)
         , s(s)
         , l(l)
@@ -211,11 +211,11 @@ namespace floppy::gfx
 
       /// \brief Converts the color to RGBA format.
       [[nodiscard]] constexpr auto to_rgba() const -> std::array<u8, 4> {
-        auto rgb_ = color::hsl_t { this->h, this->s, this->l }.to_rgb();
+        const auto rgb = color::hsl_t { this->h, this->s, this->l }.to_rgb();
         return std::array<u8, 4> {
-          static_cast<u8>(rgb_[0]),
-          static_cast<u8>(rgb_[1]),
-          static_cast<u8>(rgb_[2]),
+          static_cast<u8>(rgb[0]),
+          static_cast<u8>(rgb[1]),
+          static_cast<u8>(rgb[2]),
           static_cast<u8>(this->a * 255.0F)
         };
       }
@@ -250,7 +250,7 @@ namespace floppy::gfx
       /// \param h Hue
       /// \param s Saturation
       /// \param v Value
-      constexpr hsv_t(u16 h, f32 s, f32 v)
+      constexpr hsv_t(const u16 h, const f32 s, const f32 v)
         : h(h)
         , s(s)
         , v(v)
@@ -260,51 +260,26 @@ namespace floppy::gfx
       [[nodiscard]] constexpr auto to_rgb() const -> std::array<u8, 3> {
         auto rgb = std::array<u8, 3>();
         auto tmp_rgb  = std::array<f32, 3>();
-        auto c = this->v * this->s ;
-        auto x = c * (1.0F - std::abs(std::fmod(this->h / 60.0F, 2.0F) - 1.0F));
-        auto m = this->v - c;
-        if(this->h < 60.F)
+        const auto c = this->v * this->s ;
+        const auto x = c * (1.0F - std::abs(std::fmod(static_cast<f32>(this->h) / 60.0F, 2.0F) - 1.0F));
+        const auto m = this->v - c;
+        if(static_cast<f32>(this->h)< 60.F)
           tmp_rgb = {c, x ,0};
-        else if(this->h < 120.F)
+        else if(static_cast<f32>(this->h) < 120.F)
           tmp_rgb = {x, c, 0};
-        else if(this->h < 180.F)
+        else if(static_cast<f32>(this->h) < 180.F)
           tmp_rgb = {0, c, x};
-        else if(this->h < 240.F)
+        else if(static_cast<f32>(this->h) < 240.F)
           tmp_rgb = {0, x, c};
-        else if(this->h < 300.F)
+        else if(static_cast<f32>(this->h) < 300.F)
           tmp_rgb = {x, 0, c};
-        else if(this->h < 360.F)
+        else if(static_cast<f32>(this->h)< 360.F)
           tmp_rgb = {c, 0, x};
 
         rgb[0] = static_cast<u8>((tmp_rgb[0] + m) * 255.0F);
         rgb[1] = static_cast<u8>((tmp_rgb[1] + m) * 255.0F);
         rgb[2] = static_cast<u8>((tmp_rgb[2] + m) * 255.0F);
         return rgb;
-
-
-        // ---- old implementation ----
-//        auto rgb = std::array<f32, 3>();
-//        auto const fc = this->v * this->s;
-//        auto const fh_prime = std::fmod(this->h / 60.0F, 6.0F);
-//        auto const fx = fc * (1.0F - std::abs(std::fmod(fh_prime, 2.0F) - 1.0F));
-//        auto const fm = this->v - fc;
-//        if(0.F <= fh_prime and fh_prime < 1.F)
-//          rgb = { fc, fx, 0.F };
-//        else if(1.F <= fh_prime and fh_prime < 2.F)
-//          rgb = { fx, fc, 0.F };
-//        else if(2.F <= fh_prime and fh_prime < 3.F)
-//          rgb = { 0.F, fc, fx };
-//        else if(3.F <= fh_prime and fh_prime < 4.F)
-//          rgb = { 0.F, fx, fc };
-//        else if(4.F <= fh_prime and fh_prime < 5.F)
-//          rgb = { fx, 0.F, fc };
-//        else
-//          rgb = { 0.F, 0.F, 0.F };
-//        return {
-//          static_cast<u8>(fm + rgb[0] * 255.0F),
-//          static_cast<u8>(fm + rgb[1] * 255.0F),
-//          static_cast<u8>(fm + rgb[2] * 255.0F)
-//        };
       }
 
       /// \brief Constructs an HSL color from RGB values.
@@ -319,25 +294,21 @@ namespace floppy::gfx
         auto const c_max = detail::max(detail::max(fr, fg), fb);
         auto const c_min = detail::min(detail::min(fr, fg), fb);
         auto const delta = c_max - c_min;
-        if(delta > 0.F) {
-          if(c_max == fr)
-            self.h = 60.0F * (std::fmod(((fg - fb) / delta), 6.0F));
-          else if(c_max == fg)
-            self.h = 60.0F * (((fb - fr) / delta) + 2.0F);
-          else if(c_max == fb)
-            self.h = 60.0F * (((fr - fg) / delta) + 4.0F);
-          if(c_max > 0.F)
-            self.s = delta / c_max;
-          else
-            self.s = 0.F;
-          self.v = c_max;
-        } else {
+
+        if (delta <= 0.F)
           self.h = 0.F;
-          self.s = 0.F;
-          self.v = c_max;
+        else {
+          if(c_max == fr)
+            self.h = std::lround(60.0F * std::fmod((fg - fb) / delta, 6.0F));
+          else if(c_max == fg)
+            self.h = std::lround(60.0F * ((fb - fr) / delta + 2.F));
+          else if(c_max == fb)
+            self.h = std::lround(60.0 * ((fr - fg) / delta + 4.F));
         }
-        if(self.h < 0)
-          self.h += 360;
+
+        self.s = c_max == 0.F ? 0.F : delta / c_max;
+        self.v = c_max;
+
         return self;
       }
 
@@ -372,7 +343,7 @@ namespace floppy::gfx
       /// \param s Saturation
       /// \param v Value
       /// \param a Alpha
-      constexpr hsva_t(u16 h, f32 s, f32 v, f32 a)
+      constexpr hsva_t(const u16 h, const f32 s, const f32 v, const f32 a)
         : h(h)
         , s(s)
         , v(v)
@@ -381,11 +352,11 @@ namespace floppy::gfx
 
       /// \brief Converts the color to RGBA format.
       [[nodiscard]] constexpr auto to_rgba() const -> std::array<u8, 4> {
-        auto rgb_ = color::hsv_t { this->h, this->s, this->v }.to_rgb();
+        const auto rgb = color::hsv_t { this->h, this->s, this->v }.to_rgb();
         return std::array<u8, 4> {
-          static_cast<u8>(rgb_[0]),
-          static_cast<u8>(rgb_[1]),
-          static_cast<u8>(rgb_[2]),
+          static_cast<u8>(rgb[0]),
+          static_cast<u8>(rgb[1]),
+          static_cast<u8>(rgb[2]),
           static_cast<u8>(this->a * 255.0F)
         };
       }
@@ -407,12 +378,44 @@ namespace floppy::gfx
       constexpr auto operator!=(color::hsva_t const& other) const -> bool { return not (*this == other); }
     };
 
-    struct cmyk_t
+    struct cmyk_t : public traits::formattable<color::hsv_t, char>
     {
       f32 c = 0.0F;
       f32 m = 0.0F;
       f32 y = 0.0F;
       f32 k = 0.0F;
+
+      constexpr cmyk_t(const f32 c, const f32 m, const f32 y, const f32 k)
+        : c{c}
+        , m{m}
+        , y{y}
+        , k{k}
+      {}
+
+      [[nodiscard]] constexpr auto to_rgb() const -> std::array<u8, 3> {
+        return {
+          static_cast<u8>(255.0F * (1.0F - this->c) * (1.0F - this->k)),
+          static_cast<u8>(255.0F * (1.0F - this->m) * (1.0F - this->k)),
+          static_cast<u8>(255.0F * (1.0F - this->y) * (1.0F - this->k))
+        };
+      }
+
+      [[nodiscard]] static constexpr auto from_rgb(const u8 r, const u8 g, const u8 b) -> color::cmyk_t {
+        const auto tmp_rgb = std::array<f32, 3>{
+          static_cast<f32>(r) / 255.0F,
+          static_cast<f32>(g) / 255.0F,
+          static_cast<f32>(b) / 255.0F
+        };
+        const auto k = 1 - std::max(std::max(tmp_rgb[0], tmp_rgb[1]), tmp_rgb[2]);
+        const auto c = (1 - tmp_rgb[0] - k) / (1 - k);
+        const auto m = (1 - tmp_rgb[1] - k) / (1 - k);
+        const auto y = (1 - tmp_rgb[2] - k) / (1 - k);
+        return {c, m, y, k};
+      }
+
+      [[nodiscard]] virtual auto to_string() const -> std::string override {
+        return fmt::format("({} {} {} {})", this->c, this->m, this->y, this->k);
+      }
 
       constexpr auto operator==(color::cmyk_t const& other) const -> bool {
         return math::approx_eq(this->c, other.c, 3.0F)
@@ -421,16 +424,52 @@ namespace floppy::gfx
           and math::approx_eq(this->k, other.k, 3.0F);
       }
 
-      constexpr auto operator!=(color::cmyk_t const& other) const -> bool { return not (*this == other); }
+
+      constexpr auto operator!=(color::cmyk_t const& other) const -> bool
+      {
+        return not (*this == other);
+      }
     };
 
-    struct cmyka_t
+    struct cmyka_t : public traits::formattable<color::hsv_t, char>
     {
       f32 c = 0.0F;
       f32 m = 0.0F;
       f32 y = 0.0F;
       f32 k = 0.0F;
       f32 a = 1.0F;
+
+      constexpr cmyka_t(const f32 c, const f32 m, const f32 y, const f32 k, const f32 a)
+        : c{c}
+        , m{m}
+        , y{y}
+        , k{k}
+        , a{a}
+      {}
+
+      [[nodiscard]] constexpr auto to_rgba() const -> std::array<u8, 4> {
+        return {
+          static_cast<u8>(255.0F * (1.0F - this->c) * (1.0F - this->k)),
+          static_cast<u8>(255.0F * (1.0F - this->m) * (1.0F - this->k)),
+          static_cast<u8>(255.0F * (1.0F - this->y) * (1.0F - this->k)),
+          static_cast<u8>(255.0F * this->a)
+        };
+      }
+
+      [[nodiscard]] static constexpr auto from_rgba(const u8 r, const u8 g, const u8 b, const u8 a) -> color::cmyka_t
+      {
+        auto tmp_cmyk = cmyk_t::from_rgb(r, g, b);
+        return {
+          tmp_cmyk.c,
+          tmp_cmyk.m,
+          tmp_cmyk.y,
+          tmp_cmyk.k,
+          static_cast<f32>(a)/255.F};
+      }
+
+      [[nodiscard]] virtual auto to_string() const -> std::string override {
+        return fmt::format("({} {} {} {} {})", this->c, this->m, this->y, this->k, this->a);
+      }
 
       constexpr auto operator==(color::cmyka_t const& other) const -> bool {
         return math::approx_eq(this->c, other.c, 3.0F)
@@ -455,7 +494,7 @@ namespace floppy::gfx
     /// \param r Red component.
     /// \param g Green component.
     /// \param b Blue component.
-    constexpr color(u8 r, u8 g, u8 b)
+    constexpr color(const u8 r, const u8 g, const u8 b)
       : r_(static_cast<f32>(r) / mask<f32>)
       , g_(static_cast<f32>(g) / mask<f32>)
       , b_(static_cast<f32>(b) / mask<f32>)
@@ -467,7 +506,7 @@ namespace floppy::gfx
     /// \param g Green component.
     /// \param b Blue component.
     /// \param a Alpha component.
-    constexpr color(u8 r, u8 g, u8 b, u8 a)
+    constexpr color(const u8 r, const u8 g, const u8 b, const u8 a)
       : r_(static_cast<f32>(r) / mask<f32>)
       , g_(static_cast<f32>(g) / mask<f32>)
       , b_(static_cast<f32>(b) / mask<f32>)
@@ -484,8 +523,7 @@ namespace floppy::gfx
     /// the next 8 bits are used as green component, the next 8 bits are used as blue component, and
     /// the last 8 bits are used as alpha component.
     /// \param rgba 32-bit unsigned integer.
-    constexpr explicit color(u32 rgba)
-    {
+    constexpr explicit color(u32 rgba) {
       if(rgba > 0xFFFFFF) {
         this->r_ = static_cast<f32>((rgba >> 24) & mask<u8>) / mask<f32>;
         this->g_ = static_cast<f32>((rgba >> 16) & mask<u8>) / mask<f32>;
@@ -509,8 +547,7 @@ namespace floppy::gfx
     /// </ul>
     /// \throws std::invalid_argument if the string is not a valid color.
     /// \param s String view.
-    constexpr explicit color(std::string_view s)
-    {
+    constexpr explicit color(std::string_view s) {
       if(s.starts_with("#"))
         s = s.substr(1);
       if (s.size() == 6) {
@@ -533,9 +570,8 @@ namespace floppy::gfx
     /// \brief Constructs an opaque color from HSL values.
     /// \param hsl HSL color value.
     /// \see from_hsl
-    constexpr color(color::hsl_t const& hsl)
-      : a_(1.0F)
-    {
+    constexpr explicit color(color::hsl_t const& hsl)
+      : a_(1.0F) {
       auto const t = hsl.to_rgb();
       this->r_ = static_cast<f32>(t[0]) / mask<f32>;
       this->g_ = static_cast<f32>(t[1]) / mask<f32>;
@@ -545,8 +581,7 @@ namespace floppy::gfx
     /// \brief Constructs a color from HSLA values.
     /// \param hsla HSLA color value.
     /// \see from_hsla
-    constexpr color(color::hsla_t const& hsla)
-    {
+    explicit constexpr color(color::hsla_t const& hsla) {
       auto const t = hsla.to_rgba();
       this->r_ = static_cast<f32>(t[0]) / mask<f32>;
       this->g_ = static_cast<f32>(t[1]) / mask<f32>;
@@ -557,9 +592,8 @@ namespace floppy::gfx
     /// \brief Constructs a color from HSV values.
     /// \param hsv HSV color value.
     /// \see from_hsv
-    constexpr color(color::hsv_t const& hsv)
-      : a_(1.0F)
-    {
+    explicit constexpr color(color::hsv_t const& hsv)
+      : a_(1.0F) {
       auto const t = hsv.to_rgb();
       this->r_ = static_cast<f32>(t[0]) / mask<f32>;
       this->g_ = static_cast<f32>(t[1]) / mask<f32>;
@@ -569,14 +603,36 @@ namespace floppy::gfx
     /// \brief Constructs a color from HSVA values.
     /// \param hsva HSVA color value.
     /// \see from_hsva
-    constexpr color(color::hsva_t const& hsva)
-    {
+    constexpr explicit color(color::hsva_t const& hsva) {
       auto const t = hsva.to_rgba();
       this->r_ = static_cast<f32>(t[0]) / mask<f32>;
       this->g_ = static_cast<f32>(t[1]) / mask<f32>;
       this->b_ = static_cast<f32>(t[2]) / mask<f32>;
       this->a_ = static_cast<f32>(t[3]) / mask<f32>;
     }
+
+    /// \brief Constructs a color from CMYK values.
+    /// \param cmyk CMYK color value.
+    /// \see from_cmyk
+    constexpr explicit color(color::cmyk_t const& cmyk)
+      : a_{1.0F} {
+      auto const t = cmyk.to_rgb();
+      this->r_ = static_cast<f32>(t[0]) / mask<f32>;
+      this->g_ = static_cast<f32>(t[1]) / mask<f32>;
+      this->b_ = static_cast<f32>(t[2]) / mask<f32>;
+    }
+
+    /// \brief Constructs a color from CMYKA values.
+    /// \param cmyka CMYKA color value.
+    /// \see from_cmyka
+    constexpr explicit color(color::cmyka_t const& cmyka) {
+      auto const t = cmyka.to_rgba();
+      this->r_ = static_cast<f32>(t[0]) / mask<f32>;
+      this->g_ = static_cast<f32>(t[1]) / mask<f32>;
+      this->b_ = static_cast<f32>(t[2]) / mask<f32>;
+      this->a_ = static_cast<f32>(t[3]) / mask<f32>;
+    }
+
 
     /// \brief Returns the string representation of the color.
     /// \details Example: <code>#RRGGBBAA</code>.
@@ -657,7 +713,7 @@ namespace floppy::gfx
     /// \brief Returns the hue color component (HSL/HSV) in range <code>0..360</code>.
     /// \returns The hue color component (HSL/HSV) in range <code>0..255</code>.
     /// \see huef()
-    [[nodiscard]] constexpr auto hue() const -> u8 { return static_cast<u8>(this->hsl().h * 360.0F); }
+    [[nodiscard]] constexpr auto hue() const -> u8 { return static_cast<u8>(static_cast<f32>(this->hsl().h) * 360.0F); }
 
     /// \brief Returns the hue color component (HSL/HSV) in range <code>0..1</code>.
     /// \returns The hue color component (HSL/HSV) in range <code>0..1</code>.
@@ -761,8 +817,23 @@ namespace floppy::gfx
       };
     }
 
-    // todo: hsv
-    // todo: cmyk
+    /// \brief Returns CMYK color components as <tt>color::cmyk_t</tt> type.
+    /// \details If you need the individual color components, use \ref cyan(), \ref magenta(), \ref yellow(), \ref black() instead.
+    /// \returns CMYK color components as <tt>color::cmyk_t</tt> type.
+    /// \see cmyka()
+    /// \see rgb()
+    [[nodiscard]] constexpr auto cmyk() const -> color::cmyk_t {
+      return color::cmyk_t::from_rgb(this->red(), this->green(), this->blue());
+    }
+
+    /// \brief Returns CMYKA color components as <tt>color::cmyka_t</tt> type.
+    /// \details If you need the individual color components, use \ref cyan(), \ref magenta(), \ref yellow(), \ref black(), \ref alpha() instead.
+    /// \returns CMYKA color components as <tt>color::cmyka_t</tt> type.
+    /// \see cmyk()
+    /// \see rgba()
+    [[nodiscard]] constexpr auto cmyka() const -> color::cmyka_t {
+      return color::cmyka_t::from_rgba(this->red(), this->green(), this->blue(), this->alpha());
+    }
 
   #if defined(FL_QT_GUI) || defined(FL_DOC)
     /// \brief Returns the color as <tt>QColor</tt> object.
@@ -771,12 +842,12 @@ namespace floppy::gfx
     /// \see from_qcolor()
     /// \sa https://doc.qt.io/qt-6/qcolor.html
     [[nodiscard]] constexpr auto to_qcolor() const -> QColor {
-      return QColor(
+      return {
         this->red(),
         this->green(),
         this->blue(),
         this->alpha()
-      );
+      };
     }
   #endif
 
@@ -790,23 +861,44 @@ namespace floppy::gfx
     [[nodiscard]] constexpr auto operator!=(color const& other) const -> bool { return not (*this == other); }
 
     [[nodiscard]] constexpr auto operator+(color const& other) const -> color {
-      return color(this->r_ + other.r_, this->g_ + other.g_, this->b_ + other.b_, this->a_ + other.a_);
+      return {
+        static_cast<u8>(this->red() + other.red()),
+        static_cast<u8>(this->green() + other.green()),
+        static_cast<u8>(this->blue() + other.blue()),
+        static_cast<u8>(this->alpha() + other.alpha())
+      };
     }
 
     [[nodiscard]] constexpr auto operator-(color const& other) const -> color {
-      return color(this->r_ - other.r_, this->g_ - other.g_, this->b_ - other.b_, this->a_ - other.a_);
+      return {
+        static_cast<u8>(this->red() - other.red()),
+        static_cast<u8>(this->green() - other.green()),
+        static_cast<u8>(this->blue() - other.blue()),
+        static_cast<u8>(this->alpha() - other.alpha())
+      };
     }
 
     [[nodiscard]] constexpr auto operator*(color const& other) const -> color {
-      return color(this->r_ * other.r_, this->g_ * other.g_, this->b_ * other.b_, this->a_ * other.a_);
+      return {
+        static_cast<u8>(this->red() * other.red()),
+        static_cast<u8>(this->green() * other.green()),
+        static_cast<u8>(this->blue() * other.blue()),
+        static_cast<u8>(this->alpha() * other.alpha())
+      };
     }
 
     [[nodiscard]] constexpr auto operator/(color const& other) const -> color {
-      return color(this->r_ / other.r_, this->g_ / other.g_, this->b_ / other.b_, this->a_ / other.a_);
+      return {
+        static_cast<u8>(this->red() / other.red()),
+        static_cast<u8>(this->green() / other.green()),
+        static_cast<u8>(this->blue() / other.blue()),
+        static_cast<u8>(this->alpha() / other.alpha())
+      };
     }
 
+    /// wtf ???
     [[nodiscard]] constexpr auto operator-() const -> color {
-      return color(-this->r_, -this->g_, -this->b_, -this->a_);
+      return color(-this->red(), -this->green(), -this->blue(), -this->alpha());
     }
 
     [[nodiscard]] constexpr auto operator*=(color const& other) -> color& {
@@ -841,7 +933,7 @@ namespace floppy::gfx
       return *this;
     }
 
-    [[nodiscard]] constexpr auto operator*=(f32 other) -> color& {
+    [[nodiscard]] constexpr auto operator*=(const f32 other) -> color& {
       this->r_ *= other;
       this->g_ *= other;
       this->b_ *= other;
@@ -849,7 +941,7 @@ namespace floppy::gfx
       return *this;
     }
 
-    [[nodiscard]] constexpr auto operator/=(f32 other) -> color& {
+    [[nodiscard]] constexpr auto operator/=(const f32 other) -> color& {
       this->r_ /= other;
       this->g_ /= other;
       this->b_ /= other;
@@ -862,36 +954,49 @@ namespace floppy::gfx
     /// \param g Green component.
     /// \param b Blue component.
     /// \param a Alpha component.
-    [[nodiscard]] static constexpr auto from_floats(f32 r, f32 g, f32 b, f32 a) -> color {
-      return color(
-        r * mask<f32>,
-        g * mask<f32>,
-        b * mask<f32>,
-        a * mask<f32>);
+    [[nodiscard]] static constexpr auto from_floats(const f32 r, const f32 g, const f32 b, const f32 a) -> color {
+      return {
+        static_cast<u8>(r * mask<f32>),
+        static_cast<u8>(g * mask<f32>),
+        static_cast<u8>(b * mask<f32>),
+        static_cast<u8>(a * mask<f32>)
+      };
     }
 
     /// \brief Constructs an opaque color from HSL values.
     /// \param hsl HSL color value.
     [[nodiscard]] static constexpr auto from_hsl(color::hsl_t const& hsl) -> color {
-      return { hsl };
+      return color(hsl);
     }
 
     /// \brief Constructs a color from HSLA values.
     /// \param hsla HSLA color value.
     [[nodiscard]] static constexpr auto from_hsla(color::hsla_t const& hsla) -> color {
-      return { hsla };
+      return color(hsla);
     }
 
     /// \brief Construct a color from HSV values.
     /// \param hsv HSV color value.
     [[nodiscard]] static constexpr auto from_hsv(color::hsv_t const& hsv) -> color {
-      return { hsv };
+      return color(hsv);
     }
 
     /// \brief Construct a color from HSVA values.
     /// \param hsva HSVA color value.
     [[nodiscard]] static constexpr auto from_hsva(color::hsva_t const& hsva) -> color {
-      return { hsva };
+      return color(hsva);
+    }
+
+    /// \brief Construct a color from CMYK values.
+    /// \param cmyk CMYK color value.
+    [[nodiscard]] static constexpr auto from_cmyk(color::cmyk_t const& cmyk) -> color {
+      return color(cmyk);
+    }
+
+    /// \brief Construct a color from CMYKA values.
+    /// \param cmyka CMYKA color value.
+    [[nodiscard]] static constexpr auto from_cmyka(color::cmyka_t const& cmyka) -> color {
+      return color(cmyka);
     }
 
   #if defined(FL_QT_GUI) || defined(FL_DOC)
@@ -907,13 +1012,13 @@ namespace floppy::gfx
         static_cast<f32>(col.alphaF())
       );
     }
-  #endif
+  #endif // FL_QT_GUI || FL_DOC
 
    private:
     f32 r_;
     f32 g_;
     f32 b_;
-    f32 a_;
+    f32 a_ {1.0F};
   };
 
   static_assert(color(50, 168, 82).rgb() == color(0x32A852FF).rgb());
@@ -924,11 +1029,3 @@ namespace floppy::gfx
   static_assert(color("32a85280").rgba() == color(0x32A85280).rgba());
   static_assert(color::from_floats(0.1966F, 0.659F, 0.322F, 0.505F).rgba() == color("32a85280").rgba());
 } // namespace floppy::gfx
-
-// #32a852
-// 50 168 82 rgb
-// 0x32a852
-// 70% 0% 51% 34% cmyk
-// 136 70 66 hsv
-// 136 54 43 hsl
-// https://github.com/proxict/constexpr-color/blob/master/include/constexpr-color/constexpr-color.hpp
