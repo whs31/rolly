@@ -11,8 +11,8 @@ project(leaf
 
 option(INTEGRATION_TESTS "Enable integration tests" OFF)
 
-set(CMAKE_C_COMPILER clang)
-set(CMAKE_CPP_COMPILER clang)
+set(CMAKE_C_COMPILER gcc)
+set(CMAKE_CPP_COMPILER g++)
 
 if(NOT CMAKE_CXX_STANDARD)
   message(STATUS "[${PROJECT_NAME}] setting c++ standard to c++20")
