@@ -69,12 +69,12 @@ struct DummyConfiguration : public lf::trait::i::Serializable,
 
 TEST(Config, ConfigurationFile)
 {
-  using enum lf::config::SavingPolicy;
+  // using enum lf::config::SavingPolicy;
 
   auto config = lf::config::ConfigurationFile<DummyConfiguration>(
     "test.toml",
     fs::current_path() / "test-cfg",
-    Explicit
+    lf::config::SavingPolicy::Explicit
   );
 
   ASSERT_EQ(config.values.test, 0);
