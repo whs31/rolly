@@ -61,7 +61,9 @@ struct DummyConfiguration : public lf::trait::i::Serializable,
         }}
       }}
     };
-    return Ok((std::stringstream() << out).str());
+    std::stringstream out_stream;
+    out_stream << out;
+    return Ok(out_stream.str());
   }
 };
 
