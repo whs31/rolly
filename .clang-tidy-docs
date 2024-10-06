@@ -1,4 +1,0 @@
-# Clang-Tidy configuration for the m.css docs of the `floppy` library.
----
-Checks: 
-  - fuchsia-trailing-return

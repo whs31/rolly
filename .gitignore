@@ -11,8 +11,6 @@ doc/doxy.log
 # Qt artifacts
 *.user
 *.autosave
-settings/userSettings.json
-settings/*.cfg
 moc_*
 ui_*
 *.moc
@@ -26,10 +24,9 @@ src/latex/
 !docs/src
 docs/*
 
-# Conan (deps folder must have separate .gitignore)
+# Conan 
 CMakeUserPresets.json
 conan_provider.cmake
-dependencies
 
 # Rust
 Cargo.lock
@@ -38,6 +35,11 @@ target
 # DLL exports
 .export
 
-.idea/QtSettings.xml
+# IDE
+.idea/*
+.vscode/*
+settings/userSettings.json
+settings/*.cfg
 
-.idea/.name
+# Misc
+__pycache__

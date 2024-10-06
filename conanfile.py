@@ -10,21 +10,27 @@ except ImportError:
         return text
 
 
-class FloppyRecipe(ConanFile):
-    name = "floppy"
-    version = "1.2.5"
-    description = "Library that augments and extends C++ standard library"
+def print_info(text: str):
+    print("▶ {}".format(colored(text, attrs=["bold"], color="cyan")))
+
+
+class RollyRecipe(ConanFile):
+    name = "rolly"
+    version = "2.0.0"
+    description = "Radar open-source library"
     author = "whs31 <whs31@github.io>"
-    topics = ("logging", "coreutils", "utility")
+    topics = ("coreutils", "utility")
 
     settings = "os", "arch", "compiler", "build_type"
     options = {
         "shared": [True, False],
         "test": [True, False],
+        "compat": [True, False]
     }
     default_options = {
         "shared": True,
-        "test": False
+        "test": False,
+        "compat": False
     }
 
     exports_sources = "*"
@@ -34,9 +40,10 @@ class FloppyRecipe(ConanFile):
         return "20" 
 
     def requirements(self):
-        self.requires("fmt/[^10.1.0]", transitive_headers=True, transitive_libs=True)
-        self.requires("spdlog/1.13.0", transitive_headers=True, transitive_libs=True)
-        self.requires("tl-expected/20190710", transitive_headers=True, transitive_libs=True)
+        self.requires("fmt/11.0.2", transitive_headers=True, transitive_libs=True)
+        #self.requires("spdlog/1.13.0", transitive_headers=True, transitive_libs=True)
+        if self.settings.os != "Windows":
+            self.requires("elfutils/0.190", transitive_headers=True, transitive_libs=True) # todo: really needed transitive here?
         if self.options.test:
             self.requires("gtest/1.14.0")
             self.requires("tomlplusplus/[^3.0.0]", transitive_headers=True, transitive_libs=True)
@@ -45,11 +52,13 @@ class FloppyRecipe(ConanFile):
         cmake_layout(self)
 
     def validate(self):
+        if self.options.compat:
+            print_info("compat enabled. library will be built with c++17 support only")
         if self.settings.get_safe("compiler.cppstd"):
             check_min_cppstd(self, self._min_cppstd)
 
     def configure(self):
-        self.options["spdlog/*"].shared = True
+        #self.options["spdlog/*"].shared = True
         self.options["fmt/*"].shared = True
 
     def generate(self):
@@ -58,6 +67,7 @@ class FloppyRecipe(ConanFile):
         tc = CMakeToolchain(self)
         tc.cache_variables["BUILD_SHARED_LIBS"] = self.options.shared
         tc.cache_variables["TESTS"] = self.options.test
+        tc.cache_variables["ROLLY_COMPAT"] = self.options.compat
         tc.generate()
 
     def build(self):
@@ -74,11 +84,16 @@ class FloppyRecipe(ConanFile):
         rmdir(self, os.path.join(self.package_folder, "share"))
 
     def package_info(self):
-        self.cpp_info.set_property("cmake_file_name", "floppy")
-        self.cpp_info.set_property("cmake_target_name", "floppy::floppy")
-        self.cpp_info.libs = ["floppy"]
-        self.cpp_info.requires = ["fmt::fmt", "spdlog::spdlog", "tl-expected::tl-expected"]
+        self.cpp_info.set_property("cmake_file_name", "rolly")
+        self.cpp_info.set_property("cmake_target_name", "rolly::rolly")
+        self.cpp_info.libs = ["rolly"]
+        self.cpp_info.requires = ["fmt::fmt"]
         if self.options.test:
-            print(colored("▶ testing enabled. following libraries will be added to deps: gtest, tomlplusplus", "green"))
+            print_info("testing enabled. following libraries will be added to deps: gtest, tomlplusplus")
             self.cpp_info.requires.append("gtest::gtest")
             self.cpp_info.requires.append("tomlplusplus::tomlplusplus")
+        if self.settings.os == "Windows":
+            self.cpp_info.system_libs.extend(["psapi", "dbghelp"])
+        if self.settings.os in ["Linux", "FreeBSD", "Android"]:
+            self.cpp_info.system_libs.extend(["dl", "m"])
+            self.cpp_info.requires.append("elfutils::elfutils")

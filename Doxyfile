@@ -1,9 +1,9 @@
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = Floppy
-PROJECT_NUMBER         = 1.2.5
-PROJECT_BRIEF          = "Extensions for C++ stdlib"
-PROJECT_LOGO           = ./doxygen/images/logo-tmp.png
-PROJECT_ICON           = ./doxygen/images/logo-tmp.png
+PROJECT_NAME           = Rolly
+PROJECT_NUMBER         = 2.0.0
+PROJECT_BRIEF          = "Radar open-source library"
+PROJECT_LOGO           = ./doxygen/images/logo.png
+PROJECT_ICON           = ./doxygen/images/logo.png
 OUTPUT_DIRECTORY       = docs
 CREATE_SUBDIRS         = NO
 CREATE_SUBDIRS_LEVEL   = 8
@@ -193,15 +193,24 @@ IGNORE_PREFIX          =
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
 HTML_FILE_EXTENSION    = .html
-HTML_HEADER            = doxygen/header.html
+
+# To use without mcss, uncomment the following line:
+# HTML_HEADER            = doxygen/header.html
+HTML_HEADER            =
 HTML_FOOTER            =
 HTML_STYLESHEET        =
-HTML_EXTRA_STYLESHEET  = doxygen/preset/doxygen-awesome.css doxygen/preset/custom.css
-HTML_EXTRA_FILES       = doxygen/preset/doxygen-awesome-tabs.js \
-                         doxygen/preset/doxygen-awesome-paragraph-link.js \
-                         doxygen/preset/doxygen-awesome-interactive-toc.js \
-                         doxygen/preset/doxygen-awesome-fragment-copy-button.js \
-                         doxygen/preset/doxygen-awesome-darkmode-toggle.js
+
+# To use with mcss, uncomment the following line:
+# HTML_EXTRA_STYLESHEET  = doxygen/preset/doxygen-awesome.css doxygen/preset/custom.css
+HTML_EXTRA_STYLESHEET  =
+
+# To use with mcss, uncomment the following line:
+# HTML_EXTRA_FILES       = doxygen/preset/doxygen-awesome-tabs.js \
+#                          doxygen/preset/doxygen-awesome-paragraph-link.js \
+#                          doxygen/preset/doxygen-awesome-interactive-toc.js \
+#                          doxygen/preset/doxygen-awesome-fragment-copy-button.js \
+#                          doxygen/preset/doxygen-awesome-darkmode-toggle.js
+HTML_EXTRA_FILES       =
 HTML_COLORSTYLE        = LIGHT
 HTML_COLORSTYLE_HUE    = 286
 HTML_COLORSTYLE_SAT    = 60
@@ -354,3 +363,4 @@ GENERATE_LEGEND        = YES
 DOT_CLEANUP            = YES
 MSCGEN_TOOL            =
 MSCFILE_DIRS           =
+

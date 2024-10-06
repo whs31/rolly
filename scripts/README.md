@@ -1,5 +1,5 @@
 ## Helper scripts
-Collection of utility scripts for the _floppy_ project
+Collection of utility scripts for the _rolly_ project
 
 ### `tag.py`
 Script to update all versions in respective files in project and optionally push new git tag.

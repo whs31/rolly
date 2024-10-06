@@ -1,0 +1,2 @@
+Diagnostics:
+  Suppress: invalid_consteval_take_address
