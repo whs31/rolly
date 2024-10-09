@@ -49,8 +49,8 @@ namespace rolly
    * @return The underlying value of the enumeration.
    * @see https://en.cppreference.com/w/cpp/utility/to_underlying
    */
-  template <___concept___(concepts::enum_) T>
-  constexpr std::underlying_type<T> to_underlying(T t) noexcept {
+  template <___concept___(concepts::enum_) T ___sfinae_requirement___(std::is_enum_v<T>)>
+  constexpr auto to_underlying(T t) noexcept {
     return static_cast<std::underlying_type_t<T>>(t);
   }
 
