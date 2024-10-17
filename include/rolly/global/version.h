@@ -82,7 +82,11 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
      * @endcode
      * @see project_meta, version
      */
-    [[maybe_unused]] constexpr inline auto library_metadata = project_meta(
+    [[maybe_unused]]
+#if __cplusplus > 201703L
+   constexpr
+#endif // __cplusplus > 201703L
+   const static inline auto library_metadata = project_meta(
       version(
         ROLLY_VERSION_MAJOR,
         ROLLY_VERSION_MINOR,
@@ -95,10 +99,6 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
   } // namespace meta
 } // namespace rolly
 
-static_assert(rolly::meta::library_metadata.version().major == ROLLY_VERSION_MAJOR);
-static_assert(rolly::meta::library_metadata.version().minor == ROLLY_VERSION_MINOR);
-static_assert(rolly::meta::library_metadata.version().patch == ROLLY_VERSION_PATCH);
-static_assert(rolly::meta::library_metadata.version() == rolly::version("2.0.0"));
 static_assert(alignof(rolly::version) == 2);
 static_assert(sizeof(rolly::version) == 12);
 static_assert(alignof(rolly::prerelease) == 1);

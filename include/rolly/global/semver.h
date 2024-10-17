@@ -21,6 +21,12 @@
 # include <compare>
 #endif
 
+#ifdef __NVCC__
+# define ROLLY_SEMVER_CONSTEXPR inline
+#else
+# define ROLLY_SEMVER_CONSTEXPR constexpr
+#endif // __NVCC__
+
 namespace rolly
 {
   enum struct prerelease : std::uint8_t
@@ -109,7 +115,7 @@ namespace rolly
       return str;
     }
 
-    [[nodiscard]] constexpr char const* from_chars(char const* first, char const* last, std::uint16_t& d) noexcept {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR char const* from_chars(char const* first, char const* last, std::uint16_t& d) noexcept {
       if(first != last and is_digit(*first)) {
         std::int32_t t = 0;
         for(; first != last and is_digit(*first); ++first)
@@ -122,7 +128,7 @@ namespace rolly
       return nullptr;
     }
 
-    [[nodiscard]] constexpr char const* from_chars(char const* first, char const* last, std::optional<std::uint16_t>& d) noexcept {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR char const* from_chars(char const* first, char const* last, std::optional<std::uint16_t>& d) noexcept {
       if(first != last && is_digit(*first)) {
         std::int32_t t = 0;
          for(; first != last && is_digit(*first); ++first)  
@@ -136,7 +142,7 @@ namespace rolly
       return nullptr;
     }
 
-    [[nodiscard]] constexpr char const* from_chars(char const* first, char const* last, prerelease& p) noexcept {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR char const* from_chars(char const* first, char const* last, prerelease& p) noexcept {
       if(is_hyphen(*first))
         ++first;  
       if(equals(first, last, alpha)) {
@@ -179,7 +185,7 @@ namespace rolly
     prerelease prerelease_type      = prerelease::none;
     std::optional<std::uint16_t> prerelease_number = std::nullopt;
 
-    constexpr version(
+    ROLLY_SEMVER_CONSTEXPR version(
       std::uint16_t mj,
       std::uint16_t mn,
       std::uint16_t pt,
@@ -193,7 +199,7 @@ namespace rolly
       , prerelease_number{prt == prerelease::none ? std::nullopt : prn}
     {}
 
-    constexpr version(
+    ROLLY_SEMVER_CONSTEXPR version(
       std::uint16_t mj,
       std::uint16_t mn,
       std::uint16_t pt,
@@ -209,7 +215,7 @@ namespace rolly
         : std::make_optional<std::uint16_t>(prn)}
     {}
 
-    explicit constexpr version(std::string_view str)
+    explicit ROLLY_SEMVER_CONSTEXPR version(std::string_view str)
       : version(0, 0, 0, prerelease::none, std::nullopt) {
       from_string(str);
     }
@@ -221,7 +227,7 @@ namespace rolly
     version& operator=(const version&) = default;
     version& operator=(version&&) = default;
 
-    [[nodiscard]] constexpr from_chars_result from_chars(char const* first, char const* last) noexcept {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR from_chars_result from_chars(char const* first, char const* last) noexcept {
       if(first == nullptr or last == nullptr or (last - first) < detail::min_version_string_length)
         return {first, std::errc::invalid_argument};
       const auto* next = first;
@@ -246,7 +252,7 @@ namespace rolly
       return {first, std::errc::invalid_argument};
     }
 
-    [[nodiscard]] constexpr to_chars_result to_chars(char* first, char* last) const noexcept {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR to_chars_result to_chars(char* first, char* last) const noexcept {
       auto const length = string_length();
       if(first == nullptr or last == nullptr or (last - first) < length)
         return {last, std::errc::value_too_large};
@@ -263,11 +269,11 @@ namespace rolly
       return {first + length, std::errc{}};
     }
 
-    [[nodiscard]] constexpr bool from_string_noexcept(std::string_view str) noexcept {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR bool from_string_noexcept(std::string_view str) noexcept {
       return from_chars(str.data(), str.data() + str.length());
     }
 
-    constexpr version& from_string(std::string_view str) {
+    ROLLY_SEMVER_CONSTEXPR version& from_string(std::string_view str) {
       if(not from_string_noexcept(str))
         throw std::invalid_argument("rolly::version::from_string: invalid version.");
       return *this;
@@ -281,7 +287,7 @@ namespace rolly
       return str;
     }
 
-    [[nodiscard]] constexpr std::uint8_t string_length() const noexcept {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR std::uint8_t string_length() const noexcept {
       auto length = detail::length(major) + detail::length(minor) + detail::length(patch) + 2;
       if(prerelease_type != prerelease::none) {
         length += detail::length(prerelease_type) + 1;
@@ -360,30 +366,30 @@ namespace rolly
      * static_assert(v == rolly::version(1, 0, 0));
      * @endcode
      */
-    [[nodiscard]] constexpr version operator""_version(char const* str, std::size_t length) {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR version operator""_version(char const* str, std::size_t length) {
       return version{std::string_view{str, length}};
     }
   }
 
-  [[nodiscard]] constexpr bool valid(std::string_view str) noexcept {
+  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR bool valid(std::string_view str) noexcept {
     return version{}.from_string_noexcept(str);
   }
 
-  [[nodiscard]] constexpr from_chars_result from_chars(char const* first, char const* last, version& v) noexcept {
+  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR from_chars_result from_chars(char const* first, char const* last, version& v) noexcept {
     return v.from_chars(first, last);
   }
 
-  [[nodiscard]] constexpr to_chars_result to_chars(char* first, char* last, const version& v) noexcept {
+  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR to_chars_result to_chars(char* first, char* last, const version& v) noexcept {
     return v.to_chars(first, last);
   }
 
-  [[nodiscard]] constexpr std::optional<version> from_string_noexcept(std::string_view str) noexcept {
+  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR std::optional<version> from_string_noexcept(std::string_view str) noexcept {
     if(version v{}; v.from_string_noexcept(str))
       return v;
     return std::nullopt;
   }
 
-  [[nodiscard]] constexpr version from_string(std::string_view str) {
+  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR version from_string(std::string_view str) {
     return version{str};
   }
 
@@ -444,9 +450,9 @@ namespace rolly
     class range
       {
        public:
-        constexpr explicit range(std::string_view str) noexcept : parser{str} {}
+        ROLLY_SEMVER_CONSTEXPR explicit range(std::string_view str) noexcept : parser{str} {}
 
-        constexpr bool satisfies(const version& ver, bool include_prerelease) {
+        ROLLY_SEMVER_CONSTEXPR bool satisfies(const version& ver, bool include_prerelease) {
           const bool has_prerelease = ver.prerelease_type != prerelease::none;
           do {
             if(is_logical_or_token())
@@ -525,12 +531,12 @@ namespace rolly
           std::string_view text;
           std::size_t pos;
 
-          constexpr explicit range_lexer(std::string_view text) noexcept
+          ROLLY_SEMVER_CONSTEXPR explicit range_lexer(std::string_view text) noexcept
             : text{text}
             , pos{0}
           {}
 
-          constexpr range_token get_next_token() noexcept {
+          ROLLY_SEMVER_CONSTEXPR range_token get_next_token() noexcept {
             while (not end_of_line()) {
               if(is_space(text[pos])) {
                 advance(1);
@@ -565,13 +571,13 @@ namespace rolly
             return {range_token_type::end_of_line};
           }
 
-          constexpr bool end_of_line() const noexcept { return pos >= text.length(); }
+          ROLLY_SEMVER_CONSTEXPR bool end_of_line() const noexcept { return pos >= text.length(); }
 
-          constexpr void advance(std::size_t i) noexcept {
+          ROLLY_SEMVER_CONSTEXPR void advance(std::size_t i) noexcept {
             pos += i;
           }
 
-          constexpr range_operator get_operator() noexcept {
+          ROLLY_SEMVER_CONSTEXPR range_operator get_operator() noexcept {
              if(text[pos] == '<') {
               advance(1);
                if(text[pos] == '=') {
@@ -593,7 +599,7 @@ namespace rolly
             return range_operator::equal;
           }
 
-          constexpr std::uint16_t get_number() noexcept {
+          ROLLY_SEMVER_CONSTEXPR std::uint16_t get_number() noexcept {
             const auto* const first = text.data() + pos;
             const auto* const last = text.data() + text.length();
             if(std::uint16_t n{}; from_chars(first, last, n) != nullptr) {
@@ -603,7 +609,7 @@ namespace rolly
             return 0;
           }
 
-          constexpr prerelease get_prerelease() noexcept {
+          ROLLY_SEMVER_CONSTEXPR prerelease get_prerelease() noexcept {
             const auto* const first = text.data() + pos;
             const auto* const last = text.data() + text.length();
             if(first > last) {
@@ -624,17 +630,17 @@ namespace rolly
           range_lexer lexer;
           range_token current_token;
 
-          constexpr explicit range_parser(std::string_view str) : lexer{str}, current_token{range_token_type::none} {
+          ROLLY_SEMVER_CONSTEXPR explicit range_parser(std::string_view str) : lexer{str}, current_token{range_token_type::none} {
             advance_token(range_token_type::none);
           }
 
-          constexpr void advance_token(range_token_type token_type) {
+          ROLLY_SEMVER_CONSTEXPR void advance_token(range_token_type token_type) {
              if(current_token.type != token_type)
               throw std::invalid_argument("rolly::version_range unexpected token.");
             current_token = lexer.get_next_token();
           }
 
-          constexpr range_comparator parse_range() {
+          ROLLY_SEMVER_CONSTEXPR range_comparator parse_range() {
              if(current_token.type == range_token_type::number) {
               const auto version = parse_version();
               return {range_operator::equal, version};
@@ -647,7 +653,7 @@ namespace rolly
             return {range_operator::equal, version{}};
           }
 
-          constexpr version parse_version() {
+          ROLLY_SEMVER_CONSTEXPR version parse_version() {
             const auto major = parse_number();
             advance_token(range_token_type::dot);
             const auto minor = parse_number();
@@ -667,13 +673,13 @@ namespace rolly
             return {major, minor, patch, prerelease, prerelease_number};
           }
 
-          constexpr std::uint16_t parse_number() {
+          ROLLY_SEMVER_CONSTEXPR std::uint16_t parse_number() {
             const auto token = current_token;
             advance_token(range_token_type::number);
             return token.number;
           }
 
-          constexpr prerelease parse_prerelease() {
+          ROLLY_SEMVER_CONSTEXPR prerelease parse_prerelease() {
             const auto token = current_token;
             advance_token(range_token_type::prerelease);
             return token.prerelease_type;
@@ -699,7 +705,7 @@ namespace rolly
       include_prerelease
     };
 
-    constexpr bool satisfies(version const& ver, std::string_view str, satisfies_option option = satisfies_option::exclude_prerelease) {
+    ROLLY_SEMVER_CONSTEXPR bool satisfies(version const& ver, std::string_view str, satisfies_option option = satisfies_option::exclude_prerelease) {
       switch(option) {
         case satisfies_option::exclude_prerelease: return detail::range{str}.satisfies(ver, false);
         case satisfies_option::include_prerelease: return detail::range{str}.satisfies(ver, true);

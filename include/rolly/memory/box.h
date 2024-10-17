@@ -26,6 +26,7 @@ namespace rolly
   {
    public:
     using value_type = T;
+    using element_type = T;
 
     /**
      * @brief Creates an box with default-constructed data of type <code>T</code>.
@@ -50,7 +51,7 @@ namespace rolly
      * @tparam U Underlying type of the other box.
      * @param other Other box to move data from.
      */
-    template <std::destructible U>
+    template <___concept___(std::destructible) U>
     box(box<U>&& other) noexcept // NOLINT(*-explicit-constructor, *-rvalue-reference-param-not-moved)
       : ptr_(std::forward<std::unique_ptr<U>>(other.as_unique_ptr()))
     {}
