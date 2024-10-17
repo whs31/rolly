@@ -3,20 +3,11 @@ from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, cmake_layout, CMakeDeps
 from conan.tools.build import check_min_cppstd
 from conan.tools.files import rmdir
-try:
-    from termcolor import colored
-except ImportError:
-    def colored(text, color, on_color=None, attrs=None):
-        return text
-
-
-def print_info(text: str):
-    print("▶ {}".format(colored(text, attrs=["bold"], color="cyan")))
 
 
 class RollyRecipe(ConanFile):
     name = "rolly"
-    version = "2.0.0"
+    version = "2.0.1"
     description = "Radar open-source library"
     author = "whs31 <whs31@github.io>"
     topics = ("coreutils", "utility")
@@ -37,11 +28,10 @@ class RollyRecipe(ConanFile):
 
     @property
     def _min_cppstd(self):
-        return "20" 
+        return "20" if self.options.compat else "17"
 
     def requirements(self):
-        self.requires("fmt/11.0.2", transitive_headers=True, transitive_libs=True)
-        #self.requires("spdlog/1.13.0", transitive_headers=True, transitive_libs=True)
+        self.requires("fmt/[>=10.0.0]", transitive_headers=True, transitive_libs=True)
         if self.settings.os != "Windows":
             self.requires("elfutils/0.190", transitive_headers=True, transitive_libs=True) # todo: really needed transitive here?
         if self.options.test:
@@ -52,13 +42,10 @@ class RollyRecipe(ConanFile):
         cmake_layout(self)
 
     def validate(self):
-        if self.options.compat:
-            print_info("compat enabled. library will be built with c++17 support only")
         if self.settings.get_safe("compiler.cppstd"):
             check_min_cppstd(self, self._min_cppstd)
 
     def configure(self):
-        #self.options["spdlog/*"].shared = True
         self.options["fmt/*"].shared = True
 
     def generate(self):
@@ -89,7 +76,6 @@ class RollyRecipe(ConanFile):
         self.cpp_info.libs = ["rolly"]
         self.cpp_info.requires = ["fmt::fmt"]
         if self.options.test:
-            print_info("testing enabled. following libraries will be added to deps: gtest, tomlplusplus")
             self.cpp_info.requires.append("gtest::gtest")
             self.cpp_info.requires.append("tomlplusplus::tomlplusplus")
         if self.settings.os == "Windows":
