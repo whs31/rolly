@@ -121,11 +121,13 @@
 #   define ___concept___(x) x
 #   define ___requires___(x) requires x
 #   define ___constexpr___ constexpr
+#   define ___consteval___ consteval
 #   define ___sfinae_requirement___(x)
 # else // defined(___rolly_cxx20___)
 #   define ___concept___(x) typename
 #   define ___requires___(x)
 #   define ___constexpr___
+#   define ___consteval___ constexpr
 #   define ___sfinae_requirement___(x) , typename = std::enable_if_t<x>
 # endif // defined(___rolly_cxx20___)
 // NOLINTEND(*-reserved-identifier, *-identifier-naming, *-macro-usage)

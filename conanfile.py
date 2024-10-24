@@ -32,8 +32,6 @@ class RollyRecipe(ConanFile):
 
     def requirements(self):
         self.requires("fmt/[>=10.0.0]", transitive_headers=True, transitive_libs=True)
-        if self.settings.os != "Windows":
-            self.requires("elfutils/0.190", transitive_headers=True, transitive_libs=True) # todo: really needed transitive here?
         if self.options.test:
             self.requires("gtest/1.14.0")
             self.requires("tomlplusplus/[^3.0.0]", transitive_headers=True, transitive_libs=True)
@@ -78,8 +76,3 @@ class RollyRecipe(ConanFile):
         if self.options.test:
             self.cpp_info.requires.append("gtest::gtest")
             self.cpp_info.requires.append("tomlplusplus::tomlplusplus")
-        if self.settings.os == "Windows":
-            self.cpp_info.system_libs.extend(["psapi", "dbghelp"])
-        if self.settings.os in ["Linux", "FreeBSD", "Android"]:
-            self.cpp_info.system_libs.extend(["dl", "m"])
-            self.cpp_info.requires.append("elfutils::elfutils")

@@ -34,9 +34,6 @@ message(STATUS "[${PROJECT_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 
 # -- dependencies --
 find_package(fmt REQUIRED)
-if(NOT WIN32)
-  find_package(elfutils REQUIRED)
-endif()
 
 add_library(${PROJECT_NAME})
 add_library(${PROJECT_NAMESPACE}${PROJECT_NAME} ALIAS ${PROJECT_NAME})
@@ -70,10 +67,6 @@ target_link_libraries(${PROJECT_NAME}
   PUBLIC
     fmt::fmt
 )
-if(NOT WIN32)
-  target_link_libraries(${PROJECT_NAME} PUBLIC elfutils::elfutils)
-endif()
-
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src)
 
 if(BUILD_SHARED_LIBS)

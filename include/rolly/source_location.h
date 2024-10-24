@@ -40,7 +40,7 @@ namespace rolly
       /**
        * @brief Returns current source location.
        */ 
-      static ___constexpr___ source_location current(
+      static ___consteval___ source_location current(
   #ifndef ROLLY_DOC
   #if not defined(__apple_build_version__) and defined(__clang__) and (__clang_major__ >= 9)
         char const* file = __builtin_FILE(),
@@ -64,8 +64,8 @@ namespace rolly
       }
 
      private:
-      std::string file_;
-      std::string function_;
+      char const* file_;
+      char const* function_;
       u32 line_;
       u32 column_;
 
@@ -104,22 +104,12 @@ namespace rolly
       /**
        * @brief Returns the file name.
        */
-      [[nodiscard]] std::string_view file_name() const noexcept { return this->file_; }
-
-      /**
-       * @brief Returns a mutable reference to the file name.
-       */
-      [[nodiscard]] [[maybe_unused]] std::string& file_name_mut() noexcept { return this->file_; }
+      [[nodiscard]] ___constexpr___ std::string_view file_name() const noexcept { return this->file_; }
 
       /**
        * @brief Returns the function name. NULL if unknown or not available on compiler
        */
-      [[nodiscard]] std::string_view function_name() const noexcept { return this->function_; }
-
-      /**
-       * @brief Returns a mutable reference to the function name.
-       */
-      [[nodiscard]] [[maybe_unused]] std::string& function_name_mut() noexcept { return this->function_; }
+      [[nodiscard]] ___constexpr___ std::string_view function_name() const noexcept { return this->function_; }
 
       /**
        * @brief Returns the line number. 0 if unknown or not available on compiler.
@@ -127,19 +117,9 @@ namespace rolly
       [[nodiscard]] constexpr u32 line() const noexcept { return this->line_; }
 
       /**
-       * @brief Returns a mutable reference to the line number.
-       */
-      [[nodiscard]] [[maybe_unused]] constexpr u32& line_mut() noexcept { return this->line_; }
-
-      /**
        * @brief Returns the column number. 0 if unknown or not available on compiler
        */
       [[nodiscard]] constexpr u32 column() const noexcept { return this->column_; }
-
-      /**
-       * @brief Returns a mutable reference to the column number.
-       */
-      [[nodiscard]] [[maybe_unused]] constexpr u32& column_mut() noexcept { return this->column_; }
     };
 
     /**
