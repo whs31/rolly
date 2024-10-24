@@ -11,8 +11,6 @@ doc/doxy.log
 # Qt artifacts
 *.user
 *.autosave
-settings/userSettings.json
-settings/*.cfg
 moc_*
 ui_*
 *.moc
@@ -22,15 +20,13 @@ ui_*
 # Doxygen generated
 src/html/
 src/latex/
-docs/*
 !docs/images
 !docs/src
-!docs/pages
+docs/*
 
-# Conan (deps folder must have separate .gitignore)
+# Conan 
 CMakeUserPresets.json
 conan_provider.cmake
-dependencies
 
 # Rust
 Cargo.lock
@@ -38,3 +34,12 @@ target
 
 # DLL exports
 .export
+
+# IDE
+.idea/*
+.vscode/*
+settings/userSettings.json
+settings/*.cfg
+
+# Misc
+__pycache__

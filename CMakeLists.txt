@@ -2,142 +2,113 @@ cmake_minimum_required(VERSION 3.15)
 
 include_guard(GLOBAL)
 
-project(leaf
-  VERSION 1.1.4
-  DESCRIPTION "Coreutils library for C++"
-  HOMEPAGE_URL "io.whs31.leaf"
+project(rolly
+  VERSION 2.0.1
+  DESCRIPTION "Radar open-source library"
+  HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
 )
+set(PROJECT_NAMESPACE ${PROJECT_NAME}::)
 
-option(INTEGRATION_TESTS "Enable integration tests" ON)
+include(CMakePrintHelpers)
 
-if(NOT CMAKE_CXX_STANDARD)
-  message(STATUS "[${PROJECT_NAME}] setting c++ standard to c++20")
-  set(CMAKE_CXX_STANDARD 20)
-  set(CMAKE_CXX_STANDARD_REQUIRED ON)
-  set(CMAKE_CXX_EXTENSIONS OFF)
-endif()
+option(TESTS "Enable integration tests" OFF)
+option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+option(ROLLY_COMPAT "Enable C++17 compatibility mode" OFF)
 
 if("${CMAKE_GENERATOR}" MATCHES "^Visual Studio")
   set(CMAKE_GENERATOR_PLATFORM "x64" CACHE STRING "" FORCE)
 endif()
 
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-message(STATUS "[${PROJECT_NAME}] setting fPIC: ${CMAKE_POSITION_INDEPENDENT_CODE}")
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-message(STATUS "[${PROJECT_NAME}] checking language features...")
-include(CheckCXXSourceCompiles)
-
-message(STATUS "[${PROJECT_NAME}] checking dollar macro...")
-check_cxx_source_compiles(
-  "#include <iostream>
-  #define $dollar(x) x
-  int main() {
-    std::cout << $dollar(1.0) << std::endl;
-    return 0;
-  }
-  #undef $dollar"
-  DOLLAR_MACRO_ALLOWED
-)
-if(NOT DOLLAR_MACRO_ALLOWED)
-  message(FATAL_ERROR "[${PROJECT_NAME}] checking dollar macro... FAILURE")
+if(ROLLY_COMPAT)
+  set(ROLLY_CXX_STANDARD 17)
 else()
-  message(STATUS "[${PROJECT_NAME}] checking dollar macro... OK!")
+  set(ROLLY_CXX_STANDARD 20)
 endif()
 
-find_package(spdlog REQUIRED)
-find_package(magic_enum REQUIRED)
-find_package(tl-expected REQUIRED)
+message(STATUS "[${PROJECT_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
+
+# -- dependencies --
+find_package(fmt REQUIRED)
+if(NOT WIN32)
+  find_package(elfutils REQUIRED)
+endif()
 
 add_library(${PROJECT_NAME})
-add_library(${PROJECT_NAME}::leaf ALIAS ${PROJECT_NAME})
+add_library(${PROJECT_NAMESPACE}${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+  CXX_STANDARD ${ROLLY_CXX_STANDARD}
+  CXX_STANDARD_REQUIRED ON
+  CXX_EXTENSIONS OFF
+  POSITION_INDEPENDENT_CODE ON
+)
+
+cmake_print_properties(TARGETS ${PROJECT_NAME} PROPERTIES
+  CXX_STANDARD
+  CXX_STANDARD_REQUIRED
+  CXX_EXTENSIONS
+  POSITION_INDEPENDENT_CODE
+)
 
 target_sources(${PROJECT_NAME}
-  PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/export.h> $<INSTALL_INTERFACE:include/lf/detail/export.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/platform.h> $<INSTALL_INTERFACE:include/lf/detail/platform.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/types.h> $<INSTALL_INTERFACE:include/lf/detail/types.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/corefn.h> $<INSTALL_INTERFACE:include/lf/detail/corefn.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/os.h> $<INSTALL_INTERFACE:include/lf/detail/os.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/backports.h> $<INSTALL_INTERFACE:include/lf/detail/backports.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/traits.h> $<INSTALL_INTERFACE:include/lf/detail/traits.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/log.h> $<INSTALL_INTERFACE:include/lf/detail/log.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/assert.h> $<INSTALL_INTERFACE:include/lf/detail/assert.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/math.h> $<INSTALL_INTERFACE:include/lf/detail/math.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/detail/memory.h> $<INSTALL_INTERFACE:include/lf/detail/memory.h>
-
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/leaf.h> $<INSTALL_INTERFACE:include/lf/leaf.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/logger.h> $<INSTALL_INTERFACE:include/lf/logger.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/config.h> $<INSTALL_INTERFACE:include/lf/config.h>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf/directories.h> $<INSTALL_INTERFACE:include/lf/directories.h>
-
   PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/detail/rtti.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/logger.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/c++/directories.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/contracts.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/directories.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/rtti.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
 )
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
-    spdlog::spdlog
-    tl::expected
-  PRIVATE
-    magic_enum::magic_enum
+    fmt::fmt
 )
+if(NOT WIN32)
+  target_link_libraries(${PROJECT_NAME} PUBLIC elfutils::elfutils)
+endif()
 
-target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src/c++)
+target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src)
 
 if(BUILD_SHARED_LIBS)
-  message(STATUS "[${PROJECT_NAME}] adding shared export symbols: LEAF_LIBRARY")
-  set_target_properties(${PROJECT_NAME} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
-  target_compile_definitions(${PROJECT_NAME} PUBLIC -DLEAF_LIBRARY=1)
+  message(STATUS "[${PROJECT_NAME}] adding shared export symbols: ROLLY_LIBRARY")
+  target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_LIBRARY=1)
 else()
-  message(STATUS "[${PROJECT_NAME}] adding static export symbols: LEAF_STATIC_LIBRARY")
-  target_compile_definitions(${PROJECT_NAME} PUBLIC -DLEAF_STATIC_LIBRARY=1)
+  message(STATUS "[${PROJECT_NAME}] adding static export symbols: ROLLY_STATIC_LIBRARY")
+  target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_STATIC_LIBRARY=1)
 endif()
 
-message(STATUS "[${PROJECT_NAME}] compile integration tests status: ${INTEGRATION_TESTS}")
+if(ROLLY_COMPAT)
+  target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_COMPAT=1)
+endif()
 
-if(INTEGRATION_TESTS)
-  find_package(GTest REQUIRED)
-  find_package(tomlplusplus REQUIRED)
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug)
+endif()
+
+if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+  message(STATUS "[${PROJECT_NAME}] adding compiler flags: -Wall -Wextra -Wpedantic -Werror")
+  target_compile_options(${PROJECT_NAME} PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX>
+    $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wpedantic>
+    $<$<NOT:$<CXX_COMPILER_ID:Clang>>:-Werror>
+  )
+endif()
+
+if(TESTS)
   enable_testing()
-
-  add_executable(${PROJECT_NAME}-test)
-  target_sources(${PROJECT_NAME}-test PRIVATE
-    tests/test-main.cc
-    tests/test-expected.cc
-    tests/test-panic.cc
-    tests/test-casts.cc
-    tests/test-config.cc
-  )
-
-  target_link_libraries(${PROJECT_NAME}-test
-    PRIVATE
-      ${PROJECT_NAME}
-      GTest::GTest
-      GTest::Main
-      tomlplusplus::tomlplusplus
-  )
-
-  if(WIN32)
-    add_custom_command(TARGET ${PROJECT_NAME}-test
-      POST_BUILD
-      COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:${PROJECT_NAME}-test> $<TARGET_FILE_DIR:${PROJECT_NAME}-test>
-      COMMAND_EXPAND_LISTS
-    )
-  endif()
-
-  install(TARGETS ${PROJECT_NAME}-test
-    EXPORT ${PROJECT_NAME}-test
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-  )
+  add_subdirectory(tests)
+  add_subdirectory(bin)
 endif()
 
-set(PROJECT_NAMESPACE leaf::)
+# -- installation --
+message(STATUS "[${PROJECT_NAME}] compile integration tests status: ${INTEGRATION_TESTS}")
 message(STATUS "[${PROJECT_NAME}] installing ${PROJECT_NAME} in namespace ${PROJECT_NAMESPACE}")
 include(GNUInstallDirs)
 include(GenerateExportHeader)
@@ -158,7 +129,7 @@ install(TARGETS ${PROJECT_NAME}
   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
-install(DIRECTORY $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/lf> $<INSTALL_INTERFACE:include/lf> ; DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(DIRECTORY $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/rolly> $<INSTALL_INTERFACE:include/rolly> ; DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 export(TARGETS ${PROJECT_NAME} NAMESPACE ${PROJECT_NAMESPACE} FILE "${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_TARGETS_FILE}")
 install(EXPORT ${PROJECT_NAME}
   DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR}
@@ -170,5 +141,5 @@ write_basic_package_version_file(${CONFIG_VERSION_FILE} COMPATIBILITY AnyNewerVe
 install(FILES ${PROJECT_CONFIG_FILE} ${CONFIG_VERSION_FILE} DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR})
 
 message(STATUS "[${PROJECT_NAME}] configuring ${PROJECT_NAME} done!")
-
-unset(INTEGRATION_TESTS CACHE)
+unset(TESTS CACHE)
+unset(ROLLY_COMPAT CACHE)

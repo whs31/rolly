@@ -1,0 +1,34 @@
+/**
+ * @defgroup core Core
+ * @brief The core classes, functions and definitions of the library.
+ * @todo Add detailed description.
+ *
+ * @defgroup macros Definitions and macros
+ * @ingroup core
+ * @brief Library definitions and macros.
+ * @todo Add detailed description.
+ *
+ * @defgroup helpers Helpers
+ * @ingroup core
+ * @todo Add detailed description.
+ *
+ * @defgroup meta Library metadata
+ * @ingroup core
+ * @brief Library meta information.
+ * @details Contains library meta information.
+ * Represented in both macros and constexpr classes.
+ *
+ * @defgroup platform Platform
+ * @ingroup core
+ * @brief Platform information
+ * @details Contains information about the operating system, architecture, language version and etc.
+ * @todo Add reference to global constant and suggest to use it.
+*/
+
+/**
+ * @dir include
+ * @brief Top-level include directory.
+ *
+ * @dir include/rolly
+ * @brief <b>Rolly</b> include directory.
+ */

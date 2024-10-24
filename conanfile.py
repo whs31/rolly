@@ -5,37 +5,38 @@ from conan.tools.build import check_min_cppstd
 from conan.tools.files import rmdir
 
 
-class LeafRecipe(ConanFile):
-    name = "leaf"
-    version = "1.1.4"
-    description = "Coreutils library for C++ (poor man's Google::Abseil)"
+class RollyRecipe(ConanFile):
+    name = "rolly"
+    version = "2.0.1"
+    description = "Radar open-source library"
     author = "whs31 <whs31@github.io>"
-    topics = ("logging", "coreutils", "utility")
+    topics = ("coreutils", "utility")
 
     settings = "os", "arch", "compiler", "build_type"
     options = {
         "shared": [True, False],
         "test": [True, False],
+        "compat": [True, False]
     }
     default_options = {
         "shared": True,
-        "test": False
+        "test": False,
+        "compat": False
     }
 
     exports_sources = "*"
 
     @property
     def _min_cppstd(self):
-        return "20" 
+        return "20" if self.options.compat else "17"
 
     def requirements(self):
-        self.requires("fmt/[^10.1.0]", transitive_headers=True, transitive_libs=True)
-        self.requires("spdlog/1.13.0", transitive_headers=True, transitive_libs=True)
-        self.requires("tl-expected/20190710", transitive_headers=True, transitive_libs=True)
-        self.requires("magic_enum/[^0.9.0]", transitive_libs=True)
+        self.requires("fmt/[>=10.0.0]", transitive_headers=True, transitive_libs=True)
+        if self.settings.os != "Windows":
+            self.requires("elfutils/0.190", transitive_headers=True, transitive_libs=True) # todo: really needed transitive here?
         if self.options.test:
             self.requires("gtest/1.14.0")
-            self.requires("tomlplusplus/[^3.0.0]", transitive_headers = True, transitive_libs=True)
+            self.requires("tomlplusplus/[^3.0.0]", transitive_headers=True, transitive_libs=True)
 
     def layout(self):
         cmake_layout(self)
@@ -45,7 +46,6 @@ class LeafRecipe(ConanFile):
             check_min_cppstd(self, self._min_cppstd)
 
     def configure(self):
-        self.options["spdlog/*"].shared = True
         self.options["fmt/*"].shared = True
 
     def generate(self):
@@ -53,7 +53,8 @@ class LeafRecipe(ConanFile):
         deps.generate()
         tc = CMakeToolchain(self)
         tc.cache_variables["BUILD_SHARED_LIBS"] = self.options.shared
-        tc.cache_variables["INTEGRATION_TESTS"] = self.options.test
+        tc.cache_variables["TESTS"] = self.options.test
+        tc.cache_variables["ROLLY_COMPAT"] = self.options.compat
         tc.generate()
 
     def build(self):
@@ -70,7 +71,15 @@ class LeafRecipe(ConanFile):
         rmdir(self, os.path.join(self.package_folder, "share"))
 
     def package_info(self):
-        self.cpp_info.set_property("cmake_file_name", "leaf")
-        self.cpp_info.set_property("cmake_target_name", "leaf::leaf")
-        self.cpp_info.libs = ["leaf"]
-        self.cpp_info.requires = ["fmt::fmt", "magic_enum::magic_enum", "spdlog::spdlog", "tl-expected::tl-expected"]
+        self.cpp_info.set_property("cmake_file_name", "rolly")
+        self.cpp_info.set_property("cmake_target_name", "rolly::rolly")
+        self.cpp_info.libs = ["rolly"]
+        self.cpp_info.requires = ["fmt::fmt"]
+        if self.options.test:
+            self.cpp_info.requires.append("gtest::gtest")
+            self.cpp_info.requires.append("tomlplusplus::tomlplusplus")
+        if self.settings.os == "Windows":
+            self.cpp_info.system_libs.extend(["psapi", "dbghelp"])
+        if self.settings.os in ["Linux", "FreeBSD", "Android"]:
+            self.cpp_info.system_libs.extend(["dl", "m"])
+            self.cpp_info.requires.append("elfutils::elfutils")

@@ -1,0 +1,28 @@
+@INCLUDE                = Doxyfile
+LINKS_NAVBAR1 = [
+    ("Pages", 'pages', []),
+    ("Modules", 'modules', []),
+    ("Namespaces", 'namespaces', [])
+]
+LINKS_NAVBAR2 = [
+    ("Classes", 'annotated', []),
+    ("Files", 'files', [])
+]
+GENERATE_HTML           = NO
+GENERATE_XML            = YES
+XML_PROGRAMLISTING      = NO
+XML_NS_MEMB_FILE_SCOPE  = YES
+CREATE_SUBDIRS          = NO
+HTML_HEADER             =
+HTML_EXTRA_STYLESHEET   =
+HTML_EXTRA_FILES        =
+HTML_OUTPUT             =
+STYLESHEETS = [
+   'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600',
+   '../css/m-dark+documentation.compiled.css'
+]
+THEME_COLOR = '#22272e'
+FAVICON = 'favicon-dark.png'
+SHOW_INCLUDE_FILES = YES
+VERSION_LABELS = YES
+SHOW_UNDOCUMENTED = YES

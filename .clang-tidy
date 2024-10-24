@@ -1,0 +1,46 @@
+# Clang-Tidy configuration for the `floppy` library.
+---
+Checks:
+  -*,
+  boost-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  portability-*,
+  bugprone-*,
+  -bugprone-easily-swappable-parameters,
+  google-readability-casting,
+  google-runtime-int,
+  google-explicit-constructor,
+  llvm-namespace-comment,
+  misc-*,
+  readability-*,
+  fuchsia-trailing-return,
+  -readability-identifier-length,
+  -readability-implicit-bool-conversion,
+  -readability-braces-around-statements,
+  -readability-avoid-magic-numbers,
+  -readability-magic-numbers,
+  -cppcoreguidelines-explicit-virtual-functions,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -misc-non-private-member-variables-in-classes,
+  -misc-include-cleaner,
+  -modernize-use-trailing-return-type
+
+# Turn all the warnings from the checks above into errors.
+WarningsAsErrors: "*"
+
+CheckOptions:
+  - { key: readability-identifier-naming.NamespaceCase,          value: lower_case }
+  - { key: readability-identifier-naming.ClassCase,              value: lower_case }
+  - { key: readability-identifier-naming.StructCase,             value: lower_case }
+  - { key: readability-identifier-naming.TemplateParameterCase,  value: CamelCase  }
+  - { key: readability-identifier-naming.FunctionCase,           value: lower_case  }
+  - { key: readability-identifier-naming.VariableCase,           value: lower_case }
+  - { key: readability-identifier-naming.PrivateMemberSuffix,    value: _          }
+  - { key: readability-identifier-naming.ProtectedMemberSuffix,  value: _          }
+  - { key: readability-identifier-naming.MacroDefinitionCase,    value: aNy_CasE }
+  - { key: readability-identifier-naming.EnumConstantCase,         value: lower_case }
+  - { key: readability-identifier-naming.ConstexprVariableCase,    value: lower_case }
+  - { key: readability-identifier-naming.GlobalConstantCase,       value: lower_case }
+  - { key: readability-identifier-naming.StaticConstantCase,       value: lower_case }
