@@ -104,22 +104,22 @@ namespace rolly
       /**
        * @brief Returns the file name.
        */
-      [[nodiscard]] ___constexpr___ std::string_view file_name() const noexcept { return this->file_; }
+      [[nodiscard]] std::string_view file_name() const noexcept { return this->file_; }
 
       /**
        * @brief Returns a mutable reference to the file name.
        */
-      [[nodiscard]] [[maybe_unused]] ___constexpr___ std::string& file_name_mut() noexcept { return this->file_; }
+      [[nodiscard]] [[maybe_unused]] std::string& file_name_mut() noexcept { return this->file_; }
 
       /**
        * @brief Returns the function name. NULL if unknown or not available on compiler
        */
-      [[nodiscard]] ___constexpr___ std::string_view function_name() const noexcept { return this->function_; }
+      [[nodiscard]] std::string_view function_name() const noexcept { return this->function_; }
 
       /**
        * @brief Returns a mutable reference to the function name.
        */
-      [[nodiscard]] [[maybe_unused]] ___constexpr___ std::string& function_name_mut() noexcept { return this->function_; }
+      [[nodiscard]] [[maybe_unused]] std::string& function_name_mut() noexcept { return this->function_; }
 
       /**
        * @brief Returns the line number. 0 if unknown or not available on compiler.
