@@ -13,12 +13,36 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
 {
   inline namespace types
   {
+    /**
+     * @brief 128-bit globally unique identifier (GUID).
+     * @details Based on <tt>std::array</tt> container.
+     * @sa https://en.wikipedia.org/wiki/Globally_unique_identifier
+     */
     class guid
     {
      public:
+      /**
+       * @brief Creates an empty <tt>guid</tt>.
+       * @see empty
+       */
       guid();
+
+      /**
+       * @brief Creates a <tt>guid</tt> from an array of bytes.
+       * @param bytes Array of bytes.
+       */
       explicit guid(std::array<u8, 16> const& bytes);
+
+      /**
+       * @brief Creates a <tt>guid</tt> from an array of <tt>std::byte</tt>.
+       * @param bytes Array of <tt>std::byte</tt>.
+       */
       explicit guid(std::array<std::byte, 16> const& bytes);
+
+      /**
+       * @brief Creates a <tt>guid</tt> from a string.
+       * @param str String representation of the <tt>guid</tt>.
+       */
       explicit guid(std::string_view str);
 
       guid(guid const&) = default;
@@ -26,24 +50,89 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
       guid& operator=(guid const&) = default;
       guid& operator=(guid&&) = default;
 
+      /**
+       * @brief Checks whether the <tt>guid</tt> is valid or not.
+       * @return <tt>true</tt> if the <tt>guid</tt> is valid, <tt>false</tt> otherwise.
+       */
       [[nodiscard]] bool valid() const noexcept;
 
+      /**
+       * @brief Converts the <tt>guid</tt> to a string.
+       * @details String representation is in the form of <tt>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</tt>.
+       * All hex digits are lowercase.
+       * Bytes are separated by hyphens.
+       * @return String representation of the <tt>guid</tt>.
+       */
       [[nodiscard]] std::string to_string() const;
+
+      /**
+       * @brief Gets the bytes of the <tt>guid</tt>.
+       * @return Constant reference to the array of bytes.
+       */
       [[nodiscard]] std::array<u8, 16> const& bytes() const noexcept;
+
+      /**
+       * @brief Gets the mutable bytes of the <tt>guid</tt>.
+       * @return Mutable reference to the array of bytes.
+       */
       [[nodiscard]] std::array<u8, 16>& bytes_mut() noexcept;
+
+      /**
+       * @brief Hashes the <tt>guid</tt> to an unsigned 64-bit integer.
+       * @return Hash value.
+       */
       [[nodiscard]] u64 to_u64() const noexcept;
 
+      /**
+       * @brief Checks whether the <tt>guid</tt> is valid or not.
+       * @return <tt>true</tt> if the <tt>guid</tt> is valid, <tt>false</tt> otherwise.
+       * @see valid
+       */
       [[nodiscard]] operator bool() const noexcept { // NOLINT(*-explicit-constructor)
         return this->valid();
       }
 
+      /**
+       * @brief Checks whether two <tt>guid</tt>s are equal or not.
+       * @param other Other <tt>guid</tt>.
+       * @return <tt>true</tt> if the <tt>guid</tt>s are equal, <tt>false</tt> otherwise.
+       */
       [[nodiscard]] bool operator==(guid const& other) const noexcept;
+
+      /**
+       * @brief Checks whether two <tt>guid</tt>s are not equal.
+       * @param other Other <tt>guid</tt>.
+       * @return <tt>true</tt> if the <tt>guid</tt>s are not equal, <tt>false</tt> otherwise.
+       */
       [[nodiscard]] bool operator!=(guid const& other) const noexcept;
 
+      /**
+       * @brief Array-like less comparator for <tt>guid</tt>.
+       * @param lhs First guid.
+       * @param rhs Second guid.
+       * @return <tt>true</tt> if lhs is less than rhs, <tt>false</tt> otherwise.
+       */
       friend bool operator<(guid const& lhs, guid const& rhs) noexcept;
+
+      /**
+       * @brief Prints the <tt>guid</tt> to an output stream.
+       * @param os Output stream
+       * @param guid <tt>guid</tt>
+       * @return Output stream
+       * @see to_string
+       */
       friend std::ostream& operator<<(std::ostream& os, guid const& guid);
 
+      /**
+       * @brief Creates an empty <tt>guid</tt>.
+       * @return New empty <tt>guid</tt>.
+       */
       [[nodiscard]] static guid empty() noexcept;
+
+      /**
+       * @brief Creates a random <tt>guid</tt>.
+       * @return New random <tt>guid</tt>.
+       */
       [[nodiscard]] static guid random() noexcept;
 
      private:
@@ -96,6 +185,7 @@ namespace std
    * @tparam T Underlying type of the <tt>guid</tt>.
    * @param b <tt>guid</tt> to hash.
    * @return Hash value.
+   * @relates rolly::types::guid
    * @sa http://en.cppreference.com/w/cpp/utility/hash
    */
   template <>
@@ -109,6 +199,7 @@ namespace std
 
 /**
  * @brief Specialization of std::formatter for the <tt>guid</tt> class.
+ * @relates rolly::types::guid
  */
 template <>
 struct [[maybe_unused]] fmt::formatter<rolly::guid> : fmt::formatter<std::string_view>
