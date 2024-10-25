@@ -32,6 +32,8 @@ class RollyRecipe(ConanFile):
 
     def requirements(self):
         self.requires("fmt/[>=10.0.0]", transitive_headers=True, transitive_libs=True)
+        if self.settings.os != "Windows":
+            self.requires("libuuid/1.0.3")
         if self.options.test:
             self.requires("gtest/1.14.0")
             self.requires("tomlplusplus/[^3.0.0]", transitive_headers=True, transitive_libs=True)
@@ -73,6 +75,8 @@ class RollyRecipe(ConanFile):
         self.cpp_info.set_property("cmake_target_name", "rolly::rolly")
         self.cpp_info.libs = ["rolly"]
         self.cpp_info.requires = ["fmt::fmt"]
+        if self.settings.os != "Windows":
+            self.cpp_info.requires.append("libuuid::libuuid")
         if self.options.test:
             self.cpp_info.requires.append("gtest::gtest")
             self.cpp_info.requires.append("tomlplusplus::tomlplusplus")

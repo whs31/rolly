@@ -5,7 +5,8 @@ find_package(tomlplusplus REQUIRED)
 
 file(GLOB TEST_SOURCES "*.cc")
 
-add_executable(${PROJECT_NAME}-test)
+add_executable(${PROJECT_NAME}-test
+  test_guid.cc)
 set_target_properties(${PROJECT_NAME}-test PROPERTIES
   CXX_STANDARD ${ROLLY_CXX_STANDARD}
   CXX_STANDARD_REQUIRED ON
