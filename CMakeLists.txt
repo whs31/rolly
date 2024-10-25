@@ -3,14 +3,13 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.0.1
+  VERSION 2.0.2
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
 )
 set(PROJECT_NAMESPACE ${PROJECT_NAME}::)
-
-include(CMakePrintHelpers)
+set(PROJECT_FULL_NAME ${PROJECT_NAMESPACE}${PROJECT_NAME})
 
 option(TESTS "Enable integration tests" OFF)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
@@ -30,26 +29,22 @@ else()
   set(ROLLY_CXX_STANDARD 20)
 endif()
 
-message(STATUS "[${PROJECT_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
+message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 
 # -- dependencies --
 find_package(fmt REQUIRED)
+if(NOT WIN32)
+  find_package(libuuid REQUIRED)
+endif()
 
 add_library(${PROJECT_NAME})
-add_library(${PROJECT_NAMESPACE}${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+add_library(${PROJECT_FULL_NAME} ALIAS ${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
   CXX_STANDARD ${ROLLY_CXX_STANDARD}
   CXX_STANDARD_REQUIRED ON
   CXX_EXTENSIONS OFF
   POSITION_INDEPENDENT_CODE ON
-)
-
-cmake_print_properties(TARGETS ${PROJECT_NAME} PROPERTIES
-  CXX_STANDARD
-  CXX_STANDARD_REQUIRED
-  CXX_EXTENSIONS
-  POSITION_INDEPENDENT_CODE
 )
 
 target_sources(${PROJECT_NAME}
@@ -59,21 +54,25 @@ target_sources(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/src/rtti.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
 )
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
     fmt::fmt
+  PRIVATE
+    $<$<NOT:$<PLATFORM_ID:Windows>>:libuuid::libuuid>
 )
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src)
 
 if(BUILD_SHARED_LIBS)
-  message(STATUS "[${PROJECT_NAME}] adding shared export symbols: ROLLY_LIBRARY")
+  message(STATUS "[${PROJECT_FULL_NAME}] adding shared export symbols: ROLLY_LIBRARY")
   target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_LIBRARY=1)
 else()
-  message(STATUS "[${PROJECT_NAME}] adding static export symbols: ROLLY_STATIC_LIBRARY")
+  message(STATUS "[${PROJECT_FULL_NAME}] adding static export symbols: ROLLY_STATIC_LIBRARY")
   target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_STATIC_LIBRARY=1)
 endif()
 
@@ -86,7 +85,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
-  message(STATUS "[${PROJECT_NAME}] adding compiler flags: -Wall -Wextra -Wpedantic -Werror")
+  message(STATUS "[${PROJECT_FULL_NAME}] adding compiler flags: -Wall -Wextra -Wpedantic -Werror")
   target_compile_options(${PROJECT_NAME} PRIVATE
     $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX>
     $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wpedantic>
@@ -101,12 +100,12 @@ if(TESTS)
 endif()
 
 # -- installation --
-message(STATUS "[${PROJECT_NAME}] compile integration tests status: ${INTEGRATION_TESTS}")
-message(STATUS "[${PROJECT_NAME}] installing ${PROJECT_NAME} in namespace ${PROJECT_NAMESPACE}")
+message(STATUS "[${PROJECT_FULL_NAME}] compile integration tests status: ${INTEGRATION_TESTS}")
+message(STATUS "[${PROJECT_FULL_NAME}] installing ${PROJECT_NAME} in namespace ${PROJECT_NAMESPACE}")
 include(GNUInstallDirs)
 include(GenerateExportHeader)
 include(CMakePackageConfigHelpers)
-message(STATUS "[${PROJECT_NAME}] installing in prefix: ${CMAKE_INSTALL_PREFIX}")
+message(STATUS "[${PROJECT_FULL_NAME}] installing in prefix: ${CMAKE_INSTALL_PREFIX}")
 
 set(PROJECT_CONFIG_FILE_IN "${CMAKE_CURRENT_SOURCE_DIR}/cmake/${PROJECT_NAME}-config.cmake.in")
 set(PROJECT_CONFIG_FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake")
@@ -133,6 +132,6 @@ configure_package_config_file(${PROJECT_CONFIG_FILE_IN} ${PROJECT_CONFIG_FILE} I
 write_basic_package_version_file(${CONFIG_VERSION_FILE} COMPATIBILITY AnyNewerVersion)
 install(FILES ${PROJECT_CONFIG_FILE} ${CONFIG_VERSION_FILE} DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR})
 
-message(STATUS "[${PROJECT_NAME}] configuring ${PROJECT_NAME} done!")
+message(STATUS "[${PROJECT_FULL_NAME}] configuring ${PROJECT_NAME} done!")
 unset(TESTS CACHE)
 unset(ROLLY_COMPAT CACHE)

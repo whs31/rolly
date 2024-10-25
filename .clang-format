@@ -171,10 +171,6 @@ IntegerLiteralSeparator:
   HexMinDigits: 0
 JavaScriptQuotes: Leave
 JavaScriptWrapImports: true
-KeepEmptyLines:
-  AtEndOfFile: false
-  AtStartOfBlock: true
-  AtStartOfFile: true
 LambdaBodyIndentation: Signature
 Language: Cpp
 LineEnding: DeriveLF
@@ -248,12 +244,6 @@ SpacesInLineCommentPrefix:
   Minimum: 1
   Maximum: -1
 SpacesInParens: Never
-SpacesInParensOptions:
-  ExceptDoubleParentheses: false
-  InConditionalStatements: false
-  InCStyleCasts: false
-  InEmptyParentheses: false
-  Other: false
 SpacesInSquareBrackets: false
 Standard: Latest
 StatementAttributeLikeMacros:
