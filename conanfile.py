@@ -35,7 +35,7 @@ class RollyRecipe(ConanFile):
         if self.settings.os != "Windows":
             self.requires("libuuid/1.0.3")
         if self.options.test:
-            self.requires("gtest/1.14.0")
+            self.requires("catch2/[=3.7.1]")
             self.requires("tomlplusplus/[^3.0.0]", transitive_headers=True, transitive_libs=True)
 
     def layout(self):
@@ -53,7 +53,7 @@ class RollyRecipe(ConanFile):
         deps.generate()
         tc = CMakeToolchain(self)
         tc.cache_variables["BUILD_SHARED_LIBS"] = self.options.shared
-        tc.cache_variables["TESTS"] = self.options.test
+        tc.cache_variables["ROLLY_TESTS"] = self.options.test
         tc.cache_variables["ROLLY_COMPAT"] = self.options.compat
         tc.generate()
 
@@ -78,5 +78,5 @@ class RollyRecipe(ConanFile):
         if self.settings.os != "Windows":
             self.cpp_info.requires.append("libuuid::libuuid")
         if self.options.test:
-            self.cpp_info.requires.append("gtest::gtest")
+            self.cpp_info.requires.append("catch2::catch2")
             self.cpp_info.requires.append("tomlplusplus::tomlplusplus")

@@ -1,102 +1,61 @@
 #include <rolly/global/version.h>
 
 #include <array>
-#include <gtest/gtest.h>
+#include <catch2/catch_all.hpp>
 
 using namespace rolly;
+using namespace std::string_view_literals;
 
-TEST(Version, ConstructorDefault)
-{
-  auto constexpr v = version();
+TEST_CASE("Version", "[version]") {
+  SECTION("DefaultConstructor") {
+    auto constexpr v = version();
 
-  ASSERT_EQ(v.major, 0);
-  ASSERT_EQ(v.minor, 1);
-  ASSERT_EQ(v.patch, 0);
-  ASSERT_EQ(v.prerelease_type, prerelease::none);
-  ASSERT_FALSE(v.prerelease_number.has_value());
-}
+    REQUIRE(v.major == 0);
+    REQUIRE(v.minor == 1);
+    REQUIRE(v.patch == 0);
+    REQUIRE(v.prerelease_type == prerelease::none);
+    REQUIRE_FALSE(v.prerelease_number.has_value());
+  }
 
-TEST(Version, Constructor)
-{
-  {
+  SECTION("Constructor") {
     auto constexpr v = version(1, 2, 3, prerelease::rc);
 
-    ASSERT_EQ(v.major, 1);
-    ASSERT_EQ(v.minor, 2);
-    ASSERT_EQ(v.patch, 3);
-    ASSERT_EQ(v.prerelease_type, prerelease::rc);
-    ASSERT_FALSE(v.prerelease_number.has_value());
+    REQUIRE(v.major == 1);
+    REQUIRE(v.minor == 2);
+    REQUIRE(v.patch == 3);
+    REQUIRE(v.prerelease_type == prerelease::rc);
+    REQUIRE_FALSE(v.prerelease_number.has_value());
   }
-  {
+
+  SECTION("ConstructorWithPrerelease") {
     auto constexpr v = version(1, 2, 3, prerelease::rc, 4);
 
-    ASSERT_EQ(v.major, 1);
-    ASSERT_EQ(v.minor, 2);
-    ASSERT_EQ(v.patch, 3);
-    ASSERT_EQ(v.prerelease_type, prerelease::rc);
-    ASSERT_TRUE(v.prerelease_number.has_value());
-    ASSERT_EQ(*v.prerelease_number, 4);
+    REQUIRE(v.major == 1);
+    REQUIRE(v.minor == 2);
+    REQUIRE(v.patch == 3);
+    REQUIRE(v.prerelease_type == prerelease::rc);
+    REQUIRE(v.prerelease_number.has_value());
+    REQUIRE(*v.prerelease_number == 4);
   }
-  {
-    auto constexpr v = version(1, 2, 3, prerelease::none);
 
-    ASSERT_EQ(v.major, 1);
-    ASSERT_EQ(v.minor, 2);
-    ASSERT_EQ(v.patch, 3);
-    ASSERT_EQ(v.prerelease_type, prerelease::none);
-    ASSERT_FALSE(v.prerelease_number.has_value());
+  SECTION("Parse") {
+    auto constexpr v = version("1.2.3-alpha.4");
+
+    REQUIRE(v.major == 1);
+    REQUIRE(v.minor == 2);
+    REQUIRE(v.patch == 3);
+    REQUIRE(v.prerelease_type == prerelease::alpha);
+    REQUIRE(v.prerelease_number.has_value());
+    REQUIRE(*v.prerelease_number == 4);
+    REQUIRE(v.to_string() == "1.2.3-alpha.4");
   }
-  {
-    auto constexpr v = version(1, 2, 3, prerelease::none, 0);
 
-    ASSERT_EQ(v.major, 1);
-    ASSERT_EQ(v.minor, 2);
-    ASSERT_EQ(v.patch, 3);
-    ASSERT_EQ(v.prerelease_type, prerelease::none);
-    ASSERT_FALSE(v.prerelease_number.has_value());
-  }
-  {
-    auto constexpr v = version(1, 2, 3, prerelease::none, 4);
-
-    ASSERT_EQ(v.major, 1);
-    ASSERT_EQ(v.minor, 2);
-    ASSERT_EQ(v.patch, 3);
-    ASSERT_EQ(v.prerelease_type, prerelease::none);
-    ASSERT_FALSE(v.prerelease_number.has_value());
+  SECTION("ParseFail") {
+    REQUIRE_THROWS(version("1.2.3-asd"));
   }
 }
 
-TEST(Version, Parse)
-{
-  auto constexpr v = version("1.2.3-alpha.4");
-
-  ASSERT_EQ(v.major, 1);
-  ASSERT_EQ(v.minor, 2);
-  ASSERT_EQ(v.patch, 3);
-  ASSERT_EQ(v.prerelease_type, prerelease::alpha);
-  ASSERT_TRUE(v.prerelease_number.has_value());
-  ASSERT_EQ(*v.prerelease_number, 4);
-  ASSERT_EQ(v.to_string(), "1.2.3-alpha.4");
-
-  auto constexpr v2 = version("1.2.3-alpha.0");
-  ASSERT_EQ(v2.major, 1);
-  ASSERT_EQ(v2.minor, 2);
-  ASSERT_EQ(v2.patch, 3);
-  ASSERT_EQ(v2.prerelease_type, prerelease::alpha);
-  ASSERT_TRUE(v2.prerelease_number.has_value());
-  ASSERT_EQ(*v2.prerelease_number, 0);
-  ASSERT_EQ(v2.to_string(), "1.2.3-alpha.0");
-}
-
-TEST(Version, ParseFail)
-{
-  ASSERT_ANY_THROW(auto v = version("1.2.3-asd"));
-}
-
-TEST(VersionRange, Satisfies)
-{
-  using namespace std::string_view_literals;
-
+TEST_CASE("VersionRange", "[version.range]") {
   constexpr auto r1 = ">1.2.3-alpha.3"sv;
   constexpr auto r2 = ">=1.2.3 < 2.0.0"sv;
   constexpr auto r3 = ">=1.2.3-alpha.7 <2.0.0"sv;
@@ -113,33 +72,37 @@ TEST(VersionRange, Satisfies)
   constexpr version v5{"2.0.0-alpha.5"};
   constexpr version v6{"2.0.0-alpha.0"};
 
-  ASSERT_TRUE(satisfies(v1, r1));
-  ASSERT_FALSE(satisfies(v2, r1));
-  ASSERT_TRUE(satisfies(v3, r1));
-  ASSERT_TRUE(satisfies(v4, r1));
-  ASSERT_FALSE(satisfies(v1, r2));
-  ASSERT_TRUE(satisfies(v1, r3));
-  ASSERT_TRUE(satisfies(v5, r4));
-  ASSERT_FALSE(satisfies(v1, r4));
-  ASSERT_TRUE(satisfies(v5, r5));
-  ASSERT_FALSE(satisfies(v5, r6));
-  ASSERT_TRUE(satisfies(v5, r7));
-  ASSERT_TRUE(satisfies(v6, r7));
-  ASSERT_FALSE(satisfies(v5, r8));
-  ASSERT_FALSE(satisfies(v6, r8));
+  SECTION("Satisfies") {
+    REQUIRE(satisfies(v1, r1));
+    REQUIRE(not satisfies(v2, r1));
+    REQUIRE(satisfies(v3, r1));
+    REQUIRE(satisfies(v4, r1));
+    REQUIRE(not satisfies(v1, r2));
+    REQUIRE(satisfies(v1, r3));
+    REQUIRE(satisfies(v5, r4));
+    REQUIRE(not satisfies(v1, r4));
+    REQUIRE(satisfies(v5, r5));
+    REQUIRE(not satisfies(v5, r6));
+    REQUIRE(satisfies(v5, r7));
+    REQUIRE(satisfies(v6, r7));
+    REQUIRE(not satisfies(v5, r8));
+    REQUIRE(not satisfies(v6, r8));
+  }
 
-  ASSERT_TRUE(satisfies(v1, r1, version_range_option::include_prerelease));
-  ASSERT_TRUE(satisfies(v2, r1, version_range_option::include_prerelease));
-  ASSERT_TRUE(satisfies(v3, r1, version_range_option::include_prerelease));
-  ASSERT_TRUE(satisfies(v4, r1, version_range_option::include_prerelease));
-  ASSERT_FALSE(satisfies(v1, r2, version_range_option::include_prerelease));
-  ASSERT_TRUE(satisfies(v1, r3, version_range_option::include_prerelease));
-  ASSERT_TRUE(satisfies(v5, r4, version_range_option::include_prerelease));
-  ASSERT_FALSE(satisfies(v1, r4, version_range_option::include_prerelease));
-  ASSERT_TRUE(satisfies(v5, r5, version_range_option::include_prerelease));
-  ASSERT_FALSE(satisfies(v5, r6, version_range_option::include_prerelease));
-  ASSERT_TRUE(satisfies(v5, r7, version_range_option::include_prerelease));
-  ASSERT_TRUE(satisfies(v6, r7, version_range_option::include_prerelease));
-  ASSERT_FALSE(satisfies(v5, r8, version_range_option::include_prerelease));
-  ASSERT_FALSE(satisfies(v6, r8, version_range_option::include_prerelease));
+  SECTION("Satisfies with prerelease") {
+    REQUIRE(satisfies(v1, r1, version_range_option::include_prerelease));
+    REQUIRE(satisfies(v2, r1, version_range_option::include_prerelease));
+    REQUIRE(satisfies(v3, r1, version_range_option::include_prerelease));
+    REQUIRE(satisfies(v4, r1, version_range_option::include_prerelease));
+    REQUIRE(not satisfies(v1, r2, version_range_option::include_prerelease));
+    REQUIRE(satisfies(v1, r3, version_range_option::include_prerelease));
+    REQUIRE(satisfies(v5, r4, version_range_option::include_prerelease));
+    REQUIRE(not satisfies(v1, r4, version_range_option::include_prerelease));
+    REQUIRE(satisfies(v5, r5, version_range_option::include_prerelease));
+    REQUIRE(not satisfies(v5, r6, version_range_option::include_prerelease));
+    REQUIRE(satisfies(v5, r7, version_range_option::include_prerelease));
+    REQUIRE(satisfies(v6, r7, version_range_option::include_prerelease));
+    REQUIRE(not satisfies(v5, r8, version_range_option::include_prerelease));
+    REQUIRE(not satisfies(v6, r8, version_range_option::include_prerelease));
+  }
 }

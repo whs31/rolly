@@ -23,10 +23,7 @@ build:alse:
 test:alse:
  stage: test
  allow_failure: true
- extends: .tests_extend
- script:
-   - conan build . -b "missing" -o "$CONAN_PACKAGE_NAME/*:test=True"
-   - ./build/Release/tests/$CONAN_PACKAGE_NAME-test --gtest_color=yes --gtest_output=xml --gtest_shuffle --gtest_repeat=1 --platform=linuxfb
+ extends: .tests_catch2_extend
 
 publish:alse:
   stage: publish
