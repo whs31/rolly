@@ -43,3 +43,5 @@ settings/*.cfg
 
 # Misc
 __pycache__
+.venv
+m.css
