@@ -1,4 +1,4 @@
-find_package(GTest REQUIRED)
+find_package(Catch2 REQUIRED)
 find_package(tomlplusplus REQUIRED)
 #find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Gui QUIET)
 #find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui QUIET)
@@ -16,11 +16,9 @@ target_sources(${PROJECT_NAME}-test PRIVATE ${TEST_SOURCES})
 
 target_link_libraries(${PROJECT_NAME}-test
   PRIVATE
-  GTest::Main
-  ${PROJECT_NAME}
-  tomlplusplus::tomlplusplus
-#  Qt${QT_VERSION_MAJOR}::Core
-#  Qt${QT_VERSION_MAJOR}::Gui
+    Catch2::Catch2WithMain
+    ${PROJECT_NAME}
+    tomlplusplus::tomlplusplus
 )
 
 if(WIN32)

@@ -11,7 +11,7 @@ project(rolly
 set(PROJECT_NAMESPACE ${PROJECT_NAME}::)
 set(PROJECT_FULL_NAME ${PROJECT_NAMESPACE}${PROJECT_NAME})
 
-option(TESTS "Enable integration tests" OFF)
+option(ROLLY_TESTS "Enable integration tests" OFF)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 option(ROLLY_COMPAT "Enable C++17 compatibility mode" OFF)
 
@@ -93,14 +93,14 @@ if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   )
 endif()
 
-if(TESTS)
+if(ROLLY_TESTS)
   enable_testing()
   add_subdirectory(tests)
   add_subdirectory(bin)
 endif()
 
 # -- installation --
-message(STATUS "[${PROJECT_FULL_NAME}] compile integration tests status: ${INTEGRATION_TESTS}")
+message(STATUS "[${PROJECT_FULL_NAME}] tests status: ${ROLLY_TESTS}")
 message(STATUS "[${PROJECT_FULL_NAME}] installing ${PROJECT_NAME} in namespace ${PROJECT_NAMESPACE}")
 include(GNUInstallDirs)
 include(GenerateExportHeader)
@@ -133,5 +133,5 @@ write_basic_package_version_file(${CONFIG_VERSION_FILE} COMPATIBILITY AnyNewerVe
 install(FILES ${PROJECT_CONFIG_FILE} ${CONFIG_VERSION_FILE} DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR})
 
 message(STATUS "[${PROJECT_FULL_NAME}] configuring ${PROJECT_NAME} done!")
-unset(TESTS CACHE)
+unset(ROLLY_TESTS CACHE)
 unset(ROLLY_COMPAT CACHE)

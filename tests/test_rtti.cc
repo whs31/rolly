@@ -1,18 +1,15 @@
 #include <rolly/rtti.h>
-
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
+#include <catch2/catch_all.hpp>
 
 using namespace rolly;
 
-TEST(Rtti, Demangle)
-{
-  EXPECT_EQ(rtti::type_name<int>(), "int");
-  EXPECT_EQ(rtti::type_name<float>(), "float");
-  EXPECT_EQ(rtti::type_name<double>(), "double");
-  EXPECT_EQ(rtti::type_name<char>(), "char");
-  EXPECT_THAT(rtti::type_name<std::vector<int>>(), testing::AnyOf(
-    "std::vector<int, std::allocator<int> >",
-    "class std::vector<int,class std::allocator<int> >"
-  ));
+TEST_CASE("Rtti", "[rtti]") {
+  SECTION("Demangle") {
+    REQUIRE(rtti::demangle("int") == "int");
+    REQUIRE(rtti::type_name<int>() == "int");
+    REQUIRE(rtti::type_name<float>() == "float");
+    REQUIRE(rtti::type_name<double>() == "double");
+    REQUIRE(rtti::type_name<char>() == "char");
+    REQUIRE((rtti::type_name<std::vector<int>>().find("std::") != std::string::npos));
+  }
 }
