@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.0.1
+  VERSION 2.0.2
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -34,8 +34,15 @@ message(STATUS "[${PROJECT_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 
 # -- dependencies --
 find_package(fmt REQUIRED)
+if(NOT WIN32)
+  find_package(libuuid REQUIRED)
+endif()
 
-add_library(${PROJECT_NAME})
+add_library(${PROJECT_NAME}
+  include/rolly/types/guid.h
+  src/types/guid.cc
+  src/oslayer/android/guid.h
+  src/oslayer/android/guid.cc)
 add_library(${PROJECT_NAMESPACE}${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
@@ -59,13 +66,17 @@ target_sources(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/src/rtti.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
 )
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
     fmt::fmt
+  PRIVATE
+    $<$<NOT:$<PLATFORM_ID:Windows>>:libuuid::libuuid>
 )
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src)
 
