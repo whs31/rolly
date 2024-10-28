@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.0.2
+  VERSION 2.0.3
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -14,6 +14,7 @@ set(PROJECT_FULL_NAME ${PROJECT_NAMESPACE}${PROJECT_NAME})
 option(ROLLY_TESTS "Enable integration tests" OFF)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 option(ROLLY_COMPAT "Enable C++17 compatibility mode" OFF)
+option(ROLLY_QT "Link with Qt" OFF)
 
 if("${CMAKE_GENERATOR}" MATCHES "^Visual Studio")
   set(CMAKE_GENERATOR_PLATFORM "x64" CACHE STRING "" FORCE)
@@ -33,6 +34,14 @@ message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 
 # -- dependencies --
 find_package(fmt REQUIRED)
+if(ROLLY_QT)
+  find_package(Qt5
+    COMPONENTS
+    Core
+    Quick
+    REQUIRED
+  )
+endif()
 if(NOT WIN32)
   find_package(libuuid REQUIRED)
 endif()
@@ -66,6 +75,14 @@ target_link_libraries(${PROJECT_NAME}
   PRIVATE
     $<$<NOT:$<PLATFORM_ID:Windows>>:libuuid::libuuid>
 )
+if(ROLLY_QT)
+  target_link_libraries(${PROJECT_NAME}
+    PUBLIC
+      Qt::Core
+      Qt::Quick
+      Qt::Qml
+  )
+endif()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src)
 
 if(BUILD_SHARED_LIBS)
