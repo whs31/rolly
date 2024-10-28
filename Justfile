@@ -2,6 +2,7 @@ alias t := test
 alias td := test-dev
 alias tdd := test-dev-no-rebuild
 alias doc := mcss-commit
+alias v := version
 
 [linux]
 default:
@@ -171,3 +172,9 @@ mcss-folder := "D:/dev/my/m.css/documentation"
 @tag VERSION:
   echo "Patching version..."
   python3 scripts/tag.py -v {{VERSION}}
+
+[group('misc')]
+[doc('Show versions')]
+@version:
+  echo "Current versions is:"
+  python3 scripts/tag.py --show

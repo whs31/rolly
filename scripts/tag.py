@@ -134,13 +134,47 @@ def tag_git(tag: str) -> None:
                    , check=True
                    , cwd=getroot("scripts"))
 
+def extract_semver(string: str) -> str:
+    return re.search(r"(\d+\.)?(\d+\.)?(\*|\d+)", string).group(0)
+
+def show_versions(root):
+    try:
+        with open(os.path.join(root, "CMakeLists.txt"), "r") as f:
+            lines = f.readlines()
+            for i, line in enumerate(lines):
+                if re.search(r"VERSION (\d+\.)?(\d+\.)?(\*|\d+)", line) and not line.startswith("cmake_"):
+                    print(colored(f"- cmakelists.txt:   {extract_semver(line)}", "green"))
+                    break
+
+        with open(os.path.join(root, "conanfile.py"), "r") as f:
+            lines = f.readlines()
+            for i, line in enumerate(lines):
+                if re.search(r"version\s*=\s*\"(.*)\"", line):
+                    print(colored(f"- conanfile.py:     {extract_semver(line)}", "green"))
+                    break
+
+        with open(os.path.join(root, "Doxyfile"), "r") as f:
+            lines = f.readlines()
+            for i, line in enumerate(lines):
+                if re.search(r"PROJECT_NUMBER\s*=\s*(\S*)", line):
+                    print(colored(f"- doxyfile:         {extract_semver(line)}", "green"))
+                    break
+
+    except FileNotFoundError as e:
+        print(colored(f'⚠️ failed to show versions due to: {e}', "red"))
+        sys.exit(1)
+
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-v", "--version", type=str, required=True, help="New project version")
+    parser.add_argument("-v", "--version", type=str, help="New project version")
     parser.add_argument("-g", "--git", action="store_true", help="Tag git repository")
+    parser.add_argument("-s", "--show", action="store_true", help="Show current versions")
     args = parser.parse_args()
     root = getroot("scripts")
+    if args.show:
+        show_versions(root)
+        sys.exit(0)
     patch_cmake(strip_version(args.version), root)
     patch_conanfile(args.version, root)
     patch_doxyfile(args.version, root)

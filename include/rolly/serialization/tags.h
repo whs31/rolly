@@ -23,5 +23,6 @@ namespace rolly::serialization
     struct msgpack {};
     struct toml {};
     struct yaml {};
+    struct generic {};
   } // namespace tag
 } // namespace rolly::serialization

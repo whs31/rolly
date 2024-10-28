@@ -176,7 +176,7 @@ namespace std
    * @sa http://en.cppreference.com/w/cpp/memory/swap
    * @relates rolly::types::guid
    */
-  [[maybe_unused]] void swap(rolly::guid& a, rolly::guid& b) noexcept {
+  [[maybe_unused]] inline void swap(rolly::guid& a, rolly::guid& b) noexcept {
     std::swap(a.bytes_mut(), b.bytes_mut());
   }
 
