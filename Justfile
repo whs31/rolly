@@ -166,4 +166,8 @@ mcss-folder := "D:/dev/my/m.css/documentation"
   just mcss-remove-stored
   git checkout main
 
-
+[group('misc')]
+[doc('Patch version')]
+@tag VERSION:
+  echo "Patching version..."
+  python3 scripts/tag.py -v {{VERSION}}
