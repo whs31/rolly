@@ -8,6 +8,10 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
 {
   inline namespace exceptions
   {
+    /**
+     * @brief Serialization error exception class.
+     * @see deserialization_error
+     */
     class serialization_error : public std::runtime_error
     {
      public:
@@ -22,6 +26,10 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
       {}
     };
 
+    /**
+     * @brief Deserialization error exception class.
+     * @see serialization_error
+     */
     class deserialization_error : public std::runtime_error
     {
      public:

@@ -36,7 +36,7 @@ namespace rolly
        * @param message Error message.
        */
       explicit compile_time_error(std::string_view message)
-        : message_(fmt::format("compile-time error: {}\n", message).c_str())
+        : message_(fmt::format("compile-time error: {}\n", message))
       {}
 
       /**
