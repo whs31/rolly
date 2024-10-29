@@ -13,6 +13,6 @@ namespace rolly::prelude {
   using namespace rolly::literals;
   using rolly::unreachable;
   using rolly::to_underlying;
-  using rolly::log;
+  using rolly::logger;
   using rolly::source_location;
 } // namespace rolly::prelude

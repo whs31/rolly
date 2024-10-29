@@ -2,19 +2,15 @@
 
 #include "global/definitions.h"
 
-#ifdef log
-# undef log
-#endif // log
-
 #ifdef ROLLY_SPDLOG
 # include <spdlog/spdlog.h>
 
 namespace rolly {
-  [[nodiscard]] inline spdlog::logger& log() {
+  [[nodiscard]] inline spdlog::logger& logger() {
     return *spdlog::default_logger();
   }
 
-  [[nodiscard]] inline spdlog::logger& log(std::string_view const name) {
+  [[nodiscard]] inline spdlog::logger& logger(std::string_view const name) {
     return *spdlog::get(name.data());
   }
 } // namespace rolly
