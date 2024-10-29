@@ -258,10 +258,11 @@ namespace rolly::contracts
    * @details Useful for marking a function as <i>unimplemented</i>.
    * @see invariant
    */
+  [[noreturn]]
   #ifndef ROLLY_DOC
   ___inline___
   #endif // ROLLY_DOC
-  [[noreturn]] void not_implemented(
+  void not_implemented(
     #ifndef ROLLY_DOC
     source_location location = source_location::current()
     #endif // ROLLY_DOC
@@ -373,6 +374,7 @@ namespace rolly::contracts
      * @see invariant
      */
     #ifndef ROLLY_DOC
+    [[noreturn]]
     ___inline___
     ___rolly_release_consteval___
     #endif // ROLLY_DOC
@@ -394,6 +396,7 @@ namespace rolly::contracts
      * @see precondition
      */
     #ifndef ROLLY_DOC
+    [[noreturn]]
     ___inline___
     ___rolly_release_consteval___
     #endif // ROLLY_DOC
@@ -416,6 +419,7 @@ namespace rolly::contracts
      * @see postcondition
      */
     #ifndef ROLLY_DOC
+    [[noreturn]]
     ___inline___
     ___rolly_release_consteval___
     #endif // ROLLY_DOC
@@ -437,11 +441,12 @@ namespace rolly::contracts
      * @note The expression is only evaluated in debug mode. In release mode this function is a no-op.
      * @see invariant
      */
+    [[noreturn]]
     #ifndef ROLLY_DOC
     ___inline___
     ___rolly_release_consteval___
     #endif // ROLLY_DOC
-    [[noreturn]] void not_implemented(
+    void not_implemented(
         #ifndef ROLLY_DOC
         ___rolly_release_unused___ source_location location = source_location::current()
         #endif // ROLLY_DOC
