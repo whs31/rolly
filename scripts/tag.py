@@ -137,32 +137,21 @@ def tag_git(tag: str) -> None:
 def extract_semver(string: str) -> str:
     return re.search(r"(\d+\.)?(\d+\.)?(\*|\d+)", string).group(0)
 
-def show_versions(root):
+def print_semver(root: str, filename: str, regex: str) -> str:
     try:
-        with open(os.path.join(root, "CMakeLists.txt"), "r") as f:
+        with open(os.path.join(root, filename), "r") as f:
             lines = f.readlines()
             for i, line in enumerate(lines):
-                if re.search(r"VERSION (\d+\.)?(\d+\.)?(\*|\d+)", line) and not line.startswith("cmake_"):
-                    print(colored(f"- cmakelists.txt:   {extract_semver(line)}", "green"))
+                if re.search(regex, line) and not line.startswith("cmake_"):
+                    print(colored(f"- {filename:<30}: {extract_semver(line)}", "green"))
                     break
+    except FileNotFoundError:
+        print(colored(f"- {filename:<30}: not found", "yellow"))
 
-        with open(os.path.join(root, "conanfile.py"), "r") as f:
-            lines = f.readlines()
-            for i, line in enumerate(lines):
-                if re.search(r"version\s*=\s*\"(.*)\"", line):
-                    print(colored(f"- conanfile.py:     {extract_semver(line)}", "green"))
-                    break
-
-        with open(os.path.join(root, "Doxyfile"), "r") as f:
-            lines = f.readlines()
-            for i, line in enumerate(lines):
-                if re.search(r"PROJECT_NUMBER\s*=\s*(\S*)", line):
-                    print(colored(f"- doxyfile:         {extract_semver(line)}", "green"))
-                    break
-
-    except FileNotFoundError as e:
-        print(colored(f'⚠️ failed to show versions due to: {e}', "red"))
-        sys.exit(1)
+def show_versions(root):
+    print_semver(root, "CMakeLists.txt", r"VERSION (\d+\.)?(\d+\.)?(\*|\d+)")
+    print_semver(root, "conanfile.py", r"version\s*=\s*\"(.*)\"")
+    print_semver(root, "Doxyfile", r"PROJECT_NUMBER\s*=\s*(\S*)")
 
 
 def main():
