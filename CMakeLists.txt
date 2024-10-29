@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.0.8
+  VERSION 2.1.0
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -46,8 +46,7 @@ if(NOT WIN32)
   find_package(libuuid REQUIRED)
 endif()
 
-add_library(${PROJECT_NAME}
-  include/rolly/qt/registrable.h)
+add_library(${PROJECT_NAME})
 add_library(${PROJECT_FULL_NAME} ALIAS ${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES

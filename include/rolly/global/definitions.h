@@ -132,3 +132,7 @@
 # endif // defined(___rolly_cxx20___)
 // NOLINTEND(*-reserved-identifier, *-identifier-naming, *-macro-usage)
 #endif // ROLLY_DOC
+
+#if __has_include(<spdlog/spdlog.h>)
+# define ROLLY_SPDLOG 1
+#endif // __has_include(<spdlog/spdlog.h>)
