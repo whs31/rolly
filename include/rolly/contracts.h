@@ -261,7 +261,7 @@ namespace rolly::contracts
   #ifndef ROLLY_DOC
   ___inline___
   #endif // ROLLY_DOC
-  void not_implemented(
+  [[noreturn]] void not_implemented(
     #ifndef ROLLY_DOC
     source_location location = source_location::current()
     #endif // ROLLY_DOC
@@ -441,7 +441,7 @@ namespace rolly::contracts
     ___inline___
     ___rolly_release_consteval___
     #endif // ROLLY_DOC
-    void not_implemented(
+    [[noreturn]] void not_implemented(
         #ifndef ROLLY_DOC
         ___rolly_release_unused___ source_location location = source_location::current()
         #endif // ROLLY_DOC
