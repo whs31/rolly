@@ -163,23 +163,5 @@ namespace rolly::qt::qml
     std::string name_;
     version_type version_;
   };
-
-  class registrable {
-   public:
-    virtual ~registrable() = default;
-
-    [[nodiscard]] bool registered() const { return this->registered_; }
-
-    virtual void register_() {
-      if(this->registered_) {
-        fmt::println("rolly::qt::qml: type is already registered");
-        return;
-      }
-      this->registered_ = true;
-    }
-
-   private:
-    bool registered_{false};
-  }
 } // namespace rolly::qt::qml
 #endif // defined(ROLLY_QT_GUI)
