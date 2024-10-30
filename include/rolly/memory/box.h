@@ -21,7 +21,7 @@ namespace rolly
    * @sa https://github.com/getml/reflect-cpp/blob/main/include/rfl/Box.hpp
    * @sa https://doc.rust-lang.org/std/boxed/struct.Box.html
    */
-  template <___concept___(std::destructible) T>
+  template <typename T>
   class box : noncopyable // NOLINT(*-special-member-functions)
   {
    public:
@@ -51,7 +51,7 @@ namespace rolly
      * @tparam U Underlying type of the other box.
      * @param other Other box to move data from.
      */
-    template <___concept___(std::destructible) U>
+    template <typename U>
     box(box<U>&& other) noexcept // NOLINT(*-explicit-constructor, *-rvalue-reference-param-not-moved)
       : ptr_(std::forward<std::unique_ptr<U>>(other.as_unique_ptr()))
     {}
