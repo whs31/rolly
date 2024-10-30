@@ -41,10 +41,10 @@ deploy:alse:
   # extends: .deploy_extend
   script:
     - echo "Collecting binary package..."
-    - ls
+    - cp -r ./build/Release/export ./public
   artifacts:
     name: $CI_PROJECT_TITLE-$CI_COMMIT_REF_NAME-$CI_JOB_NAME
-    paths: [./build/Release/export]
+    paths: [./public]
 
 
 documentation:
