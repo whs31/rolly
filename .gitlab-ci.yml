@@ -19,6 +19,9 @@ local_variables:
 build:alse:
   stage: build
   extends: .build_extend
+  artifacts:
+    paths:
+      - build/Release
 
 test:alse:
   stage: test
@@ -28,6 +31,21 @@ test:alse:
 publish:alse:
   stage: publish
   extends: .publish_extend
+
+deploy:alse:
+  tags: [alse]
+  stage: publish
+  needs:
+    - job: build:alse
+      artifacts: true
+  # extends: .deploy_extend
+  script:
+    - echo "Collecting binary package..."
+    - ls
+  artifacts:
+    name: $CI_PROJECT_TITLE-$CI_COMMIT_REF_NAME-$CI_JOB_NAME
+    paths: [./build/Release/export]
+
 
 documentation:
   tags: [dev-utils]
