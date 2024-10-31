@@ -17,12 +17,14 @@ class RollyRecipe(ConanFile):
         "shared": [True, False],
         "test": [True, False],
         "compat": [True, False],
+        "export": [True, False],
         "export_folder_name": ["ANY"]
     }
     default_options = {
         "shared": True,
         "test": False,
         "compat": False,
+        "export": False,
         "export_folder_name": "export"
     }
     exports = "CMakeLists.txt", "conanfile.py", "*.cmake.in"
@@ -59,7 +61,7 @@ class RollyRecipe(ConanFile):
         tc.cache_variables["ROLLY_COMPAT"] = self.options.compat
         tc.generate()
 
-        if not self.options.test:
+        if self.options.export:
             for dep in self.dependencies.values():
                 self.output.info(f"copying {dep.ref.name} into export folder {str(self.options.export_folder_name)}")
                 bin_dest = os.path.join(self.build_folder, str(self.options.export_folder_name), 'bin')

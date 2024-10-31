@@ -2,7 +2,7 @@
 stages:
   - build
   - test
-  - publish
+  - deploy
 
 include:
   - project: "developers/v2/libs/essentials/ci"
@@ -29,40 +29,9 @@ test:alse:
   extends: .tests_catch2_extend
 
 publish:alse:
-  stage: publish
+  stage: deploy
   extends: .publish_extend
 
 deploy:alse:
-  tags: [alse]
-  stage: publish
-  needs:
-    - job: build:alse
-      artifacts: true
-  # extends: .deploy_extend
-  script:
-    - echo "Collecting binary package..."
-    - cp -r ./build/Release/export ./public
-  artifacts:
-    name: $CI_PROJECT_TITLE-$CI_COMMIT_REF_NAME-$CI_JOB_NAME
-    paths: [./public]
-
-
-documentation:
-  tags: [dev-utils]
-  stage: publish
-  allow_failure: true
-  needs:
-    - job: test:alse
-  before_script:
-    - git clone https://github.com/maybe-unused/m.css.git
-    - python3 -m venv .venv
-    - source .venv/bin/activate
-    - pip install jinja2 pygments
-  script:
-    - python3 m.css/documentation/doxygen.py ./conf.py
-    - echo "Deploying to GitLab Pages..."
-    - mkdir -p public
-    - cp -r docs/* public
-  artifacts:
-    paths:
-      - public
+  stage: deploy
+  extends: .deploy_library_extend
