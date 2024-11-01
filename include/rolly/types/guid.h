@@ -7,6 +7,7 @@
 #include <string>
 #include <string_view>
 #include <fmt/format.h>
+#include "../global/export.h"
 #include "./stdint.h"
 
 namespace rolly // NOLINT(*-concat-nested-namespaces)
@@ -18,7 +19,7 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
      * @details Based on <tt>std::array</tt> container.
      * @sa https://en.wikipedia.org/wiki/Globally_unique_identifier
      */
-    class guid
+    class ___rolly_api___ guid
     {
      public:
       /**
@@ -121,7 +122,7 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
        * @return Output stream
        * @see to_string
        */
-      friend std::ostream& operator<<(std::ostream& os, guid const& guid);
+      ___rolly_api___ friend std::ostream& operator<<(std::ostream& os, guid const& guid);
 
       /**
        * @brief Creates an empty <tt>guid</tt>.
@@ -148,7 +149,7 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
      * @return <tt>guid</tt> object.
      * @relates rolly::types::guid
      */
-    inline types::guid operator""_guid(char const* str, std::size_t) { return types::guid(str); }
+    inline types::guid operator""_guid(char const* str, [[maybe_unused]] std::size_t unused) { return types::guid(str); }
   } // namespace literals
 
   namespace detail
@@ -158,7 +159,7 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
 
     template <typename T, typename... Rest>
     struct hash<T, Rest...> {
-      inline std::size_t operator()(T const& v, Rest const&... rest) {
+      inline std::size_t operator()(T const& v, Rest const&... rest) { // NOLINT(*-redundant-inline-specifier)
         auto seed = std::size_t(hash<Rest...>{}(rest...));
         seed ^= hash<T>{}(v) + 0x9E3779B9 + (seed << 6) + (seed >> 2);
         return seed;
