@@ -73,7 +73,7 @@ namespace rolly
       /**
        * @brief Creates an invalid source_location.
        */
-      ___constexpr___ source_location() noexcept
+      constexpr source_location() noexcept
         : file_(unknown)
         , function_(unknown)
         , line_(0)
@@ -87,7 +87,7 @@ namespace rolly
        * @param function Function name
        * @param column Column number in the function. Defaults to 0
        */
-      ___constexpr___ source_location(
+      constexpr source_location(
         char const* file,
         u32 const line,
         char const* function,
@@ -104,12 +104,12 @@ namespace rolly
       /**
        * @brief Returns the file name.
        */
-      [[nodiscard]] ___constexpr___ std::string_view file_name() const noexcept { return this->file_; }
+      [[nodiscard]] constexpr std::string_view file_name() const noexcept { return this->file_; }
 
       /**
        * @brief Returns the function name. NULL if unknown or not available on compiler
        */
-      [[nodiscard]] ___constexpr___ std::string_view function_name() const noexcept { return this->function_; }
+      [[nodiscard]] constexpr std::string_view function_name() const noexcept { return this->function_; }
 
       /**
        * @brief Returns the line number. 0 if unknown or not available on compiler.
