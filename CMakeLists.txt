@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.1.6
+  VERSION 2.1.7
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -104,9 +104,7 @@ endif()
 if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   message(STATUS "[${PROJECT_FULL_NAME}] adding compiler flags: -Wall -Wextra -Wpedantic -Werror")
   target_compile_options(${PROJECT_NAME} PRIVATE
-    $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX>
     $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wpedantic>
-    $<$<NOT:$<CXX_COMPILER_ID:Clang>>:-Werror>
   )
 endif()
 

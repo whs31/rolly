@@ -47,15 +47,10 @@ namespace rolly
         char const* function = __builtin_FUNCTION(),
         u32 line = __builtin_LINE(),
         u32 column = __builtin_COLUMN()
-  #elif defined(__GNUC__) and (__GNUC__ > 4 or (__GNUC__ == 4 and __GNUC_MINOR__ >= 8))
+  #else
         char const* file = __builtin_FILE(),
         char const* function = __builtin_FUNCTION(),
         u32 line = __builtin_LINE(),
-        u32 column = 0
-  #else // compiler
-        char const* file = UNKNOWN,
-        char const* function = UNKNOWN,
-        u32 line = 0,
         u32 column = 0
   #endif // compiler
   #endif // ROLLY_DOC
