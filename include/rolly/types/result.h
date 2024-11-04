@@ -9,6 +9,7 @@
 # include <utility>
 # include <variant>
 # include <optional>
+# include <fmt/format.h>
 
 // NOLINTBEGIN(*-avoid-c-arrays, *-pro-type-union-access)
 
