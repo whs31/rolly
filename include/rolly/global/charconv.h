@@ -4,8 +4,7 @@
 #include <string>
 #include <string_view>
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Function prototype for converting C++ types to owned strings.
    * @tparam T Type to convert
@@ -35,4 +34,4 @@ namespace rolly
    */
   template <typename T, typename C = char>
   [[nodiscard]] constexpr inline T from_str(std::basic_string_view<C> const& str) = delete;
-} // namespace rolly
+}  // namespace rolly

@@ -21,6 +21,6 @@ namespace rolly::prelude {
   using rolly::to_underlying;
 #ifdef ROLLY_SPDLOG
   using rolly::logger;
-#endif //ROLLY_SPDLOG
+#endif  // ROLLY_SPDLOG
   using rolly::source_location;
-} // namespace rolly::prelude
+}  // namespace rolly::prelude

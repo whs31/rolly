@@ -178,3 +178,9 @@ mcss-folder := "D:/dev/my/m.css/documentation"
 @version:
   echo "Current versions is:"
   python3 scripts/tag.py --show
+
+[group('misc')]
+[doc('Format code')]
+@format:
+    find . -iname '*.h' -o -iname '*.cc' | xargs clang-format -i;
+    echo "Formatted!"

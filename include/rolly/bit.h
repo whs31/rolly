@@ -4,17 +4,15 @@
 #include "concepts/num.h"
 
 #ifdef _MSC_VER
-# include <intrin.h>
-# define __builtin_popcount __popcnt
-#endif // _MSC_VER
+#  include <intrin.h>
+#  define __builtin_popcount __popcnt
+#endif  // _MSC_VER
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Inline namespace for math/bit utilities.
    */
-  inline namespace math 
-  {
+  inline namespace math {
     /**
      * @brief Returns the number of 1 bits in the value.
      * @tparam T Type of the value. Must be an unsigned integral type.
@@ -48,7 +46,7 @@ namespace rolly
      */
     template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
     [[nodiscard]] constexpr bool is_pow2(T x) noexcept {
-      return x and not(x bitand (x - 1));
+      return x and not (x bitand (x - 1));
     }
 
     /**
@@ -67,5 +65,5 @@ namespace rolly
       x |= x >> 16;
       return x + 1;
     }
-  } // namespace math
-} // namespace rolly
+  }  // namespace math
+}  // namespace rolly

@@ -4,17 +4,17 @@
 #include "../global/definitions.h"
 
 #if defined(___rolly_cxx20___)
-# include <concepts>
-#endif // defined(___rolly_cxx20___)
+#  include <concepts>
+#endif  // defined(___rolly_cxx20___)
 
-namespace rolly::concepts
-{
+namespace rolly::concepts {
 #if defined(___rolly_cxx20___) || defined(ROLLY_DOC)
   /**
    * @brief Pointer concept.
    * @details Will yield <code>true</code> for any type that is a pointer or reference.
    *
-   * Note that this concept will be evaluated to <code>false</code> for function pointers, <code>std::nullptr_t</code> and smart pointers.
+   * Note that this concept will be evaluated to <code>false</code> for function pointers, <code>std::nullptr_t</code>
+   * and smart pointers.
    * @tparam T Type to check.
    * @note Available only in C++20 mode.
    * @see c_ptr
@@ -28,7 +28,8 @@ namespace rolly::concepts
    * @brief Raw pointer concept.
    * @details Will yield <code>true</code> for any type that is a raw pointer <b>and not a reference</b>.
    *
-   * Note that this concept will be evaluated to <code>false</code> for function pointers, <code>std::nullptr_t</code>, <b>references</b> and smart pointers.
+   * Note that this concept will be evaluated to <code>false</code> for function pointers, <code>std::nullptr_t</code>,
+   * <b>references</b> and smart pointers.
    * @tparam T Type to check.
    * @note Available only in C++20 mode.
    * @see ptr
@@ -55,7 +56,7 @@ namespace rolly::concepts
    * @see ptr_like
    */
   template <typename T>
-  concept smart_ptr = requires (T t) {
+  concept smart_ptr = requires(T t) {
     { *t };
     { static_cast<bool>(t) };
     { t.operator->() } -> std::convertible_to<decltype(&*t)>;
@@ -71,5 +72,5 @@ namespace rolly::concepts
    */
   template <typename T>
   concept ptr_like = ptr<T> or smart_ptr<T>;
-#endif // defined(___rolly_cxx20___) || defined(ROLLY_DOC)
-} // namespace rolly::concepts
+#endif  // defined(___rolly_cxx20___) || defined(ROLLY_DOC)
+}  // namespace rolly::concepts

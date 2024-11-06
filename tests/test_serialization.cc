@@ -8,19 +8,21 @@ struct TestStruct {
   int b = 2;
 };
 
-template <> std::basic_string<char> serialization::serialize<serialization::format::json>(TestStruct const& value) {
+template <>
+std::basic_string<char> serialization::serialize<serialization::format::json>(TestStruct const& value) {
   return fmt::format(R"({{"a": {}, "b": {}}})", value.a, value.b);
 }
 
-template <> TestStruct serialization::deserialize<serialization::format::json>(std::basic_string<char> const& value) {
-  return { .a = 1, .b = 2 };
+template <>
+TestStruct serialization::deserialize<serialization::format::json>(std::basic_string<char> const& value) {
+  return {.a = 1, .b = 2};
 }
 
 TEST_CASE("Serialization", "[serialization]") {
   namespace format = rolly::serialization::format;
 
   SECTION("Basic") {
-    auto const test = TestStruct { 1, 2 };
+    auto const test = TestStruct {1, 2};
     auto const expected = test;
     auto json = serialization::serialize<format::json>(test);
     auto test2 = serialization::deserialize<format::json, TestStruct>(json);

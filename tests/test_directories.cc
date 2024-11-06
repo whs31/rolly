@@ -10,8 +10,8 @@ TEST(Directories, ApplicationDirs)
   using dir = application_dirs::dir;
 
   auto dirs = application_dirs("com", "Foo Corp", "Bar App");
-#if defined(ROLLY_OS_WINDOWS)
-# define _CRT_SECURE_NO_WARNINGS
+#  if defined(ROLLY_OS_WINDOWS)
+#    define _CRT_SECURE_NO_WARNINGS
   auto username = std::string(std::getenv("USERNAME"));
   EXPECT_EQ(dirs[dir::cache].string(), R"(C:\Users\)" + username + R"(\AppData\Local\Foo Corp\Bar App\cache)");
   EXPECT_EQ(dirs[dir::config].string(), R"(C:\Users\)" + username + R"(\AppData\Roaming\Foo Corp\Bar App\config)");
@@ -21,8 +21,8 @@ TEST(Directories, ApplicationDirs)
   EXPECT_EQ(dirs[dir::preferences].string(), R"(C:\Users\)" + username + R"(\AppData\Roaming\Foo Corp\Bar App\config)");
   EXPECT_FALSE(dirs.runtime_dir().has_value());
   EXPECT_FALSE(dirs.state_dir().has_value());
-#else
+#  else
   GTEST_SUCCEED();
-#endif
+#  endif
 }
 #endif

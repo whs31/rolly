@@ -1,13 +1,12 @@
 #include "known_folder.h"
 
 #ifdef ROLLY_OS_WINDOWS
-# include <array>
-# include <system_error>
-# include <windows.h>
-# include <winerror.h>
+#  include <array>
+#  include <system_error>
+#  include <windows.h>
+#  include <winerror.h>
 
-namespace rolly::oslayer::win
-{
+namespace rolly::oslayer::win {
   fs::path known_folder_path(::KNOWNFOLDERID id) {
     auto* buf = ::PWSTR();
     auto const result = ::SHGetKnownFolderPath(id, 0, nullptr, &buf);
@@ -23,18 +22,14 @@ namespace rolly::oslayer::win
   fs::path home_dir() {
     auto buf = std::array<wchar_t, MAX_PATH>();
     auto const result = ::SHGetFolderPathW(nullptr, CSIDL_PROFILE, nullptr, SHGFP_TYPE_CURRENT, buf.data());
-    if(FAILED(result)) 
+    if(FAILED(result))
       throw std::system_error(std::make_error_code(static_cast<std::errc>(result)));
-    return { buf.data() };
+    return {buf.data()};
   }
 
-  fs::path appdata_dir() {
-    return known_folder_path(::FOLDERID_RoamingAppData);
-  }
+  fs::path appdata_dir() { return known_folder_path(::FOLDERID_RoamingAppData); }
 
-  fs::path local_appdata_dir() {
-    return known_folder_path(::FOLDERID_LocalAppData);
-  }
-} // namespace rolly::oslayer::win
+  fs::path local_appdata_dir() { return known_folder_path(::FOLDERID_LocalAppData); }
+}  // namespace rolly::oslayer::win
 
-#endif // ROLLY_OS_WINDOWS
+#endif  // ROLLY_OS_WINDOWS

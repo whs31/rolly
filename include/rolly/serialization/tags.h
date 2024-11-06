@@ -1,28 +1,33 @@
 #pragma once
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Functions and types related to serialization and deserialization.
    */
-  namespace serialization {} // namespace serialization
-} // namespace rolly
+  namespace serialization {}  // namespace serialization
+}  // namespace rolly
 
-namespace rolly::serialization
-{
+namespace rolly::serialization {
   /**
    * @brief Serialization tags.
    */
-  namespace format
-  {
+  namespace format {
     struct json {};
+
     struct bson {};
+
     struct xml {};
+
     struct cbor {};
+
     struct flexbuffer {};
+
     struct msgpack {};
+
     struct toml {};
+
     struct yaml {};
+
     struct generic {};
-  } // namespace tag
-} // namespace rolly::serialization
+  }  // namespace format
+}  // namespace rolly::serialization

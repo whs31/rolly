@@ -10,17 +10,15 @@
 #include "../global/export.h"
 #include "./stdint.h"
 
-namespace rolly // NOLINT(*-concat-nested-namespaces)
+namespace rolly  // NOLINT(*-concat-nested-namespaces)
 {
-  inline namespace types
-  {
+  inline namespace types {
     /**
      * @brief 128-bit globally unique identifier (GUID).
      * @details Based on <tt>std::array</tt> container.
      * @sa https://en.wikipedia.org/wiki/Globally_unique_identifier
      */
-    class ___rolly_api___ guid
-    {
+    class ___rolly_api___ guid {
      public:
       /**
        * @brief Creates an empty <tt>guid</tt>.
@@ -89,7 +87,7 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
        * @return <tt>true</tt> if the <tt>guid</tt> is valid, <tt>false</tt> otherwise.
        * @see valid
        */
-      [[nodiscard]] operator bool() const noexcept { // NOLINT(*-explicit-constructor)
+      [[nodiscard]] operator bool() const noexcept {  // NOLINT(*-explicit-constructor)
         return this->valid();
       }
 
@@ -139,37 +137,41 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
      private:
       std::array<u8, 16> bytes_;
     };
-  } // namespace types
+  }  // namespace types
 
-  inline namespace literals
-  {
+  inline namespace literals {
     /**
      * @brief Literal operator for <tt>guid</tt>.
      * @param str String representation of the <tt>guid</tt>.
      * @return <tt>guid</tt> object.
      * @relates rolly::types::guid
      */
-    inline types::guid operator""_guid(char const* str, [[maybe_unused]] std::size_t unused) { return types::guid(str); }
-  } // namespace literals
+    inline types::guid operator""_guid(char const* str, [[maybe_unused]] std::size_t unused) {
+      return types::guid(str);
+    }
+  }  // namespace literals
 
-  namespace detail
-  {
-    template <typename...> struct hash;
-    template <typename T> struct hash<T> : public std::hash<T> { using std::hash<T>::hash; };
+  namespace detail {
+    template <typename...>
+    struct hash;
+
+    template <typename T>
+    struct hash<T> : public std::hash<T> {
+      using std::hash<T>::hash;
+    };
 
     template <typename T, typename... Rest>
     struct hash<T, Rest...> {
-      inline std::size_t operator()(T const& v, Rest const&... rest) { // NOLINT(*-redundant-inline-specifier)
-        auto seed = std::size_t(hash<Rest...>{}(rest...));
-        seed ^= hash<T>{}(v) + 0x9E3779B9 + (seed << 6) + (seed >> 2);
+      inline std::size_t operator()(T const& v, Rest const&... rest) {  // NOLINT(*-redundant-inline-specifier)
+        auto seed = std::size_t(hash<Rest...> {}(rest...));
+        seed ^= hash<T> {}(v) + 0x9E3779B9 + (seed << 6) + (seed >> 2);
         return seed;
       }
     };
-  } // namespace detail
-} // namespace rolly
+  }  // namespace detail
+}  // namespace rolly
 
-namespace std
-{
+namespace std {
   /**
    * @brief Swaps two <tt>guid</tt>s.
    * @param a First <tt>guid</tt>.
@@ -190,21 +192,19 @@ namespace std
    * @sa http://en.cppreference.com/w/cpp/utility/hash
    */
   template <>
-  struct [[maybe_unused]] hash<rolly::guid>
-  {
+  struct [[maybe_unused]] hash<rolly::guid> {
     [[nodiscard]] std::size_t operator()(rolly::guid const& b) const {
-      return rolly::detail::hash<rolly::u64, rolly::u64>{}(b.bytes()[0], b.bytes()[1]);
+      return rolly::detail::hash<rolly::u64, rolly::u64> {}(b.bytes()[0], b.bytes()[1]);
     }
   };
-} // namespace std
+}  // namespace std
 
 /**
  * @brief Specialization of std::formatter for the <tt>guid</tt> class.
  * @relates rolly::types::guid
  */
 template <>
-struct [[maybe_unused]] fmt::formatter<rolly::guid> : fmt::formatter<std::string_view>
-{
+struct [[maybe_unused]] fmt::formatter<rolly::guid> : fmt::formatter<std::string_view> {
   template <typename FormatContext>
   auto format(rolly::guid const& v, FormatContext& ctx) const {
     return fmt::format_to(ctx.out(), "{}", v.to_string());

@@ -3,8 +3,7 @@
 #include "../global/definitions.h"
 #include "../type_traits.h"
 
-namespace rolly::concepts
-{
+namespace rolly::concepts {
 #if defined(___rolly_cxx20___) || defined(ROLLY_DOC)
   /**
    * @brief Concept that is true if T is an enum type.
@@ -14,5 +13,5 @@ namespace rolly::concepts
    */
   template <typename T>
   concept enum_ = std::is_enum_v<plain_type_t<T>>;
-#endif // defined(___rolly_cxx20___)
-} // namespace rolly::concepts
+#endif  // defined(___rolly_cxx20___)
+}  // namespace rolly::concepts

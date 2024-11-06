@@ -50,9 +50,7 @@ TEST_CASE("Version", "[version]") {
     REQUIRE(v.to_string() == "1.2.3-alpha.4");
   }
 
-  SECTION("ParseFail") {
-    REQUIRE_THROWS(version("1.2.3-asd"));
-  }
+  SECTION("ParseFail") { REQUIRE_THROWS(version("1.2.3-asd")); }
 }
 
 TEST_CASE("VersionRange", "[version.range]") {
@@ -65,12 +63,12 @@ TEST_CASE("VersionRange", "[version.range]") {
   constexpr auto r7 = ">=2.0.0-alpha"sv;
   constexpr auto r8 = "<2.0.0-alpha"sv;
 
-  constexpr version v1{"1.2.3-alpha.7"};
-  constexpr version v2{"3.4.5-alpha.9"};
-  constexpr version v3{"3.4.5"};
-  constexpr version v4{"1.2.3-alpha.4"};
-  constexpr version v5{"2.0.0-alpha.5"};
-  constexpr version v6{"2.0.0-alpha.0"};
+  constexpr version v1 {"1.2.3-alpha.7"};
+  constexpr version v2 {"3.4.5-alpha.9"};
+  constexpr version v3 {"3.4.5"};
+  constexpr version v4 {"1.2.3-alpha.4"};
+  constexpr version v5 {"2.0.0-alpha.5"};
+  constexpr version v6 {"2.0.0-alpha.0"};
 
   SECTION("Satisfies") {
     REQUIRE(satisfies(v1, r1));

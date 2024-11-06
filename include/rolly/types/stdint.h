@@ -4,40 +4,37 @@
 #include <cstdint>
 #include <type_traits>
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Inline namespace for simple types.
    */
-  inline namespace types
-  {
-    using u8 = std::uint8_t;                       ///< 8-bit unsigned integer
-    using u16 = std::uint16_t;                     ///< 16-bit unsigned integer
-    using u32 = std::uint32_t;                     ///< 32-bit unsigned integer
-    using u64 = std::uint64_t;                     ///< 64-bit unsigned integer
-    using i8 = std::int8_t;                        ///< 8-bit signed integer
-    using i16 = std::int16_t;                      ///< 16-bit signed integer
-    using i32 = std::int32_t;                      ///< 32-bit signed integer
-    using i64 = std::int64_t;                      ///< 64-bit signed integer
-    using usize = std::size_t;                     ///< Unsigned integer with pointer size
-    using isize = std::make_signed_t<std::size_t>; ///< Signed integer with pointer size
-    using f32 = float;                             ///< Float with 32-bit precision
-    using f64 = double;                            ///< Float with 64-bit precision
-    using f128 [[maybe_unused]] = long double;     ///< Float with 128-bit precision
-    using uptr = std::uintptr_t;                   ///< Unsigned integer with pointer size
+  inline namespace types {
+    using u8 = std::uint8_t;                        ///< 8-bit unsigned integer
+    using u16 = std::uint16_t;                      ///< 16-bit unsigned integer
+    using u32 = std::uint32_t;                      ///< 32-bit unsigned integer
+    using u64 = std::uint64_t;                      ///< 64-bit unsigned integer
+    using i8 = std::int8_t;                         ///< 8-bit signed integer
+    using i16 = std::int16_t;                       ///< 16-bit signed integer
+    using i32 = std::int32_t;                       ///< 32-bit signed integer
+    using i64 = std::int64_t;                       ///< 64-bit signed integer
+    using usize = std::size_t;                      ///< Unsigned integer with pointer size
+    using isize = std::make_signed_t<std::size_t>;  ///< Signed integer with pointer size
+    using f32 = float;                              ///< Float with 32-bit precision
+    using f64 = double;                             ///< Float with 64-bit precision
+    using f128 [[maybe_unused]] = long double;      ///< Float with 128-bit precision
+    using uptr = std::uintptr_t;                    ///< Unsigned integer with pointer size
 
-    //NOLINTNEXTLINE(*-runtime-int)
-    using ulonglong [[maybe_unused]] = unsigned long long; ///< Alias for <tt>unsigned long long</tt>.
+    // NOLINTNEXTLINE(*-runtime-int)
+    using ulonglong [[maybe_unused]] = unsigned long long;  ///< Alias for <tt>unsigned long long</tt>.
 
-    //NOLINTNEXTLINE(*-runtime-int)
-    using uint [[maybe_unused]] = unsigned int; ///< Alias for <tt>unsigned int</tt>.
-  } // namespace types
+    // NOLINTNEXTLINE(*-runtime-int)
+    using uint [[maybe_unused]] = unsigned int;  ///< Alias for <tt>unsigned int</tt>.
+  }  // namespace types
 
   /**
    * @brief Inline namespace for literal operators.
    */
-  inline namespace literals
-  {
+  inline namespace literals {
     /**
      * @brief Literal operator for @ref types::u8.
      */
@@ -92,5 +89,5 @@ namespace rolly
     inline void* operator""_pvoid(unsigned long long value) { return reinterpret_cast<void*>(value); }
 
     // NOLINTEND(*-pro-type-reinterpret-cast, *-no-int-to-ptr)
-  } // namespace literals
-} // namespace rolly
+  }  // namespace literals
+}  // namespace rolly

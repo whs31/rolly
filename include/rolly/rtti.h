@@ -5,16 +5,14 @@
 #include "global/export.h"
 #include "global/definitions.h"
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Runtime type information-related functions and classes.
    */
-  namespace rtti {} // namespace rtti
-} // namespace rolly
+  namespace rtti {}  // namespace rtti
+}  // namespace rolly
 
-namespace rolly::rtti
-{
+namespace rolly::rtti {
   /**
    * @brief Demangles C++ type name from string.
    * @details Confirmed support on:
@@ -31,8 +29,8 @@ namespace rolly::rtti
   [[nodiscard]]
 #ifndef ROLLY_DOC
   ___rolly_api___
-#endif // ROLLY_DOC
-  std::string demangle(char const* name);
+#endif  // ROLLY_DOC
+    std::string demangle(char const* name);
 
   /**
    * @brief Returns C++ type name or signature from <b>typeid</b> object using RTTI.
@@ -60,4 +58,4 @@ namespace rolly::rtti
   [[nodiscard]] std::string type_name() {
     return demangle(typeid(T).name());
   }
-} // namespace rolly::rtti
+}  // namespace rolly::rtti

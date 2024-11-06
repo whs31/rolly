@@ -6,13 +6,11 @@
 #include "serialization.h"
 #include "types/stdint.h"
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Determines the policy used for autosaving configuration files.
    */
-  enum class saving_policy : u8
-  {
+  enum class saving_policy : u8 {
     autosave,  ///< Saves configuration files automatically on closing.
     explicit_  ///< Saves configuration files only explicitly.
   };
@@ -20,8 +18,8 @@ namespace rolly
   /**
    * @brief Configuration file that can be loaded and saved.
    * @details This class is used to store configuration values in a configuration file in given format.
-   * Accepts any type that implements @ref rolly::serialization::serializable_and_deserializable with character type <code>char</code>
-   * and given format.
+   * Accepts any type that implements @ref rolly::serialization::serializable_and_deserializable with character type
+   * <code>char</code> and given format.
    *
    * Example usage:
    * @code {.cpp}
@@ -40,12 +38,12 @@ namespace rolly
    *   } ip_address = { .ip = "127.0.0.1", .port = 25565 };
    * };
    * template <>
-   * auto rolly::serialization::serialize<fl::serialization::format::toml>(DummyConfiguration const& value) -> std::basic_string<char>
-   * { / implementation / }
+   * auto rolly::serialization::serialize<fl::serialization::format::toml>(DummyConfiguration const& value) ->
+   * std::basic_string<char> { / implementation / }
    *
    * template <>
-   * auto rolly::serialization::deserialize<fl::serialization::format::toml>(std::basic_string<char> const& value) -> DummyConfiguration
-   * { / implementation / }
+   * auto rolly::serialization::deserialize<fl::serialization::format::toml>(std::basic_string<char> const& value) ->
+   * DummyConfiguration { / implementation / }
    *
    * auto main() -> int
    * {
@@ -70,15 +68,14 @@ namespace rolly
    * }
    * @endcode
    * @tparam F Format type. Must be value of tag \ref rolly::serialization::format or your own format tag.
-   * @tparam T Type to serialize and deserialize. Must implement \ref rolly::serialization::serializable_and_deserializable with character type <code>char</code>.
+   * @tparam T Type to serialize and deserialize. Must implement \ref
+   * rolly::serialization::serializable_and_deserializable with character type <code>char</code>.
    * @see rolly::serialization::format
    * @see rolly::serialization::serializable_and_deserializable
    * @see rolly::saving_policy
    */
   template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  class configuration_file
-  {
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) class configuration_file {
    public:
     /**
      * @brief Creates or loads configuration file from given path with saving policy.
@@ -214,11 +211,10 @@ namespace rolly
 
   template <typename F, typename T>
   ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  configuration_file<F, T>::configuration_file(std::filesystem::path path, enum saving_policy policy)
+    configuration_file<F, T>::configuration_file(std::filesystem::path path, enum saving_policy policy)
     : default_values_(T())
     , path_(std::move(path))
-    , saving_policy_(policy)
-  {
+    , saving_policy_(policy) {
     try {
       this->load();
       this->valid_ = true;
@@ -227,48 +223,71 @@ namespace rolly
     }
   }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  configuration_file<F, T>::configuration_file(
-    std::string_view filename,
-    std::filesystem::path const& folder,
-    enum saving_policy policy
-  )
-    : configuration_file(folder / filename, policy)
-  {}
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
+    configuration_file<F, T>::configuration_file(
+      std::string_view filename,
+      std::filesystem::path const& folder,
+      enum saving_policy policy
+    )
+    : configuration_file(folder / filename, policy) {}
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  configuration_file<F, T>::~configuration_file() noexcept
-  {
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
+    configuration_file<F, T>::~configuration_file() noexcept {
     if(this->saving_policy() == saving_policy::autosave) {
       try {
         this->save();
-      } catch(std::exception const& ex) {} // NOLINT(*-empty-catch)
+      } catch(std::exception const& ex) {
+      }  // NOLINT(*-empty-catch)
     }
   }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  bool configuration_file<F, T>::valid() const { return this->valid_; }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) bool configuration_file<F, T>::valid(
+  ) const {
+    return this->valid_;
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  std::filesystem::path const& configuration_file<F, T>::path() const { return this->path_; }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
+  ) std::filesystem::path const& configuration_file<F, T>::path() const {
+    return this->path_;
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  enum saving_policy configuration_file<F, T>::saving_policy() const { return this->saving_policy_; }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) enum saving_policy
+    configuration_file<F, T>::saving_policy() const {
+    return this->saving_policy_;
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  T& configuration_file<F, T>::values_mut() { return this->values_; }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) T& configuration_file<F, T>::values_mut(
+  ) {
+    return this->values_;
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  T const& configuration_file<F, T>::values() const { return this->values_; }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
+  ) T const& configuration_file<F, T>::values() const {
+    return this->values_;
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  T const& configuration_file<F, T>::default_values() const { return this->default_values_; }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
+  ) T const& configuration_file<F, T>::default_values() const {
+    return this->default_values_;
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  T& configuration_file<F, T>::default_values_mut() { return this->default_values_; }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
+  ) T& configuration_file<F, T>::default_values_mut() {
+    return this->default_values_;
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  void configuration_file<F, T>::load() noexcept(false) {
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void configuration_file<F, T>::load(
+  ) noexcept(false) {
     namespace fs = std::filesystem;
     if(not fs::exists(this->path())) {
       this->revert_to_default();
@@ -282,41 +301,54 @@ namespace rolly
     }
   }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  void configuration_file<F, T>::save() const noexcept(false) try {
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void configuration_file<F, T>::save(
+  ) const noexcept(false) try {
     auto str = serialization::serialize<F, T>(this->values_);
     this->write_to_file(str);
   } catch(std::exception const& ex) {
     throw;
   }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  void configuration_file<F, T>::revert_to_default() noexcept(false) try {
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
+  ) void configuration_file<F, T>::revert_to_default() noexcept(false) try {
     this->values_ = this->default_values_;
     this->save();
   } catch(std::exception const& ex) {
     throw;
   }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  configuration_file<F, T>::operator bool() const noexcept { return this->valid(); }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
+    configuration_file<F, T>::operator bool() const noexcept {
+    return this->valid();
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  T const& configuration_file<F, T>::operator()() const { return this->values_; }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
+  ) T const& configuration_file<F, T>::operator()() const {
+    return this->values_;
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  T& configuration_file<F, T>::operator()() { return this->values_; }
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) T& configuration_file<F, T>::operator()(
+  ) {
+    return this->values_;
+  }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  std::string configuration_file<F, T>::read_from_file() const noexcept(false) {
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) std::string
+    configuration_file<F, T>::read_from_file() const noexcept(false) {
     auto handle = std::ifstream(this->path());
     if(not handle.is_open())
       throw std::runtime_error("failed to open file handle for reading at " + this->path().string());
     return {(std::istreambuf_iterator<char>(handle)), std::istreambuf_iterator<char>()};
   }
 
-  template <typename F, typename T> ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-  void configuration_file<F, T>::write_to_file(std::string_view content) const noexcept(false) {
+  template <typename F, typename T>
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
+  ) void configuration_file<F, T>::write_to_file(std::string_view content) const noexcept(false) {
     namespace fs = std::filesystem;
 
     if(not fs::exists(this->path().parent_path()))
@@ -325,15 +357,12 @@ namespace rolly
     if(not handle.is_open())
       throw std::runtime_error("failed to open file handle for writing at " + this->path().string());
     if(fs::exists(this->path())) {
-      auto const permissions = fs::perms::owner_read
-        | fs::perms::owner_write
-        | fs::perms::group_read
-        | fs::perms::others_read
-        | fs::perms::others_exec;
+      auto const permissions = fs::perms::owner_read | fs::perms::owner_write | fs::perms::group_read |
+                               fs::perms::others_read | fs::perms::others_exec;
       fs::permissions(this->path(), permissions);
     }
     handle << content;
     if(not handle.good())
       throw std::runtime_error("failed to write to file at " + this->path().string());
   }
-} // namespace rolly
+}  // namespace rolly

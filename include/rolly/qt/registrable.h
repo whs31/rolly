@@ -18,6 +18,6 @@ namespace rolly::qt::qml {
     }
 
    private:
-    bool registered_{false};
+    bool registered_ {false};
   };
-} // namespace rolly::qt::qml
+}  // namespace rolly::qt::qml

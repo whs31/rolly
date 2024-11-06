@@ -24,6 +24,6 @@ TEST_CASE("Bit", "[bit]") {
     REQUIRE_FALSE(is_pow2(257));
     REQUIRE(is_pow2(512));
     REQUIRE_FALSE(is_pow2(513));
-    REQUIRE(is_pow2(1024));
+    REQUIRE(is_pow2(1'024));
   }
 }

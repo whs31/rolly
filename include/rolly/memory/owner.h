@@ -2,8 +2,7 @@
 
 #include "../concepts/ptr.h"
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief GSL-like owning raw pointer typedef.
    * @details <code>rolly::owner<T></code> is designed as a safety mechanism for code that must deal
@@ -17,4 +16,4 @@ namespace rolly
    */
   template <___concept___(concepts::c_ptr) T>
   using owner = T;
-} // namespace rolly
+}  // namespace rolly

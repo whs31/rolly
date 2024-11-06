@@ -9,8 +9,7 @@
 #include "exception/serialization_error.h"
 #include "serialization/tags.h"
 
-namespace rolly::serialization
-{
+namespace rolly::serialization {
   template <typename F, typename T, typename C = char>
   [[maybe_unused]] [[nodiscard]] std::basic_string<C> serialize(T const& value) = delete;
 
@@ -30,5 +29,5 @@ namespace rolly::serialization
 
   template <typename F, typename T, typename C = char>
   concept serializable_and_deserializable = serializable<F, T, C> and deserializable<F, T, C>;
-#endif // defined(___rolly_cxx20___)
-} // namespace rolly::serialization
+#endif  // defined(___rolly_cxx20___)
+}  // namespace rolly::serialization

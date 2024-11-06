@@ -1,13 +1,11 @@
 #pragma once
 
-namespace rolly
-{
+namespace rolly {
   template <typename R, typename T, R (*F)(T)>
-  struct deleter
-  {
+  struct deleter {
     template <typename U>
     void operator()(U& ref) const {
       (*F)(ref);
     }
   };
-} // namespace rolly
+}  // namespace rolly

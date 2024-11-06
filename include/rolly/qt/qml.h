@@ -4,29 +4,27 @@
 #include "literals.h"
 
 #if defined(ROLLY_QT_GUI) || defined(ROLLY_DOC)
-# include <algorithm>
-# include <stdexcept>
-# include <string>
-# include <string_view>
-# include <optional>
-# include <qobject.h>
-# include <qqml.h>
-# include <qqmlengine.h>
-# include <fmt/format.h>
-# include <fmt/color.h>
-# include "../types/stdint.h"
-# include "../global/version.h"
-# ifdef ___rolly_cxx20___
-#   include <concepts>
-# endif // ___rolly_cxx20___
+#  include <algorithm>
+#  include <stdexcept>
+#  include <string>
+#  include <string_view>
+#  include <optional>
+#  include <qobject.h>
+#  include <qqml.h>
+#  include <qqmlengine.h>
+#  include <fmt/format.h>
+#  include <fmt/color.h>
+#  include "../types/stdint.h"
+#  include "../global/version.h"
+#  ifdef ___rolly_cxx20___
+#    include <concepts>
+#  endif  // ___rolly_cxx20___
 
-namespace rolly::qt::qml
-{
-  namespace detail
-  {
+namespace rolly::qt::qml {
+  namespace detail {
     enum class strip_kind : u8 {
       prefix_and_extension,
-      namespace_, // NOLINT(*-identifier-naming)
+      namespace_,  // NOLINT(*-identifier-naming)
       hungarian_prefix
     };
 
@@ -53,22 +51,22 @@ namespace rolly::qt::qml
       }
       return std::string(str);
     }
-  } // namespace detail
+  }  // namespace detail
 
   enum class verbosity : u8 {
     quiet,
     verbose
   };
 
-#ifdef ROLLY_DEBUG
-  inline constexpr verbosity implicit_verbosity{verbosity::verbose};
-#else // defined(ROLLY_DEBUG)
-  inline constexpr verbosity implicit_verbosity{verbosity::quiet};
-#endif // defined(ROLLY_DEBUG)
+#  ifdef ROLLY_DEBUG
+  inline constexpr verbosity implicit_verbosity {verbosity::verbose};
+#  else   // defined(ROLLY_DEBUG)
+  inline constexpr verbosity implicit_verbosity {verbosity::quiet};
+#  endif  // defined(ROLLY_DEBUG)
 
-  template <auto Verbosity = implicit_verbosity ___sfinae_requirement___((std::is_same_v<decltype(Verbosity), verbosity>))>
-  ___requires___((std::is_same_v<decltype(Verbosity), verbosity>))
-  class module {
+  template <
+    auto Verbosity = implicit_verbosity ___sfinae_requirement___((std::is_same_v<decltype(Verbosity), verbosity>))>
+  ___requires___((std::is_same_v<decltype(Verbosity), verbosity>)) class module {
    public:
     using version_type = version;
     using verbosity_value = decltype(Verbosity);
@@ -77,7 +75,8 @@ namespace rolly::qt::qml
       : name_(std::move(name))
       , version_(version) {
       if constexpr(Verbosity == verbosity::verbose) {
-        fmt::println("rolly::qt::qml: registering module {} v{}.{}",
+        fmt::println(
+          "rolly::qt::qml: registering module {} v{}.{}",
           fmt::styled(this->name_, fmt::fg(fmt::terminal_color::blue) | fmt::emphasis::bold),
           fmt::styled(this->version_.major, fmt::fg(fmt::terminal_color::cyan)),
           fmt::styled(this->version_.minor, fmt::fg(fmt::terminal_color::cyan))
@@ -90,51 +89,62 @@ namespace rolly::qt::qml
     module& component(std::optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
       if constexpr(Verbosity == verbosity::verbose)
-        fmt::println("rolly::qt::qml: \tregistering type {} (qobject)",
+        fmt::println(
+          "rolly::qt::qml: \tregistering type {} (qobject)",
           fmt::styled(component_name, fmt::fg(fmt::terminal_color::green) | fmt::emphasis::bold)
         );
       ::qmlRegisterType<T>(this->name_.c_str(), this->version_.major, this->version_.minor, component_name.c_str());
       return *this;
     }
 
-   template <___concept___(std::derived_from<::QObject>) T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
-   module& singleton(T* instance, std::optional<std::string_view> name = std::nullopt) {
-     auto const component_name = module::demangle_class_name<T>(name);
-     if constexpr(Verbosity == verbosity::verbose)
-       fmt::println("rolly::qt::qml: \tregistering singleton type {} (instance)",
-         fmt::styled(component_name, fmt::fg(fmt::terminal_color::magenta) | fmt::emphasis::bold)
-       );
-     ::qmlRegisterSingletonInstance(this->name_.c_str(), this->version_.major, this->version_.minor, component_name.c_str(), instance);
-     return *this;
-   }
+    template <___concept___(std::derived_from<::QObject>) T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
+    module& singleton(T* instance, std::optional<std::string_view> name = std::nullopt) {
+      auto const component_name = module::demangle_class_name<T>(name);
+      if constexpr(Verbosity == verbosity::verbose)
+        fmt::println(
+          "rolly::qt::qml: \tregistering singleton type {} (instance)",
+          fmt::styled(component_name, fmt::fg(fmt::terminal_color::magenta) | fmt::emphasis::bold)
+        );
+      ::qmlRegisterSingletonInstance(
+        this->name_.c_str(),
+        this->version_.major,
+        this->version_.minor,
+        component_name.c_str(),
+        instance
+      );
+      return *this;
+    }
 
-   template <___concept___(std::derived_from<::QObject>) T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
-   module& singleton(std::optional<std::string_view> name = std::nullopt) {
-     auto const component_name = module::demangle_class_name<T>(name);
-     if constexpr(Verbosity == verbosity::verbose)
-       fmt::println("rolly::qt::qml: \tregistering singleton type {}",
-         fmt::styled(component_name, fmt::fg(fmt::terminal_color::bright_magenta) | fmt::emphasis::bold)
-       );
-     ::qmlRegisterSingletonType<T>(
-       this->name_.c_str(),
-       this->version_.major,
-       this->version_.minor,
-       component_name.c_str(),
-       T::create
-     );
-     return *this;
-   }
+    template <___concept___(std::derived_from<::QObject>) T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
+    module& singleton(std::optional<std::string_view> name = std::nullopt) {
+      auto const component_name = module::demangle_class_name<T>(name);
+      if constexpr(Verbosity == verbosity::verbose)
+        fmt::println(
+          "rolly::qt::qml: \tregistering singleton type {}",
+          fmt::styled(component_name, fmt::fg(fmt::terminal_color::bright_magenta) | fmt::emphasis::bold)
+        );
+      ::qmlRegisterSingletonType<
+        T>(this->name_.c_str(), this->version_.major, this->version_.minor, component_name.c_str(), T::create);
+      return *this;
+    }
 
-   module& file(std::string_view url, std::optional<std::string_view> name = std::nullopt) {
-     auto const component_name = module::demangle_file_url(url, name);
-     if constexpr(Verbosity == verbosity::verbose)
-       fmt::println("rolly::qt::qml: \tregistering type {} from {}",
-         fmt::styled(component_name, fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold),
-         fmt::styled(url, fmt::emphasis::faint)
-       );
-     ::qmlRegisterType(::QUrl(url.data()), this->name_.c_str(), this->version_.major, this->version_.minor, component_name.c_str());
-     return *this;
-   }
+    module& file(std::string_view url, std::optional<std::string_view> name = std::nullopt) {
+      auto const component_name = module::demangle_file_url(url, name);
+      if constexpr(Verbosity == verbosity::verbose)
+        fmt::println(
+          "rolly::qt::qml: \tregistering type {} from {}",
+          fmt::styled(component_name, fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold),
+          fmt::styled(url, fmt::emphasis::faint)
+        );
+      ::qmlRegisterType(
+        ::QUrl(url.data()),
+        this->name_.c_str(),
+        this->version_.major,
+        this->version_.minor,
+        component_name.c_str()
+      );
+      return *this;
+    }
 
    private:
     template <___concept___(std::derived_from<::QObject>) T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
@@ -153,7 +163,9 @@ namespace rolly::qt::qml
         return res;
       } catch(std::exception const& err) {
         if constexpr(Verbosity == verbosity::verbose)
-          fmt::println(stderr, "rolly::qt::qml: error during qml registration: {}",
+          fmt::println(
+            stderr,
+            "rolly::qt::qml: error during qml registration: {}",
             fmt::styled(err.what(), fmt::fg(fmt::terminal_color::red) | fmt::emphasis::bold)
           );
         return "Unknown";
@@ -163,5 +175,5 @@ namespace rolly::qt::qml
     std::string name_;
     version_type version_;
   };
-} // namespace rolly::qt::qml
-#endif // defined(ROLLY_QT_GUI)
+}  // namespace rolly::qt::qml
+#endif  // defined(ROLLY_QT_GUI)

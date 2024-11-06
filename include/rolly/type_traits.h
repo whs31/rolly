@@ -2,8 +2,7 @@
 
 #include <type_traits>
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Remove all cv qualifiers, references and pointers from a type.
    * @details If the type T is a reference type, provides the member typedef type which is the type referred to by T
@@ -14,8 +13,7 @@ namespace rolly
    * @sa https://en.cppreference.com/w/cpp/types/remove_cvref
    */
   template <typename T>
-  struct remove_cvref
-  {
+  struct remove_cvref {
     /**
      * @brief The type referred by T or T itself if it is not a reference, with top-level cv-qualifiers removed.
      */
@@ -41,8 +39,7 @@ namespace rolly
    * @see plain_type_t
    */
   template <typename T>
-  struct plain_type
-  {
+  struct plain_type {
     /**
      * @brief The type without qualifiers, references and pointers.
      */
@@ -60,4 +57,4 @@ namespace rolly
    */
   template <typename T>
   using plain_type_t = typename plain_type<T>::type;
-} // namespace rolly
+}  // namespace rolly
