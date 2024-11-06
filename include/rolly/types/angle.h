@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "../math.h"
+#include "../contracts.h"
 #include "../concepts/num.h"
 #include "../format/ostream_formatter.h"
 #include "./stdint.h"
@@ -23,6 +24,14 @@ namespace rolly {
          * @brief Underlying number type.
          */
         using number_type = T;
+
+        /**
+         * @brief Measurement unit of the angle.
+         */
+        enum class unit {
+          degrees,
+          radians
+        };
 
         /**
          * @brief Constructs an empty angle.
@@ -74,6 +83,19 @@ namespace rolly {
             return fmt::format("{:.2f}°", this->degrees());
           else
             return fmt::format("{}°", this->degrees());
+        }
+
+        /**
+         * @brief Returns the angle in the given unit.
+         * @param u Unit to return the angle in.
+         * @return Angle in the given unit.
+         */
+        [[nodiscard]] constexpr number_type in(unit u) const {
+          switch(u) {
+            case unit::radians: return this->radians();
+            case unit::degrees: return this->degrees();
+            default: contracts::broken_precondition("Unknown unit");
+          }
         }
 
         /**
