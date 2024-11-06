@@ -46,7 +46,8 @@ if(NOT WIN32)
   find_package(libuuid REQUIRED)
 endif()
 
-add_library(${PROJECT_NAME})
+add_library(${PROJECT_NAME}
+  include/rolly/types/angle.h)
 add_library(${PROJECT_FULL_NAME} ALIAS ${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
