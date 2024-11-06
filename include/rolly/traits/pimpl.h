@@ -36,3 +36,14 @@ namespace rolly {
   template <typename T>
   using pimpl = propagate_const<box<T>>;
 }  // namespace rolly
+
+#define DECLARE_PRIVATE(classname)                                                          \
+  struct classname##Private;                                                                \
+  rolly::pimpl<classname##Private> m_d;                                                     \
+  [[nodiscard]] inline classname##Private const& d() const noexcept { return *this->m_d; }  \
+  [[nodiscard]] inline classname##Private& d() noexcept { return *this->m_d; }
+
+#define DECLARE_PRIVATE_AS(classname)                                                       \
+  rolly::pimpl<classname> m_d;                                                              \
+  [[nodiscard]] inline classname const& d() const noexcept { return *this->m_d; }           \
+  [[nodiscard]] inline classname& d() noexcept { return *this->m_d; }
