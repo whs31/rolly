@@ -16,38 +16,39 @@ option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 option(ROLLY_COMPAT "Enable C++17 compatibility mode" OFF)
 option(ROLLY_QT "Link with Qt" OFF)
 
-if("${CMAKE_GENERATOR}" MATCHES "^Visual Studio")
+if ("${CMAKE_GENERATOR}" MATCHES "^Visual Studio")
   set(CMAKE_GENERATOR_PLATFORM "x64" CACHE STRING "" FORCE)
-endif()
+endif ()
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-if(ROLLY_COMPAT)
+if (ROLLY_COMPAT)
   set(ROLLY_CXX_STANDARD 17)
-else()
+else ()
   set(ROLLY_CXX_STANDARD 20)
-endif()
+endif ()
 
 message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 
 # -- dependencies --
 find_package(fmt REQUIRED)
-if(ROLLY_QT)
+if (ROLLY_QT)
   find_package(Qt5
     COMPONENTS
     Core
     Quick
     REQUIRED
   )
-endif()
-if(NOT WIN32)
+endif ()
+if (NOT WIN32)
   find_package(libuuid REQUIRED)
-endif()
+endif ()
 
 add_library(${PROJECT_NAME}
-  include/rolly/types/angle.h)
+  include/rolly/types/angle.h
+  include/rolly/types/velocity.h)
 add_library(${PROJECT_FULL_NAME} ALIAS ${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
@@ -59,61 +60,61 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 target_sources(${PROJECT_NAME}
   PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/contracts.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/directories.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/rtti.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/contracts.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/directories.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/rtti.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
 )
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
-    fmt::fmt
+  fmt::fmt
   PRIVATE
-    $<$<NOT:$<PLATFORM_ID:Windows>>:libuuid::libuuid>
+  $<$<NOT:$<PLATFORM_ID:Windows>>:libuuid::libuuid>
 )
-if(ROLLY_QT)
+if (ROLLY_QT)
   target_link_libraries(${PROJECT_NAME}
     PUBLIC
-      Qt::Core
-      Qt::Quick
-      Qt::Qml
+    Qt::Core
+    Qt::Quick
+    Qt::Qml
   )
-endif()
+endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src)
 
-if(BUILD_SHARED_LIBS)
+if (BUILD_SHARED_LIBS)
   message(STATUS "[${PROJECT_FULL_NAME}] adding shared export symbols: ROLLY_LIBRARY")
   target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_LIBRARY=1)
-else()
+else ()
   message(STATUS "[${PROJECT_FULL_NAME}] adding static export symbols: ROLLY_STATIC_LIBRARY")
   target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_STATIC_LIBRARY=1)
-endif()
+endif ()
 
-if(ROLLY_COMPAT)
+if (ROLLY_COMPAT)
   target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_COMPAT=1)
-endif()
+endif ()
 
-if(NOT CMAKE_BUILD_TYPE)
+if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug)
-endif()
+endif ()
 
-if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   message(STATUS "[${PROJECT_FULL_NAME}] adding compiler flags: -Wall -Wextra -Wpedantic -Werror")
   target_compile_options(${PROJECT_NAME} PRIVATE
     $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wpedantic>
   )
-endif()
+endif ()
 
-if(ROLLY_TESTS)
+if (ROLLY_TESTS)
   enable_testing()
   add_subdirectory(tests)
   add_subdirectory(bin)
-endif()
+endif ()
 
 # -- installation --
 message(STATUS "[${PROJECT_FULL_NAME}] tests status: ${ROLLY_TESTS}")

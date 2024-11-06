@@ -5,7 +5,6 @@
 #include "../contracts.h"
 #include "../concepts/num.h"
 #include "../format/ostream_formatter.h"
-#include "./stdint.h"
 
 namespace rolly {
   inline namespace types {
@@ -14,24 +13,24 @@ namespace rolly {
      */
     inline namespace euclid {
       /**
+       * @brief Measurement unit of the angle.
+       */
+      enum class angle_unit : char {
+        degrees,
+        radians
+      };
+
+      /**
        * @brief Newtype describing an angle.
        * @details Stores an angle in radians.
        * @tparam T Number type. Must satisfy concept <tt>rolly::concepts::num</tt>. Default is <tt>f32</tt>.
        */
-      template <___concept___(concepts::num) T = f32>
+      template <___concept___(concepts::num) T = f32 ___sfinae_requirement___(is_num_v<T>)>
       struct angle {
         /**
          * @brief Underlying number type.
          */
         using number_type = T;
-
-        /**
-         * @brief Measurement unit of the angle.
-         */
-        enum class unit {
-          degrees,
-          radians
-        };
 
         /**
          * @brief Constructs an empty angle.
@@ -90,10 +89,10 @@ namespace rolly {
          * @param u Unit to return the angle in.
          * @return Angle in the given unit.
          */
-        [[nodiscard]] constexpr number_type in(unit u) const {
+        [[nodiscard]] constexpr number_type in(angle_unit u) const {
           switch(u) {
-            case unit::radians: return this->radians();
-            case unit::degrees: return this->degrees();
+            case angle_unit::radians: return this->radians();
+            case angle_unit::degrees: return this->degrees();
             default: contracts::broken_precondition("Unknown unit");
           }
         }
@@ -199,10 +198,10 @@ namespace rolly {
          * @param u Unit.
          * @return Constructed angle.
          */
-        [[nodiscard]] static constexpr angle from(number_type value, unit u) {
+        [[nodiscard]] static constexpr angle from(number_type value, angle_unit u) {
           switch(u) {
-            case unit::radians: return from_radians(value);
-            case unit::degrees: return from_degrees(value);
+            case angle_unit::radians: return from_radians(value);
+            case angle_unit::degrees: return from_degrees(value);
             default: contracts::broken_precondition("Unknown unit");
           }
         }
