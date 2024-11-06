@@ -45,3 +45,5 @@ settings/*.cfg
 __pycache__
 .venv
 m.css
+/html/*
+/latex/*

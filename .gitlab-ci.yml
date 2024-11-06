@@ -14,7 +14,7 @@ include:
 local_variables:
   extends: .variables_core_job
   script:
-    - !reference [.svariables, conan_project_name]
+    - !reference [ .svariables, conan_project_name ]
 
 build:alse:
   stage: build
@@ -33,10 +33,14 @@ build:alse-c++17:
 test:alse:
   stage: test
   allow_failure: true
+  before_script:
+    - !reference [ .svariables, init_variables ]
+  needs:
+    - job: build:alse
   extends: .tests_catch2_extend
 
 test:alse-c++17:
-  tags: [alse]
+  tags: [ alse ]
   stage: test
   allow_failure: true
   needs:
@@ -57,3 +61,30 @@ publish:alse:
 deploy:alse:
   stage: deploy
   extends: .deploy_library_extend
+
+documentation:
+  tags: [ dev-utils ]
+  stage: deploy
+  allow_failure: true
+  needs:
+    - job: build:alse
+  script:
+    - doxygen Doxyfile
+    - mkdir -p public
+    - cp -r docs/html/* public
+  artifacts:
+    paths:
+      - public
+
+pages:
+  tags: [ alse ]
+  stage: deploy
+  allow_failure: true
+  needs:
+    - job: documentation
+      artifacts: true
+  script:
+    - echo "Deploying to GitLab Pages"
+  artifacts:
+    paths:
+      - public

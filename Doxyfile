@@ -195,22 +195,22 @@ HTML_OUTPUT            = html
 HTML_FILE_EXTENSION    = .html
 
 # To use without mcss, uncomment the following line:
-# HTML_HEADER            = doxygen/header.html
-HTML_HEADER            =
+HTML_HEADER            = doxygen/header.html
+# HTML_HEADER            =
 HTML_FOOTER            =
 HTML_STYLESHEET        =
 
-# To use with mcss, uncomment the following line:
-# HTML_EXTRA_STYLESHEET  = doxygen/preset/doxygen-awesome.css doxygen/preset/custom.css
-HTML_EXTRA_STYLESHEET  =
+# To use without mcss, uncomment the following line:
+HTML_EXTRA_STYLESHEET  = doxygen/preset/doxygen-awesome.css doxygen/preset/custom.css
+# HTML_EXTRA_STYLESHEET  =
 
-# To use with mcss, uncomment the following line:
-# HTML_EXTRA_FILES       = doxygen/preset/doxygen-awesome-tabs.js \
-#                          doxygen/preset/doxygen-awesome-paragraph-link.js \
-#                          doxygen/preset/doxygen-awesome-interactive-toc.js \
-#                          doxygen/preset/doxygen-awesome-fragment-copy-button.js \
-#                          doxygen/preset/doxygen-awesome-darkmode-toggle.js
-HTML_EXTRA_FILES       =
+# To use without mcss, uncomment the following line:
+HTML_EXTRA_FILES       = doxygen/preset/doxygen-awesome-tabs.js \
+                         doxygen/preset/doxygen-awesome-paragraph-link.js \
+                         doxygen/preset/doxygen-awesome-interactive-toc.js \
+                         doxygen/preset/doxygen-awesome-fragment-copy-button.js \
+                         doxygen/preset/doxygen-awesome-darkmode-toggle.js
+# HTML_EXTRA_FILES       =
 HTML_COLORSTYLE        = LIGHT
 HTML_COLORSTYLE_HUE    = 286
 HTML_COLORSTYLE_SAT    = 60
