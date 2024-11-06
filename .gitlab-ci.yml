@@ -33,10 +33,6 @@ build:alse-c++17:
 test:alse:
   stage: test
   allow_failure: true
-  before_script:
-    - !reference [ .svariables, init_variables ]
-  needs:
-    - job: build:alse
   extends: .tests_catch2_extend
 
 test:alse-c++17:
