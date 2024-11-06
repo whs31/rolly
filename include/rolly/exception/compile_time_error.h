@@ -4,40 +4,35 @@
 #include <string_view>
 #include <fmt/format.h>
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Inline namespace for library exception classes.
    */
-  inline namespace exceptions {} // namespace exceptions
-} // namespace rolly
+  inline namespace exceptions {}  // namespace exceptions
+}  // namespace rolly
 
-namespace rolly
-{
-  inline namespace exceptions
-  {
+namespace rolly {
+  inline namespace exceptions {
     /**
      * @brief Compile-time error exception class.
      */
-    class compile_time_error : public std::exception
-    {
-     std::string message_;
+    class compile_time_error : public std::exception {
+      std::string message_;
+
      public:
       /**
        * @brief Construct a new compile time error object with a default message.
        * @details The default message is "compile-time error occurred."
        */
       compile_time_error()
-        : message_("compile-time error occurred.\n")
-      {}
+        : message_("compile-time error occurred.\n") {}
 
       /**
        * @brief Construct a new compile time error object with a message.
        * @param message Error message.
        */
       explicit compile_time_error(std::string_view message)
-        : message_(fmt::format("compile-time error: {}\n", message).c_str())
-      {}
+        : message_(fmt::format("compile-time error: {}\n", message)) {}
 
       /**
        * @brief Construct a new compile time error object with a message and format arguments.
@@ -48,21 +43,19 @@ namespace rolly
        */
       template <typename... Args>
       explicit compile_time_error(std::string_view message, Args&&... args)
-        : message_(fmt::format("compile-time error: {}\n", fmt::format(message, std::forward<Args>(args)...)).c_str())
-      {}
+        : message_(fmt::format("compile-time error: {}\n", fmt::format(message, std::forward<Args>(args)...)).c_str()) {
+      }
 
       ~compile_time_error() noexcept override = default;
-      compile_time_error(const compile_time_error&) = default;
+      compile_time_error(compile_time_error const&) = default;
       compile_time_error(compile_time_error&&) = default;
-      compile_time_error& operator=(const compile_time_error&) = default;
+      compile_time_error& operator=(compile_time_error const&) = default;
       compile_time_error& operator=(compile_time_error&&) = default;
 
       /**
        * @brief Returns the error message.
        */
-      [[nodiscard]] char const* what() const noexcept override {
-        return this->message_.c_str();
-      }
+      [[nodiscard]] char const* what() const noexcept override { return this->message_.c_str(); }
     };
-  } // namespace exceptions
-} // namespace rolly
+  }  // namespace exceptions
+}  // namespace rolly

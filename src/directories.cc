@@ -7,18 +7,17 @@
 #include "oslayer/base.h"
 
 #ifdef ROLLY_OS_WINDOWS
-# include "oslayer/win/known_folder.h"
-#else 
-# include "oslayer/linux/dirs.h"
-#endif // ROLLY_OS_WINDOWS
+#  include "oslayer/win/known_folder.h"
+#else
+#  include "oslayer/linux/dirs.h"
+#endif  // ROLLY_OS_WINDOWS
 
 using std::string;
 using std::string_view;
 using std::filesystem::path;
 
 #if defined(ROLLY_OS_LINUX)
-namespace 
-{
+namespace {
   string trim(string_view const name, string_view const repl) {
     auto str = string();
     str.reserve(name.length());
@@ -34,22 +33,18 @@ namespace
     }
     return str;
   }
-} // namespace
-#endif // ROLLY_OS_LINUX
+}  // namespace
+#endif  // ROLLY_OS_LINUX
 
-namespace rolly
-{
+namespace rolly {
   dirs::dirs()
-    : user_home_(oslayer::___os___::home_dir()) 
-  {}
+    : user_home_(oslayer::___os___::home_dir()) {}
 
-  path const& dirs::user_home() const {
-    return this->user_home_;
-  }
+  path const& dirs::user_home() const { return this->user_home_; }
 
   application_dirs::application_dirs(
-    [[maybe_unused]] string_view const qualifier, 
-    [[maybe_unused]] string_view const vendor, 
+    [[maybe_unused]] string_view const qualifier,
+    [[maybe_unused]] string_view const vendor,
     [[maybe_unused]] string_view const app
   ) {
 #if defined(ROLLY_OS_WINDOWS)
@@ -63,9 +58,9 @@ namespace rolly
     this->config_local_dir_ = local_appdata / p / "config";
     this->data_dir_ = appdata / p / "data";
     this->data_local_dir_ = local_appdata / p / "data";
-    this->preference_dir_ = this->config_dir_; // NOLINT
-    this->runtime_dir_ = std::nullopt;         // NOLINT
-    this->state_dir_ = std::nullopt;           // NOLINT         
+    this->preference_dir_ = this->config_dir_;  // NOLINT
+    this->runtime_dir_ = std::nullopt;          // NOLINT
+    this->state_dir_ = std::nullopt;            // NOLINT
 #elif defined(ROLLY_OS_LINUX)
     auto const p = path(::trim(app, ""));
     auto const home = oslayer::___os___::home_dir();
@@ -73,9 +68,9 @@ namespace rolly
     this->project_path_ = p;
     this->cache_dir_ = home / ".cache" / p;
     this->config_dir_ = home / ".config" / p;
-    this->config_local_dir_ = this->config_dir_; // NOLINT
+    this->config_local_dir_ = this->config_dir_;  // NOLINT
     this->data_dir_ = home / ".local" / "share" / p;
-    this->data_local_dir_ = this->data_dir_;     // NOLINT
+    this->data_local_dir_ = this->data_dir_;      // NOLINT
     this->preference_dir_ = this->config_dir_;
     try {
       this->runtime_dir_ = oslayer::___os___::xdg_runtime_dir();
@@ -90,32 +85,26 @@ namespace rolly
       return owned_str;
     };
     auto const org = replaced(vendor, ' ', '-');
-    auto const path = fmt::format("{}{}{}{}{}",
-      qualifier,
-      qualifier.empty() ? "" : ".",
-      org,
-      org.empty() ? "" : ".",
-      app
-    );
+    auto const path =
+      fmt::format("{}{}{}{}{}", qualifier, qualifier.empty() ? "" : ".", org, org.empty() ? "" : ".", app);
     auto const home = oslayer::___os___::home_dir();
     this->project_path_ = path;
     this->cache_dir_ = home / "Library" / "Caches" / path;
     this->config_dir_ = home / "Library" / "Application Support" / path;
-    this->config_local_dir_ = this->config_dir_;    // NOLINT
-    this->data_dir_ = this->config_dir_;            // NOLINT
-    this->data_local_dir_ = this->config_dir_;      // NOLINT
-    this->preference_dir_ = this->config_dir_;      // NOLINT
-    this->runtime_dir_ = std::nullopt;              // NOLINT
-    this->state_dir_ = std::nullopt;                // NOLINT  
-#endif // OS
+    this->config_local_dir_ = this->config_dir_;  // NOLINT
+    this->data_dir_ = this->config_dir_;          // NOLINT
+    this->data_local_dir_ = this->config_dir_;    // NOLINT
+    this->preference_dir_ = this->config_dir_;    // NOLINT
+    this->runtime_dir_ = std::nullopt;            // NOLINT
+    this->state_dir_ = std::nullopt;              // NOLINT
+#endif                                          // OS
   }
 
   application_dirs::application_dirs(meta::project_meta const& meta)
-    : application_dirs(meta.domain(), meta.organization(), meta.name())
-  {}
+    : application_dirs(meta.domain(), meta.organization(), meta.name()) {}
 
   void application_dirs::create() const {
-    for(auto i = 0; i <= static_cast<int>(dir::preferences); ++i) 
+    for(auto i = 0; i <= static_cast<int>(dir::preferences); ++i)
       if(auto const directory = (*this)[static_cast<enum dir>(i)]; not exists(directory))
         create_directories(directory);
     if(this->runtime_dir_ and not exists(*this->runtime_dir_))
@@ -125,7 +114,7 @@ namespace rolly
   }
 
   void application_dirs::remove() const {
-    for(auto i = 0; i <= static_cast<int>(dir::preferences); ++i) 
+    for(auto i = 0; i <= static_cast<int>(dir::preferences); ++i)
       if(auto const directory = (*this)[static_cast<enum dir>(i)]; exists(directory))
         remove_all(directory);
     if(this->runtime_dir_ and exists(*this->runtime_dir_))
@@ -155,12 +144,20 @@ namespace rolly
   }
 
   path const& application_dirs::project_path() const { return this->project_path_; }
+
   path const& application_dirs::cache_dir() const { return this->cache_dir_; }
+
   path const& application_dirs::config_dir() const { return this->config_dir_; }
+
   path const& application_dirs::config_local_dir() const { return this->config_local_dir_; }
+
   path const& application_dirs::data_dir() const { return this->data_dir_; }
+
   path const& application_dirs::data_local_dir() const { return this->data_local_dir_; }
+
   path const& application_dirs::preference_dir() const { return this->preference_dir_; }
+
   std::optional<path> const& application_dirs::runtime_dir() const { return this->runtime_dir_; }
+
   std::optional<path> const& application_dirs::state_dir() const { return this->state_dir_; }
-} // namespace rolly
+}  // namespace rolly

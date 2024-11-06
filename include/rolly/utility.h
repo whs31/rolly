@@ -4,8 +4,7 @@
 #include <utility>
 #include "concepts/enum.h"
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Informs the compiler that the current location is unreachable.
    * @details If the compiler can prove that the current location is unreachable, it is free to
@@ -33,11 +32,11 @@ namespace rolly
    * @sa https://en.cppreference.com/w/cpp/utility/unreachable
    */
   [[noreturn]] inline void unreachable() {
-    #if defined(_MSC_VER) && !defined(__clang__)
+#if defined(_MSC_VER) && ! defined(__clang__)
     __assume(false);
-    #else // defined(_MSC_VER) && !defined(__clang__)
+#else   // defined(_MSC_VER) && !defined(__clang__)
     __builtin_unreachable();
-    #endif // defined(_MSC_VER) && !defined(__clang__)
+#endif  // defined(_MSC_VER) && !defined(__clang__)
   }
 
   /**
@@ -82,12 +81,10 @@ namespace rolly
    */
   template <typename T>
 #ifdef ___rolly_cxx20___
-  requires(std::is_enum_v<T> and requires(T e) {
-    enable_bitwise_or(e);
-  } or requires(T e) {
-    enum_flag(e);
-  })
-#endif // ___rolly_cxx20___
+    requires(
+      std::is_enum_v<T> and requires(T e) { enable_bitwise_or(e); } or requires(T e) { enum_flag(e); }
+    )
+#endif  // ___rolly_cxx20___
   constexpr T operator|(T const lhs, T const rhs) noexcept {
     return static_cast<T>(to_underlying(lhs) | to_underlying(rhs));
   }
@@ -120,12 +117,10 @@ namespace rolly
    */
   template <typename T>
 #ifdef ___rolly_cxx20___
-  requires(std::is_enum_v<T> and requires(T e) {
-    enable_bitwise_and(e);
-  } or requires(T e) {
-    enum_flag(e);
-  })
-#endif // ___rolly_cxx20___
+    requires(
+      std::is_enum_v<T> and requires(T e) { enable_bitwise_and(e); } or requires(T e) { enum_flag(e); }
+    )
+#endif  // ___rolly_cxx20___
   constexpr T operator&(T const lhs, T const rhs) noexcept {
     return static_cast<T>(to_underlying(lhs) & to_underlying(rhs));
   }
@@ -158,12 +153,10 @@ namespace rolly
    */
   template <typename T>
 #ifdef ___rolly_cxx20___
-  requires(std::is_enum_v<T> and requires(T e) {
-    enable_bitwise_xor(e);
-  } or requires(T e) {
-    enum_flag(e);
-  })
-#endif // ___rolly_cxx20___
+    requires(
+      std::is_enum_v<T> and requires(T e) { enable_bitwise_xor(e); } or requires(T e) { enum_flag(e); }
+    )
+#endif  // ___rolly_cxx20___
   constexpr T operator^(T const lhs, T const rhs) noexcept {
     return static_cast<T>(to_underlying(lhs) ^ to_underlying(rhs));
   }
@@ -196,13 +189,11 @@ namespace rolly
    */
   template <typename T>
 #ifdef ___rolly_cxx20___
-  requires(std::is_enum_v<T> and requires(T e) {
-    enable_bitwise_not(e);
-  } or requires(T e) {
-    enum_flag(e);
-  })
-#endif // ___rolly_cxx20___
+    requires(
+      std::is_enum_v<T> and requires(T e) { enable_bitwise_not(e); } or requires(T e) { enum_flag(e); }
+    )
+#endif  // ___rolly_cxx20___
   constexpr T operator~(T const value) noexcept {
     return static_cast<T>(~to_underlying(value));
   }
-} // namespace rolly
+}  // namespace rolly

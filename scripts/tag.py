@@ -134,13 +134,36 @@ def tag_git(tag: str) -> None:
                    , check=True
                    , cwd=getroot("scripts"))
 
+def extract_semver(string: str) -> str:
+    return re.search(r"(\d+\.)?(\d+\.)?(\*|\d+)", string).group(0)
+
+def print_semver(root: str, filename: str, regex: str) -> str:
+    try:
+        with open(os.path.join(root, filename), "r") as f:
+            lines = f.readlines()
+            for i, line in enumerate(lines):
+                if re.search(regex, line) and not line.startswith("cmake_"):
+                    print(colored(f"- {filename:<30}: {extract_semver(line)}", "green"))
+                    break
+    except FileNotFoundError:
+        print(colored(f"- {filename:<30}: not found", "yellow"))
+
+def show_versions(root):
+    print_semver(root, "CMakeLists.txt", r"VERSION (\d+\.)?(\d+\.)?(\*|\d+)")
+    print_semver(root, "conanfile.py", r"version\s*=\s*\"(.*)\"")
+    print_semver(root, "Doxyfile", r"PROJECT_NUMBER\s*=\s*(\S*)")
+
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-v", "--version", type=str, required=True, help="New project version")
+    parser.add_argument("-v", "--version", type=str, help="New project version")
     parser.add_argument("-g", "--git", action="store_true", help="Tag git repository")
+    parser.add_argument("-s", "--show", action="store_true", help="Show current versions")
     args = parser.parse_args()
     root = getroot("scripts")
+    if args.show:
+        show_versions(root)
+        sys.exit(0)
     patch_cmake(strip_version(args.version), root)
     patch_conanfile(args.version, root)
     patch_doxyfile(args.version, root)

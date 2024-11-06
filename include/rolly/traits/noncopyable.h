@@ -1,7 +1,6 @@
 #pragma once
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Disallows copy operations for a type
    * @details Example usage:
@@ -15,11 +14,11 @@ namespace rolly
    * @see nonmovable
    * @see pin
    */
-  struct noncopyable // NOLINT(*-special-member-functions)
+  struct noncopyable  // NOLINT(*-special-member-functions)
   {
     noncopyable() = default;
     ~noncopyable() = default;
     noncopyable(noncopyable const&) = delete;
     noncopyable& operator=(noncopyable const&) = delete;
   };
-} // namespace rolly
+}  // namespace rolly

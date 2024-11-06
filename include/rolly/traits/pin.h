@@ -3,8 +3,7 @@
 #include "noncopyable.h"
 #include "nonmovable.h"
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Disallows copy and move operations for a type.
    * @details Useful for types that are not meant to be copied or moved.
@@ -24,5 +23,6 @@ namespace rolly
    * @see noncopyable
    * @see nonmovable
    */
-  struct pin : noncopyable, nonmovable {};
-} // namespace rolly
+  struct pin : noncopyable,
+               nonmovable {};
+}  // namespace rolly

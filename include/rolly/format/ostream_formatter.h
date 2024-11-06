@@ -5,15 +5,14 @@
 #include <iosfwd>
 #include <fmt/format.h>
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Formatter for types which support stream output.
    * @details Example usage for <tt>std::ostream</tt>:
    * @code {.cpp}
    * template <> struct [[maybe_unused]] fmt::formatter<YourType> : rolly::ostream_formatter<char> {};
    * @endcode
-   * 
+   *
    * Example usage for <tt>std::wostream</tt>:
    * @code {.cpp}
    * template <> struct [[maybe_unused]] fmt::formatter<YourType> : rolly::ostream_formatter<wchar_t> {};
@@ -21,11 +20,10 @@ namespace rolly
    * @tparam C Underlying character type.
    */
   template <typename C>
-  struct [[maybe_unused]] ostream_formatter : fmt::formatter<std::basic_string_view<C>, C>
-  {
+  struct [[maybe_unused]] ostream_formatter : fmt::formatter<std::basic_string_view<C>, C> {
     /**
      * @brief Required by <tt>fmt</tt>.
-     */ 
+     */
     template <typename T, typename OutputIt>
     OutputIt format(T const& value, fmt::basic_format_context<OutputIt, C>& ctx) const {
       auto ss = std::basic_stringstream<C>();
@@ -33,4 +31,4 @@ namespace rolly
       return fmt::formatter<std::basic_string_view<C>, C>::format(ss.str(), ctx);
     }
   };
-} // namespace rolly
+}  // namespace rolly

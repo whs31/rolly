@@ -4,9 +4,8 @@
 #include <iterator>
 #include <sstream>
 
-namespace rolly
-{
-  std::vector<std::string> split(const std::string& input) {
+namespace rolly {
+  std::vector<std::string> split(std::string const& input) {
     auto buffer = std::istringstream(input);
     return {std::istream_iterator<std::string>(buffer), std::istream_iterator<std::string>()};
   }
@@ -16,11 +15,11 @@ namespace rolly
     return split(str);
   }
 
-  std::vector<std::string> split_by(const std::string& input, char delimiter) {
+  std::vector<std::string> split_by(std::string const& input, char delimiter) {
     auto tokens = std::vector<std::string>();
     auto token = std::string();
     auto token_stream = std::istringstream(input);
-    while(std::getline(token_stream, token, delimiter)) 
+    while(std::getline(token_stream, token, delimiter))
       tokens.push_back(token);
     return tokens;
   }
@@ -35,4 +34,4 @@ namespace rolly
     std::transform(str.begin(), str.end(), str.begin(), ::tolower);
     return str;
   }
-} // namespace rolly
+}  // namespace rolly

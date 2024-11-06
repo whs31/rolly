@@ -3,8 +3,7 @@
 #include "../memory/propagate_const.h"
 #include "../memory/box.h"
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Pointer-to-implementation pattern trait.
    * @details Allows to use <b>Pimpl</b> pattern in custom types and classes.
@@ -36,4 +35,15 @@ namespace rolly
    */
   template <typename T>
   using pimpl = propagate_const<box<T>>;
-} // namespace rolly
+}  // namespace rolly
+
+#define DECLARE_PRIVATE(classname)                                                          \
+  struct classname##Private;                                                                \
+  rolly::pimpl<classname##Private> m_d;                                                     \
+  [[nodiscard]] inline classname##Private const& d() const noexcept { return *this->m_d; }  \
+  [[nodiscard]] inline classname##Private& d() noexcept { return *this->m_d; }
+
+#define DECLARE_PRIVATE_AS(classname)                                                       \
+  rolly::pimpl<classname> m_d;                                                              \
+  [[nodiscard]] inline classname const& d() const noexcept { return *this->m_d; }           \
+  [[nodiscard]] inline classname& d() noexcept { return *this->m_d; }

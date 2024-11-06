@@ -2,8 +2,7 @@
 
 #include "pin.h"
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Singleton pattern trait.
    * @details Allows to use <b>Singleton</b> pattern in custom types and classes.
@@ -35,8 +34,7 @@ namespace rolly
    * @tparam T Class type.
    */
   template <typename T>
-  struct singleton : pin
-  {
+  struct singleton : pin {
     /**
      * @brief Returns <i>mutable pointer</i> to the singleton instance.
      * @return Mutable pointer to the singleton instance.
@@ -70,4 +68,4 @@ namespace rolly
 
     singleton() = default;
   };
-} // namespace rolly
+}  // namespace rolly

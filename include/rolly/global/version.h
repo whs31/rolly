@@ -4,21 +4,19 @@
 #include "version_definitions.h"
 #include "semver.h"
 
-namespace rolly // NOLINT(*-concat-nested-namespaces)
+namespace rolly  // NOLINT(*-concat-nested-namespaces)
 {
   /**
    * @brief Library meta information.
    */
-  namespace meta
-  {
+  namespace meta {
     /**
      * @brief Immutable constant expression structure, holding project meta-information.
      * @details See @ref library_metadata global variable for current <b>floppy</b> project meta-information.
      * @ingroup meta
      * @see version
      */
-    class [[maybe_unused]] project_meta
-    {
+    class [[maybe_unused]] project_meta {
      public:
       /**
        * @brief Creates project meta-information object at compile time.
@@ -36,8 +34,7 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
         : version_(version)
         , name_(name)
         , domain_(domain)
-        , organization_(organization)
-      {}
+        , organization_(organization) {}
 
       /**
        * @brief Version of the project.
@@ -83,21 +80,17 @@ namespace rolly // NOLINT(*-concat-nested-namespaces)
      * @see project_meta, version
      */
     [[maybe_unused]]
-#if __cplusplus > 201703L
-   constexpr
-#endif // __cplusplus > 201703L
-   const static inline auto library_metadata = project_meta(
-      version(
-        ROLLY_VERSION_MAJOR,
-        ROLLY_VERSION_MINOR,
-        ROLLY_VERSION_PATCH
-      ),
-      "rolly",
-      "com",
-      "Radar MMS"
-    );
-  } // namespace meta
-} // namespace rolly
+#if __cplusplus > 201'703L
+    constexpr
+#endif  // __cplusplus > 201703L
+      static inline auto const library_metadata = project_meta(
+        version(ROLLY_VERSION_MAJOR, ROLLY_VERSION_MINOR, ROLLY_VERSION_PATCH),
+        "rolly",
+        "com",
+        "Radar MMS"
+      );
+  }  // namespace meta
+}  // namespace rolly
 
 static_assert(alignof(rolly::version) == 2);
 static_assert(sizeof(rolly::version) == 12);

@@ -4,20 +4,18 @@
 #include "../type_traits.h"
 
 #if defined(___rolly_cxx20___)
-# include <concepts>
-#endif // defined(___rolly_cxx20___)
+#  include <concepts>
+#endif  // defined(___rolly_cxx20___)
 
-namespace rolly
-{
+namespace rolly {
   /**
    * @brief Concepts namespace.
    * @note Available only in C++20 mode.
    */
-  namespace concepts {} // namespace concepts
-} // namespace rolly
+  namespace concepts {}  // namespace concepts
+}  // namespace rolly
 
-namespace rolly::concepts
-{
+namespace rolly::concepts {
 #if defined(___rolly_cxx20___) || defined(ROLLY_DOC)
   /**
    * @brief Concept that is true if T is a number.
@@ -28,9 +26,17 @@ namespace rolly::concepts
    * @tparam T Type to check.
    */
   template <typename T>
-  concept num = std::integral<plain_type_t<T>>
-    or std::floating_point<plain_type_t<T>>
-    and (not std::is_same_v<plain_type_t<T>, bool>)
-    and (not std::is_same_v<plain_type_t<T>, std::nullptr_t>);
-#endif // defined(___rolly_cxx20___) || defined(ROLLY_DOC)
-} // namespace rolly::concepts
+  concept num = std::integral<plain_type_t<T>> or std::floating_point<plain_type_t<T>> and
+                                                    (not std::is_same_v<plain_type_t<T>, bool>) and
+                                                    (not std::is_same_v<plain_type_t<T>, std::nullptr_t>);
+#endif  // defined(___rolly_cxx20___) || defined(ROLLY_DOC)
+}  // namespace rolly::concepts
+
+namespace rolly {
+  template <typename T>
+  struct is_num
+    : std::integral_constant<bool, std::is_integral_v<plain_type_t<T>> or std::is_floating_point_v<plain_type_t<T>>> {};
+
+  template <typename T>
+  inline constexpr bool is_num_v = is_num<T>::value;
+}  // namespace rolly

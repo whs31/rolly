@@ -1,0 +1,86 @@
+---
+stages:
+  - build
+  - test
+  - deploy
+
+include:
+  - project: "developers/v2/libs/essentials/ci"
+    ref: main
+    file:
+      - 'linux/conan.yml'
+      - 'utils/variables.yml'
+
+local_variables:
+  extends: .variables_core_job
+  script:
+    - !reference [ .svariables, conan_project_name ]
+
+build:alse:
+  stage: build
+  extends: .build_extend
+  artifacts:
+    paths:
+      - build/Release
+
+build:alse-c++17:
+  stage: build
+  extends: .build_extend
+  script:
+    - rm -rf build
+    - conan build . -b "missing" -o "$CONAN_PACKAGE_NAME/*:compat=True" --profile gcc
+
+test:alse:
+  stage: test
+  allow_failure: true
+  extends: .tests_catch2_extend
+
+test:alse-c++17:
+  tags: [ alse ]
+  stage: test
+  allow_failure: true
+  needs:
+    - job: build:alse-c++17
+  script:
+    - rm -rf ./build
+    - conan build . -b "missing" -o "rolly/*:test=True" -o "rolly/*:compat=True" --profile gcc
+    - ./build/Release/tests/rolly-test --reporter JUnit::out=test_detail.xml --reporter console::out=-::colour-mode=ansi
+  artifacts:
+    reports:
+      junit:
+        - test_detail.xml
+
+publish:alse:
+  stage: deploy
+  extends: .publish_extend
+
+deploy:alse:
+  stage: deploy
+  extends: .deploy_library_extend
+
+documentation:
+  tags: [ dev-utils ]
+  stage: deploy
+  allow_failure: true
+  needs:
+    - job: build:alse
+  script:
+    - doxygen Doxyfile
+    - mkdir -p public
+    - cp -r docs/html/* public
+  artifacts:
+    paths:
+      - public
+
+pages:
+  tags: [ alse ]
+  stage: deploy
+  allow_failure: true
+  needs:
+    - job: documentation
+      artifacts: true
+  script:
+    - echo "Deploying to GitLab Pages"
+  artifacts:
+    paths:
+      - public

@@ -5,18 +5,18 @@
 #include "../global/definitions.h"
 
 #if defined(___rolly_cxx20___)
-# include <concepts>
-#endif // defined(___rolly_cxx20___)
+#  include <concepts>
+#endif  // defined(___rolly_cxx20___)
 
-namespace rolly::concepts
-{
+namespace rolly::concepts {
 #if defined(___rolly_cxx20___) || defined(ROLLY_DOC)
   /**
    * @brief Basic lockable concept.
    * @details Describes the minimal characteristics of a lockable object.
    * <ul>
-   *   <li>Blocks until a lock can be acquired for the current execution agent (thread, process, task). If an exception is thrown, no lock is acquired.</li>
-   *   <li>Releases the non-shared lock held by the execution agent. Throws no exceptions.</li>
+   *   <li>Blocks until a lock can be acquired for the current execution agent (thread, process, task). If an exception
+   * is thrown, no lock is acquired.</li> <li>Releases the non-shared lock held by the execution agent. Throws no
+   * exceptions.</li>
    * </ul>
    * @tparam T Type to check.
    * @note Available only in C++20 mode.
@@ -32,12 +32,13 @@ namespace rolly::concepts
 
   /**
    * @brief Lockable concept.
-   * @details The Lockable requirements extends the BasicLockable requirements to include attempted locking. 
-   * 
+   * @details The Lockable requirements extends the BasicLockable requirements to include attempted locking.
+   *
    * For type to be lockable, it must meet the following requirements:
    * <ul>
    *   <li>Satisfies the BasicLockable requirements</li>
-   *   <li>Provide a <code>try_lock</code> method: Attempts to acquire the lock for the current execution agent (thread, process, task) without blocking. If an exception is thrown, no lock is obtained.</li>
+   *   <li>Provide a <code>try_lock</code> method: Attempts to acquire the lock for the current execution agent (thread,
+   * process, task) without blocking. If an exception is thrown, no lock is obtained.</li>
    * </ul>
    * @tparam T Type to check.
    * @note Available only in C++20 mode.
@@ -52,12 +53,14 @@ namespace rolly::concepts
   /**
    * @brief Timed lockable concept.
    * @details Describes the requirements for a lockable object that can be locked for a specified time period.
-   * 
+   *
    * For type to be timed lockable, it must meet the following requirements:
    * <ul>
    *   <li>Satisfies the Lockable requirements</li>
-   *   <li>Provide a <code>try_lock_for</code> method: Blocks for the provided duration rel_time or until a lock on m is acquired. Returns true if a lock is acquired, false otherwise.</li>
-   *   <li>Provide a <code>try_lock_until</code> method: Blocks until the provided time_point or until a lock on m is acquired. Returns true if a lock is acquired, false otherwise.</li>
+   *   <li>Provide a <code>try_lock_for</code> method: Blocks for the provided duration rel_time or until a lock on m is
+   * acquired. Returns true if a lock is acquired, false otherwise.</li> <li>Provide a <code>try_lock_until</code>
+   * method: Blocks until the provided time_point or until a lock on m is acquired. Returns true if a lock is acquired,
+   * false otherwise.</li>
    * </ul>
    * @tparam T Type to check.
    * @tparam Duration Duration type.
@@ -68,25 +71,26 @@ namespace rolly::concepts
    * @see basic_lockable
    */
   template <typename T, typename Duration, typename TimePoint>
-  concept timed_lockable = lockable<T> and requires(
-    T t, 
-    std::chrono::duration<Duration> rel_time,
-    std::chrono::time_point<TimePoint> abs_time
-  ) {
-    { t.try_lock_for(rel_time) } -> std::convertible_to<bool>;
-    { t.try_lock_until(abs_time) } -> std::convertible_to<bool>;
-  };
+  concept timed_lockable =
+    lockable<T> and
+    requires(T t, std::chrono::duration<Duration> rel_time, std::chrono::time_point<TimePoint> abs_time) {
+      { t.try_lock_for(rel_time) } -> std::convertible_to<bool>;
+      { t.try_lock_until(abs_time) } -> std::convertible_to<bool>;
+    };
 
   /**
    * @brief Shared lockable concept.
-   * @details The SharedLockable requirements describe the minimal characteristics of types 
-   * that provide shared blocking semantics for execution agents (i.e. threads). 
-   * 
+   * @details The SharedLockable requirements describe the minimal characteristics of types
+   * that provide shared blocking semantics for execution agents (i.e. threads).
+   *
    * For type to be shared lockable, it must meet the following requirements:
    * <ul>
-   *   <li>Provide a <code>lock_shared</code> method: Blocks until a lock can be obtained for the current execution agent (thread, process, task). If an exception is thrown, no lock is obtained.</li>
-   *   <li>Provide an <code>try_lock_shared</code> method: Attempts to obtain a lock for the current execution agent (thread, process, task) without blocking. If an exception is thrown, no lock is obtained. Returns true if a lock is obtained, false otherwise.</li>
-   *   <li>Provide an <code>unlock_shared</code> method: Releases the shared lock held by the execution agent. Throws no exceptions.</li>
+   *   <li>Provide a <code>lock_shared</code> method: Blocks until a lock can be obtained for the current execution
+   * agent (thread, process, task). If an exception is thrown, no lock is obtained.</li> <li>Provide an
+   * <code>try_lock_shared</code> method: Attempts to obtain a lock for the current execution agent (thread, process,
+   * task) without blocking. If an exception is thrown, no lock is obtained. Returns true if a lock is obtained, false
+   * otherwise.</li> <li>Provide an <code>unlock_shared</code> method: Releases the shared lock held by the execution
+   * agent. Throws no exceptions.</li>
    * </ul>
    * @tparam T Type to check.
    * @note Available only in C++20 mode.
@@ -104,14 +108,16 @@ namespace rolly::concepts
 
   /**
    * @brief Shared timed lockable concept.
-   * @details The SharedTimedLockable requirements describe the characteristics of types that provide timed shared blocking semantics 
-   * for execution agents (threads, processes, tasks). 
-   * 
+   * @details The SharedTimedLockable requirements describe the characteristics of types that provide timed shared
+   * blocking semantics for execution agents (threads, processes, tasks).
+   *
    * For type to be shared timed lockable, it must meet the following requirements:
    * <ul>
    *   <li>Satisfies the SharedLockable requirements</li>
-   *   <li>Provide a <code>try_lock_shared_for</code> method: Blocks for the provided duration rel_time or until a lock on m is acquired. Returns true if a lock is acquired, false otherwise.</li>
-   *   <li>Provide a <code>try_lock_shared_until</code> method: Blocks until the provided time_point or until a lock on m is acquired. Returns true if a lock is acquired, false otherwise.</li>
+   *   <li>Provide a <code>try_lock_shared_for</code> method: Blocks for the provided duration rel_time or until a lock
+   * on m is acquired. Returns true if a lock is acquired, false otherwise.</li> <li>Provide a
+   * <code>try_lock_shared_until</code> method: Blocks until the provided time_point or until a lock on m is acquired.
+   * Returns true if a lock is acquired, false otherwise.</li>
    * </ul>
    * @tparam T Type to check.
    * @tparam Duration Duration type.
@@ -123,19 +129,17 @@ namespace rolly::concepts
    * @see lockable
    */
   template <typename T, typename Duration, typename TimePoint>
-  concept shared_timed_lockable = timed_lockable<T, Duration, TimePoint> and requires(
-    T t,
-    std::chrono::duration<Duration> rel_time,
-    std::chrono::time_point<TimePoint> abs_time
-  ) {
-    { t.try_lock_shared_for(rel_time) } -> std::convertible_to<bool>;
-    { t.try_lock_shared_until(abs_time) } -> std::convertible_to<bool>;
-  };
+  concept shared_timed_lockable =
+    timed_lockable<T, Duration, TimePoint> and
+    requires(T t, std::chrono::duration<Duration> rel_time, std::chrono::time_point<TimePoint> abs_time) {
+      { t.try_lock_shared_for(rel_time) } -> std::convertible_to<bool>;
+      { t.try_lock_shared_until(abs_time) } -> std::convertible_to<bool>;
+    };
 
   /**
    * @brief Mutex concept.
-   * @details The Mutex requirements extends the Lockable requirements to include inter-thread synchronization. 
-   * 
+   * @details The Mutex requirements extends the Lockable requirements to include inter-thread synchronization.
+   *
    * For type to be mutex, it must meet the following requirements:
    * <ul>
    *   <li>Satisfies the Lockable requirements</li>
@@ -153,16 +157,14 @@ namespace rolly::concepts
    * @see lockable
    */
   template <typename T>
-  concept mutex = lockable<T> 
-    and std::default_initializable<T>
-    and std::destructible<T>
-    and not std::copy_constructible<T>
-    and not std::move_constructible<T>;
+  concept mutex = lockable<T> and std::default_initializable<T> and std::destructible<T> and
+                  not std::copy_constructible<T> and not std::move_constructible<T>;
 
   /**
    * @brief Timed mutex concept.
-   * @details The TimedMutex requirements extends the TimedLockable requirements to include inter-thread synchronization.
-   * 
+   * @details The TimedMutex requirements extends the TimedLockable requirements to include inter-thread
+   * synchronization.
+   *
    * For type to be timed mutex, it must meet the following requirements:
    * <ul>
    *   <li>Satisfies the TimedLockable requirements</li>
@@ -182,8 +184,9 @@ namespace rolly::concepts
 
   /**
    * @brief Shared mutex concept.
-   * @details The SharedMutex requirements extends the SharedLockable requirements to include inter-thread synchronization.
-   * 
+   * @details The SharedMutex requirements extends the SharedLockable requirements to include inter-thread
+   * synchronization.
+   *
    * For type to be shared mutex, it must meet the following requirements:
    * <ul>
    *   <li>Satisfies the SharedLockable requirements</li>
@@ -201,8 +204,9 @@ namespace rolly::concepts
 
   /**
    * @brief Shared timed mutex concept.
-   * @details The SharedTimedMutex requirements extends the SharedTimedLockable requirements to include inter-thread synchronization.
-   * 
+   * @details The SharedTimedMutex requirements extends the SharedTimedLockable requirements to include inter-thread
+   * synchronization.
+   *
    * For type to be shared timed mutex, it must meet the following requirements:
    * <ul>
    *   <li>Satisfies the SharedTimedLockable requirements</li>
@@ -219,5 +223,5 @@ namespace rolly::concepts
    */
   template <typename T, typename Duration, typename TimePoint>
   concept shared_timed_mutex = shared_timed_lockable<T, Duration, TimePoint> and mutex<T>;
-#endif // defined(___rolly_cxx20___) || defined(ROLLY_DOC)
-} // namespace rolly::concepts
+#endif  // defined(___rolly_cxx20___) || defined(ROLLY_DOC)
+}  // namespace rolly::concepts
