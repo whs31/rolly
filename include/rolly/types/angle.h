@@ -194,6 +194,20 @@ namespace rolly {
         [[nodiscard]] static constexpr angle from_degrees(number_type degrees) { return angle(to_radians(degrees)); }
 
         /**
+         * @brief Constructs an angle from another unit.
+         * @param value Numeric value.
+         * @param u Unit.
+         * @return Constructed angle.
+         */
+        [[nodiscard]] static constexpr angle from(number_type value, unit u) {
+          switch(u) {
+            case unit::radians: return from_radians(value);
+            case unit::degrees: return from_degrees(value);
+            default: contracts::broken_precondition("Unknown unit");
+          }
+        }
+
+        /**
          * @brief Constructs an zero angle.
          */
         [[nodiscard]] static constexpr angle zero() { return angle(static_cast<number_type>(0.0)); }
