@@ -27,7 +27,7 @@ Checks:
   -misc-include-cleaner,
   -modernize-use-trailing-return-type,
   -*-missing-std-forward,
-  *-math-missing-parentheses
+  -*-math-missing-parentheses
 
 # Turn all the warnings from the checks above into errors.
 WarningsAsErrors: "*"

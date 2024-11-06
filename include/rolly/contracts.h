@@ -203,17 +203,18 @@ namespace rolly::contracts {
       detail::violate(contract_type::postcondition, message, location);
   }
 
-/**
- * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken invariant violation.
- * @details If the expression is false, the contract violation is thrown with the given message and location.
- * @param message Violation message. Defaults to <code>"Broken invariant"</code>.
- * @see invariant
- */
+  /**
+   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken invariant
+   * violation.
+   * @details If the expression is false, the contract violation is thrown with the given message and location.
+   * @param message Violation message. Defaults to <code>"Broken invariant"</code>.
+   * @see invariant
+   */
+  [[noreturn]]
 #ifndef ROLLY_DOC
   ___inline___
 #endif  // ROLLY_DOC
-    void
-    broken_invariant(
+    void broken_invariant(
       std::string_view message = "Broken invariant",
 #ifndef ROLLY_DOC
       source_location location = source_location::current()
@@ -222,17 +223,17 @@ namespace rolly::contracts {
     detail::violate(contract_type::invariant, message, location);
   }
 
-/**
- * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken precondition
- * violation.
- * @param message Violation message. Defaults to <code>"Broken precondition"</code>.
- * @see precondition
- */
+  /**
+   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken precondition
+   * violation.
+   * @param message Violation message. Defaults to <code>"Broken precondition"</code>.
+   * @see precondition
+   */
+  [[noreturn]]
 #ifndef ROLLY_DOC
   ___inline___
 #endif  // ROLLY_DOC
-    void
-    broken_precondition(
+    void broken_precondition(
       std::string_view message = "Broken precondition",
 #ifndef ROLLY_DOC
       source_location location = source_location::current()
@@ -241,17 +242,17 @@ namespace rolly::contracts {
     detail::violate(contract_type::precondition, message, location);
   }
 
-/**
- * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken postcondition
- * violation.
- * @param message Violation message. Defaults to <code>"Broken postcondition"</code>.
- * @see postcondition
- */
+  /**
+   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken postcondition
+   * violation.
+   * @param message Violation message. Defaults to <code>"Broken postcondition"</code>.
+   * @see postcondition
+   */
+  [[noreturn]]
 #ifndef ROLLY_DOC
   ___inline___
 #endif  // ROLLY_DOC
-    void
-    broken_postcondition(
+    void broken_postcondition(
       std::string_view message = "Broken postcondition",
 #ifndef ROLLY_DOC
       source_location location = source_location::current()

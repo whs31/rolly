@@ -1167,4 +1167,16 @@ TEST_CASE("Types", "[types]") {
       REQUIRE(fmt::format("{}", a) == "1.00°");
     }
   }
+
+  SECTION("Velocity") {
+    SECTION("Format") {
+      auto const v = velocity(10.f);
+      REQUIRE(fmt::format("{}", v) == "10.00 m/s");
+      REQUIRE(v.to_string(velocity_unit::kmph) == "36.00 km/h");
+
+      auto const v2 = velocity(10);
+      REQUIRE(fmt::format("{}", v2) == "10 m/s");
+      REQUIRE(v2.to_string(velocity_unit::kmph) == "36 km/h");
+    }
+  }
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include "types/stdint.h"
 #include "numbers.h"
 
 namespace rolly {
