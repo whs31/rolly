@@ -11,6 +11,62 @@
 /**
  * @brief Contract-programming related functions and classes.
  * @details Mimics the canceled C++20 contracts proposal.
+ *
+ * @paragraph Quick introduction
+ * Can be used to check preconditions, postconditions and invariants instead of default C-style <code>assert</code>:
+ * <ul>
+ *   <li>@ref rolly::contracts::precondition - these are conditions that must be true before a function (or code
+ *   segment) executes, in order for the code to work correctly. E.g., a bisection search will work only if the
+ *   vector is sorted. Another: Converting to polar form will work only if the cartesian coordinates are valid.
+ *   <b>It's a good idea to document preconditions.</b></li>
+ *   <li>@ref rolly::contracts::postcondition - these are conditions that are true after a functions returns or at the
+ *   end of a code segment. <b>Document significant postconditions (i.e., ones that refer to the purpose of the code)
+ *   .</b></li>
+ *   <li>@ref rolly::contracts::invariant - these are conditions that is supposed to be true all the time (except for
+ *   brief, well-defined intervals). E.g., one invariant would be that if the cartesian and polar flags are both
+ *   true, then the cartesian and polar member variables must represent the same complex number. Another example: in
+ *   the selection sort, the part of the vector we have already scanned is sorted. <b>It's a good idea to document
+ *   significant invariants.</b></li>
+ * </ul>
+ *
+ * @paragraph Usage
+ * You can include contracts.h in your code as follows:
+ * @code {.cpp}
+ * #include <rolly/contracts.h>      // or #include <rolly/prelude.h>
+ * using namespace rolly::contracts; // or using namespace rolly::prelude instead
+ * @endcode
+ *
+ * @paragraph Examples
+ * In first example we use @ref rolly::contracts::precondition to ensure that second argument, passed to function is
+ * not zero:
+ * @code {.cpp}
+ * auto divide(i32 a, i32 b) -> i32 {
+ *   contracts::precondition(b != 0, "Cannot divide by zero");
+ *   return a / b;
+ * }
+ * @endcode
+ *
+ * In second example, we ensure that the integer is not overflowed after summing two numbers using
+ * @ref rolly::contracts::postcondition :
+ * @code {.cpp}
+ * auto add(i32 a, i32 b) -> i32 {
+ *   auto sum = a + b;
+ *   contracts::postcondition(sum >= a and sum >= b, "Overflow");
+ *   return sum;
+ * }
+ * @endcode
+ *
+ * In third example, we the standard stream is open for writing using @ref rolly::contracts::invariant :
+ * @code {.cpp}
+ * auto println(std::string_view message) -> void {
+ *   contracts::invariant(std::cout);
+ *   std::cout << message << std::endl;
+ * }
+ * @endcode
+ *
+ * @note
+ * It is a good idea to document both preconditions, postconditions and invariants. Use Doxygen tags <tt>\\pre</tt>,
+ * <tt>\\post</tt> and <tt>\\invariant</tt> for this purpose (see http://www.stack.nl/~dimitri/doxygen/).
  */
 namespace rolly::contracts {
   /**
