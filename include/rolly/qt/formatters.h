@@ -17,6 +17,10 @@ namespace rolly {
 }  // namespace rolly
 
 namespace fmt {
+  /**
+   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QString</code> class.
+   * @note Only available if Qt::Core is linked against the project.
+   */
   template <>
   struct formatter<QString> {
     template <typename ParseContext>
@@ -30,6 +34,10 @@ namespace fmt {
     }
   };
 
+  /**
+   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QByteArray</code> class.
+   * @note Only available if Qt::Core is linked against the project.
+   */
   template <>
   struct formatter<QByteArray> {
     template <typename ParseContext>
@@ -43,6 +51,10 @@ namespace fmt {
     }
   };
 
+  /**
+   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QLatin1String</code> class.
+   * @note Only available if Qt::Core is linked against the project.
+   */
   template <>
   struct formatter<QLatin1String> {
     template <typename ParseContext>
@@ -56,6 +68,10 @@ namespace fmt {
     }
   };
 
+  /**
+   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QStringView</code> class.
+   * @note Only available if Qt::Core is linked against the project.
+   */
   template <>
   struct formatter<QStringView> {
     template <typename ParseContext>
@@ -69,6 +85,10 @@ namespace fmt {
     }
   };
 
+  /**
+   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QChar</code> class.
+   * @note Only available if Qt::Core is linked against the project.
+   */
   template <>
   struct formatter<QChar> {
     template <typename ParseContext>
@@ -82,6 +102,10 @@ namespace fmt {
     }
   };
 
+  /**
+   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QPoint</code> class.
+   * @note Only available if Qt::Core is linked against the project.
+   */
   template <>
   struct formatter<QPoint> {
     template <typename ParseContext>
@@ -95,6 +119,10 @@ namespace fmt {
     }
   };
 
+  /**
+   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QPointF</code> class.
+   * @note Only available if Qt::Core is linked against the project.
+   */
   template <>
   struct formatter<QPointF> {
     template <typename ParseContext>

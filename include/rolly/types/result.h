@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../global/definitions.h"
-#ifdef ___rolly_cxx20___
+#ifdef ___rolly_cxx20___ || DOXYGEN_GENERATING_OUTPUT
 #  include <concepts>
 #  include <exception>
 #  include <functional>
@@ -98,6 +98,7 @@ namespace rolly {
 
   static constexpr unexpect_t unexpect {};
 
+#ifndef DOXYGEN_GENERATING_OUTPUT
   namespace detail {
     template <typename E>
     [[noreturn]] constexpr void throw_exception(E&& e) {
@@ -907,6 +908,7 @@ namespace rolly {
    private:
     E m_val;
   };
+#endif
 
   /// An `expected<T, E>` object is an object that contains the storage for
   /// another object and manages the lifetime of this contained object `T`.
@@ -1826,11 +1828,33 @@ namespace rolly {
 
     static_assert(std::is_same_v<result<>, expected<void, std::string>>);
 
+    /**
+     * @brief Generates an unexpected error object with a formatted error message.
+     *
+     * @details This function formats an error message using the provided format
+     * string and arguments, and returns it wrapped in an `unexpected` object.
+     *
+     * @param format The format string used to construct the error message.
+     * @param args Additional arguments to format the error message.
+     *
+     * @return An `unexpected` object containing the formatted error message.
+     */
     template <typename... Args>
     [[nodiscard]] unexpected<std::decay_t<std::string>> error(std::string_view format, Args&&... args) {
       return unexpected<std::decay_t<std::string>>(fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
     }
 
+    /**
+     * @brief Wrap a value in an expected.
+     *
+     * @details
+     * This function is a helper for creating an expected from a value.
+     * It is mostly useful when working with generic code that needs to work with
+     * both expected and optional types.
+     *
+     * @see result
+     * @see error
+     */
     template <typename T>
     [[nodiscard]] expected<std::decay_t<T>, std::string> ok(T&& t) {
       return expected<std::decay_t<T>, std::string>(std::forward<T>(t));
@@ -1838,11 +1862,33 @@ namespace rolly {
 
     [[nodiscard]] inline result<> ok() { return {}; }
 
-    template <std::destructible T>
+    /** 
+     * @brief Wrap a value in an std::optional.
+     *
+     * @details
+     * This function is a helper for creating an std::optional from a value.
+     * It is mostly useful when working with generic code that needs to work with
+     * both expected and optional types.
+     *
+     * @see ok
+     * @see none
+     */
+    template <typename T>
     [[nodiscard]] std::optional<std::decay_t<T>> some(T&& t) {
       return std::optional<std::decay_t<T>>(std::forward<T>(t));
     }
 
+    /**
+     * @brief Wrap an empty value in an std::optional.
+     *
+     * @details
+     * This function is a helper for creating an std::optional from a value.
+     * It is mostly useful when working with generic code that needs to work with
+     * both expected and optional types.
+     *
+     * @see ok
+     * @see some
+     */
     inline constexpr auto none = std::nullopt;
   }  // namespace types
 }  // namespace rolly

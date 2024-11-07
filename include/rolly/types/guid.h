@@ -151,6 +151,7 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
     }
   }  // namespace literals
 
+#ifndef DOXYGEN_GENERATING_OUTPUT
   namespace detail {
     template <typename...>
     struct hash;
@@ -170,6 +171,7 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
     };
   }  // namespace detail
 }  // namespace rolly
+#endif
 
 namespace std {
   /**
@@ -200,8 +202,8 @@ namespace std {
 }  // namespace std
 
 /**
- * @brief Specialization of std::formatter for the <tt>guid</tt> class.
- * @relates rolly::types::guid
+ * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::guid class.
+ * @relates rolly::guid
  */
 template <>
 struct [[maybe_unused]] fmt::formatter<rolly::guid> : fmt::formatter<std::string_view> {

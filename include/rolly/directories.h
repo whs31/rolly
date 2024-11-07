@@ -46,7 +46,7 @@ namespace rolly {
    * std::cout << dirs[config].string() << std::endl; // or std::cout << dirs.config_dir() << std::endl;
    * @endcode
    * will produce the following output:
-   * @code {.sh}
+   * @code {.shell-session}
    * Linux:   '/home/alice/.config/barapp'
    * Windows: 'C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App'
    * MacOS:   '/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App'

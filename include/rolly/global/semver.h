@@ -36,6 +36,7 @@ namespace rolly {
     none = 3
   };
 
+#ifndef DOXYGEN_GENERATING_OUTPUT
   struct from_chars_result : std::from_chars_result {
     [[nodiscard]] constexpr operator bool() const noexcept { return ec == std::errc {}; }
   };
@@ -45,7 +46,9 @@ namespace rolly {
   };
 
   inline constexpr auto max_version_string_length = static_cast<std::size_t>(29);
+#endif
 
+#ifndef DOXYGEN_GENERATING_OUTPUT
   namespace detail {
     inline constexpr auto alpha = std::string_view {"alpha", 5};
     inline constexpr auto beta = std::string_view {"beta", 4};
@@ -169,6 +172,7 @@ namespace rolly {
       static void resize(T& str, std::size_t size) { str.__resize_default_init(size); }
     };
   }  // namespace detail
+#endif 
 
   struct version {
     std::uint16_t major = 0;
@@ -451,6 +455,7 @@ namespace rolly {
     }
   }  // namespace comparators
 
+#ifndef DOXYGEN_GENERATING_OUTPUT
   namespace detail {
     using namespace rolly::detail;
 
@@ -719,6 +724,7 @@ namespace rolly {
       }
     }
   }  // namespace detail
+#endif
 
   using detail::satisfies;
   using version_range = detail::range;
@@ -726,7 +732,8 @@ namespace rolly {
 }  // namespace rolly
 
 /**
- * @brief Specialization of std::formatter for the version class.
+ * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::version class.
+ * @relates rolly::version
  */
 template <>
 struct [[maybe_unused]] fmt::formatter<rolly::version> : fmt::formatter<std::string_view> {

@@ -461,6 +461,11 @@ namespace rolly {
   }  // namespace types
 }  // namespace rolly
 
+/**
+ * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::velocity class.
+ * @tparam T Number type.
+ * @relates rolly::velocity
+ */
 template <typename T>
 struct fmt::formatter<rolly::velocity<T>> {
   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }
