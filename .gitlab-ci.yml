@@ -59,15 +59,15 @@ deploy:alse:
   extends: .deploy_library_extend
 
 documentation:
-  tags: [ dev-utils ]
+  tags: [ doxygen-mcss ]
   stage: deploy
   allow_failure: true
   needs:
     - job: build:alse
   script:
-    - doxygen Doxyfile
+    - python3 /mcss/documentation/doxygen.py ./conf.py
     - mkdir -p public
-    - cp -r docs/html/* public
+    - cp -r docs/* public
   artifacts:
     paths:
       - public
