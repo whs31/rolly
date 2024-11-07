@@ -1,7 +1,7 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = Rolly
 PROJECT_NUMBER         = 2.1.12
-PROJECT_BRIEF          = "Radar open-source library"
+PROJECT_BRIEF          = "Radar core library"
 PROJECT_LOGO           = ./doxygen/images/logo.png
 PROJECT_ICON           = ./doxygen/images/logo.png
 OUTPUT_DIRECTORY       = docs
