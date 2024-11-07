@@ -75,7 +75,10 @@ namespace rolly {
    * @see rolly::saving_policy
    */
   template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) class configuration_file {
+#ifndef DOXYGEN_GENERATING_OUTPUT
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) 
+#endif
+  class configuration_file {
    public:
     /**
      * @brief Creates or loads configuration file from given path with saving policy.
