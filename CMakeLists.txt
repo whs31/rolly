@@ -35,20 +35,20 @@ message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 # -- dependencies --
 find_package(fmt REQUIRED)
 if (ROLLY_QT)
+  message(WARNING "-- [${PROJECT_FULL_NAME}] linking with qt enabled! remember to disable it before push")
   find_package(Qt5
     COMPONENTS
     Core
     Quick
     REQUIRED
   )
+  set(CMAKE_AUTOMOC ON)
 endif ()
 if (NOT WIN32)
   find_package(libuuid REQUIRED)
 endif ()
 
-add_library(${PROJECT_NAME}
-  include/rolly/types/angle.h
-  include/rolly/types/velocity.h)
+add_library(${PROJECT_NAME})
 add_library(${PROJECT_FULL_NAME} ALIAS ${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
@@ -152,3 +152,4 @@ install(FILES ${PROJECT_CONFIG_FILE} ${CONFIG_VERSION_FILE} DESTINATION ${INSTAL
 message(STATUS "[${PROJECT_FULL_NAME}] configuring ${PROJECT_NAME} done!")
 unset(ROLLY_TESTS CACHE)
 unset(ROLLY_COMPAT CACHE)
+unset(ROLLY_QT CACHE)
