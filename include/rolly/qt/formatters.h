@@ -8,7 +8,13 @@
 #  include <fmt/core.h>
 #  include <fmt/format.h>
 
-namespace rolly::qt {}  // namespace rolly::qt
+namespace rolly {
+  /**
+   * @brief Qt-related types and functions.
+   * @note Only available if Qt::Core is linked against the project.
+   */
+  namespace qt {}  // namespace qt
+}  // namespace rolly
 
 namespace fmt {
   template <>

@@ -8,10 +8,6 @@
  * @brief Library definitions and macros.
  * @todo Add detailed description.
  *
- * @defgroup helpers Helpers
- * @ingroup core
- * @todo Add detailed description.
- *
  * @defgroup meta Library metadata
  * @ingroup core
  * @brief Library meta information.
@@ -23,7 +19,7 @@
  * @brief Platform information
  * @details Contains information about the operating system, architecture, language version and etc.
  * @todo Add reference to global constant and suggest to use it.
-*/
+ */
 
 /**
  * @dir include

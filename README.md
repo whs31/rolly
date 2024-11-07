@@ -15,9 +15,9 @@
 
 #### Dependencies
 
-- ![**fmt**](https://github.com/fmtlib/fmt) - modern formatting library (
+- [**fmt**](https://github.com/fmtlib/fmt) - modern formatting library (
   proposal for `std::format`) (**MIT**)
-- ![**catch2**](https://github.com/catchorg/Catch2) - c++ testing
+- [**catch2**](https://github.com/catchorg/Catch2) - c++ testing
   framework (**BSL-1.0**)
 - [**libuuid**](https://sourceforge.net/projects/libuuid/) - portable uuid c library (**BSD-3-Clause**)
 
