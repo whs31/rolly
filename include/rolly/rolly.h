@@ -12,6 +12,7 @@
 #include "memory.h"
 #include "numbers.h"
 #include "rtti.h"
+#include "savefile.h"
 #include "serialization.h"
 #include "source_location.h"
 #include "string_util.h"
