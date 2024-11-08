@@ -3,6 +3,12 @@
 #include <fmt/core.h>
 
 namespace rolly::qt::qml {
+  class module;
+
+  /**
+   * @brief Interface for types that can be registered with QML.
+   * @note Only available if Qt::Gui is linked against the project.
+   */
   class registrable {
    public:
     virtual ~registrable() = default;
@@ -16,6 +22,8 @@ namespace rolly::qt::qml {
       }
       this->registered_ = true;
     }
+    
+    virtual void register_in(module& m) = 0;
 
    private:
     bool registered_ {false};

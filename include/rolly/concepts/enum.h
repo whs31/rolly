@@ -14,4 +14,7 @@ namespace rolly::concepts {
   template <typename T>
   concept enum_ = std::is_enum_v<plain_type_t<T>>;
 #endif  // defined(___rolly_cxx20___)
+
+  using std::is_enum;
+  using std::is_enum_v;
 }  // namespace rolly::concepts
