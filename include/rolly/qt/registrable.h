@@ -1,9 +1,26 @@
 #pragma once
 
 #include <fmt/core.h>
+#include "../types/stdint.h"
+#include "../global/version.h"
+#include "../contracts.h"
+#include "./concepts.h"
 
 namespace rolly::qt::qml {
-  class module;
+  enum class verbosity : u8 {
+    quiet,
+    verbose
+  };
+
+#ifdef ROLLY_DEBUG
+  inline constexpr verbosity implicit_verbosity {verbosity::verbose};
+#else   // defined(ROLLY_DEBUG)
+  inline constexpr verbosity implicit_verbosity {verbosity::quiet};
+#endif  // defined(ROLLY_DEBUG)
+
+  template <
+    auto Verbosity = implicit_verbosity ___sfinae_requirement___((std::is_same_v<decltype(Verbosity), verbosity>))>
+  ___requires___((std::is_same_v<decltype(Verbosity), verbosity>)) class module;
 
   /**
    * @brief Interface for types that can be registered with QML.
@@ -22,8 +39,8 @@ namespace rolly::qt::qml {
       }
       this->registered_ = true;
     }
-    
-    virtual void register_in(module& m) = 0;
+
+    virtual void register_in(module& m) { contracts::not_implemented(); }
 
    private:
     bool registered_ {false};

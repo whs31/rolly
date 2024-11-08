@@ -14,9 +14,7 @@
 #  include <qqmlengine.h>
 #  include <fmt/format.h>
 #  include <fmt/color.h>
-#  include "../types/stdint.h"
-#  include "../global/version.h"
-#  include "./concepts.h"
+#  include "./registrable.h"
 
 namespace rolly::qt::qml {
   namespace detail {
@@ -50,17 +48,6 @@ namespace rolly::qt::qml {
       return std::string(str);
     }
   }  // namespace detail
-
-  enum class verbosity : u8 {
-    quiet,
-    verbose
-  };
-
-#  ifdef ROLLY_DEBUG
-  inline constexpr verbosity implicit_verbosity {verbosity::verbose};
-#  else   // defined(ROLLY_DEBUG)
-  inline constexpr verbosity implicit_verbosity {verbosity::quiet};
-#  endif  // defined(ROLLY_DEBUG)
 
   template <
     auto Verbosity = implicit_verbosity ___sfinae_requirement___((std::is_same_v<decltype(Verbosity), verbosity>))>

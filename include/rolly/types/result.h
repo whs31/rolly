@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../global/definitions.h"
-#ifdef ___rolly_cxx20___ || DOXYGEN_GENERATING_OUTPUT
+#if defined(___rolly_cxx20___) || defined(DOXYGEN_GENERATING_OUTPUT)
 #  include <concepts>
 #  include <exception>
 #  include <functional>
@@ -98,7 +98,7 @@ namespace rolly {
 
   static constexpr unexpect_t unexpect {};
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#  ifndef DOXYGEN_GENERATING_OUTPUT
   namespace detail {
     template <typename E>
     [[noreturn]] constexpr void throw_exception(E&& e) {
@@ -356,11 +356,11 @@ namespace rolly {
     // `T` is `void`, `E` is trivially-destructible
     template <class E>
     struct expected_storage_base<void, E, false, true> {
-#  if __GNUC__ <= 5
+#    if __GNUC__ <= 5
       // no constexpr for GCC 4/5 bug
-#  else
+#    else
       constexpr
-#  endif
+#    endif
       expected_storage_base()
         : m_has_val(true) {}
 
@@ -908,7 +908,7 @@ namespace rolly {
    private:
     E m_val;
   };
-#endif
+#  endif
 
   /// An `expected<T, E>` object is an object that contains the storage for
   /// another object and manages the lifetime of this contained object `T`.
@@ -1475,33 +1475,33 @@ namespace rolly {
     }
 
     template <class U = T>
-    constexpr U& operator*() &
-      requires(! std::is_void_v<U>)
-    {
-      if(not this->has_value())
-        throw std::runtime_error("expected has no value");
-      return val();
-    }
+      constexpr U& operator*() &
+      requires(! std::is_void_v<U>) {
+        if(not this->has_value())
+          throw std::runtime_error("expected has no value");
+        return val();
+      }
 
-    template <class U = T>
-    constexpr U const&& operator*() const&&
-      requires(! std::is_void_v<U>)
-    {
-      if(not this->has_value())
-        throw std::runtime_error("expected has no value");
-      return std::move(val());
-    }
-
-    template <class U = T>
-    constexpr U&& operator*() &&
-      requires(! std::is_void_v<U>)
+      template <class U = T>
+      constexpr U const&& operator*() const&&
+        requires(! std::is_void_v<U>)
     {
       if(not this->has_value())
         throw std::runtime_error("expected has no value");
       return std::move(val());
     }
 
-    [[nodiscard]] constexpr bool has_value() const noexcept { return this->m_has_val; }
+    template <class U = T>
+      constexpr U&& operator*() &&
+      requires(! std::is_void_v<U>) {
+        if(not this->has_value())
+          throw std::runtime_error("expected has no value");
+        return std::move(val());
+      }
+
+      [[nodiscard]] constexpr bool has_value() const noexcept {
+      return this->m_has_val;
+    }
 
     constexpr explicit operator bool() const noexcept { return this->m_has_val; }
 
@@ -1515,33 +1515,31 @@ namespace rolly {
     }
 
     template <class U = T>
-    constexpr U& value() &
-      requires(! std::is_void_v<U>)
-    {
-      if(! has_value())
-        detail::throw_exception(bad_expected_access<E>(err().value()));
-      return val();
-    }
+      constexpr U& value() &
+      requires(! std::is_void_v<U>) {
+        if(! has_value())
+          detail::throw_exception(bad_expected_access<E>(err().value()));
+        return val();
+      }
 
-    template <class U = T>
-    constexpr U const&& value() const&&
-      requires(! std::is_void_v<U>)
-    {
-      if(! has_value())
-        detail::throw_exception(bad_expected_access<E>(std::move(err()).value()));
-      return std::move(val());
-    }
-
-    template <class U = T>
-    constexpr U&& value() &&
-      requires(! std::is_void_v<U>)
+      template <class U = T>
+      constexpr U const&& value() const&&
+        requires(! std::is_void_v<U>)
     {
       if(! has_value())
         detail::throw_exception(bad_expected_access<E>(std::move(err()).value()));
       return std::move(val());
     }
 
-    constexpr E const& error() const& {
+    template <class U = T>
+      constexpr U&& value() &&
+      requires(! std::is_void_v<U>) {
+        if(! has_value())
+          detail::throw_exception(bad_expected_access<E>(std::move(err()).value()));
+        return std::move(val());
+      }
+
+      constexpr E const& error() const& {
       if(this->has_value())
         throw std::runtime_error("expected has no error");
       return err().value();
@@ -1775,22 +1773,22 @@ namespace rolly {
 
   template <class T, class E, class U>
   constexpr bool operator==(expected<T, E> const& x, U const& v) {
-    return x.has_value() and *x == v;
+    return x.has_value() and * x == v;
   }
 
   template <class T, class E, class U>
   constexpr bool operator==(U const& v, expected<T, E> const& x) {
-    return x.has_value() and *x == v;
+    return x.has_value() and * x == v;
   }
 
   template <class T, class E, class U>
   constexpr bool operator!=(expected<T, E> const& x, U const& v) {
-    return not x.has_value() or *x != v;
+    return not x.has_value() or * x != v;
   }
 
   template <class T, class E, class U>
   constexpr bool operator!=(U const& v, expected<T, E> const& x) {
-    return not x.has_value() or *x != v;
+    return not x.has_value() or * x != v;
   }
 
   template <class T, class E>
@@ -1862,7 +1860,7 @@ namespace rolly {
 
     [[nodiscard]] inline result<> ok() { return {}; }
 
-    /** 
+    /**
      * @brief Wrap a value in an std::optional.
      *
      * @details
