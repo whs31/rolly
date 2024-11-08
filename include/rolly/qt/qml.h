@@ -1,5 +1,6 @@
 #pragma once
 
+#include <list>
 #include "formatters.h"
 #include "literals.h"
 
@@ -152,6 +153,18 @@ namespace rolly::qt::qml {
         component_name.c_str(),
         ::QString::fromStdString(reason_string)
       );
+      return *this;
+    }
+
+    module& push(registrable& r) {
+      r.register_in(*this);
+      return *this;
+    }
+
+    module& push_all(std::list<registrable>&& r) {
+      contracts::precondition(r.size() > 0);
+      for(auto& i : r)
+        i.register_in(*this);
       return *this;
     }
 

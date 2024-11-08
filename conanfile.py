@@ -7,7 +7,7 @@ from conan.tools.files import rmdir, copy
 
 class RollyRecipe(ConanFile):
     name = "rolly"
-    version = "2.1.15"
+    version = "2.1.17"
     description = "Radar open-source library"
     author = "whs31 <whs31@github.io>"
     topics = ("coreutils", "utility")
@@ -35,7 +35,7 @@ class RollyRecipe(ConanFile):
         return "17"
 
     def requirements(self):
-        self.requires("fmt/[>=10.0.0]", transitive_headers=True, transitive_libs=True)
+        self.requires("fmt/10.2.1", transitive_headers=True, transitive_libs=True)
         if self.settings.os != "Windows":
             self.requires("libuuid/1.0.3")
         if self.options.test:
@@ -66,13 +66,16 @@ class RollyRecipe(ConanFile):
                 self.output.info(f"copying {dep.ref.name} into export folder {str(self.options.export_folder_name)}")
                 bin_dest = os.path.join(self.build_folder, str(self.options.export_folder_name), 'bin')
                 lib_dest = os.path.join(self.build_folder, str(self.options.export_folder_name), 'lib')
-                inc_dest = os.path.join(self.build_folder, str(self.options.export_folder_name), self.cpp.source.includedirs[0])
+                inc_dest = os.path.join(self.build_folder, str(self.options.export_folder_name),
+                                        self.cpp.source.includedirs[0])
                 self.output.info(f" - bin: {bin_dest}")
                 self.output.info(f" - lib: {lib_dest}")
                 self.output.info(f" - inc: {inc_dest}")
-                bin_extensions = [".exe", ".dll", ".dylib", "*"]               # temporarily copying full folder contents because libfmt.so can
-                lib_extensions = [".a", ".lib", ".so", "*"]                    # be a symbolic link to libfmt.so.11.0.2 
-                inc_extensions = [".h", ".hh", ".hxx", ".h++", ".cuh", "*"]    # same as above, includes can have cursed extensions
+                bin_extensions = [".exe", ".dll", ".dylib",
+                                  "*"]  # temporarily copying full folder contents because libfmt.so can
+                lib_extensions = [".a", ".lib", ".so", "*"]  # be a symbolic link to libfmt.so.11.0.2
+                inc_extensions = [".h", ".hh", ".hxx", ".h++", ".cuh",
+                                  "*"]  # same as above, includes can have cursed extensions
                 for ext in bin_extensions:
                     copy(self, f"*{ext}", src=dep.cpp_info.bindirs[0], dst=bin_dest)
                 for ext in lib_extensions:
