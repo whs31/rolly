@@ -49,17 +49,14 @@ namespace rolly::qt::qml {
     }
   }  // namespace detail
 
-  template <
-    auto Verbosity = implicit_verbosity ___sfinae_requirement___((std::is_same_v<decltype(Verbosity), verbosity>))>
-  ___requires___((std::is_same_v<decltype(Verbosity), verbosity>)) class module {
+  class module {
    public:
     using version_type = version;
-    using verbosity_value = decltype(Verbosity);
 
     explicit module(std::string name, version_type version = {0, 0, 0}) noexcept
       : name_(std::move(name))
       , version_(version) {
-      if constexpr(Verbosity == verbosity::verbose) {
+      if constexpr(implicit_verbosity == verbosity::verbose) {
         fmt::println(
           "rolly::qt::qml: registering module {} v{}.{}",
           fmt::styled(this->name_, fmt::fg(fmt::terminal_color::blue) | fmt::emphasis::bold),
@@ -73,7 +70,7 @@ namespace rolly::qt::qml {
     template <___concept___(std::derived_from<::QObject>) T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
     module& component(std::optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
-      if constexpr(Verbosity == verbosity::verbose)
+      if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
           "rolly::qt::qml: \tregistering type {} (qobject)",
           fmt::styled(component_name, fmt::fg(fmt::terminal_color::green) | fmt::emphasis::bold)
@@ -85,7 +82,7 @@ namespace rolly::qt::qml {
     template <___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v<T>)>
     module& singleton(T* instance, std::optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
-      if constexpr(Verbosity == verbosity::verbose)
+      if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
           "rolly::qt::qml: \tregistering singleton type {} (instance)",
           fmt::styled(component_name, fmt::fg(fmt::terminal_color::magenta) | fmt::emphasis::bold)
@@ -103,7 +100,7 @@ namespace rolly::qt::qml {
     template <___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v<T>)>
     module& singleton(std::optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
-      if constexpr(Verbosity == verbosity::verbose)
+      if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
           "rolly::qt::qml: \tregistering singleton type {}",
           fmt::styled(component_name, fmt::fg(fmt::terminal_color::bright_magenta) | fmt::emphasis::bold)
@@ -115,7 +112,7 @@ namespace rolly::qt::qml {
 
     module& file(std::string_view url, std::optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_file_url(url, name);
-      if constexpr(Verbosity == verbosity::verbose)
+      if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
           "rolly::qt::qml: \tregistering type {} from {}",
           fmt::styled(component_name, fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold),
@@ -142,7 +139,7 @@ namespace rolly::qt::qml {
           return fmt::format("Class \'{}\' is uncreatable", component_name);
         return std::string(reason.value());
       }();
-      if constexpr(Verbosity == verbosity::verbose)
+      if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
           "rolly::qt::qml: \tregistering uncreatable type {}, reason: {}",
           fmt::styled(component_name, fmt::fg(fmt::terminal_color::bright_cyan) | fmt::emphasis::bold),
@@ -174,7 +171,7 @@ namespace rolly::qt::qml {
         auto const res = detail::strip(url, detail::strip_kind::prefix_and_extension);
         return res;
       } catch(std::exception const& err) {
-        if constexpr(Verbosity == verbosity::verbose)
+        if constexpr(implicit_verbosity == verbosity::verbose)
           fmt::println(
             stderr,
             "rolly::qt::qml: error during qml registration: {}",

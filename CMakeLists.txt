@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.1.14
+  VERSION 2.1.15
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -14,7 +14,7 @@ set(PROJECT_FULL_NAME ${PROJECT_NAMESPACE}${PROJECT_NAME})
 option(ROLLY_TESTS "Enable integration tests" OFF)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 option(ROLLY_COMPAT "Enable C++17 compatibility mode" OFF)
-option(ROLLY_QT "Link with Qt" OFF)
+option(ROLLY_QT "Link with Qt" ON)
 
 if ("${CMAKE_GENERATOR}" MATCHES "^Visual Studio")
   set(CMAKE_GENERATOR_PLATFORM "x64" CACHE STRING "" FORCE)

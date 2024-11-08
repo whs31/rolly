@@ -18,9 +18,7 @@ namespace rolly::qt::qml {
   inline constexpr verbosity implicit_verbosity {verbosity::quiet};
 #endif  // defined(ROLLY_DEBUG)
 
-  template <
-    auto Verbosity = implicit_verbosity ___sfinae_requirement___((std::is_same_v<decltype(Verbosity), verbosity>))>
-  ___requires___((std::is_same_v<decltype(Verbosity), verbosity>)) class module;
+  class module;
 
   /**
    * @brief Interface for types that can be registered with QML.
