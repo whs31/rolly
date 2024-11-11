@@ -396,7 +396,7 @@ namespace rolly {
         /**
          * @brief Returns <tt>-this</tt>.
          */
-        [[nodiscard]] constexpr angle operator-() const { return T(-this->m_); }
+        [[nodiscard]] constexpr angle operator-() const { return angle(-this->m_); }
 
         /**
          * @brief Returns <tt>this + other</tt>.

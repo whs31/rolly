@@ -40,7 +40,7 @@ namespace rolly {
 
     /**
      * @brief Returns the minimum value among the provided arguments.
-     * @details This function compares multiple values and returns the smallest one. 
+     * @details This function compares multiple values and returns the smallest one.
      * It uses a recursive approach to handle an arbitrary number of arguments.
      * @tparam T Type of the values to compare.
      * @tparam Args Variadic template arguments allowing multiple values of type T.
@@ -168,6 +168,48 @@ namespace rolly {
     template <typename T>
     [[nodiscard]] constexpr bool is_null(T a, T epsilon = std::numeric_limits<T>::epsilon()) {
       return approx_eq(a, static_cast<T>(0), epsilon);
+    }
+
+    /**
+     * @brief Calculates Euclidean division, the matching method for <b>rem_euclid</b>.
+     * @param a Dividend
+     * @param b Divisor
+     */
+#ifdef DOXYGEN_GENERATING_OUTPUT
+    template <concepts::num T>
+#else
+    template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
+#endif
+    [[nodiscard]] T div_euclid(T a, T b) {
+      auto const q = std::trunc(a / b);
+      if constexpr(std::is_floating_point_v<T>) {
+        if(std::fmod(a, b) < 0.0)
+          return b > 0.0 ? q - 1.0 : q + 1.0;
+      } else {
+        if(a % b < 0)
+          return b > 0 ? q - 1 : q + 1;
+      }
+      return q;
+    }
+
+    /**
+     * @brief Calculates the least nonnegative remainder of <tt>self (mod rhs)</tt>.
+     * @param a Dividend
+     * @param b Divisor
+     */
+#ifdef DOXYGEN_GENERATING_OUTPUT
+    template <concepts::num T>
+#else
+    template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
+#endif
+    [[nodiscard]] T rem_euclid(T a, T b) {
+      if constexpr(std::is_floating_point_v<T>) {
+        auto const r = std::fmod(a, b);
+        return r < 0.0 ? r + std::abs(b) : r;
+      } else {
+        auto const r = a % b;
+        return r < 0 ? r + std::abs(b) : r;
+      }
     }
   }  // namespace math
 }  // namespace rolly
