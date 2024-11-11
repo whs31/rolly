@@ -9,6 +9,7 @@
 
 using namespace rolly;
 using Catch::Matchers::WithinRel;
+using Catch::Matchers::WithinAbs;
 
 struct takes_init_and_variadic {
   std::vector<int> v;
@@ -1168,15 +1169,461 @@ TEST_CASE("Types", "[types]") {
     }
   }
 
-  SECTION("Velocity") {
-    SECTION("Format") {
-      auto const v = velocity(10.f);
-      REQUIRE(fmt::format("{}", v) == "10.00 m/s");
-      REQUIRE(v.to_string(velocity_unit::kmph) == "36.00 km/h");
+  SECTION("Point 2D", "[types.point2d]") {
+    SECTION("Negation") {
+      REQUIRE(-point2d(1.0, 2.0) == point2d(-1.0, -2.0));
+      REQUIRE(-point2d(0.0, 0.0) == point2d(-0.0, -0.0));
+      REQUIRE(-point2d(-1.0, -2.0) == point2d(1.0, 2.0));
+    }
 
-      auto const v2 = velocity(10);
-      REQUIRE(fmt::format("{}", v2) == "10 m/s");
-      REQUIRE(v2.to_string(velocity_unit::kmph) == "36 km/h");
+    SECTION("AddSize") {
+      constexpr auto p1 = point2d(1.0, 2.0);
+      constexpr auto p2 = size2d(3.0, 4.0);
+
+      REQUIRE(p1 + p2 == point2d(4.0, 6.0));
+    }
+
+    SECTION("AddAssignSize") {
+      auto p1 = point2d(1.0, 2.0);
+      constexpr auto p2 = size2d(3.0, 4.0);
+
+      REQUIRE((p1 += p2) == point2d(4.0, 6.0));
+    }
+
+    SECTION("Subtract") {
+      constexpr auto p1 = point2d(1.0, 2.0);
+      constexpr auto p2 = point2d(3.0, 4.0);
+
+      REQUIRE(p1 - p2 == point2d(-2.0, -2.0));
+    }
+
+    SECTION("SubtractAssign") {
+      auto p1 = point2d(1.0, 2.0);
+      constexpr auto p2 = point2d(3.0, 4.0);
+
+      REQUIRE((p1 -= p2) == point2d(-2.0, -2.0));
+    }
+
+    SECTION("SubtractSize") {
+      constexpr auto p1 = point2d(1.0, 2.0);
+      constexpr auto p2 = size2d(3.0, 4.0);
+
+      REQUIRE(p1 - p2 == point2d(-2.0, -2.0));
+    }
+
+    SECTION("SubtractAssignSize") {
+      auto p1 = point2d(1.0, 2.0);
+      constexpr auto p2 = size2d(3.0, 4.0);
+
+      REQUIRE((p1 -= p2) == point2d(-2.0, -2.0));
+    }
+
+    SECTION("MulScalar") {
+      constexpr auto p1 = point2d(3.0, 5.0);
+
+      REQUIRE(p1 * 2.0 == point2d(6.0, 10.0));
+      REQUIRE(p1 * 5.0 == point2d(15.0, 25.0));
+      REQUIRE(p1 * -1.0 == point2d(-3.0, -5.0));
+    }
+
+    SECTION("MulAssignScalar") {
+      auto p1 = point2d(3.0, 5.0);
+
+      REQUIRE((p1 *= 2.0) == point2d(6.0, 10.0));
+      REQUIRE((p1 *= 2.0) == point2d(12.0, 20.0));
+      REQUIRE((p1 *= -0.5) == point2d(-6.0, -10.0));
+    }
+
+    SECTION("DivScalar") {
+      constexpr auto p1 = point2d(3.0, 5.0);
+
+      REQUIRE(p1 / 2.0 == point2d(1.5, 2.5));
+      REQUIRE(p1 / 5.0 == point2d(0.6, 1.0));
+      REQUIRE(p1 / -1.0 == point2d(-3.0, -5.0));
+    }
+
+    SECTION("DivAssignScalar") {
+      auto p1 = point2d(3.0, 5.0);
+
+      REQUIRE((p1 /= 2.0) == point2d(1.5, 2.5));
+      REQUIRE((p1 /= 2.0) == point2d(0.75, 1.25));
+    }
+
+    SECTION("Format") {
+      constexpr auto p1 = point2d(1.0, 2.0);
+      auto const res1 = fmt::format("{}", p1);
+      constexpr auto p2 = point2d(1, 2);
+      auto const res2 = fmt::format("{}", p2);
+      REQUIRE(res1 == "[1.00, 2.00]");
+      REQUIRE(res2 == "[1, 2]");
+    }
+
+    SECTION("Equality") {
+      REQUIRE(point2d(1.0, 2.0) == point2d(1.0, 2.0));
+      REQUIRE_FALSE(point2d(1.0, 2.0) == point2d(1.0, 3.0));
+      REQUIRE_FALSE(point2d(1.0, 2.0) == point2d(2.0, 2.0));
+    }
+
+    SECTION("RemEuclid") {
+      constexpr auto p = point2d(7.0, -7.0);
+      constexpr auto sp = point2d(4.0, -4.0);
+      constexpr auto s = size2d(4.0, -4.0);
+
+      REQUIRE(p.rem_euclid(sp) == point2d(3.0, 1.0));
+      REQUIRE((-p).rem_euclid(sp) == point2d(1.0, 3.0));
+      REQUIRE(p.rem_euclid(-sp) == point2d(3.0, 1.0));
+
+      REQUIRE(p.rem_euclid(s) == point2d(3.0, 1.0));
+      REQUIRE((-p).rem_euclid(s) == point2d(1.0, 3.0));
+      REQUIRE(p.rem_euclid(-s) == point2d(3.0, 1.0));
+    }
+
+    SECTION("DivEuclid") {
+      constexpr auto p = point2d(7.0, -7.0);
+      constexpr auto sp = point2d(4.0, -4.0);
+      constexpr auto s = sp.to_size2d();
+
+      REQUIRE(p.div_euclid(sp) == point2d(1.0, 2.0));
+      REQUIRE((-p).div_euclid(sp) == point2d(-2.0, -1.0));
+      REQUIRE(p.div_euclid(-sp) == point2d(-1.0, -2.0));
+
+      REQUIRE(p.div_euclid(s) == point2d(1.0, 2.0));
+      REQUIRE((-p).div_euclid(s) == point2d(-2.0, -1.0));
+      REQUIRE(p.div_euclid(-s) == point2d(-1.0, -2.0));
+    }
+
+#if defined(ROLLY_QT_CORE)
+    SECTION("ToQPoint") {
+      constexpr auto p = point2d(1.0, 2.0);
+
+      REQUIRE(p.to_qpoint() == QPoint(1, 2));
+    }
+
+    SECTION("ToQPointF") {
+      constexpr auto p = point2d(1.0, 2.0);
+
+      REQUIRE(p.to_qpointf() == QPointF(1.0, 2.0));
+    }
+
+    SECTION("FromQPoint") {
+      auto const p = QPoint(1, 2);
+
+      REQUIRE(point2d(p) == point2d(1.0F, 2.0F));
+    }
+#endif
+
+    SECTION("Map") {
+      constexpr auto p = point2d(1.0, 2.0);
+      constexpr auto expected = point2d<i32>(2, 4);
+      auto fn = [](f64 x) -> i32 { return x * 2; };
+      REQUIRE(p.map(fn) == expected);
+    }
+
+    SECTION("Zip") {
+      constexpr auto p = point2d(1.0, 2.0);
+      constexpr auto q = point2d(3.0, 4.0);
+      constexpr auto got = p.zip(q, [](f64 x, f64 y) -> f64 { return x + y; });
+      constexpr auto expected = point2d(4.0, 6.0);
+      REQUIRE(got.to_size2d() == expected.to_size2d());
+    }
+
+    SECTION("AddVec") {
+      constexpr auto p = point2d(1.0, 2.0);
+      constexpr auto v = vector2d(3.0, 4.0);
+      constexpr auto got = p + v;
+      constexpr auto expected = point2d(4.0, 6.0);
+      REQUIRE(got == expected);
+    }
+
+    SECTION("SubVec") {
+      constexpr auto p = point2d(1.0, 2.0);
+      constexpr auto v = vector2d(3.0, 4.0);
+      constexpr auto got = p - v;
+      constexpr auto expected = point2d(-2.0, -2.0);
+      REQUIRE(got == expected);
+    }
+  }
+  SECTION("Size 2D", "[types.size2d]") {
+    SECTION("Area") {
+      auto const p = size2d(1.5, 2.0);
+
+      REQUIRE(p.x() == 1.5);
+      REQUIRE(p.y() == 2.0);
+      REQUIRE(p.area() == 3.0);
+    }
+
+    SECTION("FromTuple") {
+      auto const p = size2d<f64>::from_tuple(std::tuple<double, double> {1.5, 2.0});
+
+      REQUIRE(p.x() == 1.5);
+      REQUIRE(p.y() == 2.0);
+      REQUIRE(p.area() == 3.0);
+    }
+
+    SECTION("Negation") {
+      REQUIRE(-size2d(1.0, 2.0) == size2d(-1.0, -2.0));
+      REQUIRE(-size2d(0.0, 0.0) == size2d(-0.0, -0.0));
+      REQUIRE(-size2d(-1.0, -2.0) == size2d(1.0, 2.0));
+    }
+
+    SECTION("Add") {
+      REQUIRE(size2d(1.0, 2.0) + size2d(3.0, 4.0) == size2d(4.0, 6.0));
+      REQUIRE(size2d(1.0, 2.0) + size2d(0.0, 0.0) == size2d(1.0, 2.0));
+      REQUIRE(size2d(1.0, 2.0) + size2d(-3.0, -4.0) == size2d(-2.0, -2.0));
+      REQUIRE(size2d(0.0, 0.0) + size2d(0.0, 0.0) == size2d(0.0, 0.0));
+    }
+
+    SECTION("AddAssign") {
+      REQUIRE((size2d(1.0, 2.0) += size2d(3.0, 4.0)) == size2d(4.0, 6.0));
+      REQUIRE((size2d(1.0, 2.0) += size2d(0.0, 0.0)) == size2d(1.0, 2.0));
+      REQUIRE((size2d(1.0, 2.0) += size2d(-3.0, -4.0)) == size2d(-2.0, -2.0));
+      REQUIRE((size2d(0.0, 0.0) += size2d(0.0, 0.0)) == size2d(0.0, 0.0));
+    }
+
+    SECTION("Sum") {
+      auto vec = std::vector<size2d<f32>> {size2d(1.0F, 2.0F), size2d(3.0F, 4.0F), size2d(5.0F, 6.0F)};
+      auto acc = std::accumulate(vec.begin(), vec.end(), size2d());
+
+      REQUIRE(acc == size2d(9.0F, 12.0F));
+    }
+
+    SECTION("Subtract") {
+      REQUIRE(size2d(1.0, 2.0) - size2d(3.0, 4.0) == size2d(-2.0, -2.0));
+      REQUIRE(size2d(1.0, 2.0) - size2d(0.0, 0.0) == size2d(1.0, 2.0));
+      REQUIRE(size2d(1.0, 2.0) - size2d(-3.0, -4.0) == size2d(4.0, 6.0));
+      REQUIRE(size2d(0.0, 0.0) - size2d(0.0, 0.0) == size2d(0.0, 0.0));
+    }
+
+    SECTION("SubtractAssign") {
+      REQUIRE((size2d(1.0, 2.0) -= size2d(3.0, 4.0)) == size2d(-2.0, -2.0));
+      REQUIRE((size2d(1.0, 2.0) -= size2d(0.0, 0.0)) == size2d(1.0, 2.0));
+      REQUIRE((size2d(1.0, 2.0) -= size2d(-3.0, -4.0)) == size2d(4.0, 6.0));
+      REQUIRE((size2d(0.0, 0.0) -= size2d(0.0, 0.0)) == size2d(0.0, 0.0));
+    }
+
+    SECTION("MultiplyByScalar") {
+      REQUIRE(size2d(1.0, 2.0) * 3.0 == size2d(3.0, 6.0));
+      REQUIRE(size2d(1.0, 2.0) * 0.0 == size2d(0.0, 0.0));
+      REQUIRE(size2d(1.0, 2.0) * -3.0 == size2d(-3.0, -6.0));
+      REQUIRE(size2d(0.0, 0.0) * 0.0 == size2d(0.0, 0.0));
+    }
+
+    SECTION("MultiplyAssignByScalar") {
+      REQUIRE((size2d(1.0, 2.0) *= 3.0) == size2d(3.0, 6.0));
+      REQUIRE((size2d(1.0, 2.0) *= 0.0) == size2d(0.0, 0.0));
+      REQUIRE((size2d(1.0, 2.0) *= -3.0) == size2d(-3.0, -6.0));
+      REQUIRE((size2d(0.0, 0.0) *= 0.0) == size2d(0.0, 0.0));
+    }
+
+    SECTION("DivideByScalar") {
+      REQUIRE(size2d(1.0, 2.0) / 2.0 == size2d(0.5, 1.0));
+      REQUIRE(size2d(1.0, 2.0) / -2.0 == size2d(-0.5, -1.0));
+    }
+
+    SECTION("DivideAssignByScalar") {
+      REQUIRE((size2d(1.0, 2.0) /= 2.0) == size2d(0.5, 1.0));
+      REQUIRE((size2d(1.0, 2.0) /= -2.0) == size2d(-0.5, -1.0));
+    }
+
+    SECTION("NanEmpty") {
+      constexpr auto a = size2d(std::numeric_limits<f32>::quiet_NaN(), 2.0F);
+      constexpr auto b = size2d(0.0F, std::numeric_limits<f32>::quiet_NaN());
+      constexpr auto c = size2d(std::numeric_limits<f32>::quiet_NaN(), -2.0F);
+      REQUIRE_FALSE(a);
+      REQUIRE_FALSE(b);
+      REQUIRE_FALSE(c);
+    }
+
+#if defined(ROLLY_QT_CORE)
+    SECTION("ToQSize") {
+      REQUIRE(size2d(1.0, 2.0).to_qsize() == QSize(1, 2));
+      REQUIRE(size2d(0.0, 0.0).to_qsize() == QSize(0, 0));
+      REQUIRE(size2d(-1.0, -2.0).to_qsize() == QSize(-1, -2));
+    }
+
+    SECTION("ToQSizeF") {
+      REQUIRE(size2d(1.0, 2.0).to_qsizef() == QSizeF(1.0, 2.0));
+      REQUIRE(size2d(0.0, 0.0).to_qsizef() == QSizeF(0.0, 0.0));
+      REQUIRE(size2d(-1.0, -2.0).to_qsizef() == QSizeF(-1.0, -2.0));
+    }
+#endif  // defined(FL_QT_CORE)
+
+    SECTION("ToPoint2D") {
+      REQUIRE(size2d(1.0, 2.0).to_point2d() == point2d(1.0, 2.0));
+      REQUIRE(size2d(0.0, 0.0).to_point2d() == point2d(0.0, 0.0));
+      REQUIRE(size2d(-1.0, -2.0).to_point2d() == point2d(-1.0, -2.0));
+    }
+  }
+  SECTION("Vector 2D", "[types.vector2d]") {
+    SECTION("ScalarMul") {
+      constexpr auto p1 = vector2d(3.0, 5.0);
+      constexpr auto result = p1 * 5.0;
+
+      REQUIRE(result.x() == 15.0);
+      REQUIRE(result.y() == 25.0);
+      REQUIRE(result == vector2d(15.0, 25.0));
+    }
+
+    SECTION("Dot") {
+      constexpr auto p1 = vector2d(2.0, 7.0);
+      constexpr auto p2 = vector2d(13.0, 11.0);
+      REQUIRE(p1.dot(p2) == 103.0);
+    }
+
+    SECTION("Cross") {
+      constexpr auto p1 = vector2d(4.0, 7.0);
+      constexpr auto p2 = vector2d(13.0, 8.0);
+      REQUIRE(p1.cross(p2) == -59.0);
+    }
+
+    SECTION("Normalize") {
+      constexpr auto p1 = vector2d(4.0, 0.0);
+      constexpr auto p2 = vector2d(3.0, -4.0);
+      REQUIRE(p1.normalized().x() == 1.0);
+      REQUIRE(p1.normalized().y() == 0.0);
+      REQUIRE(p2.normalized().x() == 0.6);
+      REQUIRE(p2.normalized().y() == -0.8);
+    }
+
+    SECTION("Length") {
+      constexpr auto p1 = vector2d(3.0, 4.0);
+
+      REQUIRE(p1.length_scalar() == 5.0);
+    }
+
+    SECTION("LengthSquared") {
+      constexpr auto p1 = vector2d(3.0, 4.0);
+
+      REQUIRE(p1.length_squared() == 25.0);
+    }
+
+    SECTION("Min") {
+      constexpr auto p1 = vector2d(1.0, 3.0);
+      constexpr auto p2 = vector2d(2.0, 2.0);
+
+      REQUIRE(p1.min(p2) == vector2d(1.0, 2.0));
+    }
+
+    SECTION("Max") {
+      constexpr auto p1 = vector2d(1.0, 3.0);
+      constexpr auto p2 = vector2d(2.0, 2.0);
+
+      REQUIRE(p1.max(p2) == vector2d(2.0, 3.0));
+    }
+
+    SECTION("AngleFromXAxis") {
+      constexpr auto right = vector2d(10.0, 0.0);
+      constexpr auto down = vector2d(0.0, 4.0);
+      constexpr auto up = vector2d(0.0, -1.0);
+
+      REQUIRE(right.angle_to_x_axis() == angle<f64>::zero());
+      REQUIRE_THAT(down.angle_to_x_axis().value(), WithinAbs(angle<f64>::half_pi().value(), 0.01));
+      REQUIRE_THAT(up.angle_to_x_axis().value(), WithinAbs(-angle<f64>::half_pi().value(), 0.01));
+    }
+
+    SECTION("AngleTo") {
+      constexpr auto right = vector2d(10.0, 0.0);
+      constexpr auto right2 = vector2d(1.0, 0.0);
+      constexpr auto up = vector2d(0.0, -1.0);
+      constexpr auto up_left = vector2d(-1.0, -1.0);
+
+      REQUIRE(right.angle_to(right2) == angle<f64>::zero());
+      REQUIRE_THAT(right.angle_to(up).value(), WithinAbs(-angle<f64>::half_pi().value(), 0.01));
+      REQUIRE_THAT(up.angle_to(right).value(), WithinAbs(angle<f64>::half_pi().value(), 0.01));
+      REQUIRE_THAT(up_left.angle_to(up).value(), WithinAbs(angle<f64>::quarter_pi().value(), 0.01));
+    }
+
+    SECTION("ProjectOnto") {
+      constexpr auto v1 = vector2d(1.0, 2.0);
+      constexpr auto x = vector2d(1.0, 0.0);
+      constexpr auto y = vector2d(0.0, 1.0);
+
+      REQUIRE(v1.project(x) == vector2d(1.0, 0.0));
+      REQUIRE(v1.project(y) == vector2d(0.0, 2.0));
+      REQUIRE(v1.project(-x) == vector2d(1.0, 0.0));
+      REQUIRE(v1.project(x * 10.0) == vector2d(1.0, 0.0));
+      REQUIRE(v1.project(v1 * 2.0) == v1);
+      REQUIRE(v1.project(-v1) == v1);
+    }
+
+    SECTION("Add") {
+      constexpr auto p1 = vector2d(1.0, 2.0);
+      constexpr auto p2 = vector2d(3.0, 4.0);
+
+      REQUIRE(p1 + p2 == vector2d(4.0, 6.0));
+      REQUIRE(p1 + p2 == vector2d(4.0, 6.0));
+    }
+
+    SECTION("Sum") {
+      auto vec = std::vector<vector2d<f32>> {vector2d(1.0F, 2.0F), vector2d(3.0F, 4.0F), vector2d(5.0F, 6.0F)};
+      auto acc = std::accumulate(vec.begin(), vec.end(), vector2d());
+
+      REQUIRE(acc == vector2d(9.0F, 12.0F));
+    }
+
+    SECTION("Sub") {
+      constexpr auto p1 = vector2d(1.0, 2.0);
+      constexpr auto p2 = vector2d(3.0, 4.0);
+
+      REQUIRE(p1 - p2 == vector2d(-2.0, -2.0));
+    }
+
+    SECTION("SubAssign") {
+      auto p1 = vector2d(1.0, 2.0);
+      p1 -= vector2d(3.0, 4.0);
+
+      REQUIRE(p1 == vector2d(-2.0, -2.0));
+    }
+
+    SECTION("MulAssign") {
+      auto p1 = vector2d(1.0, 2.0);
+      p1 *= 3.0;
+
+      REQUIRE(p1 == vector2d(3.0, 6.0));
+    }
+
+    SECTION("DivAssign") {
+      auto p1 = vector2d(3.0, 6.0);
+      p1 /= 3.0;
+
+      REQUIRE(p1 == vector2d(1.0, 2.0));
+    }
+
+    SECTION("Neg") {
+      auto p1 = vector2d(1.0, 2.0);
+      auto p2 = -p1;
+
+      REQUIRE(p2 == vector2d(-1.0, -2.0));
+    }
+
+    SECTION("Swizzle") {
+      auto p1 = vector2d(1.0, 2.0);
+
+      REQUIRE(p1.inverted() == vector2d(2.0, 1.0));
+    }
+
+    SECTION("Reflect") {
+      constexpr auto a = vector2d(1.0, 3.0);
+      constexpr auto n1 = vector2d(0.0, -1.0);
+      auto const n2 = vector2d(1.0, -1.0).normalized();
+
+      REQUIRE(a.reflected(n1) == vector2d(1.0, -3.0));
+      REQUIRE(a.reflected(n2) == vector2d(3.0, 1.0));
+    }
+
+    SECTION("Map") {
+      constexpr auto p = vector2d(1.0, 2.0);
+      constexpr auto expected = vector2d<i32>(2, 4);
+      auto fn = [](f64 x) -> i32 { return x * 2; };
+      REQUIRE(p.map(fn) == expected);
+    }
+
+    SECTION("Zip") {
+      constexpr auto p = vector2d(1.0, 2.0);
+      constexpr auto q = vector2d(3.0, 4.0);
+      constexpr auto got = p.zip(q, [](f64 x, f64 y) -> f64 { return x + y; });
+      constexpr auto expected = vector2d(4.0, 6.0);
+      REQUIRE(got.to_point2d() == expected.to_point2d());
     }
   }
 }

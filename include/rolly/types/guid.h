@@ -187,7 +187,7 @@ namespace std {
 
   /**
    * @brief Hashes a <tt>guid</tt>.
-   * @tparam T Underlying type of the <tt>guid</tt>.
+   * @tparam T Underlying type of the <tt>hash</tt>.
    * @param b <tt>guid</tt> to hash.
    * @return Hash value.
    * @relates rolly::types::guid
