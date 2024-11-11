@@ -93,7 +93,11 @@ namespace rolly {
        * @tparam F The type of function to apply.
        * @param fn The function to apply.
        */
+#ifdef DOXYGEN_GENERATING_OUTPUT
+      template <std::invocable<number_type> F>
+#else
       template <___concept___(std::invocable<number_type>) F>
+#endif
       constexpr auto map(F&& fn) const                            // NOLINT(*-trailing-return)
         -> std::enable_if_t<
           std::is_invocable_v<F, number_type>,
@@ -364,11 +368,16 @@ namespace rolly {
 
       /**
        * @brief Constructs new vector2d from <tt>std::array</tt>.
+       * @tparam N2 The size of the <tt>std::array</tt>. Must be equal to <tt>2</tt>.
        * @param other The other <tt>std::array</tt>.
        */
-      template <std::size_t N2 ___sfinae_requirement___(N2 == 2)>
-      ___requires___((N2 == 2)) [[nodiscard]] static constexpr vector2d
-        from_array(std::array<number_type, N2> const& other) {
+#ifdef DOXYGEN_GENERATING_OUTPUT
+      template <std::size_t N2>
+        requires(N2 == 2)
+#else
+      template <std::size_t N2 ___sfinae_requirement___(N2 == 2)> ___requires___((N2 == 2))
+#endif
+      [[nodiscard]] static constexpr vector2d from_array(std::array<number_type, N2> const& other) {
         return {other[0], other[1]};
       }
 
@@ -669,6 +678,11 @@ namespace rolly {
   }  // namespace types
 }  // namespace rolly
 
+/**
+ * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::vector2d class.
+ * @tparam T Number type.
+ * @relates rolly::vector2d
+ */
 template <typename T>
 struct fmt::formatter<rolly::vector2d<T>> {
   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }

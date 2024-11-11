@@ -33,58 +33,136 @@ namespace rolly {
      * @brief Closes the savefile.
      * @details File will be saved automatically on closing.
      */
-    virtual ~savefile() noexcept;
+    virtual ~savefile() noexcept {
+      this->try_save().map_error([&](auto const& err) { fmt::println(stderr, "savefile::~savefile: {}", err); });
+    }
 
     /**
      * @brief Returns whether savefile is valid or not.
      */
-    [[nodiscard]] bool valid() const;
+    [[nodiscard]] bool valid() const { return this->valid_; }
 
     /**
      * @brief Path to the savefile's backing file.
      */
-    [[nodiscard]] std::filesystem::path const& backing_path() const;
+    [[nodiscard]] std::filesystem::path const& backing_path() const { return this->backing_path_; }
 
     [[nodiscard]] bool has_backup() const noexcept { return std::filesystem::exists(this->backing_path()); }
 
     /**
      * @brief Constant reference to the current values of savefile.
      */
-    [[nodiscard]] T const& values() const;
+    [[nodiscard]] T const& values() const { return this->values_; }
 
     /**
      * @brief Mutable reference to the current values of savefile.
      */
-    [[nodiscard]] T& values_mut();
+    [[nodiscard]] T& values_mut() { return this->values_; }
 
-    void load() noexcept(false);
+    void load() {
+      namespace fs = std::filesystem;
+      if(not fs::exists(this->path())) {
+        this->values_ = T();
+        this->save();
+        return;
+      }
+      try {
+        auto str = this->read();
+        this->values_ = serialization::deserialize<F, T>(str);
+      } catch(std::exception const& ex) {
+        this->invalidate();
+        try {
+          auto str = this->read();
+          this->values_ = serialization::deserialize<F, T>(str);
+        } catch(std::exception const& ex2) {
+          throw ex2;
+        }
+      }
+    }
 
-    void save() const noexcept(false);
+    [[nodiscard]] result<> try_load() const noexcept {
+      try {
+        this->load();
+        return {};
+      } catch(std::exception const& ex) {
+        return error("savefile::try_load: {}", ex.what());
+      }
+    }
+
+    void save() const {
+      auto str = serialization::serialize<F, T>(this->values_);
+      this->write(str);
+      this->commit();
+    }
+
+    [[nodiscard]] result<> try_save() const noexcept {
+      auto try_serialize = [this]() -> result<std::string> {
+        try {
+          return serialization::serialize<F, T>(this->values_);
+        } catch(std::exception const& ex) {
+          return error("savefile::try_save: {}", ex.what());
+        }
+      };
+      try_serialize().and_then([this](auto const& str) { return this->try_write(str); }
+      ).and_then([this]() { return this->try_commit(); });
+      return ok();
+    }
 
     /**
      * @brief Swaps the current savefile with its backup.
+     * @details Consider using exception-safe @ref try_invalidate instead.
      */
-    void invalidate() const noexcept;
+    void invalidate() const {
+      if(this->exists())
+        std::filesystem::remove_all(this->path());
+      std::filesystem::copy(this->backing_path(), this->path());
+    }
 
-    void commit() const noexcept;
+    [[nodiscard]] result<> try_invalidate() const noexcept {
+      try {
+        this->invalidate();
+        return {};
+      } catch(std::exception const& ex) {
+        return error("savefile::try_invalidate: {}", ex.what());
+      }
+    }
+
+    /**
+     * @brief Removes previous backup and replaces it with the current one.
+     * @details Consider using exception-safe @ref try_commit instead.
+     */
+    void commit() const {
+      if(std::filesystem::exists(this->backing_path()))
+        std::filesystem::remove_all(this->backing_path());
+      std::filesystem::copy(this->path(), this->backing_path());
+    }
+
+    [[nodiscard]] result<> try_commit() const noexcept {
+      try {
+        this->commit();
+        return {};
+      } catch(std::exception const& ex) {
+        return error("savefile::try_commit: {}", ex.what());
+      }
+    }
 
     /**
      * @brief Returns whether the savefile is valid or not.
      * @see valid
      */
-    [[nodiscard]] explicit operator bool() const noexcept;
+    [[nodiscard]] explicit operator bool() const noexcept { return this->valid(); }
 
     /**
      * @brief Constant reference to the current values of the savefile.
      * @see values
      */
-    [[nodiscard]] T const& operator()() const;
+    [[nodiscard]] T const& operator()() const { return this->values_; }
 
     /**
      * @brief Mutable reference to the current values of the savefile.
      * @see values_mut
      */
-    [[nodiscard]] T& operator()();
+    [[nodiscard]] T& operator()() { return this->values_; }
 
     /**
      * @brief Default copy assignment.
@@ -96,147 +174,9 @@ namespace rolly {
      */
     savefile& operator=(savefile&&) = default;
 
-   protected:
-    /**
-     * @brief Reads content of savefile from file.
-     */
-    [[nodiscard]] std::string read_from_file() const noexcept(false);
-
-    /**
-     * @brief Writes content of savefile to a file.
-     * @param content Content to write.
-     */
-    void write_to_file(std::string_view content) const noexcept(false);
-
    private:
     T values_;
-    mutable std::filesystem::path path_;
-    mutable std::filesystem::path backing_path_;
+    std::filesystem::path backing_path_;
     bool valid_;
   };
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) savefile<F, T>::~savefile() noexcept {
-    try {
-      this->save();
-    } catch(std::exception const& ex) {
-    }  // NOLINT(*-empty-catch)
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) bool savefile<F, T>::valid() const {
-    return this->valid_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) std::filesystem::path const& savefile<F, T>::backing_path() const {
-    return this->backing_path_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) T& savefile<F, T>::values_mut() {
-    return this->values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) T const& savefile<F, T>::values() const {
-    return this->values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void savefile<F, T>::load(
-  ) noexcept(false) {
-    namespace fs = std::filesystem;
-    if(not fs::exists(this->path())) {
-      this->values_ = T();
-      this->save();
-      return;
-    }
-    try {
-      auto str = this->read_from_file();
-      this->values_ = serialization::deserialize<F, T>(str);
-    } catch(std::exception const& ex) {
-      this->invalidate();
-      try {
-        auto str = this->read_from_file();
-        this->values_ = serialization::deserialize<F, T>(str);
-      } catch(std::exception const& ex2) {
-        throw ex2;
-      }
-    }
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void savefile<F, T>::save() const
-    noexcept(false) try {
-    auto str = serialization::serialize<F, T>(this->values_);
-    this->write_to_file(str);
-    this->commit();
-  } catch(std::exception const& ex) {
-    throw;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void savefile<F, T>::invalidate(
-  ) const noexcept {
-    if(this->exists())
-      std::filesystem::remove_all(this->path());
-    std::filesystem::copy(this->backing_path(), this->path());
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void savefile<F, T>::commit(
-  ) const noexcept {
-    if(std::filesystem::exists(this->backing_path()))
-      std::filesystem::remove_all(this->backing_path());
-    std::filesystem::copy(this->path(), this->backing_path());
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) savefile<F, T>::operator bool(
-  ) const noexcept {
-    return this->valid();
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) T const& savefile<F, T>::operator()(
-  ) const {
-    return this->values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) T& savefile<F, T>::operator()() {
-    return this->values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) std::string savefile<F, T>::read_from_file() const noexcept(false) {
-    auto handle = std::ifstream(this->path());
-    if(not handle.is_open())
-      throw std::runtime_error("failed to open file handle for reading at " + this->path().string());
-    return {(std::istreambuf_iterator<char>(handle)), std::istreambuf_iterator<char>()};
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) void savefile<F, T>::write_to_file(std::string_view content) const noexcept(false) {
-    namespace fs = std::filesystem;
-
-    if(not fs::exists(this->path().parent_path()))
-      fs::create_directories(this->path().parent_path());
-    auto handle = std::ofstream(this->path());
-    if(not handle.is_open())
-      throw std::runtime_error("failed to open file handle for writing at " + this->path().string());
-    if(fs::exists(this->path())) {
-      auto const permissions = fs::perms::owner_read | fs::perms::owner_write | fs::perms::group_read |
-                               fs::perms::others_read | fs::perms::others_exec | fs::perms::owner_all |
-                               fs::perms::group_all;
-      fs::permissions(this->path(), permissions);
-    }
-    handle << content;
-    if(not handle.good())
-      throw std::runtime_error("failed to write to file at " + this->path().string());
-  }
 }  // namespace rolly

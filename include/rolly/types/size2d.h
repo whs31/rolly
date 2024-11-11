@@ -13,7 +13,6 @@
 
 namespace rolly {
   inline namespace types {
-
     template <___concept___(concepts::num) T>
     class point2d;
 
@@ -316,11 +315,16 @@ namespace rolly {
 
       /**
        * @brief Constructs new size2d from <tt>std::array</tt>.
+       * @tparam N2 The size of the array. Must be equal to <tt>2</tt>.
        * @param other The other <tt>std::array</tt>.
        */
-      template <std::size_t N2 ___sfinae_requirement___(N2 == 2)>
-      ___requires___((N2 == 2)) [[nodiscard]] static constexpr size2d
-        from_array(std::array<number_type, N2> const& other) {
+#ifdef DOXYGEN_GENERATING_OUTPUT
+      template <std::size_t N2>
+        requires(N2 == 2)
+#else
+      template <std::size_t N2 ___sfinae_requirement___(N2 == 2)> ___requires___((N2 == 2))
+#endif
+      [[nodiscard]] static constexpr size2d from_array(std::array<number_type, N2> const& other) {
         return {other[0], other[1]};
       }
 
@@ -593,6 +597,11 @@ namespace rolly {
   }  // namespace types
 }  // namespace rolly
 
+/**
+ * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::size2d class.
+ * @tparam T Number type.
+ * @relates rolly::size2d
+ */
 template <typename T>
 struct fmt::formatter<rolly::size2d<T>> {
   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }

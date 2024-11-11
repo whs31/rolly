@@ -18,7 +18,12 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * @details Based on <tt>std::array</tt> container.
      * @sa https://en.wikipedia.org/wiki/Globally_unique_identifier
      */
+#ifdef DOXYGEN_GENERATING_OUTPUT
+    class guid {
+#else
     class ___rolly_api___ guid {
+#endif
+
      public:
       /**
        * @brief Creates an empty <tt>guid</tt>.
@@ -120,7 +125,11 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
        * @return Output stream
        * @see to_string
        */
-      ___rolly_api___ friend std::ostream& operator<<(std::ostream& os, guid const& guid);
+#ifndef DOXYGEN_GENERATING_OUTPUT
+      ___rolly_api___
+#endif
+        friend std::ostream&
+        operator<<(std::ostream& os, guid const& guid);
 
       /**
        * @brief Creates an empty <tt>guid</tt>.
@@ -170,8 +179,8 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
       }
     };
   }  // namespace detail
-}  // namespace rolly
 #endif
+}  // namespace rolly
 
 namespace std {
   /**

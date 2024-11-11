@@ -21,7 +21,11 @@
 
 namespace rolly {
   inline namespace types {
+#ifdef DOXYGEN_GENERATING_OUTPUT
+    template <concepts::num T = f32>
+#else
     template <___concept___(concepts::num) T = f32>
+#endif
     /**
      * @brief A two-dimensional point tagged with a unit.
      * @tparam T Number type. Must satisfy concept <tt>floppy::concepts::num</tt>. Default is \c f32.
@@ -553,11 +557,16 @@ namespace rolly {
 
       /**
        * @brief Constructs new point2d from <tt>std::array</tt>.
+       * @tparam N2 Size of the <tt>std::array</tt>. Must be equal to <tt>2</tt>.
        * @param other The other <tt>std::array</tt>.
        */
-      template <std::size_t N2 ___sfinae_requirement___(N2 == 2)>
-      ___requires___((N2 == 2)) [[nodiscard]] static constexpr point2d
-        from_array(std::array<number_type, N2> const& other) {
+#ifdef DOXYGEN_GENERATING_OUTPUT
+      template <std::size_t N2>
+        requires(N2 == 2)
+#else
+      template <std::size_t N2 ___sfinae_requirement___(N2 == 2)> ___requires___((N2 == 2))
+#endif
+      [[nodiscard]] static constexpr point2d from_array(std::array<number_type, N2> const& other) {
         return {other[0], other[1]};
       }
 
@@ -630,7 +639,8 @@ namespace rolly {
       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
       * for.
       /**
-      [[nodiscard]] static constexpr point2d from_qpoint(QPoint const& other) { return point2d(other.x(), other.y()); }
+      [[nodiscard]] static constexpr point2d from_qpoint(QPoint const& other) { return point2d(other.x(), other.y());
+      }
 
       /**
       * @brief Constructs new point from <tt>QPointF</tt>.
@@ -650,6 +660,11 @@ namespace rolly {
   }  // namespace types
 }  // namespace rolly
 
+/**
+ * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::point2d class.
+ * @tparam T Number type.
+ * @relates rolly::point2d
+ */
 template <typename T>
 struct fmt::formatter<rolly::point2d<T>> {
   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }

@@ -69,20 +69,6 @@ TEST_CASE("Types", "[types]") {
 
 #ifdef ___rolly_cxx20___
   SECTION("Result", "[types.result]") {
-    SECTION("Assertions") {
-      expected<int, int> o1 = 42;
-      REQUIRE_THROWS(o1.error());
-
-      expected<int, int> o2 {unexpect, 0};
-      REQUIRE_THROWS(*o2);
-
-      struct foo {
-        int bar;
-      };
-      expected<struct foo, int> o3 {unexpect, 0};
-      REQUIRE_THROWS(o3->bar);
-    }
-
     SECTION("Assignment") {
       expected<int, int> e1 = 42;
       expected<int, int> e2 = 17;
