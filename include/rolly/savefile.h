@@ -1,24 +1,31 @@
 #pragma once
 
-#pragma once
-
-#include <filesystem>
-#include <utility>
-#include <fstream>
 #include "serialization.h"
 #include "types/stdint.h"
+#include "io/filedevice.h"
 
 namespace rolly {
   template <typename F, typename T>
 #ifndef DOXYGEN_GENERATING_OUTPUT
   ___requires___((serialization::serializable_and_deserializable<F, T, char>))
 #endif
-    class savefile {
+    class savefile : public io::filedevice {
 
    public:
-    explicit savefile(std::filesystem::path path);
+    explicit savefile(std::filesystem::path path)
+      : io::filedevice(std::move(path))
+      , backing_path_(this->suffixed_path(".bak")) {
+      try {
+        this->load();
+        this->valid_ = true;
+      } catch(std::exception const& ex) {
+        this->valid_ = false;
+      }
+    }
 
-    explicit savefile(std::string_view filename, std::filesystem::path const& folder);
+    explicit savefile(std::string_view filename, std::filesystem::path const& folder)
+      : savefile(folder / filename) {}
+
     savefile(savefile const&) = default;
     savefile(savefile&&) = default;
 
@@ -32,11 +39,6 @@ namespace rolly {
      * @brief Returns whether savefile is valid or not.
      */
     [[nodiscard]] bool valid() const;
-
-    /**
-     * @brief Path to the savefile.
-     */
-    [[nodiscard]] std::filesystem::path const& path() const;
 
     /**
      * @brief Path to the savefile's backing file.
@@ -114,28 +116,6 @@ namespace rolly {
   };
 
   template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) savefile<F, T>::savefile(std::filesystem::path path)
-    : path_(std::move(path))
-    , backing_path_([this]() -> std::filesystem::path {
-      auto path = this->path_;
-      path.replace_extension(".bak");
-      return path;
-    }()) {
-    try {
-      this->load();
-      this->valid_ = true;
-    } catch(std::exception const& ex) {
-      this->valid_ = false;
-    }
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) savefile<F, T>::savefile(std::string_view filename, std::filesystem::path const& folder)
-    : savefile(folder / filename) {}
-
-  template <typename F, typename T>
   ___requires___((serialization::serializable_and_deserializable<F, T, char>)) savefile<F, T>::~savefile() noexcept {
     try {
       this->save();
@@ -146,12 +126,6 @@ namespace rolly {
   template <typename F, typename T>
   ___requires___((serialization::serializable_and_deserializable<F, T, char>)) bool savefile<F, T>::valid() const {
     return this->valid_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) std::filesystem::path const& savefile<F, T>::path() const {
-    return this->path_;
   }
 
   template <typename F, typename T>
@@ -206,7 +180,7 @@ namespace rolly {
   template <typename F, typename T>
   ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void savefile<F, T>::invalidate(
   ) const noexcept {
-    if(exists(this->path()))
+    if(this->exists())
       std::filesystem::remove_all(this->path());
     std::filesystem::copy(this->backing_path(), this->path());
   }
@@ -214,7 +188,7 @@ namespace rolly {
   template <typename F, typename T>
   ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void savefile<F, T>::commit(
   ) const noexcept {
-    if(exists(this->backing_path()))
+    if(std::filesystem::exists(this->backing_path()))
       std::filesystem::remove_all(this->backing_path());
     std::filesystem::copy(this->path(), this->backing_path());
   }

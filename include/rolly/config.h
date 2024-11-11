@@ -1,10 +1,12 @@
 #pragma once
 
-#include <filesystem>
 #include <utility>
 #include <fstream>
 #include "serialization.h"
 #include "types/stdint.h"
+#ifndef Q_MOC_RUN
+#  include <filesystem>
+#endif
 
 namespace rolly {
   /**
@@ -76,9 +78,10 @@ namespace rolly {
    */
   template <typename F, typename T>
 #ifndef DOXYGEN_GENERATING_OUTPUT
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) 
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
 #endif
-  class configuration_file {
+    class configuration_file {
+
    public:
     /**
      * @brief Creates or loads configuration file from given path with saving policy.

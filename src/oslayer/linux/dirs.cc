@@ -1,7 +1,6 @@
 #include "dirs.h"
 
 #include <cstdlib>
-#include <filesystem>
 
 #ifndef ROLLY_OS_WINDOWS
 

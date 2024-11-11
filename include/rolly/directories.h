@@ -2,12 +2,14 @@
 
 #include <string>
 #include <string_view>
-#include <filesystem>
 #include <optional>
 #include "global/export.h"
 #include "global/version.h"
 #include "global/definitions.h"
 #include "types/stdint.h"
+#ifndef Q_MOC_RUN
+#  include <filesystem>
+#endif
 
 namespace rolly {
   class dirs {

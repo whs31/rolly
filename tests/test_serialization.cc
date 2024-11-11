@@ -152,6 +152,7 @@ TEST_CASE("Serialization & filesystem") {
         save.save();
         REQUIRE(fs::exists(save.path()));
         REQUIRE(save.has_backup());
+        REQUIRE(fs::exists(fs::current_path() / "test-save" / "test.toml.bak"));
         REQUIRE(save().test == 0);
         REQUIRE(save().ip_address.ip == "127.0.0.1");
         REQUIRE(save().ip_address.port == 45'555);
