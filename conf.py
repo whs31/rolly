@@ -8,3 +8,4 @@ LINKS_NAVBAR1 = [
   ("Modules", 'modules', []),
   ("Namespaces", 'namespaces', [])
 ]
+SHOW_UNDOCUMENTED = True
