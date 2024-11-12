@@ -14,6 +14,7 @@ namespace rolly {  // NOLINT
 namespace rolly::dll {
   class plugin {
    public:
+    plugin() = default;
     plugin(plugin const&) = default;
     plugin(plugin&&) = default;
     plugin& operator=(plugin const&) = default;

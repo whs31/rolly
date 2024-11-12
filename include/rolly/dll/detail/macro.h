@@ -9,4 +9,4 @@
 #else
 #  define ___rolly_dll_api___
 #endif
-#define DECLARE_PLUGIN_SIGNATURE extern "C" ___rolly_dll_api___ rolly::dll::plugin* ___rolly_dll_proc_name___
+#define DECLARE_PLUGIN(ID) extern "C" ___rolly_dll_api___ rolly::dll::plugin* ___rolly_dll_proc_name___ () { return reinterpret_cast<rolly::dll::plugin*>(new ID); }

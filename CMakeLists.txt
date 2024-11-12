@@ -118,6 +118,7 @@ if (ROLLY_TESTS)
   enable_testing()
   add_subdirectory(tests)
   add_subdirectory(bin)
+  add_subdirectory(examples)
 endif ()
 
 # -- installation --
