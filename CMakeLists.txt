@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.1.21
+  VERSION 2.1.22
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -65,9 +65,13 @@ target_sources(${PROJECT_NAME}
   ${CMAKE_CURRENT_SOURCE_DIR}/src/rtti.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
 
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/shared_library.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/plugin_loader.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dll.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/dll.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
 )
 
@@ -148,6 +152,15 @@ install(EXPORT ${PROJECT_NAME}
 configure_package_config_file(${PROJECT_CONFIG_FILE_IN} ${PROJECT_CONFIG_FILE} INSTALL_DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR})
 write_basic_package_version_file(${CONFIG_VERSION_FILE} COMPATIBILITY AnyNewerVersion)
 install(FILES ${PROJECT_CONFIG_FILE} ${CONFIG_VERSION_FILE} DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR})
+
+# -- misc --
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+message(STATUS "[${PROJECT_FULL_NAME}] copying ${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json to the root folder ${CMAKE_CURRENT_SOURCE_DIR}")
+file(CREATE_LINK
+  ${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json
+  ${CMAKE_CURRENT_SOURCE_DIR}/compile_commands.json
+  SYMBOLIC
+)
 
 message(STATUS "[${PROJECT_FULL_NAME}] configuring ${PROJECT_NAME} done!")
 unset(ROLLY_TESTS CACHE)

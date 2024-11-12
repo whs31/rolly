@@ -1,9 +1,6 @@
 #pragma once
 
 #include "../base.h"
-#ifndef Q_MOC_RUN
-#  include <filesystem>
-#endif
 
 #ifndef ROLLY_OS_WINDOWS
 
