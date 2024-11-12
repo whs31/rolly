@@ -73,11 +73,15 @@ namespace rolly::dll {
    * Implementation of the plugin interface must be compiled as a <b>SHARED</b> library, which links to the
    * <b>INTERFACE</b> library described above.
    *
-   * @remark
-   * @ref rolly::dll::plugin_loader expects libraries on Linux to be named with the prefix "lib", e.g. "libplugin-impl".
-   * In Windows, it expects the same, but without the prefix.
-   * By default, CMake with MingW compiles the libraries with the prefix "lib", so don't forget to set the prefix to
-   * ""., e.g. <code>set_target_properties(plugin-impl PROPERTIES PREFIX "")</code>
+   * @warning
+   * @ref rolly::dll::plugin_loader expects libraries on Linux to be named with the prefix <tt>lib</tt>, e.g.
+   * <tt>libplugin-impl</tt>. In Windows, it expects the same, but without the prefix. By default, CMake with MingW
+   * compiles the libraries with the prefix <tt>lib</tt>, so don't forget to set the prefix to <tt>""</tt>., e.g.
+   * @code {.cmake}
+   * if(WIN32)
+   *   set_target_properties(plugin-impl PROPERTIES PREFIX "")
+   * endif()
+   * @endcode
    *
    * <b>CMakeLists.txt</b>
    * @code {.cmake}
@@ -88,7 +92,7 @@ namespace rolly::dll {
    *
    * if(WIN32)
    *   set_target_properties(plugin-impl PROPERTIES PREFIX "")
-   * endif ()
+   * endif()
    * @endcode
    *
    * The plugin implementation is a class, which implements the plugin interface and overrides the
@@ -106,7 +110,7 @@ namespace rolly::dll {
    *
    * @note Do not forget to fully qualify your implementation class typename when passing it to the
    * <code>DECLARE_PLUGIN(...)</code> macro! For example, if your plugin resides in the <code>example</code> namespace
-   * and named <code>ExamplePluginImpl</code>, qualify it like:
+   * and is named <code>ExamplePluginImpl</code>, qualify it like:
    * @code {.cpp}
    * DECLARE_PLUGIN(example::ExamplePluginImpl)
    * @endcode
@@ -195,6 +199,31 @@ namespace rolly::dll {
    *   fmt::println("Success!");
    *   return 0;
    * }
+   * @endcode
+   *
+   * @paragraph plugin_example_plugin_output Output
+   * @code {.shell-session}
+   * 17:20:14  .\plugin-host.exe
+   * Plugin: constructor called
+   * [2024-11-12 17:20:17.008] [info] rolly::dll: loaded plugin 'plugin-impl.dll'
+   * Plugin: plugin loaded
+   * Plugin: init called with Hi from std::any!
+   * Hello
+   * Success!
+   * Plugin: plugin unloaded
+   * Plugin: destructor called
+   *
+   * 17:20:17  ls
+   * D:\dev\radar2\rolly-radar\build\Debug\examples\dll\host
+   * Mode                LastWriteTime         Length Name
+   * ----                -------------         ------ ----
+   * d-----       12.11.2024     14:37                  CMakeFiles
+   * -a----       12.11.2024     14:37           1197   cmake_install.cmake
+   * -a----       12.11.2024     14:37            317   CTestTestfile.cmake
+   * -a----       12.11.2024     15:33        2036629   libfmtd.dll
+   * -a----       12.11.2024     15:33           2404   libplugin-host.dll.a
+   * -a----       12.11.2024     15:33       14017647   librolly.dll
+   * -a----       12.11.2024     15:33       10949254   plugin-host.exe
    * @endcode
    * @see rolly::dll::plugin_loader
    */

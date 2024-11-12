@@ -9,3 +9,4 @@ LINKS_NAVBAR1 = [
   ("Namespaces", 'namespaces', [])
 ]
 SHOW_UNDOCUMENTED = True
+VERSION_LABELS = True
