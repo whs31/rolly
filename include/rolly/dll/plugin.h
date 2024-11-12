@@ -2,6 +2,7 @@
 
 #include <any>
 #include <string>
+#include "../types/guid.h"
 #include "detail/macro.h"
 
 namespace rolly {  // NOLINT
@@ -246,6 +247,8 @@ namespace rolly::dll {
      * @return Internal interface name.
      */
     [[nodiscard]] virtual std::string_view name() const = 0;
+
+    [[nodiscard]] virtual guid const& uuid() const = 0;
 
     /**
      * @brief Called directly after plugin constructor during plugin loading.

@@ -79,10 +79,21 @@ namespace rolly::dll {
         continue;
       found_any = true;
       logger().trace("rolly::dll: found plugin candidate '{}'", entry.path().generic_string());
-      std::ignore = this->load(path, entry.path().filename().generic_string());
+      auto name = entry.path().filename().replace_extension("").filename().string();
+      if(name.starts_with("lib"))
+        name = name.substr(3);
+      this->load(path, name).map_error([](auto const& err) { logger().error("rolly::dll: {}", err); });
     }
     if(not found_any)
       return error("no plugins found in '{}'", path.generic_string());
     return ok();
+  }
+
+  plugin* plugin_loader::query_raw(std::function<bool(plugin const&)> const& predicate) const {
+    for(auto const& p : this->plugins_) {
+      if(predicate(*p))
+        return p.get();
+    }
+    return nullptr;
   }
 }  // namespace rolly::dll

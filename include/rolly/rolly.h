@@ -4,6 +4,7 @@
 #include "concepts.h"
 #include "contracts.h"
 #include "directories.h"
+#include "dll.h"
 #include "exception.h"
 #include "format.h"
 #include "functional.h"

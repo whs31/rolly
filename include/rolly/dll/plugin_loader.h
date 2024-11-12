@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <functional>
 #include <unordered_map>
 #include <vector>
 #include "../traits/pin.h"
@@ -112,17 +113,31 @@ namespace rolly::dll {
      */
     template <typename T>
     [[nodiscard]] std::optional<std::reference_wrapper<T>> query_interface(std::string_view interface_name) const {
-      for(auto const& p : this->plugins()) {
-        if(p->name() == interface_name)
-          try {
-            return std::ref(*dynamic_cast<T*>(p.get()));
-          } catch(...) {
-            return none;
-          }
-        break;
-      }
-      return none;
+      return this->query_by<T>([&interface_name](plugin const& p) { return p.name() == interface_name; });
     }
+
+    /**
+     * @brief Queries plugin interface by it's unique ID (UUID).
+     * @tparam T Interface type.
+     * @param interface_name Internal plugin interface GUID. See @ref rolly::dll::plugin::uuid
+     * @return Reference to the retrieved interface or none when no such interface is loaded.
+     */
+    template <typename T>
+    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_interface(guid const& uuid) const {
+      return this->query_by<T>([&uuid](plugin const& p) { return p.uuid() == uuid; });
+    }
+
+    template <typename T>
+    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_by(std::function<bool(plugin const&)> const& predicate) const {
+      auto* p = this->query_raw(predicate);
+      try {
+        return std::ref(*dynamic_cast<T*>(p));
+      } catch(...) {
+        return none;
+      }
+    }
+
+    [[nodiscard]] plugin* query_raw(std::function<bool(plugin const&)> const& predicate) const;
 
    private:
     std::any init_data_;

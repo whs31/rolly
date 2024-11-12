@@ -184,3 +184,9 @@ mcss-folder := "D:/dev/my/m.css/documentation"
 @format:
     find . -iname '*.h' -o -iname '*.cc' | xargs clang-format -i;
     echo "Formatted!"
+
+[group('misc')]
+[doc('Deploy package locally')]
+@deploy:
+  rm -rf build
+  conan create . -b missing
