@@ -9,11 +9,16 @@
 #endif
 
 namespace rolly::dll {
-  class shared_library : noncopyable {
+  class
+#ifndef DOXYGEN_GENERATING_OUTPUT
+    ___rolly_api___
+#endif
+      shared_library : noncopyable {
+
    public:
     shared_library() = default;
-    explicit shared_library(std::string_view name);
-    explicit shared_library(std::filesystem::path const& path, std::string_view name);
+    explicit shared_library(std::string name);
+    explicit shared_library(std::filesystem::path const& path, std::string name);
     shared_library(shared_library&&) noexcept;
     shared_library& operator=(shared_library&&) noexcept;
     virtual ~shared_library();
@@ -37,8 +42,8 @@ namespace rolly::dll {
 
     [[nodiscard]] bootstrap_function_type locate_entry() const;
 
+    std::string name_;
     void* handle_ = nullptr;
     std::filesystem::path path_;
-    std::string name_;
   };
 }  // namespace rolly::dll

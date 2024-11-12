@@ -4,8 +4,12 @@
 #include <cstdint>
 #include "rolly/dll/shared_library.h"
 #include <rolly/contracts.h>
+#include <rolly/log.h>
 
 namespace rolly::dll {
+  plugin_loader::plugin_loader(std::any init_data)
+    : init_data_(std::move(init_data)) {}
+
   plugin_loader::~plugin_loader() {
     for(auto& p : this->plugins_)
       std::ignore = p->quit();
@@ -14,7 +18,7 @@ namespace rolly::dll {
   result<plugin*> plugin_loader::load(std::string_view const name) {
     auto it = this->libraries_.find(name.data());
     if(it == this->libraries_.end()) {
-      this->libraries_[name.data()] = shared_library(name);
+      this->libraries_[name.data()] = shared_library(std::string(name));
       it = this->libraries_.find(name.data());
       contracts::postcondition(it != this->libraries_.end());
     }
@@ -28,7 +32,9 @@ namespace rolly::dll {
     contracts::postcondition(
       reinterpret_cast<std::uintptr_t>(*plugin_ptr) == reinterpret_cast<std::uintptr_t>(this->plugins_.back().get())
     );
-    std::ignore = (**plugin_ptr).init();  // todo
+    logger().info("rolly::dll: loaded plugin '{}'", name);
+    std::ignore = (**plugin_ptr).init(this->init_data_);
+    logger().debug("rolly::dll: initialized plugin '{}'", name);
     return *plugin_ptr;
     // NOLINTEND(*-pro-type-reinterpret-cast)
   }
@@ -36,7 +42,7 @@ namespace rolly::dll {
   result<plugin*> plugin_loader::load(std::filesystem::path const& path, std::string_view const name) {
     auto it = this->libraries_.find(name.data());
     if(it == this->libraries_.end()) {
-      this->libraries_[name.data()] = shared_library(path, name);
+      this->libraries_[name.data()] = shared_library(path, std::string(name));
       it = this->libraries_.find(name.data());
       contracts::postcondition(it != this->libraries_.end());
     }
@@ -50,8 +56,33 @@ namespace rolly::dll {
     contracts::postcondition(
       reinterpret_cast<std::uintptr_t>(*plugin_ptr) == reinterpret_cast<std::uintptr_t>(this->plugins_.back().get())
     );
-    std::ignore = (**plugin_ptr).init();  // todo
+    logger().info("rolly::dll: loaded plugin '{}'", name);
+    std::ignore = (**plugin_ptr).init(this->init_data_);
+    logger().debug("rolly::dll: initialized plugin '{}'", name);
     return *plugin_ptr;
     // NOLINTEND(*-pro-type-reinterpret-cast)
+  }
+
+  std::string_view plugin_loader::native_extension() noexcept {
+#ifdef ROLLY_OS_WINDOWS
+    return "dll";
+#else
+    return "so";
+#endif
+  }
+
+  result<> plugin_loader::load_all(std::filesystem::path const& path, std::string_view const extension) {
+    logger().debug("rolly::dll: searching for plugins in '{}'", path.generic_string());
+    auto found_any = false;
+    for(auto const& entry : std::filesystem::directory_iterator(path)) {
+      if(entry.path().extension() != fmt::format(".{}", extension) and entry.path().extension() != extension)
+        continue;
+      found_any = true;
+      logger().trace("rolly::dll: found plugin candidate '{}'", entry.path().generic_string());
+      std::ignore = this->load(path, entry.path().filename().generic_string());
+    }
+    if(not found_any)
+      return error("no plugins found in '{}'", path.generic_string());
+    return ok();
   }
 }  // namespace rolly::dll

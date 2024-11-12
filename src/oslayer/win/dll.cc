@@ -1,12 +1,16 @@
 #include "dll.h"
 
 #ifdef ROLLY_OS_WINDOWS
-#  define NOMINMAX
-#  define WIN32_LEAN_AND_MEAN
+#  ifndef NOMINMAX
+#    define NOMINMAX
+#  endif
+#  ifndef WIN32_LEAN_AND_MEAN
+#    define WIN32_LEAN_AND_MEAN
+#  endif
 #  include <windows.h>
 #  include <fmt/format.h>
 
-namespace rolly::oslayer::windows {
+namespace rolly::oslayer::win {
   std::string library_name(std::string_view const name) { return std::string(name); }
 
   void* load_library(std::string_view name) {
@@ -22,6 +26,6 @@ namespace rolly::oslayer::windows {
   void* get_proc_address(void* handle, std::string_view name) {
     return reinterpret_cast<void*>(GetProcAddress(HMODULE(handle), LPCSTR(name.data())));
   }
-}  // namespace rolly::oslayer::windows
+}  // namespace rolly::oslayer::win
 
 #endif

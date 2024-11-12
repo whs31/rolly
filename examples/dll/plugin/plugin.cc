@@ -5,8 +5,11 @@
 
 class ExamplePluginImpl final : public ExamplePlugin {
  private:
-  [[nodiscard]] bool init() final {
+  [[nodiscard]] bool init(std::any& init_interface) final {
     fmt::println("Plugin: plugin loaded");
+    // cast any to string
+    auto const s = std::any_cast<std::string const&>(init_interface);
+    fmt::println("Plugin: init called with {}", s);
     return true;
   }
 
@@ -25,4 +28,4 @@ class ExamplePluginImpl final : public ExamplePlugin {
   [[nodiscard]] std::string hello() const final { return "Hello"; }
 };
 
-DECLARE_PLUGIN(ExamplePluginImpl)
+DECLARE_PLUGIN(ExamplePluginImpl)  // NOLINT(*-pro-type-reinterpret-cast)
