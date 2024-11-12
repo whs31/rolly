@@ -45,7 +45,8 @@ namespace rolly::dll {
    *
    * include_guard(GLOBAL)
    *
-   * add_library(plugin-interface INTERFACE include/plugin-api/api.h)
+   * add_library(plugin-interface INTERFACE)
+   * target_sources(plugin-interface INTERFACE include/plugin-api/api.h)
    *
    * target_link_libraries(plugin-interface INTERFACE rolly::rolly)
    * target_include_directories(${PROJECT_NAME}
@@ -103,7 +104,7 @@ namespace rolly::dll {
    * }
    * @endcode
    *
-   * @note Do not forget to fully qualify your implemenation class typename when passing it to the
+   * @note Do not forget to fully qualify your implementation class typename when passing it to the
    * <code>DECLARE_PLUGIN(...)</code> macro! For example, if your plugin resides in the <code>example</code> namespace
    * and named <code>ExamplePluginImpl</code>, qualify it like:
    * @code {.cpp}

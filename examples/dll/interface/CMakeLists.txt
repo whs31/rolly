@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 
 include_guard(GLOBAL)
 
-add_library(plugin-interface INTERFACE include/plugin-api/api.h)
+add_library(plugin-interface INTERFACE)
+target_sources(plugin-interface INTERFACE include/plugin-api/api.h)
 
 target_link_libraries(plugin-interface INTERFACE rolly::rolly)
 
