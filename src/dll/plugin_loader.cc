@@ -5,6 +5,7 @@
 #include "rolly/dll/shared_library.h"
 #include <rolly/contracts.h>
 #include <rolly/log.h>
+#include <rolly/string_util.h>
 
 namespace rolly::dll {
   plugin_loader::plugin_loader(std::any init_data)
@@ -80,7 +81,7 @@ namespace rolly::dll {
       found_any = true;
       logger().trace("rolly::dll: found plugin candidate '{}'", entry.path().generic_string());
       auto name = entry.path().filename().replace_extension("").filename().string();
-      if(name.starts_with("lib"))
+      if(starts_with(name, "lib"))
         name = name.substr(3);
       this->load(path, name).map_error([](auto const& err) { logger().error("rolly::dll: {}", err); });
     }
