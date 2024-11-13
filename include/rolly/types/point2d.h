@@ -613,7 +613,7 @@ namespace rolly {
        * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
        * for.
        */
-      [[nodiscard]] constexpr QPointF to_qpointf() const { return QPointF(this->x_, this->y_()); }
+      [[nodiscard]] constexpr QPointF to_qpointf() const { return QPointF(this->x_, this->y_); }
 
       /**
        * @brief Constructs new point from <tt>QPoint</tt>.

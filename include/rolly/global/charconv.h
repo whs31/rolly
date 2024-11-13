@@ -35,3 +35,8 @@ namespace rolly {
   template <typename T, typename C = char>
   [[nodiscard]] constexpr inline T from_str(std::basic_string_view<C> const& str) = delete;
 }  // namespace rolly
+
+#define DECLARE_CONVERTIBLE_TO_STRING_VIEW(T) template <> [[nodiscard]] constexpr inline std::basic_string_view<char> rolly::as_str(T const& type)
+#define DECLARE_CONVERTIBLE_TO_STRING(T) template <> [[nodiscard]] inline std::basic_string<char> rolly::to_string(T const& value)
+#define DECLARE_CONVERTIBLE_TO_STRING_DEFAULT(T) template <> [[nodiscard]] inline std::basic_string<char> rolly::to_string(T const& value) { return std::basic_string<char>(rolly::as_str(value)); }
+#define DECLARE_CONVERTIBLE_FROM_STRING(T) template <> [[nodiscard]] constexpr inline T rolly::from_str(std::basic_string_view<char> const& str)

@@ -27,20 +27,13 @@ struct TestStruct {
   int b = 2;
 };
 
-template <>
-std::basic_string<char> serialization::serialize<serialization::format::json>(TestStruct const& value) {
+DECLARE_SERIALIZABLE(TestStruct, rolly::serialization::format::json) {
   return fmt::format(R"({{"a": {}, "b": {}}})", value.a, value.b);
 }
 
-template <>
-TestStruct serialization::deserialize<serialization::format::json>(std::basic_string<char> const& value) {
-  return {.a = 1, .b = 2};
-}
+DECLARE_DESERIALIZABLE(TestStruct, rolly::serialization::format::json) { return {.a = 1, .b = 2}; }
 
-template <>
-std::basic_string<char> rolly::serialization::serialize<rolly::serialization::format::toml>(
-  DummyConfiguration const& value
-) {
+DECLARE_SERIALIZABLE(DummyConfiguration, rolly::serialization::format::toml) {
   auto const out = toml::table {
     {"test",       value.test},
     {"ip_address",
@@ -55,10 +48,7 @@ std::basic_string<char> rolly::serialization::serialize<rolly::serialization::fo
   return ss.str();
 }
 
-template <>
-DummyConfiguration rolly::serialization::deserialize<rolly::serialization::format::toml>(
-  std::basic_string<char> const& str
-) {
+DECLARE_DESERIALIZABLE(DummyConfiguration, rolly::serialization::format::toml) {
   auto self = DummyConfiguration();
   toml::table in;
   try {

@@ -212,15 +212,8 @@ namespace rolly {
      * @see values_mut
      */
     [[nodiscard]] T& operator()() { return this->values_; }
-
-    /**
-     * @brief Default copy assignment.
-     */
+    
     configuration_file& operator=(configuration_file const&) = default;
-
-    /**
-     * @brief Default move assignment.
-     */
     configuration_file& operator=(configuration_file&&) = default;
 
    private:
