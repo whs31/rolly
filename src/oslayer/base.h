@@ -1,7 +1,9 @@
 #pragma once
 
-#include <filesystem>
 #include <rolly/global/platform_definitions.h>
+#ifndef Q_MOC_RUN
+#  include <filesystem>
+#endif
 
 namespace rolly::oslayer {
   namespace fs = std::filesystem;

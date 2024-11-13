@@ -7,6 +7,7 @@
 #include "../traits/noncopyable.h"
 
 namespace rolly {
+#ifndef DOXYGEN_GENERATING_OUTPUT
   namespace detail {
     template <___concept___(std::invocable) F>
 #ifdef ___rolly_cxx20___
@@ -63,7 +64,13 @@ namespace rolly {
       mutable F f_;
     };
   }  // namespace detail
+#endif
 
+  /**
+    * @brief Constructs a lazy object from a given function object.
+    * @param[in] f Function object to be evaluated when the value is requested the first time. The function object is
+    * moved into the lazy object.
+    */
   template <typename F>
   [[nodiscard]] auto lazy(F&& f) {
     return detail::lazy<std::remove_cvref_t<F>>(std::forward<F>(f));

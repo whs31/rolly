@@ -3,6 +3,7 @@
 #include "export.h"
 #include "platform_definitions.h"
 
+// NOLINTBEGIN(*-macro-usage)
 #if defined(DOXYGEN_GENERATING_OUTPUT)
 /**
  * @ingroup macros
@@ -138,3 +139,4 @@
 #if __has_include(<spdlog/spdlog.h>)
 #  define ROLLY_SPDLOG 1
 #endif    // __has_include(<spdlog/spdlog.h>)
+          // NOLINTEND(*-macro-usage)

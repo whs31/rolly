@@ -134,7 +134,8 @@ namespace rolly {
 }  // namespace rolly
 
 /**
- * @brief Formatter for @ref rolly::source_location
+ * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::source_location class.
+ * @relates rolly::source_location
  */
 template <>
 struct [[maybe_unused]] fmt::formatter<rolly::source_location> : rolly::ostream_formatter<char> {};

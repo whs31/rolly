@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../base.h"
-#include <filesystem>
 
 #ifndef ROLLY_OS_WINDOWS
 

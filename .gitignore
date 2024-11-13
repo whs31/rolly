@@ -36,10 +36,12 @@ target
 .export
 
 # IDE
+.cache
 .idea/*
 .vscode/*
 settings/userSettings.json
 settings/*.cfg
+compile_commands.json
 
 # Misc
 __pycache__

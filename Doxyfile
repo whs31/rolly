@@ -1,7 +1,7 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = Rolly
-PROJECT_NUMBER         = 2.1.11
-PROJECT_BRIEF          = "Radar open-source library"
+PROJECT_NUMBER         = 2.1.29
+PROJECT_BRIEF          = "Radar core library"
 PROJECT_LOGO           = ./doxygen/images/logo.png
 PROJECT_ICON           = ./doxygen/images/logo.png
 OUTPUT_DIRECTORY       = docs
@@ -168,12 +168,13 @@ EXCLUDE_SYMBOLS        =
 EXAMPLE_PATH           =
 EXAMPLE_PATTERNS       = *
 EXAMPLE_RECURSIVE      = NO
-IMAGE_PATH             = doxygen/images
+IMAGE_PATH             = doxygen/images \
+                         ./
 INPUT_FILTER           =
 FILTER_PATTERNS        =
 FILTER_SOURCE_FILES    = NO
 FILTER_SOURCE_PATTERNS =
-USE_MDFILE_AS_MAINPAGE = README.md
+USE_MDFILE_AS_MAINPAGE = 
 FORTRAN_COMMENT_AFTER  = 72
 SOURCE_BROWSER         = YES
 INLINE_SOURCES         = NO
@@ -195,22 +196,22 @@ HTML_OUTPUT            = html
 HTML_FILE_EXTENSION    = .html
 
 # To use without mcss, uncomment the following line:
-HTML_HEADER            = doxygen/header.html
-# HTML_HEADER            =
+# HTML_HEADER            = doxygen/header.html
+HTML_HEADER            =
 HTML_FOOTER            =
 HTML_STYLESHEET        =
 
 # To use without mcss, uncomment the following line:
-HTML_EXTRA_STYLESHEET  = doxygen/preset/doxygen-awesome.css doxygen/preset/custom.css
-# HTML_EXTRA_STYLESHEET  =
+# HTML_EXTRA_STYLESHEET  = doxygen/preset/doxygen-awesome.css doxygen/preset/custom.css
+HTML_EXTRA_STYLESHEET  =
 
 # To use without mcss, uncomment the following line:
-HTML_EXTRA_FILES       = doxygen/preset/doxygen-awesome-tabs.js \
-                         doxygen/preset/doxygen-awesome-paragraph-link.js \
-                         doxygen/preset/doxygen-awesome-interactive-toc.js \
-                         doxygen/preset/doxygen-awesome-fragment-copy-button.js \
-                         doxygen/preset/doxygen-awesome-darkmode-toggle.js
-# HTML_EXTRA_FILES       =
+# HTML_EXTRA_FILES       = doxygen/preset/doxygen-awesome-tabs.js \
+#                          doxygen/preset/doxygen-awesome-paragraph-link.js \
+#                          doxygen/preset/doxygen-awesome-interactive-toc.js \
+#                          doxygen/preset/doxygen-awesome-fragment-copy-button.js \
+#                          doxygen/preset/doxygen-awesome-darkmode-toggle.js
+HTML_EXTRA_FILES       =
 HTML_COLORSTYLE        = LIGHT
 HTML_COLORSTYLE_HUE    = 286
 HTML_COLORSTYLE_SAT    = 60
@@ -320,7 +321,7 @@ INCLUDE_FILE_PATTERNS  =
 PREDEFINED             = DOXYGEN_GENERATING_OUTPUT
 EXPAND_AS_DEFINED      =
 SKIP_FUNCTION_MACROS   = NO
-TAGFILES               =
+TAGFILES               = doxygen/cppreference-doxygen-web.tag.xml=http://en.cppreference.com/w/
 GENERATE_TAGFILE       =
 ALLEXTERNALS           = NO
 EXTERNAL_GROUPS        = YES
@@ -338,6 +339,7 @@ GROUP_GRAPHS           = YES
 UML_LOOK               = NO
 UML_LIMIT_NUM_FIELDS   = 10
 DOT_UML_DETAILS        = NO
+DOT_TRANSPARENT        = YES
 DOT_WRAP_THRESHOLD     = 17
 TEMPLATE_RELATIONS     = YES
 INCLUDE_GRAPH          = YES
@@ -347,10 +349,10 @@ CALLER_GRAPH           = NO
 GRAPHICAL_HIERARCHY    = YES
 DIRECTORY_GRAPH        = YES
 DIR_GRAPH_MAX_DEPTH    = 1
-DOT_IMAGE_FORMAT       = svg
+DOT_IMAGE_FORMAT       = png
 INTERACTIVE_SVG        = YES
 DOT_PATH               =
-DOTFILE_DIRS           =
+DOTFILE_DIRS           = ./
 DIA_PATH               =
 DIAFILE_DIRS           =
 PLANTUML_JAR_PATH      =

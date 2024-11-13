@@ -1,10 +1,8 @@
 #pragma once
 
-#include <filesystem>
-#include <utility>
-#include <fstream>
 #include "serialization.h"
 #include "types/stdint.h"
+#include "io/filedevice.h"
 
 namespace rolly {
   /**
@@ -75,7 +73,11 @@ namespace rolly {
    * @see rolly::saving_policy
    */
   template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) class configuration_file {
+#ifndef DOXYGEN_GENERATING_OUTPUT
+  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
+#endif
+    class configuration_file : public io::filedevice {
+
    public:
     /**
      * @brief Creates or loads configuration file from given path with saving policy.
@@ -86,7 +88,17 @@ namespace rolly {
      * @see saving_policy
      * @see valid
      */
-    explicit configuration_file(std::filesystem::path path, saving_policy policy);
+    explicit configuration_file(std::filesystem::path path, saving_policy policy)
+      : io::filedevice(std::move(path))
+      , default_values_(T())
+      , saving_policy_(policy) {
+      try {
+        this->load();
+        this->valid_ = true;
+      } catch(std::exception const& ex) {
+        this->valid_ = false;
+      }
+    }
 
     /**
      * @brief Creates or loads configuration file from given path and folder with saving policy.
@@ -98,7 +110,9 @@ namespace rolly {
      * @see saving_policy
      * @see valid
      */
-    explicit configuration_file(std::string_view filename, std::filesystem::path const& folder, saving_policy policy);
+    explicit configuration_file(std::string_view filename, std::filesystem::path const& folder, saving_policy policy)
+      : configuration_file(folder / filename, policy) {}
+
     configuration_file(configuration_file const&) = default;
     configuration_file(configuration_file&&) = default;
 
@@ -106,263 +120,106 @@ namespace rolly {
      * @brief Closes configuration file.
      * @details If saving policy is set to @ref saving_policy::autosave, file will be saved automatically on closing.
      */
-    virtual ~configuration_file() noexcept;
+    virtual ~configuration_file() noexcept {
+      if(this->saving_policy() == saving_policy::autosave) {
+        try {
+          this->save();
+        } catch(std::exception const& ex) {
+        }  // NOLINT(*-empty-catch)
+      }
+    }
 
     /**
      * @brief Returns whether configuration file is valid or not.
      */
-    [[nodiscard]] bool valid() const;
-
-    /**
-     * @brief Path to the configuration file.
-     */
-    [[nodiscard]] std::filesystem::path const& path() const;
+    [[nodiscard]] bool valid() const { return this->valid_; }
 
     /**
      * @brief Saving policy.
      */
-    [[nodiscard]] enum saving_policy saving_policy() const;
+    [[nodiscard]] enum saving_policy saving_policy() const { return this->saving_policy_; }
 
     /**
      * @brief Constant reference to the current values of configuration file.
      */
-    [[nodiscard]] T const& values() const;
+    [[nodiscard]] T const& values() const { return this->values_; }
 
     /**
      * @brief Mutable reference to the current values of configuration file.
      */
-    [[nodiscard]] T& values_mut();
+    [[nodiscard]] T& values_mut() { return this->values_; }
 
     /**
      * @brief Default values of configuration file.
      */
-    [[nodiscard]] T const& default_values() const;
+    [[nodiscard]] T const& default_values() const { return this->default_values_; }
 
     /**
      * @brief Mutable reference to default values of configuration file.
      */
-    [[nodiscard]] T& default_values_mut();
+    [[nodiscard]] T& default_values_mut() { return this->default_values_; }
 
     /**
      * @brief Loads configuration file from file.
      * @throws std::exception if loading fails.
      */
-    void load() noexcept(false);
+    void load() noexcept(false) {
+      namespace fs = std::filesystem;
+      if(not fs::exists(this->path())) {
+        this->revert_to_default();
+        return;
+      }
+      try {
+        auto str = this->read();
+        this->values_ = serialization::deserialize<F, T>(str);
+      } catch(std::exception const& ex) {
+        throw;
+      }
+    }
 
     /**
      * @brief Saves configuration file to file.
      * @throws std::exception if saving fails.
      */
-    void save() const noexcept(false);
+    void save() const noexcept(false) {
+      auto str = serialization::serialize<F, T>(this->values_);
+      this->write(str);
+    }
 
     /**
      * @brief Reverts configuration file to default values.
      * @throws std::exception if reverting fails.
      */
-    void revert_to_default() noexcept(false);
+    void revert_to_default() noexcept(false) {
+      this->values_ = this->default_values_;
+      this->save();
+    }
 
     /**
      * @brief Returns whether configuration file is valid or not.
      * @see valid
      */
-    [[nodiscard]] explicit operator bool() const noexcept;
+    [[nodiscard]] explicit operator bool() const noexcept { return this->valid(); }
 
     /**
      * @brief Constant reference to the current values of configuration file.
      * @see values
      */
-    [[nodiscard]] T const& operator()() const;
+    [[nodiscard]] T const& operator()() const { return this->values_; }
 
     /**
      * @brief Mutable reference to the current values of configuration file.
      * @see values_mut
      */
-    [[nodiscard]] T& operator()();
-
-    /**
-     * @brief Default copy assignment.
-     */
+    [[nodiscard]] T& operator()() { return this->values_; }
+    
     configuration_file& operator=(configuration_file const&) = default;
-
-    /**
-     * @brief Default move assignment.
-     */
     configuration_file& operator=(configuration_file&&) = default;
-
-   protected:
-    /**
-     * @brief Reads content of configuration file from file.
-     */
-    [[nodiscard]] std::string read_from_file() const noexcept(false);
-
-    /**
-     * @brief Writes content of configuration file to a file.
-     * @param content Content to write.
-     */
-    void write_to_file(std::string_view content) const noexcept(false);
 
    private:
     T values_;
     T default_values_;
-    std::filesystem::path path_;
     enum saving_policy saving_policy_;
     bool valid_;
   };
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-    configuration_file<F, T>::configuration_file(std::filesystem::path path, enum saving_policy policy)
-    : default_values_(T())
-    , path_(std::move(path))
-    , saving_policy_(policy) {
-    try {
-      this->load();
-      this->valid_ = true;
-    } catch(std::exception const& ex) {
-      this->valid_ = false;
-    }
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-    configuration_file<F, T>::configuration_file(
-      std::string_view filename,
-      std::filesystem::path const& folder,
-      enum saving_policy policy
-    )
-    : configuration_file(folder / filename, policy) {}
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-    configuration_file<F, T>::~configuration_file() noexcept {
-    if(this->saving_policy() == saving_policy::autosave) {
-      try {
-        this->save();
-      } catch(std::exception const& ex) {
-      }  // NOLINT(*-empty-catch)
-    }
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) bool configuration_file<F, T>::valid(
-  ) const {
-    return this->valid_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) std::filesystem::path const& configuration_file<F, T>::path() const {
-    return this->path_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) enum saving_policy
-    configuration_file<F, T>::saving_policy() const {
-    return this->saving_policy_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) T& configuration_file<F, T>::values_mut(
-  ) {
-    return this->values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) T const& configuration_file<F, T>::values() const {
-    return this->values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) T const& configuration_file<F, T>::default_values() const {
-    return this->default_values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) T& configuration_file<F, T>::default_values_mut() {
-    return this->default_values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void configuration_file<F, T>::load(
-  ) noexcept(false) {
-    namespace fs = std::filesystem;
-    if(not fs::exists(this->path())) {
-      this->revert_to_default();
-      return;
-    }
-    try {
-      auto str = this->read_from_file();
-      this->values_ = serialization::deserialize<F, T>(str);
-    } catch(std::exception const& ex) {
-      throw;
-    }
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) void configuration_file<F, T>::save(
-  ) const noexcept(false) try {
-    auto str = serialization::serialize<F, T>(this->values_);
-    this->write_to_file(str);
-  } catch(std::exception const& ex) {
-    throw;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) void configuration_file<F, T>::revert_to_default() noexcept(false) try {
-    this->values_ = this->default_values_;
-    this->save();
-  } catch(std::exception const& ex) {
-    throw;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-    configuration_file<F, T>::operator bool() const noexcept {
-    return this->valid();
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) T const& configuration_file<F, T>::operator()() const {
-    return this->values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) T& configuration_file<F, T>::operator()(
-  ) {
-    return this->values_;
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)) std::string
-    configuration_file<F, T>::read_from_file() const noexcept(false) {
-    auto handle = std::ifstream(this->path());
-    if(not handle.is_open())
-      throw std::runtime_error("failed to open file handle for reading at " + this->path().string());
-    return {(std::istreambuf_iterator<char>(handle)), std::istreambuf_iterator<char>()};
-  }
-
-  template <typename F, typename T>
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>)
-  ) void configuration_file<F, T>::write_to_file(std::string_view content) const noexcept(false) {
-    namespace fs = std::filesystem;
-
-    if(not fs::exists(this->path().parent_path()))
-      fs::create_directories(this->path().parent_path());
-    auto handle = std::ofstream(this->path());
-    if(not handle.is_open())
-      throw std::runtime_error("failed to open file handle for writing at " + this->path().string());
-    if(fs::exists(this->path())) {
-      auto const permissions = fs::perms::owner_read | fs::perms::owner_write | fs::perms::group_read |
-                               fs::perms::others_read | fs::perms::others_exec;
-      fs::permissions(this->path(), permissions);
-    }
-    handle << content;
-    if(not handle.good())
-      throw std::runtime_error("failed to write to file at " + this->path().string());
-  }
 }  // namespace rolly

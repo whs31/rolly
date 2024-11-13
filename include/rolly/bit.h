@@ -9,9 +9,6 @@
 #endif  // _MSC_VER
 
 namespace rolly {
-  /**
-   * @brief Inline namespace for math/bit utilities.
-   */
   inline namespace math {
     /**
      * @brief Returns the number of 1 bits in the value.
@@ -19,7 +16,11 @@ namespace rolly {
      * @param x Value to count the number of 1 bits in.
      * @return The number of 1 bits in the value.
      */
+#ifdef DOXYGEN_GENERATING_OUTPUT
+    template <std::integral T>
+#else 
     template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
+#endif
     [[nodiscard]] constexpr int popcount(T x) noexcept {
       return __builtin_popcount(x);
     }
@@ -31,7 +32,11 @@ namespace rolly {
      * @return True if the value is an integral power of two, false otherwise.
      * @see is_pow2
      */
+#ifdef DOXYGEN_GENERATING_OUTPUT
+    template <std::integral T>
+#else
     template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
+#endif
     [[nodiscard]] constexpr bool has_single_bit(T x) noexcept {
       return popcount(static_cast<unsigned>(x)) == 1;
     }
@@ -44,7 +49,11 @@ namespace rolly {
      * @return True if the value is an integral power of two, false otherwise.
      * @see has_single_bit
      */
+#ifdef DOXYGEN_GENERATING_OUTPUT
+    template <std::integral T>
+#else
     template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
+#endif
     [[nodiscard]] constexpr bool is_pow2(T x) noexcept {
       return x and not (x bitand (x - 1));
     }
@@ -55,7 +64,11 @@ namespace rolly {
      * @param x Value.
      * @return The next power of two of the value.
      */
+#ifdef DOXYGEN_GENERATING_OUTPUT
+    template <std::unsigned_integral T>
+#else
     template <___concept___(std::unsigned_integral) T ___sfinae_requirement___(std::is_unsigned_v<T>)>
+#endif
     [[nodiscard]] constexpr T bit_ceil(T x) noexcept {
       x--;
       x |= x >> 1;

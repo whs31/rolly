@@ -1,0 +1,7 @@
+digraph {
+    node [shape = rectangle, style = filled, fillcolor = whitesmoke, color = "gray"]
+    constructor -> init [label = "  plugin_loader::load"]
+    init -> "..."
+    "..." -> quit [label = "  plugin_loader::~plugin_loader"]
+    quit -> destructor
+}

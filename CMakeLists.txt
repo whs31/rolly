@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.1.11
+  VERSION 2.1.29
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -14,7 +14,7 @@ set(PROJECT_FULL_NAME ${PROJECT_NAMESPACE}${PROJECT_NAME})
 option(ROLLY_TESTS "Enable integration tests" OFF)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 option(ROLLY_COMPAT "Enable C++17 compatibility mode" OFF)
-option(ROLLY_QT "Link with Qt" OFF)
+option(ROLLY_QT "Link with Qt" ON)
 
 if ("${CMAKE_GENERATOR}" MATCHES "^Visual Studio")
   set(CMAKE_GENERATOR_PLATFORM "x64" CACHE STRING "" FORCE)
@@ -34,21 +34,22 @@ message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 
 # -- dependencies --
 find_package(fmt REQUIRED)
+find_package(spdlog REQUIRED)
 if (ROLLY_QT)
+  message(WARNING "-- [${PROJECT_FULL_NAME}] linking with qt enabled! remember to disable it before push")
   find_package(Qt5
     COMPONENTS
     Core
     Quick
     REQUIRED
   )
+  set(CMAKE_AUTOMOC ON)
 endif ()
 if (NOT WIN32)
   find_package(libuuid REQUIRED)
 endif ()
 
-add_library(${PROJECT_NAME}
-  include/rolly/types/angle.h
-  include/rolly/types/velocity.h)
+add_library(${PROJECT_NAME})
 add_library(${PROJECT_FULL_NAME} ALIAS ${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
@@ -65,17 +66,23 @@ target_sources(${PROJECT_NAME}
   ${CMAKE_CURRENT_SOURCE_DIR}/src/rtti.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
 
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/shared_library.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/plugin_loader.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dll.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/dll.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
 )
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
   fmt::fmt
+  spdlog::spdlog
   PRIVATE
   $<$<NOT:$<PLATFORM_ID:Windows>>:libuuid::libuuid>
+  ${CMAKE_DL_LIBS}
 )
 if (ROLLY_QT)
   target_link_libraries(${PROJECT_NAME}
@@ -114,6 +121,7 @@ if (ROLLY_TESTS)
   enable_testing()
   add_subdirectory(tests)
   add_subdirectory(bin)
+  add_subdirectory(examples)
 endif ()
 
 # -- installation --
@@ -149,6 +157,18 @@ configure_package_config_file(${PROJECT_CONFIG_FILE_IN} ${PROJECT_CONFIG_FILE} I
 write_basic_package_version_file(${CONFIG_VERSION_FILE} COMPATIBILITY AnyNewerVersion)
 install(FILES ${PROJECT_CONFIG_FILE} ${CONFIG_VERSION_FILE} DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR})
 
+# -- misc --
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+if (NOT WIN32)
+  message(STATUS "[${PROJECT_FULL_NAME}] copying ${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json to the root folder ${CMAKE_CURRENT_SOURCE_DIR}")
+  file(CREATE_LINK
+    ${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json
+    ${CMAKE_CURRENT_SOURCE_DIR}/compile_commands.json
+    SYMBOLIC
+  )
+endif ()
+
 message(STATUS "[${PROJECT_FULL_NAME}] configuring ${PROJECT_NAME} done!")
 unset(ROLLY_TESTS CACHE)
 unset(ROLLY_COMPAT CACHE)
+unset(ROLLY_QT CACHE)

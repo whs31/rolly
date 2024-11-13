@@ -2,12 +2,14 @@
 
 #include <string>
 #include <string_view>
-#include <filesystem>
 #include <optional>
 #include "global/export.h"
 #include "global/version.h"
 #include "global/definitions.h"
 #include "types/stdint.h"
+#ifndef Q_MOC_RUN
+#  include <filesystem>
+#endif
 
 namespace rolly {
   class dirs {
@@ -46,7 +48,7 @@ namespace rolly {
    * std::cout << dirs[config].string() << std::endl; // or std::cout << dirs.config_dir() << std::endl;
    * @endcode
    * will produce the following output:
-   * @code {.sh}
+   * @code {.shell-session}
    * Linux:   '/home/alice/.config/barapp'
    * Windows: 'C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App'
    * MacOS:   '/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App'
