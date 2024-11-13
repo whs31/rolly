@@ -21,11 +21,16 @@ class ExamplePluginImpl final : public ExamplePlugin {
  public:
   [[nodiscard]] std::string_view name() const final { return "example_plugin_impl"; }
 
+  [[nodiscard]] rolly::guid const& uuid() const final { return this->uuid_; }
+
   ExamplePluginImpl() { fmt::println("Plugin: constructor called"); }
 
   ~ExamplePluginImpl() final { fmt::println("Plugin: destructor called"); }
 
   [[nodiscard]] std::string hello() const final { return "Hello"; }
+
+ private:
+  rolly::guid uuid_ = rolly::guid("00000000-0000-0000-0100-000123000000");
 };
 
 DECLARE_PLUGIN(ExamplePluginImpl)  // NOLINT(*-pro-type-reinterpret-cast)

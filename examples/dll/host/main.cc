@@ -12,6 +12,11 @@ int main() {
     fmt::println(stderr, "Failed to load plugin: {}", res.error());
     return -1;
   }
+  fmt::println(
+    "Loaded plugin: {} ({})",
+    loader.query_raw([](auto const& p) { return p.name() == "example_plugin_impl"; })->name(),
+    loader.query_raw([](auto const& p) { return p.name() == "example_plugin_impl"; })->uuid()
+  );
   auto const plugin = loader.query_interface<ExamplePlugin>("example_plugin_impl");
   if(not plugin) {
     fmt::println(stderr, "Failed to load plugin: plugin is nullptr");
