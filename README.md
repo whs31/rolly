@@ -11,8 +11,7 @@
 
 #### Documentation
 
-- ![gitlab_logo](./doxygen/images/logo_gitlab.png) *
-  *[GitLab Pages](http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly)**
+- ![gitlab_logo](./doxygen/images/logo_gitlab.png) **[GitLab Pages](http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly)**
 - ![github_logo](./doxygen/images/logo_github.png) **[GitHub Pages](https://whs31.github.io/rolly/)**
 
 #### Dependencies
