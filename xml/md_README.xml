@@ -20,7 +20,19 @@
 <sect3 id="md_README_1autotoc_md1">
 <title>Documentation</title>
 <para><itemizedlist>
-<listitem><para><bold><ulink url="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly">GitLab Pages</ulink></bold></para>
+<listitem><para><image type="html" name="logo_gitlab.png">gitlab_logo</image>
+ <image type="latex" name="logo_gitlab.png">gitlab_logo</image>
+ <image type="rtf" name="logo_gitlab.png">gitlab_logo</image>
+ <image type="docbook" name="logo_gitlab.png">gitlab_logo</image>
+<itemizedlist>
+<listitem><para>*<ulink url="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly">GitLab Pages</ulink>**</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><image type="html" name="logo_github.png">github_logo</image>
+ <image type="latex" name="logo_github.png">github_logo</image>
+ <image type="rtf" name="logo_github.png">github_logo</image>
+ <image type="docbook" name="logo_github.png">github_logo</image>
+ <bold><ulink url="https://whs31.github.io/rolly/">GitHub Pages</ulink></bold></para>
 </listitem></itemizedlist>
 </para>
 </sect3>
