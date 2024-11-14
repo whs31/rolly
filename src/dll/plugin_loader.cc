@@ -16,6 +16,34 @@ namespace rolly::dll {
       std::ignore = p->quit();
   }
 
+  bool plugin_loader::is_loaded(std::string_view name) const {
+    return std::any_of(this->plugins_.cbegin(), this->plugins_.cend(), [&](auto const& p) {
+      return p->name() == name;
+    });
+  }
+
+  bool plugin_loader::is_loaded(guid const& uuid) const {
+    return std::any_of(this->plugins_.cbegin(), this->plugins_.cend(), [&](auto const& p) {
+      return p->uuid() == uuid;
+    });
+  }
+
+  usize plugin_loader::loaded_count() const { return this->plugins_.size(); }
+
+  plugin* plugin_loader::operator[](std::string_view name) const {
+    auto it = std::find_if(this->plugins_.cbegin(), this->plugins_.cend(), [&](auto const& p) {
+      return p->name() == name;
+    });
+    return it != this->plugins_.end() ? it->get() : nullptr;
+  }
+
+  plugin* plugin_loader::operator[](guid const& uuid) const {
+    auto it = std::find_if(this->plugins_.cbegin(), this->plugins_.cend(), [&](auto const& p) {
+      return p->uuid() == uuid;
+    });
+    return it != this->plugins_.end() ? it->get() : nullptr;
+  }
+
   result<plugin*> plugin_loader::load(std::string_view const name) {
     auto it = this->libraries_.find(name.data());
     if(it == this->libraries_.end()) {

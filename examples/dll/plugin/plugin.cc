@@ -19,9 +19,14 @@ class ExamplePluginImpl final : public ExamplePlugin {
   }
 
  public:
-  [[nodiscard]] std::string_view name() const final { return "example_plugin_impl"; }
+  [[nodiscard]] std::string_view name() const final { return this->meta().name(); }
 
-  [[nodiscard]] rolly::guid const& uuid() const final { return this->uuid_; }
+  [[nodiscard]] rolly::meta::project_meta const& meta() const final { return this->meta_; }
+
+  [[nodiscard]] rolly::guid const&
+    uuid() const final {
+    return this->uuid_;
+  }
 
   ExamplePluginImpl() { fmt::println("Plugin: constructor called"); }
 
@@ -31,6 +36,8 @@ class ExamplePluginImpl final : public ExamplePlugin {
 
  private:
   rolly::guid uuid_ = rolly::guid("00000000-0000-0000-0100-000123000000");
+  rolly::meta::project_meta meta_ =
+    rolly::meta::project_meta(rolly::version("1.0.1"), "Example Plugin", "io.github.rolly.example_plugin", "Radar-MMS");
 };
 
 DECLARE_PLUGIN(ExamplePluginImpl)  // NOLINT(*-pro-type-reinterpret-cast)
