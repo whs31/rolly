@@ -1,0 +1,41 @@
+name: Documentation
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - release/*
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04 
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Apt dependencies
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+      - name: Install Python dependencies
+        run: pip3 install --upgrade pip Jinja2 pygments
+      - name: Install M.CSS
+        uses: actions/checkout@v3
+        with:
+          repository: maybe-unused/m.css
+          path: mcss
+      - name: Build documentation
+        run: |
+          python3 ./mcss/documentation/doxygen.py ./conf.py
+          mkdir -p public
+          cp -r docs/* public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
