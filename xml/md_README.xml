@@ -24,10 +24,7 @@
  <image type="latex" name="logo_gitlab.png">gitlab_logo</image>
  <image type="rtf" name="logo_gitlab.png">gitlab_logo</image>
  <image type="docbook" name="logo_gitlab.png">gitlab_logo</image>
-<itemizedlist>
-<listitem><para>*<ulink url="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly">GitLab Pages</ulink>**</para>
-</listitem></itemizedlist>
-</para>
+ <bold><ulink url="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly">GitLab Pages</ulink></bold></para>
 </listitem><listitem><para><image type="html" name="logo_github.png">github_logo</image>
  <image type="latex" name="logo_github.png">github_logo</image>
  <image type="rtf" name="logo_github.png">github_logo</image>
