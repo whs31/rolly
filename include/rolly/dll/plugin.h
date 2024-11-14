@@ -3,6 +3,7 @@
 #include <any>
 #include <string>
 #include "../types/guid.h"
+#include "../global/version.h"
 #include "detail/macro.h"
 
 namespace rolly {  // NOLINT
@@ -13,7 +14,6 @@ namespace rolly {  // NOLINT
   namespace dll {}
 }  // namespace rolly
 
-//* <!-- @image html ./calling_graph.svg width=35% -->
 namespace rolly::dll {
   /**
    * @brief Plugin interface.
@@ -247,6 +247,19 @@ namespace rolly::dll {
      * @return Internal interface name.
      */
     [[nodiscard]] virtual std::string_view name() const = 0;
+
+    /**
+     * @brief Plugin metadata.
+     * @details Plugins are described by:
+     * <ul>
+     * <li>name</li>
+     * <li>version</li>
+     * <li>vendor domain</li>
+     * <li>vendor name</li>
+     * </ul>
+     * @return Reference to the plugin metadata.
+     */
+    [[nodiscard]] virtual meta::project_meta const& meta() const = 0;
 
     [[nodiscard]] virtual guid const& uuid() const = 0;
 

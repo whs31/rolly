@@ -13,10 +13,10 @@ namespace rolly::dll {
 #ifndef DOXYGEN_GENERATING_OUTPUT
     ___rolly_api___
 #endif
-    /**
-     * @brief Dynamic loader for @ref rolly::dll::plugin libraries.
-     * @details See @ref rolly::dll::plugin class reference for detailed usage examples and guidelines.
-     */
+      /**
+       * @brief Dynamic loader for @ref rolly::dll::plugin libraries.
+       * @details See @ref rolly::dll::plugin class reference for detailed usage examples and guidelines.
+       */
       plugin_loader : pin {
 
    public:
@@ -74,6 +74,14 @@ namespace rolly::dll {
      */
     [[nodiscard]] std::vector<std::unique_ptr<plugin>>& plugins() { return this->plugins_; }
 
+    [[nodiscard]] bool is_loaded(std::string_view name) const;
+    [[nodiscard]] bool is_loaded(guid const& uuid) const;
+
+    [[nodiscard]] usize loaded_count() const;
+    
+    [[nodiscard]] plugin* operator[](std::string_view name) const;
+    [[nodiscard]] plugin* operator[](guid const& uuid) const;
+
     /**
      * @brief Returns the internal map of loaded libraries.
      * @return Internal map of loaded libraries.
@@ -128,7 +136,8 @@ namespace rolly::dll {
     }
 
     template <typename T>
-    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_by(std::function<bool(plugin const&)> const& predicate) const {
+    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_by(std::function<bool(plugin const&)> const& predicate
+    ) const {
       auto* p = this->query_raw(predicate);
       try {
         return std::ref(*dynamic_cast<T*>(p));

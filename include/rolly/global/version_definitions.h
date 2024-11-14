@@ -11,6 +11,7 @@
  * @ingroup meta
  * @brief Major version number of this library build.
  * @note Consider using <i>meta::library_metadata</i> variable to access this value.
+ * @version 2.1.32
  */
 #  define ROLLY_VERSION_MAJOR 2
 
@@ -18,15 +19,17 @@
  * @ingroup meta
  * @brief Minor version number of this library build.
  * @note Consider using <i>meta::library_metadata</i> variable to access this value.
+ * @version 2.1.32
  */
-#  define ROLLY_VERSION_MINOR 0
+#  define ROLLY_VERSION_MINOR 1
 
 /**
  * @ingroup meta
  * @brief Patch version number of this library build.
  * @note Consider using <i>meta::library_metadata</i> variable to access this value.
+ * @version 2.1.32
  */
-#  define ROLLY_VERSION_PATCH 0
+#  define ROLLY_VERSION_PATCH 32
 
 /**
  * @internal

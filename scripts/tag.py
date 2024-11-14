@@ -25,7 +25,8 @@ def find_executable(name: str):
         _a = subprocess.run(f'{name} --version', shell=True, stdout=subprocess.DEVNULL)
         if _a.returncode != 0:
             raise FileNotFoundError
-        print(colored(f'- {name} found ({_a.stdout if _a.stdout else _a.stderr if _a.stderr else "unknown version"})', "green"))
+        print(colored(f'- {name} found ({_a.stdout if _a.stdout else _a.stderr if _a.stderr else "unknown version"})',
+                      "green"))
     except FileNotFoundError:
         print(colored(f'- {name} not found', "red"))
         raise FileNotFoundError
@@ -113,6 +114,30 @@ def patch_doxyfile(version: str, directory: str) -> bool:
         return False
 
 
+def patch_include_version(version: str, filepath: str, prefix: str) -> None:
+    try:
+        print(colored(f'- patching {os.path.basename(filepath)} ({version})', "green"))
+        major = version.split(".")[0]
+        minor = version.split(".")[1]
+        patch = version.split(".")[2]
+        with open(filepath, "r") as f:
+            lines = f.readlines()
+            for i, line in enumerate(lines):
+                if re.search(fr'#\s*define\s+{prefix}_VERSION_MAJOR\s+(\d+)', line):
+                    lines[i] = re.sub(fr'#\s*define\s+{prefix}_VERSION_MAJOR\s+(\d+)',
+                                      f'#define {prefix}_VERSION_MAJOR {major}', line)
+                if re.search(fr'#\s*define\s+{prefix}_VERSION_MINOR\s+(\d+)', line):
+                    lines[i] = re.sub(fr'#\s*define\s+{prefix}_VERSION_MINOR\s+(\d+)',
+                                      f'#define {prefix}_VERSION_MINOR {minor}', line)
+                if re.search(fr'#\s*define\s+{prefix}_VERSION_PATCH\s+(\d+)', line):
+                    lines[i] = re.sub(fr'#\s*define\s+{prefix}_VERSION_PATCH\s+(\d+)',
+                                      f'#define {prefix}_VERSION_PATCH {patch}', line)
+            with open(filepath, "w") as f:
+                f.writelines(lines)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"{filepath} not found")
+
+
 def tag_git(tag: str) -> None:
     """
     Tags git repository with specified tag
@@ -134,8 +159,10 @@ def tag_git(tag: str) -> None:
                    , check=True
                    , cwd=getroot("scripts"))
 
+
 def extract_semver(string: str) -> str:
     return re.search(r"(\d+\.)?(\d+\.)?(\*|\d+)", string).group(0)
+
 
 def print_semver(root: str, filename: str, regex: str) -> str:
     try:
@@ -148,10 +175,31 @@ def print_semver(root: str, filename: str, regex: str) -> str:
     except FileNotFoundError:
         print(colored(f"- {filename:<30}: not found", "yellow"))
 
+
+def print_include_version(filepath: str, prefix: str) -> str:
+    def extract_define(line: str, prefix: str, suffix: str) -> str:
+        return re.search(fr'#\s*define\s+{prefix}_VERSION_{suffix}\s+(\d+)', line).group(1)
+
+    try:
+        with open(filepath, "r") as f:
+            lines = f.readlines()
+            for i, line in enumerate(lines):
+                if re.search(fr'#\s*define\s+{prefix}_VERSION_MAJOR\s+(\d+)', line):
+                    major = extract_define(line, prefix, "MAJOR")
+                if re.search(fr'#\s*define\s+{prefix}_VERSION_MINOR\s+(\d+)', line):
+                    minor = extract_define(line, prefix, "MINOR")
+                if re.search(fr'#\s*define\s+{prefix}_VERSION_PATCH\s+(\d+)', line):
+                    patch = extract_define(line, prefix, "PATCH")
+            print(colored(f"- {os.path.basename(filepath):<30}: {major}.{minor}.{patch}", "green"))
+    except FileNotFoundError:
+        print(colored(f"- {os.path.basename(filepath):<30}: not found", "yellow"))
+
+
 def show_versions(root):
     print_semver(root, "CMakeLists.txt", r"VERSION (\d+\.)?(\d+\.)?(\*|\d+)")
     print_semver(root, "conanfile.py", r"version\s*=\s*\"(.*)\"")
     print_semver(root, "Doxyfile", r"PROJECT_NUMBER\s*=\s*(\S*)")
+    print_include_version(os.path.join(root, "include", "rolly", "global", "version_definitions.h"), "ROLLY")
 
 
 def main():
@@ -167,6 +215,11 @@ def main():
     patch_cmake(strip_version(args.version), root)
     patch_conanfile(args.version, root)
     patch_doxyfile(args.version, root)
+    patch_include_version(
+        args.version,
+        os.path.join(root, "include", "rolly", "global", "version_definitions.h"),
+        "ROLLY"
+    )
     if args.git:
         tag_git(args.version)
 
@@ -177,4 +230,3 @@ if __name__ == "__main__":
     except FileNotFoundError as e:
         print(colored(f'⚠️ failed to tag project due to: {e}', "red"))
         sys.exit(1)
-

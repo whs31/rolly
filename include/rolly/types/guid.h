@@ -30,6 +30,8 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
        * @see empty
        */
       guid();
+      
+      ~guid() = default;
 
       /**
        * @brief Creates a <tt>guid</tt> from an array of bytes.
@@ -153,7 +155,6 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * @brief Literal operator for <tt>guid</tt>.
      * @param str String representation of the <tt>guid</tt>.
      * @return <tt>guid</tt> object.
-     * @relates rolly::types::guid
      */
     inline types::guid operator""_guid(char const* str, [[maybe_unused]] std::size_t unused) {
       return types::guid(str);
