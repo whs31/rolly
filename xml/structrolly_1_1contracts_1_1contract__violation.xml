@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structrolly_1_1contracts_1_1contract__violation" kind="struct" language="C++" prot="public">
+    <compoundname>rolly::contracts::contract_violation</compoundname>
+    <includes refid="contracts_8h" local="no">contracts.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrolly_1_1contracts_1_1contract__violation_1a291a73e9618c042c608372d489b8e8b3" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacerolly_1_1contracts_1abc0d6ffe3d1fdb96d3872c5148f529e2" kindref="member">contract_type</ref></type>
+        <definition>contract_type type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+<para>Violated contract type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/contracts.h" line="87" column="19" bodyfile="include/rolly/contracts.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrolly_1_1contracts_1_1contract__violation_1a36bd74109f547f7f8198faf5a12d2879" prot="public" static="no" mutable="no">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <briefdescription>
+<para>Violation message. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/contracts.h" line="88" column="17" bodyfile="include/rolly/contracts.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrolly_1_1contracts_1_1contract__violation_1a729bab6ed1cfcc043916f1c4abd7d2c7" prot="public" static="no" mutable="no">
+        <type><ref refid="structrolly_1_1source__location" kindref="compound">source_location</ref></type>
+        <definition>source_location location</definition>
+        <argsstring></argsstring>
+        <name>location</name>
+        <briefdescription>
+<para>Violation location in source code. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/contracts.h" line="89" column="21" bodyfile="include/rolly/contracts.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contract violation data holder. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains information about a contract violation. <simplesect kind="see"><para><ref refid="namespacerolly_1_1contracts_1aca5defb1c056aa55df22bc093159c32e" kindref="member">contract_violation_handler</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>contract_violation</label>
+        <link refid="structrolly_1_1contracts_1_1contract__violation"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>location</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>message</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string</label>
+        <link refid="cpp/string/basic_string" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml"/>
+      </node>
+      <node id="2">
+        <label>source_location</label>
+        <link refid="structrolly_1_1source__location"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/rolly/contracts.h" line="86" column="27" bodyfile="include/rolly/contracts.h" bodystart="86" bodyend="90"/>
+    <listofallmembers>
+      <member refid="structrolly_1_1contracts_1_1contract__violation_1a729bab6ed1cfcc043916f1c4abd7d2c7" prot="public" virt="non-virtual"><scope>rolly::contracts::contract_violation</scope><name>location</name></member>
+      <member refid="structrolly_1_1contracts_1_1contract__violation_1a36bd74109f547f7f8198faf5a12d2879" prot="public" virt="non-virtual"><scope>rolly::contracts::contract_violation</scope><name>message</name></member>
+      <member refid="structrolly_1_1contracts_1_1contract__violation_1a291a73e9618c042c608372d489b8e8b3" prot="public" virt="non-virtual"><scope>rolly::contracts::contract_violation</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>rolly::observer_ptr class | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;include/rolly/memory/observer_ptr.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>observer_ptr <span class="m-thin">class</span>
+        </h1>
+        <p>A smart pointer that holds a pointer to a value, but does not own it.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>Type of the pointer #sa <a href="https://en.cppreference.com/w/cpp/experimental/observer_ptr">https://en.cppreference.com/w/cpp/experimental/observer_<wbr />ptr</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#related">Related</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p><a href="classrolly_1_1observer__ptr.html" class="m-doc">observer_<wbr />ptr</a> is a non-owning pointer, or observer. The observer stores a pointer to a second object, known as the watched object. An <a href="classrolly_1_1observer__ptr.html" class="m-doc">observer_<wbr />ptr</a> may also have no watched object.</p><p>An observer is not responsible in any way for the watched object; there is no inherent relationship between an observer and the object it watches.</p><p>It is intended as a near drop-in replacement for raw pointer types, with the advantage that, as a vocabulary type, it indicates its intended use without need for detailed analysis by code readers.</p><aside class="m-note m-default"><h4>Remark</h4><p>This is a reimplementation of the LF TSv2 <code>std::observer_ptr</code> type.</p></aside>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="ab09edc4b568d547d04da66f947f5595a">
+              using <a href="#ab09edc4b568d547d04da66f947f5595a" class="m-doc-self">element_type</a> = T
+            </dt>
+            <dd>The element type.</dd>
+            <dt id="ab088798d28525c0befe3c707b95c5bc2">
+              using <a href="#ab088798d28525c0befe3c707b95c5bc2" class="m-doc-self">pointer</a> = T*
+            </dt>
+            <dd>The pointer type.</dd>
+            <dt id="ada8ef625b97396676e3e2303a84535be">
+              using <a href="#ada8ef625b97396676e3e2303a84535be" class="m-doc-self">const_pointer</a> = T const *
+            </dt>
+            <dd>The const pointer type.</dd>
+            <dt id="a0c5a1541ecf7ad17925583cf6abd2c65">
+              using <a href="#a0c5a1541ecf7ad17925583cf6abd2c65" class="m-doc-self">reference</a> = T&amp;
+            </dt>
+            <dd>The reference type.</dd>
+            <dt id="af73227c77834d27f9c89e0a92ea698d8">
+              using <a href="#af73227c77834d27f9c89e0a92ea698d8" class="m-doc-self">const_reference</a> = T const &amp;
+            </dt>
+            <dd>The const reference type.</dd>
+            <dt id="a31c872a1c5784bf8eb67039d36047f6c">
+              using <a href="#a31c872a1c5784bf8eb67039d36047f6c" class="m-doc-self">value_type</a> = std::remove_cv_t&lt;T&gt;
+            </dt>
+            <dd>The value type. Equivalent to the element type without cv-qualifiers.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a8fd2758495c7d39b4f7e9c9a7a2affdf">
+              <span class="m-dox-wrap-bumper"><a href="#a8fd2758495c7d39b4f7e9c9a7a2affdf" class="m-dox-self" name="a8fd2758495c7d39b4f7e9c9a7a2affdf">observer_ptr</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs <code>nullptr</code> observer.</dd>
+            <dt id="a7db273aa4945dc39fe351d7616f5f814">
+              <span class="m-dox-wrap-bumper"><a href="#a7db273aa4945dc39fe351d7616f5f814" class="m-dox-self" name="a7db273aa4945dc39fe351d7616f5f814">observer_ptr</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/types/nullptr_t.html" class="m-doc-external">std::<wbr />nullptr_t</a>) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs <code>nullptr</code> observer.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a0735d4b4c42a4327cf8ae6d1d88359eb" class="m-dox">observer_ptr</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> ptr) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs an observer from a pointer.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename U&gt;</div>
+              <span class="m-dox-wrap-bumper"><a href="#aae0f7514210dafde3695c0aa984f9ae7" class="m-dox">observer_ptr</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1observer__ptr.html" class="m-doc">observer_<wbr />ptr</a>&lt;U&gt; const&amp; other) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs an observer from another observer.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename U&gt;</div>
+              <span class="m-dox-wrap-bumper"><a href="#afd0d8fef5e2e709ecfe34e465412be05" class="m-dox">observer_ptr</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;U&gt; const&amp; other) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs an observer from a unique pointer.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename U&gt;</div>
+              <span class="m-dox-wrap-bumper"><a href="#a8888e9dd9db1435a172232db23e264c1" class="m-dox">observer_ptr</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1box.html" class="m-doc">box</a>&lt;U&gt; const&amp; other) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs an observer from a box.</dd>
+            <dt id="a420e60e9788bfa3b52aa3aab72ea3a5e">
+              <span class="m-dox-wrap-bumper"><a href="#a420e60e9788bfa3b52aa3aab72ea3a5e" class="m-dox-self" name="a420e60e9788bfa3b52aa3aab72ea3a5e">operator bool</a>(</span><span class="m-dox-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns <code>true</code> if the watched pointer is not <code>nullptr</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a5ea4d6faed311cd6bf7af821ef2f038e" class="m-dox">operator pointer</a>(</span><span class="m-dox-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the watched pointer.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a5b3070b1e5da32efba368f18ab9f611c" class="m-dox">get</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the watched pointer.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a8dd31bf0ddc9809655d6f66827013865" class="m-dox">ref</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1observer__ptr.html#af73227c77834d27f9c89e0a92ea698d8" class="m-doc">const_<wbr />reference</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the constant reference to the watched object.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a14bee89e538427a25cc1e361d8a86140" class="m-dox">ref</a>(</span><span class="m-dox-wrap">) -&gt; <a href="classrolly_1_1observer__ptr.html#a0c5a1541ecf7ad17925583cf6abd2c65" class="m-doc">reference</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the reference to the watched object.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a95a453b6d6fe6d168aa9748d7bee076c" class="m-dox">operator*</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1observer__ptr.html#a0c5a1541ecf7ad17925583cf6abd2c65" class="m-doc">reference</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the dereferenced watched object.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a4d87e2ceab34e71e890d84482bfd5dfa" class="m-dox">operator-&gt;</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the pointer to the watched object.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a6a68b7063d23d1c5ff1dcd0cdd33ec36" class="m-dox">release</a>(</span><span class="m-dox-wrap">) -&gt; <a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the watched pointer and resets the watched pointer to <code>nullptr</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#af9f22cb37d3edae4b12382631e95ec76" class="m-dox">reset</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> ptr = nullptr) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Resets the watched pointer to <code>nullptr</code> or the new watched pointer.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#adf6f1fb30d64991e6bf834d69bc34018" class="m-dox">swap</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1observer__ptr.html" class="m-doc">observer_<wbr />ptr</a>&amp; other) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Swaps two watched pointers.</dd>
+          </dl>
+        </section>
+        <section id="related">
+          <h2><a href="#related">Related</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">void <a href="#ac869794e3e52c6f5416d5ebc7d720767" class="m-dox">swap</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1observer__ptr.html" class="m-doc">rolly::<wbr />observer_ptr</a>&lt;T&gt;&amp; lhs,
+              <a href="classrolly_1_1observer__ptr.html" class="m-doc">rolly::<wbr />observer_ptr</a>&lt;T&gt;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Swaps two pointers.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a0735d4b4c42a4327cf8ae6d1d88359eb"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0735d4b4c42a4327cf8ae6d1d88359eb" class="m-doc-self">observer_ptr</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> ptr) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs an observer from a pointer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">ptr</td>
+                  <td>Pointer to construct from.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aae0f7514210dafde3695c0aa984f9ae7"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+                template&lt;typename U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aae0f7514210dafde3695c0aa984f9ae7" class="m-doc-self">observer_ptr</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1observer__ptr.html" class="m-doc">observer_<wbr />ptr</a>&lt;U&gt; const&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs an observer from another observer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Type of the other observer. Must be convertible to <code>T*</code>.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>Observer to construct from.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="afd0d8fef5e2e709ecfe34e465412be05"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+                template&lt;typename U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afd0d8fef5e2e709ecfe34e465412be05" class="m-doc-self">observer_ptr</a>(</span><span class="m-doc-wrap"><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;U&gt; const&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs an observer from a unique pointer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Underlying type of the unique pointer. Must be convertible to <code>T*</code>.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>Unique pointer to construct from.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8888e9dd9db1435a172232db23e264c1"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+                template&lt;typename U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8888e9dd9db1435a172232db23e264c1" class="m-doc-self">observer_ptr</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1box.html" class="m-doc">box</a>&lt;U&gt; const&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs an observer from a box.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Type of the box. Must be convertible to <code>T*</code>.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>Box to construct from.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5ea4d6faed311cd6bf7af821ef2f038e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5ea4d6faed311cd6bf7af821ef2f038e" class="m-doc-self">operator pointer</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the watched pointer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The watched pointer.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5b3070b1e5da32efba368f18ab9f611c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5b3070b1e5da32efba368f18ab9f611c" class="m-doc-self">get</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the watched pointer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The watched pointer.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8dd31bf0ddc9809655d6f66827013865"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1observer__ptr.html#af73227c77834d27f9c89e0a92ea698d8" class="m-doc">const_<wbr />reference</a> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8dd31bf0ddc9809655d6f66827013865" class="m-doc-self">ref</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the constant reference to the watched object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The reference to the watched object.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-success"><h4>Invariant</h4><p>The watched pointer is not <code>nullptr</code>.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a14bee89e538427a25cc1e361d8a86140"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1observer__ptr.html#a0c5a1541ecf7ad17925583cf6abd2c65" class="m-doc">reference</a> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14bee89e538427a25cc1e361d8a86140" class="m-doc-self">ref</a>(</span><span class="m-doc-wrap">) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the reference to the watched object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The reference to the watched object.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-success"><h4>Invariant</h4><p>The watched pointer is not <code>nullptr</code>.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a95a453b6d6fe6d168aa9748d7bee076c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1observer__ptr.html#a0c5a1541ecf7ad17925583cf6abd2c65" class="m-doc">reference</a> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a95a453b6d6fe6d168aa9748d7bee076c" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the dereferenced watched object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The reference to the watched object.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-success"><h4>Invariant</h4><p>The watched pointer is not <code>nullptr</code>.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a4d87e2ceab34e71e890d84482bfd5dfa"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d87e2ceab34e71e890d84482bfd5dfa" class="m-doc-self">operator-&gt;</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the pointer to the watched object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The pointer to the watched object.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-success"><h4>Invariant</h4><p>The watched pointer is not <code>nullptr</code>.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a6a68b7063d23d1c5ff1dcd0cdd33ec36"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6a68b7063d23d1c5ff1dcd0cdd33ec36" class="m-doc-self">release</a>(</span><span class="m-doc-wrap">) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the watched pointer and resets the watched pointer to <code>nullptr</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The watched pointer.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af9f22cb37d3edae4b12382631e95ec76"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af9f22cb37d3edae4b12382631e95ec76" class="m-doc-self">reset</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1observer__ptr.html#ab088798d28525c0befe3c707b95c5bc2" class="m-doc">pointer</a> ptr = nullptr) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Resets the watched pointer to <code>nullptr</code> or the new watched pointer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">ptr</td>
+                  <td>The new watched pointer. Defaults to <code>nullptr</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="adf6f1fb30d64991e6bf834d69bc34018"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />observer_ptr&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf6f1fb30d64991e6bf834d69bc34018" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1observer__ptr.html" class="m-doc">observer_<wbr />ptr</a>&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Swaps two watched pointers.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other observer.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac869794e3e52c6f5416d5ebc7d720767"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac869794e3e52c6f5416d5ebc7d720767" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1observer__ptr.html" class="m-doc">rolly::<wbr />observer_ptr</a>&lt;T&gt;&amp; lhs,
+              <a href="classrolly_1_1observer__ptr.html" class="m-doc">rolly::<wbr />observer_ptr</a>&lt;T&gt;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Swaps two pointers.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the watched pointer</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lhs</td>
+                  <td>First pointer</td>
+                </tr>
+                <tr>
+                  <td>rhs</td>
+                  <td>Second pointer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

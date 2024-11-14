@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrolly_1_1meta_1_1project__meta" kind="class" language="C++" prot="public">
+    <compoundname>rolly::meta::project_meta</compoundname>
+    <includes refid="version_8h" local="no">version.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrolly_1_1meta_1_1project__meta_1a57ea2e18ffb95f496ec29a0bd9fa4c75" prot="private" static="no" mutable="no">
+        <type>struct <ref refid="structrolly_1_1version" kindref="compound">version</ref></type>
+        <definition>struct version version_</definition>
+        <argsstring></argsstring>
+        <name>version_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/version.h" line="57" column="35" bodyfile="include/rolly/global/version.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1meta_1_1project__meta_1a5f334163123b6db7ae068a6ccdb06a34" prot="private" static="no" mutable="no">
+        <type>std::string_view</type>
+        <definition>std::string_view name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/version.h" line="61" column="24" bodyfile="include/rolly/global/version.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1meta_1_1project__meta_1ae762fb49635ffd9139da75ebd5fefb79" prot="private" static="no" mutable="no">
+        <type>std::string_view</type>
+        <definition>std::string_view domain_</definition>
+        <argsstring></argsstring>
+        <name>domain_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/version.h" line="62" column="24" bodyfile="include/rolly/global/version.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1meta_1_1project__meta_1afa5420d2f47a72fd0f3cc3c5224f1e48" prot="private" static="no" mutable="no">
+        <type>std::string_view</type>
+        <definition>std::string_view organization_</definition>
+        <argsstring></argsstring>
+        <name>organization_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/version.h" line="63" column="24" bodyfile="include/rolly/global/version.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrolly_1_1meta_1_1project__meta_1afd20daab765750f3f6a9a5371d7306ff" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr project_meta</definition>
+        <argsstring>(struct version version, std::string_view name, std::string_view domain, std::string_view organization) noexcept</argsstring>
+        <name>project_meta</name>
+        <param>
+          <type>struct <ref refid="structrolly_1_1version" kindref="compound">version</ref></type>
+          <declname>version</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>domain</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>organization</declname>
+        </param>
+        <briefdescription>
+<para>Creates project meta-information object at compile time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Project version. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Project name. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Project domain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>organization</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Project organization. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/version.h" line="28" column="17" bodyfile="include/rolly/global/version.h" bodystart="28" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1meta_1_1project__meta_1a00fa0078220b94333ca2fc508e401daa" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr struct <ref refid="structrolly_1_1version" kindref="compound">version</ref></type>
+        <definition>constexpr struct version version</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>version</name>
+        <briefdescription>
+<para>Version of the project. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/version.h" line="28" column="17" bodyfile="include/rolly/global/version.h" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1meta_1_1project__meta_1a6dbef6eba3f6e10e6214264935416840" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr std::string_view</type>
+        <definition>constexpr std::string_view name</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>Name of the project. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/version.h" line="47" column="35" bodyfile="include/rolly/global/version.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1meta_1_1project__meta_1a82b2a19d47f1a52d8d8e7369f46e85fa" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr std::string_view</type>
+        <definition>constexpr std::string_view domain</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>domain</name>
+        <briefdescription>
+<para>Project domain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/version.h" line="52" column="35" bodyfile="include/rolly/global/version.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1meta_1_1project__meta_1ab9a206438e0c206e925fcd11f4722b8a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr std::string_view</type>
+        <definition>constexpr std::string_view organization</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>organization</name>
+        <briefdescription>
+<para>Project organization. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/version.h" line="57" column="35" bodyfile="include/rolly/global/version.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Immutable constant expression structure, holding project meta-information. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>See <ref refid="group__meta_1ga0afd1b8278623202b4061a6142aa4ec3" kindref="member">library_metadata</ref> global variable for current <bold>floppy</bold> project meta-information.</para>
+<para><simplesect kind="see"><para><ref refid="structrolly_1_1version" kindref="compound">version</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="include/rolly/global/version.h" line="19" column="23" bodyfile="include/rolly/global/version.h" bodystart="19" bodyend="64"/>
+    <listofallmembers>
+      <member refid="classrolly_1_1meta_1_1project__meta_1a82b2a19d47f1a52d8d8e7369f46e85fa" prot="public" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>domain</name></member>
+      <member refid="classrolly_1_1meta_1_1project__meta_1ae762fb49635ffd9139da75ebd5fefb79" prot="private" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>domain_</name></member>
+      <member refid="classrolly_1_1meta_1_1project__meta_1a6dbef6eba3f6e10e6214264935416840" prot="public" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>name</name></member>
+      <member refid="classrolly_1_1meta_1_1project__meta_1a5f334163123b6db7ae068a6ccdb06a34" prot="private" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>name_</name></member>
+      <member refid="classrolly_1_1meta_1_1project__meta_1ab9a206438e0c206e925fcd11f4722b8a" prot="public" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>organization</name></member>
+      <member refid="classrolly_1_1meta_1_1project__meta_1afa5420d2f47a72fd0f3cc3c5224f1e48" prot="private" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>organization_</name></member>
+      <member refid="classrolly_1_1meta_1_1project__meta_1afd20daab765750f3f6a9a5371d7306ff" prot="public" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>project_meta</name></member>
+      <member refid="classrolly_1_1meta_1_1project__meta_1a00fa0078220b94333ca2fc508e401daa" prot="public" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>version</name></member>
+      <member refid="classrolly_1_1meta_1_1project__meta_1a57ea2e18ffb95f496ec29a0bd9fa4c75" prot="private" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>version_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

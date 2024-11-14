@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacerolly_1_1dll" kind="namespace" language="C++">
+    <compoundname>rolly::dll</compoundname>
+    <innerclass refid="classrolly_1_1dll_1_1plugin" prot="public">rolly::dll::plugin</innerclass>
+    <innerclass refid="classrolly_1_1dll_1_1plugin__loader" prot="public">rolly::dll::plugin_loader</innerclass>
+    <innerclass refid="classrolly_1_1dll_1_1shared__library" prot="public">rolly::dll::shared_library</innerclass>
+    <briefdescription>
+<para>Dynamic libraries and plugins. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/dll/plugin.h" line="14" column="15"/>
+  </compounddef>
+</doxygen>

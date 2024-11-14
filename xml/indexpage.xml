@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Rolly documentation</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1intro_sec">
+<title>Introduction</title>
+<para><xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>Add introduction</para>
+</xrefdescription></xrefsect></para>
+<para>This is the Rolly documentation.</para>
+</sect1>
+<sect1 id="index_1install_sec">
+<title>Installation</title>
+<para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>Add installation instructions</para>
+</xrefdescription></xrefsect></para>
+</sect1>
+<sect1 id="index_1usage_sec">
+<title>Usage</title>
+<para><xrefsect id="todo_1_todo000006"><xreftitle>Todo</xreftitle><xrefdescription><para>Add usage instructions</para>
+</xrefdescription></xrefsect></para>
+</sect1>
+<sect1 id="index_1license_sec">
+<title>License</title>
+<para><bold>Rolly</bold> library is distributed under the MIT license. See <emphasis>LICENSE</emphasis> file for details.</para>
+<para> <mcss:class xmlns:mcss="http://mcss.mosra.cz/doxygen/" mcss:class="m-block m-success" /></para>
+<para><simplesect kind="par"><title>Third-party license info</title><para>This library depends on the following libraries:<itemizedlist>
+<listitem><para><bold><ulink url="https://fmt.dev">fmt</ulink></bold> (<computeroutput>MIT</computeroutput>) - modern C++ formatting library;</para>
+</listitem><listitem><para><bold><ulink url="https://github.com/gabime/spdlog">spdlog</ulink></bold> (<computeroutput>MIT</computeroutput>) - logging implementation based on <bold><ulink url="https://fmt.dev">fmt</ulink></bold>;</para>
+</listitem><listitem><para><bold><ulink url="https://github.com/catchorg/Catch2">Catch2</ulink></bold> (<computeroutput>MIT</computeroutput>) - testing framework. <linebreak/>
+<linebreak/>
+ You must obtain a copy of these licenses and include them in your project. </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

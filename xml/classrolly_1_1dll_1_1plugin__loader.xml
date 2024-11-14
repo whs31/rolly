@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrolly_1_1dll_1_1plugin__loader" kind="class" language="C++" prot="public">
+    <compoundname>rolly::dll::plugin_loader</compoundname>
+    <basecompoundref refid="structrolly_1_1pin" prot="private" virt="non-virtual">pin</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrolly_1_1dll_1_1plugin__loader_1ae3bb340fd551881ea9206a02c751df57" prot="private" static="no" mutable="no">
+        <type>std::any</type>
+        <definition>std::any init_data_</definition>
+        <argsstring></argsstring>
+        <name>init_data_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="152" column="14" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1dll_1_1plugin__loader_1af87f20e97adfb60dd3a927628d5b600d" prot="private" static="no" mutable="no">
+        <type><ref refid="cpp/container/unordered_map" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::unordered_map</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref>, <ref refid="classrolly_1_1dll_1_1shared__library" kindref="compound">shared_library</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, shared_library&gt; libraries_</definition>
+        <argsstring></argsstring>
+        <name>libraries_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="153" column="24" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1dll_1_1plugin__loader_1ad7ffbe0783f1b03467391a40b0033383" prot="private" static="no" mutable="no">
+        <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/memory/unique_ptr" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::unique_ptr</ref>&lt; <ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;plugin&gt; &gt; plugins_</definition>
+        <argsstring></argsstring>
+        <name>plugins_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="154" column="17" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a13eef6db62b0a7f43d496c2fcfe5f650" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plugin_loader</definition>
+        <argsstring>(std::any init_data)</argsstring>
+        <name>plugin_loader</name>
+        <param>
+          <type>std::any</type>
+          <declname>init_data</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new <ref refid="classrolly_1_1dll_1_1plugin__loader" kindref="compound">plugin_loader</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>init_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data, which will be passed into plugins during initialization. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="27" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a402730d8e6410c6c869868c61d01d171" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plugin_loader</definition>
+        <argsstring>(plugin_loader const &amp;)=delete</argsstring>
+        <name>plugin_loader</name>
+        <param>
+          <type><ref refid="classrolly_1_1dll_1_1plugin__loader" kindref="compound">plugin_loader</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="28" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1ad639cda89295322b087a832a02cb2b00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plugin_loader</definition>
+        <argsstring>(plugin_loader &amp;&amp;)=delete</argsstring>
+        <name>plugin_loader</name>
+        <param>
+          <type><ref refid="classrolly_1_1dll_1_1plugin__loader" kindref="compound">plugin_loader</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="29" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a9b2afce1924f8c6c7c8621249747f12d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrolly_1_1dll_1_1plugin__loader" kindref="compound">plugin_loader</ref> &amp;</type>
+        <definition>plugin_loader&amp; operator=</definition>
+        <argsstring>(plugin_loader const &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classrolly_1_1dll_1_1plugin__loader" kindref="compound">plugin_loader</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="30" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a2da6d8311065fc4f2353b41a989d479c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrolly_1_1dll_1_1plugin__loader" kindref="compound">plugin_loader</ref> &amp;</type>
+        <definition>plugin_loader&amp; operator=</definition>
+        <argsstring>(plugin_loader &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classrolly_1_1dll_1_1plugin__loader" kindref="compound">plugin_loader</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="31" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a087acaca2999ce50760af2a3e9fc0c6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ~plugin_loader</definition>
+        <argsstring>()</argsstring>
+        <name>~plugin_loader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="33" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a042cb25dc22561bcc289d2364bf6b4d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>result&lt; <ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> * &gt;</type>
+        <definition>result&lt;plugin*&gt; load</definition>
+        <argsstring>(std::string_view name)</argsstring>
+        <name>load</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Loads a plugin by name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the plugin to load. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the loaded plugin or error if loading fails. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="40" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1aebf4e0d6556ef1203b333d3878517887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>result&lt; <ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> * &gt;</type>
+        <definition>result&lt;plugin*&gt; load</definition>
+        <argsstring>(std::filesystem::path const &amp;path, std::string_view name)</argsstring>
+        <name>load</name>
+        <param>
+          <type>std::filesystem::path const &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Loads a plugin by name and path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to directory where plugin file is located. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the plugin to load. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the loaded plugin or error if loading fails. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="48" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a929e00117a988f8c03074599eae5316a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>result</type>
+        <definition>result load_all</definition>
+        <argsstring>(std::filesystem::path const &amp;path, std::string_view extension=plugin_loader::native_extension())</argsstring>
+        <name>load_all</name>
+        <param>
+          <type>std::filesystem::path const &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>extension</declname>
+          <defval><ref refid="classrolly_1_1dll_1_1plugin__loader_1aa5ddc06c4d3be94b529d49e9b8c0d19e" kindref="member">plugin_loader::native_extension</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Loads all possible plugins in a directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to directory where plugin files are located. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns error, if no plugins are located in provided directory. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="56" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1add920d5649094e721c145343b78c5271" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/memory/unique_ptr" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::unique_ptr</ref>&lt; <ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> &gt; &gt; const  &amp;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;plugin&gt; &gt; const&amp; plugins</definition>
+        <argsstring>() const</argsstring>
+        <name>plugins</name>
+        <briefdescription>
+<para>Returns the internal vector of loaded plugins. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Internal vector of loaded plugins. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="69" column="24" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a5197d0b7d67fa62a08cd3807ada21483" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/memory/unique_ptr" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::unique_ptr</ref>&lt; <ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> &gt; &gt; &amp;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;plugin&gt; &gt;&amp; plugins</definition>
+        <argsstring>()</argsstring>
+        <name>plugins</name>
+        <briefdescription>
+<para>Returns a mutable reference to the internal vector of loaded plugins. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Mutable reference to the internal vector of loaded plugins. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="75" column="18" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a4b7c973e4a2da2f77eb26db2a3fc61bc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool is_loaded</definition>
+        <argsstring>(std::string_view name) const</argsstring>
+        <name>is_loaded</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="77" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1aff3cd01b8690932611562f23b6ac06e7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool is_loaded</definition>
+        <argsstring>(guid const &amp;uuid) const</argsstring>
+        <name>is_loaded</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="78" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a33015fe51a91f649432b513bbf968cff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacerolly_1_1types_1ac47ac2e28dd2cb38fbf05ce10f810407" kindref="member">usize</ref></type>
+        <definition>usize loaded_count</definition>
+        <argsstring>() const</argsstring>
+        <name>loaded_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="80" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a0ef168a3db5a920b1c9784a144be74d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> *</type>
+        <definition>plugin* operator[]</definition>
+        <argsstring>(std::string_view name) const</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="82" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a563f7a5d2614222aa2c8bbc0c86499f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> *</type>
+        <definition>plugin* operator[]</definition>
+        <argsstring>(guid const &amp;uuid) const</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="83" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1ab8b37e40341d625d21a8e0f4d9fe4bcb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/container/unordered_map" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::unordered_map</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref>, <ref refid="classrolly_1_1dll_1_1shared__library" kindref="compound">shared_library</ref> &gt; const  &amp;</type>
+        <definition>std::unordered_map&lt;std::string, shared_library&gt; const&amp; libraries</definition>
+        <argsstring>() const</argsstring>
+        <name>libraries</name>
+        <briefdescription>
+<para>Returns the internal map of loaded libraries. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Internal map of loaded libraries. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="89" column="31" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="89" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a9ad17968ce6970294a52ce19058d3a86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/container/unordered_map" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::unordered_map</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref>, <ref refid="classrolly_1_1dll_1_1shared__library" kindref="compound">shared_library</ref> &gt; &amp;</type>
+        <definition>std::unordered_map&lt;std::string, shared_library&gt;&amp; libraries</definition>
+        <argsstring>()</argsstring>
+        <name>libraries</name>
+        <briefdescription>
+<para>Returns a mutable reference to the internal map of loaded libraries. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Mutable reference to the internal map of loaded libraries. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="95" column="25" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a8f7748dedbb8beb54decf63f462dc3a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::optional&lt; <ref refid="cpp/utility/functional/reference_wrapper" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::reference_wrapper</ref>&lt; T &gt; &gt;</type>
+        <definition>std::optional&lt;std::reference_wrapper&lt;T&gt; &gt; query_interface_by_type</definition>
+        <argsstring>() const</argsstring>
+        <name>query_interface_by_type</name>
+        <briefdescription>
+<para>Queries plugin interface by it&apos;s type via RTTI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Essentially iterates over all loaded plugins and tries to <computeroutput>dynamic_cast</computeroutput> their pointer to the requested interface. <simplesect kind="warning"><para>This function can be slow, especially when many plugins are loaded. Much better solution will be to query by internal plugin interface name using method <ref refid="classrolly_1_1dll_1_1plugin__loader_1a3e3f5ed68afe55f658cf58b604224925" kindref="member">query_interface</ref> </para>
+</simplesect>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interface type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the retrieved interface or none when no such interface is loaded. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="107" column="20" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="107" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a3e3f5ed68afe55f658cf58b604224925" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::optional&lt; <ref refid="cpp/utility/functional/reference_wrapper" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::reference_wrapper</ref>&lt; T &gt; &gt;</type>
+        <definition>std::optional&lt;std::reference_wrapper&lt;T&gt; &gt; query_interface</definition>
+        <argsstring>(std::string_view interface_name) const</argsstring>
+        <name>query_interface</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>interface_name</declname>
+        </param>
+        <briefdescription>
+<para>Queries plugin interface by it&apos;s internal name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interface type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interface_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Internal plugin interface name. See <ref refid="classrolly_1_1dll_1_1plugin_1a782a8f03cca96caa964b019fdf81da84" kindref="member">rolly::dll::plugin::name</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the retrieved interface or none when no such interface is loaded. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="123" column="20" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="123" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1af8eca129abedfe379d04ade437f5a53e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::optional&lt; <ref refid="cpp/utility/functional/reference_wrapper" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::reference_wrapper</ref>&lt; T &gt; &gt;</type>
+        <definition>std::optional&lt;std::reference_wrapper&lt;T&gt; &gt; query_interface</definition>
+        <argsstring>(guid const &amp;uuid) const</argsstring>
+        <name>query_interface</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+<para>Queries plugin interface by it&apos;s unique ID (UUID). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interface type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interface_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Internal plugin interface GUID. See rolly::dll::plugin::uuid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the retrieved interface or none when no such interface is loaded. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="134" column="20" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="134" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1a7a425be3cb615b7c8009d27a87d0fa29" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::optional&lt; <ref refid="cpp/utility/functional/reference_wrapper" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::reference_wrapper</ref>&lt; T &gt; &gt;</type>
+        <definition>std::optional&lt;std::reference_wrapper&lt;T&gt; &gt; query_by</definition>
+        <argsstring>(std::function&lt; bool(plugin const &amp;)&gt; const &amp;predicate) const</argsstring>
+        <name>query_by</name>
+        <param>
+          <type><ref refid="cpp/utility/functional/function" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::function</ref>&lt; bool(<ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> const &amp;)&gt; const &amp;</type>
+          <declname>predicate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="139" column="20" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="139" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1add8e0fe685ab80b2cab50ab8ac09bb5d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> *</type>
+        <definition>plugin* query_raw</definition>
+        <argsstring>(std::function&lt; bool(plugin const &amp;)&gt; const &amp;predicate) const</argsstring>
+        <name>query_raw</name>
+        <param>
+          <type><ref refid="cpp/utility/functional/function" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::function</ref>&lt; bool(<ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> const &amp;)&gt; const &amp;</type>
+          <declname>predicate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="149" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classrolly_1_1dll_1_1plugin__loader_1aa5ddc06c4d3be94b529d49e9b8c0d19e" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>static std::string_view native_extension</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>native_extension</name>
+        <briefdescription>
+<para>Returns native extension for dynamically loaded libraries on this platform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns <computeroutput>dll</computeroutput>, <computeroutput>so</computeroutput> on Linux. <simplesect kind="return"><para>Native extension without a prefix dot. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/plugin_loader.h" line="63" column="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>nonmovable</label>
+        <link refid="structrolly_1_1nonmovable"/>
+      </node>
+      <node id="2">
+        <label>pin</label>
+        <link refid="structrolly_1_1pin"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>noncopyable</label>
+        <link refid="structrolly_1_1noncopyable"/>
+      </node>
+      <node id="1">
+        <label>plugin_loader</label>
+        <link refid="classrolly_1_1dll_1_1plugin__loader"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>nonmovable</label>
+        <link refid="structrolly_1_1nonmovable"/>
+      </node>
+      <node id="2">
+        <label>pin</label>
+        <link refid="structrolly_1_1pin"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>noncopyable</label>
+        <link refid="structrolly_1_1noncopyable"/>
+      </node>
+      <node id="1">
+        <label>plugin_loader</label>
+        <link refid="classrolly_1_1dll_1_1plugin__loader"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/rolly/dll/plugin_loader.h" line="20" column="18" bodyfile="include/rolly/dll/plugin_loader.h" bodystart="12" bodyend="155"/>
+    <listofallmembers>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1ae3bb340fd551881ea9206a02c751df57" prot="private" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>init_data_</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a4b7c973e4a2da2f77eb26db2a3fc61bc" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>is_loaded</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1aff3cd01b8690932611562f23b6ac06e7" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>is_loaded</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1ab8b37e40341d625d21a8e0f4d9fe4bcb" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>libraries</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a9ad17968ce6970294a52ce19058d3a86" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>libraries</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1af87f20e97adfb60dd3a927628d5b600d" prot="private" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>libraries_</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a042cb25dc22561bcc289d2364bf6b4d8" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>load</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1aebf4e0d6556ef1203b333d3878517887" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>load</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a929e00117a988f8c03074599eae5316a" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>load_all</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a33015fe51a91f649432b513bbf968cff" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>loaded_count</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1aa5ddc06c4d3be94b529d49e9b8c0d19e" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>native_extension</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a9b2afce1924f8c6c7c8621249747f12d" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>operator=</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a2da6d8311065fc4f2353b41a989d479c" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>operator=</name></member>
+      <member refid="structrolly_1_1noncopyable_1abf5d0a96e554770dbe7f2470901b23f8" prot="private" virt="non-virtual" ambiguityscope="rolly::pin::"><scope>rolly::dll::plugin_loader</scope><name>operator=</name></member>
+      <member refid="structrolly_1_1nonmovable_1a7e86c1b2d7c0aeb233f86cdde473389b" prot="private" virt="non-virtual" ambiguityscope="rolly::pin::"><scope>rolly::dll::plugin_loader</scope><name>operator=</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a0ef168a3db5a920b1c9784a144be74d0" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>operator[]</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a563f7a5d2614222aa2c8bbc0c86499f6" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>operator[]</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a13eef6db62b0a7f43d496c2fcfe5f650" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>plugin_loader</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a402730d8e6410c6c869868c61d01d171" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>plugin_loader</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1ad639cda89295322b087a832a02cb2b00" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>plugin_loader</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1add920d5649094e721c145343b78c5271" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>plugins</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a5197d0b7d67fa62a08cd3807ada21483" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>plugins</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1ad7ffbe0783f1b03467391a40b0033383" prot="private" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>plugins_</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a7a425be3cb615b7c8009d27a87d0fa29" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>query_by</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a3e3f5ed68afe55f658cf58b604224925" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>query_interface</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1af8eca129abedfe379d04ade437f5a53e" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>query_interface</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a8f7748dedbb8beb54decf63f462dc3a8" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>query_interface_by_type</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1add8e0fe685ab80b2cab50ab8ac09bb5d" prot="public" virt="non-virtual"><scope>rolly::dll::plugin_loader</scope><name>query_raw</name></member>
+      <member refid="classrolly_1_1dll_1_1plugin__loader_1a087acaca2999ce50760af2a3e9fc0c6f" prot="public" virt="virtual"><scope>rolly::dll::plugin_loader</scope><name>~plugin_loader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

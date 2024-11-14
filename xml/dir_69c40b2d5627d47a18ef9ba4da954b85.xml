@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_69c40b2d5627d47a18ef9ba4da954b85" kind="dir">
+    <compoundname>types</compoundname>
+    <innerfile refid="angle_8h">angle.h</innerfile>
+    <innerfile refid="guid_8h">guid.h</innerfile>
+    <innerfile refid="point2d_8h">point2d.h</innerfile>
+    <innerfile refid="result_8h">result.h</innerfile>
+    <innerfile refid="size2d_8h">size2d.h</innerfile>
+    <innerfile refid="stdint_8h">stdint.h</innerfile>
+    <innerfile refid="vector2d_8h">vector2d.h</innerfile>
+    <innerfile refid="velocity_8h">velocity.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/types/"/>
+  </compounddef>
+</doxygen>

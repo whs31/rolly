@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_263ad86cbdbe128b73930aed145a5b84" kind="dir">
+    <compoundname>dll</compoundname>
+    <innerdir refid="dir_bdb85986216d53b8efd883df7820b9ac">detail</innerdir>
+    <innerfile refid="plugin_8h">plugin.h</innerfile>
+    <innerfile refid="plugin__loader_8h">plugin_loader.h</innerfile>
+    <innerfile refid="shared__library_8h">shared_library.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/dll/"/>
+  </compounddef>
+</doxygen>

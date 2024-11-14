@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="char__utils_8h" kind="file" language="C++">
+    <compoundname>char_utils.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">string_view</includes>
+    <includes local="no">fmt/format.h</includes>
+    <includedby refid="semver_8h" local="yes">semver.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>fmt/format.h</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>char_utils.h</label>
+        <link refid="char__utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string_view</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="17">
+        <label>angle.h</label>
+        <link refid="angle_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>version.h</label>
+        <link refid="version_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>point2d.h</label>
+        <link refid="point2d_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>math.h</label>
+        <link refid="math_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>dll.h</label>
+        <link refid="dll_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>shared_library.h</label>
+        <link refid="shared__library_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>serialization.h</label>
+        <link refid="serialization_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>bit.h</label>
+        <link refid="bit_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>directories.h</label>
+        <link refid="directories_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>macro.h</label>
+        <link refid="macro_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>qt.h</label>
+        <link refid="qt_8h_source"/>
+      </node>
+      <node id="1">
+        <label>char_utils.h</label>
+        <link refid="char__utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>semver.h</label>
+        <link refid="semver_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>types.h</label>
+        <link refid="types_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>registrable.h</label>
+        <link refid="registrable_8h_source"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>plugin_loader.h</label>
+        <link refid="plugin__loader_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>qml.h</label>
+        <link refid="qml_8h_source"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>plugin.h</label>
+        <link refid="plugin_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>numbers.h</label>
+        <link refid="numbers_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>global.h</label>
+        <link refid="global_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>config.h</label>
+        <link refid="config_8h_source"/>
+      </node>
+      <node id="9">
+        <label>savefile.h</label>
+        <link refid="savefile_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>vector2d.h</label>
+        <link refid="vector2d_8h_source"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>velocity.h</label>
+        <link refid="velocity_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>prelude.h</label>
+        <link refid="prelude_8h_source"/>
+      </node>
+      <node id="6">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerolly_1a373760a3c5836375681456b6c51f1e93" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr char</type>
+        <definition>constexpr char rolly::to_lower</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>to_lower</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="8" column="19" bodyfile="include/rolly/global/char_utils.h" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a6f31057710263260dde372ac14417b07" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::is_digit</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>is_digit</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="12" column="19" bodyfile="include/rolly/global/char_utils.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a68be1add7d0d715e53b0689ac056f0d2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::is_space</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>is_space</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="14" column="19" bodyfile="include/rolly/global/char_utils.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1aa86605562968255acbd911ed427a2e26" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::is_operator</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>is_operator</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="16" column="19" bodyfile="include/rolly/global/char_utils.h" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a3a9735d38642d18354f18e961f06c9f2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::is_dot</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>is_dot</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="18" column="19" bodyfile="include/rolly/global/char_utils.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a011123e17c8b3dcf68f082eb03f376df" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::is_logical_or</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>is_logical_or</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="20" column="19" bodyfile="include/rolly/global/char_utils.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a7694a2c16fb00e6162dec784e4ab5681" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::is_hyphen</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>is_hyphen</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="22" column="19" bodyfile="include/rolly/global/char_utils.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a95a56ea6e001b20d4537755511f94436" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::is_letter</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>is_letter</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="24" column="19" bodyfile="include/rolly/global/char_utils.h" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1adaa0a5242a018519c3cba5f3374e6c15" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::is_hex</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>is_hex</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="26" column="19" bodyfile="include/rolly/global/char_utils.h" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a29d324f3499898f4676605869b55449c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+        <definition>constexpr std::uint16_t rolly::to_digit</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>to_digit</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="30" column="28" bodyfile="include/rolly/global/char_utils.h" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a9cd77251f15016f95592878e29c5a6e7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr unsigned char</type>
+        <definition>constexpr unsigned char rolly::hex_to_char</definition>
+        <argsstring>(char c) noexcept</argsstring>
+        <name>hex_to_char</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/char_utils.h" line="32" column="28" bodyfile="include/rolly/global/char_utils.h" bodystart="32" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/global/char_utils.h"/>
+  </compounddef>
+</doxygen>

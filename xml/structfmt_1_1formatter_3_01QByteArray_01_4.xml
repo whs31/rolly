@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structfmt_1_1formatter_3_01QByteArray_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>fmt::formatter&lt; QByteArray &gt;</compoundname>
+    <includes refid="formatters_8h" local="no">formatters.h</includes>
+    <templateparamlist>
+    </templateparamlist>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structfmt_1_1formatter_3_01QByteArray_01_4_1a3fb66fb3f7d1b83ddf09547c7494e062" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ParseContext</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr static auto</type>
+        <definition>constexpr static auto parse</definition>
+        <argsstring>(ParseContext &amp;ctx)</argsstring>
+        <name>parse</name>
+        <param>
+          <type>ParseContext &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/qt/formatters.h" line="44" column="27" bodyfile="include/rolly/qt/formatters.h" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="structfmt_1_1formatter_3_01QByteArray_01_4_1aee26cc5d11922588c053b8a0d9e40533" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FormatContext</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>static auto format</definition>
+        <argsstring>(QByteArray const &amp;s, FormatContext &amp;ctx)</argsstring>
+        <name>format</name>
+        <param>
+          <type>QByteArray const &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>FormatContext &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/qt/formatters.h" line="49" column="17" bodyfile="include/rolly/qt/formatters.h" bodystart="49" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Specialization of the <computeroutput>fmt::formatter</computeroutput> for the <computeroutput>QByteArray</computeroutput> class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="note"><para>Only available if Qt::Core is linked against the project. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="include/rolly/qt/formatters.h" line="42" column="19" bodyfile="include/rolly/qt/formatters.h" bodystart="42" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structfmt_1_1formatter_3_01QByteArray_01_4_1aee26cc5d11922588c053b8a0d9e40533" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; QByteArray &gt;</scope><name>format</name></member>
+      <member refid="structfmt_1_1formatter_3_01QByteArray_01_4_1a3fb66fb3f7d1b83ddf09547c7494e062" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; QByteArray &gt;</scope><name>parse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

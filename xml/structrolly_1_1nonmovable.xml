@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structrolly_1_1nonmovable" kind="struct" language="C++" prot="public">
+    <compoundname>rolly::nonmovable</compoundname>
+    <derivedcompoundref refid="structrolly_1_1pin" prot="public" virt="non-virtual">pin</derivedcompoundref>
+    <includes refid="nonmovable_8h" local="no">nonmovable.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structrolly_1_1nonmovable_1acc2fa1e57d8a43b308175b5c56e221cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nonmovable</definition>
+        <argsstring>()=default</argsstring>
+        <name>nonmovable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/traits/nonmovable.h" line="19" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1nonmovable_1a4352173bc3c30a542b3c5166f31ebf9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>~nonmovable</definition>
+        <argsstring>()=default</argsstring>
+        <name>~nonmovable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/traits/nonmovable.h" line="20" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1nonmovable_1add65207e9c46232f479124c747f3abb5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>nonmovable</definition>
+        <argsstring>(nonmovable &amp;&amp;) noexcept=delete</argsstring>
+        <name>nonmovable</name>
+        <param>
+          <type><ref refid="structrolly_1_1nonmovable" kindref="compound">nonmovable</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/traits/nonmovable.h" line="21" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1nonmovable_1a7e86c1b2d7c0aeb233f86cdde473389b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structrolly_1_1nonmovable" kindref="compound">nonmovable</ref> &amp;</type>
+        <definition>nonmovable&amp; operator=</definition>
+        <argsstring>(nonmovable &amp;&amp;) noexcept=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="structrolly_1_1nonmovable" kindref="compound">nonmovable</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/traits/nonmovable.h" line="22" column="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Disallows move operations for a type. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Example usage:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">Test<sp/>:<sp/><ref refid="structrolly_1_1nonmovable" kindref="compound">rolly::nonmovable</ref><sp/>{};<sp/></highlight><highlight class="comment">//<sp/>move<sp/>is<sp/>not<sp/>allowed<sp/>for<sp/>Test</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Test<sp/>t1;</highlight></codeline>
+<codeline><highlight class="normal">Test<sp/>t2(<ref refid="cpp/utility/move" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::move</ref>(t1));<sp/></highlight><highlight class="comment">//<sp/>error</highlight></codeline>
+</programlisting> <simplesect kind="see"><para><ref refid="structrolly_1_1noncopyable" kindref="compound">noncopyable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structrolly_1_1pin" kindref="compound">pin</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>nonmovable</label>
+        <link refid="structrolly_1_1nonmovable"/>
+      </node>
+      <node id="2">
+        <label>pin</label>
+        <link refid="structrolly_1_1pin"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>singleton&lt; T &gt;</label>
+        <link refid="structrolly_1_1singleton"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>plugin_loader</label>
+        <link refid="classrolly_1_1dll_1_1plugin__loader"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/rolly/traits/nonmovable.h" line="18" column="1" bodyfile="include/rolly/traits/nonmovable.h" bodystart="17" bodyend="23"/>
+    <listofallmembers>
+      <member refid="structrolly_1_1nonmovable_1acc2fa1e57d8a43b308175b5c56e221cd" prot="public" virt="non-virtual"><scope>rolly::nonmovable</scope><name>nonmovable</name></member>
+      <member refid="structrolly_1_1nonmovable_1add65207e9c46232f479124c747f3abb5" prot="public" virt="non-virtual"><scope>rolly::nonmovable</scope><name>nonmovable</name></member>
+      <member refid="structrolly_1_1nonmovable_1a7e86c1b2d7c0aeb233f86cdde473389b" prot="public" virt="non-virtual"><scope>rolly::nonmovable</scope><name>operator=</name></member>
+      <member refid="structrolly_1_1nonmovable_1a4352173bc3c30a542b3c5166f31ebf9b" prot="public" virt="non-virtual"><scope>rolly::nonmovable</scope><name>~nonmovable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

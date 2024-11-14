@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="angle_8h" kind="file" language="C++">
+    <compoundname>angle.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes refid="math_8h" local="yes">../math.h</includes>
+    <includes refid="contracts_8h" local="yes">../contracts.h</includes>
+    <includes refid="num_8h" local="yes">../concepts/num.h</includes>
+    <includes refid="ostream__formatter_8h" local="yes">../format/ostream_formatter.h</includes>
+    <includedby refid="types_8h" local="yes">types.h</includedby>
+    <includedby refid="vector2d_8h" local="yes">vector2d.h</includedby>
+    <incdepgraph>
+      <node id="32">
+        <label>format/ostream_formatter.h</label>
+        <link refid="ostream__formatter_8h_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>functional</label>
+      </node>
+      <node id="18">
+        <label>fmt/format.h</label>
+      </node>
+      <node id="10">
+        <label>limits</label>
+      </node>
+      <node id="1">
+        <label>angle.h</label>
+        <link refid="angle_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cstdint</label>
+      </node>
+      <node id="17">
+        <label>global/version.h</label>
+        <link refid="version_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>charconv</label>
+      </node>
+      <node id="3">
+        <label>../math.h</label>
+        <link refid="math_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cmath</label>
+      </node>
+      <node id="23">
+        <label>stdexcept</label>
+      </node>
+      <node id="14">
+        <label>string</label>
+      </node>
+      <node id="16">
+        <label>global/export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="26">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="19">
+        <label>version_definitions.h</label>
+        <link refid="version__definitions_8h_source"/>
+      </node>
+      <node id="24">
+        <label>char_utils.h</label>
+        <link refid="char__utils_8h_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>semver.h</label>
+        <link refid="semver_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>string_view</label>
+      </node>
+      <node id="25">
+        <label>global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>optional</label>
+      </node>
+      <node id="33">
+        <label>sstream</label>
+      </node>
+      <node id="9">
+        <label>numbers.h</label>
+        <link refid="numbers_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>iosfwd</label>
+      </node>
+      <node id="2">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>global.h</label>
+        <link refid="global_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstddef</label>
+      </node>
+      <node id="31">
+        <label>source_location.h</label>
+        <link refid="source__location_8h_source"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>../contracts.h</label>
+        <link refid="contracts_8h_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>../type_traits.h</label>
+        <link refid="type__traits_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>global/charconv.h</label>
+        <link refid="charconv_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>type_traits</label>
+      </node>
+      <node id="27">
+        <label>concepts/num.h</label>
+        <link refid="num_8h_source"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>types/stdint.h</label>
+        <link refid="stdint_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>angle.h</label>
+        <link refid="angle_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>point2d.h</label>
+        <link refid="point2d_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>types.h</label>
+        <link refid="types_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>vector2d.h</label>
+        <link refid="vector2d_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrolly_1_1types_1_1angle" prot="public">rolly::types::angle</innerclass>
+    <innerclass refid="structfmt_1_1formatter_3_01rolly_1_1angle_3_01T_01_4_01_4" prot="public">fmt::formatter&lt; rolly::angle&lt; T &gt; &gt;</innerclass>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1types">rolly::types</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacerolly_1_1types_1a3f652efe88945dad9f5db87673b0909e" prot="public" static="no" strong="yes">
+        <type>char</type>
+        <name>angle_unit</name>
+        <enumvalue id="namespacerolly_1_1types_1a3f652efe88945dad9f5db87673b0909ea18daee01fc6e54aacd7f4c2eef60ff4d" prot="public">
+          <name>degrees</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerolly_1_1types_1a3f652efe88945dad9f5db87673b0909ea017969ba49117264eb077e9f66daacfd" prot="public">
+          <name>radians</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Inline namespace for geometric-related types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Measurement unit of the angle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/angle.h" line="17" column="26" bodyfile="include/rolly/types/angle.h" bodystart="17" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/types/angle.h"/>
+  </compounddef>
+</doxygen>

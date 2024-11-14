@@ -1,0 +1,731 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="bit_8h" kind="file" language="C++">
+    <compoundname>bit.h</compoundname>
+    <includes local="no">array</includes>
+    <includes local="no">algorithm</includes>
+    <includes refid="global_8h" local="yes">global.h</includes>
+    <includes refid="num_8h" local="yes">concepts/num.h</includes>
+    <includes local="no">intrin.h</includes>
+    <includes local="no">cstdlib</includes>
+    <includedby refid="rolly_8h" local="yes">rolly.h</includedby>
+    <incdepgraph>
+      <node id="11">
+        <label>fmt/format.h</label>
+      </node>
+      <node id="17">
+        <label>limits</label>
+      </node>
+      <node id="15">
+        <label>cstdint</label>
+      </node>
+      <node id="10">
+        <label>global/version.h</label>
+        <link refid="version_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>charconv</label>
+      </node>
+      <node id="19">
+        <label>stdexcept</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>global/export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="22">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="1">
+        <label>bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>version_definitions.h</label>
+        <link refid="version__definitions_8h_source"/>
+      </node>
+      <node id="20">
+        <label>char_utils.h</label>
+        <link refid="char__utils_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>semver.h</label>
+        <link refid="semver_8h_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>string_view</label>
+      </node>
+      <node id="21">
+        <label>global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>optional</label>
+      </node>
+      <node id="2">
+        <label>array</label>
+      </node>
+      <node id="16">
+        <label>iosfwd</label>
+      </node>
+      <node id="27">
+        <label>cstdlib</label>
+      </node>
+      <node id="14">
+        <label>cstddef</label>
+      </node>
+      <node id="4">
+        <label>global.h</label>
+        <link refid="global_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>../type_traits.h</label>
+        <link refid="type__traits_8h_source"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>global/charconv.h</label>
+        <link refid="charconv_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>type_traits</label>
+      </node>
+      <node id="3">
+        <label>algorithm</label>
+      </node>
+      <node id="23">
+        <label>concepts/num.h</label>
+        <link refid="num_8h_source"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>intrin.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>bit.h</label>
+        <link refid="bit_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1math">rolly::math</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="bit_8h_1ae52f9ab121b791b441455c2de191034e" prot="public" static="no">
+        <name>__builtin_popcount</name>
+        <initializer>__popcnt</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="11" column="14" bodyfile="include/rolly/bit.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bit_8h_1a73644f3cbdf00887a94b718f6ef0054a" prot="public" static="no">
+        <name>___rolly_byteswap16</name>
+        <initializer>_byteswap_ushort</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="16" column="14" bodyfile="include/rolly/bit.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bit_8h_1a9b6038988dad05d084ae36c96fcf0f88" prot="public" static="no">
+        <name>___rolly_byteswap32</name>
+        <initializer>_byteswap_ulong</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="17" column="11" bodyfile="include/rolly/bit.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bit_8h_1aa23cf7e17f975f07efb2fd4bf3c20092" prot="public" static="no">
+        <name>___rolly_byteswap64</name>
+        <initializer>_byteswap_uint64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="18" column="11" bodyfile="include/rolly/bit.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacerolly_1a7db57d2dfe8e47b6753b16adee1ddcd0" prot="public" static="no" strong="yes">
+        <type>signed int</type>
+        <name>endian</name>
+        <enumvalue id="namespacerolly_1a7db57d2dfe8e47b6753b16adee1ddcd0aaae6635e044ac56046b2893a529b5114" prot="public">
+          <name>little</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Little endian. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerolly_1a7db57d2dfe8e47b6753b16adee1ddcd0ad861877da56b8b4ceb35c8cbfdf65bb4" prot="public">
+          <name>big</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Big endian. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerolly_1a7db57d2dfe8e47b6753b16adee1ddcd0a8e5f3adee38c8fccc13c1f3be0143796" prot="public">
+          <name>native</name>
+          <initializer>= little</initializer>
+          <briefdescription>
+<para>Native endian. Either little or big. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Endianness. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the backport of <computeroutput>std::endian</computeroutput>. <simplesect kind="version"><para>2.1.32 </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/types/endian">https://en.cppreference.com/w/cpp/types/endian</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="104" column="20" bodyfile="include/rolly/bit.h" bodystart="104" bodyend="114"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacerolly_1adee8f199e8943479e2e7ba5269bf0e37" prot="public" static="no">
+        <type><ref refid="cpp/types/integral_constant" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::integral_constant</ref>&lt; int, static_cast&lt; signed int &gt;(endian::big)&gt;</type>
+        <definition>using big_endian_t =  std::integral_constant&lt;int, static_cast&lt;signed int&gt;(endian::big)&gt;</definition>
+        <argsstring></argsstring>
+        <name>big_endian_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="version"><para>2.1.32 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="119" column="3" bodyfile="include/rolly/bit.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerolly_1a3d7bc8c2e9c71c3e2399b4623676a000" prot="public" static="no">
+        <type><ref refid="cpp/types/integral_constant" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::integral_constant</ref>&lt; int, static_cast&lt; signed int &gt;(endian::little)&gt;</type>
+        <definition>using little_endian_t =  std::integral_constant&lt;int, static_cast&lt;signed int&gt;(endian::little)&gt;</definition>
+        <argsstring></argsstring>
+        <name>little_endian_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="version"><para>2.1.32 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="124" column="3" bodyfile="include/rolly/bit.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerolly_1a1a021e92d7e75961d5ee7400ad081fc9" prot="public" static="no">
+        <type><ref refid="cpp/types/integral_constant" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::integral_constant</ref>&lt; int, static_cast&lt; signed int &gt;(endian::native)&gt;</type>
+        <definition>using native_endian_t =  std::integral_constant&lt;int, static_cast&lt;signed int&gt;(endian::native)&gt;</definition>
+        <argsstring></argsstring>
+        <name>native_endian_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="version"><para>2.1.32 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="129" column="3" bodyfile="include/rolly/bit.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerolly_1_1math_1a2264e542a12579ea469c63ecdee1883d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::integral</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr int</type>
+        <definition>constexpr int rolly::math::popcount</definition>
+        <argsstring>(T x) noexcept</argsstring>
+        <name>popcount</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of 1 bits in the value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the value. Must be an unsigned integral type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to count the number of 1 bits in. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of 1 bits in the value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="39" column="20" bodyfile="include/rolly/bit.h" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1math_1ac856a1cb702219f1d1035f0ce0945492" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::integral</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::math::has_single_bit</definition>
+        <argsstring>(T x) noexcept</argsstring>
+        <name>has_single_bit</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the value is an integral power of two. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the value. Must be an integral type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the value is an integral power of two, false otherwise. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1math_1a9f9d00ff5e0c49434b60e113d83be45e" kindref="member">is_pow2</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="55" column="21" bodyfile="include/rolly/bit.h" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1math_1a9f9d00ff5e0c49434b60e113d83be45e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::integral</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::math::is_pow2</definition>
+        <argsstring>(T x) noexcept</argsstring>
+        <name>is_pow2</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the value is an integral power of two. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an alias for <ref refid="namespacerolly_1_1math_1ac856a1cb702219f1d1035f0ce0945492" kindref="member">has_single_bit</ref> function. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the value. Must be an integral type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the value is an integral power of two, false otherwise. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1math_1ac856a1cb702219f1d1035f0ce0945492" kindref="member">has_single_bit</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="72" column="21" bodyfile="include/rolly/bit.h" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1math_1af2e45c6029de89f124eb5f3d415b19be" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::unsigned_integral</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr T</type>
+        <definition>constexpr T rolly::math::bit_ceil</definition>
+        <argsstring>(T x) noexcept</argsstring>
+        <name>bit_ceil</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Returns the next power of two of the value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the value. Must be an unsigned integral type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The next power of two of the value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="87" column="18" bodyfile="include/rolly/bit.h" bodystart="87" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a99bfcde93b3d479813abecbbc877a5c0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class To</type>
+          </param>
+          <param>
+            <type>class From</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>rolly::bit_cast</definition>
+        <argsstring>(From const &amp;src) noexcept</argsstring>
+        <name>bit_cast</name>
+        <param>
+          <type>From const &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+<para>Casts value from one type to another by bit copy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the backport of <computeroutput>std::bit_cast</computeroutput>.</para>
+<para>Obtain a value of type To by reinterpreting the object representation of From. Every bit in the value representation of the returned To object is equal to the corresponding bit in the object representation of from.</para>
+<para>The values of padding bits in the returned To object are unspecified.</para>
+<para>If there is no value of type To corresponding to the value representation produced, the behavior is undefined. If there are multiple such values, which value is produced is unspecified. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>To</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination type. Must be a trivially copyable type and have the same size as the source type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>From</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source type. Must be a trivially copyable type and have the same size as the destination type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Destination value. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/numeric/bit_cast">https://en.cppreference.com/w/cpp/numeric/bit_cast</ulink> </para>
+</simplesect>
+<simplesect kind="version"><para>2.1.32 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="155" column="5" bodyfile="include/rolly/bit.h" bodystart="155" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a50b397be3a6964a1f150ceb189afabb5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>concepts::num</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr T</type>
+        <definition>constexpr T rolly::byteswap</definition>
+        <argsstring>(T x) noexcept</argsstring>
+        <name>byteswap</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Reverses the byte order of the value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the backport of <computeroutput>std::byteswap</computeroutput>. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the value. Must be a numeric type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reversed value. </para>
+</simplesect>
+<simplesect kind="version"><para>2.1.32 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="179" column="16" bodyfile="include/rolly/bit.h" bodystart="179" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a5764cccca8658c6880ab03364b4fcda5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>concepts::num</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr T</type>
+        <definition>constexpr T rolly::to_big_endian</definition>
+        <argsstring>(T x) noexcept</argsstring>
+        <name>to_big_endian</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Reverses the byte order of the value if the native endianness is little. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the native endianness is big, the value is returned unchanged. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the value. Must be a numeric type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reversed value. </para>
+</simplesect>
+<simplesect kind="version"><para>2.1.32 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="199" column="16" bodyfile="include/rolly/bit.h" bodystart="199" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a571786331157b178e73d2ac05d14751b" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>concepts::num</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr T</type>
+        <definition>constexpr T rolly::to_little_endian</definition>
+        <argsstring>(T x) noexcept</argsstring>
+        <name>to_little_endian</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Reverses the byte order of the value if the native endianness is big. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the native endianness is little, the value is returned unchanged. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the value. Must be a numeric type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reversed value. </para>
+</simplesect>
+<simplesect kind="version"><para>2.1.32 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/bit.h" line="219" column="16" bodyfile="include/rolly/bit.h" bodystart="219" bodyend="224"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/bit.h"/>
+  </compounddef>
+</doxygen>

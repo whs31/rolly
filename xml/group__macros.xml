@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__macros" kind="group">
+    <compoundname>macros</compoundname>
+    <title>Definitions and macros</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__macros_1ga505b4a9fc37ca5cbd8fdcfdf5ef88dd8" prot="public" static="no">
+        <name>ROLLY_DOC</name>
+        <briefdescription>
+<para>Flag defined if <bold>Doxygen</bold> documentation is being generated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/definitions.h" line="12" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" prot="public" static="no">
+        <name>___constexpr___</name>
+        <briefdescription>
+<para>Expands to <computeroutput>constexpr</computeroutput> in C++20 mode, to nothing in C++17 mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/definitions.h" line="18" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__macros_1gaa032e9c37560d16eb522f6ad25d09893" prot="public" static="no">
+        <name>ROLLY_QT_CORE</name>
+        <briefdescription>
+<para>Flag defined if <bold>Qt::Core</bold> library is available and linked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/definitions.h" line="26" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__macros_1gacdcb0a5fcef3d4a927a21b45ab4242a2" prot="public" static="no">
+        <name>ROLLY_QT_GUI</name>
+        <briefdescription>
+<para>Flag defined if <bold>Qt::Gui</bold> library is available and linked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/definitions.h" line="32" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__macros_1ga7529dd8806261ce6d42e74b6b8640645" prot="public" static="no">
+        <name>ROLLY_DEBUG</name>
+        <briefdescription>
+<para>Flag defined if debug mode is <bold>enabled</bold>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Enables some additional checks, majority of contract functionality and some assertions. <simplesect kind="see"><para><ref refid="group__macros_1ga4bd557993872c902c6e785cb8a606e81" kindref="member">ROLLY_NO_DEBUG</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/definitions.h" line="40" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__macros_1ga4bd557993872c902c6e785cb8a606e81" prot="public" static="no">
+        <name>ROLLY_NO_DEBUG</name>
+        <briefdescription>
+<para>Flag defined if debug mode is <bold>disabled</bold>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Disables some additional checks, majority of contract functionality and some assertions. <simplesect kind="see"><para><ref refid="group__macros_1ga7529dd8806261ce6d42e74b6b8640645" kindref="member">ROLLY_DEBUG</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/definitions.h" line="48" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__macros_1ga145bb0d26bb2157f4dc7874127366986" prot="public" static="no">
+        <name>___noinline___</name>
+        <briefdescription>
+<para>Attribute macro intended for <bold>no inlining</bold> functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Disables inlining for the function.</para>
+<para>Example usage:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="group__macros_1ga145bb0d26bb2157f4dc7874127366986" kindref="member">___noinline___</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>func()<sp/>{<sp/>...<sp/>}<sp/></highlight><highlight class="comment">//<sp/>func<sp/>will<sp/>not<sp/>be<sp/>inlined</highlight></codeline>
+</programlisting> <simplesect kind="see"><para><ref refid="group__macros_1ga791216d5be3d4ee7f5b5b04f597a7fcb" kindref="member">___inline___</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/definitions.h" line="62" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__macros_1ga791216d5be3d4ee7f5b5b04f597a7fcb" prot="public" static="no">
+        <name>___inline___</name>
+        <briefdescription>
+<para>Attribute macro intended for <bold>force inlining</bold> functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Forces inlining for the function.</para>
+<para>Example usage:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="group__macros_1ga791216d5be3d4ee7f5b5b04f597a7fcb" kindref="member">___inline___</ref><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>func()<sp/>{<sp/>...<sp/>}<sp/></highlight><highlight class="comment">//<sp/>func<sp/>will<sp/>be<sp/>inlined,<sp/>if<sp/>possible</highlight></codeline>
+</programlisting></para>
+<para>In some cases, inlining will not be possible, for example, when code contains taking the address of a such function:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="group__macros_1ga791216d5be3d4ee7f5b5b04f597a7fcb" kindref="member">___inline___</ref><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>func()<sp/>{<sp/>...<sp/>}<sp/></highlight><highlight class="comment">//<sp/>func<sp/>will<sp/>not<sp/>be<sp/>inlined</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="namespacerolly_1_1concepts_1ab11672aee126fbc1d72aa1d291083b25" kindref="member">ptr</ref><sp/>=<sp/>&amp;func;</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">func();</highlight></codeline>
+</programlisting> <simplesect kind="see"><para><ref refid="group__macros_1ga145bb0d26bb2157f4dc7874127366986" kindref="member">___noinline___</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/definitions.h" line="85" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Library definitions and macros. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><xrefsect id="todo_1_todo000002"><xreftitle>Todo</xreftitle><xrefdescription><para>Add detailed description.</para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

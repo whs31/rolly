@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>include/rolly/bit.h file | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a>/</span><span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span>bit.h <span class="m-thin">file</span>
+        </h1>
+        <p><span></span></p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#define-members">Defines</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespacerolly.html" class="m-doc">rolly</a></dt>
+            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
+            <dt>namespace <a href="namespacerolly_1_1math.html" class="m-doc">rolly::math</a></dt>
+            <dd>Inline namespace for mathematical functions.</dd>
+          </dl>
+        </section>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="namespacerolly.html#a7db57d2dfe8e47b6753b16adee1ddcd0" class="m-doc">endian</a>: signed int { </span><span class="m-doc-wrap"><a href="#a7db57d2dfe8e47b6753b16adee1ddcd0aaae6635e044ac56046b2893a529b5114" class="m-doc">little</a> = 0,
+              <a href="#a7db57d2dfe8e47b6753b16adee1ddcd0ad861877da56b8b4ceb35c8cbfdf65bb4" class="m-doc">big</a> = 1,
+              <a href="#a7db57d2dfe8e47b6753b16adee1ddcd0a8e5f3adee38c8fccc13c1f3be0143796" class="m-doc">native</a> = little }</span>
+            </dt>
+            <dd>Endianness.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;std::integral T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly_1_1math.html#a2264e542a12579ea469c63ecdee1883d" class="m-dox">popcount</a>(</span><span class="m-dox-wrap">T x) -&gt; int <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the number of 1 bits in the value.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;std::integral T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly_1_1math.html#ac856a1cb702219f1d1035f0ce0945492" class="m-dox">has_single_bit</a>(</span><span class="m-dox-wrap">T x) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Checks if the value is an integral power of two.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;std::integral T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly_1_1math.html#a9f9d00ff5e0c49434b60e113d83be45e" class="m-dox">is_pow2</a>(</span><span class="m-dox-wrap">T x) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Checks if the value is an integral power of two.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;std::unsigned_integral T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly_1_1math.html#af2e45c6029de89f124eb5f3d415b19be" class="m-dox">bit_ceil</a>(</span><span class="m-dox-wrap">T x) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the next power of two of the value.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class To, class From&gt;</div>
+              <span class="m-dox-wrap-bumper"><a href="namespacerolly.html#a99bfcde93b3d479813abecbbc877a5c0" class="m-dox">bit_cast</a>(</span><span class="m-dox-wrap">From const&amp; src) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Casts value from one type to another by bit copy.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;concepts::num T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#a50b397be3a6964a1f150ceb189afabb5" class="m-dox">byteswap</a>(</span><span class="m-dox-wrap">T x) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Reverses the byte order of the value.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;concepts::num T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#a5764cccca8658c6880ab03364b4fcda5" class="m-dox">to_big_endian</a>(</span><span class="m-dox-wrap">T x) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Reverses the byte order of the value if the native endianness is little.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;concepts::num T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#a571786331157b178e73d2ac05d14751b" class="m-dox">to_little_endian</a>(</span><span class="m-dox-wrap">T x) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Reverses the byte order of the value if the native endianness is big.</dd>
+          </dl>
+        </section>
+        <section id="define-members">
+          <h2><a href="#define-members">Defines</a></h2>
+          <dl class="m-doc">
+            <dt id="ae52f9ab121b791b441455c2de191034e">
+              <span class="m-doc-wrap-bumper">#define <a href="#ae52f9ab121b791b441455c2de191034e" class="m-doc-self">__builtin_popcount</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a73644f3cbdf00887a94b718f6ef0054a">
+              <span class="m-doc-wrap-bumper">#define <a href="#a73644f3cbdf00887a94b718f6ef0054a" class="m-doc-self">___rolly_byteswap16</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9b6038988dad05d084ae36c96fcf0f88">
+              <span class="m-doc-wrap-bumper">#define <a href="#a9b6038988dad05d084ae36c96fcf0f88" class="m-doc-self">___rolly_byteswap32</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa23cf7e17f975f07efb2fd4bf3c20092">
+              <span class="m-doc-wrap-bumper">#define <a href="#aa23cf7e17f975f07efb2fd4bf3c20092" class="m-doc-self">___rolly_byteswap64</a></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

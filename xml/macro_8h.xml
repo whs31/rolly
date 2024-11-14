@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="macro_8h" kind="file" language="C++">
+    <compoundname>macro.h</compoundname>
+    <includes refid="global_8h" local="yes">../../global.h</includes>
+    <includedby refid="plugin_8h" local="yes">plugin.h</includedby>
+    <incdepgraph>
+      <node id="9">
+        <label>fmt/format.h</label>
+      </node>
+      <node id="15">
+        <label>limits</label>
+      </node>
+      <node id="13">
+        <label>cstdint</label>
+      </node>
+      <node id="8">
+        <label>global/version.h</label>
+        <link refid="version_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>charconv</label>
+      </node>
+      <node id="17">
+        <label>stdexcept</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>global/export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="20">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="10">
+        <label>version_definitions.h</label>
+        <link refid="version__definitions_8h_source"/>
+      </node>
+      <node id="1">
+        <label>macro.h</label>
+        <link refid="macro_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>char_utils.h</label>
+        <link refid="char__utils_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>semver.h</label>
+        <link refid="semver_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>string_view</label>
+      </node>
+      <node id="19">
+        <label>global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>optional</label>
+      </node>
+      <node id="14">
+        <label>iosfwd</label>
+      </node>
+      <node id="12">
+        <label>cstddef</label>
+      </node>
+      <node id="2">
+        <label>../../global.h</label>
+        <link refid="global_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>global/charconv.h</label>
+        <link refid="charconv_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>dll.h</label>
+        <link refid="dll_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>shared_library.h</label>
+        <link refid="shared__library_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>macro.h</label>
+        <link refid="macro_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>plugin_loader.h</label>
+        <link refid="plugin__loader_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>plugin.h</label>
+        <link refid="plugin_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="macro_8h_1a6ea63807656da0c8f848406f047a4cec" prot="public" static="no">
+        <name>___rolly_dll_proc_name___</name>
+        <initializer>__rolly_dll_plugin_entry_procedure</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/detail/macro.h" line="5" column="9" bodyfile="include/rolly/dll/detail/macro.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="macro_8h_1a82afd6a29e58cbbcfe0e876b8ed43cf6" prot="public" static="no">
+        <name>___rolly_dll_proc_name_string___</name>
+        <initializer>___rolly_stringify___(__rolly_dll_plugin_entry_procedure)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/detail/macro.h" line="6" column="9" bodyfile="include/rolly/dll/detail/macro.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="macro_8h_1ae6f7b2d1500706f724b98b9420ce919b" prot="public" static="no">
+        <name>___rolly_dll_api___</name>
+        <initializer>__declspec(dllexport)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/detail/macro.h" line="8" column="11" bodyfile="include/rolly/dll/detail/macro.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="macro_8h_1a315558e8b1d56dba9f5dafecb8bc2c3e" prot="public" static="no">
+        <name>DECLARE_PLUGIN</name>
+        <param><defname>ID</defname></param>
+        <initializer>extern &quot;C&quot; ___rolly_dll_api___ <ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">rolly::dll::plugin</ref>* ___rolly_dll_proc_name___ () { return reinterpret_cast&lt;<ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">rolly::dll::plugin</ref>*&gt;(new ID); }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/detail/macro.h" line="12" column="10" bodyfile="include/rolly/dll/detail/macro.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/dll/detail/macro.h"/>
+  </compounddef>
+</doxygen>

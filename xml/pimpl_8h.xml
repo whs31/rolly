@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="pimpl_8h" kind="file" language="C++">
+    <compoundname>pimpl.h</compoundname>
+    <includes refid="propagate__const_8h" local="yes">../memory/propagate_const.h</includes>
+    <includes refid="box_8h" local="yes">../memory/box.h</includes>
+    <includedby refid="traits_8h" local="yes">traits.h</includedby>
+    <incdepgraph>
+      <node id="18">
+        <label>format/ostream_formatter.h</label>
+        <link refid="ostream__formatter_8h_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>functional</label>
+      </node>
+      <node id="16">
+        <label>fmt/format.h</label>
+      </node>
+      <node id="23">
+        <label>cstdint</label>
+      </node>
+      <node id="13">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>pimpl.h</label>
+        <link refid="pimpl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="8">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="2">
+        <label>../memory/propagate_const.h</label>
+        <link refid="propagate__const_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>string_view</label>
+      </node>
+      <node id="6">
+        <label>../global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>optional</label>
+      </node>
+      <node id="9">
+        <label>../memory/box.h</label>
+        <link refid="box_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>utility</label>
+      </node>
+      <node id="19">
+        <label>sstream</label>
+      </node>
+      <node id="20">
+        <label>iosfwd</label>
+      </node>
+      <node id="22">
+        <label>cstddef</label>
+      </node>
+      <node id="4">
+        <label>../concepts/ptr.h</label>
+        <link refid="ptr_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>source_location.h</label>
+        <link refid="source__location_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>../traits/noncopyable.h</label>
+        <link refid="noncopyable_8h_source"/>
+      </node>
+      <node id="12">
+        <label>../contracts.h</label>
+        <link refid="contracts_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>type_traits</label>
+      </node>
+      <node id="10">
+        <label>memory</label>
+      </node>
+      <node id="21">
+        <label>types/stdint.h</label>
+        <link refid="stdint_8h_source"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>traits.h</label>
+        <link refid="traits_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>pimpl.h</label>
+        <link refid="pimpl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="pimpl_8h_1a9c6048a4c390e63349e43ea83ed07c12" prot="public" static="no">
+        <name>DECLARE_PRIVATE</name>
+        <param><defname>classname</defname></param>
+        <initializer>  struct classname##Private;                                                                \
+  <ref refid="namespacerolly_1a454d33bccebd3c6eba3dd0c57a547365" kindref="member">rolly::pimpl</ref>&lt;classname##Private&gt; m_d;                                                     \
+  [[nodiscard]] inline classname##Private const&amp; d() const noexcept { return *this-&gt;m_d; }  \
+  [[nodiscard]] inline classname##Private&amp; d() noexcept { return *this-&gt;m_d; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/traits/pimpl.h" line="40" column="9" bodyfile="include/rolly/traits/pimpl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pimpl_8h_1a6263117fc8365a3b88cdd34c9a2659fb" prot="public" static="no">
+        <name>DECLARE_PRIVATE_AS</name>
+        <param><defname>classname</defname></param>
+        <initializer>  <ref refid="namespacerolly_1a454d33bccebd3c6eba3dd0c57a547365" kindref="member">rolly::pimpl</ref>&lt;classname&gt; m_d;                                                              \
+  [[nodiscard]] inline classname const&amp; d() const noexcept { return *this-&gt;m_d; }           \
+  [[nodiscard]] inline classname&amp; d() noexcept { return *this-&gt;m_d; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/traits/pimpl.h" line="46" column="9" bodyfile="include/rolly/traits/pimpl.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacerolly_1a454d33bccebd3c6eba3dd0c57a547365" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>propagate_const&lt; box&lt; T &gt; &gt;</type>
+        <definition>using pimpl =  propagate_const&lt;box&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>pimpl</name>
+        <briefdescription>
+<para>Pointer-to-implementation pattern trait. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows to use <bold>Pimpl</bold> pattern in custom types and classes.</para>
+<para>Example declaration:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">TestPimpl<sp/>:<sp/><ref refid="structrolly_1_1pin" kindref="compound">rolly::pin</ref></highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>TestPimpl()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>add(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>-&gt;<sp/>int;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">impl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classrolly_1_1propagate__const" kindref="compound">rolly::pimpl&lt;struct impl&gt;</ref><sp/>impl_;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">TestPimpl::impl</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>add(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a<sp/>+<sp/>b;<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TestPimpl::add(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;impl_-&gt;add(a,<sp/>b);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to implement. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/traits/pimpl.h" line="37" column="3" bodyfile="include/rolly/traits/pimpl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/traits/pimpl.h"/>
+  </compounddef>
+</doxygen>

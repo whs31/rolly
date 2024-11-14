@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>rolly::dll::plugin_loader class | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacerolly_1_1dll.html">dll</a>::<wbr/></span>plugin_loader <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="plugin__loader_8h.html">&lt;include/rolly/dll/plugin_loader.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper">static auto <a href="#aa5ddc06c4d3be94b529d49e9b8c0d19e" class="m-dox">native_extension</a>(</span><span class="m-dox-wrap">) -&gt; std::string_view <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns native extension for dynamically loaded libraries on this platform.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a13eef6db62b0a7f43d496c2fcfe5f650" class="m-dox">plugin_loader</a>(</span><span class="m-dox-wrap">std::any init_data) <span class="m-label m-flat m-info">explicit</span> </span>
+            </dt>
+            <dd>Constructs new <a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a> instance.</dd>
+            <dt id="a402730d8e6410c6c869868c61d01d171">
+              <span class="m-dox-wrap-bumper"><a href="#a402730d8e6410c6c869868c61d01d171" class="m-dox-self" name="a402730d8e6410c6c869868c61d01d171">plugin_loader</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a> const&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad639cda89295322b087a832a02cb2b00">
+              <span class="m-dox-wrap-bumper"><a href="#ad639cda89295322b087a832a02cb2b00" class="m-dox-self" name="ad639cda89295322b087a832a02cb2b00">plugin_loader</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a>&amp;&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a087acaca2999ce50760af2a3e9fc0c6f">
+              <span class="m-dox-wrap-bumper"><a href="#a087acaca2999ce50760af2a3e9fc0c6f" class="m-dox-self" name="a087acaca2999ce50760af2a3e9fc0c6f">~plugin_loader</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a9b2afce1924f8c6c7c8621249747f12d">
+              <span class="m-dox-wrap-bumper">auto <a href="#a9b2afce1924f8c6c7c8621249747f12d" class="m-dox-self" name="a9b2afce1924f8c6c7c8621249747f12d">operator=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a> const&amp;) -&gt; <a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a>&amp; <span class="m-label m-flat m-danger">deleted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2da6d8311065fc4f2353b41a989d479c">
+              <span class="m-dox-wrap-bumper">auto <a href="#a2da6d8311065fc4f2353b41a989d479c" class="m-dox-self" name="a2da6d8311065fc4f2353b41a989d479c">operator=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a>&amp;&amp;) -&gt; <a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a>&amp; <span class="m-label m-flat m-danger">deleted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a042cb25dc22561bcc289d2364bf6b4d8" class="m-dox">load</a>(</span><span class="m-dox-wrap">std::string_view name) -&gt; result&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>*&gt;</span>
+            </dt>
+            <dd>Loads a plugin by name.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#aebf4e0d6556ef1203b333d3878517887" class="m-dox">load</a>(</span><span class="m-dox-wrap">std::filesystem::path const&amp; path,
+              std::string_view name) -&gt; result&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>*&gt;</span>
+            </dt>
+            <dd>Loads a plugin by name and path.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a929e00117a988f8c03074599eae5316a" class="m-dox">load_all</a>(</span><span class="m-dox-wrap">std::filesystem::path const&amp; path,
+              std::string_view extension = <a href="classrolly_1_1dll_1_1plugin__loader.html#aa5ddc06c4d3be94b529d49e9b8c0d19e" class="m-doc">plugin_loader::<wbr />native_extension</a>()) -&gt; result</span>
+            </dt>
+            <dd>Loads all possible plugins in a directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#add920d5649094e721c145343b78c5271" class="m-dox">plugins</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>&gt;&gt; const &amp;</span>
+            </dt>
+            <dd>Returns the internal vector of loaded plugins.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a5197d0b7d67fa62a08cd3807ada21483" class="m-dox">plugins</a>(</span><span class="m-dox-wrap">) -&gt; <a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>&gt;&gt;&amp;</span>
+            </dt>
+            <dd>Returns a mutable reference to the internal vector of loaded plugins.</dd>
+            <dt id="a4b7c973e4a2da2f77eb26db2a3fc61bc">
+              <span class="m-dox-wrap-bumper">auto <a href="#a4b7c973e4a2da2f77eb26db2a3fc61bc" class="m-dox-self" name="a4b7c973e4a2da2f77eb26db2a3fc61bc">is_loaded</a>(</span><span class="m-dox-wrap">std::string_view name) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aff3cd01b8690932611562f23b6ac06e7">
+              <span class="m-dox-wrap-bumper">auto <a href="#aff3cd01b8690932611562f23b6ac06e7" class="m-dox-self" name="aff3cd01b8690932611562f23b6ac06e7">is_loaded</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; uuid) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a33015fe51a91f649432b513bbf968cff">
+              <span class="m-dox-wrap-bumper">auto <a href="#a33015fe51a91f649432b513bbf968cff" class="m-dox-self" name="a33015fe51a91f649432b513bbf968cff">loaded_count</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="namespacerolly_1_1types.html#ac47ac2e28dd2cb38fbf05ce10f810407" class="m-doc">usize</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0ef168a3db5a920b1c9784a144be74d0">
+              <span class="m-dox-wrap-bumper">auto <a href="#a0ef168a3db5a920b1c9784a144be74d0" class="m-dox-self" name="a0ef168a3db5a920b1c9784a144be74d0">operator[]</a>(</span><span class="m-dox-wrap">std::string_view name) const -&gt; <a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a563f7a5d2614222aa2c8bbc0c86499f6">
+              <span class="m-dox-wrap-bumper">auto <a href="#a563f7a5d2614222aa2c8bbc0c86499f6" class="m-dox-self" name="a563f7a5d2614222aa2c8bbc0c86499f6">operator[]</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; uuid) const -&gt; <a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#ab8b37e40341d625d21a8e0f4d9fe4bcb" class="m-dox">libraries</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="http://en.cppreference.com/w/cpp/container/unordered_map.html" class="m-doc-external">std::<wbr />unordered_map</a>&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>, <a href="classrolly_1_1dll_1_1shared__library.html" class="m-doc">shared_<wbr />library</a>&gt; const &amp;</span>
+            </dt>
+            <dd>Returns the internal map of loaded libraries.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a9ad17968ce6970294a52ce19058d3a86" class="m-dox">libraries</a>(</span><span class="m-dox-wrap">) -&gt; <a href="http://en.cppreference.com/w/cpp/container/unordered_map.html" class="m-doc-external">std::<wbr />unordered_map</a>&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>, <a href="classrolly_1_1dll_1_1shared__library.html" class="m-doc">shared_<wbr />library</a>&gt;&amp;</span>
+            </dt>
+            <dd>Returns a mutable reference to the internal map of loaded libraries.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a8f7748dedbb8beb54decf63f462dc3a8" class="m-dox">query_interface_by_type</a>(</span><span class="m-dox-wrap">) const -&gt; std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
+            </dt>
+            <dd>Queries plugin interface by it&#x27;s type via RTTI.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a3e3f5ed68afe55f658cf58b604224925" class="m-dox">query_interface</a>(</span><span class="m-dox-wrap">std::string_view interface_name) const -&gt; std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
+            </dt>
+            <dd>Queries plugin interface by it&#x27;s internal name.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#af8eca129abedfe379d04ade437f5a53e" class="m-dox">query_interface</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; uuid) const -&gt; std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
+            </dt>
+            <dd>Queries plugin interface by it&#x27;s unique ID (UUID).</dd>
+            <dt id="a7a425be3cb615b7c8009d27a87d0fa29">
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a7a425be3cb615b7c8009d27a87d0fa29" class="m-dox-self" name="a7a425be3cb615b7c8009d27a87d0fa29">query_by</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/utility/functional/function.html" class="m-doc-external">std::<wbr />function</a>&lt;bool(<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a> const&amp;)&gt; const&amp; predicate) const -&gt; std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="add8e0fe685ab80b2cab50ab8ac09bb5d">
+              <span class="m-dox-wrap-bumper">auto <a href="#add8e0fe685ab80b2cab50ab8ac09bb5d" class="m-dox-self" name="add8e0fe685ab80b2cab50ab8ac09bb5d">query_raw</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/utility/functional/function.html" class="m-doc-external">std::<wbr />function</a>&lt;bool(<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a> const&amp;)&gt; const&amp; predicate) const -&gt; <a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aa5ddc06c4d3be94b529d49e9b8c0d19e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static std::string_view rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa5ddc06c4d3be94b529d49e9b8c0d19e" class="m-doc-self">native_extension</a>(</span><span class="m-doc-wrap">) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns native extension for dynamically loaded libraries on this platform.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Native extension without a prefix dot.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns <code>dll</code>, <code>so</code> on Linux.</p>
+          </div></section>
+          <section class="m-doc-details" id="a13eef6db62b0a7f43d496c2fcfe5f650"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a13eef6db62b0a7f43d496c2fcfe5f650" class="m-doc-self">plugin_loader</a>(</span><span class="m-doc-wrap">std::any init_data) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <p>Constructs new <a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a> instance.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">init_data</td>
+                  <td>Data, which will be passed into plugins during initialization.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a042cb25dc22561bcc289d2364bf6b4d8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">result&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>*&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a042cb25dc22561bcc289d2364bf6b4d8" class="m-doc-self">load</a>(</span><span class="m-doc-wrap">std::string_view name)</span></span>
+            </h3>
+            <p>Loads a plugin by name.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">name</td>
+                  <td>Name of the plugin to load.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Pointer to the loaded plugin or error if loading fails.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aebf4e0d6556ef1203b333d3878517887"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">result&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>*&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aebf4e0d6556ef1203b333d3878517887" class="m-doc-self">load</a>(</span><span class="m-doc-wrap">std::filesystem::path const&amp; path,
+              std::string_view name)</span></span>
+            </h3>
+            <p>Loads a plugin by name and path.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">path</td>
+                  <td>Path to directory where plugin file is located.</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Name of the plugin to load.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Pointer to the loaded plugin or error if loading fails.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a929e00117a988f8c03074599eae5316a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">result rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a929e00117a988f8c03074599eae5316a" class="m-doc-self">load_all</a>(</span><span class="m-doc-wrap">std::filesystem::path const&amp; path,
+              std::string_view extension = <a href="classrolly_1_1dll_1_1plugin__loader.html#aa5ddc06c4d3be94b529d49e9b8c0d19e" class="m-doc">plugin_loader::<wbr />native_extension</a>())</span></span>
+            </h3>
+            <p>Loads all possible plugins in a directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">path</td>
+                  <td>Path to directory where plugin files are located.</td>
+                </tr>
+                <tr>
+                  <td>extension</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Returns error, if no plugins are located in provided directory.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="add920d5649094e721c145343b78c5271"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>&gt;&gt; const &amp; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#add920d5649094e721c145343b78c5271" class="m-doc-self">plugins</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the internal vector of loaded plugins.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Internal vector of loaded plugins.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5197d0b7d67fa62a08cd3807ada21483"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>&gt;&gt;&amp; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5197d0b7d67fa62a08cd3807ada21483" class="m-doc-self">plugins</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a mutable reference to the internal vector of loaded plugins.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Mutable reference to the internal vector of loaded plugins.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab8b37e40341d625d21a8e0f4d9fe4bcb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/unordered_map.html" class="m-doc-external">std::<wbr />unordered_map</a>&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>, <a href="classrolly_1_1dll_1_1shared__library.html" class="m-doc">shared_<wbr />library</a>&gt; const &amp; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab8b37e40341d625d21a8e0f4d9fe4bcb" class="m-doc-self">libraries</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the internal map of loaded libraries.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Internal map of loaded libraries.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9ad17968ce6970294a52ce19058d3a86"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/unordered_map.html" class="m-doc-external">std::<wbr />unordered_map</a>&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>, <a href="classrolly_1_1dll_1_1shared__library.html" class="m-doc">shared_<wbr />library</a>&gt;&amp; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9ad17968ce6970294a52ce19058d3a86" class="m-doc-self">libraries</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a mutable reference to the internal map of loaded libraries.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Mutable reference to the internal map of loaded libraries.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8f7748dedbb8beb54decf63f462dc3a8"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8f7748dedbb8beb54decf63f462dc3a8" class="m-doc-self">query_interface_by_type</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Queries plugin interface by it&#x27;s type via RTTI.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Interface type.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to the retrieved interface or none when no such interface is loaded.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Essentially iterates over all loaded plugins and tries to <code>dynamic_cast</code> their pointer to the requested interface.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This function can be slow, especially when many plugins are loaded. Much better solution will be to query by internal plugin interface name using method <a href="classrolly_1_1dll_1_1plugin__loader.html#a3e3f5ed68afe55f658cf58b604224925" class="m-doc">query_<wbr />interface</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a3e3f5ed68afe55f658cf58b604224925"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3e3f5ed68afe55f658cf58b604224925" class="m-doc-self">query_interface</a>(</span><span class="m-doc-wrap">std::string_view interface_name) const</span></span>
+            </h3>
+            <p>Queries plugin interface by it&#x27;s internal name.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Interface type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>interface_name</td>
+                  <td>Internal plugin interface name. See <a href="classrolly_1_1dll_1_1plugin.html#a782a8f03cca96caa964b019fdf81da84" class="m-doc">rolly::<wbr />dll::<wbr />plugin::<wbr />name</a></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to the retrieved interface or none when no such interface is loaded.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af8eca129abedfe379d04ade437f5a53e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8eca129abedfe379d04ade437f5a53e" class="m-doc-self">query_interface</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; uuid) const</span></span>
+            </h3>
+            <p>Queries plugin interface by it&#x27;s unique ID (UUID).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Interface type.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to the retrieved interface or none when no such interface is loaded.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

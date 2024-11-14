@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrolly_1_1io_1_1filedevice" kind="class" language="C++" prot="public">
+    <compoundname>rolly::io::filedevice</compoundname>
+    <derivedcompoundref refid="classrolly_1_1configuration__file" prot="public" virt="non-virtual">configuration_file&lt; F, T &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classrolly_1_1savefile" prot="public" virt="non-virtual">savefile&lt; F, T &gt;</derivedcompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classrolly_1_1io_1_1filedevice_1a5963243bd4dde422ba389da63fb2cab1" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto write_permissions</definition>
+        <argsstring></argsstring>
+        <name>write_permissions</name>
+        <initializer>= std::filesystem::perms::owner_read |
+                                                std::filesystem::perms::owner_write |
+                                                std::filesystem::perms::group_read |
+                                                std::filesystem::perms::others_read |
+                                                std::filesystem::perms::others_exec |
+                                                std::filesystem::perms::owner_all | std::filesystem::perms::group_all</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="17" column="29" bodyfile="include/rolly/io/filedevice.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrolly_1_1io_1_1filedevice_1ae085158a530fc969b1c42c36f43c08d5" prot="private" static="no" mutable="no">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path path_</definition>
+        <argsstring></argsstring>
+        <name>path_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="94" column="29" bodyfile="include/rolly/io/filedevice.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1ac598adefc92873c5eee90bc1d4b858dc" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>filedevice</definition>
+        <argsstring>(std::filesystem::path path)</argsstring>
+        <name>filedevice</name>
+        <param>
+          <type>std::filesystem::path</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="24" column="16" bodyfile="include/rolly/io/filedevice.h" bodystart="24" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1a552d7f392bb1a0fa04a64f737962f1b2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::filesystem::path const  &amp;</type>
+        <definition>std::filesystem::path const&amp; path</definition>
+        <argsstring>() const</argsstring>
+        <name>path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="27" column="36" bodyfile="include/rolly/io/filedevice.h" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1abdd96853741d33edcb6d31cae7d30440" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path suffixed_path</definition>
+        <argsstring>(std::string_view suffix) const</argsstring>
+        <name>suffixed_path</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>suffix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="29" column="30" bodyfile="include/rolly/io/filedevice.h" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1aa7d8623150e6d43ab4bf7493aa8cbc1a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool exists</definition>
+        <argsstring>() const</argsstring>
+        <name>exists</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="34" column="13" bodyfile="include/rolly/io/filedevice.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1a9679f146b538754acbf087378a3ddaad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool is_regular_file</definition>
+        <argsstring>() const</argsstring>
+        <name>is_regular_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="36" column="13" bodyfile="include/rolly/io/filedevice.h" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1abe8e2e9db3d4ce712d36196439e748f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string read</definition>
+        <argsstring>() const</argsstring>
+        <name>read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="38" column="20" bodyfile="include/rolly/io/filedevice.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1a0d339d4d2a65c872eb96721d4d9fc5de" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>result&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
+        <definition>result&lt;std::string&gt; try_read</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>try_read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="40" column="15" bodyfile="include/rolly/io/filedevice.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1a50fec7e7d10e5475e0ccf14adbaf7db0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void write</definition>
+        <argsstring>(std::string_view content) const noexcept(false)</argsstring>
+        <name>write</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="42" column="12" bodyfile="include/rolly/io/filedevice.h" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1a3c3bc25a16c19968d1381cb89df6458b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>result</type>
+        <definition>result try_write</definition>
+        <argsstring>(std::string_view content) const noexcept</argsstring>
+        <name>try_write</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="44" column="9" bodyfile="include/rolly/io/filedevice.h" bodystart="44" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1a0c8308e2ccfa43c99a02dfb2cd6089ef" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>static std::string read_from</definition>
+        <argsstring>(std::filesystem::path const &amp;path)</argsstring>
+        <name>read_from</name>
+        <param>
+          <type>std::filesystem::path const &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="48" column="27" bodyfile="include/rolly/io/filedevice.h" bodystart="48" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1a8007f9e387b60936bb962035c645c430" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>result&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
+        <definition>static result&lt;std::string&gt; try_read_from</definition>
+        <argsstring>(std::filesystem::path const &amp;path) noexcept</argsstring>
+        <name>try_read_from</name>
+        <param>
+          <type>std::filesystem::path const &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="55" column="22" bodyfile="include/rolly/io/filedevice.h" bodystart="55" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1a0216cd840232d838604b8f3f859eedde" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void write_to</definition>
+        <argsstring>(std::filesystem::path const &amp;path, std::string_view content) noexcept(false)</argsstring>
+        <name>write_to</name>
+        <param>
+          <type>std::filesystem::path const &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="62" column="19" bodyfile="include/rolly/io/filedevice.h" bodystart="62" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1io_1_1filedevice_1a56105d753006a32aa832a7ad76390f01" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>result</type>
+        <definition>static result try_write_to</definition>
+        <argsstring>(std::filesystem::path const &amp;path, std::string_view content) noexcept</argsstring>
+        <name>try_write_to</name>
+        <param>
+          <type>std::filesystem::path const &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/io/filedevice.h" line="77" column="16" bodyfile="include/rolly/io/filedevice.h" bodystart="77" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>filedevice</label>
+        <link refid="classrolly_1_1io_1_1filedevice"/>
+      </node>
+      <node id="3">
+        <label>savefile&lt; F, T &gt;</label>
+        <link refid="classrolly_1_1savefile"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>configuration_file&lt; F, T &gt;</label>
+        <link refid="classrolly_1_1configuration__file"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/rolly/io/filedevice.h" line="15" column="21" bodyfile="include/rolly/io/filedevice.h" bodystart="15" bodyend="95"/>
+    <listofallmembers>
+      <member refid="classrolly_1_1io_1_1filedevice_1aa7d8623150e6d43ab4bf7493aa8cbc1a" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>exists</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1ac598adefc92873c5eee90bc1d4b858dc" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>filedevice</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a9679f146b538754acbf087378a3ddaad" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>is_regular_file</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a552d7f392bb1a0fa04a64f737962f1b2" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>path</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1ae085158a530fc969b1c42c36f43c08d5" prot="private" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>path_</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1abe8e2e9db3d4ce712d36196439e748f7" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>read</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a0c8308e2ccfa43c99a02dfb2cd6089ef" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>read_from</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1abdd96853741d33edcb6d31cae7d30440" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>suffixed_path</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a0d339d4d2a65c872eb96721d4d9fc5de" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>try_read</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a8007f9e387b60936bb962035c645c430" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>try_read_from</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a3c3bc25a16c19968d1381cb89df6458b" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>try_write</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a56105d753006a32aa832a7ad76390f01" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>try_write_to</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a50fec7e7d10e5475e0ccf14adbaf7db0" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>write</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a5963243bd4dde422ba389da63fb2cab1" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>write_permissions</name></member>
+      <member refid="classrolly_1_1io_1_1filedevice_1a0216cd840232d838604b8f3f859eedde" prot="public" virt="non-virtual"><scope>rolly::io::filedevice</scope><name>write_to</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

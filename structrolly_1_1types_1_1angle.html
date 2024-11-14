@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>rolly::types::angle struct | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="angle_8h.html">&lt;include/rolly/types/angle.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T = <a href="namespacerolly_1_1types.html#ad34d88453d37b65a09797bad37f2f527" class="m-doc">f32</a>&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacerolly_1_1types.html">types</a>::<wbr/></span>angle <span class="m-thin">struct</span>
+        </h1>
+        <p>Newtype describing an angle.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>Number type. Must satisfy concept <code><a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">rolly::<wbr />concepts::<wbr />num</a></code>. Default is <code>f32</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#friends">Friends</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>Stores an angle in radians.</p>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a107b40f8f53dbbb17f9224074426b8e6">
+              using <a href="#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc-self">number_type</a> = T
+            </dt>
+            <dd>Underlying number type.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper">static auto <a href="#a5470198b343db477861d55f3b089149f" class="m-dox">from_radians</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> radians) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an angle from radians.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">static auto <a href="#a485ca2070340a13e5e78cb687dbc1465" class="m-dox">from_degrees</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> degrees) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an angle from degrees.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">static auto <a href="#a5c55f8db6f6cb4c73858af1e28f768e8" class="m-dox">from</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> value,
+              <a href="namespacerolly_1_1types.html#a3f652efe88945dad9f5db87673b0909e" class="m-doc">angle_<wbr />unit</a> u) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an angle from another unit.</dd>
+            <dt id="afa7805bec73a51bf1c0256515e28ee56">
+              <span class="m-dox-wrap-bumper">static auto <a href="#afa7805bec73a51bf1c0256515e28ee56" class="m-dox-self" name="afa7805bec73a51bf1c0256515e28ee56">zero</a>(</span><span class="m-dox-wrap">) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an zero angle.</dd>
+            <dt id="a206a627d4bbd55113b5eaac5ae4771fb">
+              <span class="m-dox-wrap-bumper">static auto <a href="#a206a627d4bbd55113b5eaac5ae4771fb" class="m-dox-self" name="a206a627d4bbd55113b5eaac5ae4771fb">pi</a>(</span><span class="m-dox-wrap">) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an angle with value <code>pi</code>.</dd>
+            <dt id="a99148853695ae53641609f542e18e4aa">
+              <span class="m-dox-wrap-bumper">static auto <a href="#a99148853695ae53641609f542e18e4aa" class="m-dox-self" name="a99148853695ae53641609f542e18e4aa">two_pi</a>(</span><span class="m-dox-wrap">) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an angle with value <code>2pi</code>.</dd>
+            <dt id="ab67f404883d5c94e4f2cd95ab3566e5a">
+              <span class="m-dox-wrap-bumper">static auto <a href="#ab67f404883d5c94e4f2cd95ab3566e5a" class="m-dox-self" name="ab67f404883d5c94e4f2cd95ab3566e5a">half_pi</a>(</span><span class="m-dox-wrap">) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an angle with value <code>pi/2</code>.</dd>
+            <dt id="a4ae3c43c7e9c16d33bf52172f1f898db">
+              <span class="m-dox-wrap-bumper">static auto <a href="#a4ae3c43c7e9c16d33bf52172f1f898db" class="m-dox-self" name="a4ae3c43c7e9c16d33bf52172f1f898db">third_pi</a>(</span><span class="m-dox-wrap">) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an angle with value <code>pi/3</code>.</dd>
+            <dt id="a4eabbb298d080362e01c8ba722984785">
+              <span class="m-dox-wrap-bumper">static auto <a href="#a4eabbb298d080362e01c8ba722984785" class="m-dox-self" name="a4eabbb298d080362e01c8ba722984785">quarter_pi</a>(</span><span class="m-dox-wrap">) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an angle with value <code>pi/4</code>.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a0b3265454614c3cb2c563ec74dfeb851" class="m-dox">angle</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an empty angle.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a33f20a9549cf6a2b79817fde3034aa33" class="m-dox">angle</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> const value) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs an angle from a numeric value.</dd>
+            <dt id="a62ac8ec6740b5914e8f9226c7714dbe6">
+              <span class="m-dox-wrap-bumper"><a href="#a62ac8ec6740b5914e8f9226c7714dbe6" class="m-dox-self" name="a62ac8ec6740b5914e8f9226c7714dbe6">~angle</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd>Default destructor.</dd>
+            <dt id="a2ddf4eb45f66fc53a35a92fec3fd22b9">
+              <span class="m-dox-wrap-bumper"><a href="#a2ddf4eb45f66fc53a35a92fec3fd22b9" class="m-dox-self" name="a2ddf4eb45f66fc53a35a92fec3fd22b9">angle</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp;) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Copy constructor.</dd>
+            <dt id="a908e7bc2c2d8e9a26301ff68ddbb023c">
+              <span class="m-dox-wrap-bumper"><a href="#a908e7bc2c2d8e9a26301ff68ddbb023c" class="m-dox-self" name="a908e7bc2c2d8e9a26301ff68ddbb023c">angle</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp;&amp;) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Move constructor.</dd>
+            <dt id="ad0ed9dded3dc4405713f0b9270930a92">
+              <span class="m-dox-wrap-bumper"><a href="#ad0ed9dded3dc4405713f0b9270930a92" class="m-dox-self" name="ad0ed9dded3dc4405713f0b9270930a92">operator bool</a>(</span><span class="m-dox-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>true</code> if underlying value is not <code>0</code>.</dd>
+            <dt id="a11f5e5b2d5a79d40ca187cb76f1c5fff">
+              <span class="m-dox-wrap-bumper"><a href="#a11f5e5b2d5a79d40ca187cb76f1c5fff" class="m-dox-self" name="a11f5e5b2d5a79d40ca187cb76f1c5fff">operator number_type</a>(</span><span class="m-dox-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the underlying value as <code>number_type</code>.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a02bfe50e08aad2328c0836a4c362ceb7">
+              <span class="m-dox-wrap-bumper">auto <a href="#a02bfe50e08aad2328c0836a4c362ceb7" class="m-dox-self" name="a02bfe50e08aad2328c0836a4c362ceb7">operator=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp;) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Copy assignment.</dd>
+            <dt id="ade8996f319db17f70ad5ce969e840558">
+              <span class="m-dox-wrap-bumper">auto <a href="#ade8996f319db17f70ad5ce969e840558" class="m-dox-self" name="ade8996f319db17f70ad5ce969e840558">operator=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp;&amp;) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Move assignment.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#aac993ecccd3d88aafefb6b8e3caa1dee" class="m-dox">to_string</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a></span>
+            </dt>
+            <dd>Returns string representation of the angle.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a88fdf66be062767e4090d10a7d1de681" class="m-dox">in</a>(</span><span class="m-dox-wrap"><a href="namespacerolly_1_1types.html#a3f652efe88945dad9f5db87673b0909e" class="m-doc">angle_<wbr />unit</a> u) const -&gt; <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the angle in the given unit.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a4d596e0bb6f37199a669740aab6256ac" class="m-dox">radians</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the angle in radians.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a6133257e807ce7986b58d501bc09d734" class="m-dox">degrees</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the angle in degrees.</dd>
+            <dt id="aa0e06aa96b91570c0bf5a341e27a19b5">
+              <span class="m-dox-wrap-bumper">auto <a href="#aa0e06aa96b91570c0bf5a341e27a19b5" class="m-dox-self" name="aa0e06aa96b91570c0bf5a341e27a19b5">positive</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns this angle as number in range <code>[0, 2pi)</code>.</dd>
+            <dt id="a65712cf7f7c8341f6ffb6f3604573e6d">
+              <span class="m-dox-wrap-bumper">auto <a href="#a65712cf7f7c8341f6ffb6f3604573e6d" class="m-dox-self" name="a65712cf7f7c8341f6ffb6f3604573e6d">signed_</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns this angle as number in range <code>[-pi, pi)</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#ad96ebdfffee4655081b053b19084c3d9" class="m-dox">angle_to</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the shortest signed angle between two angles.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#ab50fe362d80e4a70a8c67fc749d1a0fe" class="m-dox">lerp</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other,
+              T t) const -&gt; <a href="group__macros.html#ga0c9fde80eb6d7ab75a391dc178ef18b7" class="m-doc">_<wbr />_<wbr />_<wbr />constexpr_<wbr />_<wbr />_<wbr /></a> <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a></span>
+            </dt>
+            <dd>Linear interpolation between two angles, using the shortest path.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#ac3ca04e925cf9e490eadfa612dcb2810" class="m-dox">sin_cos</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="http://en.cppreference.com/w/cpp/utility/pair.html" class="m-doc-external">std::<wbr />pair</a>&lt;T, T&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the sine and cosine of the angle.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ab4296efb618a5d97bd8779ec48fa7f56" class="m-dox">cast</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&lt;U&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts the angle to another numeric type.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a524546a00e65da4c0a58a20d7913a593" class="m-dox">value</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the underlying numeric scalar value.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a7b1e681365ca2379776ba38496c8d9e1" class="m-dox">as</a>(</span><span class="m-dox-wrap">) const -&gt; U <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns this numeric newtype as number in another numeric representation.</dd>
+            <dt id="a4eadd631845fcfea8cf526a58403cf9b">
+              <span class="m-dox-wrap-bumper">auto <a href="#a4eadd631845fcfea8cf526a58403cf9b" class="m-dox-self" name="a4eadd631845fcfea8cf526a58403cf9b">as_f32</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="namespacerolly_1_1types.html#ad34d88453d37b65a09797bad37f2f527" class="m-doc">f32</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns this angle as 32-bit floating-point number.</dd>
+            <dt id="a4f3d1e4786e042fac8b82314a89439ce">
+              <span class="m-dox-wrap-bumper">auto <a href="#a4f3d1e4786e042fac8b82314a89439ce" class="m-dox-self" name="a4f3d1e4786e042fac8b82314a89439ce">as_f64</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="namespacerolly_1_1types.html#abc2f107791bd7c1d49ecf0f168c085a3" class="m-doc">f64</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns this angle as 64-bit floating-point number.</dd>
+            <dt id="a287bb4c3be885ca0f758ecfa8ad27682">
+              <span class="m-dox-wrap-bumper">auto <a href="#a287bb4c3be885ca0f758ecfa8ad27682" class="m-dox-self" name="a287bb4c3be885ca0f758ecfa8ad27682">is_finite</a>(</span><span class="m-dox-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd>Returns true if this angle is a finite number.</dd>
+            <dt id="a6affa04d1ef290bb34a5b569ca8798a5">
+              <span class="m-dox-wrap-bumper">auto <a href="#a6affa04d1ef290bb34a5b569ca8798a5" class="m-dox-self" name="a6affa04d1ef290bb34a5b569ca8798a5">sin</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="group__macros.html#ga0c9fde80eb6d7ab75a391dc178ef18b7" class="m-doc">_<wbr />_<wbr />_<wbr />constexpr_<wbr />_<wbr />_<wbr /></a> <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a></span>
+            </dt>
+            <dd>Returns the sine of this angle.</dd>
+            <dt id="ab81f96b5cb802f028c83868875fa42c3">
+              <span class="m-dox-wrap-bumper">auto <a href="#ab81f96b5cb802f028c83868875fa42c3" class="m-dox-self" name="ab81f96b5cb802f028c83868875fa42c3">cos</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="group__macros.html#ga0c9fde80eb6d7ab75a391dc178ef18b7" class="m-doc">_<wbr />_<wbr />_<wbr />constexpr_<wbr />_<wbr />_<wbr /></a> <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a></span>
+            </dt>
+            <dd>Returns the cosine of this angle.</dd>
+            <dt id="a0c7665e88eb32274796d8cefb28b1c30">
+              <span class="m-dox-wrap-bumper">auto <a href="#a0c7665e88eb32274796d8cefb28b1c30" class="m-dox-self" name="a0c7665e88eb32274796d8cefb28b1c30">tan</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="group__macros.html#ga0c9fde80eb6d7ab75a391dc178ef18b7" class="m-doc">_<wbr />_<wbr />_<wbr />constexpr_<wbr />_<wbr />_<wbr /></a> <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a></span>
+            </dt>
+            <dd>Returns the tangent of this angle.</dd>
+            <dt id="aa75b20c064709be7f48b79fbe1135fc2">
+              <span class="m-dox-wrap-bumper">auto <a href="#aa75b20c064709be7f48b79fbe1135fc2" class="m-dox-self" name="aa75b20c064709be7f48b79fbe1135fc2">asin</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="group__macros.html#ga0c9fde80eb6d7ab75a391dc178ef18b7" class="m-doc">_<wbr />_<wbr />_<wbr />constexpr_<wbr />_<wbr />_<wbr /></a> <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a></span>
+            </dt>
+            <dd>Returns the arc sine of this angle.</dd>
+            <dt id="a13388a97dd44dac80896feb90613d45d">
+              <span class="m-dox-wrap-bumper">auto <a href="#a13388a97dd44dac80896feb90613d45d" class="m-dox-self" name="a13388a97dd44dac80896feb90613d45d">acos</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="group__macros.html#ga0c9fde80eb6d7ab75a391dc178ef18b7" class="m-doc">_<wbr />_<wbr />_<wbr />constexpr_<wbr />_<wbr />_<wbr /></a> <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a></span>
+            </dt>
+            <dd>Returns the arc cosine of this angle.</dd>
+            <dt id="a214638797f0f6df8d0c82c2a4d1a1266">
+              <span class="m-dox-wrap-bumper">auto <a href="#a214638797f0f6df8d0c82c2a4d1a1266" class="m-dox-self" name="a214638797f0f6df8d0c82c2a4d1a1266">atan</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="group__macros.html#ga0c9fde80eb6d7ab75a391dc178ef18b7" class="m-doc">_<wbr />_<wbr />_<wbr />constexpr_<wbr />_<wbr />_<wbr /></a> <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a></span>
+            </dt>
+            <dd>Returns the arc tangent of this angle.</dd>
+            <dt id="a566265d7ea4ab6649c2bfdf2e96145af">
+              <span class="m-dox-wrap-bumper">auto <a href="#a566265d7ea4ab6649c2bfdf2e96145af" class="m-dox-self" name="a566265d7ea4ab6649c2bfdf2e96145af">operator++</a>(</span><span class="m-dox-wrap">) -&gt; T&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Increments the underlying value by 1.</dd>
+            <dt id="afe13db0e1af81cd99e0f21f4b35561f1">
+              <span class="m-dox-wrap-bumper">auto <a href="#afe13db0e1af81cd99e0f21f4b35561f1" class="m-dox-self" name="afe13db0e1af81cd99e0f21f4b35561f1">operator++</a>(</span><span class="m-dox-wrap">int) -&gt; T&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Increments the underlying value by 1.</dd>
+            <dt id="afd70a5715cd3b48b3a1f247e6f5bc0a8">
+              <span class="m-dox-wrap-bumper">auto <a href="#afd70a5715cd3b48b3a1f247e6f5bc0a8" class="m-dox-self" name="afd70a5715cd3b48b3a1f247e6f5bc0a8">operator--</a>(</span><span class="m-dox-wrap">) -&gt; T&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Decrements the underlying value by 1.</dd>
+            <dt id="a32ad7696f348d2811a994e27daf6cc67">
+              <span class="m-dox-wrap-bumper">auto <a href="#a32ad7696f348d2811a994e27daf6cc67" class="m-dox-self" name="a32ad7696f348d2811a994e27daf6cc67">operator--</a>(</span><span class="m-dox-wrap">int) -&gt; T&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Decrements the underlying value by 1.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#aefd7979ce2368b9ef98210aa864b6295" class="m-dox">operator==</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Compares this and <em>other</em> angle with <a href="namespacerolly_1_1math.html#a3ac3258dd6ee92741399970d50868c2e" class="m-doc">rolly::<wbr />math::<wbr />approx_eq</a> for equality.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a309d0757a973d6d2c6614d0581b45d92" class="m-dox">operator!=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Compares this and <em>other</em> angle with <a href="namespacerolly_1_1math.html#a3ac3258dd6ee92741399970d50868c2e" class="m-doc">rolly::<wbr />math::<wbr />approx_eq</a> for inequality.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#aa23ff0fac2171ad6ce2140c4cd965d42" class="m-dox">operator&lt;</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Compares this and <em>other</em> angle for less than.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a5ff964a65187ef94f6a280f9cbd5f2e5" class="m-dox">operator&gt;</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Compares this and <em>other</em> angle for greater than.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#ae2dbf39105d4518d91f4ac2783106737" class="m-dox">operator&lt;=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Compares this and <em>other</em> angle for less than or equal to.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a24164f3417a133a550089a5a276af6d9" class="m-dox">operator&gt;=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Compares this and <em>other</em> angle for greater than or equal to.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a187480616a4887aa0d98538df458e26d" class="m-dox">operator*</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the underlying numeric scalar.</dd>
+            <dt id="ab6cb838c89f8d1f7082caaf515cccfbe">
+              <span class="m-dox-wrap-bumper">auto <a href="#ab6cb838c89f8d1f7082caaf515cccfbe" class="m-dox-self" name="ab6cb838c89f8d1f7082caaf515cccfbe">operator+</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this</code>.</dd>
+            <dt id="af748c933998a173b97ccb5d74a9a9d10">
+              <span class="m-dox-wrap-bumper">auto <a href="#af748c933998a173b97ccb5d74a9a9d10" class="m-dox-self" name="af748c933998a173b97ccb5d74a9a9d10">operator-</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>-this</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#ada7d9122b1eb43d1a63e0a661d49ea60" class="m-dox">operator+</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this + other</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a9f62a83ad05047c663de6705ab6ce5f2" class="m-dox">operator-</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this - other</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a75f902dd70e3e238bfff25510eb96123" class="m-dox">operator*</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this * other</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#aea4139bbd4e98b1967da63f4390137f1" class="m-dox">operator/</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this / other</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a70d5b448a690e5cfcdd24190b2bfb71c" class="m-dox">operator+=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this += other</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a531456a8461a83f3cfebc5c7952c2e37" class="m-dox">operator-=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this -= other</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#ae1f0b69d4d88c07eb2e8b092cf379996" class="m-dox">operator*=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this *= other</code>.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a5bbe5bc05125c4ca21de9c8e367002f0" class="m-dox">operator/=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this /= other</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#acd68ed48b123c38fe645b4a9c6694e2c" class="m-dox">operator*</a>(</span><span class="m-dox-wrap">U const&amp; other) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this * other</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a69e3844905e49f7a8924565fba0a3c60" class="m-dox">operator/</a>(</span><span class="m-dox-wrap">U const&amp; other) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this / other</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a09b3b0e8330ce76a89450f25a598b50e" class="m-dox">operator+</a>(</span><span class="m-dox-wrap">U const&amp; other) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this + other</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a0bb40c7d98c3638f5fea004246a7fb6f" class="m-dox">operator-</a>(</span><span class="m-dox-wrap">U const&amp; other) const -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this - other</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#af503bc734615155e4f727bd9ed790209" class="m-dox">operator+=</a>(</span><span class="m-dox-wrap">U const&amp; other) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this += other</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a877410d1ce3c690a66da73c8c8cba6f0" class="m-dox">operator-=</a>(</span><span class="m-dox-wrap">U const&amp; other) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this -= other</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a16b31742e4c2a0e80fdba6b94651064e" class="m-dox">operator*=</a>(</span><span class="m-dox-wrap">U const&amp; other) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this *= other</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a45d33fea8994dd76e3964dc1aa72018e" class="m-dox">operator/=</a>(</span><span class="m-dox-wrap">U const&amp; other) -&gt; <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>this /= other</code>.</dd>
+          </dl>
+        </section>
+        <section id="friends">
+          <h2><a href="#friends">Friends</a></h2>
+          <dl class="m-doc">
+            <dt id="aedba7c4771ce3dc1d53a2759279b49e4">
+              <span class="m-dox-wrap-bumper">auto <a href="#aedba7c4771ce3dc1d53a2759279b49e4" class="m-dox-self" name="aedba7c4771ce3dc1d53a2759279b49e4">operator&lt;&lt;</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html" class="m-doc-external">std::<wbr />ostream</a>&amp; os,
+              <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; a) -&gt; <a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html" class="m-doc-external">std::<wbr />ostream</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a5470198b343db477861d55f3b089149f"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5470198b343db477861d55f3b089149f" class="m-doc-self">from_radians</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> radians) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs an angle from radians.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">radians</td>
+                  <td>Angle in radians.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Constructed angle.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="structrolly_1_1types_1_1angle.html#a485ca2070340a13e5e78cb687dbc1465" class="m-doc">from_<wbr />degrees</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a485ca2070340a13e5e78cb687dbc1465"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a485ca2070340a13e5e78cb687dbc1465" class="m-doc-self">from_degrees</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> degrees) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs an angle from degrees.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">degrees</td>
+                  <td>Angle in degrees.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Constructed angle.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="structrolly_1_1types_1_1angle.html#a5470198b343db477861d55f3b089149f" class="m-doc">from_<wbr />radians</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a5c55f8db6f6cb4c73858af1e28f768e8"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c55f8db6f6cb4c73858af1e28f768e8" class="m-doc-self">from</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> value,
+              <a href="namespacerolly_1_1types.html#a3f652efe88945dad9f5db87673b0909e" class="m-doc">angle_<wbr />unit</a> u) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs an angle from another unit.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>Numeric value.</td>
+                </tr>
+                <tr>
+                  <td>u</td>
+                  <td>Unit.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Constructed angle.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0b3265454614c3cb2c563ec74dfeb851"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b3265454614c3cb2c563ec74dfeb851" class="m-doc-self">angle</a>(</span><span class="m-doc-wrap">) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs an empty angle.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="structrolly_1_1types_1_1angle.html#afa7805bec73a51bf1c0256515e28ee56" class="m-doc">angle::<wbr />zero</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a33f20a9549cf6a2b79817fde3034aa33"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a33f20a9549cf6a2b79817fde3034aa33" class="m-doc-self">angle</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> const value) <span class="m-label m-info">explicit</span>  <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs an angle from a numeric value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>Numeric value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aac993ecccd3d88aafefb6b8e3caa1dee"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aac993ecccd3d88aafefb6b8e3caa1dee" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns string representation of the angle.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>String representation of the object.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Angle is represented in degrees. If the underlying number type is floating point, it is rounded to two decimal places.</p>
+          </div></section>
+          <section class="m-doc-details" id="a88fdf66be062767e4090d10a7d1de681"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a88fdf66be062767e4090d10a7d1de681" class="m-doc-self">in</a>(</span><span class="m-doc-wrap"><a href="namespacerolly_1_1types.html#a3f652efe88945dad9f5db87673b0909e" class="m-doc">angle_<wbr />unit</a> u) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the angle in the given unit.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">u</td>
+                  <td>Unit to return the angle in.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Angle in the given unit.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4d596e0bb6f37199a669740aab6256ac"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d596e0bb6f37199a669740aab6256ac" class="m-doc-self">radians</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the angle in radians.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="structrolly_1_1types_1_1angle.html#a6133257e807ce7986b58d501bc09d734" class="m-doc">degrees</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a6133257e807ce7986b58d501bc09d734"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6133257e807ce7986b58d501bc09d734" class="m-doc-self">degrees</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the angle in degrees.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="structrolly_1_1types_1_1angle.html#a4d596e0bb6f37199a669740aab6256ac" class="m-doc">radians</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="ad96ebdfffee4655081b053b19084c3d9"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad96ebdfffee4655081b053b19084c3d9" class="m-doc-self">angle_to</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the shortest signed angle between two angles.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Other angle</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Takes wrapping and signs into account.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab50fe362d80e4a70a8c67fc749d1a0fe"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="group__macros.html#ga0c9fde80eb6d7ab75a391dc178ef18b7" class="m-doc">_<wbr />_<wbr />_<wbr />constexpr_<wbr />_<wbr />_<wbr /></a> <a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab50fe362d80e4a70a8c67fc749d1a0fe" class="m-doc-self">lerp</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other,
+              T t) const</span></span>
+            </h3>
+            <p>Linear interpolation between two angles, using the shortest path.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Other angle</td>
+                </tr>
+                <tr>
+                  <td>t</td>
+                  <td>Interpolation factor</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Interpolated angle</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac3ca04e925cf9e490eadfa612dcb2810"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/utility/pair.html" class="m-doc-external">std::<wbr />pair</a>&lt;T, T&gt; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac3ca04e925cf9e490eadfa612dcb2810" class="m-doc-self">sin_cos</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the sine and cosine of the angle.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Pair of sine and cosine.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab4296efb618a5d97bd8779ec48fa7f56"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&lt;U&gt; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab4296efb618a5d97bd8779ec48fa7f56" class="m-doc-self">cast</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Casts the angle to another numeric type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Target numeric type.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Casted angle.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a524546a00e65da4c0a58a20d7913a593"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a524546a00e65da4c0a58a20d7913a593" class="m-doc-self">value</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the underlying numeric scalar value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The underlying numeric scalar value.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a7b1e681365ca2379776ba38496c8d9e1"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">U rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7b1e681365ca2379776ba38496c8d9e1" class="m-doc-self">as</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns this numeric newtype as number in another numeric representation.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Number type. Must satisfy concept <code><a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">rolly::<wbr />concepts::<wbr />num</a></code>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aefd7979ce2368b9ef98210aa864b6295"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aefd7979ce2368b9ef98210aa864b6295" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Compares this and <em>other</em> angle with <a href="namespacerolly_1_1math.html#a3ac3258dd6ee92741399970d50868c2e" class="m-doc">rolly::<wbr />math::<wbr />approx_eq</a> for equality.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Other angle.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if both angles are approximately equal, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a309d0757a973d6d2c6614d0581b45d92"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a309d0757a973d6d2c6614d0581b45d92" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Compares this and <em>other</em> angle with <a href="namespacerolly_1_1math.html#a3ac3258dd6ee92741399970d50868c2e" class="m-doc">rolly::<wbr />math::<wbr />approx_eq</a> for inequality.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Other angle.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if both angles are not approximately equal, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa23ff0fac2171ad6ce2140c4cd965d42"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa23ff0fac2171ad6ce2140c4cd965d42" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Compares this and <em>other</em> angle for less than.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Other angle.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if this angle is less than <em>other</em>, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5ff964a65187ef94f6a280f9cbd5f2e5"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5ff964a65187ef94f6a280f9cbd5f2e5" class="m-doc-self">operator&gt;</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Compares this and <em>other</em> angle for greater than.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Other angle.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if this angle is greater than <em>other</em>, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae2dbf39105d4518d91f4ac2783106737"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae2dbf39105d4518d91f4ac2783106737" class="m-doc-self">operator&lt;=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Compares this and <em>other</em> angle for less than or equal to.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Other angle.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if this angle is less than or equal to <em>other</em>, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a24164f3417a133a550089a5a276af6d9"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a24164f3417a133a550089a5a276af6d9" class="m-doc-self">operator&gt;=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Compares this and <em>other</em> angle for greater than or equal to.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Other angle.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if this angle is greater than or equal to <em>other</em>, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a187480616a4887aa0d98538df458e26d"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a187480616a4887aa0d98538df458e26d" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the underlying numeric scalar.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The underlying numeric scalar.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ada7d9122b1eb43d1a63e0a661d49ea60"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ada7d9122b1eb43d1a63e0a661d49ea60" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this + other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9f62a83ad05047c663de6705ab6ce5f2"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9f62a83ad05047c663de6705ab6ce5f2" class="m-doc-self">operator-</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this - other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a75f902dd70e3e238bfff25510eb96123"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a75f902dd70e3e238bfff25510eb96123" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this * other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aea4139bbd4e98b1967da63f4390137f1"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea4139bbd4e98b1967da63f4390137f1" class="m-doc-self">operator/</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this / other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a70d5b448a690e5cfcdd24190b2bfb71c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70d5b448a690e5cfcdd24190b2bfb71c" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this += other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a531456a8461a83f3cfebc5c7952c2e37"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a531456a8461a83f3cfebc5c7952c2e37" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this -= other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae1f0b69d4d88c07eb2e8b092cf379996"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae1f0b69d4d88c07eb2e8b092cf379996" class="m-doc-self">operator*=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this *= other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5bbe5bc05125c4ca21de9c8e367002f0"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5bbe5bc05125c4ca21de9c8e367002f0" class="m-doc-self">operator/=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this /= other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="acd68ed48b123c38fe645b4a9c6694e2c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acd68ed48b123c38fe645b4a9c6694e2c" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">U const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this * other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Right hand side numeric type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a69e3844905e49f7a8924565fba0a3c60"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a69e3844905e49f7a8924565fba0a3c60" class="m-doc-self">operator/</a>(</span><span class="m-doc-wrap">U const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this / other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Right hand side numeric type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a09b3b0e8330ce76a89450f25a598b50e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a09b3b0e8330ce76a89450f25a598b50e" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">U const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this + other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Right hand side numeric type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0bb40c7d98c3638f5fea004246a7fb6f"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a> rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0bb40c7d98c3638f5fea004246a7fb6f" class="m-doc-self">operator-</a>(</span><span class="m-doc-wrap">U const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this - other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Right hand side numeric type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af503bc734615155e4f727bd9ed790209"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af503bc734615155e4f727bd9ed790209" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">U const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this += other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Right hand side numeric type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a877410d1ce3c690a66da73c8c8cba6f0"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a877410d1ce3c690a66da73c8c8cba6f0" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap">U const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this -= other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Right hand side numeric type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a16b31742e4c2a0e80fdba6b94651064e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a16b31742e4c2a0e80fdba6b94651064e" class="m-doc-self">operator*=</a>(</span><span class="m-doc-wrap">U const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this *= other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Right hand side numeric type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a45d33fea8994dd76e3964dc1aa72018e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
+                template&lt;___concept___(<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a>) U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structrolly_1_1types_1_1angle.html" class="m-doc">angle</a>&amp; rolly::<wbr />types::<wbr />angle&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a45d33fea8994dd76e3964dc1aa72018e" class="m-doc-self">operator/=</a>(</span><span class="m-doc-wrap">U const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>this /= other</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>Right hand side numeric type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

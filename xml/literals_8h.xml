@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="literals_8h" kind="file" language="C++">
+    <compoundname>literals.h</compoundname>
+    <includes refid="definitions_8h" local="yes">../global/definitions.h</includes>
+    <includes local="no">qstring.h</includes>
+    <includes local="no">qurl.h</includes>
+    <includedby refid="qml_8h" local="yes">qml.h</includedby>
+    <includedby refid="qt_8h" local="yes">qt.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>qstring.h</label>
+      </node>
+      <node id="3">
+        <label>export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="4">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="2">
+        <label>../global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>qurl.h</label>
+      </node>
+      <node id="1">
+        <label>literals.h</label>
+        <link refid="literals_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>qt.h</label>
+        <link refid="qt_8h_source"/>
+      </node>
+      <node id="2">
+        <label>qml.h</label>
+        <link refid="qml_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>literals.h</label>
+        <link refid="literals_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1literals">rolly::literals</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerolly_1_1literals_1a8a8efad40133d1a3b2f4bf784ac9d7a4" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>::QString</type>
+        <definition>::QString rolly::literals::operator&quot;&quot;_qs</definition>
+        <argsstring>(char16_t const *str, std::size_t size) noexcept</argsstring>
+        <name>operator&quot;&quot;_qs</name>
+        <param>
+          <type>char16_t const *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::size_t</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/qt/literals.h" line="12" column="23" bodyfile="include/rolly/qt/literals.h" bodystart="12" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1literals_1a4f9c6921ea6ed3cf7b672ffc7aae74ac" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>::QUrl</type>
+        <definition>::QUrl rolly::literals::operator&quot;&quot;_qurl</definition>
+        <argsstring>(char16_t const *str, std::size_t size) noexcept</argsstring>
+        <name>operator&quot;&quot;_qurl</name>
+        <param>
+          <type>char16_t const *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::size_t</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/qt/literals.h" line="21" column="20" bodyfile="include/rolly/qt/literals.h" bodystart="21" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/qt/literals.h"/>
+  </compounddef>
+</doxygen>

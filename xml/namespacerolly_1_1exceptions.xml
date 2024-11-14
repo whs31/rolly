@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacerolly_1_1exceptions" kind="namespace" language="C++">
+    <compoundname>rolly::exceptions</compoundname>
+    <innerclass refid="classrolly_1_1exceptions_1_1compile__time__error" prot="public">rolly::exceptions::compile_time_error</innerclass>
+    <innerclass refid="classrolly_1_1exceptions_1_1deserialization__error" prot="public">rolly::exceptions::deserialization_error</innerclass>
+    <innerclass refid="classrolly_1_1exceptions_1_1serialization__error" prot="public">rolly::exceptions::serialization_error</innerclass>
+    <briefdescription>
+<para>Inline namespace for library exception classes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/exception/compile_time_error.h" line="11" column="29"/>
+  </compounddef>
+</doxygen>

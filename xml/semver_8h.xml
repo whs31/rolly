@@ -1,0 +1,873 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="semver_8h" kind="file" language="C++">
+    <compoundname>semver.h</compoundname>
+    <includes local="no">cstddef</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">charconv</includes>
+    <includes local="no">iosfwd</includes>
+    <includes local="no">limits</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">stdexcept</includes>
+    <includes refid="char__utils_8h" local="yes">char_utils.h</includes>
+    <includes refid="version__definitions_8h" local="yes">version_definitions.h</includes>
+    <includedby refid="version_8h" local="yes">version.h</includedby>
+    <incdepgraph>
+      <node id="12">
+        <label>fmt/format.h</label>
+      </node>
+      <node id="6">
+        <label>limits</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>charconv</label>
+      </node>
+      <node id="8">
+        <label>stdexcept</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="13">
+        <label>version_definitions.h</label>
+        <link refid="version__definitions_8h_source"/>
+      </node>
+      <node id="9">
+        <label>char_utils.h</label>
+        <link refid="char__utils_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>semver.h</label>
+        <link refid="semver_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>string_view</label>
+      </node>
+      <node id="7">
+        <label>optional</label>
+      </node>
+      <node id="5">
+        <label>iosfwd</label>
+      </node>
+      <node id="2">
+        <label>cstddef</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="16">
+        <label>angle.h</label>
+        <link refid="angle_8h_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>version.h</label>
+        <link refid="version_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>point2d.h</label>
+        <link refid="point2d_8h_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>math.h</label>
+        <link refid="math_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>dll.h</label>
+        <link refid="dll_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>shared_library.h</label>
+        <link refid="shared__library_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>serialization.h</label>
+        <link refid="serialization_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>bit.h</label>
+        <link refid="bit_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>directories.h</label>
+        <link refid="directories_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>macro.h</label>
+        <link refid="macro_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>qt.h</label>
+        <link refid="qt_8h_source"/>
+      </node>
+      <node id="1">
+        <label>semver.h</label>
+        <link refid="semver_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>types.h</label>
+        <link refid="types_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>registrable.h</label>
+        <link refid="registrable_8h_source"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>plugin_loader.h</label>
+        <link refid="plugin__loader_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>qml.h</label>
+        <link refid="qml_8h_source"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>plugin.h</label>
+        <link refid="plugin_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>numbers.h</label>
+        <link refid="numbers_8h_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>global.h</label>
+        <link refid="global_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>config.h</label>
+        <link refid="config_8h_source"/>
+      </node>
+      <node id="8">
+        <label>savefile.h</label>
+        <link refid="savefile_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>vector2d.h</label>
+        <link refid="vector2d_8h_source"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>velocity.h</label>
+        <link refid="velocity_8h_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>prelude.h</label>
+        <link refid="prelude_8h_source"/>
+      </node>
+      <node id="5">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrolly_1_1version" prot="public">rolly::version</innerclass>
+    <innerclass refid="structfmt_1_1formatter_3_01rolly_1_1version_01_4" prot="public">fmt::formatter&lt; rolly::version &gt;</innerclass>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1literals">rolly::literals</innernamespace>
+    <innernamespace refid="namespacerolly_1_1comparators">rolly::comparators</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="semver_8h_1a5f68fcfa657eb6fe30663458b8ed0634" prot="public" static="no">
+        <name>ROLLY_SEMVER_CONSTEXPR</name>
+        <initializer>constexpr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="28" column="12" bodyfile="include/rolly/global/semver.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacerolly_1afd32bbfaaac78f0211ed4bcc528b15de" prot="public" static="no" strong="yes">
+        <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint8_t</ref></type>
+        <name>prerelease</name>
+        <enumvalue id="namespacerolly_1afd32bbfaaac78f0211ed4bcc528b15dea2c1743a391305fbf367df8e4f069f9f9" prot="public">
+          <name>alpha</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerolly_1afd32bbfaaac78f0211ed4bcc528b15dea987bcab01b929eb2c07877b224215c92" prot="public">
+          <name>beta</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerolly_1afd32bbfaaac78f0211ed4bcc528b15deaff78648be52a4e79513f4e70b266c62a" prot="public">
+          <name>rc</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerolly_1afd32bbfaaac78f0211ed4bcc528b15dea334c4a4c42fdb79d7ebc3e73b517e6f8" prot="public">
+          <name>none</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="32" column="25" bodyfile="include/rolly/global/semver.h" bodystart="32" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacerolly_1aac165e3d48efbaab7e97d5139d630875" prot="public" static="no" strong="yes">
+        <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint8_t</ref></type>
+        <name>comparators_option</name>
+        <enumvalue id="namespacerolly_1aac165e3d48efbaab7e97d5139d630875addeceef5ab5e83d395f484906200d378" prot="public">
+          <name>exclude_prerelease</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerolly_1aac165e3d48efbaab7e97d5139d630875ae6190b381edc2f52d53e4c142b6fdd8a" prot="public">
+          <name>include_prerelease</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="394" column="35" bodyfile="include/rolly/global/semver.h" bodystart="394" bodyend="397"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacerolly_1a0129ca85eb0fd2fc4f9c8425333c357a" prot="public" static="no">
+        <type>detail::range</type>
+        <definition>using version_range =  detail::range</definition>
+        <argsstring></argsstring>
+        <name>version_range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="730" column="3" bodyfile="include/rolly/global/semver.h" bodystart="730" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerolly_1a83f09cfe4e868bb4b36a157a0887b0d6" prot="public" static="no">
+        <type>detail::satisfies_option</type>
+        <definition>using version_range_option =  detail::satisfies_option</definition>
+        <argsstring></argsstring>
+        <name>version_range_option</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="731" column="3" bodyfile="include/rolly/global/semver.h" bodystart="731" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerolly_1af5f41175811a2f4a42eca6bc6e6f01d3" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::operator==</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs) noexcept</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="307" column="19" bodyfile="include/rolly/global/semver.h" bodystart="307" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a6a0829fd71ded700e13174ae89c009e1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::operator!=</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs) noexcept</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="311" column="19" bodyfile="include/rolly/global/semver.h" bodystart="311" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1ad1af20d5b7b707c993d1930a863f7760" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::operator&gt;</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs) noexcept</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="315" column="19" bodyfile="include/rolly/global/semver.h" bodystart="315" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a8330ddf4c9dcf3b881130a2f07010c66" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::operator&gt;=</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs) noexcept</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="319" column="19" bodyfile="include/rolly/global/semver.h" bodystart="319" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a909ee63bac59a1e69a6d558596311f43" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::operator&lt;</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs) noexcept</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="323" column="14" bodyfile="include/rolly/global/semver.h" bodystart="323" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a1bb0f54264509f56b5481cbd437b05ae" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::operator&lt;=</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs) noexcept</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="327" column="14" bodyfile="include/rolly/global/semver.h" bodystart="327" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1literals_1ae36f4e7b9c0900e1c08d9970b026fbbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR version</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR version rolly::literals::operator&quot;&quot;_version</definition>
+        <argsstring>(char const *str, std::size_t length)</argsstring>
+        <name>operator&quot;&quot;_version</name>
+        <param>
+          <type>char const *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::size_t</ref></type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Version literal operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a version from a string literal at compile time.</para>
+<para>Example usage: <programlisting filename=".cpp"><codeline><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacerolly_1_1literals" kindref="compound">rolly::literals</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>constexpr<sp/>v<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;1.0.0&quot;</highlight><highlight class="normal">_version;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">static_assert(v<sp/>==<sp/><ref refid="structrolly_1_1version" kindref="compound">rolly::version</ref>(1,<sp/>0,<sp/>0));</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="356" column="37" bodyfile="include/rolly/global/semver.h" bodystart="356" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a176758c28587a73dfa5cf233d853d23d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR bool</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR bool rolly::valid</definition>
+        <argsstring>(std::string_view str) noexcept</argsstring>
+        <name>valid</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="363" column="32" bodyfile="include/rolly/global/semver.h" bodystart="363" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a25e9b3ba291a589983345addab86e319" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR from_chars_result</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR from_chars_result rolly::from_chars</definition>
+        <argsstring>(char const *first, char const *last, version &amp;v) noexcept</argsstring>
+        <name>from_chars</name>
+        <param>
+          <type>char const *</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>char const *</type>
+          <declname>last</declname>
+        </param>
+        <param>
+          <type>version &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="368" column="5" bodyfile="include/rolly/global/semver.h" bodystart="368" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1ad27abc9860dd15c159be04b022aeb5a0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR to_chars_result</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR to_chars_result rolly::to_chars</definition>
+        <argsstring>(char *first, char *last, version const &amp;v) noexcept</argsstring>
+        <name>to_chars</name>
+        <param>
+          <type>char *</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>last</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="372" column="43" bodyfile="include/rolly/global/semver.h" bodystart="372" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a29bf2b257aae11af86113305689df183" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR std::optional&lt; version &gt;</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR std::optional&lt;version&gt; rolly::from_string_noexcept</definition>
+        <argsstring>(std::string_view str) noexcept</argsstring>
+        <name>from_string_noexcept</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="376" column="41" bodyfile="include/rolly/global/semver.h" bodystart="376" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a6472f585e4160c186d682782d57ab7ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR version</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR version rolly::from_string</definition>
+        <argsstring>(std::string_view str)</argsstring>
+        <name>from_string</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="382" column="35" bodyfile="include/rolly/global/semver.h" bodystart="382" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1ad687023e3333f2a28121709aa2ec8b92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string rolly::to_string</definition>
+        <argsstring>(version const &amp;v)</argsstring>
+        <name>to_string</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="384" column="23" bodyfile="include/rolly/global/semver.h" bodystart="384" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1ae775c2f85b0bbc89c8ea6633708b2b47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Char</type>
+          </param>
+          <param>
+            <type>typename Traits</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_ostream</ref>&lt; Char, Traits &gt; &amp;</type>
+        <definition>std::basic_ostream&lt;Char, Traits&gt;&amp; rolly::operator&lt;&lt;</definition>
+        <argsstring>(std::basic_ostream&lt; Char, Traits &gt; &amp;os, version const &amp;v)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_ostream</ref>&lt; Char, Traits &gt; &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="384" column="23" bodyfile="include/rolly/global/semver.h" bodystart="387" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a073e020abb8d49be9a4ed3f6e05d31f0" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr int</type>
+        <definition>constexpr int rolly::comparators::compare</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs, comparators_option option=comparators_option::include_prerelease) noexcept</argsstring>
+        <name>compare</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>comparators_option</type>
+          <declname>option</declname>
+          <defval>comparators_option::include_prerelease</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="399" column="20" bodyfile="include/rolly/global/semver.h" bodystart="399" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1add78f2c5593250a4d8635e8ab86231a1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::comparators::equal_to</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs, comparators_option option=comparators_option::include_prerelease) noexcept</argsstring>
+        <name>equal_to</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>comparators_option</type>
+          <declname>option</declname>
+          <defval>comparators_option::include_prerelease</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="409" column="21" bodyfile="include/rolly/global/semver.h" bodystart="409" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1aac20f4b292436c8f853d8450305a3728" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::comparators::not_equal_to</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs, comparators_option option=comparators_option::include_prerelease) noexcept</argsstring>
+        <name>not_equal_to</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>comparators_option</type>
+          <declname>option</declname>
+          <defval>comparators_option::include_prerelease</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="417" column="21" bodyfile="include/rolly/global/semver.h" bodystart="417" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a0ddad7c8ac3da88058d6f7404199b478" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::comparators::greater</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs, comparators_option option=comparators_option::include_prerelease) noexcept</argsstring>
+        <name>greater</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>comparators_option</type>
+          <declname>option</declname>
+          <defval>comparators_option::include_prerelease</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="425" column="21" bodyfile="include/rolly/global/semver.h" bodystart="425" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a765c39fb28cd5b799f4cd9fdaded9393" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::comparators::greater_equal</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs, comparators_option option=comparators_option::include_prerelease) noexcept</argsstring>
+        <name>greater_equal</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>comparators_option</type>
+          <declname>option</declname>
+          <defval>comparators_option::include_prerelease</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="433" column="21" bodyfile="include/rolly/global/semver.h" bodystart="433" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a8cdeab0eaeaf885f90902d1ac7d5e3e6" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::comparators::less</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs, comparators_option option=comparators_option::include_prerelease) noexcept</argsstring>
+        <name>less</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>comparators_option</type>
+          <declname>option</declname>
+          <defval>comparators_option::include_prerelease</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="441" column="21" bodyfile="include/rolly/global/semver.h" bodystart="441" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a7d7d7f80bcbd1558d975988d8fefa0d8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rolly::comparators::less_equal</definition>
+        <argsstring>(version const &amp;lhs, version const &amp;rhs, comparators_option option=comparators_option::include_prerelease) noexcept</argsstring>
+        <name>less_equal</name>
+        <param>
+          <type>version const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>version const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>comparators_option</type>
+          <declname>option</declname>
+          <defval>comparators_option::include_prerelease</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="449" column="21" bodyfile="include/rolly/global/semver.h" bodystart="449" bodyend="455"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/global/semver.h"/>
+  </compounddef>
+</doxygen>

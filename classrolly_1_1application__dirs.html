@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>rolly::application_dirs class | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>application_dirs <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="directories_8h.html">&lt;include/rolly/directories.h&gt;</a></div>
+        </h1>
+        <p>Class for getting location of system directories for a specific application.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>ProjectDirs computes the location of cache, config or data directories for a specific application, which are derived from the standard directories and the name of the project/organization.</p><p>For example if user named <em>Alice</em>, the following code:</p><pre class="m-code"><span class="k">using</span><span class="w"> </span><span class="n">rolly</span><span class="o">::</span><span class="n">application_dirs</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">rolly</span><span class="o">::</span><span class="n">application_dirs</span><span class="o">::</span><span class="n">dir</span><span class="p">;</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">application_dirs</span><span class="p">(</span><span class="s">&quot;com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Foo Corp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bar App&quot;</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dirs</span><span class="p">[</span><span class="n">config</span><span class="p">].</span><span class="n">string</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// or std::cout &lt;&lt; dirs.config_dir() &lt;&lt; std::endl;</span></pre><p>will produce the following output:</p><pre class="m-console"><span class="go">Linux:   &#39;/home/alice/.config/barapp&#39;</span>
+<span class="go">Windows: &#39;C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App&#39;</span>
+<span class="go">MacOS:   &#39;/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App&#39;</span></pre><aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1dirs.html" class="m-doc">dirs</a></p></aside>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#aa671c41b56810ab4bfd94587e8507a75" class="m-doc">dir</a>: <a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a> { </span><span class="m-doc-wrap"><a href="#aa671c41b56810ab4bfd94587e8507a75a0fea6a13c52b4d4725368f24b045ca84" class="m-doc">cache</a>,
+              <a href="#aa671c41b56810ab4bfd94587e8507a75a2245023265ae4cf87d02c8b6ba991139" class="m-doc">config</a>,
+              <a href="#aa671c41b56810ab4bfd94587e8507a75a63e5ccc32239b155c8691da2de09d8f1" class="m-doc">config_local</a>,
+              <a href="#aa671c41b56810ab4bfd94587e8507a75a8d777f385d3dfec8815d20f7496026dc" class="m-doc">data</a>,
+              <a href="#aa671c41b56810ab4bfd94587e8507a75a109d0fabf7fadeb851631940a8ce6e34" class="m-doc">data_local</a>,
+              <a href="#aa671c41b56810ab4bfd94587e8507a75a1ce027fe3518cc64ef3570b50a9a7c10" class="m-doc">preferences</a>,
+              <a href="#aa671c41b56810ab4bfd94587e8507a75ab4a619251c5c397f26d05c9b0e7bf97a" class="m-doc">runtime</a>,
+              <a href="#aa671c41b56810ab4bfd94587e8507a75a9ed39e2ea931586b6a985a6942ef573e" class="m-doc">state</a> }</span>
+            </dt>
+            <dd>Supported application directory types.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a55c0e5e3ac7e710af26c992fd49dec50" class="m-dox">application_dirs</a>(</span><span class="m-dox-wrap">std::string_view qualifier,
+              std::string_view vendor,
+              std::string_view app)</span>
+            </dt>
+            <dd>Creates an <a href="classrolly_1_1application__dirs.html" class="m-doc">application_<wbr />dirs</a> class from values describing the project.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a9d30264f6f4177a75053575e5e04f771" class="m-dox">application_dirs</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1meta_1_1project__meta.html" class="m-doc">meta::<wbr />project_meta</a> const&amp; meta) <span class="m-label m-flat m-info">explicit</span> </span>
+            </dt>
+            <dd>Creates an <a href="classrolly_1_1application__dirs.html" class="m-doc">application_<wbr />dirs</a> class from values describing the project.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a2d42730a391790d4be3c9fe14af5327e">
+              <span class="m-dox-wrap-bumper">void <a href="#a2d42730a391790d4be3c9fe14af5327e" class="m-dox-self" name="a2d42730a391790d4be3c9fe14af5327e">create</a>(</span><span class="m-dox-wrap">) const</span>
+            </dt>
+            <dd>Creates the directories if they do not exist.</dd>
+            <dt id="a83b6c3587991d0a3afeac89f2c61de17">
+              <span class="m-dox-wrap-bumper">void <a href="#a83b6c3587991d0a3afeac89f2c61de17" class="m-dox-self" name="a83b6c3587991d0a3afeac89f2c61de17">remove</a>(</span><span class="m-dox-wrap">) const</span>
+            </dt>
+            <dd>Removes the directories and their contents from the filesystem.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a877c175fe97261a9b214ed7152481482" class="m-dox">get</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1application__dirs.html#aa671c41b56810ab4bfd94587e8507a75" class="m-doc">dir</a> d) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd>Returns the path to the directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a00ff1719edd03ad0aff4a10010eb503b" class="m-dox">operator[]</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1application__dirs.html#aa671c41b56810ab4bfd94587e8507a75" class="m-doc">dir</a> d) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd>Returns the path to the directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a30e2c864bb359337268ceea8388e6a70" class="m-dox">project_path</a>(</span><span class="m-dox-wrap">) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd>Returns the project path fragment used to compute the project&#x27;s cache/config/data directories.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a16a0cf395395ae824d875bd7e6d8a842" class="m-dox">cache_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd>Returns the path to the project&#x27;s cache directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a59c6f1acf971116e29638f2603ddab24" class="m-dox">config_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd>Returns the path to the project&#x27;s config directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#af397d204a53b4d8663cab8fe3290f7e4" class="m-dox">config_local_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd>Returns the path to the project&#x27;s config_local directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a4bc1b913553cb31ddf0c37cc55c6c4c5" class="m-dox">data_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd>Returns the path to the project&#x27;s data directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a9515233f07cdc7f8626c6e85e2ff6fe2" class="m-dox">data_local_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd>Returns the path to the project&#x27;s data_local directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#ac0c60c9ab055e4fbe6e2faecd6722a9a" class="m-dox">preference_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd>Returns the path to the project&#x27;s preference directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a559edd679316c7ced41fef5119788cef" class="m-dox">runtime_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::optional&lt;std::filesystem::path&gt; const &amp;</span>
+            </dt>
+            <dd>Returns the path to the project&#x27;s runtime directory.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a2523855bb47cadb2a77c10fa2351ba67" class="m-dox">state_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::optional&lt;std::filesystem::path&gt; const &amp;</span>
+            </dt>
+            <dd>Returns the path to the project&#x27;s state directory.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="aa671c41b56810ab4bfd94587e8507a75"><div>
+            <h3>
+              enum class rolly::<wbr />application_dirs::<wbr /><a href="#aa671c41b56810ab4bfd94587e8507a75" class="m-doc-self">dir</a>: <a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>
+            </h3>
+            <p>Supported application directory types.</p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#aa671c41b56810ab4bfd94587e8507a75a0fea6a13c52b4d4725368f24b045ca84" class="m-doc-self" id="aa671c41b56810ab4bfd94587e8507a75a0fea6a13c52b4d4725368f24b045ca84">cache</a></td>
+                  <td>
+                  <p>Cache directory.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aa671c41b56810ab4bfd94587e8507a75a2245023265ae4cf87d02c8b6ba991139" class="m-doc-self" id="aa671c41b56810ab4bfd94587e8507a75a2245023265ae4cf87d02c8b6ba991139">config</a></td>
+                  <td>
+                  <p>Config directory.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aa671c41b56810ab4bfd94587e8507a75a63e5ccc32239b155c8691da2de09d8f1" class="m-doc-self" id="aa671c41b56810ab4bfd94587e8507a75a63e5ccc32239b155c8691da2de09d8f1">config_local</a></td>
+                  <td>
+                  <p>Local config directory.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aa671c41b56810ab4bfd94587e8507a75a8d777f385d3dfec8815d20f7496026dc" class="m-doc-self" id="aa671c41b56810ab4bfd94587e8507a75a8d777f385d3dfec8815d20f7496026dc">data</a></td>
+                  <td>
+                  <p>Data directory.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aa671c41b56810ab4bfd94587e8507a75a109d0fabf7fadeb851631940a8ce6e34" class="m-doc-self" id="aa671c41b56810ab4bfd94587e8507a75a109d0fabf7fadeb851631940a8ce6e34">data_local</a></td>
+                  <td>
+                  <p>Local data directory.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aa671c41b56810ab4bfd94587e8507a75a1ce027fe3518cc64ef3570b50a9a7c10" class="m-doc-self" id="aa671c41b56810ab4bfd94587e8507a75a1ce027fe3518cc64ef3570b50a9a7c10">preferences</a></td>
+                  <td>
+                  <p>Preferences directory.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aa671c41b56810ab4bfd94587e8507a75ab4a619251c5c397f26d05c9b0e7bf97a" class="m-doc-self" id="aa671c41b56810ab4bfd94587e8507a75ab4a619251c5c397f26d05c9b0e7bf97a">runtime</a></td>
+                  <td>
+                  <p>Runtime directory. Can be unavailable on some platforms.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aa671c41b56810ab4bfd94587e8507a75a9ed39e2ea931586b6a985a6942ef573e" class="m-doc-self" id="aa671c41b56810ab4bfd94587e8507a75a9ed39e2ea931586b6a985a6942ef573e">state</a></td>
+                  <td>
+                  <p>State directory. Can be unavailable on some platforms.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a55c0e5e3ac7e710af26c992fd49dec50"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a55c0e5e3ac7e710af26c992fd49dec50" class="m-doc-self">application_dirs</a>(</span><span class="m-doc-wrap">std::string_view qualifier,
+              std::string_view vendor,
+              std::string_view app)</span></span>
+            </h3>
+            <p>Creates an <a href="classrolly_1_1application__dirs.html" class="m-doc">application_<wbr />dirs</a> class from values describing the project.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">qualifier</td>
+                  <td>The reverse domain name notation of the application, excluding the organization or application name itself.</td>
+                </tr>
+                <tr>
+                  <td>vendor</td>
+                  <td>The name of the organization that develops this application, or for which the application is developed.</td>
+                </tr>
+                <tr>
+                  <td>app</td>
+                  <td>The name of the application itself.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://en.cppreference.com/w/cpp/error/runtime_error.html" class="m-doc-external">std::<wbr />runtime_error</a></td>
+                  <td>if no valid home directory could be retrieved from the operating system.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>Constructor can fail if no valid home directory could be retrieved from the operating system.</p><p>Directories will be created if they do not exist.</p></aside><p>Example values of qualifier:</p><ul><li><code>&quot;com.example&quot;</code></li><li><code>&quot;org&quot;</code></li><li><code>&quot;uk.co&quot;</code></li><li><code>&quot;io&quot;</code></li><li><code>&quot;&quot;</code></li></ul>
+<p>Example values of vendor:</p><ul><li><code>&quot;Foo Corp&quot;</code></li><li><code>&quot;Bar Ltd&quot;</code></li><li><code>&quot;Example Inc&quot;</code></li></ul>
+<p>Example values of app:</p><ul><li><code>&quot;Bar App&quot;</code></li><li><code>&quot;Foo App&quot;</code></li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a9d30264f6f4177a75053575e5e04f771"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d30264f6f4177a75053575e5e04f771" class="m-doc-self">application_dirs</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1meta_1_1project__meta.html" class="m-doc">meta::<wbr />project_meta</a> const&amp; meta) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <p>Creates an <a href="classrolly_1_1application__dirs.html" class="m-doc">application_<wbr />dirs</a> class from values describing the project.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">meta</td>
+                  <td>The project meta data.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://en.cppreference.com/w/cpp/error/runtime_error.html" class="m-doc-external">std::<wbr />runtime_error</a></td>
+                  <td>if no valid home directory could be retrieved from the operating system.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>Constuctor can fail if no valid home directory could be retrieved from the operating system.</p><p>Directories will be created if they do not exist.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1meta_1_1project__meta.html" class="m-doc">meta::<wbr />project_meta</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a877c175fe97261a9b214ed7152481482"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a877c175fe97261a9b214ed7152481482" class="m-doc-self">get</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1application__dirs.html#aa671c41b56810ab4bfd94587e8507a75" class="m-doc">dir</a> d) const</span></span>
+            </h3>
+            <p>Returns the path to the directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">d</td>
+                  <td>The directory type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>The path to the directory.</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://en.cppreference.com/w/cpp/error/system_error.html" class="m-doc-external">std::<wbr />system_error</a></td>
+                  <td>If the directory does not exist on this platform.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>Use explicit functions such as <a href="classrolly_1_1application__dirs.html#a59c6f1acf971116e29638f2603ddab24" class="m-doc">application_dirs::<wbr />config_dir</a> to avoid this exception.</p></aside><aside class="m-note m-default"><h4>See also</h4><p>operator[]</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a00ff1719edd03ad0aff4a10010eb503b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a00ff1719edd03ad0aff4a10010eb503b" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1application__dirs.html#aa671c41b56810ab4bfd94587e8507a75" class="m-doc">dir</a> d) const</span></span>
+            </h3>
+            <p>Returns the path to the directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">d</td>
+                  <td>The directory type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>The path to the directory.</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://en.cppreference.com/w/cpp/error/system_error.html" class="m-doc-external">std::<wbr />system_error</a></td>
+                  <td>If the directory does not exist on this platform.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>Use explicit functions such as <a href="classrolly_1_1application__dirs.html#a59c6f1acf971116e29638f2603ddab24" class="m-doc">application_dirs::<wbr />config_dir</a> to avoid this exception.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1application__dirs.html#a877c175fe97261a9b214ed7152481482" class="m-doc">get</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a30e2c864bb359337268ceea8388e6a70"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a30e2c864bb359337268ceea8388e6a70" class="m-doc-self">project_path</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the project path fragment used to compute the project&#x27;s cache/config/data directories.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The project path.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The value is derived from the constructor call and is platform-dependent.</p>
+          </div></section>
+          <section class="m-doc-details" id="a16a0cf395395ae824d875bd7e6d8a842"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a16a0cf395395ae824d875bd7e6d8a842" class="m-doc-self">cache_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the path to the project&#x27;s cache directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The path to the project&#x27;s cache directory.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>$XDG_CACHE_HOME</code>/<code>project_path</code> or <code>$HOME</code>/.cache/<code>project_path</code>, for example: <code>/home/alice/.cache/barapp</code></li><li><strong>MacOS</strong>: <code>$HOME/Library/Caches</code>/<code>project_path</code>, for example: <code>/Users/Alice/Library/Caches/com.Foo-Corp.Bar-App</code></li><li><strong>Windows</strong>: <code>LOCALAPPDATA%</code>\<code>project_path</code>\cache, for example: <code>C:\Users\Alice\AppData\Local\Foo Corp\Bar App\cache</code></li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a59c6f1acf971116e29638f2603ddab24"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a59c6f1acf971116e29638f2603ddab24" class="m-doc-self">config_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the path to the project&#x27;s config directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The path to the project&#x27;s config directory.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>$XDG_CONFIG_HOME</code>/<code>project_path</code> or <code>$HOME</code>/.config/<code>project_path</code>, for example: <code>/home/alice/.config/barapp</code></li><li><strong>MacOS</strong>: <code>$HOME/Library/Application Support</code>/<code>project_path</code>, for example: <code>/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App</code></li><li><strong>Windows</strong>: <code>APPDATA%</code>\<code>project_path</code>\config, for example: <code>C:\Users\Alice\AppData\Roaming\Foo Corp\Bar App\config</code></li></ul>
+          </div></section>
+          <section class="m-doc-details" id="af397d204a53b4d8663cab8fe3290f7e4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af397d204a53b4d8663cab8fe3290f7e4" class="m-doc-self">config_local_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the path to the project&#x27;s config_local directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The path to the project&#x27;s config_local directory.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>$XDG_CONFIG_HOME</code>/<code>project_path</code> or <code>$HOME</code>/.config/<code>project_path</code>, for example: <code>/home/alice/.config/barapp</code></li><li><strong>MacOS</strong>: <code>$HOME/Library/Application Support</code>/<code>project_path</code>, for example: <code>/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App</code></li><li><strong>Windows</strong>: <code>LOCALAPPDATA%</code>\<code>project_path</code>\config, for example: <code>C:\Users\Alice\AppData\Roaming\Foo Corp\Bar App\config</code></li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a4bc1b913553cb31ddf0c37cc55c6c4c5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4bc1b913553cb31ddf0c37cc55c6c4c5" class="m-doc-self">data_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the path to the project&#x27;s data directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The path to the project&#x27;s data directory.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>$XDG_DATA_HOME</code>/<code>project_path</code> or <code>$HOME</code>/.local/share/<code>project_path</code>, for example: <code>/home/alice/.local/share/barapp</code></li><li><strong>MacOS</strong>: <code>$HOME/Library/Application Support</code>/<code>project_path</code>, for example: <code>/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App</code></li><li><strong>Windows</strong>: <code>LOCALAPPDATA%</code>\<code>project_path</code>\data, for example: <code>C:\Users\Alice\AppData\Roaming\Foo Corp\Bar App\data</code></li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a9515233f07cdc7f8626c6e85e2ff6fe2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9515233f07cdc7f8626c6e85e2ff6fe2" class="m-doc-self">data_local_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the path to the project&#x27;s data_local directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The path to the project&#x27;s data_local directory.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>$XDG_DATA_HOME</code>/<code>project_path</code> or <code>$HOME</code>/.local/share/<code>project_path</code>, for example: <code>/home/alice/.local/share/barapp</code></li><li><strong>MacOS</strong>: <code>$HOME/Library/Application Support</code>/<code>project_path</code>, for example: <code>/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App</code></li><li><strong>Windows</strong>: <code>LOCALAPPDATA%</code>\<code>project_path</code>\data, for example: <code>C:\Users\Alice\AppData\Roaming\Foo Corp\Bar App\data</code></li></ul>
+          </div></section>
+          <section class="m-doc-details" id="ac0c60c9ab055e4fbe6e2faecd6722a9a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac0c60c9ab055e4fbe6e2faecd6722a9a" class="m-doc-self">preference_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the path to the project&#x27;s preference directory.</p>
+<p>Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>$XDG_CONFIG_HOME</code>/<code>project_path</code> or <code>$HOME</code>/.config/<code>project_path</code>, for example: <code>/home/alice/.config/barapp</code></li><li><strong>MacOS</strong>: <code>$HOME</code>/Library/Preferences/<code>project_path</code>, for example: <code>/Users/Alice/Library/Preferences/com.Foo-Corp.Bar-App</code></li><li><strong>Windows</strong>: <code>LOCALAPPDATA%</code>\<code>project_path</code>\config, for example: <code>C:\Users\Alice\AppData\Roaming\Foo Corp\Bar App\config</code></li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a559edd679316c7ced41fef5119788cef"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::optional&lt;std::filesystem::path&gt; const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a559edd679316c7ced41fef5119788cef" class="m-doc-self">runtime_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the path to the project&#x27;s runtime directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The path to the project&#x27;s runtime directory or <code>none</code> if it is not available.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The runtime directory contains transient, non-essential data (like sockets or named pipes) that is expected to be cleared when the user&#x27;s session ends.<br />Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>XDG_RUNTIME_DIR</code>/<code>project_path</code>, for example: <code>/run/user/1001/barapp</code></li><li><strong>MacOS</strong>: -</li><li><strong>Windows</strong>: -</li></ul><aside class="m-note m-info"><h4>Note</h4><p>Only for Linux.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a2523855bb47cadb2a77c10fa2351ba67"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::optional&lt;std::filesystem::path&gt; const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2523855bb47cadb2a77c10fa2351ba67" class="m-doc-self">state_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the path to the project&#x27;s state directory.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The path to the project&#x27;s state directory or <code>none</code> if it is not available.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The state directory contains data that should be retained between sessions (unlike the runtime directory), but may not be important/portable enough to be synchronized across machines (unlike the config/preferences/data directories).<br />Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>$XDG_STATE_HOME</code>/<code>project_path</code> or <code>$HOME</code>/.local/state/<code>project_path</code>, for example: <code>/home/alice/.local/state/barapp</code></li><li><strong>MacOS</strong>: -</li><li><strong>Windows</strong>: -</li></ul><aside class="m-note m-info"><h4>Note</h4><p>Only for Linux.</p></aside>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

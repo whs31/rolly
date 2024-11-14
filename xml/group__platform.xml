@@ -1,0 +1,508 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__platform" kind="group">
+    <compoundname>platform</compoundname>
+    <title>Platform</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__platform_1ga3ac2093cf66c05ed2254c38419269b98" prot="public" static="no">
+        <name>ROLLY_OS_WINDOWS</name>
+        <briefdescription>
+<para>Flag defined if operating system is Windows. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="8" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gad060f36ed8c26cd0962f465ce31711dd" prot="public" static="no">
+        <name>ROLLY_OS_LINUX</name>
+        <briefdescription>
+<para>Flag defined if operating system is Linux. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="14" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gab5514b1891219769aa14d21e80ed8608" prot="public" static="no">
+        <name>ROLLY_OS_DARWIN</name>
+        <briefdescription>
+<para>Flag defined if operating system is macOS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="20" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga989564bc81f298ea3be6d5ebc3ccaf19" prot="public" static="no">
+        <name>ROLLY_OS_ANDROID</name>
+        <briefdescription>
+<para>Flag defined if operating system is Android. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="26" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gacf820cfe648cdfff6118bf3ea7a468fe" prot="public" static="no">
+        <name>ROLLY_OS_IOS</name>
+        <briefdescription>
+<para>Flag defined if operating system is Apple iOS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="32" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gae4e7ffb21e0842d6e1a7ce8c7e33ea50" prot="public" static="no">
+        <name>ROLLY_OS_CYGWIN</name>
+        <briefdescription>
+<para>Flag defined if operating system is Cygwin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="38" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gad18005e148adeb353ea1ead9a885a497" prot="public" static="no">
+        <name>ROLLY_OS_FREEBSD</name>
+        <briefdescription>
+<para>Flag defined if operating system is FreeBSD. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="44" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gaf8e1352717a68b2f0512331142b2a185" prot="public" static="no">
+        <name>ROLLY_OS_DRAGONFLY</name>
+        <briefdescription>
+<para>Flag defined if operating system is DragonFly BSD. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="50" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga1cbbe058d150e202e08ff27f93eb487c" prot="public" static="no">
+        <name>ROLLY_OS_NETBSD</name>
+        <briefdescription>
+<para>Flag defined if operating system is NetBSD. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="56" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga0f1f18fee1cd87a8eba133825fda2779" prot="public" static="no">
+        <name>ROLLYOPPY_OS_OPENBSD</name>
+        <briefdescription>
+<para>Flag defined if operating system is OpenBSD. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="62" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga554e07346830d0faf9b967b1b641d1b3" prot="public" static="no">
+        <name>ROLLY_OS_UNKNOWN</name>
+        <briefdescription>
+<para>Flag defined if operating system is unknown. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="68" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga890d65212ce7a0f8eea1afa31de77fb9" prot="public" static="no">
+        <name>ROLLY_ARCH_X86_32</name>
+        <briefdescription>
+<para>Flag defined if architecture is x86_32. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="74" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga450bb34f0bd2c32320a771e4d789ad7d" prot="public" static="no">
+        <name>ROLLY_ARCH_X86_64</name>
+        <briefdescription>
+<para>Flag defined if architecture is x86_64. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="80" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga09a70e8470acbaa51a65fb264ad16bb7" prot="public" static="no">
+        <name>ROLLY_ARCH_ALPHA</name>
+        <briefdescription>
+<para>Flag defined if architecture is Alpha. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/DEC_Alpha">https://en.wikipedia.org/wiki/DEC_Alpha</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="87" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga628febc9470197aa352f8016dad24a0c" prot="public" static="no">
+        <name>ROLLY_ARCH_ARM</name>
+        <briefdescription>
+<para>Flag defined if architecture is ARM. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="93" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga0f138c49b35a6a59a577165807bbdd47" prot="public" static="no">
+        <name>ROLLY_ARCH_BFIN</name>
+        <briefdescription>
+<para>Flag defined if architecture is Blackfin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="99" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gaa2de711cdd8d7c84e8f0137477841f90" prot="public" static="no">
+        <name>ROLLY_ARCH_CONVEX</name>
+        <briefdescription>
+<para>Flag defined if architecture is Convex. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="105" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga510bee8caa4157b4847084ba997275f7" prot="public" static="no">
+        <name>ROLLY_ARCH_E2K</name>
+        <briefdescription>
+<para>Flag defined if architecture is Elbrus 2K. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/Elbrus_2000">https://en.wikipedia.org/wiki/Elbrus_2000</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="112" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gafe790513c5d737dca75dbf755af849a7" prot="public" static="no">
+        <name>ROLLY_ARCH_IA64</name>
+        <briefdescription>
+<para>Flag defined if architecture is Intel IA64. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://ru.wikipedia.org/wiki/Intel_Architecture">https://ru.wikipedia.org/wiki/Intel_Architecture</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="119" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga22f7382a3682a533e7a0c553a155e62b" prot="public" static="no">
+        <name>ROLLY_ARCH_LOONGARCH</name>
+        <briefdescription>
+<para>Flag defined if architecture is LoongArch. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/Loongson">https://en.wikipedia.org/wiki/Loongson</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="126" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga7874f48b75bba92f83b288578fdee7d1" prot="public" static="no">
+        <name>ROLLY_ARCH_M68K</name>
+        <briefdescription>
+<para>Flag defined if architecture is Motorola M68K. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/Motorola_680x0">https://en.wikipedia.org/wiki/Motorola_680x0</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="133" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga0f713ee81bc999aba8cb5d387cfa7b46" prot="public" static="no">
+        <name>ROLLY_ARCH_MIPS</name>
+        <briefdescription>
+<para>Flag defined if architecture is MIPS. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/MIPS_architecture">https://en.wikipedia.org/wiki/MIPS_architecture</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="140" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga57b544d6326b7e173678bb9c82989675" prot="public" static="no">
+        <name>ROLLY_ARCH_HPPA</name>
+        <briefdescription>
+<para>Flag defined if architecture is PA-RISC (HPPA). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/PA-RISC">https://en.wikipedia.org/wiki/PA-RISC</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="147" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gac4fcae5db6d5ecb1f878da9a8e56a42f" prot="public" static="no">
+        <name>ROLLY_ARCH_POWERPC</name>
+        <briefdescription>
+<para>Flag defined if architecture is PowerPC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/PowerPC">https://en.wikipedia.org/wiki/PowerPC</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="154" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gabd1662c2611f3c6159a9d01e7e99e395" prot="public" static="no">
+        <name>ROLLY_ARCH_CUDA</name>
+        <briefdescription>
+<para>Flag defined if architecture is NVIDIA CUDA. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This does not imply that <computeroutput>__CUDA_ARCH__</computeroutput> or <computeroutput>__CUDACC__</computeroutput> is defined. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/CUDA">https://en.wikipedia.org/wiki/CUDA</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="162" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga49884b4788f50bb0ab4727533f78c40f" prot="public" static="no">
+        <name>ROLLY_ARCH_PYRAMID</name>
+        <briefdescription>
+<para>Flag defined if architecture is Pyramid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/Pyramid_Technology">https://en.wikipedia.org/wiki/Pyramid_Technology</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="169" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gab1655d147cf1bc9e32e1da6b8ac53f9c" prot="public" static="no">
+        <name>ROLLY_ARCH_RISCV</name>
+        <briefdescription>
+<para>Flag defined if architecture is RISC-V. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/RISC-V">https://en.wikipedia.org/wiki/RISC-V</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="176" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga6326919fd5ea05f09fe0743d2a950c1d" prot="public" static="no">
+        <name>ROLLY_ARCH_RS6000</name>
+        <briefdescription>
+<para>Flag defined if architecture is IBM RS/6000. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/IBM_RS/6000">https://en.wikipedia.org/wiki/IBM_RS/6000</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="183" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga26f2ec079683603790985f7e45aaddbe" prot="public" static="no">
+        <name>ROLLY_ARCH_SPARC</name>
+        <briefdescription>
+<para>Flag defined if architecture is SPARC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/SPARC">https://en.wikipedia.org/wiki/SPARC</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="190" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga792872a7c42c6aa9442f70afeae5172c" prot="public" static="no">
+        <name>ROLLY_ARCH_SUPERH</name>
+        <briefdescription>
+<para>Flag defined if architecture is Hitachi SuperH. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/SuperH">https://en.wikipedia.org/wiki/SuperH</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="197" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gaede03277d29b2378353e2f24794f5265" prot="public" static="no">
+        <name>ROLLY_ARCH_UNKNOWN</name>
+        <briefdescription>
+<para>Flag defined if architecture is unknown. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="203" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga4866f2313174db6a067b61d63c174672" prot="public" static="no">
+        <name>ROLLY_COMPILER_CLANG</name>
+        <briefdescription>
+<para>Flag defined if compiler is Clang LLVM. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="209" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga84aa2b5b51025d52183c06f236113007" prot="public" static="no">
+        <name>ROLLY_COMPILER_GNU</name>
+        <briefdescription>
+<para>Flag defined if compiler is GNU GCC. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="215" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga0d31831f176d24cde1fb95556b50b4f9" prot="public" static="no">
+        <name>ROLLY_COMPILER_INTEL</name>
+        <briefdescription>
+<para>Flag defined if compiler is Intel C++ Compiler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="221" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gae7fff818a131b880b357a83bcd16d634" prot="public" static="no">
+        <name>ROLLY_COMPILER_NVIDIA</name>
+        <briefdescription>
+<para>Flag defined if compiler is Nvidia NVCC. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="227" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga5deb8ecba17561da1fd2a34bb000e6a8" prot="public" static="no">
+        <name>ROLLY_COMPILER_MSVC</name>
+        <briefdescription>
+<para>Flag defined if compiler is Microsoft Visual C++ (MSVC). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="233" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gac522f7e788f608ec355ad390a0fe3de5" prot="public" static="no">
+        <name>ROLLY_COMPILER_UNKNOWN</name>
+        <briefdescription>
+<para>Flag defined if compiler is unknown. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="239" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1gaf6bc941a5499e1203ce88d31e521598e" prot="public" static="no">
+        <name>ROLLY_ENDIAN_BIG</name>
+        <briefdescription>
+<para>Flag defined if architecture is big endian. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="bug_1_bug000001"><xreftitle>Bug</xreftitle><xrefdescription><para>Can often be undefined on some platforms. Consider using <computeroutput>std::endian::native</computeroutput> to determine endianness. </para>
+</xrefdescription></xrefsect><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/Endianness">https://en.wikipedia.org/wiki/Endianness</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="248" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga5fc2015645e6eb1845fe995e9dda9862" prot="public" static="no">
+        <name>ROLLY_ENDIAN_LITTLE</name>
+        <briefdescription>
+<para>Flag defined if architecture is little endian. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="bug_1_bug000002"><xreftitle>Bug</xreftitle><xrefdescription><para>Can often be undefined on some platforms. Consider using <computeroutput>std::endian::native</computeroutput> to determine endianness. </para>
+</xrefdescription></xrefsect><simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/Endianness">https://en.wikipedia.org/wiki/Endianness</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="257" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__platform_1ga8132bb6bedcf01aa05cc4f45da438023" prot="public" static="no">
+        <name>ROLLY_ENDIAN_UNKNOWN</name>
+        <briefdescription>
+<para>Flag defined if architecture is unknown. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/platform_definitions.h" line="263" column="11" bodyfile="include/rolly/global/platform_definitions.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Platform information. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains information about the operating system, architecture, language version and etc. <xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para>Add reference to global constant and suggest to use it. </para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

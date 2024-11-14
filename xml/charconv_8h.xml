@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="charconv_8h" kind="file" language="C++">
+    <compoundname>charconv.h</compoundname>
+    <includes local="no">charconv</includes>
+    <includes local="no">string</includes>
+    <includes local="no">string_view</includes>
+    <includedby refid="global_8h" local="yes">global.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>charconv</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>string_view</label>
+      </node>
+      <node id="1">
+        <label>charconv.h</label>
+        <link refid="charconv_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="15">
+        <label>angle.h</label>
+        <link refid="angle_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>point2d.h</label>
+        <link refid="point2d_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>math.h</label>
+        <link refid="math_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>dll.h</label>
+        <link refid="dll_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>shared_library.h</label>
+        <link refid="shared__library_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>serialization.h</label>
+        <link refid="serialization_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>bit.h</label>
+        <link refid="bit_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>macro.h</label>
+        <link refid="macro_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>types.h</label>
+        <link refid="types_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>plugin_loader.h</label>
+        <link refid="plugin__loader_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>plugin.h</label>
+        <link refid="plugin_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>numbers.h</label>
+        <link refid="numbers_8h_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>global.h</label>
+        <link refid="global_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>config.h</label>
+        <link refid="config_8h_source"/>
+      </node>
+      <node id="1">
+        <label>charconv.h</label>
+        <link refid="charconv_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>savefile.h</label>
+        <link refid="savefile_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>vector2d.h</label>
+        <link refid="vector2d_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>velocity.h</label>
+        <link refid="velocity_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>prelude.h</label>
+        <link refid="prelude_8h_source"/>
+      </node>
+      <node id="4">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="charconv_8h_1a45800098988715afd7df3e3c7bccca52" prot="public" static="no">
+        <name>DECLARE_CONVERTIBLE_TO_STRING_VIEW</name>
+        <param><defname>T</defname></param>
+        <initializer>template &lt;&gt; [[nodiscard]] constexpr inline std::basic_string_view&lt;char&gt; <ref refid="namespacerolly_1a0caf7f4c7ee8a9aa65b3dd556e1e656c" kindref="member">rolly::as_str</ref>(T const&amp; type)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/charconv.h" line="39" column="9" bodyfile="include/rolly/global/charconv.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="charconv_8h_1a4fcbd720adba1662ad994ab67588e058" prot="public" static="no">
+        <name>DECLARE_CONVERTIBLE_TO_STRING</name>
+        <param><defname>T</defname></param>
+        <initializer>template &lt;&gt; [[nodiscard]] inline <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt;char&gt; <ref refid="namespacerolly_1abed9db28b478cd89e3f00adba8f6632a" kindref="member">rolly::to_string</ref>(T const&amp; value)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/charconv.h" line="40" column="9" bodyfile="include/rolly/global/charconv.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="charconv_8h_1ab62a8d7c4fb893156c4787b98a896443" prot="public" static="no">
+        <name>DECLARE_CONVERTIBLE_TO_STRING_DEFAULT</name>
+        <param><defname>T</defname></param>
+        <initializer>template &lt;&gt; [[nodiscard]] inline <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt;char&gt; <ref refid="namespacerolly_1abed9db28b478cd89e3f00adba8f6632a" kindref="member">rolly::to_string</ref>(T const&amp; value) { return <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt;char&gt;(<ref refid="namespacerolly_1a0caf7f4c7ee8a9aa65b3dd556e1e656c" kindref="member">rolly::as_str</ref>(value)); }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/charconv.h" line="41" column="9" bodyfile="include/rolly/global/charconv.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="charconv_8h_1a274d7677a5e67a64ef79d2c530a33595" prot="public" static="no">
+        <name>DECLARE_CONVERTIBLE_FROM_STRING</name>
+        <param><defname>T</defname></param>
+        <initializer>template &lt;&gt; [[nodiscard]] constexpr inline T <ref refid="namespacerolly_1aeb6cbc9c9826b7eef31366ea5d000db2" kindref="member">rolly::from_str</ref>(std::basic_string_view&lt;char&gt; const&amp; str)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/charconv.h" line="42" column="9" bodyfile="include/rolly/global/charconv.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerolly_1abed9db28b478cd89e3f00adba8f6632a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename C</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt; C &gt;</type>
+        <definition>std::basic_string&lt;C&gt; rolly::to_string</definition>
+        <argsstring>(T const &amp;value)=delete</argsstring>
+        <name>to_string</name>
+        <param>
+          <type>T const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Function prototype for converting C++ types to owned strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to convert </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Constant reference to the type to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Owned string representation of the type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/charconv.h" line="16" column="29" declfile="include/rolly/global/charconv.h" declline="16" declcolumn="29"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a0caf7f4c7ee8a9aa65b3dd556e1e656c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename C</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; C &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;C&gt; rolly::as_str</definition>
+        <argsstring>(T const &amp;type)=delete</argsstring>
+        <name>as_str</name>
+        <param>
+          <type>T const &amp;</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Function prototype for converting C++ types to non-owned strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to convert </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Constant reference to the type to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-owned string representation of the type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/charconv.h" line="26" column="44" declfile="include/rolly/global/charconv.h" declline="26" declcolumn="44"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1aeb6cbc9c9826b7eef31366ea5d000db2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename C</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr T</type>
+        <definition>constexpr T rolly::from_str</definition>
+        <argsstring>(std::basic_string_view&lt; C &gt; const &amp;str)=delete</argsstring>
+        <name>from_str</name>
+        <param>
+          <type>std::basic_string_view&lt; C &gt; const &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Function prototype for converting strings to C++ types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to convert </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Non-owned string representation of the type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Value of the converted type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/charconv.h" line="36" column="23" declfile="include/rolly/global/charconv.h" declline="36" declcolumn="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/global/charconv.h"/>
+  </compounddef>
+</doxygen>

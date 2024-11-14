@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="serialization__error_8h" kind="file" language="C++">
+    <compoundname>serialization_error.h</compoundname>
+    <includes local="no">stdexcept</includes>
+    <includes local="no">fmt/format.h</includes>
+    <includes refid="rtti_8h" local="yes">../rtti.h</includes>
+    <includes refid="tags_8h" local="yes">../serialization/tags.h</includes>
+    <includedby refid="serialization_8h" local="yes">serialization.h</includedby>
+    <includedby refid="exception_8h" local="yes">exception.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>fmt/format.h</label>
+      </node>
+      <node id="10">
+        <label>../serialization/tags.h</label>
+        <link refid="tags_8h_source"/>
+      </node>
+      <node id="2">
+        <label>stdexcept</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>global/export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="1">
+        <label>serialization_error.h</label>
+        <link refid="serialization__error_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="8">
+        <label>global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>typeinfo</label>
+      </node>
+      <node id="4">
+        <label>../rtti.h</label>
+        <link refid="rtti_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>serialization.h</label>
+        <link refid="serialization_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>serialization_error.h</label>
+        <link refid="serialization__error_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>config.h</label>
+        <link refid="config_8h_source"/>
+      </node>
+      <node id="6">
+        <label>exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>savefile.h</label>
+        <link refid="savefile_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classrolly_1_1exceptions_1_1serialization__error" prot="public">rolly::exceptions::serialization_error</innerclass>
+    <innerclass refid="classrolly_1_1exceptions_1_1deserialization__error" prot="public">rolly::exceptions::deserialization_error</innerclass>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1exceptions">rolly::exceptions</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/exception/serialization_error.h"/>
+  </compounddef>
+</doxygen>

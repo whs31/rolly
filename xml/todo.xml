@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>Todo List</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Module <ref refid="group__core" kindref="compound">core</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000001"/>Add detailed description. </para>
+</listitem>
+<varlistentry><term>Module <ref refid="group__macros" kindref="compound">macros</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000002"/>Add detailed description. </para>
+</listitem>
+<varlistentry><term>Module <ref refid="group__platform" kindref="compound">platform</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000003"/>Add reference to global constant and suggest to use it.  </para>
+</listitem>
+<varlistentry><term>page <ref refid="index" kindref="compound">Rolly documentation</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000004"/>Add introduction</para>
+<para><anchor id="todo_1_todo000005"/>Add installation instructions</para>
+<para><anchor id="todo_1_todo000006"/>Add usage instructions</para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

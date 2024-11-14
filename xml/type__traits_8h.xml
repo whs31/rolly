@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="type__traits_8h" kind="file" language="C++">
+    <compoundname>type_traits.h</compoundname>
+    <includes local="no">type_traits</includes>
+    <includedby refid="num_8h" local="yes">num.h</includedby>
+    <includedby refid="any__of_8h" local="yes">any_of.h</includedby>
+    <includedby refid="enum_8h" local="yes">enum.h</includedby>
+    <includedby refid="serialization_8h" local="yes">serialization.h</includedby>
+    <includedby refid="rolly_8h" local="yes">rolly.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>angle.h</label>
+        <link refid="angle_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>point2d.h</label>
+        <link refid="point2d_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>math.h</label>
+        <link refid="math_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>any_of.h</label>
+        <link refid="any__of_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>serialization.h</label>
+        <link refid="serialization_8h_source"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>utility.h</label>
+        <link refid="utility_8h_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>bit.h</label>
+        <link refid="bit_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>types.h</label>
+        <link refid="types_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>size2d.h</label>
+        <link refid="size2d_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>enum.h</label>
+        <link refid="enum_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>numbers.h</label>
+        <link refid="numbers_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>config.h</label>
+        <link refid="config_8h_source"/>
+      </node>
+      <node id="1">
+        <label>type_traits.h</label>
+        <link refid="type__traits_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>num.h</label>
+        <link refid="num_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>savefile.h</label>
+        <link refid="savefile_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>vector2d.h</label>
+        <link refid="vector2d_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>concepts.h</label>
+        <link refid="concepts_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>velocity.h</label>
+        <link refid="velocity_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>prelude.h</label>
+        <link refid="prelude_8h_source"/>
+      </node>
+      <node id="4">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrolly_1_1remove__cvref" prot="public">rolly::remove_cvref</innerclass>
+    <innerclass refid="structrolly_1_1plain__type" prot="public">rolly::plain_type</innerclass>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacerolly_1a3c0600da43d6867a247432fcc43ce84f" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>typename remove_cvref&lt; T &gt;::type</type>
+        <definition>using remove_cvref_t =  typename remove_cvref&lt;T&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>remove_cvref_t</name>
+        <briefdescription>
+<para>The type referred by T or T itself if it is not a reference, with top-level cv-qualifiers removed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/type_traits.h" line="27" column="3" bodyfile="include/rolly/type_traits.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>typename plain_type&lt; T &gt;::type</type>
+        <definition>using plain_type_t =  typename plain_type&lt;T&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>plain_type_t</name>
+        <briefdescription>
+<para>Remove all cv qualifiers, references and pointers from a type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="structrolly_1_1plain__type" kindref="compound">plain_type</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/type_traits.h" line="59" column="3" bodyfile="include/rolly/type_traits.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/type_traits.h"/>
+  </compounddef>
+</doxygen>

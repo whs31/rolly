@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>rolly::configuration_file class | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="config_8h.html">&lt;include/rolly/config.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename F, typename T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>configuration_file <span class="m-thin">class</span>
+        </h1>
+        <p>Configuration file that can be loaded and saved.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">F</td>
+              <td>Format type. Must be value of tag <a href="namespacerolly_1_1serialization_1_1format.html" class="m-doc">rolly::<wbr />serialization::<wbr />format</a> or your own format tag.</td>
+            </tr>
+            <tr>
+              <td>T</td>
+              <td>Type to serialize and deserialize. Must implement rolly::serialization::serializable_and_deserializable with character type <code>char</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>This class is used to store configuration values in a configuration file in given format. Accepts any type that implements rolly::serialization::serializable_and_deserializable with character type <code>char</code> and given format.</p><p>Example usage:</p><pre class="m-code"><span class="k">struct</span><span class="w"> </span><span class="nc">DummyConfiguration</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">u32</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">IpAddress</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">ip</span><span class="p">;</span>
+<span class="w">    </span><span class="n">u16</span><span class="w"> </span><span class="n">port</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">SockMode</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="n">tcp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="n">udp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">sock_mode</span><span class="p">{};</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">.</span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25565</span><span class="w"> </span><span class="p">};</span>
+<span class="p">};</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">rolly</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">serialize</span><span class="o">&lt;</span><span class="n">fl</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">format</span><span class="o">::</span><span class="n">toml</span><span class="o">&gt;</span><span class="p">(</span><span class="n">DummyConfiguration</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">basic_string</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">implementation</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">rolly</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">deserialize</span><span class="o">&lt;</span><span class="n">fl</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">format</span><span class="o">::</span><span class="n">toml</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">basic_string</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="n">DummyConfiguration</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">implementation</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">int</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">rolly</span><span class="o">::</span><span class="n">saving_policy</span><span class="p">;</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">rolly</span><span class="o">::</span><span class="nn">serialization</span><span class="o">::</span><span class="nn">format</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rolly</span><span class="o">::</span><span class="n">configuration_file</span><span class="o">&lt;</span><span class="n">format</span><span class="o">::</span><span class="n">toml</span><span class="p">,</span><span class="w"> </span><span class="n">DummyConfiguration</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;test.toml&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">fs</span><span class="o">::</span><span class="n">current_path</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;test-cfg&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">explicit_</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="n">config</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">config</span><span class="p">().</span><span class="n">ip_address</span><span class="p">.</span><span class="n">ip</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">config</span><span class="p">().</span><span class="n">ip_address</span><span class="p">.</span><span class="n">sock_mode</span><span class="p">.</span><span class="n">udp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="n">config</span><span class="p">.</span><span class="n">save</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></pre><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1serialization_1_1format.html" class="m-doc">rolly::<wbr />serialization::<wbr />format</a></p><p>rolly::serialization::serializable_and_deserializable</p><p><a href="namespacerolly.html#ae1e5f60a57661fe4d13cf754e0a8d6ae" class="m-doc">rolly::<wbr />saving_policy</a></p></aside>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classrolly_1_1io_1_1filedevice.html" class="m-doc">filedevice</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              static auto <a href="classrolly_1_1io_1_1filedevice.html#a5963243bd4dde422ba389da63fb2cab1" class="m-doc">write_permissions</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper">static auto <a href="classrolly_1_1io_1_1filedevice.html#a0c8308e2ccfa43c99a02dfb2cd6089ef" class="m-dox">read_from</a>(</span><span class="m-dox-wrap">std::filesystem::path const&amp; path) -&gt; <a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">static auto <a href="classrolly_1_1io_1_1filedevice.html#a8007f9e387b60936bb962035c645c430" class="m-dox">try_read_from</a>(</span><span class="m-dox-wrap">std::filesystem::path const&amp; path) -&gt; result&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>&gt; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">static void <a href="classrolly_1_1io_1_1filedevice.html#a0216cd840232d838604b8f3f859eedde" class="m-dox">write_to</a>(</span><span class="m-dox-wrap">std::filesystem::path const&amp; path,
+              std::string_view content) <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">static auto <a href="classrolly_1_1io_1_1filedevice.html#a56105d753006a32aa832a7ad76390f01" class="m-dox">try_write_to</a>(</span><span class="m-dox-wrap">std::filesystem::path const&amp; path,
+              std::string_view content) -&gt; result <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#ab7300f20d215d2e4369770ff4135a113" class="m-dox">configuration_file</a>(</span><span class="m-dox-wrap">std::filesystem::path path,
+              <a href="namespacerolly.html#ae1e5f60a57661fe4d13cf754e0a8d6ae" class="m-doc">saving_<wbr />policy</a> policy) <span class="m-label m-flat m-info">explicit</span> </span>
+            </dt>
+            <dd>Creates or loads configuration file from given path with saving policy.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a18451451f7e324f25db86f011a7908a5" class="m-dox">configuration_file</a>(</span><span class="m-dox-wrap">std::string_view filename,
+              std::filesystem::path const&amp; folder,
+              <a href="namespacerolly.html#ae1e5f60a57661fe4d13cf754e0a8d6ae" class="m-doc">saving_<wbr />policy</a> policy) <span class="m-label m-flat m-info">explicit</span> </span>
+            </dt>
+            <dd>Creates or loads configuration file from given path and folder with saving policy.</dd>
+            <dt id="a0c950eff44aa6758331e8ef31b282f13">
+              <span class="m-dox-wrap-bumper"><a href="#a0c950eff44aa6758331e8ef31b282f13" class="m-dox-self" name="a0c950eff44aa6758331e8ef31b282f13">configuration_file</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1configuration__file.html" class="m-doc">configuration_<wbr />file</a> const&amp;) <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abc103010a13e13273b7ebb6f5abb744c">
+              <span class="m-dox-wrap-bumper"><a href="#abc103010a13e13273b7ebb6f5abb744c" class="m-dox-self" name="abc103010a13e13273b7ebb6f5abb744c">configuration_file</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1configuration__file.html" class="m-doc">configuration_<wbr />file</a>&amp;&amp;) <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a87744a7d4bc1ae142669345201fd3cff" class="m-dox">~configuration_file</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-warning">virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Closes configuration file.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper"><a href="#a420e60e9788bfa3b52aa3aab72ea3a5e" class="m-dox">operator bool</a>(</span><span class="m-dox-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns whether configuration file is valid or not.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a315419f26d3c59fa143b49b90a019049">
+              <span class="m-dox-wrap-bumper">auto <a href="#a315419f26d3c59fa143b49b90a019049" class="m-dox-self" name="a315419f26d3c59fa143b49b90a019049">valid</a>(</span><span class="m-dox-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd>Returns whether configuration file is valid or not.</dd>
+            <dt id="a4c482a82a76a1795230c3b7c795c6522">
+              <span class="m-dox-wrap-bumper">auto <a href="#a4c482a82a76a1795230c3b7c795c6522" class="m-dox-self" name="a4c482a82a76a1795230c3b7c795c6522">saving_policy</a>(</span><span class="m-dox-wrap">) const -&gt; enum <a href="namespacerolly.html#ae1e5f60a57661fe4d13cf754e0a8d6ae" class="m-doc">saving_<wbr />policy</a></span>
+            </dt>
+            <dd>Saving policy.</dd>
+            <dt id="a118d219d09d66ec2576a7bbc31a69d26">
+              <span class="m-dox-wrap-bumper">auto <a href="#a118d219d09d66ec2576a7bbc31a69d26" class="m-dox-self" name="a118d219d09d66ec2576a7bbc31a69d26">values</a>(</span><span class="m-dox-wrap">) const -&gt; T const &amp;</span>
+            </dt>
+            <dd>Constant reference to the current values of configuration file.</dd>
+            <dt id="a61e8a1bf44a495e3db6ffc8041a87b5b">
+              <span class="m-dox-wrap-bumper">auto <a href="#a61e8a1bf44a495e3db6ffc8041a87b5b" class="m-dox-self" name="a61e8a1bf44a495e3db6ffc8041a87b5b">values_mut</a>(</span><span class="m-dox-wrap">) -&gt; T&amp;</span>
+            </dt>
+            <dd>Mutable reference to the current values of configuration file.</dd>
+            <dt id="a97f2ce038608c3eea243a200d73abc1b">
+              <span class="m-dox-wrap-bumper">auto <a href="#a97f2ce038608c3eea243a200d73abc1b" class="m-dox-self" name="a97f2ce038608c3eea243a200d73abc1b">default_values</a>(</span><span class="m-dox-wrap">) const -&gt; T const &amp;</span>
+            </dt>
+            <dd>Default values of configuration file.</dd>
+            <dt id="a4beca5e62db0dc01ba9a5b921725b09d">
+              <span class="m-dox-wrap-bumper">auto <a href="#a4beca5e62db0dc01ba9a5b921725b09d" class="m-dox-self" name="a4beca5e62db0dc01ba9a5b921725b09d">default_values_mut</a>(</span><span class="m-dox-wrap">) -&gt; T&amp;</span>
+            </dt>
+            <dd>Mutable reference to default values of configuration file.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#a96350dbe2693f29fd1fd7e0b44981bf8" class="m-dox">load</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd>Loads configuration file from file.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#ac09d45cc534c27373744e2472c720a76" class="m-dox">save</a>(</span><span class="m-dox-wrap">) const <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd>Saves configuration file to file.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#aa30d950c278f5487c30e4e1251309816" class="m-dox">revert_to_default</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd>Reverts configuration file to default values.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a1e344333134003bc0aab05727b4a4e3c" class="m-dox">operator()</a>(</span><span class="m-dox-wrap">) const -&gt; T const &amp;</span>
+            </dt>
+            <dd>Constant reference to the current values of configuration file.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a9b6e1a7a6d5d7db85bae38ba04aaec7f" class="m-dox">operator()</a>(</span><span class="m-dox-wrap">) -&gt; T&amp;</span>
+            </dt>
+            <dd>Mutable reference to the current values of configuration file.</dd>
+            <dt id="a31469fed90e8e9853f923101bb22488e">
+              <span class="m-dox-wrap-bumper">auto <a href="#a31469fed90e8e9853f923101bb22488e" class="m-dox-self" name="a31469fed90e8e9853f923101bb22488e">operator=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1configuration__file.html" class="m-doc">configuration_<wbr />file</a> const&amp;) -&gt; <a href="classrolly_1_1configuration__file.html" class="m-doc">configuration_<wbr />file</a>&amp; <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7b28d2ef7e63df8e7bd2e85759d0a723">
+              <span class="m-dox-wrap-bumper">auto <a href="#a7b28d2ef7e63df8e7bd2e85759d0a723" class="m-dox-self" name="a7b28d2ef7e63df8e7bd2e85759d0a723">operator=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1configuration__file.html" class="m-doc">configuration_<wbr />file</a>&amp;&amp;) -&gt; <a href="classrolly_1_1configuration__file.html" class="m-doc">configuration_<wbr />file</a>&amp; <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="classrolly_1_1io_1_1filedevice.html#a552d7f392bb1a0fa04a64f737962f1b2" class="m-dox">path</a>(</span><span class="m-dox-wrap">) const -&gt; std::filesystem::path const &amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="classrolly_1_1io_1_1filedevice.html#abdd96853741d33edcb6d31cae7d30440" class="m-dox">suffixed_path</a>(</span><span class="m-dox-wrap">std::string_view suffix) const -&gt; std::filesystem::path</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="classrolly_1_1io_1_1filedevice.html#aa7d8623150e6d43ab4bf7493aa8cbc1a" class="m-dox">exists</a>(</span><span class="m-dox-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="classrolly_1_1io_1_1filedevice.html#a9679f146b538754acbf087378a3ddaad" class="m-dox">is_regular_file</a>(</span><span class="m-dox-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="classrolly_1_1io_1_1filedevice.html#abe8e2e9db3d4ce712d36196439e748f7" class="m-dox">read</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="classrolly_1_1io_1_1filedevice.html#a0d339d4d2a65c872eb96721d4d9fc5de" class="m-dox">try_read</a>(</span><span class="m-dox-wrap">) const -&gt; result&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>&gt; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="classrolly_1_1io_1_1filedevice.html#a50fec7e7d10e5475e0ccf14adbaf7db0" class="m-dox">write</a>(</span><span class="m-dox-wrap">std::string_view content) const <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="classrolly_1_1io_1_1filedevice.html#a3c3bc25a16c19968d1381cb89df6458b" class="m-dox">try_write</a>(</span><span class="m-dox-wrap">std::string_view content) const -&gt; result <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a0c8308e2ccfa43c99a02dfb2cd6089ef"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static <a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0c8308e2ccfa43c99a02dfb2cd6089ef" class="m-doc-self">read_from</a>(</span><span class="m-doc-wrap">std::filesystem::path const&amp; path)</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a8007f9e387b60936bb962035c645c430"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static result&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>&gt; rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8007f9e387b60936bb962035c645c430" class="m-doc-self">try_read_from</a>(</span><span class="m-doc-wrap">std::filesystem::path const&amp; path) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0216cd840232d838604b8f3f859eedde"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static void rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0216cd840232d838604b8f3f859eedde" class="m-doc-self">write_to</a>(</span><span class="m-doc-wrap">std::filesystem::path const&amp; path,
+              std::string_view content) <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a56105d753006a32aa832a7ad76390f01"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static result rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a56105d753006a32aa832a7ad76390f01" class="m-doc-self">try_write_to</a>(</span><span class="m-doc-wrap">std::filesystem::path const&amp; path,
+              std::string_view content) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab7300f20d215d2e4369770ff4135a113"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab7300f20d215d2e4369770ff4135a113" class="m-doc-self">configuration_file</a>(</span><span class="m-doc-wrap">std::filesystem::path path,
+              <a href="namespacerolly.html#ae1e5f60a57661fe4d13cf754e0a8d6ae" class="m-doc">saving_<wbr />policy</a> policy) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <p>Creates or loads configuration file from given path with saving policy.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">path</td>
+                  <td>Path to configuration file.</td>
+                </tr>
+                <tr>
+                  <td>policy</td>
+                  <td>Saving policy.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>This constructor will not throw any error, but will return an invalid configuration file. Don&#x27;t forget to check if configuration file is valid before using it.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1configuration__file.html#a4c482a82a76a1795230c3b7c795c6522" class="m-doc">saving_<wbr />policy</a></p><p><a href="classrolly_1_1configuration__file.html#a315419f26d3c59fa143b49b90a019049" class="m-doc">valid</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a18451451f7e324f25db86f011a7908a5"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18451451f7e324f25db86f011a7908a5" class="m-doc-self">configuration_file</a>(</span><span class="m-doc-wrap">std::string_view filename,
+              std::filesystem::path const&amp; folder,
+              <a href="namespacerolly.html#ae1e5f60a57661fe4d13cf754e0a8d6ae" class="m-doc">saving_<wbr />policy</a> policy) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <p>Creates or loads configuration file from given path and folder with saving policy.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">filename</td>
+                  <td>Filename of configuration file.</td>
+                </tr>
+                <tr>
+                  <td>folder</td>
+                  <td>Folder where configuration file is located.</td>
+                </tr>
+                <tr>
+                  <td>policy</td>
+                  <td>Saving policy.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>This constructor will not throw any error, but will return an invalid configuration file. Don&#x27;t forget to check if configuration file is valid before using it.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1configuration__file.html#a4c482a82a76a1795230c3b7c795c6522" class="m-doc">saving_<wbr />policy</a></p><p><a href="classrolly_1_1configuration__file.html#a315419f26d3c59fa143b49b90a019049" class="m-doc">valid</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a87744a7d4bc1ae142669345201fd3cff"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a87744a7d4bc1ae142669345201fd3cff" class="m-doc-self">~configuration_file</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Closes configuration file.</p>
+<p>If saving policy is set to <a href="namespacerolly.html#ae1e5f60a57661fe4d13cf754e0a8d6aeaf47468435c3051a65ef52dbe8a7838b1" class="m-doc">saving_policy::<wbr />autosave</a>, file will be saved automatically on closing.</p>
+          </div></section>
+          <section class="m-doc-details" id="a420e60e9788bfa3b52aa3aab72ea3a5e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a420e60e9788bfa3b52aa3aab72ea3a5e" class="m-doc-self">operator bool</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns whether configuration file is valid or not.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1configuration__file.html#a315419f26d3c59fa143b49b90a019049" class="m-doc">valid</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a96350dbe2693f29fd1fd7e0b44981bf8"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a96350dbe2693f29fd1fd7e0b44981bf8" class="m-doc-self">load</a>(</span><span class="m-doc-wrap">) <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p>Loads configuration file from file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%"><a href="http://en.cppreference.com/w/cpp/error/exception.html" class="m-doc-external">std::<wbr />exception</a></td>
+                  <td>if loading fails.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac09d45cc534c27373744e2472c720a76"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac09d45cc534c27373744e2472c720a76" class="m-doc-self">save</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p>Saves configuration file to file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%"><a href="http://en.cppreference.com/w/cpp/error/exception.html" class="m-doc-external">std::<wbr />exception</a></td>
+                  <td>if saving fails.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa30d950c278f5487c30e4e1251309816"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa30d950c278f5487c30e4e1251309816" class="m-doc-self">revert_to_default</a>(</span><span class="m-doc-wrap">) <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p>Reverts configuration file to default values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%"><a href="http://en.cppreference.com/w/cpp/error/exception.html" class="m-doc-external">std::<wbr />exception</a></td>
+                  <td>if reverting fails.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1e344333134003bc0aab05727b4a4e3c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T const &amp; rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e344333134003bc0aab05727b4a4e3c" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Constant reference to the current values of configuration file.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1configuration__file.html#a118d219d09d66ec2576a7bbc31a69d26" class="m-doc">values</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a9b6e1a7a6d5d7db85bae38ba04aaec7f"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T&amp; rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9b6e1a7a6d5d7db85bae38ba04aaec7f" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Mutable reference to the current values of configuration file.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1configuration__file.html#a61e8a1bf44a495e3db6ffc8041a87b5b" class="m-doc">values_<wbr />mut</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a552d7f392bb1a0fa04a64f737962f1b2"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::filesystem::path const &amp; rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a552d7f392bb1a0fa04a64f737962f1b2" class="m-doc-self">path</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abdd96853741d33edcb6d31cae7d30440"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::filesystem::path rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abdd96853741d33edcb6d31cae7d30440" class="m-doc-self">suffixed_path</a>(</span><span class="m-doc-wrap">std::string_view suffix) const</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa7d8623150e6d43ab4bf7493aa8cbc1a"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7d8623150e6d43ab4bf7493aa8cbc1a" class="m-doc-self">exists</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9679f146b538754acbf087378a3ddaad"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9679f146b538754acbf087378a3ddaad" class="m-doc-self">is_regular_file</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abe8e2e9db3d4ce712d36196439e748f7"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe8e2e9db3d4ce712d36196439e748f7" class="m-doc-self">read</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0d339d4d2a65c872eb96721d4d9fc5de"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">result&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>&gt; rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0d339d4d2a65c872eb96721d4d9fc5de" class="m-doc-self">try_read</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a50fec7e7d10e5475e0ccf14adbaf7db0"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a50fec7e7d10e5475e0ccf14adbaf7db0" class="m-doc-self">write</a>(</span><span class="m-doc-wrap">std::string_view content) const <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3c3bc25a16c19968d1381cb89df6458b"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">result rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c3bc25a16c19968d1381cb89df6458b" class="m-doc-self">try_write</a>(</span><span class="m-doc-wrap">std::string_view content) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="a5963243bd4dde422ba389da63fb2cab1"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename T&gt;
+              </div>
+              static auto rolly::<wbr />configuration_file&lt;F, T&gt;::<wbr /><a href="#a5963243bd4dde422ba389da63fb2cab1" class="m-doc-self">write_permissions</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

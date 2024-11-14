@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structfmt_1_1formatter_3_01rolly_1_1angle_3_01T_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>fmt::formatter&lt; rolly::angle&lt; T &gt; &gt;</compoundname>
+    <includes refid="angle_8h" local="no">angle.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfmt_1_1formatter_3_01rolly_1_1angle_3_01T_01_4_01_4_1ace7073dae42bf3e88060cd4f66d6a01f" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr auto</type>
+        <definition>constexpr auto parse</definition>
+        <argsstring>(format_parse_context &amp;ctx)</argsstring>
+        <name>parse</name>
+        <param>
+          <type>format_parse_context &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/angle.h" line="566" column="18" bodyfile="include/rolly/types/angle.h" bodystart="566" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="structfmt_1_1formatter_3_01rolly_1_1angle_3_01T_01_4_01_4_1a2cd2de60f7bb6637d96681c14ea251d1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto format</definition>
+        <argsstring>(rolly::angle&lt; T &gt; const &amp;val, format_context &amp;ctx) const</argsstring>
+        <name>format</name>
+        <param>
+          <type><ref refid="structrolly_1_1types_1_1angle" kindref="compound">rolly::angle</ref>&lt; T &gt; const &amp;</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>format_context &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/angle.h" line="568" column="8" bodyfile="include/rolly/types/angle.h" bodystart="568" bodyend="571"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Specialization of the <computeroutput>fmt::formatter</computeroutput> for the <ref refid="structrolly_1_1types_1_1angle" kindref="compound">rolly::angle</ref> class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="include/rolly/types/angle.h" line="565" column="23" bodyfile="include/rolly/types/angle.h" bodystart="565" bodyend="572"/>
+    <listofallmembers>
+      <member refid="structfmt_1_1formatter_3_01rolly_1_1angle_3_01T_01_4_01_4_1a2cd2de60f7bb6637d96681c14ea251d1" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::angle&lt; T &gt; &gt;</scope><name>format</name></member>
+      <member refid="structfmt_1_1formatter_3_01rolly_1_1angle_3_01T_01_4_01_4_1ace7073dae42bf3e88060cd4f66d6a01f" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::angle&lt; T &gt; &gt;</scope><name>parse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

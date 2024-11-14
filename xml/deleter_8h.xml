@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="deleter_8h" kind="file" language="C++">
+    <compoundname>deleter.h</compoundname>
+    <includedby refid="memory_8h" local="yes">memory.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>deleter.h</label>
+        <link refid="deleter_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>memory.h</label>
+        <link refid="memory_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrolly_1_1deleter" prot="public">rolly::deleter</innerclass>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/memory/deleter.h"/>
+  </compounddef>
+</doxygen>

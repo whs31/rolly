@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrolly_1_1dll_1_1shared__library" kind="class" language="C++" prot="public">
+    <compoundname>rolly::dll::shared_library</compoundname>
+    <basecompoundref refid="structrolly_1_1noncopyable" prot="private" virt="non-virtual">noncopyable</basecompoundref>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classrolly_1_1dll_1_1shared__library_1a4e40a1ae30bf255f2e528fa8c2c712af" prot="private" static="no">
+        <type><ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> *(*)()</type>
+        <definition>using bootstrap_function_type =  plugin* (*)()</definition>
+        <argsstring></argsstring>
+        <name>bootstrap_function_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="41" column="5" bodyfile="include/rolly/dll/shared_library.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrolly_1_1dll_1_1shared__library_1a4d739cc5d335052eb9f5b2ca559b81d1" prot="private" static="no" mutable="no">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="45" column="17" bodyfile="include/rolly/dll/shared_library.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1dll_1_1shared__library_1ab79efa45bbc9b84612ef457b4ca25025" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* handle_</definition>
+        <argsstring></argsstring>
+        <name>handle_</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="46" column="10" bodyfile="include/rolly/dll/shared_library.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1dll_1_1shared__library_1ae085158a530fc969b1c42c36f43c08d5" prot="private" static="no" mutable="no">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path path_</definition>
+        <argsstring></argsstring>
+        <name>path_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="47" column="27" bodyfile="include/rolly/dll/shared_library.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1ae155c3348d1591951120486f11dcfd5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>shared_library</definition>
+        <argsstring>()=default</argsstring>
+        <name>shared_library</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="19" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1ab618d70357203bcc6dcd33a873b4f76b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>shared_library</definition>
+        <argsstring>(std::string name)</argsstring>
+        <name>shared_library</name>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="20" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1afe11e9150d753b22bf107aa63f1ef611" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>shared_library</definition>
+        <argsstring>(std::filesystem::path const &amp;path, std::string name)</argsstring>
+        <name>shared_library</name>
+        <param>
+          <type>std::filesystem::path const &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="21" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1a33eb15370cece6445c580c8e5f14643f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>shared_library</definition>
+        <argsstring>(shared_library &amp;&amp;) noexcept</argsstring>
+        <name>shared_library</name>
+        <param>
+          <type><ref refid="classrolly_1_1dll_1_1shared__library" kindref="compound">shared_library</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="22" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1ad2dad22142bcab3e5c0dfc89bb054f28" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classrolly_1_1dll_1_1shared__library" kindref="compound">shared_library</ref> &amp;</type>
+        <definition>shared_library&amp; operator=</definition>
+        <argsstring>(shared_library &amp;&amp;) noexcept</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classrolly_1_1dll_1_1shared__library" kindref="compound">shared_library</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="23" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1a8a359b648693ee7d178b209b6d116eab" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ~shared_library</definition>
+        <argsstring>()</argsstring>
+        <name>~shared_library</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="24" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1a78f7d20352e4f6e11cbac61efd4522e0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* handle</definition>
+        <argsstring>() const</argsstring>
+        <name>handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="26" column="11" bodyfile="include/rolly/dll/shared_library.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1a552d7f392bb1a0fa04a64f737962f1b2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::filesystem::path const  &amp;</type>
+        <definition>std::filesystem::path const&amp; path</definition>
+        <argsstring>() const</argsstring>
+        <name>path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="28" column="34" bodyfile="include/rolly/dll/shared_library.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1a3b311ad7b66f230479b19b47c094cb41" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view name</definition>
+        <argsstring>() const</argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="30" column="23" bodyfile="include/rolly/dll/shared_library.h" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1a315419f26d3c59fa143b49b90a019049" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool valid</definition>
+        <argsstring>() const</argsstring>
+        <name>valid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="32" column="11" bodyfile="include/rolly/dll/shared_library.h" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1a67b76affb3b5d35fa419ac234144038b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="34" column="6" bodyfile="include/rolly/dll/shared_library.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1af5acc1f38091c0eece64aa0186f44689" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> *</type>
+        <definition>plugin* load</definition>
+        <argsstring>() const</argsstring>
+        <name>load</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="36" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1aad536e71012b5d60d29287b7f644f236" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>result&lt; <ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> * &gt;</type>
+        <definition>result&lt;plugin*&gt; try_load</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>try_load</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="38" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classrolly_1_1dll_1_1shared__library_1a17e0e86fbb2456154de9f88bc60bb2f0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bootstrap_function_type</type>
+        <definition>bootstrap_function_type locate_entry</definition>
+        <argsstring>() const</argsstring>
+        <name>locate_entry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/dll/shared_library.h" line="43" column="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>shared_library</label>
+        <link refid="classrolly_1_1dll_1_1shared__library"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>noncopyable</label>
+        <link refid="structrolly_1_1noncopyable"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>shared_library</label>
+        <link refid="classrolly_1_1dll_1_1shared__library"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>noncopyable</label>
+        <link refid="structrolly_1_1noncopyable"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/rolly/dll/shared_library.h" line="16" column="33" bodyfile="include/rolly/dll/shared_library.h" bodystart="12" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a4e40a1ae30bf255f2e528fa8c2c712af" prot="private" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>bootstrap_function_type</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a78f7d20352e4f6e11cbac61efd4522e0" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>handle</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1ab79efa45bbc9b84612ef457b4ca25025" prot="private" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>handle_</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1af5acc1f38091c0eece64aa0186f44689" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>load</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a17e0e86fbb2456154de9f88bc60bb2f0" prot="private" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>locate_entry</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a3b311ad7b66f230479b19b47c094cb41" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>name</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a4d739cc5d335052eb9f5b2ca559b81d1" prot="private" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>name_</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a67b76affb3b5d35fa419ac234144038b" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>operator bool</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1ad2dad22142bcab3e5c0dfc89bb054f28" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>operator=</name></member>
+      <member refid="structrolly_1_1noncopyable_1abf5d0a96e554770dbe7f2470901b23f8" prot="private" virt="non-virtual" ambiguityscope="rolly::noncopyable::"><scope>rolly::dll::shared_library</scope><name>operator=</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a552d7f392bb1a0fa04a64f737962f1b2" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>path</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1ae085158a530fc969b1c42c36f43c08d5" prot="private" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>path_</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1ae155c3348d1591951120486f11dcfd5c" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>shared_library</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1ab618d70357203bcc6dcd33a873b4f76b" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>shared_library</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1afe11e9150d753b22bf107aa63f1ef611" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>shared_library</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a33eb15370cece6445c580c8e5f14643f" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>shared_library</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1aad536e71012b5d60d29287b7f644f236" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>try_load</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a315419f26d3c59fa143b49b90a019049" prot="public" virt="non-virtual"><scope>rolly::dll::shared_library</scope><name>valid</name></member>
+      <member refid="classrolly_1_1dll_1_1shared__library_1a8a359b648693ee7d178b209b6d116eab" prot="public" virt="virtual"><scope>rolly::dll::shared_library</scope><name>~shared_library</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

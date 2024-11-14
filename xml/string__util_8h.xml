@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="string__util_8h" kind="file" language="C++">
+    <compoundname>string_util.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">string_view</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="rolly_8h" local="yes">rolly.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>string_util.h</label>
+        <link refid="string__util_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string_view</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>string_util.h</label>
+        <link refid="string__util_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerolly_1a9d0a17c2da385b9fdd03560792c0bab3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
+        <definition>std::vector&lt;std::string&gt; rolly::split</definition>
+        <argsstring>(std::string const &amp;input)</argsstring>
+        <name>split</name>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="8" column="16" declfile="include/rolly/string_util.h" declline="8" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a4fffede0e041c8ac069640149b823f35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
+        <definition>std::vector&lt;std::string&gt; rolly::split</definition>
+        <argsstring>(std::string_view input)</argsstring>
+        <name>split</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="9" column="16" declfile="include/rolly/string_util.h" declline="9" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a3550c846d77c5b1c9a9c85b5b588d890" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
+        <definition>std::vector&lt;std::string&gt; rolly::split_by</definition>
+        <argsstring>(std::string const &amp;input, char delimiter)</argsstring>
+        <name>split_by</name>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="11" column="16" declfile="include/rolly/string_util.h" declline="11" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1ab2f4183b11c82cc7bad02825b8e74717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
+        <definition>std::vector&lt;std::string&gt; rolly::split_by</definition>
+        <argsstring>(std::string_view input, char delimiter)</argsstring>
+        <name>split_by</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="12" column="16" declfile="include/rolly/string_util.h" declline="12" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a4cee505f1280fd2a0f8354e2efd7fd01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string rolly::to_lower</definition>
+        <argsstring>(std::string_view input)</argsstring>
+        <name>to_lower</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="14" column="16" declfile="include/rolly/string_util.h" declline="14" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a92f9cae32654fc69e69e56418a20c551" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool rolly::starts_with</definition>
+        <argsstring>(std::basic_string&lt; C &gt; const &amp;input, std::basic_string_view&lt; C &gt; sv) noexcept</argsstring>
+        <name>starts_with</name>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt; C &gt; const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::basic_string_view&lt; C &gt;</type>
+          <declname>sv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="17" column="8" bodyfile="include/rolly/string_util.h" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a7f7b41082b35952624e4871f8ae855ed" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool rolly::starts_with</definition>
+        <argsstring>(std::basic_string&lt; C &gt; const &amp;input, C c) noexcept</argsstring>
+        <name>starts_with</name>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt; C &gt; const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>C</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="22" column="8" bodyfile="include/rolly/string_util.h" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a9adf9e794ef1d06475cdfd66dd6a6b57" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool rolly::starts_with</definition>
+        <argsstring>(std::basic_string&lt; C &gt; const &amp;input, C const *chp) noexcept</argsstring>
+        <name>starts_with</name>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt; C &gt; const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>C const *</type>
+          <declname>chp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="27" column="8" bodyfile="include/rolly/string_util.h" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1aea74ed9754268ce0924b9578ff6cd02c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool rolly::ends_with</definition>
+        <argsstring>(std::basic_string&lt; C &gt; const &amp;input, std::basic_string_view&lt; C &gt; sv) noexcept</argsstring>
+        <name>ends_with</name>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt; C &gt; const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::basic_string_view&lt; C &gt;</type>
+          <declname>sv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="32" column="8" bodyfile="include/rolly/string_util.h" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a0d34216c96023f88cd65d547a38b1616" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool rolly::ends_with</definition>
+        <argsstring>(std::basic_string&lt; C &gt; const &amp;input, C c) noexcept</argsstring>
+        <name>ends_with</name>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt; C &gt; const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>C</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="37" column="8" bodyfile="include/rolly/string_util.h" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1acddd0f67ccfd58a04d5321b3dc5647ee" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool rolly::ends_with</definition>
+        <argsstring>(std::basic_string&lt; C &gt; const &amp;input, C const *chp) noexcept</argsstring>
+        <name>ends_with</name>
+        <param>
+          <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt; C &gt; const &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>C const *</type>
+          <declname>chp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/string_util.h" line="42" column="8" bodyfile="include/rolly/string_util.h" bodystart="42" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/string_util.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="enum_8h" kind="file" language="C++">
+    <compoundname>enum.h</compoundname>
+    <includes refid="definitions_8h" local="yes">../global/definitions.h</includes>
+    <includes refid="type__traits_8h" local="yes">../type_traits.h</includes>
+    <includedby refid="concepts_8h" local="yes">concepts.h</includedby>
+    <includedby refid="utility_8h" local="yes">utility.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="4">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="2">
+        <label>../global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>enum.h</label>
+        <link refid="enum_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../type_traits.h</label>
+        <link refid="type__traits_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>utility.h</label>
+        <link refid="utility_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>enum.h</label>
+        <link refid="enum_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>concepts.h</label>
+        <link refid="concepts_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>prelude.h</label>
+        <link refid="prelude_8h_source"/>
+      </node>
+      <node id="3">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1concepts">rolly::concepts</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a0b007b1ce299704da471216af2c258b8" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept enum_</definition>
+        <argsstring></argsstring>
+        <name>enum_</name>
+        <initializer>= std::is_enum_v&lt;plain_type_t&lt;T&gt;&gt;</initializer>
+        <briefdescription>
+<para>Concept that is true if T is an enum type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Will yield <computeroutput>true</computeroutput> for any type that is a scoped or unscoped enum. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/enum.h" line="15" column="11" bodyfile="include/rolly/concepts/enum.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/concepts/enum.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>std namespace | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          std <span class="m-thin">namespace</span>
+        </h1>
+        <p>STL namespace.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              struct <a href="structstd_1_1hash_3_01rolly_1_1box_3_01T_01_4_01_4.html" class="m-doc">hash&lt;rolly::box&lt;T&gt;&gt;</a>
+            </dt>
+            <dd>Hashes a <code>box</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;&gt;</div>
+              struct <a href="structstd_1_1hash_3_01rolly_1_1guid_01_4.html" class="m-doc">hash&lt;rolly::guid&gt;</a>
+            </dt>
+            <dd>Hashes a <code>guid</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              struct <a href="structstd_1_1hash_3_01rolly_1_1observer__ptr_3_01T_01_4_01_4.html" class="m-doc">hash&lt;rolly::observer_ptr&lt;T&gt;&gt;</a>
+            </dt>
+            <dd>Hashes the observer_ptr.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              struct <a href="structstd_1_1hash_3_01rolly_1_1types_1_1point2d_3_01T_01_4_01_4.html" class="m-doc">hash&lt;rolly::types::point2d&lt;T&gt;&gt;</a>
+            </dt>
+            <dd>Hashes a <code>point2d</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              struct <a href="structstd_1_1hash_3_01rolly_1_1types_1_1size2d_3_01T_01_4_01_4.html" class="m-doc">hash&lt;rolly::types::size2d&lt;T&gt;&gt;</a>
+            </dt>
+            <dd>Hashes a <code>size2d</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              struct <a href="structstd_1_1hash_3_01rolly_1_1types_1_1vector2d_3_01T_01_4_01_4.html" class="m-doc">hash&lt;rolly::types::vector2d&lt;T&gt;&gt;</a>
+            </dt>
+            <dd>Hashes a <code>vector2d</code>.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_sub.html#" class="m-dox">atomic_fetch_and_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_xor.html#" class="m-dox">atomic_fetch_xor_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/set_unexpected.html#" class="m-dox">set_unexpected</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fputs.html#" class="m-dox">fputs</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/modf.html#" class="m-dox">modf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/functional/not2.html#" class="m-dox">not2</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strlen.html#" class="m-dox">strlen</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/exp2.html#" class="m-dox">exp2</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/setiosflags.html#" class="m-dox">setiosflags</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/adjacent_difference.html#" class="m-dox">adjacent_difference</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/cos.html#" class="m-dox">cos</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fwscanf.html#" class="m-dox">fwscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_init.html#" class="m-dox">atomic_init</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/tuple/forward_as_tuple.html#" class="m-dox">forward_as_tuple</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/abort.html#" class="m-dox">abort</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcsncmp.html#" class="m-dox">wcsncmp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/set_intersection.html#" class="m-dox">set_intersection</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_signal_fence.html#" class="m-dox">atomic_signal_fence</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/abs.html#" class="m-dox">llabs</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/make_move_iterator.html#" class="m-dox">make_move_iterator</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fscanf.html#" class="m-dox">scanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/nextafter.html#" class="m-dox">nextafter</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/stol.html#" class="m-dox">stol</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strcspn.html#" class="m-dox">strcspn</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/ungetwc.html#" class="m-dox">ungetwc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/transform.html#" class="m-dox">transform</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fputc.html#" class="m-dox">putc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswdigit.html#" class="m-dox">iswdigit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/rint.html#" class="m-dox">rint</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/memset.html#" class="m-dox">memset</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/isgraph.html#" class="m-dox">isgraph</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/replace_copy.html#" class="m-dox">replace_copy_if</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/scalbn.html#" class="m-dox">scalbn</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/partial_sort_copy.html#" class="m-dox">partial_sort_copy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/make_exception_ptr.html#" class="m-dox">make_exception_ptr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/frexp.html#" class="m-dox">frexp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/isxdigit.html#" class="m-dox">isxdigit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_exchange.html#" class="m-dox">atomic_exchange_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fwprintf.html#" class="m-dox">wprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/fdim.html#" class="m-dox">fdim</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wctype.html#" class="m-dox">wctype</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/mbrtoc32.html#" class="m-dox">mbrtoc32</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/setw.html#" class="m-dox">setw</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/get_temporary_buffer.html#" class="m-dox">get_temporary_buffer</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/fmax.html#" class="m-dox">fmax</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_thread_fence.html#" class="m-dox">atomic_thread_fence</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_exchange.html#" class="m-dox">atomic_exchange</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fgetwc.html#" class="m-dox">fgetwc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fwprintf.html#" class="m-dox">swprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/prev_permutation.html#" class="m-dox">prev_permutation</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/max_element.html#" class="m-dox">max_element</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/set_symmetric_difference.html#" class="m-dox">set_symmetric_difference</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcscpy.html#" class="m-dox">wcscpy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/shared_ptr/pointer_cast.html#" class="m-dox">const_pointer_cast</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/minmax_element.html#" class="m-dox">minmax_element</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstok.html#" class="m-dox">wcstok</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/functional/ref.html#" class="m-dox">ref</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feupdateenv.html#" class="m-dox">feupdateenv</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/endl.html#" class="m-dox">endl</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/end.html#" class="m-dox">end</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wmemmove.html#" class="m-dox">wmemmove</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/fmin.html#" class="m-dox">fmin</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/uninitialized_fill_n.html#" class="m-dox">uninitialized_fill_n</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/uppercase.html#" class="m-dox">nouppercase</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/showpos.html#" class="m-dox">noshowpos</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/ctime.html#" class="m-dox">ctime</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wmemset.html#" class="m-dox">wmemset</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswpunct.html#" class="m-dox">iswpunct</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/pop_heap.html#" class="m-dox">pop_heap</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fprintf.html#" class="m-dox">sprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/fixed.html#" class="m-dox">fixed</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/shared_ptr/make_shared.html#" class="m-dox">make_shared</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/make_heap.html#" class="m-dox">make_heap</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/fmod.html#" class="m-dox">fmod</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/atoi.html#" class="m-dox">atol</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/uninitialized_copy.html#" class="m-dox">uninitialized_copy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/shared_ptr/pointer_cast.html#" class="m-dox">dynamic_pointer_cast</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/set_union.html#" class="m-dox">set_union</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/fixed.html#" class="m-dox">hexfloat</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfwprintf.html#" class="m-dox">vswprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/asctime.html#" class="m-dox">asctime</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswspace.html#" class="m-dox">iswspace</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/nan.html#" class="m-dox">nan</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/sort.html#" class="m-dox">sort</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/quick_exit.html#" class="m-dox">quick_exit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/log10.html#" class="m-dox">log10</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/mbstowcs.html#" class="m-dox">mbstowcs</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/isspace.html#" class="m-dox">isspace</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strncat.html#" class="m-dox">strncat</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/isinf.html#" class="m-dox">isinf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/atof.html#" class="m-dox">atof</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/erf.html#" class="m-dox">erf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/is_sorted_until.html#" class="m-dox">is_sorted_until</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/cbrt.html#" class="m-dox">cbrt</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/log1p.html#" class="m-dox">log1p</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/return_temporary_buffer.html#" class="m-dox">return_temporary_buffer</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/mbsrtowcs.html#" class="m-dox">mbsrtowcs</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feraiseexcept.html#" class="m-dox">feraiseexcept</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fseek.html#" class="m-dox">fseek</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_or.html#" class="m-dox">atomic_fetch_or_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/log.html#" class="m-dox">log</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/putchar.html#" class="m-dox">putchar</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/tuple/make_tuple.html#" class="m-dox">make_tuple</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/expm1.html#" class="m-dox">expm1</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/fma.html#" class="m-dox">fma</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/remove_copy.html#" class="m-dox">remove_copy_if</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/showpoint.html#" class="m-dox">showpoint</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fscanf.html#" class="m-dox">fscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/stable_partition.html#" class="m-dox">stable_partition</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/fill_n.html#" class="m-dox">fill_n</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/remove_copy.html#" class="m-dox">remove_copy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_compare_exchange.html#" class="m-dox">atomic_compare_exchange_strong_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/wctomb.html#" class="m-dox">wctomb</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fgets.html#" class="m-dox">fgets</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/remainder.html#" class="m-dox">remainder</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/shared_ptr/allocate_shared.html#" class="m-dox">allocate_shared</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/unique.html#" class="m-dox">unique</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/includes.html#" class="m-dox">includes</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswalnum.html#" class="m-dox">iswalnum</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/exit.html#" class="m-dox">exit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/put_time.html#" class="m-dox">put_time</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/to_string.html#" class="m-dox">to_string</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/is_heap_until.html#" class="m-dox">is_heap_until</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstof.html#" class="m-dox">wcstold</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/stof.html#" class="m-dox">stold</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/ftell.html#" class="m-dox">ftell</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/copy_backward.html#" class="m-dox">copy_backward</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstol.html#" class="m-dox">wcstoll</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/perror.html#" class="m-dox">perror</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfwscanf.html#" class="m-dox">vwscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/stable_sort.html#" class="m-dox">stable_sort</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/generic_category.html#" class="m-dox">generic_category</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/abs.html#" class="m-dox">abs(int)</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fgetws.html#" class="m-dox">fgetws</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/showpos.html#" class="m-dox">showpos</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/exp.html#" class="m-dox">exp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/fill.html#" class="m-dox">fill</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/isalpha.html#" class="m-dox">isalpha</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/lgamma.html#" class="m-dox">lgamma</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feclearexcept.html#" class="m-dox">feclearexcept</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcsncpy.html#" class="m-dox">wcsncpy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/gc/undeclare_reachable.html#" class="m-dox">undeclare_reachable</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/hex.html#" class="m-dox">oct</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strspn.html#" class="m-dox">strspn</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/c/realloc.html#" class="m-dox">realloc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/copy.html#" class="m-dox">copy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/binary_search.html#" class="m-dox">binary_search</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/system_category.html#" class="m-dox">system_category</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/mbrtowc.html#" class="m-dox">mbrtowc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtof.html#" class="m-dox">strtof</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/functional/mem_fn.html#" class="m-dox">mem_fn</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/distance.html#" class="m-dox">distance</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/thread/lock.html#" class="m-dox">lock</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strcmp.html#" class="m-dox">strcmp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/tmpfile.html#" class="m-dox">tmpfile</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/hypot.html#" class="m-dox">hypot</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/getenv.html#" class="m-dox">getenv</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strrchr.html#" class="m-dox">strrchr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/count.html#" class="m-dox">count</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/tan.html#" class="m-dox">tan</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/strftime.html#" class="m-dox">strftime</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/stof.html#" class="m-dox">stod</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/towupper.html#" class="m-dox">towupper</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/atoi.html#" class="m-dox">atoll</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_store.html#" class="m-dox">atomic_store</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/stol.html#" class="m-dox">stoi</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/rethrow_exception.html#" class="m-dox">rethrow_exception</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/sin.html#" class="m-dox">sin</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_sub.html#" class="m-dox">atomic_fetch_sub_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/unexpected.html#" class="m-dox">unexpected</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/mbtowc.html#" class="m-dox">mbtowc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/get_time.html#" class="m-dox">get_time</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/partition.html#" class="m-dox">partition</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/next.html#" class="m-dox">next</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/isfinite.html#" class="m-dox">isfinite</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/boolalpha.html#" class="m-dox">boolalpha</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/fetestexcept.html#" class="m-dox">fetestexcept</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/mbrlen.html#" class="m-dox">mbrlen</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswgraph.html#" class="m-dox">iswgraph</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/time.html#" class="m-dox">time</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_compare_exchange.html#" class="m-dox">atomic_compare_exchange_strong</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcschr.html#" class="m-dox">wcschr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/uppercase.html#" class="m-dox">uppercase</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/lower_bound.html#" class="m-dox">lower_bound</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/copy.html#" class="m-dox">copy_if</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/isnan.html#" class="m-dox">isnan</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/locale/has_facet.html#" class="m-dox">has_facet</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/kill_dependency.html#" class="m-dox">kill_dependency</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/uninitialized_copy_n.html#" class="m-dox">uninitialized_copy_n</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feholdexcept.html#" class="m-dox">feholdexcept</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/div.html#" class="m-dox">div</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/at_quick_exit.html#" class="m-dox">at_quick_exit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcspbrk.html#" class="m-dox">wcspbrk</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/search.html#" class="m-dox">search</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/find_first_of.html#" class="m-dox">find_first_of</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/iota.html#" class="m-dox">iota</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/gc/declare_reachable.html#" class="m-dox">declare_reachable</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_compare_exchange.html#" class="m-dox">atomic_compare_exchange_weak</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtof.html#" class="m-dox">strtod</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/accumulate.html#" class="m-dox">accumulate</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcsrchr.html#" class="m-dox">wcsrchr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/min_element.html#" class="m-dox">min_element</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/clearerr.html#" class="m-dox">clearerr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/random_shuffle.html#" class="m-dox">random_shuffle</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswalpha.html#" class="m-dox">iswalpha</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_sub.html#" class="m-dox">atomic_fetch_and</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wmemchr.html#" class="m-dox">wmemchr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/bsearch.html#" class="m-dox">bsearch</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/ilogb.html#" class="m-dox">ilogb</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/unique_copy.html#" class="m-dox">unique_copy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/_Exit.html#" class="m-dox">_Exit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/move.html#" class="m-dox">move</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/find_end.html#" class="m-dox">find_end</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feexceptflag.html#" class="m-dox">fesetexceptflag</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/nth_element.html#" class="m-dox">nth_element</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/gets.html#" class="m-dox">gets</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/lexicographical_compare.html#" class="m-dox">lexicographical_compare</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/nearbyint.html#" class="m-dox">nearbyint</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/memcpy.html#" class="m-dox">memcpy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fwrite.html#" class="m-dox">fwrite</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/unitbuf.html#" class="m-dox">unitbuf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswlower.html#" class="m-dox">iswlower</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/mblen.html#" class="m-dox">mblen</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fwscanf.html#" class="m-dox">swscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstoimax.html#" class="m-dox">wcstoimax</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fprintf.html#" class="m-dox">fprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/find.html#" class="m-dox">find_if</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtoimax.html#" class="m-dox">strtoimax</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/isalnum.html#" class="m-dox">isalnum</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_add.html#" class="m-dox">atomic_fetch_add_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/push_heap.html#" class="m-dox">push_heap</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/min.html#" class="m-dox">min</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fwprintf.html#" class="m-dox">fwprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/uncaught_exception.html#" class="m-dox">uncaught_exception</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtol.html#" class="m-dox">strtoll</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/throw_with_nested.html#" class="m-dox">throw_with_nested</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/random_shuffle.html#" class="m-dox">shuffle</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/isprint.html#" class="m-dox">isprint</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/new/get_new_handler.html#" class="m-dox">get_new_handler</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/thread/call_once.html#" class="m-dox">call_once</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/trunc.html#" class="m-dox">trunc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcscspn.html#" class="m-dox">wcscspn</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/mbrtoc16.html#" class="m-dox">mbrtoc16</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/round.html#" class="m-dox">lround</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/pow.html#" class="m-dox">pow</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/tgamma.html#" class="m-dox">tgamma</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/erfc.html#" class="m-dox">erfc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/round.html#" class="m-dox">llround</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/fabs.html#" class="m-dox">abs(float)</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/asinh.html#" class="m-dox">asinh</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/feof.html#" class="m-dox">feof</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/skipws.html#" class="m-dox">noskipws</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/find.html#" class="m-dox">find</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/atoi.html#" class="m-dox">atoi</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/functional/not1.html#" class="m-dox">not1</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfscanf.html#" class="m-dox">vfscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/stof.html#" class="m-dox">stof</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/regex/regex_search.html#" class="m-dox">regex_search</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/rotate_copy.html#" class="m-dox">rotate_copy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/new/set_new_handler.html#" class="m-dox">set_new_handler</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/gc/undeclare_no_pointers.html#" class="m-dox">undeclare_no_pointers</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/thread/async.html#" class="m-dox">async</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/partition_point.html#" class="m-dox">partition_point</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfscanf.html#" class="m-dox">vsscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feround.html#" class="m-dox">fesetround</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_is_lock_free.html#" class="m-dox">atomic_is_lock_free</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/tanh.html#" class="m-dox">tanh</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/div.html#" class="m-dox">ldiv</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/setbase.html#" class="m-dox">setbase</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/remove.html#" class="m-dox">remove</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtol.html#" class="m-dox">strtol</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strpbrk.html#" class="m-dox">strpbrk</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/signbit.html#" class="m-dox">signbit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcsncat.html#" class="m-dox">wcsncat</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/get_money.html#" class="m-dox">get_money</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/set_difference.html#" class="m-dox">set_difference</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/functional/ref.html#" class="m-dox">cref</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/getline.html#" class="m-dox">getline</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/to_wstring.html#" class="m-dox">to_wstring</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/system.html#" class="m-dox">system</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/shared_ptr/pointer_cast.html#" class="m-dox">static_pointer_cast</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstoimax.html#" class="m-dox">wcstoumax</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/memmove.html#" class="m-dox">memmove</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/getwchar.html#" class="m-dox">getwchar</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/fixed.html#" class="m-dox">scientific</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/wcsftime.html#" class="m-dox">wcsftime</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/begin.html#" class="m-dox">begin</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/ceil.html#" class="m-dox">ceil</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/sinh.html#" class="m-dox">sinh</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/is_permutation.html#" class="m-dox">is_permutation</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/generate_n.html#" class="m-dox">generate_n</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/acosh.html#" class="m-dox">acosh</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/advance.html#" class="m-dox">advance</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/flush.html#" class="m-dox">flush</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_xor.html#" class="m-dox">atomic_fetch_xor</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/ws.html#" class="m-dox">ws</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/signal.html#" class="m-dox">signal</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/showbase.html#" class="m-dox">noshowbase</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/generate.html#" class="m-dox">generate</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/ldexp.html#" class="m-dox">ldexp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfprintf.html#" class="m-dox">vsnprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/remove.html#" class="m-dox">remove_if</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/stoul.html#" class="m-dox">stoull</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feexceptflag.html#" class="m-dox">fegetexceptflag</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/find.html#" class="m-dox">find_if_not</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/merge.html#" class="m-dox">merge</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/c/free.html#" class="m-dox">free</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/count.html#" class="m-dox">count_if</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/clock.html#" class="m-dox">clock</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/mktime.html#" class="m-dox">mktime</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/inserter.html#" class="m-dox">inserter</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/puts.html#" class="m-dox">puts</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/asin.html#" class="m-dox">asin</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/iscntrl.html#" class="m-dox">iscntrl</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/difftime.html#" class="m-dox">difftime</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/terminate.html#" class="m-dox">terminate</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/memcmp.html#" class="m-dox">memcmp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/uninitialized_fill.html#" class="m-dox">uninitialized_fill</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/hex.html#" class="m-dox">hex</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/tuple/tie.html#" class="m-dox">tie</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/back_inserter.html#" class="m-dox">back_inserter</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/upper_bound.html#" class="m-dox">upper_bound</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/adjacent_find.html#" class="m-dox">adjacent_find</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/locale/use_facet.html#" class="m-dox">use_facet</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfwprintf.html#" class="m-dox">vfwprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_add.html#" class="m-dox">atomic_fetch_add</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fsetpos.html#" class="m-dox">fsetpos</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/c/malloc.html#" class="m-dox">malloc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/localtime.html#" class="m-dox">localtime</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcscmp.html#" class="m-dox">wcscmp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/c32rtomb.html#" class="m-dox">c32rtomb</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/isupper.html#" class="m-dox">isupper</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstof.html#" class="m-dox">wcstod</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/tolower.html#" class="m-dox">tolower</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/sort_heap.html#" class="m-dox">sort_heap</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/isdigit.html#" class="m-dox">isdigit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcslen.html#" class="m-dox">wcslen</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wmemcmp.html#" class="m-dox">wmemcmp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/move_if_noexcept.html#" class="m-dox">move_if_noexcept</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/declval.html#" class="m-dox">declval</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/fpclassify.html#" class="m-dox">fpclassify</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswupper.html#" class="m-dox">iswupper</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/random/rand.html#" class="m-dox">rand</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_compare_exchange.html#" class="m-dox">atomic_compare_exchange_weak_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/partial_sort.html#" class="m-dox">partial_sort</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/rint.html#" class="m-dox">llrint</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fclose.html#" class="m-dox">fclose</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/reverse.html#" class="m-dox">reverse</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/partial_sum.html#" class="m-dox">partial_sum</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/showbase.html#" class="m-dox">showbase</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfwscanf.html#" class="m-dox">vswscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/atan.html#" class="m-dox">atan</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/atanh.html#" class="m-dox">atanh</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/iter_swap.html#" class="m-dox">iter_swap</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/scalbn.html#" class="m-dox">scalbln</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/reverse_copy.html#" class="m-dox">reverse_copy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/forward.html#" class="m-dox">forward</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fgetc.html#" class="m-dox">getc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/equal_range.html#" class="m-dox">equal_range</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_sub.html#" class="m-dox">atomic_fetch_sub</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/is_partitioned.html#" class="m-dox">is_partitioned</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/next_permutation.html#" class="m-dox">next_permutation</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/isblank.html#" class="m-dox">isblank</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/showpoint.html#" class="m-dox">noshowpoint</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/atan2.html#" class="m-dox">atan2</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/nan.html#" class="m-dox">nanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/towctrans.html#" class="m-dox">towctrans</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/left.html#" class="m-dox">right</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fputwc.html#" class="m-dox">fputwc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtoul.html#" class="m-dox">strtoul</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/is_heap.html#" class="m-dox">is_heap</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fflush.html#" class="m-dox">fflush</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtoimax.html#" class="m-dox">strtoumax</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/nextafter.html#" class="m-dox">nexttoward</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/unitbuf.html#" class="m-dox">nounitbuf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/ispunct.html#" class="m-dox">ispunct</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/boolalpha.html#" class="m-dox">noboolalpha</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/pair/make_pair.html#" class="m-dox">make_pair</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswctype.html#" class="m-dox">iswctype</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/random/srand.html#" class="m-dox">srand</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/replace_copy.html#" class="m-dox">replace_copy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/thread/future/future_category.html#" class="m-dox">future_category</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/resetiosflags.html#" class="m-dox">resetiosflags</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfprintf.html#" class="m-dox">vprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/chrono/c/gmtime.html#" class="m-dox">gmtime</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/align.html#" class="m-dox">align</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/tuple/tuple_cat.html#" class="m-dox">tuple_cat</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/ends.html#" class="m-dox">ends</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/set_terminate.html#" class="m-dox">set_terminate</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/rint.html#" class="m-dox">lrint</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/all_any_none_of.html#" class="m-dox">none_of</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fwscanf.html#" class="m-dox">wscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fputc.html#" class="m-dox">fputc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/hex.html#" class="m-dox">dec</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strcat.html#" class="m-dox">strcat</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/raise.html#" class="m-dox">raise</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcsspn.html#" class="m-dox">wcsspn</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/fabs.html#" class="m-dox">fabs</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wmemcpy.html#" class="m-dox">wmemcpy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/copy_n.html#" class="m-dox">copy_n</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/rethrow_if_nested.html#" class="m-dox">rethrow_if_nested</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/locale/setlocale.html#" class="m-dox">setlocale</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/addressof.html#" class="m-dox">addressof</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/c/calloc.html#" class="m-dox">calloc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strerror.html#" class="m-dox">strerror</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strcpy.html#" class="m-dox">strcpy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstoul.html#" class="m-dox">wcstoull</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/c16rtomb.html#" class="m-dox">c16rtomb</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/random/generate_canonical.html#" class="m-dox">generate_canonical</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfprintf.html#" class="m-dox">vfprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/thread/notify_all_at_thread_exit.html#" class="m-dox">notify_all_at_thread_exit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/rotate.html#" class="m-dox">rotate</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/current_exception.html#" class="m-dox">current_exception</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtok.html#" class="m-dox">strtok</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcscat.html#" class="m-dox">wcscat</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strncpy.html#" class="m-dox">strncpy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/towlower.html#" class="m-dox">towlower</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/floor.html#" class="m-dox">floor</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/left.html#" class="m-dox">left</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/ferror.html#" class="m-dox">ferror</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_load.html#" class="m-dox">atomic_load_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/swap.html#" class="m-dox">swap</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/acos.html#" class="m-dox">acos</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcscoll.html#" class="m-dox">wcscoll</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/sqrt.html#" class="m-dox">sqrt</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/mbsinit.html#" class="m-dox">mbsinit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/qsort.html#" class="m-dox">qsort</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/stol.html#" class="m-dox">stoll</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/put_money.html#" class="m-dox">put_money</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstoul.html#" class="m-dox">wcstoul</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstol.html#" class="m-dox">wcstol</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/atexit.html#" class="m-dox">atexit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_fetch_or.html#" class="m-dox">atomic_fetch_or</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/rewind.html#" class="m-dox">rewind</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcsxfrm.html#" class="m-dox">wcsxfrm</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/round.html#" class="m-dox">round</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfwprintf.html#" class="m-dox">vwprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/all_any_none_of.html#" class="m-dox">all_of</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/replace.html#" class="m-dox">replace</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/remquo.html#" class="m-dox">remquo</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/setbuf.html#" class="m-dox">setbuf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strncmp.html#" class="m-dox">strncmp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/locale/localeconv.html#" class="m-dox">localeconv</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wctrans.html#" class="m-dox">wctrans</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/all_any_none_of.html#" class="m-dox">any_of</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/equal.html#" class="m-dox">equal</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/max.html#" class="m-dox">max</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strxfrm.html#" class="m-dox">strxfrm</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswxdigit.html#" class="m-dox">iswxdigit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/abs.html#" class="m-dox">labs</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/regex/regex_match.html#" class="m-dox">regex_match</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fputws.html#" class="m-dox">fputws</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/wcrtomb.html#" class="m-dox">wcrtomb</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/setprecision.html#" class="m-dox">setprecision</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/setvbuf.html#" class="m-dox">setvbuf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/regex/regex_replace.html#" class="m-dox">regex_replace</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/freopen.html#" class="m-dox">freopen</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/logb.html#" class="m-dox">logb</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/wctob.html#" class="m-dox">wctob</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_load.html#" class="m-dox">atomic_load</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/search_n.html#" class="m-dox">search_n</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/toupper.html#" class="m-dox">toupper</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/move_backward.html#" class="m-dox">move_backward</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/is_sorted.html#" class="m-dox">is_sorted</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtoul.html#" class="m-dox">strtoull</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswblank.html#" class="m-dox">iswblank</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/gc/get_pointer_safety.html#" class="m-dox">get_pointer_safety</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/get_unexpected.html#" class="m-dox">get_unexpected</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fscanf.html#" class="m-dox">sscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feenv.html#" class="m-dox">fesetenv</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/atomic/atomic_store.html#" class="m-dox">atomic_store_explicit</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strtof.html#" class="m-dox">strtold</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fread.html#" class="m-dox">fread</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/memchr.html#" class="m-dox">memchr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/btowc.html#" class="m-dox">btowc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/replace.html#" class="m-dox">replace_if</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strcoll.html#" class="m-dox">strcoll</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfprintf.html#" class="m-dox">vsprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/mismatch.html#" class="m-dox">mismatch</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/getchar.html#" class="m-dox">getchar</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/islower.html#" class="m-dox">islower</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/tmpnam.html#" class="m-dox">tmpnam</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/nan.html#" class="m-dox">nanl</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fopen.html#" class="m-dox">fopen</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/for_each.html#" class="m-dox">for_each</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feround.html#" class="m-dox">fegetround</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/ungetc.html#" class="m-dox">ungetc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/left.html#" class="m-dox">internal</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfwscanf.html#" class="m-dox">vfwscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fgetc.html#" class="m-dox">fgetc</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcstof.html#" class="m-dox">wcstof</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/functional/bind.html#" class="m-dox">bind</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/skipws.html#" class="m-dox">skipws</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswprint.html#" class="m-dox">iswprint</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/multibyte/wcstombs.html#" class="m-dox">wcstombs</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/inplace_merge.html#" class="m-dox">inplace_merge</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/copysign.html#" class="m-dox">copysign</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/putwchar.html#" class="m-dox">putwchar</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/wcsstr.html#" class="m-dox">wcsstr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/fenv/feenv.html#" class="m-dox">fegetenv</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/utility/program/longjmp.html#" class="m-dox">longjmp</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/wide/iswcntrl.html#" class="m-dox">iswcntrl</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/memory/gc/declare_no_pointers.html#" class="m-dox">declare_no_pointers</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/isnormal.html#" class="m-dox">isnormal</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/swap_ranges.html#" class="m-dox">swap_ranges</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/minmax.html#" class="m-dox">minmax</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/fixed.html#" class="m-dox">defaultfloat</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/rename.html#" class="m-dox">rename</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fprintf.html#" class="m-dox">snprintf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/thread/try_lock.html#" class="m-dox">try_lock</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/basic_string/stoul.html#" class="m-dox">stoul</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fgetpos.html#" class="m-dox">fgetpos</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/partition_copy.html#" class="m-dox">partition_copy</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/vfscanf.html#" class="m-dox">vscanf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/front_inserter.html#" class="m-dox">front_inserter</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/error/get_terminate.html#" class="m-dox">get_terminate</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/numeric/math/cosh.html#" class="m-dox">cosh</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/iterator/prev.html#" class="m-dox">prev</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strchr.html#" class="m-dox">strchr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/string/byte/strstr.html#" class="m-dox">strstr</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/c/fprintf.html#" class="m-dox">printf</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/io/manip/setfill.html#" class="m-dox">setfill</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="cpp/algorithm/inner_product.html#" class="m-dox">inner_product</a>(</span><span class="m-dox-wrap">T... args) -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

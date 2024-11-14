@@ -1,0 +1,568 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrolly_1_1types_1_1guid" kind="class" language="C++" prot="public">
+    <compoundname>rolly::types::guid</compoundname>
+    <includes refid="guid_8h" local="no">guid.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrolly_1_1types_1_1guid_1a12dfa471359cc40e28009e2ff6a37996" prot="private" static="no" mutable="no">
+        <type><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" kindref="member">u8</ref>, 16 &gt;</type>
+        <definition>std::array&lt;u8, 16&gt; bytes_</definition>
+        <argsstring></argsstring>
+        <name>bytes_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="149" column="18" bodyfile="include/rolly/types/guid.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a71c6f1c9e5f7965bdcd5142a6f633b96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>guid</definition>
+        <argsstring>()</argsstring>
+        <name>guid</name>
+        <briefdescription>
+<para>Creates an empty <computeroutput>guid</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classrolly_1_1types_1_1guid_1a52b280237cad4217386e8bc1abcc2229" kindref="member">empty</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="32" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1abe9997ddaf63a9309892c45b82185132" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>~guid</definition>
+        <argsstring>()=default</argsstring>
+        <name>~guid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="34" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a4c3dc0740c44eca5f83d88b9b8b8e184" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>guid</definition>
+        <argsstring>(std::array&lt; u8, 16 &gt; const &amp;bytes)</argsstring>
+        <name>guid</name>
+        <param>
+          <type><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" kindref="member">u8</ref>, 16 &gt; const &amp;</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <computeroutput>guid</computeroutput> from an array of bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of bytes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="40" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1aaec18b3d519f5d8651d3736e45b49645" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>guid</definition>
+        <argsstring>(std::array&lt; std::byte, 16 &gt; const &amp;bytes)</argsstring>
+        <name>guid</name>
+        <param>
+          <type><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; std::byte, 16 &gt; const &amp;</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <computeroutput>guid</computeroutput> from an array of <computeroutput>std::byte</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of <computeroutput>std::byte</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="46" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a411fd77fafa3952b4bdb3738c5ceaa81" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>guid</definition>
+        <argsstring>(std::string_view str)</argsstring>
+        <name>guid</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <computeroutput>guid</computeroutput> from a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String representation of the <computeroutput>guid</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="52" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1abff2c6e274edc4e7e8e032d7e640fd5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>guid</definition>
+        <argsstring>(guid const &amp;)=default</argsstring>
+        <name>guid</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="54" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a0802bb3c50a6ea37b4ffa65b7f5330bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>guid</definition>
+        <argsstring>(guid &amp;&amp;)=default</argsstring>
+        <name>guid</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="55" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a4cedf8ab7d04407b11c681253b1a15e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> &amp;</type>
+        <definition>guid&amp; operator=</definition>
+        <argsstring>(guid const &amp;)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="56" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a52829572d8b952093cf8f327a52401fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> &amp;</type>
+        <definition>guid&amp; operator=</definition>
+        <argsstring>(guid &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="57" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a99f77f09f364b20c3a30ab6bffa4c24b" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool valid</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>valid</name>
+        <briefdescription>
+<para>Checks whether the <computeroutput>guid</computeroutput> is valid or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the <computeroutput>guid</computeroutput> is valid, <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="63" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string to_string</definition>
+        <argsstring>() const</argsstring>
+        <name>to_string</name>
+        <briefdescription>
+<para>Converts the <computeroutput>guid</computeroutput> to a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>String representation is in the form of <computeroutput>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</computeroutput>. All hex digits are lowercase. Bytes are separated by hyphens. <simplesect kind="return"><para>String representation of the <computeroutput>guid</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="72" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a524e6e4494a17e99baef3044ea221ae7" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" kindref="member">u8</ref>, 16 &gt; const  &amp;</type>
+        <definition>std::array&lt;u8, 16&gt; const&amp; bytes</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>bytes</name>
+        <briefdescription>
+<para>Gets the bytes of the <computeroutput>guid</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Constant reference to the array of bytes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="78" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a97546fb989ab2746f1c269e2569babbf" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" kindref="member">u8</ref>, 16 &gt; &amp;</type>
+        <definition>std::array&lt;u8, 16&gt;&amp; bytes_mut</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>bytes_mut</name>
+        <briefdescription>
+<para>Gets the mutable bytes of the <computeroutput>guid</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Mutable reference to the array of bytes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="84" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1af687d7ba21b4110f46c09401156f8c90" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespacerolly_1_1types_1a66e1d499241ccae9a18a20a1f4f0590d" kindref="member">u64</ref></type>
+        <definition>u64 to_u64</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>to_u64</name>
+        <briefdescription>
+<para>Hashes the <computeroutput>guid</computeroutput> to an unsigned 64-bit integer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Hash value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="90" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a420e60e9788bfa3b52aa3aab72ea3a5e" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>operator bool</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+<para>Checks whether the <computeroutput>guid</computeroutput> is valid or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the <computeroutput>guid</computeroutput> is valid, <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classrolly_1_1types_1_1guid_1a99f77f09f364b20c3a30ab6bffa4c24b" kindref="member">valid</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="97" column="8" bodyfile="include/rolly/types/guid.h" bodystart="97" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a6c033d63da52b8181d4d8c2732298838" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(guid const &amp;other) const noexcept</argsstring>
+        <name>operator==</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether two <computeroutput>guid</computeroutput>s are equal or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Other <computeroutput>guid</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the <computeroutput>guid</computeroutput>s are equal, <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="106" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1aa6ee004e31ca7c2ac05666230519348b" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(guid const &amp;other) const noexcept</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether two <computeroutput>guid</computeroutput>s are not equal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Other <computeroutput>guid</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the <computeroutput>guid</computeroutput>s are not equal, <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="113" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classrolly_1_1types_1_1guid_1ae74c4f98fab3ca71a3ac198dc50ef59d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>friend bool</type>
+        <definition>bool operator&lt;</definition>
+        <argsstring>(guid const &amp;lhs, guid const &amp;rhs) noexcept</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Array-like less comparator for <computeroutput>guid</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First guid. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second guid. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if lhs is less than rhs, <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="121" column="14"/>
+      </memberdef>
+      <memberdef kind="friend" id="classrolly_1_1types_1_1guid_1a499ec739efb1085811f95c07cc4c4065" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::ostream</ref> &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, guid const &amp;guid)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::ostream</ref> &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const &amp;</type>
+          <declname>guid</declname>
+        </param>
+        <briefdescription>
+<para>Prints the <computeroutput>guid</computeroutput> to an output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>guid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>guid</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Output stream </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classrolly_1_1types_1_1guid_1aac993ecccd3d88aafefb6b8e3caa1dee" kindref="member">to_string</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="133" column="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a52b280237cad4217386e8bc1abcc2229" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref></type>
+        <definition>static guid empty</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>empty</name>
+        <briefdescription>
+<para>Creates an empty <computeroutput>guid</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>New empty <computeroutput>guid</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="140" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1adf9915d8b34d4ef59625f281ba18c90d" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref></type>
+        <definition>static guid random</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>random</name>
+        <briefdescription>
+<para>Creates a random <computeroutput>guid</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>New random <computeroutput>guid</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="146" column="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="related">
+      <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a6f014712a4893ba1135acaecc3fffc45" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void swap</definition>
+        <argsstring>(rolly::guid &amp;a, rolly::guid &amp;b) noexcept</argsstring>
+        <name>swap</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">rolly::guid</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">rolly::guid</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Swaps two <computeroutput>guid</computeroutput>s. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First <computeroutput>guid</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second <computeroutput>guid</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ulink url="http://en.cppreference.com/w/cpp/memory/swap">http://en.cppreference.com/w/cpp/memory/swap</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/guid.h" line="194" column="16" bodyfile="include/rolly/types/guid.h" bodystart="194" bodyend="196"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>128-bit globally unique identifier (GUID). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Based on <computeroutput><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref></computeroutput> container. <simplesect kind="see"><para><ulink url="https://en.wikipedia.org/wiki/Globally_unique_identifier">https://en.wikipedia.org/wiki/Globally_unique_identifier</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="include/rolly/types/guid.h" line="22" column="15" bodyfile="include/rolly/types/guid.h" bodystart="22" bodyend="150"/>
+    <listofallmembers>
+      <member refid="classrolly_1_1types_1_1guid_1a524e6e4494a17e99baef3044ea221ae7" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>bytes</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a12dfa471359cc40e28009e2ff6a37996" prot="private" virt="non-virtual"><scope>rolly::types::guid</scope><name>bytes_</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a97546fb989ab2746f1c269e2569babbf" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>bytes_mut</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a52b280237cad4217386e8bc1abcc2229" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>empty</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a71c6f1c9e5f7965bdcd5142a6f633b96" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>guid</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a4c3dc0740c44eca5f83d88b9b8b8e184" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>guid</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1aaec18b3d519f5d8651d3736e45b49645" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>guid</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a411fd77fafa3952b4bdb3738c5ceaa81" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>guid</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1abff2c6e274edc4e7e8e032d7e640fd5f" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>guid</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a0802bb3c50a6ea37b4ffa65b7f5330bd" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>guid</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a420e60e9788bfa3b52aa3aab72ea3a5e" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>operator bool</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1aa6ee004e31ca7c2ac05666230519348b" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>operator!=</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1ae74c4f98fab3ca71a3ac198dc50ef59d" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>operator&lt;</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a499ec739efb1085811f95c07cc4c4065" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a4cedf8ab7d04407b11c681253b1a15e9" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>operator=</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a52829572d8b952093cf8f327a52401fe" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>operator=</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a6c033d63da52b8181d4d8c2732298838" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>operator==</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1adf9915d8b34d4ef59625f281ba18c90d" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>random</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a6f014712a4893ba1135acaecc3fffc45" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>swap</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>to_string</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1af687d7ba21b4110f46c09401156f8c90" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>to_u64</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1a99f77f09f364b20c3a30ab6bffa4c24b" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>valid</name></member>
+      <member refid="classrolly_1_1types_1_1guid_1abe9997ddaf63a9309892c45b82185132" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>~guid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

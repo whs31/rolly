@@ -1,0 +1,417 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structrolly_1_1version" kind="struct" language="C++" prot="public">
+    <compoundname>rolly::version</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrolly_1_1version_1a670b59633d8fefdcb026b043db2b54ce" prot="public" static="no" mutable="no">
+        <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+        <definition>std::uint16_t major</definition>
+        <argsstring></argsstring>
+        <name>major</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="178" column="19" bodyfile="include/rolly/global/semver.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrolly_1_1version_1a825c2d4285fd4ef048480ea6854c5160" prot="public" static="no" mutable="no">
+        <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+        <definition>std::uint16_t minor</definition>
+        <argsstring></argsstring>
+        <name>minor</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="179" column="19" bodyfile="include/rolly/global/semver.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrolly_1_1version_1a225065c50c39b42012bde676d03d6131" prot="public" static="no" mutable="no">
+        <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+        <definition>std::uint16_t patch</definition>
+        <argsstring></argsstring>
+        <name>patch</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="180" column="19" bodyfile="include/rolly/global/semver.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrolly_1_1version_1a2b8218ebadf01154d8615cd9c31cf761" prot="public" static="no" mutable="no">
+        <type>prerelease</type>
+        <definition>prerelease prerelease_type</definition>
+        <argsstring></argsstring>
+        <name>prerelease_type</name>
+        <initializer>= prerelease::none</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="181" column="16" bodyfile="include/rolly/global/semver.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrolly_1_1version_1ad3740d612f3a17f4c528f79417719ffb" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref> &gt;</type>
+        <definition>std::optional&lt;std::uint16_t&gt; prerelease_number</definition>
+        <argsstring></argsstring>
+        <name>prerelease_number</name>
+        <initializer>= std::nullopt</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="182" column="19" bodyfile="include/rolly/global/semver.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structrolly_1_1version_1a2d3783c5a1bde4c3ad462eb2dff4d6a7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR version</definition>
+        <argsstring>(std::uint16_t mj, std::uint16_t mn, std::uint16_t pt, prerelease prt=prerelease::none, std::optional&lt; std::uint16_t &gt; prn=std::nullopt) noexcept</argsstring>
+        <name>version</name>
+        <param>
+          <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+          <declname>mj</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+          <declname>mn</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+          <declname>pt</declname>
+        </param>
+        <param>
+          <type>prerelease</type>
+          <declname>prt</declname>
+          <defval>prerelease::none</defval>
+        </param>
+        <param>
+          <type>std::optional&lt; <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref> &gt;</type>
+          <declname>prn</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="184" column="28" bodyfile="include/rolly/global/semver.h" bodystart="184" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1abfbcd4ebc1c178edd166a4e498757e81" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR version</definition>
+        <argsstring>(std::uint16_t mj, std::uint16_t mn, std::uint16_t pt, prerelease prt, std::uint16_t prn) noexcept</argsstring>
+        <name>version</name>
+        <param>
+          <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+          <declname>mj</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+          <declname>mn</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+          <declname>pt</declname>
+        </param>
+        <param>
+          <type>prerelease</type>
+          <declname>prt</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
+          <declname>prn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="198" column="7" bodyfile="include/rolly/global/semver.h" bodystart="198" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1a0332e593c889fac494451ff202c0a87f" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR version</definition>
+        <argsstring>(std::string_view str)</argsstring>
+        <name>version</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="205" column="37" bodyfile="include/rolly/global/semver.h" bodystart="205" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1ad856220a1bbc8168138d8933df54a80c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr version</definition>
+        <argsstring>()=default</argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="210" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1a748f1eaa2c956e52db5be86ac3e0dc11" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr version</definition>
+        <argsstring>(version const &amp;)=default</argsstring>
+        <name>version</name>
+        <param>
+          <type><ref refid="structrolly_1_1version" kindref="compound">version</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="212" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1a90279a5685efb6855cb517c43aa8c5fe" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr version</definition>
+        <argsstring>(version &amp;&amp;)=default</argsstring>
+        <name>version</name>
+        <param>
+          <type><ref refid="structrolly_1_1version" kindref="compound">version</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="213" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1a564ab9428288603955411dc30291c5b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>~version</definition>
+        <argsstring>()=default</argsstring>
+        <name>~version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="214" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1adb3e3d4ea43080ab1f9005af2272d3d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structrolly_1_1version" kindref="compound">version</ref> &amp;</type>
+        <definition>version&amp; operator=</definition>
+        <argsstring>(version const &amp;)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="structrolly_1_1version" kindref="compound">version</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="215" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1a9933342c7c56f68b9a00d715eb72a67b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structrolly_1_1version" kindref="compound">version</ref> &amp;</type>
+        <definition>version&amp; operator=</definition>
+        <argsstring>(version &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="structrolly_1_1version" kindref="compound">version</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="216" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1a820fc9cf24a6e75538595d60d78e49bf" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR from_chars_result</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR from_chars_result from_chars</definition>
+        <argsstring>(char const *first, char const *last) noexcept</argsstring>
+        <name>from_chars</name>
+        <param>
+          <type>char const *</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>char const *</type>
+          <declname>last</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="218" column="47" bodyfile="include/rolly/global/semver.h" bodystart="218" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1aa3121d43861bbf0ee9ab5449e694cdd2" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR to_chars_result</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR to_chars_result to_chars</definition>
+        <argsstring>(char *first, char *last) const noexcept</argsstring>
+        <name>to_chars</name>
+        <param>
+          <type>char *</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>last</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="243" column="45" bodyfile="include/rolly/global/semver.h" bodystart="243" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1a442c91bc047e34dc4198312b68319d83" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR bool</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR bool from_string_noexcept</definition>
+        <argsstring>(std::string_view str) noexcept</argsstring>
+        <name>from_string_noexcept</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="260" column="34" bodyfile="include/rolly/global/semver.h" bodystart="260" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1a183e7c66e50bf5962151444e623aad54" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR <ref refid="structrolly_1_1version" kindref="compound">version</ref> &amp;</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR version&amp; from_string</definition>
+        <argsstring>(std::string_view str)</argsstring>
+        <name>from_string</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="264" column="36" bodyfile="include/rolly/global/semver.h" bodystart="264" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string to_string</definition>
+        <argsstring>() const</argsstring>
+        <name>to_string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="270" column="18" bodyfile="include/rolly/global/semver.h" bodystart="270" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1a995e165483bb30e9f597773d0cf355c7" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint8_t</ref></type>
+        <definition>ROLLY_SEMVER_CONSTEXPR std::uint8_t string_length</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>string_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="278" column="42" bodyfile="include/rolly/global/semver.h" bodystart="278" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="structrolly_1_1version_1afc4db1cc397888cafbdedebb1da7e337" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr int</type>
+        <definition>constexpr int compare</definition>
+        <argsstring>(version const &amp;other) const noexcept</argsstring>
+        <name>compare</name>
+        <param>
+          <type><ref refid="structrolly_1_1version" kindref="compound">version</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/global/semver.h" line="288" column="20" bodyfile="include/rolly/global/semver.h" bodystart="288" bodyend="304"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>uint16_t</label>
+        <link refid="cpp/types/integer" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml"/>
+      </node>
+      <node id="1">
+        <label>version</label>
+        <link refid="structrolly_1_1version"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>patch</edgelabel>
+          <edgelabel>major</edgelabel>
+          <edgelabel>minor</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/rolly/global/semver.h" line="177" column="16" bodyfile="include/rolly/global/semver.h" bodystart="177" bodyend="305"/>
+    <listofallmembers>
+      <member refid="structrolly_1_1version_1afc4db1cc397888cafbdedebb1da7e337" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>compare</name></member>
+      <member refid="structrolly_1_1version_1a820fc9cf24a6e75538595d60d78e49bf" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>from_chars</name></member>
+      <member refid="structrolly_1_1version_1a183e7c66e50bf5962151444e623aad54" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>from_string</name></member>
+      <member refid="structrolly_1_1version_1a442c91bc047e34dc4198312b68319d83" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>from_string_noexcept</name></member>
+      <member refid="structrolly_1_1version_1a670b59633d8fefdcb026b043db2b54ce" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>major</name></member>
+      <member refid="structrolly_1_1version_1a825c2d4285fd4ef048480ea6854c5160" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>minor</name></member>
+      <member refid="structrolly_1_1version_1adb3e3d4ea43080ab1f9005af2272d3d0" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>operator=</name></member>
+      <member refid="structrolly_1_1version_1a9933342c7c56f68b9a00d715eb72a67b" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>operator=</name></member>
+      <member refid="structrolly_1_1version_1a225065c50c39b42012bde676d03d6131" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>patch</name></member>
+      <member refid="structrolly_1_1version_1ad3740d612f3a17f4c528f79417719ffb" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>prerelease_number</name></member>
+      <member refid="structrolly_1_1version_1a2b8218ebadf01154d8615cd9c31cf761" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>prerelease_type</name></member>
+      <member refid="structrolly_1_1version_1a995e165483bb30e9f597773d0cf355c7" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>string_length</name></member>
+      <member refid="structrolly_1_1version_1aa3121d43861bbf0ee9ab5449e694cdd2" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>to_chars</name></member>
+      <member refid="structrolly_1_1version_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>to_string</name></member>
+      <member refid="structrolly_1_1version_1a2d3783c5a1bde4c3ad462eb2dff4d6a7" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
+      <member refid="structrolly_1_1version_1abfbcd4ebc1c178edd166a4e498757e81" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
+      <member refid="structrolly_1_1version_1a0332e593c889fac494451ff202c0a87f" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
+      <member refid="structrolly_1_1version_1ad856220a1bbc8168138d8933df54a80c" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
+      <member refid="structrolly_1_1version_1a748f1eaa2c956e52db5be86ac3e0dc11" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
+      <member refid="structrolly_1_1version_1a90279a5685efb6855cb517c43aa8c5fe" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
+      <member refid="structrolly_1_1version_1a564ab9428288603955411dc30291c5b7" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>~version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

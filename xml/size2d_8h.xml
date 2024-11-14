@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="size2d_8h" kind="file" language="C++">
+    <compoundname>size2d.h</compoundname>
+    <includes refid="num_8h" local="yes">../concepts/num.h</includes>
+    <includes refid="stdint_8h" local="yes">./stdint.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">array</includes>
+    <includes local="no">tuple</includes>
+    <includes local="no">bits/stl_algo.h</includes>
+    <includes local="no">qsize.h</includes>
+    <includedby refid="point2d_8h" local="yes">point2d.h</includedby>
+    <includedby refid="vector2d_8h" local="yes">vector2d.h</includedby>
+    <includedby refid="types_8h" local="yes">types.h</includedby>
+    <incdepgraph>
+      <node id="10">
+        <label>cstdint</label>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="5">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="3">
+        <label>../global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>tuple</label>
+      </node>
+      <node id="1">
+        <label>size2d.h</label>
+        <link refid="size2d_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>array</label>
+      </node>
+      <node id="9">
+        <label>cstddef</label>
+      </node>
+      <node id="15">
+        <label>qsize.h</label>
+      </node>
+      <node id="6">
+        <label>../type_traits.h</label>
+        <link refid="type__traits_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>type_traits</label>
+      </node>
+      <node id="2">
+        <label>../concepts/num.h</label>
+        <link refid="num_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>bits/stl_algo.h</label>
+      </node>
+      <node id="8">
+        <label>./stdint.h</label>
+        <link refid="stdint_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>point2d.h</label>
+        <link refid="point2d_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>types.h</label>
+        <link refid="types_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>size2d.h</label>
+        <link refid="size2d_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>vector2d.h</label>
+        <link refid="vector2d_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrolly_1_1types_1_1point2d" prot="public">rolly::types::point2d</innerclass>
+    <innerclass refid="classrolly_1_1types_1_1vector2d" prot="public">rolly::types::vector2d</innerclass>
+    <innerclass refid="structrolly_1_1types_1_1size2d" prot="public">rolly::types::size2d</innerclass>
+    <innerclass refid="structfmt_1_1formatter_3_01rolly_1_1size2d_3_01T_01_4_01_4" prot="public">fmt::formatter&lt; rolly::size2d&lt; T &gt; &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01rolly_1_1types_1_1size2d_3_01T_01_4_01_4" prot="public">std::hash&lt; rolly::types::size2d&lt; T &gt; &gt;</innerclass>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1types">rolly::types</innernamespace>
+    <innernamespace refid="namespacestd">std</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/types/size2d.h"/>
+  </compounddef>
+</doxygen>

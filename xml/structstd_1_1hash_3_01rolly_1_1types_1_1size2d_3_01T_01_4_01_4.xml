@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structstd_1_1hash_3_01rolly_1_1types_1_1size2d_3_01T_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>std::hash&lt; rolly::types::size2d&lt; T &gt; &gt;</compoundname>
+    <includes refid="size2d_8h" local="no">size2d.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structstd_1_1hash_3_01rolly_1_1types_1_1size2d_3_01T_01_4_01_4_1a5b30aaef5d8d9506d2f3aa4cbbd51fc1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">size_t</ref></type>
+        <definition>size_t operator()</definition>
+        <argsstring>(rolly::types::size2d&lt; T &gt; const &amp;b) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type><ref refid="structrolly_1_1types_1_1size2d" kindref="compound">rolly::types::size2d</ref>&lt; T &gt; const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/size2d.h" line="626" column="12" bodyfile="include/rolly/types/size2d.h" bodystart="626" bodyend="628"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Hashes a <computeroutput>size2d</computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying type of the <computeroutput>size2d</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>size2d</computeroutput> to hash. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Hash value.</para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="http://en.cppreference.com/w/cpp/utility/hash">http://en.cppreference.com/w/cpp/utility/hash</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="include/rolly/types/size2d.h" line="625" column="15" bodyfile="include/rolly/types/size2d.h" bodystart="625" bodyend="629"/>
+    <listofallmembers>
+      <member refid="structstd_1_1hash_3_01rolly_1_1types_1_1size2d_3_01T_01_4_01_4_1a5b30aaef5d8d9506d2f3aa4cbbd51fc1" prot="public" virt="non-virtual"><scope>std::hash&lt; rolly::types::size2d&lt; T &gt; &gt;</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

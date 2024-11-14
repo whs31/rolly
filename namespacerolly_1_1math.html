@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>rolly::math namespace | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>math <span class="m-thin">namespace</span>
+        </h1>
+        <p>Inline namespace for mathematical functions.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;std::integral T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a2264e542a12579ea469c63ecdee1883d" class="m-dox">popcount</a>(</span><span class="m-dox-wrap">T x) -&gt; int <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the number of 1 bits in the value.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;std::integral T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ac856a1cb702219f1d1035f0ce0945492" class="m-dox">has_single_bit</a>(</span><span class="m-dox-wrap">T x) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Checks if the value is an integral power of two.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;std::integral T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a9f9d00ff5e0c49434b60e113d83be45e" class="m-dox">is_pow2</a>(</span><span class="m-dox-wrap">T x) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Checks if the value is an integral power of two.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;std::unsigned_integral T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#af2e45c6029de89f124eb5f3d415b19be" class="m-dox">bit_ceil</a>(</span><span class="m-dox-wrap">T x) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the next power of two of the value.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;std::floating_point T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ae71706eff25ec5df1ff62b4ae7be36a5" class="m-dox">floor</a>(</span><span class="m-dox-wrap">T val) -&gt; T <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Rounds <code>val</code> down to the nearest integer.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a06b1201488c8539a55f0d15c3142c846" class="m-dox">min</a>(</span><span class="m-dox-wrap">T&amp;&amp; v) -&gt; T <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the minimum of a single value.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename... Args&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a3a1a1d027d2cc6931b957029c079ad98" class="m-dox">min</a>(</span><span class="m-dox-wrap">T const&amp; v1,
+              T const&amp; v2,
+              Args const&amp;... args) -&gt; T <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the minimum value among the provided arguments.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ab3a14f303ad6df0c90ec3f7d5f57154f" class="m-dox">max</a>(</span><span class="m-dox-wrap">T&amp;&amp; v) -&gt; T <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the maximum of a single value.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename... Args&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a00d802cbcc79c27d8b780034747072fd" class="m-dox">max</a>(</span><span class="m-dox-wrap">T const&amp; v1,
+              T const&amp; v2,
+              Args const&amp;... args) -&gt; T <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the maximum value among the provided arguments.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aa3571ee367243a1d142a7dc27a0ffa2d" class="m-dox">abs</a>(</span><span class="m-dox-wrap">T const&amp; v) -&gt; T <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the absolute value of a number.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a94cb063ba3f91b4919f5fd80469f9260" class="m-dox">fmod</a>(</span><span class="m-dox-wrap"><a href="namespacerolly_1_1types.html#ad34d88453d37b65a09797bad37f2f527" class="m-doc">f32</a> const x,
+              <a href="namespacerolly_1_1types.html#ad34d88453d37b65a09797bad37f2f527" class="m-doc">f32</a> const y) -&gt; <a href="namespacerolly_1_1types.html#ad34d88453d37b65a09797bad37f2f527" class="m-doc">f32</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the remainder of the division of x by y.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;concepts::num T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a8b04e5cf1529e6fad4b713259ce61722" class="m-dox">to_radians</a>(</span><span class="m-dox-wrap">T degrees) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Converts degrees to radians.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;concepts::num T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a92152fa5d7fe7579552beee6eb51014e" class="m-dox">to_degrees</a>(</span><span class="m-dox-wrap">T radians) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Converts radians to degrees.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a3ac3258dd6ee92741399970d50868c2e" class="m-dox">approx_eq</a>(</span><span class="m-dox-wrap">T a,
+              T b,
+              T epsilon = <a href="http://en.cppreference.com/w/cpp/types/numeric_limits.html" class="m-doc-external">std::<wbr />numeric_limits</a>&lt;T&gt;::epsilon()) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns true if numbers are approximately equal within given epsilon.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ab3a5a941d1f40a4960f8090e98c680d9" class="m-dox">is_null</a>(</span><span class="m-dox-wrap">T a,
+              T epsilon = <a href="http://en.cppreference.com/w/cpp/types/numeric_limits.html" class="m-doc-external">std::<wbr />numeric_limits</a>&lt;T&gt;::epsilon()) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns true if number is approximately zero within given epsilon.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;concepts::num T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a241b7b3a3e1ba6ed1cfe08d1367b77ee" class="m-dox">div_euclid</a>(</span><span class="m-dox-wrap">T a,
+              T b) -&gt; T</span>
+            </dt>
+            <dd>Calculates Euclidean division, the matching method for <strong>rem_euclid</strong>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;concepts::num T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a7209b4640ac965aaa277f6d2d2fb017d" class="m-dox">rem_euclid</a>(</span><span class="m-dox-wrap">T a,
+              T b) -&gt; T</span>
+            </dt>
+            <dd>Calculates the least nonnegative remainder of <code>self (mod rhs)</code>.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a2264e542a12579ea469c63ecdee1883d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;std::integral T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">int rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2264e542a12579ea469c63ecdee1883d" class="m-doc-self">popcount</a>(</span><span class="m-doc-wrap">T x) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the number of 1 bits in the value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the value. Must be an unsigned integral type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>x</td>
+                  <td>Value to count the number of 1 bits in.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The number of 1 bits in the value.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac856a1cb702219f1d1035f0ce0945492"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;std::integral T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac856a1cb702219f1d1035f0ce0945492" class="m-doc-self">has_single_bit</a>(</span><span class="m-doc-wrap">T x) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Checks if the value is an integral power of two.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the value. Must be an integral type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>x</td>
+                  <td>Value to check.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the value is an integral power of two, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1math.html#a9f9d00ff5e0c49434b60e113d83be45e" class="m-doc">is_<wbr />pow2</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a9f9d00ff5e0c49434b60e113d83be45e"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;std::integral T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9f9d00ff5e0c49434b60e113d83be45e" class="m-doc-self">is_pow2</a>(</span><span class="m-doc-wrap">T x) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Checks if the value is an integral power of two.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the value. Must be an integral type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>x</td>
+                  <td>Value to check.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the value is an integral power of two, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This is an alias for <a href="namespacerolly_1_1math.html#ac856a1cb702219f1d1035f0ce0945492" class="m-doc">has_<wbr />single_<wbr />bit</a> function.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1math.html#ac856a1cb702219f1d1035f0ce0945492" class="m-doc">has_<wbr />single_<wbr />bit</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="af2e45c6029de89f124eb5f3d415b19be"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;std::unsigned_integral T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af2e45c6029de89f124eb5f3d415b19be" class="m-doc-self">bit_ceil</a>(</span><span class="m-doc-wrap">T x) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the next power of two of the value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the value. Must be an unsigned integral type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>x</td>
+                  <td>Value.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The next power of two of the value.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae71706eff25ec5df1ff62b4ae7be36a5"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;std::floating_point T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae71706eff25ec5df1ff62b4ae7be36a5" class="m-doc-self">floor</a>(</span><span class="m-doc-wrap">T val) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Rounds <code>val</code> down to the nearest integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Number type. Must be a floating point type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>val</td>
+                  <td>Number to round.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This is a <code>constexpr</code> version of <code><a href="http://en.cppreference.com/w/cpp/numeric/math/floor.html" class="m-doc-external">std::<wbr />floor</a></code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a06b1201488c8539a55f0d15c3142c846"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a06b1201488c8539a55f0d15c3142c846" class="m-doc-self">min</a>(</span><span class="m-doc-wrap">T&amp;&amp; v) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the minimum of a single value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the value.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Value to return.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The minimum of a single value.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This overload simply returns the given value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3a1a1d027d2cc6931b957029c079ad98"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename... Args&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3a1a1d027d2cc6931b957029c079ad98" class="m-doc-self">min</a>(</span><span class="m-doc-wrap">T const&amp; v1,
+              T const&amp; v2,
+              Args const&amp;... args) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the minimum value among the provided arguments.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the values to compare.</td>
+                </tr>
+                <tr>
+                  <td>Args</td>
+                  <td>Variadic template arguments allowing multiple values of type T.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v1&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>First value to compare.</td>
+                </tr>
+                <tr>
+                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Second value to compare.</td>
+                </tr>
+                <tr>
+                  <td>args&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Additional values to compare.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The minimum value among the provided arguments.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This function compares multiple values and returns the smallest one. It uses a recursive approach to handle an arbitrary number of arguments.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab3a14f303ad6df0c90ec3f7d5f57154f"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab3a14f303ad6df0c90ec3f7d5f57154f" class="m-doc-self">max</a>(</span><span class="m-doc-wrap">T&amp;&amp; v) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the maximum of a single value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the value.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Value to return.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The maximum of a single value.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This overload simply returns the given value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a00d802cbcc79c27d8b780034747072fd"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename... Args&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a00d802cbcc79c27d8b780034747072fd" class="m-doc-self">max</a>(</span><span class="m-doc-wrap">T const&amp; v1,
+              T const&amp; v2,
+              Args const&amp;... args) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the maximum value among the provided arguments.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the values to compare.</td>
+                </tr>
+                <tr>
+                  <td>Args</td>
+                  <td>Variadic template arguments allowing multiple values of type T.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v1&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>First value to compare.</td>
+                </tr>
+                <tr>
+                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Second value to compare.</td>
+                </tr>
+                <tr>
+                  <td>args&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Additional values to compare.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The maximum value among the provided arguments.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This function compares multiple values and returns the largest one. It uses a recursive approach to handle an arbitrary number of arguments.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa3571ee367243a1d142a7dc27a0ffa2d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3571ee367243a1d142a7dc27a0ffa2d" class="m-doc-self">abs</a>(</span><span class="m-doc-wrap">T const&amp; v) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the absolute value of a number.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the value.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Value to take the absolute value of.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The absolute value of v.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This function simply negates the input if it is negative, and returns the input unchanged if it is non-negative. It is a <code>constexpr</code> version of <code>std::abs</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a94cb063ba3f91b4919f5fd80469f9260"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespacerolly_1_1types.html#ad34d88453d37b65a09797bad37f2f527" class="m-doc">f32</a> rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a94cb063ba3f91b4919f5fd80469f9260" class="m-doc-self">fmod</a>(</span><span class="m-doc-wrap"><a href="namespacerolly_1_1types.html#ad34d88453d37b65a09797bad37f2f527" class="m-doc">f32</a> const x,
+              <a href="namespacerolly_1_1types.html#ad34d88453d37b65a09797bad37f2f527" class="m-doc">f32</a> const y) <span class="m-label m-primary">constexpr</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+            </h3>
+            <p>Returns the remainder of the division of x by y.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">x&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>First value.</td>
+                </tr>
+                <tr>
+                  <td>y&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Second value.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The remainder of the division of x by y.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This function is a <code>constexpr</code> version of <code><a href="http://en.cppreference.com/w/cpp/numeric/math/fmod.html" class="m-doc-external">std::<wbr />fmod</a></code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8b04e5cf1529e6fad4b713259ce61722"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;concepts::num T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b04e5cf1529e6fad4b713259ce61722" class="m-doc-self">to_radians</a>(</span><span class="m-doc-wrap">T degrees) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Converts degrees to radians.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Underlying type. Must be an integral or floating point type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>degrees</td>
+                  <td>Degree value.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Radian value.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1math.html#a92152fa5d7fe7579552beee6eb51014e" class="m-doc">to_<wbr />degrees</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a92152fa5d7fe7579552beee6eb51014e"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;concepts::num T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a92152fa5d7fe7579552beee6eb51014e" class="m-doc-self">to_degrees</a>(</span><span class="m-doc-wrap">T radians) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Converts radians to degrees.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Underlying type. Must be an integral or floating point type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>radians</td>
+                  <td>Radian value.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Degree value.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1math.html#a8b04e5cf1529e6fad4b713259ce61722" class="m-doc">to_<wbr />radians</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a3ac3258dd6ee92741399970d50868c2e"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3ac3258dd6ee92741399970d50868c2e" class="m-doc-self">approx_eq</a>(</span><span class="m-doc-wrap">T a,
+              T b,
+              T epsilon = <a href="http://en.cppreference.com/w/cpp/types/numeric_limits.html" class="m-doc-external">std::<wbr />numeric_limits</a>&lt;T&gt;::epsilon()) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns true if numbers are approximately equal within given epsilon.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Number type</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a</td>
+                  <td>First number</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>Second number</td>
+                </tr>
+                <tr>
+                  <td>epsilon</td>
+                  <td>Epsilon factor for comparison. Default is <code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits/epsilon.html" class="m-doc-external">std::<wbr />numeric_limits&lt;T&gt;::<wbr />epsilon()</a></code>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if numbers are approximately equal within given epsilon.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Compares floating point values using formula <code>|a - b| &lt;= epsilon * epsilon_factor</code>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1math.html#ab3a5a941d1f40a4960f8090e98c680d9" class="m-doc">is_<wbr />null</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="ab3a5a941d1f40a4960f8090e98c680d9"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab3a5a941d1f40a4960f8090e98c680d9" class="m-doc-self">is_null</a>(</span><span class="m-doc-wrap">T a,
+              T epsilon = <a href="http://en.cppreference.com/w/cpp/types/numeric_limits.html" class="m-doc-external">std::<wbr />numeric_limits</a>&lt;T&gt;::epsilon()) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns true if number is approximately zero within given epsilon.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Number type</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a</td>
+                  <td>Number</td>
+                </tr>
+                <tr>
+                  <td>epsilon</td>
+                  <td>Epsilon factor for comparison. Default is <code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits/epsilon.html" class="m-doc-external">std::<wbr />numeric_limits&lt;T&gt;::<wbr />epsilon()</a></code>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if number is zero within given epsilon.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Compares floating point values using formula <code>|a| &lt;= epsilon * epsilon_factor</code>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1math.html#a3ac3258dd6ee92741399970d50868c2e" class="m-doc">approx_<wbr />eq</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a241b7b3a3e1ba6ed1cfe08d1367b77ee"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;concepts::num T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a241b7b3a3e1ba6ed1cfe08d1367b77ee" class="m-doc-self">div_euclid</a>(</span><span class="m-doc-wrap">T a,
+              T b)</span></span>
+            </h3>
+            <p>Calculates Euclidean division, the matching method for <strong>rem_euclid</strong>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">a</td>
+                  <td>Dividend</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>Divisor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a7209b4640ac965aaa277f6d2d2fb017d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="math_8h.html">&lt;include/rolly/math.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;concepts::num T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T rolly::<wbr />math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7209b4640ac965aaa277f6d2d2fb017d" class="m-doc-self">rem_euclid</a>(</span><span class="m-doc-wrap">T a,
+              T b)</span></span>
+            </h3>
+            <p>Calculates the least nonnegative remainder of <code>self (mod rhs)</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">a</td>
+                  <td>Dividend</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>Divisor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

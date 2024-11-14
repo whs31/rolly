@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structfmt_1_1formatter_3_01rolly_1_1source__location_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>fmt::formatter&lt; rolly::source_location &gt;</compoundname>
+    <basecompoundref refid="structrolly_1_1ostream__formatter" prot="public" virt="non-virtual">ostream_formatter&lt; char &gt;</basecompoundref>
+    <includes refid="source__location_8h" local="no">source_location.h</includes>
+    <templateparamlist>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structrolly_1_1ostream__formatter_1a530ff3c61e787d95ed7ee018d3a26ca2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>OutputIt</type>
+        <definition>OutputIt format</definition>
+        <argsstring>(T const &amp;value, fmt::basic_format_context&lt; OutputIt, char &gt; &amp;ctx) const</argsstring>
+        <name>format</name>
+        <param>
+          <type>T const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>fmt::basic_format_context&lt; OutputIt, char &gt; &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+<para>Required by <computeroutput>fmt</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/format/ostream_formatter.h" line="28" column="14" bodyfile="include/rolly/format/ostream_formatter.h" bodystart="28" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Specialization of the <computeroutput>fmt::formatter</computeroutput> for the <ref refid="structrolly_1_1source__location" kindref="compound">rolly::source_location</ref> class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>formatter&lt; std::basic_string_view&lt; char  &gt;, char  &gt;</label>
+      </node>
+      <node id="1">
+        <label>formatter&lt; rolly::source_location &gt;</label>
+        <link refid="structfmt_1_1formatter_3_01rolly_1_1source__location_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ostream_formatter&lt; C &gt;</label>
+        <link refid="structrolly_1_1ostream__formatter"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostream_formatter&lt; char &gt;</label>
+        <link refid="structrolly_1_1ostream__formatter"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="template-instance">
+          <edgelabel>&lt; char &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>formatter&lt; std::basic_string_view&lt; C &gt;, C &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>formatter&lt; std::basic_string_view&lt; char  &gt;, char  &gt;</label>
+      </node>
+      <node id="1">
+        <label>formatter&lt; rolly::source_location &gt;</label>
+        <link refid="structfmt_1_1formatter_3_01rolly_1_1source__location_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ostream_formatter&lt; C &gt;</label>
+        <link refid="structrolly_1_1ostream__formatter"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostream_formatter&lt; char &gt;</label>
+        <link refid="structrolly_1_1ostream__formatter"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="template-instance">
+          <edgelabel>&lt; char &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>formatter&lt; std::basic_string_view&lt; C &gt;, C &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/rolly/source_location.h" line="141" column="48" bodyfile="include/rolly/source_location.h" bodystart="141" bodyend="141"/>
+    <listofallmembers>
+      <member refid="structrolly_1_1ostream__formatter_1a530ff3c61e787d95ed7ee018d3a26ca2" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::source_location &gt;</scope><name>format</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

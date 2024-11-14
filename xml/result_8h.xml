@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="result_8h" kind="file" language="C++">
+    <compoundname>result.h</compoundname>
+    <includes refid="definitions_8h" local="yes">../global/definitions.h</includes>
+    <includes local="no">exception</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">type_traits</includes>
+    <includes local="no">utility</includes>
+    <includes local="no">variant</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">fmt/format.h</includes>
+    <includes refid="contracts_8h" local="yes">../contracts.h</includes>
+    <includedby refid="filedevice_8h" local="yes">filedevice.h</includedby>
+    <includedby refid="shared__library_8h" local="yes">shared_library.h</includedby>
+    <includedby refid="prelude_8h" local="yes">prelude.h</includedby>
+    <includedby refid="types_8h" local="yes">types.h</includedby>
+    <incdepgraph>
+      <node id="16">
+        <label>format/ostream_formatter.h</label>
+        <link refid="ostream__formatter_8h_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>functional</label>
+      </node>
+      <node id="11">
+        <label>fmt/format.h</label>
+      </node>
+      <node id="21">
+        <label>cstdint</label>
+      </node>
+      <node id="9">
+        <label>variant</label>
+      </node>
+      <node id="13">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="5">
+        <label>exception</label>
+      </node>
+      <node id="4">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="14">
+        <label>string_view</label>
+      </node>
+      <node id="2">
+        <label>../global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>optional</label>
+      </node>
+      <node id="8">
+        <label>utility</label>
+      </node>
+      <node id="17">
+        <label>sstream</label>
+      </node>
+      <node id="1">
+        <label>result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>iosfwd</label>
+      </node>
+      <node id="20">
+        <label>cstddef</label>
+      </node>
+      <node id="15">
+        <label>source_location.h</label>
+        <link refid="source__location_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../contracts.h</label>
+        <link refid="contracts_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>type_traits</label>
+      </node>
+      <node id="19">
+        <label>types/stdint.h</label>
+        <link refid="stdint_8h_source"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>filedevice.h</label>
+        <link refid="filedevice_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dll.h</label>
+        <link refid="dll_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>shared_library.h</label>
+        <link refid="shared__library_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>types.h</label>
+        <link refid="types_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>plugin_loader.h</label>
+        <link refid="plugin__loader_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>config.h</label>
+        <link refid="config_8h_source"/>
+      </node>
+      <node id="4">
+        <label>savefile.h</label>
+        <link refid="savefile_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>prelude.h</label>
+        <link refid="prelude_8h_source"/>
+      </node>
+      <node id="5">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1types">rolly::types</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacerolly_1_1types_1a918453fbe2927b6410675e5eb5606441" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>void</defval>
+          </param>
+        </templateparamlist>
+        <type>expected&lt; T, <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
+        <definition>using result =  expected&lt;T, std::string&gt;</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/result.h" line="2494" column="5" bodyfile="include/rolly/types/result.h" bodystart="2494" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacerolly_1_1types_1a9365b793fe547271e48fa719a7f4854d" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto none</definition>
+        <argsstring></argsstring>
+        <name>none</name>
+        <initializer>= std::nullopt</initializer>
+        <briefdescription>
+<para>Wrap an empty value in an std::optional. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is a helper for creating an std::optional from a value. It is mostly useful when working with generic code that needs to work with both expected and optional types.</para>
+<para><simplesect kind="see"><para><ref refid="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" kindref="member">ok</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1types_1a023b1eb8a485614d2ea9c48632d275c3" kindref="member">some</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/result.h" line="2559" column="27" bodyfile="include/rolly/types/result.h" bodystart="2559" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerolly_1_1types_1a2c2d7fe1f4fcd1432bb6ee51c059306f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>unexpected&lt; std::decay_t&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt; &gt;</type>
+        <definition>unexpected&lt;std::decay_t&lt;std::string&gt; &gt; rolly::types::error</definition>
+        <argsstring>(std::string_view format, Args &amp;&amp;... args)</argsstring>
+        <name>error</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Generates an unexpected error object with a formatted error message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function formats an error message using the provided format string and arguments, and returns it wrapped in an <computeroutput>unexpected</computeroutput> object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The format string used to construct the error message. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments to format the error message.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An <computeroutput>unexpected</computeroutput> object containing the formatted error message. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/result.h" line="2510" column="17" bodyfile="include/rolly/types/result.h" bodystart="2510" bodyend="2512"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>expected&lt; std::decay_t&lt; T &gt;, <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
+        <definition>expected&lt;std::decay_t&lt;T&gt;, std::string&gt; rolly::types::ok</definition>
+        <argsstring>(T &amp;&amp;t)</argsstring>
+        <name>ok</name>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Wrap a value in an expected. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is a helper for creating an expected from a value. It is mostly useful when working with generic code that needs to work with both expected and optional types.</para>
+<para><simplesect kind="see"><para>result </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1types_1a2c2d7fe1f4fcd1432bb6ee51c059306f" kindref="member">error</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/result.h" line="2526" column="15" bodyfile="include/rolly/types/result.h" bodystart="2526" bodyend="2528"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1types_1a07a110d824e251b17a6bb94f8e4fed5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>result</type>
+        <definition>result rolly::types::ok</definition>
+        <argsstring>()</argsstring>
+        <name>ok</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/result.h" line="2530" column="14" bodyfile="include/rolly/types/result.h" bodystart="2530" bodyend="2530"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1types_1a023b1eb8a485614d2ea9c48632d275c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::optional&lt; std::decay_t&lt; T &gt; &gt;</type>
+        <definition>std::optional&lt;std::decay_t&lt;T&gt; &gt; rolly::types::some</definition>
+        <argsstring>(T &amp;&amp;t)</argsstring>
+        <name>some</name>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Wrap a value in an std::optional. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is a helper for creating an std::optional from a value. It is mostly useful when working with generic code that needs to work with both expected and optional types.</para>
+<para><simplesect kind="see"><para><ref refid="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" kindref="member">ok</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1types_1a9365b793fe547271e48fa719a7f4854d" kindref="member">none</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/result.h" line="2544" column="20" bodyfile="include/rolly/types/result.h" bodystart="2544" bodyend="2546"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/types/result.h"/>
+  </compounddef>
+</doxygen>

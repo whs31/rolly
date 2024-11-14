@@ -1,0 +1,631 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="threading_8h" kind="file" language="C++">
+    <compoundname>threading.h</compoundname>
+    <includes local="no">type_traits</includes>
+    <includes local="no">chrono</includes>
+    <includes refid="definitions_8h" local="yes">../global/definitions.h</includes>
+    <includedby refid="concepts_8h" local="yes">concepts.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="6">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="4">
+        <label>../global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>threading.h</label>
+        <link refid="threading_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>chrono</label>
+      </node>
+      <node id="2">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>threading.h</label>
+        <link refid="threading_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>concepts.h</label>
+        <link refid="concepts_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1concepts">rolly::concepts</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a256eaf11e6fe6f4b4cb5c15f4c2bb67c" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept basic_lockable</definition>
+        <argsstring></argsstring>
+        <name>basic_lockable</name>
+        <initializer>= requires(T t) {
+    { t.lock() };
+    { t.unlock() };
+  }</initializer>
+        <briefdescription>
+<para>Basic lockable concept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Describes the minimal characteristics of a lockable object. <itemizedlist>
+<listitem>
+<para>Blocks until a lock can be acquired for the current execution agent (thread, process, task). If an exception is thrown, no lock is acquired. </para>
+</listitem>
+<listitem>
+<para>Releases the non-shared lock held by the execution agent. Throws no exceptions. </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/named_req/BasicLockable">https://en.cppreference.com/w/cpp/named_req/BasicLockable</ulink> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a9f03a450503a49209711d9aabb33235b" kindref="member">mutex</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/threading.h" line="28" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept lockable</definition>
+        <argsstring></argsstring>
+        <name>lockable</name>
+        <initializer>= basic_lockable&lt;T&gt; and requires(T t) {
+    { t.try_lock() } -&gt; std::convertible_to&lt;bool&gt;;
+  }</initializer>
+        <briefdescription>
+<para>Lockable concept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The Lockable requirements extends the BasicLockable requirements to include attempted locking.</para>
+<para>For type to be lockable, it must meet the following requirements: <itemizedlist>
+<listitem>
+<para>Satisfies the BasicLockable requirements </para>
+</listitem>
+<listitem>
+<para>Provide a <computeroutput>try_lock</computeroutput> method: Attempts to acquire the lock for the current execution agent (thread, process, task) without blocking. If an exception is thrown, no lock is obtained. </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/named_req/Lockable">https://en.cppreference.com/w/cpp/named_req/Lockable</ulink> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a256eaf11e6fe6f4b4cb5c15f4c2bb67c" kindref="member">basic_lockable</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/threading.h" line="49" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a52c57da298d52036a7b419d018d30d37" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Duration</type>
+          </param>
+          <param>
+            <type>typename TimePoint</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept timed_lockable</definition>
+        <argsstring></argsstring>
+        <name>timed_lockable</name>
+        <initializer>=
+    lockable&lt;T&gt; and
+    requires(T t, <ref refid="cpp/chrono/duration" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::duration</ref>&lt;Duration&gt; rel_time, <ref refid="cpp/chrono/time_point" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::time_point</ref>&lt;TimePoint&gt; abs_time) {
+      { t.try_lock_for(rel_time) } -&gt; std::convertible_to&lt;bool&gt;;
+      { t.try_lock_until(abs_time) } -&gt; std::convertible_to&lt;bool&gt;;
+    }</initializer>
+        <briefdescription>
+<para>Timed lockable concept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Describes the requirements for a lockable object that can be locked for a specified time period.</para>
+<para>For type to be timed lockable, it must meet the following requirements: <itemizedlist>
+<listitem>
+<para>Satisfies the Lockable requirements </para>
+</listitem>
+<listitem>
+<para>Provide a <computeroutput>try_lock_for</computeroutput> method: Blocks for the provided duration rel_time or until a lock on m is acquired. Returns true if a lock is acquired, false otherwise. </para>
+</listitem>
+<listitem>
+<para>Provide a <computeroutput>try_lock_until</computeroutput> method: Blocks until the provided time_point or until a lock on m is acquired. Returns true if a lock is acquired, false otherwise. </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Duration type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TimePoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time point type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/named_req/TimedLockable">https://en.cppreference.com/w/cpp/named_req/TimedLockable</ulink> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a256eaf11e6fe6f4b4cb5c15f4c2bb67c" kindref="member">basic_lockable</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/threading.h" line="74" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a6b5e1f3d81caf56871288a0922106fba" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept shared_lockable</definition>
+        <argsstring></argsstring>
+        <name>shared_lockable</name>
+        <initializer>= lockable&lt;T&gt; and requires(T t) {
+    { t.lock_shared() };
+    { t.try_lock_shared() } -&gt; std::convertible_to&lt;bool&gt;;
+    { t.unlock_shared() };
+  }</initializer>
+        <briefdescription>
+<para>Shared lockable concept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The SharedLockable requirements describe the minimal characteristics of types that provide shared blocking semantics for execution agents (i.e. threads).</para>
+<para>For type to be shared lockable, it must meet the following requirements: <itemizedlist>
+<listitem>
+<para>Provide a <computeroutput>lock_shared</computeroutput> method: Blocks until a lock can be obtained for the current execution agent (thread, process, task). If an exception is thrown, no lock is obtained. </para>
+</listitem>
+<listitem>
+<para>Provide an <computeroutput>try_lock_shared</computeroutput> method: Attempts to obtain a lock for the current execution agent (thread, process, task) without blocking. If an exception is thrown, no lock is obtained. Returns true if a lock is obtained, false otherwise. </para>
+</listitem>
+<listitem>
+<para>Provide an <computeroutput>unlock_shared</computeroutput> method: Releases the shared lock held by the execution agent. Throws no exceptions. </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/named_req/SharedLockable">https://en.cppreference.com/w/cpp/named_req/SharedLockable</ulink> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a7ac96a877f45b8fe4d206f5a3b4227d1" kindref="member">shared_timed_lockable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a52c57da298d52036a7b419d018d30d37" kindref="member">timed_lockable</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/threading.h" line="103" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a7ac96a877f45b8fe4d206f5a3b4227d1" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Duration</type>
+          </param>
+          <param>
+            <type>typename TimePoint</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept shared_timed_lockable</definition>
+        <argsstring></argsstring>
+        <name>shared_timed_lockable</name>
+        <initializer>=
+    timed_lockable&lt;T, Duration, TimePoint&gt; and
+    requires(T t, <ref refid="cpp/chrono/duration" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::duration</ref>&lt;Duration&gt; rel_time, <ref refid="cpp/chrono/time_point" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::time_point</ref>&lt;TimePoint&gt; abs_time) {
+      { t.try_lock_shared_for(rel_time) } -&gt; std::convertible_to&lt;bool&gt;;
+      { t.try_lock_shared_until(abs_time) } -&gt; std::convertible_to&lt;bool&gt;;
+    }</initializer>
+        <briefdescription>
+<para>Shared timed lockable concept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The SharedTimedLockable requirements describe the characteristics of types that provide timed shared blocking semantics for execution agents (threads, processes, tasks).</para>
+<para>For type to be shared timed lockable, it must meet the following requirements: <itemizedlist>
+<listitem>
+<para>Satisfies the SharedLockable requirements </para>
+</listitem>
+<listitem>
+<para>Provide a <computeroutput>try_lock_shared_for</computeroutput> method: Blocks for the provided duration rel_time or until a lock on m is acquired. Returns true if a lock is acquired, false otherwise. </para>
+</listitem>
+<listitem>
+<para>Provide a <computeroutput>try_lock_shared_until</computeroutput> method: Blocks until the provided time_point or until a lock on m is acquired. Returns true if a lock is acquired, false otherwise. </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Duration type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TimePoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time point type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/named_req/SharedTimedLockable">https://en.cppreference.com/w/cpp/named_req/SharedTimedLockable</ulink> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a6b5e1f3d81caf56871288a0922106fba" kindref="member">shared_lockable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a52c57da298d52036a7b419d018d30d37" kindref="member">timed_lockable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/threading.h" line="132" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a9f03a450503a49209711d9aabb33235b" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <initializer>= lockable&lt;T&gt; and std::default_initializable&lt;T&gt; and std::destructible&lt;T&gt; and
+                  not std::copy_constructible&lt;T&gt; and not std::move_constructible&lt;T&gt;</initializer>
+        <briefdescription>
+<para>Mutex concept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The Mutex requirements extends the Lockable requirements to include inter-thread synchronization.</para>
+<para>For type to be mutex, it must meet the following requirements: <itemizedlist>
+<listitem>
+<para>Satisfies the Lockable requirements </para>
+</listitem>
+<listitem>
+<para>Be default constructible </para>
+</listitem>
+<listitem>
+<para>Be destructible </para>
+</listitem>
+<listitem>
+<para>Be not copyable </para>
+</listitem>
+<listitem>
+<para>Be not movable </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/named_req/Mutex">https://en.cppreference.com/w/cpp/named_req/Mutex</ulink> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1aac94bac785c4e7e42c81dd7c46c8a4ff" kindref="member">shared_mutex</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a286dcad460016fe53f98e8d0c6cf6be1" kindref="member">shared_timed_mutex</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1af2eae4a13cdc90beea2c6cd6f2af64e6" kindref="member">timed_mutex</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/threading.h" line="160" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1af2eae4a13cdc90beea2c6cd6f2af64e6" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Duration</type>
+          </param>
+          <param>
+            <type>typename TimePoint</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept timed_mutex</definition>
+        <argsstring></argsstring>
+        <name>timed_mutex</name>
+        <initializer>= timed_lockable&lt;T, Duration, TimePoint&gt; and mutex&lt;T&gt;</initializer>
+        <briefdescription>
+<para>Timed mutex concept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The TimedMutex requirements extends the TimedLockable requirements to include inter-thread synchronization.</para>
+<para>For type to be timed mutex, it must meet the following requirements: <itemizedlist>
+<listitem>
+<para>Satisfies the TimedLockable requirements </para>
+</listitem>
+<listitem>
+<para>Satisfies the Mutex requirements </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Duration type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TimePoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time point type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/named_req/TimedMutex">https://en.cppreference.com/w/cpp/named_req/TimedMutex</ulink> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a286dcad460016fe53f98e8d0c6cf6be1" kindref="member">shared_timed_mutex</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a9f03a450503a49209711d9aabb33235b" kindref="member">mutex</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1aac94bac785c4e7e42c81dd7c46c8a4ff" kindref="member">shared_mutex</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/threading.h" line="183" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1aac94bac785c4e7e42c81dd7c46c8a4ff" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept shared_mutex</definition>
+        <argsstring></argsstring>
+        <name>shared_mutex</name>
+        <initializer>= shared_lockable&lt;T&gt; and mutex&lt;T&gt;</initializer>
+        <briefdescription>
+<para>Shared mutex concept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The SharedMutex requirements extends the SharedLockable requirements to include inter-thread synchronization.</para>
+<para>For type to be shared mutex, it must meet the following requirements: <itemizedlist>
+<listitem>
+<para>Satisfies the SharedLockable requirements </para>
+</listitem>
+<listitem>
+<para>Satisfies the Mutex requirements </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/named_req/SharedMutex">https://en.cppreference.com/w/cpp/named_req/SharedMutex</ulink> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a286dcad460016fe53f98e8d0c6cf6be1" kindref="member">shared_timed_mutex</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1af2eae4a13cdc90beea2c6cd6f2af64e6" kindref="member">timed_mutex</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a9f03a450503a49209711d9aabb33235b" kindref="member">mutex</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/threading.h" line="203" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a286dcad460016fe53f98e8d0c6cf6be1" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Duration</type>
+          </param>
+          <param>
+            <type>typename TimePoint</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept shared_timed_mutex</definition>
+        <argsstring></argsstring>
+        <name>shared_timed_mutex</name>
+        <initializer>= shared_timed_lockable&lt;T, Duration, TimePoint&gt; and mutex&lt;T&gt;</initializer>
+        <briefdescription>
+<para>Shared timed mutex concept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The SharedTimedMutex requirements extends the SharedTimedLockable requirements to include inter-thread synchronization.</para>
+<para>For type to be shared timed mutex, it must meet the following requirements: <itemizedlist>
+<listitem>
+<para>Satisfies the SharedTimedLockable requirements </para>
+</listitem>
+<listitem>
+<para>Satisfies the Mutex requirements </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to check. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Duration type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TimePoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time point type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/named_req/SharedTimedMutex">https://en.cppreference.com/w/cpp/named_req/SharedTimedMutex</ulink> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1aac94bac785c4e7e42c81dd7c46c8a4ff" kindref="member">shared_mutex</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1af2eae4a13cdc90beea2c6cd6f2af64e6" kindref="member">timed_mutex</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1concepts_1a9f03a450503a49209711d9aabb33235b" kindref="member">mutex</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/concepts/threading.h" line="225" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/concepts/threading.h"/>
+  </compounddef>
+</doxygen>

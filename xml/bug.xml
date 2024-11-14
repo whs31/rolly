@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="bug" kind="page">
+    <compoundname>bug</compoundname>
+    <title>Bug List</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Member <ref refid="group__platform_1gaf6bc941a5499e1203ce88d31e521598e" kindref="member">ROLLY_ENDIAN_BIG</ref>  </term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000001"/>Can often be undefined on some platforms. Consider using <computeroutput>std::endian::native</computeroutput> to determine endianness.  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="group__platform_1ga5fc2015645e6eb1845fe995e9dda9862" kindref="member">ROLLY_ENDIAN_LITTLE</ref>  </term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000002"/>Can often be undefined on some platforms. Consider using <computeroutput>std::endian::native</computeroutput> to determine endianness. </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

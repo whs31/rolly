@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="qt_2concepts_8h" kind="file" language="C++">
+    <compoundname>qt/concepts.h</compoundname>
+    <includes refid="definitions_8h" local="yes">../global/definitions.h</includes>
+    <includes local="no">qobject.h</includes>
+    <includes local="no">type_traits</includes>
+    <includedby refid="registrable_8h" local="yes">registrable.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>qobject.h</label>
+      </node>
+      <node id="1">
+        <label>concepts.h</label>
+        <link refid="qt_2concepts_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="4">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="2">
+        <label>../global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>concepts.h</label>
+        <link refid="qt_2concepts_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>qt.h</label>
+        <link refid="qt_8h_source"/>
+      </node>
+      <node id="2">
+        <label>registrable.h</label>
+        <link refid="registrable_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>qml.h</label>
+        <link refid="qml_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrolly_1_1is__qobject" prot="public">rolly::is_qobject</innerclass>
+    <innerclass refid="structrolly_1_1is__qgadget" prot="public">rolly::is_qgadget</innerclass>
+    <innerclass refid="structrolly_1_1is__qgadget_3_01T_00_01std_1_1void__t_3_01decltype_07T_1_1staticMetaObject_08_4_01_4" prot="public">rolly::is_qgadget&lt; T, std::void_t&lt; decltype(T::staticMetaObject)&gt; &gt;</innerclass>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1concepts">rolly::concepts</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a54517dd6c801c2bdb84ed8974d446fa1" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept qobject</definition>
+        <argsstring></argsstring>
+        <name>qobject</name>
+        <initializer>= std::is_base_of_v&lt;::QObject, T&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/qt/concepts.h" line="15" column="11" bodyfile="include/rolly/qt/concepts.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1_1concepts_1a49ea049c3043b72fe3c0590e98adfa9a" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept qgadget</definition>
+        <argsstring></argsstring>
+        <name>qgadget</name>
+        <initializer>= requires(T t) {
+    { T::staticMetaObject } -&gt; std::convertible_to&lt;::QMetaObject&gt;;
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/qt/concepts.h" line="18" column="11" bodyfile="include/rolly/qt/concepts.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1a6fc52902ed4e616aadff50883c255f9d" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool is_qobject_v</definition>
+        <argsstring></argsstring>
+        <name>is_qobject_v</name>
+        <initializer>= is_qobject&lt;T&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/qt/concepts.h" line="29" column="25" bodyfile="include/rolly/qt/concepts.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1a4a2bc3187d7a879894ffd775ab861ac7" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool is_qgadget_v</definition>
+        <argsstring></argsstring>
+        <name>is_qgadget_v</name>
+        <initializer>= is_qgadget&lt;T&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/qt/concepts.h" line="38" column="25" bodyfile="include/rolly/qt/concepts.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/qt/concepts.h"/>
+  </compounddef>
+</doxygen>

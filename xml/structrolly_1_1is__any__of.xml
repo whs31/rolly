@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structrolly_1_1is__any__of" kind="struct" language="C++" prot="public">
+    <compoundname>rolly::is_any_of</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::disjunction&lt; std::is_same&lt; T, U &gt;... &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>U</declname>
+        <defname>U</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>disjunction&lt; std::is_same&lt; T, U &gt;... &gt;</label>
+      </node>
+      <node id="1">
+        <label>is_any_of&lt; T, U &gt;</label>
+        <link refid="structrolly_1_1is__any__of"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>disjunction&lt; std::is_same&lt; T, U &gt;... &gt;</label>
+      </node>
+      <node id="1">
+        <label>is_any_of&lt; T, U &gt;</label>
+        <link refid="structrolly_1_1is__any__of"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/rolly/concepts/any_of.h" line="18" column="37" bodyfile="include/rolly/concepts/any_of.h" bodystart="18" bodyend="18"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

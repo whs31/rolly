@@ -1,0 +1,1919 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrolly_1_1types_1_1vector2d" kind="struct" language="C++" prot="public">
+    <compoundname>rolly::types::vector2d</compoundname>
+    <includes refid="vector2d_8h" local="no">vector2d.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="namespacerolly_1_1concepts_1aea9bb2c4075cdbbe6ae4d3b6eef46cda" kindref="member">concepts::num</ref></type>
+        <declname>T</declname>
+        <defname>T</defname>
+        <defval><ref refid="namespacerolly_1_1types_1ad34d88453d37b65a09797bad37f2f527" kindref="member">f32</ref></defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" prot="public" static="no">
+        <type>T</type>
+        <definition>using number_type =  T</definition>
+        <argsstring></argsstring>
+        <name>number_type</name>
+        <briefdescription>
+<para>Underlying number type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="35" column="7" bodyfile="include/rolly/types/vector2d.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" prot="public" static="no">
+        <type><ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
+        <definition>using size2d_type =  size2d&lt;number_type&gt;</definition>
+        <argsstring></argsstring>
+        <name>size2d_type</name>
+        <briefdescription>
+<para>Associated <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="40" column="7" bodyfile="include/rolly/types/vector2d.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classrolly_1_1types_1_1vector2d_1a1d5735ed4c41bd513ff41fb16bd7b6ac" prot="public" static="no">
+        <type><ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
+        <definition>using point2d_type =  point2d&lt;number_type&gt;</definition>
+        <argsstring></argsstring>
+        <name>point2d_type</name>
+        <briefdescription>
+<para>Associated <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref> type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="45" column="7" bodyfile="include/rolly/types/vector2d.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classrolly_1_1types_1_1vector2d_1a8357a890991f50704b194bfdaf6db653" prot="public" static="no">
+        <type><ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
+        <definition>using angle_type =  angle&lt;number_type&gt;</definition>
+        <argsstring></argsstring>
+        <name>angle_type</name>
+        <briefdescription>
+<para>Associated angle type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="50" column="7" bodyfile="include/rolly/types/vector2d.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrolly_1_1types_1_1vector2d_1ae40d4cb269d0be9c0d20a9efe0462757" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T x_</definition>
+        <argsstring></argsstring>
+        <name>x_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="675" column="9" bodyfile="include/rolly/types/vector2d.h" bodystart="675" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1types_1_1vector2d_1a644d1b6657ad3f073d95487bdd5d08a9" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T y_</definition>
+        <argsstring></argsstring>
+        <name>y_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="676" column="9" bodyfile="include/rolly/types/vector2d.h" bodystart="676" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a7e8970e8b7e68e1410051f63744399fd" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr vector2d</definition>
+        <argsstring>()</argsstring>
+        <name>vector2d</name>
+        <briefdescription>
+<para>Constructs new vector with zero coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="55" column="17" bodyfile="include/rolly/types/vector2d.h" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ada46fed9c6b7cf483e202a0f6c10c4de" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr vector2d</definition>
+        <argsstring>(number_type x, number_type y)</argsstring>
+        <name>vector2d</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new vector from given scalar values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x-coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The y-coordinate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="64" column="17" bodyfile="include/rolly/types/vector2d.h" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a857c3c56d7047d36aa760fc80fa14f08" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr vector2d</definition>
+        <argsstring>(number_type value)</argsstring>
+        <name>vector2d</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new vector, setting all components to the same value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to set all components to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="72" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ab3903622b5a9c151ad0566b0f08356da" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr vector2d</definition>
+        <argsstring>(size2d_type const &amp;other)</argsstring>
+        <name>vector2d</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new vector from <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="80" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="80" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a12a757b7f4ae40284ce07a0d8215d096" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr vector2d</definition>
+        <argsstring>(point2d&lt; T &gt; const &amp;other)</argsstring>
+        <name>vector2d</name>
+        <param>
+          <type><ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>&lt; T &gt; const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new vector from <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="87" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="87" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad0bb20b92dba09e01dfe5b5bcc40db90" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::invocable&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
+            <declname>F</declname>
+            <defname>F</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr auto</type>
+        <definition>constexpr auto map</definition>
+        <argsstring>(F &amp;&amp;fn) const -&gt; std::enable_if_t&lt; std::is_invocable_v&lt; F, number_type &gt;, vector2d&lt; decltype(fn(std::declval&lt; number_type &gt;()))&gt;&gt;</argsstring>
+        <name>map</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+<para>Applies the function <bold>fn</bold> to each component of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of function to apply. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to apply. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="101" column="22" bodyfile="include/rolly/types/vector2d.h" bodystart="101" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a9287d4cce8079a793e2afe63a8ec60d0" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr auto</type>
+        <definition>constexpr auto zip</definition>
+        <argsstring>(vector2d const &amp;other, F &amp;&amp;fn) const</argsstring>
+        <name>zip</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+<para>Applies the function <bold>fn</bold> to each component of this <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> and the other <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of function to apply. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> to apply. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to apply. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="121" column="22" bodyfile="include/rolly/types/vector2d.h" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae2f0dff27f264a72bd885ec6ae87fec7" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref></type>
+        <definition>constexpr size2d_type to_size2d</definition>
+        <argsstring>() const</argsstring>
+        <name>to_size2d</name>
+        <briefdescription>
+<para>Casts this vector to a <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> representation of this vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="130" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="130" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a37f992c89080866042767b6bf3ad7995" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a1d5735ed4c41bd513ff41fb16bd7b6ac" kindref="member">point2d_type</ref></type>
+        <definition>constexpr point2d_type to_point2d</definition>
+        <argsstring>() const</argsstring>
+        <name>to_point2d</name>
+        <briefdescription>
+<para>Casts this vector to a <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref> representation of this vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="136" column="31" bodyfile="include/rolly/types/vector2d.h" bodystart="136" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aba19e8ffeec6286f6832bec689f4bd5b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>constexpr number_type length_squared</definition>
+        <argsstring>() const</argsstring>
+        <name>length_squared</name>
+        <briefdescription>
+<para>Returns this vector3d&apos;s length squared. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The length squared of this vector3d. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="142" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="142" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a641f5298f25ad854f24229789b78b92a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>constexpr number_type length_scalar</definition>
+        <argsstring>() const</argsstring>
+        <name>length_scalar</name>
+        <briefdescription>
+<para>Returns this vector3d&apos;s length as scalar value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The length of this vector3d. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="150" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="150" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aa84a741a0bfe46fb4ce8bf4878ed58cc" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d inverted</definition>
+        <argsstring>() const</argsstring>
+        <name>inverted</name>
+        <briefdescription>
+<para>Returns inverted <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Inverted <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="158" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="158" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a23d20565ed8828ea60602ae5f69d45b6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>constexpr number_type x</definition>
+        <argsstring>() const</argsstring>
+        <name>x</name>
+        <briefdescription>
+<para>Returns the x-coordinate of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> as scalar value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The x-coordinate of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="164" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="164" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad8e273c4442bfd92a64727fd411385a6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>constexpr number_type y</definition>
+        <argsstring>() const</argsstring>
+        <name>y</name>
+        <briefdescription>
+<para>Returns the y-coordinate of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> as scalar value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The y-coordinate of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="170" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="170" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a9e764a6a4f38cbdb7711383af5fa8d18" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &amp;</type>
+        <definition>constexpr number_type&amp; x_mut</definition>
+        <argsstring>()</argsstring>
+        <name>x_mut</name>
+        <briefdescription>
+<para>Returns mutable reference to the x-coordinate of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> as scalar value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Mutable reference to the x-coordinate of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="176" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="176" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a7212185fd6ab59c60da53e8e15606a4e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &amp;</type>
+        <definition>constexpr number_type&amp; y_mut</definition>
+        <argsstring>()</argsstring>
+        <name>y_mut</name>
+        <briefdescription>
+<para>Returns mutable reference to the y-coordinate of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> as scalar value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Mutable reference to the y-coordinate of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="182" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="182" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string to_string</definition>
+        <argsstring>() const</argsstring>
+        <name>to_string</name>
+        <briefdescription>
+<para>Returns string representation of the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Size is represented as it&apos;s numeric values. If the underlying number type is floating <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>, it is rounded to two decimal places. <simplesect kind="note"><para>Due to limitations of the language, units are not displayed. </para>
+</simplesect>
+<simplesect kind="return"><para>String representation of the object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="191" column="20" bodyfile="include/rolly/types/vector2d.h" bodystart="191" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a25129afd086e1ed1078677311854d7ab" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, 2 &gt;</type>
+        <definition>constexpr std::array&lt;number_type, 2&gt; to_array</definition>
+        <argsstring>() const</argsstring>
+        <name>to_array</name>
+        <briefdescription>
+<para>Casts into an array of two values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="201" column="29" bodyfile="include/rolly/types/vector2d.h" bodystart="201" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a773014d9be700f99ca76e9990945e509" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="cpp/utility/tuple" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::tuple</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
+        <definition>constexpr std::tuple&lt;number_type, number_type&gt; to_tuple</definition>
+        <argsstring>() const</argsstring>
+        <name>to_tuple</name>
+        <briefdescription>
+<para>Casts into a tuple of two values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="206" column="29" bodyfile="include/rolly/types/vector2d.h" bodystart="206" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a67ac57bed3924789d4157e4a9487749c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="cpp/utility/pair" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::pair</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
+        <definition>constexpr std::pair&lt;number_type, number_type&gt; to_pair</definition>
+        <argsstring>() const</argsstring>
+        <name>to_pair</name>
+        <briefdescription>
+<para>Casts into a pair of two values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="211" column="28" bodyfile="include/rolly/types/vector2d.h" bodystart="211" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a97747374c3a29bcfa312be97fd4e1e53" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d round</definition>
+        <argsstring>() const</argsstring>
+        <name>round</name>
+        <briefdescription>
+<para>Rounds each component to the nearest integer value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This behavior is preserved for negative values (unlike the basic cast). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="217" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="217" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8937db5747cbb32c466cedc8740f06c8" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d ceil</definition>
+        <argsstring>() const</argsstring>
+        <name>ceil</name>
+        <briefdescription>
+<para>Rounds each component to the smallest integer equal or greater than the original value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This behavior is preserved for negative values (unlike the basic cast). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="223" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="223" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a783bd4f0e1a867d1e0261899124fb640" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d floor</definition>
+        <argsstring>() const</argsstring>
+        <name>floor</name>
+        <briefdescription>
+<para>Rounds each component to the largest integer equal or less than the original value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This behavior is preserved for negative values (unlike the basic cast). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="229" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="229" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad86148d27d61ca09bbab7c37b841a7ea" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d lerp</definition>
+        <argsstring>(vector2d const &amp;other, f32 t) const</argsstring>
+        <name>lerp</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacerolly_1_1types_1ad34d88453d37b65a09797bad37f2f527" kindref="member">f32</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Linearly interpolate between this <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> and another <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Example: <programlisting filename=".cpp"><codeline><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">rolly::types::vector2d</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>from<sp/>=<sp/><ref refid="classrolly_1_1types_1_1vector2d_1a7e8970e8b7e68e1410051f63744399fd" kindref="member">vector2d</ref>(0.0F,<sp/>10.0F);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>to<sp/>=<sp/><ref refid="classrolly_1_1types_1_1vector2d_1a7e8970e8b7e68e1410051f63744399fd" kindref="member">vector2d</ref>(8.0F,<sp/>-4.0F);</highlight></codeline>
+<codeline><highlight class="normal">fmt::println(</highlight><highlight class="stringliteral">&quot;{}&quot;</highlight><highlight class="normal">,<sp/>from.lerp(to,<sp/>-1.0F));</highlight></codeline>
+<codeline><highlight class="normal">fmt::println(</highlight><highlight class="stringliteral">&quot;{}&quot;</highlight><highlight class="normal">,<sp/>from.lerp(to,<sp/>0.0F));</highlight></codeline>
+<codeline><highlight class="normal">fmt::println(</highlight><highlight class="stringliteral">&quot;{}&quot;</highlight><highlight class="normal">,<sp/>from.lerp(to,<sp/>0.5F));</highlight></codeline>
+<codeline><highlight class="normal">fmt::println(</highlight><highlight class="stringliteral">&quot;{}&quot;</highlight><highlight class="normal">,<sp/>from.lerp(to,<sp/>1.0F));</highlight></codeline>
+<codeline><highlight class="normal">fmt::println(</highlight><highlight class="stringliteral">&quot;{}&quot;</highlight><highlight class="normal">,<sp/>from.lerp(to,<sp/>2.0F));</highlight></codeline>
+</programlisting></para>
+<para>Output: <programlisting filename=".shell-session"><codeline><highlight class="normal">[-8.0,<sp/>24.0]</highlight></codeline>
+<codeline><highlight class="normal">[0.0,<sp/>10.0]</highlight></codeline>
+<codeline><highlight class="normal">[4.0,<sp/>3.0]</highlight></codeline>
+<codeline><highlight class="normal">[8.0,<sp/>-4.0]</highlight></codeline>
+<codeline><highlight class="normal">[16.0,<sp/>-18.0]</highlight></codeline>
+</programlisting> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interpolation factor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The interpolated <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="257" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="257" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae266a2489cfe2529a5ba1ede03d94b6b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d max</definition>
+        <argsstring>(vector2d const &amp;other) const</argsstring>
+        <name>max</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Returns the largest x and y values of this and another <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> with the largest x and y values. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="266" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="266" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a921a9d3d4e46ca766139644751a3249b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d min</definition>
+        <argsstring>(vector2d const &amp;other) const</argsstring>
+        <name>min</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Returns the smallest x and y values of this and another <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> with the smallest x and y values. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="275" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="275" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ac6095fccd7008abe861a426979eac90a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d clamp</definition>
+        <argsstring>(vector2d const &amp;start, vector2d const &amp;end) const</argsstring>
+        <name>clamp</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+<para>Returns the <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> each component of which clamped by corresponding components of start and end. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The end <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The clamped <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="285" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="285" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a2eb5fce88833aeedc48a8b9540e4c331" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>constexpr number_type dot</definition>
+        <argsstring>(vector2d const &amp;other) const</argsstring>
+        <name>dot</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Returns dot product of this and another <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The dot product of this and another <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="294" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="294" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1acd8165ec48627828963b6d6c00458c4a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>constexpr number_type cross</definition>
+        <argsstring>(vector2d const &amp;other) const</argsstring>
+        <name>cross</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Returns the norm of the cross product of this and another <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Cross product is defined as <computeroutput>[x1, y1] x [x2, y2] = x1 * y2 - y1 * x2</computeroutput>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The norm of the cross product of this and another <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="304" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="304" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a7b6d8c066c62800ec8f9dc54e748f705" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d abs</definition>
+        <argsstring>() const</argsstring>
+        <name>abs</name>
+        <briefdescription>
+<para>Returns the absolute value of each component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The absolute value of each component. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="312" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="312" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a69b18d171f435a723a6695a3d23d46db" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d project</definition>
+        <argsstring>(vector2d const &amp;other) const</argsstring>
+        <name>project</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Returns this vector projected onto another vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The projection of this vector onto the other vector. </para>
+</simplesect>
+<simplesect kind="warning"><para>Projecting onto a zero vector will result in a division by zero. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="320" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="320" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a0aa4a338eae196cea530b881c28031c9" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>constexpr number_type cross</definition>
+        <argsstring>(T const &amp;other) const</argsstring>
+        <name>cross</name>
+        <param>
+          <type>T const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Returns the norm of the cross product of this and another <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Cross product is defined as <computeroutput>[x1, y1] x [x2, y2] = x1 * y2 - y1 * x2</computeroutput>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The norm of the cross product of this and another <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="330" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="330" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a09eb0be0be1b9fb26096c1fccbe3d9ca" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool is_finite</definition>
+        <argsstring>() const</argsstring>
+        <name>is_finite</name>
+        <briefdescription>
+<para>Returns true if all members are finite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="337" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="337" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a231e8ba696d19d5efb24deba2b63c471" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool is_positive</definition>
+        <argsstring>() const</argsstring>
+        <name>is_positive</name>
+        <briefdescription>
+<para>Returns true if all members are positive. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="342" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="342" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ab002902ffa14c206196ac5048757d0cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::size_t</ref></type>
+            <declname>N2</declname>
+            <defname>N2</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>requires</definition>
+        <argsstring>(N2==2) static const expr vector2d from_array(std</argsstring>
+        <name>requires</name>
+        <param>
+          <type>N2</type>
+          <defval>=2</defval>
+        </param>
+        <briefdescription>
+<para>Constructs new <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> from <computeroutput><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>N2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the <computeroutput><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref></computeroutput>. Must be equal to <computeroutput>2</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <computeroutput><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="376" column="9" bodyfile="include/rolly/types/vector2d.h" bodystart="376" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad0ed9dded3dc4405713f0b9270930a92" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+<para>Returns <computeroutput>true</computeroutput> if underlying values is both not <computeroutput>0</computeroutput> and not <computeroutput>NaN</computeroutput> or <computeroutput>Infinity</computeroutput> in case of floating point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Also returns <computeroutput>false</computeroutput> if underlying values is <computeroutput>NaN</computeroutput> or <computeroutput>Infinity</computeroutput> in case of floating point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="397" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="397" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ac252a44c73ef696bf047b7b7b0ea13bc" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool operator!</definition>
+        <argsstring>() const</argsstring>
+        <name>operator!</name>
+        <briefdescription>
+<para>Returns <computeroutput>false</computeroutput> if underlying values is both not <computeroutput>0</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="410" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="410" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae4b63807bd0a4dba2d7b50026954830a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a8357a890991f50704b194bfdaf6db653" kindref="member">angle_type</ref></type>
+        <definition>constexpr angle_type angle_to</definition>
+        <argsstring>(vector2d const &amp;other) const</argsstring>
+        <name>angle_to</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Returns the signed angle between this vector and another vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The signed angle between this vector and the other vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="417" column="29" bodyfile="include/rolly/types/vector2d.h" bodystart="417" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a07c9e872f7efce9314325103915c140f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a8357a890991f50704b194bfdaf6db653" kindref="member">angle_type</ref></type>
+        <definition>constexpr angle_type angle_to_x_axis</definition>
+        <argsstring>() const</argsstring>
+        <name>angle_to_x_axis</name>
+        <briefdescription>
+<para>Returns the signed angle between this vector and the x axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Positive values counted counterclockwise, where 0 is <computeroutput>+x</computeroutput> axis, and <computeroutput>PI/2</computeroutput> is <computeroutput>+y</computeroutput> axis. <simplesect kind="return"><para>The signed angle between this vector and the x axis. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="427" column="29" bodyfile="include/rolly/types/vector2d.h" bodystart="427" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1afb75e5f86524f9a3ed4c83c0f84b9df7" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d normalized</definition>
+        <argsstring>() const</argsstring>
+        <name>normalized</name>
+        <briefdescription>
+<para>Returns the vector with length normalized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The normalized vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="435" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="435" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8bffb7234774d3ab69d9593c3bac1429" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d reflected</definition>
+        <argsstring>(vector2d const &amp;normal) const</argsstring>
+        <name>reflected</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>normal</declname>
+        </param>
+        <briefdescription>
+<para>Returns a reflection vector using an incident ray and a surface normal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>normal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The surface normal. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The reflection vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="442" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="442" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aa89ade0ea46daffaf17d29940cc4991d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>___concept___(<ref refid="namespacerolly_1_1concepts_1aea9bb2c4075cdbbe6ae4d3b6eef46cda" kindref="member">concepts::num</ref>)</type>
+            <declname>T2</declname>
+            <defname>T2</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; T2 &gt;</type>
+        <definition>constexpr vector2d&lt;T2&gt; cast</definition>
+        <argsstring>() const</argsstring>
+        <name>cast</name>
+        <briefdescription>
+<para>Cast from one numeric representation to another, preserving the units. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New number type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> with the new number type and the same value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="452" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="452" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad9cf886fded0e42bd136002993414e31" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d to_f32</definition>
+        <argsstring>() const</argsstring>
+        <name>to_f32</name>
+        <briefdescription>
+<para>Casts into <computeroutput>f32</computeroutput> <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="459" column="19" bodyfile="include/rolly/types/vector2d.h" bodystart="459" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a58ed5a277b603e4642732653aefda9bf" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1abc2f107791bd7c1d49ecf0f168c085a3" kindref="member">f64</ref> &gt;</type>
+        <definition>constexpr vector2d&lt;f64&gt; to_f64</definition>
+        <argsstring>() const</argsstring>
+        <name>to_f64</name>
+        <briefdescription>
+<para>Casts into <computeroutput>f64</computeroutput> <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="464" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="464" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a887b052249d9eea4fc59a73f06139089" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1a65cf28726f89e62ccf2f1354bc2716df" kindref="member">u32</ref> &gt;</type>
+        <definition>constexpr vector2d&lt;u32&gt; to_u32</definition>
+        <argsstring>() const</argsstring>
+        <name>to_u32</name>
+        <briefdescription>
+<para>Casts into <computeroutput>u32</computeroutput> <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="469" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="469" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a392137cf12aaac4c80d5d2455bfb35b6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1a66e1d499241ccae9a18a20a1f4f0590d" kindref="member">u64</ref> &gt;</type>
+        <definition>constexpr vector2d&lt;u64&gt; to_u64</definition>
+        <argsstring>() const</argsstring>
+        <name>to_u64</name>
+        <briefdescription>
+<para>Casts into <computeroutput>u64</computeroutput> <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="474" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="474" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a450184d2d99eb13abc133c3ae27e243e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1ac47ac2e28dd2cb38fbf05ce10f810407" kindref="member">usize</ref> &gt;</type>
+        <definition>constexpr vector2d&lt;usize&gt; to_usize</definition>
+        <argsstring>() const</argsstring>
+        <name>to_usize</name>
+        <briefdescription>
+<para>Casts into <computeroutput>usize</computeroutput> <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="479" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="479" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aea5d3113a001031c7d3a8d1993cf2cd8" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1aec4a1429cc91fb7ff41599b263c348cc" kindref="member">i32</ref> &gt;</type>
+        <definition>constexpr vector2d&lt;i32&gt; to_i32</definition>
+        <argsstring>() const</argsstring>
+        <name>to_i32</name>
+        <briefdescription>
+<para>Casts into <computeroutput>i32</computeroutput> <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="484" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="484" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aec7169fdf8348242d8966fb5129f8f3e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1ae72e52134285dbd83ca4227ec77394a2" kindref="member">i64</ref> &gt;</type>
+        <definition>constexpr vector2d&lt;i64&gt; to_i64</definition>
+        <argsstring>() const</argsstring>
+        <name>to_i64</name>
+        <briefdescription>
+<para>Casts into <computeroutput>i64</computeroutput> <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="489" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="489" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aa6beccc006821d44b8d762a215839157" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1a30f901b0e451a40d688c0fe8ec125c85" kindref="member">isize</ref> &gt;</type>
+        <definition>constexpr vector2d&lt;isize&gt; to_isize</definition>
+        <argsstring>() const</argsstring>
+        <name>to_isize</name>
+        <briefdescription>
+<para>Casts into <computeroutput>isize</computeroutput> <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="494" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="494" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1acba331faf26529e484bb777e86acaf17" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d operator+</definition>
+        <argsstring>() const</argsstring>
+        <name>operator+</name>
+        <briefdescription>
+<para>Returns an unchanged copy of this vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An unchanged copy of this vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="505" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="505" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1afcfa2ea6cc2776a9d9f38e7e26cd8229" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d operator-</definition>
+        <argsstring>() const</argsstring>
+        <name>operator-</name>
+        <briefdescription>
+<para>Returns a negated copy of this vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A negated copy of this vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="511" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="511" bodyend="511"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ade843849c4c632880d7cb189b80d7f6c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool operator!=</definition>
+        <argsstring>(vector2d const &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Returns <computeroutput>true</computeroutput> if the vector is not equal to the other vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the vector is not equal to the other vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="518" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="518" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a50628fcf9d858a6a4c7c13076479b2dd" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Q</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d operator+</definition>
+        <argsstring>(Q const &amp;other) const</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>Q const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Adds vector and either <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> or <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the summand. Can be <computeroutput><ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref></computeroutput>, <computeroutput><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></computeroutput> or <computeroutput><ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The summand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sum. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="536" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="536" bodyend="538"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a2f661ebdadffdd3a3ae66ec32110d995" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool operator==</definition>
+        <argsstring>(vector2d const &amp;other) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Returns <computeroutput>true</computeroutput> if the vector is equal to the other vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the vector is equal to the other vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="545" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="545" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad1de12dc49fa4dcea5ed19214ea7cfd5" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Q</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d operator-</definition>
+        <argsstring>(Q const &amp;other) const</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>Q const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Subtracts vector and either <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> or <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the subtrahend. Can be <computeroutput><ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref></computeroutput>, <computeroutput><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></computeroutput> or <computeroutput><ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The subtrahend. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The difference. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="563" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="563" bodyend="565"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8770dfe270833d5bc8c3a3de43af4500" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d operator*</definition>
+        <argsstring>(number_type const &amp;other) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Multiplies vector by a scalar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The multiplier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of multiplication. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="572" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="572" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a4925eb64a9c4990537c6cf98646c44b0" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>constexpr vector2d operator/</definition>
+        <argsstring>(number_type const &amp;other) const</argsstring>
+        <name>operator/</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Divides vector by a scalar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The divisor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of division. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="581" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="581" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aa6529687089035a3f4a5cd8814749e01" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Q</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> &amp;</type>
+        <definition>constexpr vector2d&amp; operator+=</definition>
+        <argsstring>(Q const &amp;other)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>Q const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Adds vector and either <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> or <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the summand. Can be <computeroutput><ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref></computeroutput>, <computeroutput><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></computeroutput> or <computeroutput><ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The summand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sum. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="598" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="598" bodyend="602"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a07632ba1cb25331e137a0ad94a936845" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Q</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> &amp;</type>
+        <definition>constexpr vector2d&amp; operator-=</definition>
+        <argsstring>(Q const &amp;other)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>Q const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Subtracts vector and either <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> or <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the subtrahend. Can be <computeroutput><ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref></computeroutput>, <computeroutput><ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></computeroutput> or <computeroutput><ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The subtrahend. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The difference. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="617" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="617" bodyend="621"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a30311cf9345b9d54ca5e679f1c4d3ebd" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> &amp;</type>
+        <definition>constexpr vector2d&amp; operator*=</definition>
+        <argsstring>(number_type const &amp;other)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Multiplication assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to this vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="628" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="628" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1abea34b1d175efe7e5b5cd1fde44bffd2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> &amp;</type>
+        <definition>constexpr vector2d&amp; operator/=</definition>
+        <argsstring>(number_type const &amp;other)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Division assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to this vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="639" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="639" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8390fa9124293f298d9ef42c276a9304" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr vector2d</definition>
+        <argsstring>(QVector2D const &amp;other)</argsstring>
+        <name>vector2d</name>
+        <param>
+          <type>QVector2D const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> from <computeroutput>QVector2D</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <computeroutput>QVector2D</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>This constructor is only available if <bold>Qt Gui</bold> is linked against the TU this header is compiled for. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="652" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="652" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a3ad2d6a454f038367c91804def5ec521" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr QVector2D</type>
+        <definition>constexpr QVector2D to_qvector2d</definition>
+        <argsstring>() const</argsstring>
+        <name>to_qvector2d</name>
+        <briefdescription>
+<para>Casts this <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> into <computeroutput>QVector2D</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>This function is only available if <bold>Qt Gui</bold> is linked against the TU this header is compiled for. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="670" column="28" bodyfile="include/rolly/types/vector2d.h" bodystart="670" bodyend="670"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aff861cc1aa2b5d336d5134477f1ba4b4" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>static constexpr vector2d zero</definition>
+        <argsstring>()</argsstring>
+        <name>zero</name>
+        <briefdescription>
+<para>The same as <emphasis>origin</emphasis>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="347" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="347" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae0cdbad8a42afb341e9e28c05e4297a7" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>static constexpr vector2d splat</definition>
+        <argsstring>(number_type value)</argsstring>
+        <name>splat</name>
+        <param>
+          <type><ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>, setting all components to the same value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to set all components to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="353" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="353" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ac7bff978b48e1a895e77d1900fb65ddc" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>static constexpr vector2d from_tuple</definition>
+        <argsstring>(std::tuple&lt; Args... &gt; const &amp;other)</argsstring>
+        <name>from_tuple</name>
+        <param>
+          <type><ref refid="cpp/utility/tuple" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::tuple</ref>&lt; Args... &gt; const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> from <computeroutput><ref refid="cpp/utility/tuple" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::tuple</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <computeroutput><ref refid="cpp/utility/tuple" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::tuple</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="365" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="365" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae98595dc9943409ffa7360864f1156ad" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>static constexpr vector2d from_pair</definition>
+        <argsstring>(std::pair&lt; number_type, number_type &gt; const &amp;other)</argsstring>
+        <name>from_pair</name>
+        <param>
+          <type><ref refid="cpp/utility/pair" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::pair</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt; const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> from <computeroutput><ref refid="cpp/utility/pair" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::pair</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <computeroutput><ref refid="cpp/utility/pair" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::pair</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="388" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="388" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8251d0051470489a585612a3c4cf821f" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>static constexpr vector2d one</definition>
+        <argsstring>()</argsstring>
+        <name>one</name>
+        <briefdescription>
+<para>Constructs new vector with all values set to one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="499" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="499" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1adac189c18610be0ec4e01d6ebc30f617" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
+        <definition>static constexpr vector2d from_qvector2d</definition>
+        <argsstring>(QVector2D const &amp;other)</argsstring>
+        <name>from_qvector2d</name>
+        <param>
+          <type>QVector2D const &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Constructs new <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> from <computeroutput>QVector2D</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <computeroutput>QVector2D</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>This function is only available if <bold>Qt Gui</bold> is linked against the TU this header is compiled for. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/types/vector2d.h" line="661" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="661" bodyend="663"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A two-dimensional vector tagged with a unit. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number type. Must satisfy concept <computeroutput><ref refid="namespacerolly_1_1concepts_1aea9bb2c4075cdbbe6ae4d3b6eef46cda" kindref="member">rolly::concepts::num</ref></computeroutput>. Default is <computeroutput>f32</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="include/rolly/types/size2d.h" line="20" column="5" bodyfile="include/rolly/types/size2d.h" bodystart="20" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="classrolly_1_1types_1_1vector2d_1a7b6d8c066c62800ec8f9dc54e748f705" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>abs</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ae4b63807bd0a4dba2d7b50026954830a" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>angle_to</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a07c9e872f7efce9314325103915c140f" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>angle_to_x_axis</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a8357a890991f50704b194bfdaf6db653" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>angle_type</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aa89ade0ea46daffaf17d29940cc4991d" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>cast</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a8937db5747cbb32c466cedc8740f06c8" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>ceil</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ac6095fccd7008abe861a426979eac90a" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>clamp</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1acd8165ec48627828963b6d6c00458c4a" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>cross</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a0aa4a338eae196cea530b881c28031c9" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>cross</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a2eb5fce88833aeedc48a8b9540e4c331" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>dot</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a783bd4f0e1a867d1e0261899124fb640" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>floor</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ae98595dc9943409ffa7360864f1156ad" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>from_pair</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1adac189c18610be0ec4e01d6ebc30f617" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>from_qvector2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ac7bff978b48e1a895e77d1900fb65ddc" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>from_tuple</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aa84a741a0bfe46fb4ce8bf4878ed58cc" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>inverted</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a09eb0be0be1b9fb26096c1fccbe3d9ca" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>is_finite</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a231e8ba696d19d5efb24deba2b63c471" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>is_positive</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a641f5298f25ad854f24229789b78b92a" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>length_scalar</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aba19e8ffeec6286f6832bec689f4bd5b" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>length_squared</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ad86148d27d61ca09bbab7c37b841a7ea" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>lerp</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ad0bb20b92dba09e01dfe5b5bcc40db90" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>map</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ae266a2489cfe2529a5ba1ede03d94b6b" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>max</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a921a9d3d4e46ca766139644751a3249b" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>min</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1afb75e5f86524f9a3ed4c83c0f84b9df7" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>normalized</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>number_type</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a8251d0051470489a585612a3c4cf821f" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>one</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ad0ed9dded3dc4405713f0b9270930a92" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator bool</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ac252a44c73ef696bf047b7b7b0ea13bc" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator!</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ade843849c4c632880d7cb189b80d7f6c" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator!=</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a8770dfe270833d5bc8c3a3de43af4500" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator*</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a30311cf9345b9d54ca5e679f1c4d3ebd" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator*=</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1acba331faf26529e484bb777e86acaf17" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator+</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a50628fcf9d858a6a4c7c13076479b2dd" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator+</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aa6529687089035a3f4a5cd8814749e01" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator+=</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1afcfa2ea6cc2776a9d9f38e7e26cd8229" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator-</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ad1de12dc49fa4dcea5ed19214ea7cfd5" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator-</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a07632ba1cb25331e137a0ad94a936845" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator-=</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a4925eb64a9c4990537c6cf98646c44b0" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator/</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1abea34b1d175efe7e5b5cd1fde44bffd2" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator/=</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a2f661ebdadffdd3a3ae66ec32110d995" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>operator==</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a1d5735ed4c41bd513ff41fb16bd7b6ac" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>point2d_type</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a69b18d171f435a723a6695a3d23d46db" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>project</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a8bffb7234774d3ab69d9593c3bac1429" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>reflected</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ab002902ffa14c206196ac5048757d0cb" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>requires</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a97747374c3a29bcfa312be97fd4e1e53" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>round</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>size2d_type</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ae0cdbad8a42afb341e9e28c05e4297a7" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>splat</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a25129afd086e1ed1078677311854d7ab" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_array</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ad9cf886fded0e42bd136002993414e31" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_f32</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a58ed5a277b603e4642732653aefda9bf" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_f64</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aea5d3113a001031c7d3a8d1993cf2cd8" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_i32</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aec7169fdf8348242d8966fb5129f8f3e" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_i64</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aa6beccc006821d44b8d762a215839157" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_isize</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a67ac57bed3924789d4157e4a9487749c" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_pair</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a37f992c89080866042767b6bf3ad7995" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_point2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a3ad2d6a454f038367c91804def5ec521" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_qvector2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ae2f0dff27f264a72bd885ec6ae87fec7" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_size2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_string</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a773014d9be700f99ca76e9990945e509" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_tuple</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a887b052249d9eea4fc59a73f06139089" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_u32</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a392137cf12aaac4c80d5d2455bfb35b6" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_u64</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a450184d2d99eb13abc133c3ae27e243e" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>to_usize</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a7e8970e8b7e68e1410051f63744399fd" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>vector2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ada46fed9c6b7cf483e202a0f6c10c4de" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>vector2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a857c3c56d7047d36aa760fc80fa14f08" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>vector2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ab3903622b5a9c151ad0566b0f08356da" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>vector2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a12a757b7f4ae40284ce07a0d8215d096" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>vector2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a8390fa9124293f298d9ef42c276a9304" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>vector2d</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a23d20565ed8828ea60602ae5f69d45b6" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>x</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ae40d4cb269d0be9c0d20a9efe0462757" prot="private" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>x_</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a9e764a6a4f38cbdb7711383af5fa8d18" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>x_mut</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1ad8e273c4442bfd92a64727fd411385a6" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>y</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a644d1b6657ad3f073d95487bdd5d08a9" prot="private" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>y_</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a7212185fd6ab59c60da53e8e15606a4e" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>y_mut</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1aff861cc1aa2b5d336d5134477f1ba4b4" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>zero</name></member>
+      <member refid="classrolly_1_1types_1_1vector2d_1a9287d4cce8079a793e2afe63a8ec60d0" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>zip</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

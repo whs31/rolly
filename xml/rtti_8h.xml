@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="rtti_8h" kind="file" language="C++">
+    <compoundname>rtti.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">typeinfo</includes>
+    <includes refid="export_8h" local="yes">global/export.h</includes>
+    <includes refid="definitions_8h" local="yes">global/definitions.h</includes>
+    <includedby refid="serialization_8h" local="yes">serialization.h</includedby>
+    <includedby refid="serialization__error_8h" local="yes">serialization_error.h</includedby>
+    <includedby refid="rolly_8h" local="yes">rolly.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>global/export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="6">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="5">
+        <label>global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>typeinfo</label>
+      </node>
+      <node id="1">
+        <label>rtti.h</label>
+        <link refid="rtti_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>serialization.h</label>
+        <link refid="serialization_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>serialization_error.h</label>
+        <link refid="serialization__error_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>rtti.h</label>
+        <link refid="rtti_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>config.h</label>
+        <link refid="config_8h_source"/>
+      </node>
+      <node id="7">
+        <label>exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>savefile.h</label>
+        <link refid="savefile_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1rtti">rolly::rtti</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerolly_1_1rtti_1a8ac2bded160f24b7225d60eed02a5f27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string rolly::rtti::demangle</definition>
+        <argsstring>(char const *name)</argsstring>
+        <name>demangle</name>
+        <param>
+          <type>char const *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Demangles C++ type name from string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Confirmed support on: <itemizedlist>
+<listitem>
+<para>MSVC </para>
+</listitem>
+<listitem>
+<para>Clang </para>
+</listitem>
+<listitem>
+<para>GCC </para>
+</listitem>
+</itemizedlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>C++ mangled type name string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Demangled type name. </para>
+</simplesect>
+<simplesect kind="note"><para>Requires RTTI to be enabled. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1rtti_1af8c9dca0ced5ad5cf39f7b94be3a5208" kindref="member">type_name</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/rtti.h" line="33" column="17" declfile="include/rolly/rtti.h" declline="33" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1rtti_1af8c9dca0ced5ad5cf39f7b94be3a5208" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string rolly::rtti::type_name</definition>
+        <argsstring>()</argsstring>
+        <name>type_name</name>
+        <briefdescription>
+<para>Returns C++ type name or signature from <bold>typeid</bold> object using RTTI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Confirmed support on: <itemizedlist>
+<listitem>
+<para>MSVC </para>
+</listitem>
+<listitem>
+<para>Clang </para>
+</listitem>
+<listitem>
+<para>GCC </para>
+</listitem>
+</itemizedlist>
+</para>
+<para>Example usage: <programlisting filename=".cpp"><codeline><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacerolly_1_1rtti" kindref="compound">rolly::rtti</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::cout &lt;&lt; type_name&lt;int&gt;</ref>();<sp/></highlight><highlight class="comment">//<sp/>prints:<sp/>&apos;int&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::cout &lt;&lt; type_name&lt;std::string&gt;</ref>();<sp/></highlight><highlight class="comment">//<sp/>prints:<sp/>&apos;std::basic_string&lt;char&gt;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> <simplesect kind="return"><para>Demangled type name. </para>
+</simplesect>
+<simplesect kind="note"><para>Requires RTTI to be enabled. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacerolly_1_1rtti_1a8ac2bded160f24b7225d60eed02a5f27" kindref="member">demangle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/rolly/rtti.h" line="58" column="16" bodyfile="include/rolly/rtti.h" bodystart="58" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/rtti.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>rolly::contracts::audit namespace | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacerolly_1_1contracts.html">contracts</a>::<wbr/></span>audit <span class="m-thin">namespace</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="contracts_8h.html">&lt;include/rolly/contracts.h&gt;</a></div>
+        </h1>
+        <p>Contracts that will be only executed in debug mode.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#a7e49ec735d033ca6f6da7652f78c4a30" class="m-dox">invariant</a>(</span><span class="m-dox-wrap">bool expression,
+              std::string_view message = &quot;Invariant violated&quot;)</span>
+            </dt>
+            <dd>Checks if a given <em>invariant</em> expression is true and throws a contract violation if it is not.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#a6c79fd5607d45e582936442da6e322f4" class="m-dox">precondition</a>(</span><span class="m-dox-wrap">bool expression,
+              std::string_view message = &quot;Precondition violated&quot;)</span>
+            </dt>
+            <dd>Checks if a given <em>precondition</em> expression is true and throws a contract violation if it is not.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#a9cf84ba57be583af6f5a3972047d8416" class="m-dox">postcondition</a>(</span><span class="m-dox-wrap">bool expression,
+              std::string_view message = &quot;Postcondition violated&quot;)</span>
+            </dt>
+            <dd>Checks if a given <em>postcondition</em> expression is true and throws a contract violation if it is not.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#a90bd93c4cbe4a541b3398ee95ed17505" class="m-dox">broken_invariant</a>(</span><span class="m-dox-wrap">std::string_view message = &quot;Broken <a href="namespacerolly_1_1contracts_1_1audit.html#a7e49ec735d033ca6f6da7652f78c4a30" class="m-doc">invariant</a>&quot;)</span>
+            </dt>
+            <dd>Invokes the global contract violation handler (see <a href="namespacerolly_1_1contracts.html#aecea849c17224c0824619ce3e30c5f8b" class="m-doc">violation_<wbr />handler</a>) with a broken invariant violation.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#a5bf2bc45f46e47e578f2defd5d87b52a" class="m-dox">broken_precondition</a>(</span><span class="m-dox-wrap">std::string_view message = &quot;Broken <a href="namespacerolly_1_1contracts_1_1audit.html#a6c79fd5607d45e582936442da6e322f4" class="m-doc">precondition</a>&quot;)</span>
+            </dt>
+            <dd>Invokes the global contract violation handler (see <a href="namespacerolly_1_1contracts.html#aecea849c17224c0824619ce3e30c5f8b" class="m-doc">violation_<wbr />handler</a>) with a broken precondition violation.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#a040c855daee4842d4c0caefd701b6607" class="m-dox">broken_postcondition</a>(</span><span class="m-dox-wrap">std::string_view message = &quot;Broken <a href="namespacerolly_1_1contracts_1_1audit.html#a9cf84ba57be583af6f5a3972047d8416" class="m-doc">postcondition</a>&quot;)</span>
+            </dt>
+            <dd>Invokes the global contract violation handler (see <a href="namespacerolly_1_1contracts.html#aecea849c17224c0824619ce3e30c5f8b" class="m-doc">violation_<wbr />handler</a>) with a broken postcondition violation.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">void <a href="#a123d98f0454da1fde978fa21ec6dd5e4" class="m-dox">not_implemented</a>(</span><span class="m-dox-wrap">)</span>
+            </dt>
+            <dd>Invokes the global contract violation handler (see <a href="namespacerolly_1_1contracts.html#aecea849c17224c0824619ce3e30c5f8b" class="m-doc">violation_<wbr />handler</a>) with a broken invariant violation.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a7e49ec735d033ca6f6da7652f78c4a30"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />contracts::<wbr />audit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7e49ec735d033ca6f6da7652f78c4a30" class="m-doc-self">invariant</a>(</span><span class="m-doc-wrap">bool expression,
+              std::string_view message = &quot;Invariant violated&quot;)</span></span>
+            </h3>
+            <p>Checks if a given <em>invariant</em> expression is true and throws a contract violation if it is not.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">expression</td>
+                  <td>Invariant expression.</td>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>Violation message. Defaults to <code>&quot;Invariant violated&quot;</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If the expression is false, the contract violation is thrown with the given message and location.</p><aside class="m-note m-info"><h4>Note</h4><p>The expression is only evaluated in debug mode. In release mode this function is a no-op.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1contracts_1_1audit.html#a90bd93c4cbe4a541b3398ee95ed17505" class="m-doc">broken_<wbr />invariant</a></p><p><a href="namespacerolly_1_1contracts_1_1audit.html#a6c79fd5607d45e582936442da6e322f4" class="m-doc">precondition</a></p><p><a href="namespacerolly_1_1contracts_1_1audit.html#a9cf84ba57be583af6f5a3972047d8416" class="m-doc">postcondition</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a6c79fd5607d45e582936442da6e322f4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />contracts::<wbr />audit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c79fd5607d45e582936442da6e322f4" class="m-doc-self">precondition</a>(</span><span class="m-doc-wrap">bool expression,
+              std::string_view message = &quot;Precondition violated&quot;)</span></span>
+            </h3>
+            <p>Checks if a given <em>precondition</em> expression is true and throws a contract violation if it is not.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">expression</td>
+                  <td>Precondition expression.</td>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>Violation message. Defaults to <code>&quot;Precondition violated&quot;</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If the expression is false, the contract violation is thrown with the given message and location.</p><aside class="m-note m-info"><h4>Note</h4><p>The expression is only evaluated in debug mode. In release mode this function is a no-op.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1contracts_1_1audit.html#a5bf2bc45f46e47e578f2defd5d87b52a" class="m-doc">broken_<wbr />precondition</a></p><p><a href="namespacerolly_1_1contracts_1_1audit.html#a7e49ec735d033ca6f6da7652f78c4a30" class="m-doc">invariant</a></p><p><a href="namespacerolly_1_1contracts_1_1audit.html#a9cf84ba57be583af6f5a3972047d8416" class="m-doc">postcondition</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a9cf84ba57be583af6f5a3972047d8416"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />contracts::<wbr />audit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9cf84ba57be583af6f5a3972047d8416" class="m-doc-self">postcondition</a>(</span><span class="m-doc-wrap">bool expression,
+              std::string_view message = &quot;Postcondition violated&quot;)</span></span>
+            </h3>
+            <p>Checks if a given <em>postcondition</em> expression is true and throws a contract violation if it is not.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">expression</td>
+                  <td>Postcondition expression.</td>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>Violation message. Defaults to <code>&quot;Postcondition violated&quot;</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If the expression is false, the contract violation is thrown with the given message and location.</p><aside class="m-note m-info"><h4>Note</h4><p>The expression is only evaluated in debug mode. In release mode this function is a no-op.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1contracts_1_1audit.html#a040c855daee4842d4c0caefd701b6607" class="m-doc">broken_<wbr />postcondition</a></p><p><a href="namespacerolly_1_1contracts_1_1audit.html#a7e49ec735d033ca6f6da7652f78c4a30" class="m-doc">invariant</a></p><p><a href="namespacerolly_1_1contracts_1_1audit.html#a6c79fd5607d45e582936442da6e322f4" class="m-doc">precondition</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a90bd93c4cbe4a541b3398ee95ed17505"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />contracts::<wbr />audit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a90bd93c4cbe4a541b3398ee95ed17505" class="m-doc-self">broken_invariant</a>(</span><span class="m-doc-wrap">std::string_view message = &quot;Broken <a href="namespacerolly_1_1contracts_1_1audit.html#a7e49ec735d033ca6f6da7652f78c4a30" class="m-doc">invariant</a>&quot;)</span></span>
+            </h3>
+            <p>Invokes the global contract violation handler (see <a href="namespacerolly_1_1contracts.html#aecea849c17224c0824619ce3e30c5f8b" class="m-doc">violation_<wbr />handler</a>) with a broken invariant violation.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">message</td>
+                  <td>Violation message. Defaults to <code>&quot;Broken invariant&quot;</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If the expression is false, the contract violation is thrown with the given message and location.</p><aside class="m-note m-info"><h4>Note</h4><p>The expression is only evaluated in debug mode. In release mode this function is a no-op.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1contracts_1_1audit.html#a7e49ec735d033ca6f6da7652f78c4a30" class="m-doc">invariant</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a5bf2bc45f46e47e578f2defd5d87b52a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />contracts::<wbr />audit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5bf2bc45f46e47e578f2defd5d87b52a" class="m-doc-self">broken_precondition</a>(</span><span class="m-doc-wrap">std::string_view message = &quot;Broken <a href="namespacerolly_1_1contracts_1_1audit.html#a6c79fd5607d45e582936442da6e322f4" class="m-doc">precondition</a>&quot;)</span></span>
+            </h3>
+            <p>Invokes the global contract violation handler (see <a href="namespacerolly_1_1contracts.html#aecea849c17224c0824619ce3e30c5f8b" class="m-doc">violation_<wbr />handler</a>) with a broken precondition violation.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">message</td>
+                  <td>Violation message. Defaults to <code>&quot;Broken precondition&quot;</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1contracts_1_1audit.html#a6c79fd5607d45e582936442da6e322f4" class="m-doc">precondition</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a040c855daee4842d4c0caefd701b6607"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />contracts::<wbr />audit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a040c855daee4842d4c0caefd701b6607" class="m-doc-self">broken_postcondition</a>(</span><span class="m-doc-wrap">std::string_view message = &quot;Broken <a href="namespacerolly_1_1contracts_1_1audit.html#a9cf84ba57be583af6f5a3972047d8416" class="m-doc">postcondition</a>&quot;)</span></span>
+            </h3>
+            <p>Invokes the global contract violation handler (see <a href="namespacerolly_1_1contracts.html#aecea849c17224c0824619ce3e30c5f8b" class="m-doc">violation_<wbr />handler</a>) with a broken postcondition violation.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">message</td>
+                  <td>Violation message. Defaults to <code>&quot;Broken postcondition&quot;</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1contracts_1_1audit.html#a9cf84ba57be583af6f5a3972047d8416" class="m-doc">postcondition</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a123d98f0454da1fde978fa21ec6dd5e4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr />contracts::<wbr />audit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a123d98f0454da1fde978fa21ec6dd5e4" class="m-doc-self">not_implemented</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Invokes the global contract violation handler (see <a href="namespacerolly_1_1contracts.html#aecea849c17224c0824619ce3e30c5f8b" class="m-doc">violation_<wbr />handler</a>) with a broken invariant violation.</p>
+<p>Useful for marking a function as <em>unimplemented</em>.</p><aside class="m-note m-info"><h4>Note</h4><p>The expression is only evaluated in debug mode. In release mode this function is a no-op.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1contracts_1_1audit.html#a7e49ec735d033ca6f6da7652f78c4a30" class="m-doc">invariant</a></p></aside>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

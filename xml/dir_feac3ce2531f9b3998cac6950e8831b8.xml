@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_feac3ce2531f9b3998cac6950e8831b8" kind="dir">
+    <compoundname>functional</compoundname>
+    <innerfile refid="lazy_8h">lazy.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/rolly/functional/"/>
+  </compounddef>
+</doxygen>
