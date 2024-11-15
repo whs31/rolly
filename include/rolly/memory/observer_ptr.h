@@ -26,7 +26,8 @@ namespace rolly {
    *
    * @remarks This is a reimplementation of the LF TSv2 <tt>std::observer_ptr</tt> type.
    * @tparam T Type of the pointer
-   * #sa https://en.cppreference.com/w/cpp/experimental/observer_ptr
+   * @sa https://en.cppreference.com/w/cpp/experimental/observer_ptr
+   * @version 2.1.31
    */
   template <typename T>
   class observer_ptr {
