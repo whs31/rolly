@@ -41,8 +41,8 @@ namespace rolly {
 
   /**
    * @brief Converts an enumeration value to its underlying type.
-   * @details This is a convenience function for converting an enumeration value to its underlying type.
-   * It is a generic version of the C++23 std::to_underlying function.
+   * @details This is a convenience function for converting an enumeration value to its underlying
+   * type. It is a generic version of the C++23 std::to_underlying function.
    * @tparam T The enumeration type. Must be an enumeration type.
    * @param t The enumeration value to convert.
    * @return The underlying value of the enumeration.
@@ -55,8 +55,8 @@ namespace rolly {
 
   /**
    * @brief Generic bitwise <b>or</b> operator for enum types.
-   * @details Requires opt-ins <code>enable_bitwise_or</code> or <code>enum_flag</code> to be defined
-   * for the enum type.
+   * @details Requires opt-ins <code>enable_bitwise_or</code> or <code>enum_flag</code> to be
+   * defined for the enum type.
    *
    * Example:
    * @code {.cpp}
@@ -82,7 +82,8 @@ namespace rolly {
   template <typename T>
 #ifdef ___rolly_cxx20___
     requires(
-      std::is_enum_v<T> and requires(T e) { enable_bitwise_or(e); } or requires(T e) { enum_flag(e); }
+      std::is_enum_v<T> and requires(T e) { enable_bitwise_or(e); }
+      or requires(T e) { enum_flag(e); }
     )
 #endif  // ___rolly_cxx20___
   constexpr T operator|(T const lhs, T const rhs) noexcept {
@@ -91,8 +92,8 @@ namespace rolly {
 
   /**
    * @brief Generic bitwise <b>and</b> operator for enum types.
-   * @details Requires opt-ins <code>enable_bitwise_and</code> or <code>enum_flag</code> to be defined
-   * for the enum type.
+   * @details Requires opt-ins <code>enable_bitwise_and</code> or <code>enum_flag</code> to be
+   * defined for the enum type.
    *
    * Example:
    * @code {.cpp}
@@ -118,7 +119,8 @@ namespace rolly {
   template <typename T>
 #ifdef ___rolly_cxx20___
     requires(
-      std::is_enum_v<T> and requires(T e) { enable_bitwise_and(e); } or requires(T e) { enum_flag(e); }
+      std::is_enum_v<T> and requires(T e) { enable_bitwise_and(e); }
+      or requires(T e) { enum_flag(e); }
     )
 #endif  // ___rolly_cxx20___
   constexpr T operator&(T const lhs, T const rhs) noexcept {
@@ -127,8 +129,8 @@ namespace rolly {
 
   /**
    * @brief Generic bitwise <b>xor</b> operator for enum types.
-   * @details Requires opt-ins <code>enable_bitwise_xor</code> or <code>enum_flag</code> to be defined
-   * for the enum type.
+   * @details Requires opt-ins <code>enable_bitwise_xor</code> or <code>enum_flag</code> to be
+   * defined for the enum type.
    *
    * Example:
    * @code {.cpp}
@@ -154,7 +156,8 @@ namespace rolly {
   template <typename T>
 #ifdef ___rolly_cxx20___
     requires(
-      std::is_enum_v<T> and requires(T e) { enable_bitwise_xor(e); } or requires(T e) { enum_flag(e); }
+      std::is_enum_v<T> and requires(T e) { enable_bitwise_xor(e); }
+      or requires(T e) { enum_flag(e); }
     )
 #endif  // ___rolly_cxx20___
   constexpr T operator^(T const lhs, T const rhs) noexcept {
@@ -163,8 +166,8 @@ namespace rolly {
 
   /**
    * @brief Generic bitwise <b>not</b> operator for enum types.
-   * @details Requires opt-ins <code>enable_bitwise_not</code> or <code>enum_flag</code> to be defined
-   * for the enum type.
+   * @details Requires opt-ins <code>enable_bitwise_not</code> or <code>enum_flag</code> to be
+   * defined for the enum type.
    *
    * Example:
    * @code {.cpp}
@@ -190,7 +193,8 @@ namespace rolly {
   template <typename T>
 #ifdef ___rolly_cxx20___
     requires(
-      std::is_enum_v<T> and requires(T e) { enable_bitwise_not(e); } or requires(T e) { enum_flag(e); }
+      std::is_enum_v<T> and requires(T e) { enable_bitwise_not(e); }
+      or requires(T e) { enum_flag(e); }
     )
 #endif  // ___rolly_cxx20___
   constexpr T operator~(T const value) noexcept {

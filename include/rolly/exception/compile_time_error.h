@@ -43,8 +43,11 @@ namespace rolly {
        */
       template <typename... Args>
       explicit compile_time_error(std::string_view message, Args&&... args)
-        : message_(fmt::format("compile-time error: {}\n", fmt::format(message, std::forward<Args>(args)...)).c_str()) {
-      }
+        : message_(fmt::format(
+                     "compile-time error: {}\n",
+                     fmt::format(message, std::forward<Args>(args)...)
+          )
+                     .c_str()) {}
 
       ~compile_time_error() noexcept override = default;
       compile_time_error(compile_time_error const&) = default;

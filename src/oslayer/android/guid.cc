@@ -11,8 +11,10 @@ namespace rolly::oslayer::android {
     i.uuid_class = (jclass)env->NewGlobalRef(local_uuid_class);
     env->DeleteLocalRef(local_uuid_class);
     i.new_guid_method = env->GetStaticMethodID(i.uuid_class, "randomUUID", "()Ljava/util/UUID;");
-    i.most_significant_bits_method = env->GetMethodID(i.uuid_class, "getMostSignificantBits", "()J");
-    i.least_significant_bits_method = env->GetMethodID(i.uuid_class, "getLeastSignificantBits", "()J");
+    i.most_significant_bits_method = env
+                                       ->GetMethodID(i.uuid_class, "getMostSignificantBits", "()J");
+    i.least_significant_bits_method =
+      env->GetMethodID(i.uuid_class, "getLeastSignificantBits", "()J");
     i.init_thread_id = std::this_thread::get_id();
     return i;
   }

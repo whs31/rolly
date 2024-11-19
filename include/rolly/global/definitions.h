@@ -72,7 +72,8 @@
  *  ___inline___ inline void func() { ... } // func will be inlined, if possible
  * @endcode
  *
- * In some cases, inlining will not be possible, for example, when code contains taking the address of a such function:
+ * In some cases, inlining will not be possible, for example, when code contains taking the address
+ * of a such function:
  *
  * @code {.cpp}
  *  ___inline___ inline void func() { ... } // func will not be inlined
@@ -84,12 +85,12 @@
  */
 #  define ___inline___
 #else  // DOXYGEN_GENERATING_OUTPUT
-#  if defined(QT_CORE_LIB) || \
-    __has_include("qtglobal.h") || __has_include("qcoreapplication.h") || defined(DOXYGEN_GENERATING_OUTPUT)
+#  if defined(QT_CORE_LIB) \
+    || __has_include("qtglobal.h") || __has_include("qcoreapplication.h") || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_QT_CORE
 #  endif
-#  if defined(QT_GUI_LIB) || \
-    __has_include("qpainter.h") || __has_include("qguiapplication.h") || defined(DOXYGEN_GENERATING_OUTPUT)
+#  if defined(QT_GUI_LIB) \
+    || __has_include("qpainter.h") || __has_include("qguiapplication.h") || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_QT_GUI
 #  endif
 #  if defined(NDEBUG) || defined(QT_NO_DEBUG)

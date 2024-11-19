@@ -25,7 +25,8 @@ namespace rolly {
     using uptr = std::uintptr_t;                    ///< Unsigned integer with pointer size
 
     // NOLINTNEXTLINE(*-runtime-int)
-    using ulonglong [[maybe_unused]] = unsigned long long;  ///< Alias for <tt>unsigned long long</tt>.
+    using ulonglong
+      [[maybe_unused]] = unsigned long long;  ///< Alias for <tt>unsigned long long</tt>.
 
     // NOLINTNEXTLINE(*-runtime-int)
     using uint [[maybe_unused]] = unsigned int;  ///< Alias for <tt>unsigned int</tt>.
@@ -78,7 +79,9 @@ namespace rolly {
     /**
      * @brief Literal operator for <code>std::ptrdiff_t</code>.
      */
-    constexpr std::ptrdiff_t operator""_ptrdiff(ulonglong value) { return static_cast<std::ptrdiff_t>(value); }
+    constexpr std::ptrdiff_t operator""_ptrdiff(ulonglong value) {
+      return static_cast<std::ptrdiff_t>(value);
+    }
 
     // NOLINTBEGIN(*-pro-type-reinterpret-cast, *-no-int-to-ptr)
 
@@ -86,7 +89,9 @@ namespace rolly {
      * @brief Literal operator for <code>void*</code>.
      * @note This operator is not constexpr.
      */
-    inline void* operator""_pvoid(unsigned long long value) { return reinterpret_cast<void*>(value); }
+    inline void* operator""_pvoid(unsigned long long value) {
+      return reinterpret_cast<void*>(value);
+    }
 
     // NOLINTEND(*-pro-type-reinterpret-cast, *-no-int-to-ptr)
   }  // namespace literals

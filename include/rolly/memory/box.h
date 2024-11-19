@@ -9,14 +9,16 @@
 namespace rolly {
   /**
    * @brief Owning unique smart pointer which can never be null.
-   * @details The box class behaves very similarly to the <code>std::unique_ptr</code> class, but unlike the
-   * <code>std::unique_ptr</code>, it is 100% guaranteed to be filled at all times (unless the user
-   * tries to access it after calling std::move does something else that is clearly a bad idea).
+   * @details The box class behaves very similarly to the <code>std::unique_ptr</code> class, but
+   * unlike the <code>std::unique_ptr</code>, it is 100% guaranteed to be filled at all times
+   * (unless the user tries to access it after calling std::move does something else that is clearly
+   * a bad idea).
    *
    * Reference implementation is taken from the <b>reflect-cpp</b> library.
    *
    * API reference matches (almost) the Rust Language implementation.
-   * @tparam T Type of data stored in the box. Must fulfill <code>std::destructible</code> requirement.
+   * @tparam T Type of data stored in the box. Must fulfill <code>std::destructible</code>
+   * requirement.
    * @sa https://github.com/getml/reflect-cpp/blob/main/include/rfl/Box.hpp
    * @sa https://doc.rust-lang.org/std/boxed/struct.Box.html
    */
@@ -50,7 +52,8 @@ namespace rolly {
      * @param other Other box to move data from.
      */
     template <typename U>
-    box(box<U>&& other) noexcept  // NOLINT(*-explicit-constructor, *-rvalue-reference-param-not-moved)
+    box(box<U>&& other
+    ) noexcept  // NOLINT(*-explicit-constructor, *-rvalue-reference-param-not-moved)
       : ptr_(std::forward<std::unique_ptr<U>>(other.as_unique_ptr())) {}
 
     /**
@@ -179,11 +182,12 @@ namespace rolly {
 
     /**
      * @brief Consumes and leaks the box, returning a mutable pointer to the underlying object.
-     * @details The caller is responsible for freeing the memory by calling deleter on the returned pointer.
-     * @note Calling this function leaves this box in an invalid state. Trying to use it afterwards will result in
-     * contract violation.
-     * @returns Mutable unmanaged pointer to the underlying object or <code>nullptr</code> if the box is already
-     * consumed.
+     * @details The caller is responsible for freeing the memory by calling deleter on the returned
+     * pointer.
+     * @note Calling this function leaves this box in an invalid state. Trying to use it afterwards
+     * will result in contract violation.
+     * @returns Mutable unmanaged pointer to the underlying object or <code>nullptr</code> if the
+     * box is already consumed.
      */
     [[nodiscard]] T* leak() noexcept { return this->ptr_.release(); }
 

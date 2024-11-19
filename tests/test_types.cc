@@ -1106,16 +1106,28 @@ TEST_CASE("Types", "[types]") {
 
       REQUIRE(angle<f32>::from_radians(0.0).positive() == angle<f32>::zero());
       REQUIRE(angle<f32>::from_radians(FRAC_PI_2).positive() == angle<f32>::half_pi());
-      REQUIRE(angle<f32>::from_radians(-FRAC_PI_2).positive() == angle<f32>::from_radians(3.0F * FRAC_PI_2));
-      REQUIRE(angle<f32>::from_radians(3.0F * FRAC_PI_2).positive() == angle<f32>::from_radians(3.0F * FRAC_PI_2));
+      REQUIRE(
+        angle<f32>::from_radians(-FRAC_PI_2).positive()
+        == angle<f32>::from_radians(3.0F * FRAC_PI_2)
+      );
+      REQUIRE(
+        angle<f32>::from_radians(3.0F * FRAC_PI_2).positive()
+        == angle<f32>::from_radians(3.0F * FRAC_PI_2)
+      );
       REQUIRE(angle<f32>::from_radians(5.0F * FRAC_PI_2).positive() == angle<f32>::half_pi());
       REQUIRE(angle<f32>::from_radians(2.0 * PI).positive() == angle<f32>::zero());
       REQUIRE(angle<f32>::from_radians(-2.0 * PI).positive() == angle<f32>::zero());
       REQUIRE(angle<f32>::from_radians(PI).positive() == angle<f32>::pi());
       REQUIRE(angle<f32>::from_radians(-PI).positive() == angle<f32>::pi());
       REQUIRE(angle<f32>::from_radians(FRAC_PI_2).signed_() == angle<f32>::half_pi());
-      REQUIRE(std::abs(*angle<f32>::from_radians(5.0F * FRAC_PI_2).signed_() - *angle<f32>::half_pi()) < 0.0001F);
-      REQUIRE(std::abs(*angle<f32>::from_radians(3.0F * FRAC_PI_2).signed_() + *angle<f32>::half_pi()) < 0.0001F);
+      REQUIRE(
+        std::abs(*angle<f32>::from_radians(5.0F * FRAC_PI_2).signed_() - *angle<f32>::half_pi())
+        < 0.0001F
+      );
+      REQUIRE(
+        std::abs(*angle<f32>::from_radians(3.0F * FRAC_PI_2).signed_() + *angle<f32>::half_pi())
+        < 0.0001F
+      );
       REQUIRE(angle<f32>::from_radians(2.0 * PI).signed_() == angle<f32>::zero());
       REQUIRE(angle<f32>::from_radians(-2.0 * PI).signed_() == angle<f32>::zero());
       REQUIRE(angle<f32>::from_radians(PI).signed_() == angle<f32>::pi());
@@ -1367,7 +1379,8 @@ TEST_CASE("Types", "[types]") {
     }
 
     SECTION("Sum") {
-      auto vec = std::vector<size2d<f32>> {size2d(1.0F, 2.0F), size2d(3.0F, 4.0F), size2d(5.0F, 6.0F)};
+      auto vec =
+        std::vector<size2d<f32>> {size2d(1.0F, 2.0F), size2d(3.0F, 4.0F), size2d(5.0F, 6.0F)};
       auto acc = std::accumulate(vec.begin(), vec.end(), size2d());
 
       REQUIRE(acc == size2d(9.0F, 12.0F));
@@ -1541,7 +1554,11 @@ TEST_CASE("Types", "[types]") {
     }
 
     SECTION("Sum") {
-      auto vec = std::vector<vector2d<f32>> {vector2d(1.0F, 2.0F), vector2d(3.0F, 4.0F), vector2d(5.0F, 6.0F)};
+      auto vec = std::vector<vector2d<f32>> {
+        vector2d(1.0F, 2.0F),
+        vector2d(3.0F, 4.0F),
+        vector2d(5.0F, 6.0F)
+      };
       auto acc = std::accumulate(vec.begin(), vec.end(), vector2d());
 
       REQUIRE(acc == vector2d(9.0F, 12.0F));

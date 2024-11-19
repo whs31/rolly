@@ -21,7 +21,8 @@ namespace rolly {
 
     /**
      * @brief Newtype describing a velocity.
-     * @tparam T Number type. Must satisfy concept <tt>rolly::concepts::num</tt>. Default is <tt>f32</tt>.
+     * @tparam T Number type. Must satisfy concept <tt>rolly::concepts::num</tt>. Default is
+     * <tt>f32</tt>.
      */
 #ifdef DOXYGEN_GENERATING_OUTPUT
     template <concepts::num T = f32>
@@ -80,7 +81,8 @@ namespace rolly {
        * @param u Representation measurement unit. Default is meters per second.
        * @return String representation of the object.
        */
-      [[nodiscard]] std::string to_string(velocity_unit u = velocity_unit::meters_per_second) const {
+      [[nodiscard]] std::string to_string(velocity_unit u = velocity_unit::meters_per_second)
+        const {
         auto const unit_suffix = [](velocity_unit u) -> std::string_view {
           switch(u) {
             case velocity_unit::kmph: return "km/h";
@@ -137,7 +139,9 @@ namespace rolly {
        * @return Constructed velocity.
        * @see from_mps
        */
-      [[nodiscard]] static constexpr velocity from_kmph(number_type kmph) { return velocity(kmph / number_type(3.6)); }
+      [[nodiscard]] static constexpr velocity from_kmph(number_type kmph) {
+        return velocity(kmph / number_type(3.6));
+      }
 
       /**
        * @brief Constructs an velocity from meters-per-second value.
@@ -164,7 +168,9 @@ namespace rolly {
       /**
        * @brief Constructs an zero velocity.
        */
-      [[nodiscard]] static constexpr velocity zero() { return velocity(static_cast<number_type>(0.0)); }
+      [[nodiscard]] static constexpr velocity zero() {
+        return velocity(static_cast<number_type>(0.0));
+      }
 
       /**
        * @brief Returns the underlying numeric scalar value.
@@ -239,48 +245,69 @@ namespace rolly {
       [[nodiscard]] constexpr explicit operator number_type() const { return this->m_; }
 
       /**
-       * @brief Compares this and <i>other</i> velocity with \ref rolly::math::approx_eq for equality.
+       * @brief Compares this and <i>other</i> velocity with \ref rolly::math::approx_eq for
+       * equality.
        * @param other Other velocity.
        * @return <tt>true</tt> if both velocities are approximately equal, <tt>false</tt> otherwise.
        */
       [[nodiscard]] constexpr bool operator==(velocity const& other) const {
-        return approx_eq(this->value(), other.value(), std::numeric_limits<number_type>::epsilon() * number_type(2.));
+        return approx_eq(
+          this->value(),
+          other.value(),
+          std::numeric_limits<number_type>::epsilon() * number_type(2.)
+        );
       }
 
       /**
-       * @brief Compares this and <i>other</i> velocity with \ref rolly::math::approx_eq for inequality.
+       * @brief Compares this and <i>other</i> velocity with \ref rolly::math::approx_eq for
+       * inequality.
        * @param other Other velocity.
-       * @return <tt>true</tt> if both velocities are not approximately equal, <tt>false</tt> otherwise.
+       * @return <tt>true</tt> if both velocities are not approximately equal, <tt>false</tt>
+       * otherwise.
        */
-      [[nodiscard]] constexpr bool operator!=(velocity const& other) const { return not (*this == other); }
+      [[nodiscard]] constexpr bool operator!=(velocity const& other) const {
+        return not (*this == other);
+      }
 
       /**
        * @brief Compares this and <i>other</i> velocity for less than.
        * @param other Other velocity.
-       * @return <tt>true</tt> if this velocities is less than <i>other</i>, <tt>false</tt> otherwise.
+       * @return <tt>true</tt> if this velocities is less than <i>other</i>, <tt>false</tt>
+       * otherwise.
        */
-      [[nodiscard]] constexpr bool operator<(velocity const& other) const { return this->value() < other.value(); }
+      [[nodiscard]] constexpr bool operator<(velocity const& other) const {
+        return this->value() < other.value();
+      }
 
       /**
        * @brief Compares this and <i>other</i> velocity for greater than.
        * @param other Other velocity.
-       * @return <tt>true</tt> if this velocities is greater than <i>other</i>, <tt>false</tt> otherwise.
+       * @return <tt>true</tt> if this velocities is greater than <i>other</i>, <tt>false</tt>
+       * otherwise.
        */
-      [[nodiscard]] constexpr bool operator>(velocity const& other) const { return this->value() > other.value(); }
+      [[nodiscard]] constexpr bool operator>(velocity const& other) const {
+        return this->value() > other.value();
+      }
 
       /**
        * @brief Compares this and <i>other</i> velocity for less than or equal to.
        * @param other Other velocity.
-       * @return <tt>true</tt> if this velocities is less than or equal to <i>other</i>, <tt>false</tt> otherwise.
+       * @return <tt>true</tt> if this velocities is less than or equal to <i>other</i>,
+       * <tt>false</tt> otherwise.
        */
-      [[nodiscard]] constexpr bool operator<=(velocity const& other) const { return not (*this > other); }
+      [[nodiscard]] constexpr bool operator<=(velocity const& other) const {
+        return not (*this > other);
+      }
 
       /**
        * @brief Compares this and <i>other</i> velocity for greater than or equal to.
        * @param other Other velocity.
-       * @return <tt>true</tt> if this velocities is greater than or equal to <i>other</i>, <tt>false</tt> otherwise.
+       * @return <tt>true</tt> if this velocities is greater than or equal to <i>other</i>,
+       * <tt>false</tt> otherwise.
        */
-      [[nodiscard]] constexpr bool operator>=(velocity const& other) const { return not (*this < other); }
+      [[nodiscard]] constexpr bool operator>=(velocity const& other) const {
+        return not (*this < other);
+      }
 
       /**
        * @brief Returns the underlying numeric scalar.
@@ -302,25 +329,33 @@ namespace rolly {
        * @brief Returns <tt>this + other</tt>.
        * @param other The other value.
        */
-      [[nodiscard]] constexpr velocity operator+(velocity const& other) const { return velocity(this->m_ + other.m_); }
+      [[nodiscard]] constexpr velocity operator+(velocity const& other) const {
+        return velocity(this->m_ + other.m_);
+      }
 
       /**
        * @brief Returns <tt>this - other</tt>.
        * @param other The other value.
        */
-      [[nodiscard]] constexpr velocity operator-(velocity const& other) const { return velocity(this->m_ - other.m_); }
+      [[nodiscard]] constexpr velocity operator-(velocity const& other) const {
+        return velocity(this->m_ - other.m_);
+      }
 
       /**
        * @brief Returns <tt>this * other</tt>.
        * @param other The other value.
        */
-      [[nodiscard]] constexpr velocity operator*(velocity const& other) const { return velocity(this->m_ * other.m_); }
+      [[nodiscard]] constexpr velocity operator*(velocity const& other) const {
+        return velocity(this->m_ * other.m_);
+      }
 
       /**
        * @brief Returns <tt>this / other</tt>.
        * @param other The other value.
        */
-      [[nodiscard]] constexpr velocity operator/(velocity const& other) const { return velocity(this->m_ / other.m_); }
+      [[nodiscard]] constexpr velocity operator/(velocity const& other) const {
+        return velocity(this->m_ / other.m_);
+      }
 
       /**
        * @brief Returns <tt>this += other</tt>.

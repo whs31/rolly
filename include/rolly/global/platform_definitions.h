@@ -241,8 +241,8 @@
 /**
  * @ingroup platform
  * @brief Flag defined if architecture is big endian.
- * @bug Can often be undefined on some platforms. Consider using <code>std::endian::native</code> to determine
- * endianness.
+ * @bug Can often be undefined on some platforms. Consider using <code>std::endian::native</code> to
+ * determine endianness.
  * @sa https://en.wikipedia.org/wiki/Endianness
  */
 #  define ROLLY_ENDIAN_BIG
@@ -250,8 +250,8 @@
 /**
  * @ingroup platform
  * @brief Flag defined if architecture is little endian.
- * @bug Can often be undefined on some platforms. Consider using <code>std::endian::native</code> to determine
- * endianness.
+ * @bug Can often be undefined on some platforms. Consider using <code>std::endian::native</code> to
+ * determine endianness.
  * @sa https://en.wikipedia.org/wiki/Endianness
  */
 #  define ROLLY_ENDIAN_LITTLE
@@ -262,19 +262,20 @@
  */
 #  define ROLLY_ENDIAN_UNKNOWN
 #else
-#  if defined(_WIN32) || defined(_WIN64) || defined(__WIN32__) || defined(__TOS_WIN__) || defined(__WINDOWS__) || \
-    defined(DOXYGEN_GENERATING_OUTPUT)
+#  if defined(_WIN32) || defined(_WIN64) || defined(__WIN32__) || defined(__TOS_WIN__) \
+    || defined(__WINDOWS__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_OS_WINDOWS
-#  elif defined(linux) || defined(__linux) || defined(__linux__) || defined(__gnu_linux__) || \
-    defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(linux) || defined(__linux) || defined(__linux__) || defined(__gnu_linux__) \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_OS_LINUX
-#  elif defined(macintosh) || defined(Macintosh) || (defined(__APPLE__) && defined(__MACH__)) || \
-    defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(macintosh) || defined(Macintosh) || (defined(__APPLE__) && defined(__MACH__)) \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_OS_DARWIN
 #  elif defined(__ANDROID__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_OS_ANDROID
-#  elif defined(__APPLE__) && defined(__MACH__) && defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) || \
-    defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__APPLE__) && defined(__MACH__)                  \
+      && defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_OS_IOS
 #  elif defined(__CYGWIN__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_OS_CYGWIN
@@ -290,43 +291,50 @@
 #    define ROLLY_OS_UNKNOWN
 #    warning "-- [rolly] Operating system is not detected."
 #  endif  // OS
-#  if defined(i386) || defined(__i386__) || defined(__i486__) || defined(__i586__) || defined(__i686__) || \
-    defined(__i386) || defined(_M_IX86) || defined(_X86_) || defined(__THW_INTEL__) || defined(__I86__) || \
-    defined(__INTEL__) || defined(DOXYGEN_GENERATING_OUTPUT)
+#  if defined(i386) || defined(__i386__) || defined(__i486__) || defined(__i586__) \
+    || defined(__i686__) || defined(__i386) || defined(_M_IX86) || defined(_X86_)  \
+    || defined(__THW_INTEL__) || defined(__I86__) || defined(__INTEL__)            \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_X86_32
-#  elif defined(__x86_64) || defined(__x86_64__) || defined(__amd64__) || defined(__amd64) || defined(_M_X64) || \
-    defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__x86_64) || defined(__x86_64__) || defined(__amd64__) || defined(__amd64) \
+    || defined(_M_X64) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_X86_64
 #  elif defined(__alpha__) || defined(__alpha) || defined(_M_ALPHA)
 #    define ROLLY_ARCH_ALPHA
-#  elif defined(__ARM_ARCH) || defined(__TARGET_ARCH_ARM) || defined(__TARGET_ARCH_THUMB) || defined(_M_ARM) ||      \
-    defined(__arm__) || defined(__arm64) || defined(__thumb__) || defined(_M_ARM64) || defined(__aarch64__) ||       \
-    defined(__AARCH64EL__) || defined(__ARM_ARCH_7__) || defined(__ARM_ARCH_7A__) || defined(__ARM_ARCH_7R__) ||     \
-    defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_6K__) || defined(__ARM_ARCH_6Z__) || defined(__ARM_ARCH_6KZ__) || \
-    defined(__ARM_ARCH_6T2__) || defined(__ARM_ARCH_5TE__) || defined(__ARM_ARCH_5TEJ__) ||                          \
-    defined(__ARM_ARCH_4T__) || defined(__ARM_ARCH_4__) || defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__ARM_ARCH) || defined(__TARGET_ARCH_ARM) || defined(__TARGET_ARCH_THUMB)  \
+    || defined(_M_ARM) || defined(__arm__) || defined(__arm64) || defined(__thumb__)       \
+    || defined(_M_ARM64) || defined(__aarch64__) || defined(__AARCH64EL__)                 \
+    || defined(__ARM_ARCH_7__) || defined(__ARM_ARCH_7A__) || defined(__ARM_ARCH_7R__)     \
+    || defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_6K__) || defined(__ARM_ARCH_6Z__)    \
+    || defined(__ARM_ARCH_6KZ__) || defined(__ARM_ARCH_6T2__) || defined(__ARM_ARCH_5TE__) \
+    || defined(__ARM_ARCH_5TEJ__) || defined(__ARM_ARCH_4T__) || defined(__ARM_ARCH_4__)   \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_ARM
-#  elif defined(__bfin__) || defined(__BFIN__) || defined(bfin) || defined(BFIN) || defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__bfin__) || defined(__BFIN__) || defined(bfin) || defined(BFIN) \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_BFIN
 #  elif defined(__convex__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_CONVEX
 #  elif defined(__e2k__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_E2K
-#  elif defined(__ia64__) || defined(_IA64) || defined(__IA64__) || defined(__ia64) || defined(_M_IA64) || \
-    defined(__itanium__) || defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__ia64__) || defined(_IA64) || defined(__IA64__) || defined(__ia64) \
+    || defined(_M_IA64) || defined(__itanium__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_IA64
 #  elif defined(__loongarch__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_LOONGARCH
 #  elif defined(__m68k__) || defined(M68000) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_M68K
-#  elif defined(__mips__) || defined(__mips) || defined(__MIPS__) || defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__mips__) || defined(__mips) || defined(__MIPS__) \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_MIPS
-#  elif defined(__hppa__) || defined(__hppa) || defined(__HPPA__) || defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__hppa__) || defined(__hppa) || defined(__HPPA__) \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_HPPA
-#  elif defined(__powerpc) || defined(__powerpc__) || defined(__powerpc64__) || defined(__POWERPC__) ||    \
-    defined(__ppc__) || defined(__ppc64__) || defined(__PPC__) || defined(__PPC64__) || defined(_M_PPC) || \
-    defined(_ARCH_PPC) || defined(_ARCH_PPC64) || defined(__PPCGECKO__) || defined(__PPCBROADWAY__) ||     \
-    defined(_XENON) || defined(__ppc) || defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__powerpc) || defined(__powerpc__) || defined(__powerpc64__)                  \
+    || defined(__POWERPC__) || defined(__ppc__) || defined(__ppc64__) || defined(__PPC__)     \
+    || defined(__PPC64__) || defined(_M_PPC) || defined(_ARCH_PPC) || defined(_ARCH_PPC64)    \
+    || defined(__PPCGECKO__) || defined(__PPCBROADWAY__) || defined(_XENON) || defined(__ppc) \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_POWERPC
 #  elif defined(__CUDA_ARCH__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_CUDA
@@ -334,8 +342,8 @@
 #    define ROLLY_ARCH_PYRAMID
 #  elif defined(__riscv) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_RISCV
-#  elif defined(__THW_RS6000) || defined(_IBMR2) || defined(_POWER) || defined(_ARCH_PWR) || defined(_ARCH_PWR2) || \
-    defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__THW_RS6000) || defined(_IBMR2) || defined(_POWER) || defined(_ARCH_PWR) \
+    || defined(_ARCH_PWR2) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_RS6000
 #  elif defined(__sparc__) || defined(__sparc) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ARCH_SPARC
@@ -349,8 +357,8 @@
 #    define ROLLY_COMPILER_CLANG
 #  elif defined(__GNUC__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_COMPILER_GNU
-#  elif defined(__INTEL_COMPILER) || defined(__ICL) || defined(__ICC) || defined(__ECC) || \
-    defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif defined(__INTEL_COMPILER) || defined(__ICL) || defined(__ICC) || defined(__ECC) \
+    || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_COMPILER_INTEL
 #  elif defined(__NVCC__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_COMPILER_NVIDIA
@@ -360,15 +368,16 @@
 #    define ROLLY_COMPILER_UNKNOWN
 #    warning "-- [rolly] Compiler is not detected."
 #  endif  // COMPILER
-#  if(defined(__BIG_ENDIAN__) && ! defined(__LITTLE_ENDIAN__)) ||                                        \
-    (defined(_BIG_ENDIAN) && ! defined(_LITTLE_ENDIAN)) || defined(__ARMEB__) || defined(__THUMBEB__) || \
-    defined(__AARCH64EB__) || defined(_MIPSEB) || defined(__MIPSEB) || defined(__MIPSEB__) ||            \
-    defined(DOXYGEN_GENERATING_OUTPUT)
+#  if(defined(__BIG_ENDIAN__) && ! defined(__LITTLE_ENDIAN__))                                 \
+    || (defined(_BIG_ENDIAN) && ! defined(_LITTLE_ENDIAN)) || defined(__ARMEB__)               \
+    || defined(__THUMBEB__) || defined(__AARCH64EB__) || defined(_MIPSEB) || defined(__MIPSEB) \
+    || defined(__MIPSEB__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ENDIAN_BIG
-#  elif(defined(__LITTLE_ENDIAN__) && ! defined(__BIG_ENDIAN__)) ||                                      \
-    (defined(_LITTLE_ENDIAN) && ! defined(_BIG_ENDIAN)) || defined(__ARMEL__) || defined(__THUMBEL__) || \
-    defined(__AARCH64EL__) || defined(__loongarch__) || defined(_MIPSEL) || defined(__MIPSEL) ||         \
-    defined(__MIPSEL__) || defined(__riscv) || defined(__e2k__) || defined(DOXYGEN_GENERATING_OUTPUT)
+#  elif(defined(__LITTLE_ENDIAN__) && ! defined(__BIG_ENDIAN__))                        \
+    || (defined(_LITTLE_ENDIAN) && ! defined(_BIG_ENDIAN)) || defined(__ARMEL__)        \
+    || defined(__THUMBEL__) || defined(__AARCH64EL__) || defined(__loongarch__)         \
+    || defined(_MIPSEL) || defined(__MIPSEL) || defined(__MIPSEL__) || defined(__riscv) \
+    || defined(__e2k__) || defined(DOXYGEN_GENERATING_OUTPUT)
 #    define ROLLY_ENDIAN_LITTLE
 #  else
 #    define ROLLY_ENDIAN_UNKNOWN

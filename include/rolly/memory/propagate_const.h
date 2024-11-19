@@ -17,11 +17,15 @@ namespace rolly {
 
     [[nodiscard]] inline typename T::element_type& operator*() { return T::operator*(); }
 
-    [[nodiscard]] inline typename T::element_type const& operator*() const { return T::operator*(); }
+    [[nodiscard]] inline typename T::element_type const& operator*() const {
+      return T::operator*();
+    }
 
     [[nodiscard]] inline typename T::element_type* operator->() { return T::operator->(); }
 
-    [[nodiscard]] inline typename T::element_type const* operator->() const { return T::operator->(); }
+    [[nodiscard]] inline typename T::element_type const* operator->() const {
+      return T::operator->();
+    }
 
     [[nodiscard]] inline typename T::element_type* get() { return T::get(); }
 

@@ -22,7 +22,8 @@ namespace rolly {
     /**
      * @brief Newtype describing an angle.
      * @details Stores an angle in radians.
-     * @tparam T Number type. Must satisfy concept <tt>rolly::concepts::num</tt>. Default is <tt>f32</tt>.
+     * @tparam T Number type. Must satisfy concept <tt>rolly::concepts::num</tt>. Default is
+     * <tt>f32</tt>.
      */
 #ifdef DOXYGEN_GENERATING_OUTPUT
     template <concepts::num T = f32>
@@ -120,7 +121,11 @@ namespace rolly {
         auto a = math::fmod(this->m_, tp);
         if(a < T(0.0))
           a += tp;
-        if(approx_eq(a, static_cast<T>(tp), std::numeric_limits<number_type>::epsilon() * number_type(3)))
+        if(approx_eq(
+             a,
+             static_cast<T>(tp),
+             std::numeric_limits<number_type>::epsilon() * number_type(3)
+           ))
           a = T(0.0);
         return angle::from_radians(a);
       }
@@ -185,7 +190,9 @@ namespace rolly {
        * @return Constructed angle.
        * @see from_degrees
        */
-      [[nodiscard]] static constexpr angle from_radians(number_type radians) { return angle(radians); }
+      [[nodiscard]] static constexpr angle from_radians(number_type radians) {
+        return angle(radians);
+      }
 
       /**
        * @brief Constructs an angle from degrees.
@@ -193,7 +200,9 @@ namespace rolly {
        * @return Constructed angle.
        * @see from_radians
        */
-      [[nodiscard]] static constexpr angle from_degrees(number_type degrees) { return angle(to_radians(degrees)); }
+      [[nodiscard]] static constexpr angle from_degrees(number_type degrees) {
+        return angle(to_radians(degrees));
+      }
 
       /**
        * @brief Constructs an angle from another unit.
@@ -227,17 +236,23 @@ namespace rolly {
       /**
        * @brief Constructs an angle with value <tt>pi/2</tt>.
        */
-      [[nodiscard]] static constexpr angle half_pi() { return angle(number_type(.5) * numbers::pi); }
+      [[nodiscard]] static constexpr angle half_pi() {
+        return angle(number_type(.5) * numbers::pi);
+      }
 
       /**
        * @brief Constructs an angle with value <tt>pi/3</tt>.
        */
-      [[nodiscard]] static constexpr angle third_pi() { return angle(number_type(.3333333333333) * numbers::pi); }
+      [[nodiscard]] static constexpr angle third_pi() {
+        return angle(number_type(.3333333333333) * numbers::pi);
+      }
 
       /**
        * @brief Constructs an angle with value <tt>pi/4</tt>.
        */
-      [[nodiscard]] static constexpr angle quarter_pi() { return angle(number_type(.25) * numbers::pi); }
+      [[nodiscard]] static constexpr angle quarter_pi() {
+        return angle(number_type(.25) * numbers::pi);
+      }
 
       /**
        * @brief Returns the underlying numeric scalar value.
@@ -347,43 +362,60 @@ namespace rolly {
        * @return <tt>true</tt> if both angles are approximately equal, <tt>false</tt> otherwise.
        */
       [[nodiscard]] constexpr bool operator==(angle const& other) const {
-        return approx_eq(this->value(), other.value(), std::numeric_limits<number_type>::epsilon() * number_type(2.));
+        return approx_eq(
+          this->value(),
+          other.value(),
+          std::numeric_limits<number_type>::epsilon() * number_type(2.)
+        );
       }
 
       /**
-       * @brief Compares this and <i>other</i> angle with \ref rolly::math::approx_eq for inequality.
+       * @brief Compares this and <i>other</i> angle with \ref rolly::math::approx_eq for
+       * inequality.
        * @param other Other angle.
        * @return <tt>true</tt> if both angles are not approximately equal, <tt>false</tt> otherwise.
        */
-      [[nodiscard]] constexpr bool operator!=(angle const& other) const { return not (*this == other); }
+      [[nodiscard]] constexpr bool operator!=(angle const& other) const {
+        return not (*this == other);
+      }
 
       /**
        * @brief Compares this and <i>other</i> angle for less than.
        * @param other Other angle.
        * @return <tt>true</tt> if this angle is less than <i>other</i>, <tt>false</tt> otherwise.
        */
-      [[nodiscard]] constexpr bool operator<(angle const& other) const { return this->value() < other.value(); }
+      [[nodiscard]] constexpr bool operator<(angle const& other) const {
+        return this->value() < other.value();
+      }
 
       /**
        * @brief Compares this and <i>other</i> angle for greater than.
        * @param other Other angle.
        * @return <tt>true</tt> if this angle is greater than <i>other</i>, <tt>false</tt> otherwise.
        */
-      [[nodiscard]] constexpr bool operator>(angle const& other) const { return this->value() > other.value(); }
+      [[nodiscard]] constexpr bool operator>(angle const& other) const {
+        return this->value() > other.value();
+      }
 
       /**
        * @brief Compares this and <i>other</i> angle for less than or equal to.
        * @param other Other angle.
-       * @return <tt>true</tt> if this angle is less than or equal to <i>other</i>, <tt>false</tt> otherwise.
+       * @return <tt>true</tt> if this angle is less than or equal to <i>other</i>, <tt>false</tt>
+       * otherwise.
        */
-      [[nodiscard]] constexpr bool operator<=(angle const& other) const { return not (*this > other); }
+      [[nodiscard]] constexpr bool operator<=(angle const& other) const {
+        return not (*this > other);
+      }
 
       /**
        * @brief Compares this and <i>other</i> angle for greater than or equal to.
        * @param other Other angle.
-       * @return <tt>true</tt> if this angle is greater than or equal to <i>other</i>, <tt>false</tt> otherwise.
+       * @return <tt>true</tt> if this angle is greater than or equal to <i>other</i>,
+       * <tt>false</tt> otherwise.
        */
-      [[nodiscard]] constexpr bool operator>=(angle const& other) const { return not (*this < other); }
+      [[nodiscard]] constexpr bool operator>=(angle const& other) const {
+        return not (*this < other);
+      }
 
       /**
        * @brief Returns the underlying numeric scalar.
@@ -405,25 +437,33 @@ namespace rolly {
        * @brief Returns <tt>this + other</tt>.
        * @param other The other value.
        */
-      [[nodiscard]] constexpr angle operator+(angle const& other) const { return angle(this->m_ + other.m_); }
+      [[nodiscard]] constexpr angle operator+(angle const& other) const {
+        return angle(this->m_ + other.m_);
+      }
 
       /**
        * @brief Returns <tt>this - other</tt>.
        * @param other The other value.
        */
-      [[nodiscard]] constexpr angle operator-(angle const& other) const { return angle(this->m_ - other.m_); }
+      [[nodiscard]] constexpr angle operator-(angle const& other) const {
+        return angle(this->m_ - other.m_);
+      }
 
       /**
        * @brief Returns <tt>this * other</tt>.
        * @param other The other value.
        */
-      [[nodiscard]] constexpr angle operator*(angle const& other) const { return angle(this->m_ * other.m_); }
+      [[nodiscard]] constexpr angle operator*(angle const& other) const {
+        return angle(this->m_ * other.m_);
+      }
 
       /**
        * @brief Returns <tt>this / other</tt>.
        * @param other The other value.
        */
-      [[nodiscard]] constexpr angle operator/(angle const& other) const { return angle(this->m_ / other.m_); }
+      [[nodiscard]] constexpr angle operator/(angle const& other) const {
+        return angle(this->m_ / other.m_);
+      }
 
       /**
        * @brief Returns <tt>this += other</tt>.

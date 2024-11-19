@@ -15,7 +15,7 @@ namespace rolly::concepts {
    * @tparam T Type to check.
    */
   template <typename T>
-  concept standard_copyable_and_movable = std::is_nothrow_move_constructible_v<T> and
-                                          std::is_nothrow_move_assignable_v<T> and std::copyable<T>;
+  concept standard_copyable_and_movable = std::is_nothrow_move_constructible_v<T>
+                                      and std::is_nothrow_move_assignable_v<T> and std::copyable<T>;
 #endif  // defined(___rolly_cxx20___)
 }  // namespace rolly::concepts

@@ -24,13 +24,15 @@ namespace rolly::rtti {
   std::string demangle(char const* name) {
 #ifdef ROLLY_USING_CXXABI
     auto status = -4;
-    unique_ptr<char, void (*)(void*)> const res {::abi::__cxa_demangle(name, nullptr, nullptr, &status), std::free};
+    unique_ptr<char, void (*)(void*)> const
+      res {::abi::__cxa_demangle(name, nullptr, nullptr, &status), std::free};
     return status == 0 ? res.get() : name;
 #else
     auto constexpr max_name_length = static_cast<::DWORD>(1'024);
     auto undecorated = array<char, max_name_length>();
-    return ::UnDecorateSymbolName(name, undecorated.data(), max_name_length, UNDNAME_COMPLETE) ? undecorated.data()
-                                                                                               : name;
+    return ::UnDecorateSymbolName(name, undecorated.data(), max_name_length, UNDNAME_COMPLETE)
+           ? undecorated.data()
+           : name;
 #endif
   }
 }  // namespace rolly::rtti

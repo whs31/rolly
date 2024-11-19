@@ -5,8 +5,9 @@
 namespace rolly {
   /**
    * @brief Remove all cv qualifiers, references and pointers from a type.
-   * @details If the type T is a reference type, provides the member typedef type which is the type referred to by T
-   * with its topmost cv-qualifiers removed. Otherwise type is T with its topmost cv-qualifiers removed.
+   * @details If the type T is a reference type, provides the member typedef type which is the type
+   * referred to by T with its topmost cv-qualifiers removed. Otherwise type is T with its topmost
+   * cv-qualifiers removed.
    *
    * This is a backport of the C++20 <tt>std::remove_cvref</tt> type trait.
    * @tparam T Type to remove qualifiers from.
@@ -15,13 +16,15 @@ namespace rolly {
   template <typename T>
   struct remove_cvref {
     /**
-     * @brief The type referred by T or T itself if it is not a reference, with top-level cv-qualifiers removed.
+     * @brief The type referred by T or T itself if it is not a reference, with top-level
+     * cv-qualifiers removed.
      */
     using type = std::remove_cv_t<std::remove_reference_t<T>>;
   };
 
   /**
-   * @brief The type referred by T or T itself if it is not a reference, with top-level cv-qualifiers removed.
+   * @brief The type referred by T or T itself if it is not a reference, with top-level
+   * cv-qualifiers removed.
    */
   template <typename T>
   using remove_cvref_t = typename remove_cvref<T>::type;

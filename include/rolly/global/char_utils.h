@@ -13,7 +13,9 @@ namespace rolly {
 
   [[nodiscard]] constexpr bool is_space(char c) noexcept { return c == ' '; }
 
-  [[nodiscard]] constexpr bool is_operator(char c) noexcept { return c == '<' or c == '>' or c == '='; }
+  [[nodiscard]] constexpr bool is_operator(char c) noexcept {
+    return c == '<' or c == '>' or c == '=';
+  }
 
   [[nodiscard]] constexpr bool is_dot(char c) noexcept { return c == '.'; }
 
@@ -21,13 +23,17 @@ namespace rolly {
 
   [[nodiscard]] constexpr bool is_hyphen(char c) noexcept { return c == '-'; }
 
-  [[nodiscard]] constexpr bool is_letter(char c) noexcept { return (c >= 'A' and c <= 'Z') or (c >= 'a' and c <= 'z'); }
+  [[nodiscard]] constexpr bool is_letter(char c) noexcept {
+    return (c >= 'A' and c <= 'Z') or (c >= 'a' and c <= 'z');
+  }
 
   [[nodiscard]] constexpr bool is_hex(char c) noexcept {
     return is_digit(c) or (c >= 'a' and c <= 'f') or (c >= 'A' and c <= 'F');
   }
 
-  [[nodiscard]] constexpr std::uint16_t to_digit(char c) noexcept { return static_cast<std::uint16_t>(c - '0'); }
+  [[nodiscard]] constexpr std::uint16_t to_digit(char c) noexcept {
+    return static_cast<std::uint16_t>(c - '0');
+  }
 
   [[nodiscard]] constexpr unsigned char hex_to_char(char c) noexcept {
     if(c >= '0' and c <= '9')

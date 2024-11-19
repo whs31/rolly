@@ -12,7 +12,8 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
   namespace meta {
     /**
      * @brief Immutable constant expression structure, holding project meta-information.
-     * @details See @ref library_metadata global variable for current <b>floppy</b> project meta-information.
+     * @details See @ref library_metadata global variable for current <b>floppy</b> project
+     * meta-information.
      * @ingroup meta
      * @see version
      */
@@ -54,7 +55,9 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
       /**
        * @brief Project organization.
        */
-      [[nodiscard]] constexpr std::string_view organization() const noexcept { return this->organization_; }
+      [[nodiscard]] constexpr std::string_view organization() const noexcept {
+        return this->organization_;
+      }
 
      private:
       struct version version_;

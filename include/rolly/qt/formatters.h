@@ -52,7 +52,8 @@ namespace fmt {
   };
 
   /**
-   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QLatin1String</code> class.
+   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QLatin1String</code>
+   * class.
    * @note Only available if Qt::Core is linked against the project.
    */
   template <>
@@ -69,7 +70,8 @@ namespace fmt {
   };
 
   /**
-   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QStringView</code> class.
+   * @brief Specialization of the <code>fmt::formatter</code> for the <code>QStringView</code>
+   * class.
    * @note Only available if Qt::Core is linked against the project.
    */
   template <>

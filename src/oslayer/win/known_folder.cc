@@ -21,7 +21,8 @@ namespace rolly::oslayer::win {
 
   fs::path home_dir() {
     auto buf = std::array<wchar_t, MAX_PATH>();
-    auto const result = ::SHGetFolderPathW(nullptr, CSIDL_PROFILE, nullptr, SHGFP_TYPE_CURRENT, buf.data());
+    auto const result =
+      ::SHGetFolderPathW(nullptr, CSIDL_PROFILE, nullptr, SHGFP_TYPE_CURRENT, buf.data());
     if(FAILED(result))
       throw std::system_error(std::make_error_code(static_cast<std::errc>(result)));
     return {buf.data()};

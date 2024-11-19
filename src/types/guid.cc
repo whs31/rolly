@@ -22,11 +22,15 @@ namespace rolly {
     guid::guid(std::array<u8, 16> const& bytes)
       : bytes_ {bytes} {}
 
-    guid::guid(std::array<std::byte, 16> const& bytes) { std::memcpy(this->bytes_.data(), bytes.data(), 16); }
+    guid::guid(std::array<std::byte, 16> const& bytes) {
+      std::memcpy(this->bytes_.data(), bytes.data(), 16);
+    }
 
     guid::guid(std::string_view const str) {
       auto zeroify = [](guid& x) { std::fill(x.bytes_.begin(), x.bytes_.end(), 0_u8); };
-      auto hex_pair_to_char = [](char a, char b) -> unsigned char { return hex_to_char(a) * 16 + hex_to_char(b); };
+      auto hex_pair_to_char = [](char a, char b) -> unsigned char {
+        return hex_to_char(a) * 16 + hex_to_char(b);
+      };
 
       auto one = char('\0');
       auto two = char('\0');
@@ -58,7 +62,8 @@ namespace rolly {
 
     std::string guid::to_string() const {
       return fmt::format(
-        "{:02x}{:02x}{:02x}{:02x}-{:02x}{:02x}-{:02x}{:02x}-{:02x}{:02x}-{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}",
+        "{:02x}{:02x}{:02x}{:02x}-{:02x}{:02x}-{:02x}{:02x}-{:02x}{:02x}-{:02x}{:02x}{:02x}{:02x}{:"
+        "02x}{:02x}",
         bytes()[0],
         bytes()[1],
         bytes()[2],
@@ -82,7 +87,9 @@ namespace rolly {
 
     std::array<u8, 16>& guid::bytes_mut() noexcept { return this->bytes_; }
 
-    bool guid::operator==(guid const& other) const noexcept { return this->bytes() == other.bytes(); }
+    bool guid::operator==(guid const& other) const noexcept {
+      return this->bytes() == other.bytes();
+    }
 
     bool guid::operator!=(guid const& other) const noexcept { return not (*this == other); }
 
@@ -90,16 +97,18 @@ namespace rolly {
 
     std::ostream& operator<<(std::ostream& os, guid const& guid) {
       auto flags = os.flags();
-      os << std::hex << std::setfill('0') << std::setw(2) << static_cast<int>(guid.bytes()[0]) << std::setw(2)
-         << static_cast<int>(guid.bytes()[1]) << std::setw(2) << static_cast<int>(guid.bytes()[2]) << std::setw(2)
-         << static_cast<int>(guid.bytes()[3]) << "-" << std::setw(2) << static_cast<int>(guid.bytes()[4])
-         << std::setw(2) << static_cast<int>(guid.bytes()[5]) << "-" << std::setw(2)
-         << static_cast<int>(guid.bytes()[6]) << std::setw(2) << static_cast<int>(guid.bytes()[7]) << "-"
-         << std::setw(2) << static_cast<int>(guid.bytes()[8]) << std::setw(2) << static_cast<int>(guid.bytes()[9])
-         << "-" << std::setw(2) << static_cast<int>(guid.bytes()[10]) << std::setw(2)
-         << static_cast<int>(guid.bytes()[11]) << std::setw(2) << static_cast<int>(guid.bytes()[12]) << std::setw(2)
-         << static_cast<int>(guid.bytes()[13]) << std::setw(2) << static_cast<int>(guid.bytes()[14]) << std::setw(2)
-         << static_cast<int>(guid.bytes()[15]);
+      os << std::hex << std::setfill('0') << std::setw(2) << static_cast<int>(guid.bytes()[0])
+         << std::setw(2) << static_cast<int>(guid.bytes()[1]) << std::setw(2)
+         << static_cast<int>(guid.bytes()[2]) << std::setw(2) << static_cast<int>(guid.bytes()[3])
+         << "-" << std::setw(2) << static_cast<int>(guid.bytes()[4]) << std::setw(2)
+         << static_cast<int>(guid.bytes()[5]) << "-" << std::setw(2)
+         << static_cast<int>(guid.bytes()[6]) << std::setw(2) << static_cast<int>(guid.bytes()[7])
+         << "-" << std::setw(2) << static_cast<int>(guid.bytes()[8]) << std::setw(2)
+         << static_cast<int>(guid.bytes()[9]) << "-" << std::setw(2)
+         << static_cast<int>(guid.bytes()[10]) << std::setw(2) << static_cast<int>(guid.bytes()[11])
+         << std::setw(2) << static_cast<int>(guid.bytes()[12]) << std::setw(2)
+         << static_cast<int>(guid.bytes()[13]) << std::setw(2) << static_cast<int>(guid.bytes()[14])
+         << std::setw(2) << static_cast<int>(guid.bytes()[15]);
       os.flags(flags);
       return os;
     }
@@ -144,6 +153,8 @@ namespace rolly {
 #endif  // ROLLY_OS_LINUX
     }
 
-    u64 guid::to_u64() const noexcept { return detail::hash<rolly::u64, rolly::u64> {}(bytes()[0], bytes()[1]); }
+    u64 guid::to_u64() const noexcept {
+      return detail::hash<rolly::u64, rolly::u64> {}(bytes()[0], bytes()[1]);
+    }
   }  // namespace types
 }  // namespace rolly

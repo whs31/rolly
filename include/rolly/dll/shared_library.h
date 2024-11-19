@@ -29,6 +29,17 @@ namespace rolly::dll {
 
     [[nodiscard]] std::string_view name() const { return this->name_; }
 
+    /**
+     * @brief Returns name of the shared object file without platform specific extension and
+     * <tt>lib</tt> prefix.
+     * @details For example, if <tt>libtest.so</tt> is loaded, then <tt>soname</tt> will return
+     * <tt>test</tt>.
+     * @return Name of the shared object file without platform specific extension and <tt>lib</tt>
+     * prefix.
+     * @version 2.1.33
+     */
+    [[nodiscard]] std::string_view soname() const { return this->soname_; }
+
     [[nodiscard]] bool valid() const { return this->handle_ != nullptr; }
 
     [[nodiscard]] operator bool() const { return this->valid(); }  // NOLINT(*-explicit-constructor)
@@ -45,5 +56,6 @@ namespace rolly::dll {
     std::string name_;
     void* handle_ = nullptr;
     std::filesystem::path path_;
+    std::string soname_;
   };
 }  // namespace rolly::dll

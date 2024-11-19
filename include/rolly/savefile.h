@@ -34,7 +34,9 @@ namespace rolly {
      * @details File will be saved automatically on closing.
      */
     virtual ~savefile() noexcept {
-      this->try_save().map_error([&](auto const& err) { fmt::println(stderr, "savefile::~savefile: {}", err); });
+      this->try_save().map_error([&](auto const& err) {
+        fmt::println(stderr, "savefile::~savefile: {}", err);
+      });
     }
 
     /**
@@ -47,7 +49,9 @@ namespace rolly {
      */
     [[nodiscard]] std::filesystem::path const& backing_path() const { return this->backing_path_; }
 
-    [[nodiscard]] bool has_backup() const noexcept { return std::filesystem::exists(this->backing_path()); }
+    [[nodiscard]] bool has_backup() const noexcept {
+      return std::filesystem::exists(this->backing_path());
+    }
 
     /**
      * @brief Constant reference to the current values of savefile.

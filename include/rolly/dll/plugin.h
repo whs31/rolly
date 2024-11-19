@@ -25,20 +25,22 @@ namespace rolly::dll {
    * @paragraph plugin_usage Usage basics
    * To implement the plugin system, you need to implement the following entities:
    * <ul>
-   *   <li>Plugin interface, which will derive from the @ref rolly::dll::plugin class . This interface will be used
-   *   by both the plugin loader and the plugin. Best practice is to put it into a separate header file or the
-   *   <b>INTERFACE</b> library in CMake.</li>
-   *   <li>Plugin implementation, which will derive from the interface, presented above. This code will not be linked
-   *   anywhere, but it is required to compile it as a <b>SHARED</b> library, which links to the <i>INTERFACE</i>
-   *   library described above.</li>
-   *   <li>Application with a plugin system (@ref rolly::dll::plugin_loader class). Must be compiled as the
-   *   <b>EXECUTABLE</b>, which links to the </i>INTERFACE</i> library described above.</li>
+   *   <li>Plugin interface, which will derive from the @ref rolly::dll::plugin class . This
+   * interface will be used by both the plugin loader and the plugin. Best practice is to put it
+   * into a separate header file or the <b>INTERFACE</b> library in CMake.</li> <li>Plugin
+   * implementation, which will derive from the interface, presented above. This code will not be
+   * linked anywhere, but it is required to compile it as a <b>SHARED</b> library, which links to
+   * the <i>INTERFACE</i> library described above.</li> <li>Application with a plugin system (@ref
+   * rolly::dll::plugin_loader class). Must be compiled as the <b>EXECUTABLE</b>, which links to the
+   * </i>INTERFACE</i> library described above.</li>
    * </ul>
    *
    * @paragraph plugin_example_plugin_interface Example plugin interface
-   * Here we declare an <b>INTERFACE</b> CMake library with a single header file, which contains your plugin interface.
+   * Here we declare an <b>INTERFACE</b> CMake library with a single header file, which contains
+   * your plugin interface.
    *
-   * In the header file we simply derive from the @ref rolly::dll::plugin without overriding any functions.
+   * In the header file we simply derive from the @ref rolly::dll::plugin without overriding any
+   * functions.
    *
    * <b>CMakeLists.txt</b>
    * @code {.cmake}
@@ -65,19 +67,22 @@ namespace rolly::dll {
    *
    * class ExamplePlugin : public rolly::dll::plugin {
    *  public:
-   *   [[nodiscard]] virtual std::string hello() const = 0; // example function - part of your plugin's public API.
-   *                                                        // we will call this function in the application later.
+   *   [[nodiscard]] virtual std::string hello() const = 0; // example function - part of your
+   * plugin's public API.
+   *                                                        // we will call this function in the
+   * application later.
    * };
    * @endcode
    *
    * @paragraph plugin_example_plugin_impl Example plugin implementation
-   * Implementation of the plugin interface must be compiled as a <b>SHARED</b> library, which links to the
-   * <b>INTERFACE</b> library described above.
+   * Implementation of the plugin interface must be compiled as a <b>SHARED</b> library, which links
+   * to the <b>INTERFACE</b> library described above.
    *
    * @warning
-   * @ref rolly::dll::plugin_loader expects libraries on Linux to be named with the prefix <tt>lib</tt>, e.g.
-   * <tt>libplugin-impl</tt>. In Windows, it expects the same, but without the prefix. By default, CMake with MingW
-   * compiles the libraries with the prefix <tt>lib</tt>, so don't forget to set the prefix to <tt>""</tt>., e.g.
+   * @ref rolly::dll::plugin_loader expects libraries on Linux to be named with the prefix
+   * <tt>lib</tt>, e.g. <tt>libplugin-impl</tt>. In Windows, it expects the same, but without the
+   * prefix. By default, CMake with MingW compiles the libraries with the prefix <tt>lib</tt>, so
+   * don't forget to set the prefix to <tt>""</tt>., e.g.
    * @code {.cmake}
    * if(WIN32)
    *   set_target_properties(plugin-impl PROPERTIES PREFIX "")
@@ -101,8 +106,8 @@ namespace rolly::dll {
    *
    * @remark
    * Notice the macro <code>DECLARE_PLUGIN(...)</code> in the plugin implementation code.
-   * This macro is used to register the plugin implementation with the plugin loader and basically expands to something
-   * like:
+   * This macro is used to register the plugin implementation with the plugin loader and basically
+   * expands to something like:
    * @code {.cpp}
    * extern "C" rolly::dll::plugin* __rolly_identifier_for_calling() {
    *   return reinterpret_cast<rolly::dll::plugin*>(new IMPL_NAME);
@@ -110,8 +115,8 @@ namespace rolly::dll {
    * @endcode
    *
    * @note Do not forget to fully qualify your implementation class typename when passing it to the
-   * <code>DECLARE_PLUGIN(...)</code> macro! For example, if your plugin resides in the <code>example</code> namespace
-   * and is named <code>ExamplePluginImpl</code>, qualify it like:
+   * <code>DECLARE_PLUGIN(...)</code> macro! For example, if your plugin resides in the
+   * <code>example</code> namespace and is named <code>ExamplePluginImpl</code>, qualify it like:
    * @code {.cpp}
    * DECLARE_PLUGIN(example::ExamplePluginImpl)
    * @endcode
@@ -169,8 +174,8 @@ namespace rolly::dll {
    * if (WIN32)
    *   add_custom_command(TARGET plugin-host
    *     POST_BUILD
-   *     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:plugin-host> $<TARGET_FILE_DIR:plugin-host>
-   *     COMMAND_EXPAND_LISTS
+   *     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:plugin-host>
+   * $<TARGET_FILE_DIR:plugin-host> COMMAND_EXPAND_LISTS
    *   )
    * endif ()
    * @endcode
@@ -249,6 +254,26 @@ namespace rolly::dll {
     [[nodiscard]] virtual std::string_view name() const = 0;
 
     /**
+     * @brief Returns name of the plugin's shared object file without platform specific extension
+     * and <tt>lib</tt> prefix.
+     * @details For example, if <tt>libtest.so</tt> is loaded, then <tt>soname</tt> will return
+     * <tt>test</tt>.
+     * @return Name of the related shared object file without platform specific extension and
+     * <tt>lib</tt> prefix.
+     * @version 2.1.33
+     */
+    [[nodiscard]] virtual std::string_view soname() const { return this->soname_; }
+
+    /**
+     * @brief Plugin description.
+     * @details This function should return plugin description. It can be left empty in case if you
+     * don't want to document your plugin.
+     * @return Plugin description string or <tt>"No description"</tt> if empty.
+     * @version 2.1.33
+     */
+    [[nodiscard]] virtual std::string_view description() const { return "No description"; }
+
+    /**
      * @brief Plugin metadata.
      * @details Plugins are described by:
      * <ul>
@@ -261,12 +286,21 @@ namespace rolly::dll {
      */
     [[nodiscard]] virtual meta::project_meta const& meta() const = 0;
 
+    /**
+     * @brief Plugin UUID.
+     * @details Plugins are described by UUID.
+     * @note You can generate UUIDs using <a href="https://www.uuidgenerator.net/">UUID
+     * generator</a>.
+     * @return Reference to the plugin UUID.
+     * @see rolly::types::guid
+     */
     [[nodiscard]] virtual guid const& uuid() const = 0;
 
     /**
      * @brief Called directly after plugin constructor during plugin loading.
-     * @param init_interface Data structure passed to plugin from the @ref rolly::dll::plugin_loader class. Can be
-     * used to pass configuration data to plugin, such as pointer to Application object.
+     * @param init_interface Data structure passed to plugin from the @ref rolly::dll::plugin_loader
+     * class. Can be used to pass configuration data to plugin, such as pointer to Application
+     * object.
      * @return True if plugin was successfully loaded.
      */
     [[nodiscard]] virtual bool init(std::any& init_interface) = 0;
@@ -276,5 +310,24 @@ namespace rolly::dll {
      * @return True if plugin was successfully unloaded.
      */
     [[nodiscard]] virtual bool quit() = 0;
+
+    [[nodiscard]] static std::string native_soname(std::string_view soname) noexcept {
+#if defined(ROLLY_OS_LINUX)
+      return "lib" + std::string(soname) + ".so";
+#elif defined(ROLLY_OS_WINDOWS)
+      return soname + ".dll";
+#elif defined(ROLLY_OS_DARWIN)
+      return "lib" + std::string(soname) + ".dylib";
+#endif
+    }
+
+    friend class plugin_loader;
+
+   protected:
+    std::string soname_;
+
+   private:
+    plugin(std::string_view soname)
+      : soname_(soname) {}
   };
 }  // namespace rolly::dll

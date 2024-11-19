@@ -13,20 +13,21 @@
  * @details Mimics the canceled C++20 contracts proposal.
  *
  * @paragraph Quick introduction
- * Can be used to check preconditions, postconditions and invariants instead of default C-style <code>assert</code>:
- * <ul>
- *   <li>@ref rolly::contracts::precondition - these are conditions that must be true before a function (or code
- *   segment) executes, in order for the code to work correctly. E.g., a bisection search will work only if the
- *   vector is sorted. Another: Converting to polar form will work only if the cartesian coordinates are valid.
- *   <b>It's a good idea to document preconditions.</b></li>
- *   <li>@ref rolly::contracts::postcondition - these are conditions that are true after a functions returns or at the
- *   end of a code segment. <b>Document significant postconditions (i.e., ones that refer to the purpose of the code)
+ * Can be used to check preconditions, postconditions and invariants instead of default C-style
+ * <code>assert</code>: <ul> <li>@ref rolly::contracts::precondition - these are conditions that
+ * must be true before a function (or code segment) executes, in order for the code to work
+ * correctly. E.g., a bisection search will work only if the vector is sorted. Another: Converting
+ * to polar form will work only if the cartesian coordinates are valid. <b>It's a good idea to
+ * document preconditions.</b></li> <li>@ref rolly::contracts::postcondition - these are conditions
+ * that are true after a functions returns or at the end of a code segment. <b>Document significant
+ * postconditions (i.e., ones that refer to the purpose of the code)
  *   .</b></li>
- *   <li>@ref rolly::contracts::invariant - these are conditions that is supposed to be true all the time (except for
- *   brief, well-defined intervals). E.g., one invariant would be that if the cartesian and polar flags are both
- *   true, then the cartesian and polar member variables must represent the same complex number. Another example: in
- *   the selection sort, the part of the vector we have already scanned is sorted. <b>It's a good idea to document
- *   significant invariants.</b></li>
+ *   <li>@ref rolly::contracts::invariant - these are conditions that is supposed to be true all the
+ * time (except for brief, well-defined intervals). E.g., one invariant would be that if the
+ * cartesian and polar flags are both true, then the cartesian and polar member variables must
+ * represent the same complex number. Another example: in the selection sort, the part of the vector
+ * we have already scanned is sorted. <b>It's a good idea to document significant
+ * invariants.</b></li>
  * </ul>
  *
  * @paragraph Usage
@@ -37,8 +38,8 @@
  * @endcode
  *
  * @paragraph Examples
- * In first example we use @ref rolly::contracts::precondition to ensure that second argument, passed to function is
- * not zero:
+ * In first example we use @ref rolly::contracts::precondition to ensure that second argument,
+ * passed to function is not zero:
  * @code {.cpp}
  * auto divide(i32 a, i32 b) -> i32 {
  *   contracts::precondition(b != 0, "Cannot divide by zero");
@@ -56,7 +57,8 @@
  * }
  * @endcode
  *
- * In third example, we the standard stream is open for writing using @ref rolly::contracts::invariant :
+ * In third example, we the standard stream is open for writing using @ref
+ * rolly::contracts::invariant :
  * @code {.cpp}
  * auto println(std::string_view message) -> void {
  *   contracts::invariant(std::cout);
@@ -65,8 +67,9 @@
  * @endcode
  *
  * @note
- * It is a good idea to document both preconditions, postconditions and invariants. Use Doxygen tags <tt>\\pre</tt>,
- * <tt>\\post</tt> and <tt>\\invariant</tt> for this purpose (see http://www.stack.nl/~dimitri/doxygen/).
+ * It is a good idea to document both preconditions, postconditions and invariants. Use Doxygen tags
+ * <tt>\\pre</tt>, <tt>\\post</tt> and <tt>\\invariant</tt> for this purpose (see
+ * http://www.stack.nl/~dimitri/doxygen/).
  */
 namespace rolly::contracts {
   /**
@@ -91,8 +94,8 @@ namespace rolly::contracts {
 
   /**
    * @brief Contract violation handler type.
-   * @note Handler function must be <code>[[noreturn]]</code>. The behavior is undefined if it does not terminate the
-   * program.
+   * @note Handler function must be <code>[[noreturn]]</code>. The behavior is undefined if it does
+   * not terminate the program.
    */
   using contract_violation_handler = std::function<void(contract_violation const&)>;
 
@@ -136,8 +139,8 @@ namespace rolly::contracts {
 
 /**
  * @brief Sets the global contract violation handler and returns the old one.
- * @note Handler function must be <code>[[noreturn]]</code>. The behavior is undefined if it does not terminate the
- * program.
+ * @note Handler function must be <code>[[noreturn]]</code>. The behavior is undefined if it does
+ * not terminate the program.
  * @param handler Contract violation handler.
  * @return Old global contract violation handler.
  * @see violation_handler
@@ -172,8 +175,8 @@ namespace rolly::contracts {
       );
 
     /**
-     * @brief Invokes the global contract violation handler (see @ref violation_handler) with the violation data from
-     * current location in the source code.
+     * @brief Invokes the global contract violation handler (see @ref violation_handler) with the
+     * violation data from current location in the source code.
      * @param type Type of violated contract.
      * @param message Violation message.
      * @param location Violation location in source code. Defaults to current location.
@@ -183,12 +186,18 @@ namespace rolly::contracts {
 #ifndef ROLLY_DOC
     ___rolly_api___
 #endif  // ROLLY_DOC
-      void violate(contract_type type, std::string_view message, source_location location = source_location::current());
+      void violate(
+        contract_type type,
+        std::string_view message,
+        source_location location = source_location::current()
+      );
   }  // namespace detail
 
 /**
- * @brief Checks if a given <i>invariant</i> expression is true and throws a contract violation if it is not.
- * @details If the expression is false, the contract violation is thrown with the given message and location.
+ * @brief Checks if a given <i>invariant</i> expression is true and throws a contract violation if
+ * it is not.
+ * @details If the expression is false, the contract violation is thrown with the given message and
+ * location.
  * @param expression Invariant expression.
  * @param message Violation message. Defaults to <code>"Invariant violated"</code>.
  * @see broken_invariant
@@ -211,8 +220,10 @@ namespace rolly::contracts {
   }
 
 /**
- * @brief Checks if a given <i>precondition</i> expression is true and throws a contract violation if it is not.
- * @details If the expression is false, the contract violation is thrown with the given message and location.
+ * @brief Checks if a given <i>precondition</i> expression is true and throws a contract violation
+ * if it is not.
+ * @details If the expression is false, the contract violation is thrown with the given message and
+ * location.
  * @param expression Precondition expression.
  * @param message Violation message. Defaults to <code>"Precondition violated"</code>.
  * @param location Violation location in source code. Defaults to current location.
@@ -236,8 +247,10 @@ namespace rolly::contracts {
   }
 
 /**
- * @brief Checks if a given <i>postcondition</i> expression is true and throws a contract violation if it is not.
- * @details If the expression is false, the contract violation is thrown with the given message and location.
+ * @brief Checks if a given <i>postcondition</i> expression is true and throws a contract violation
+ * if it is not.
+ * @details If the expression is false, the contract violation is thrown with the given message and
+ * location.
  * @param expression Postcondition expression.
  * @param message Violation message. Defaults to <code>"Postcondition violated"</code>.
  * @see broken_postcondition
@@ -260,9 +273,10 @@ namespace rolly::contracts {
   }
 
   /**
-   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken invariant
-   * violation.
-   * @details If the expression is false, the contract violation is thrown with the given message and location.
+   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken
+   * invariant violation.
+   * @details If the expression is false, the contract violation is thrown with the given message
+   * and location.
    * @param message Violation message. Defaults to <code>"Broken invariant"</code>.
    * @see invariant
    */
@@ -280,8 +294,8 @@ namespace rolly::contracts {
   }
 
   /**
-   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken precondition
-   * violation.
+   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken
+   * precondition violation.
    * @param message Violation message. Defaults to <code>"Broken precondition"</code>.
    * @see precondition
    */
@@ -299,8 +313,8 @@ namespace rolly::contracts {
   }
 
   /**
-   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken postcondition
-   * violation.
+   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken
+   * postcondition violation.
    * @param message Violation message. Defaults to <code>"Broken postcondition"</code>.
    * @see postcondition
    */
@@ -318,8 +332,8 @@ namespace rolly::contracts {
   }
 
   /**
-   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken invariant
-   * violation.
+   * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken
+   * invariant violation.
    * @details Useful for marking a function as <i>unimplemented</i>.
    * @see invariant
    */
@@ -340,8 +354,10 @@ namespace rolly::contracts {
    */
   namespace audit {
 /**
- * @brief Checks if a given <i>invariant</i> expression is true and throws a contract violation if it is not.
- * @details If the expression is false, the contract violation is thrown with the given message and location.
+ * @brief Checks if a given <i>invariant</i> expression is true and throws a contract violation if
+ * it is not.
+ * @details If the expression is false, the contract violation is thrown with the given message and
+ * location.
  * @note The expression is only evaluated in debug mode. In release mode this function is a no-op.
  * @param expression Invariant expression.
  * @param message Violation message. Defaults to <code>"Invariant violated"</code>.
@@ -366,12 +382,15 @@ namespace rolly::contracts {
         ___rolly_release_unused___ source_location location = source_location::current()
 #endif  // ROLLY_DOC
       ) {
-      ___rolly_debug_only___(if(not expression) detail::violate(contract_type::invariant, message, location));
+      ___rolly_debug_only___(if(not expression)
+                               detail::violate(contract_type::invariant, message, location));
     }
 
 /**
- * @brief Checks if a given <i>precondition</i> expression is true and throws a contract violation if it is not.
- * @details If the expression is false, the contract violation is thrown with the given message and location.
+ * @brief Checks if a given <i>precondition</i> expression is true and throws a contract violation
+ * if it is not.
+ * @details If the expression is false, the contract violation is thrown with the given message and
+ * location.
  * @note The expression is only evaluated in debug mode. In release mode this function is a no-op.
  * @param expression Precondition expression.
  * @param message Violation message. Defaults to <code>"Precondition violated"</code>.
@@ -397,12 +416,15 @@ namespace rolly::contracts {
         ___rolly_release_unused___ source_location location = source_location::current()
 #endif  // ROLLY_DOC
       ) {
-      ___rolly_debug_only___(if(not expression) detail::violate(contract_type::precondition, message, location));
+      ___rolly_debug_only___(if(not expression)
+                               detail::violate(contract_type::precondition, message, location));
     }
 
 /**
- * @brief Checks if a given <i>postcondition</i> expression is true and throws a contract violation if it is not.
- * @details If the expression is false, the contract violation is thrown with the given message and location.
+ * @brief Checks if a given <i>postcondition</i> expression is true and throws a contract violation
+ * if it is not.
+ * @details If the expression is false, the contract violation is thrown with the given message and
+ * location.
  * @note The expression is only evaluated in debug mode. In release mode this function is a no-op.
  * @param expression Postcondition expression.
  * @param message Violation message. Defaults to <code>"Postcondition violated"</code>.
@@ -427,12 +449,15 @@ namespace rolly::contracts {
         ___rolly_release_unused___ source_location location = source_location::current()
 #endif  // ROLLY_DOC
       ) {
-      ___rolly_debug_only___(if(not expression) detail::violate(contract_type::postcondition, message, location));
+      ___rolly_debug_only___(if(not expression)
+                               detail::violate(contract_type::postcondition, message, location));
     }
 
 /**
- * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken invariant violation.
- * @details If the expression is false, the contract violation is thrown with the given message and location.
+ * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken
+ * invariant violation.
+ * @details If the expression is false, the contract violation is thrown with the given message and
+ * location.
  * @note The expression is only evaluated in debug mode. In release mode this function is a no-op.
  * @param message Violation message. Defaults to <code>"Broken invariant"</code>.
  * @see invariant
@@ -454,8 +479,8 @@ namespace rolly::contracts {
     }
 
 /**
- * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken precondition
- * violation.
+ * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken
+ * precondition violation.
  * @param message Violation message. Defaults to <code>"Broken precondition"</code>.
  * @see precondition
  */
@@ -476,8 +501,8 @@ namespace rolly::contracts {
     }
 
 /**
- * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken postcondition
- * violation.
+ * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken
+ * postcondition violation.
  * @param message Violation message. Defaults to <code>"Broken postcondition"</code>.
  * @see postcondition
  */
@@ -498,10 +523,11 @@ namespace rolly::contracts {
     }
 
     /**
-     * @brief Invokes the global contract violation handler (see @ref violation_handler) with a broken invariant
-     * violation.
+     * @brief Invokes the global contract violation handler (see @ref violation_handler) with a
+     * broken invariant violation.
      * @details Useful for marking a function as <i>unimplemented</i>.
-     * @note The expression is only evaluated in debug mode. In release mode this function is a no-op.
+     * @note The expression is only evaluated in debug mode. In release mode this function is a
+     * no-op.
      * @see invariant
      */
     [[noreturn]]
@@ -513,7 +539,9 @@ namespace rolly::contracts {
         ___rolly_release_unused___ source_location location = source_location::current()
 #endif  // ROLLY_DOC
       ) {
-      ___rolly_debug_only___(detail::violate(contract_type::invariant, "Reached unimplemented code", location));
+      ___rolly_debug_only___(
+        detail::violate(contract_type::invariant, "Reached unimplemented code", location)
+      );
     }
   }  // namespace audit
 }  // namespace rolly::contracts

@@ -82,7 +82,8 @@ namespace rolly {
 #ifdef DOXYGEN_GENERATING_OUTPUT
     template <std::unsigned_integral T>
 #else
-    template <___concept___(std::unsigned_integral) T ___sfinae_requirement___(std::is_unsigned_v<T>)>
+    template <___concept___(std::unsigned_integral)
+                T ___sfinae_requirement___(std::is_unsigned_v<T>)>
 #endif
     [[nodiscard]] constexpr T bit_ceil(T x) noexcept {
       x--;
@@ -132,15 +133,19 @@ namespace rolly {
    * @brief Casts value from one type to another by bit copy.
    * @details This is the backport of <tt>std::bit_cast</tt>.
    *
-   * Obtain a value of type To by reinterpreting the object representation of From. Every bit in the value
-   * representation of the returned To object is equal to the corresponding bit in the object representation of from.
+   * Obtain a value of type To by reinterpreting the object representation of From. Every bit in the
+   * value representation of the returned To object is equal to the corresponding bit in the object
+   * representation of from.
    *
    * The values of padding bits in the returned To object are unspecified.
    *
-   * If there is no value of type To corresponding to the value representation produced, the behavior is undefined. If
-   * there are multiple such values, which value is produced is unspecified.
-   * @tparam To Destination type. Must be a trivially copyable type and have the same size as the source type.
-   * @tparam From Source type. Must be a trivially copyable type and have the same size as the destination type.
+   * If there is no value of type To corresponding to the value representation produced, the
+   * behavior is undefined. If there are multiple such values, which value is produced is
+   * unspecified.
+   * @tparam To Destination type. Must be a trivially copyable type and have the same size as the
+   * source type.
+   * @tparam From Source type. Must be a trivially copyable type and have the same size as the
+   * destination type.
    * @param src Source value.
    * @return Destination value.
    * @sa https://en.cppreference.com/w/cpp/numeric/bit_cast
@@ -149,7 +154,8 @@ namespace rolly {
   template <class To, class From>
 #ifndef DOXYGEN_GENERATING_OUTPUT
   std::enable_if_t<
-    sizeof(To) == sizeof(From) and std::is_trivially_copyable_v<From> and std::is_trivially_copyable_v<To>,
+    sizeof(To) == sizeof(From)
+      and std::is_trivially_copyable_v<From> and std::is_trivially_copyable_v<To>,
     To>
 #endif
     bit_cast(From const& src) noexcept {
@@ -177,7 +183,10 @@ namespace rolly {
   template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
 #endif
   [[nodiscard]] constexpr T byteswap(T x) noexcept {
-    static_assert(std::has_unique_object_representations_v<T>, "T must have unique object representations");
+    static_assert(
+      std::has_unique_object_representations_v<T>,
+      "T must have unique object representations"
+    );
     auto value_repr = bit_cast<std::array<std::byte, sizeof(T)>>(x);
     std::reverse(std::begin(value_repr), std::end(value_repr));
     return bit_cast<T>(value_repr);

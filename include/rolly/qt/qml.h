@@ -68,7 +68,8 @@ namespace rolly::qt::qml {
       }
     }
 
-    template <___concept___(std::derived_from<::QObject>) T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
+    template <___concept___(std::derived_from<::QObject>)
+                T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
     module& component(std::optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
       if constexpr(implicit_verbosity == verbosity::verbose)
@@ -76,7 +77,12 @@ namespace rolly::qt::qml {
           "rolly::qt::qml: \tregistering type {} (qobject)",
           fmt::styled(component_name, fmt::fg(fmt::terminal_color::green) | fmt::emphasis::bold)
         );
-      ::qmlRegisterType<T>(this->name_.c_str(), this->version_.major, this->version_.minor, component_name.c_str());
+      ::qmlRegisterType<T>(
+        this->name_.c_str(),
+        this->version_.major,
+        this->version_.minor,
+        component_name.c_str()
+      );
       return *this;
     }
 
@@ -104,10 +110,18 @@ namespace rolly::qt::qml {
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
           "rolly::qt::qml: \tregistering singleton type {}",
-          fmt::styled(component_name, fmt::fg(fmt::terminal_color::bright_magenta) | fmt::emphasis::bold)
+          fmt::styled(
+            component_name,
+            fmt::fg(fmt::terminal_color::bright_magenta) | fmt::emphasis::bold
+          )
         );
-      ::qmlRegisterSingletonType<
-        T>(this->name_.c_str(), this->version_.major, this->version_.minor, component_name.c_str(), T::create);
+      ::qmlRegisterSingletonType<T>(
+        this->name_.c_str(),
+        this->version_.major,
+        this->version_.minor,
+        component_name.c_str(),
+        T::create
+      );
       return *this;
     }
 
@@ -143,7 +157,10 @@ namespace rolly::qt::qml {
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
           "rolly::qt::qml: \tregistering uncreatable type {}, reason: {}",
-          fmt::styled(component_name, fmt::fg(fmt::terminal_color::bright_cyan) | fmt::emphasis::bold),
+          fmt::styled(
+            component_name,
+            fmt::fg(fmt::terminal_color::bright_cyan) | fmt::emphasis::bold
+          ),
           fmt::styled(reason_string, fmt::fg(fmt::terminal_color::cyan))
         );
       ::qmlRegisterUncreatableType<T>(
@@ -173,11 +190,13 @@ namespace rolly::qt::qml {
     [[nodiscard]] static std::string demangle_class_name(std::optional<std::string_view> name) {
       if(name)
         return std::string(*name);
-      auto const meta_name = detail::strip(T::staticMetaObject.className(), detail::strip_kind::namespace_);
+      auto const meta_name =
+        detail::strip(T::staticMetaObject.className(), detail::strip_kind::namespace_);
       return detail::strip(meta_name, detail::strip_kind::hungarian_prefix);
     }
 
-    [[nodiscard]] static std::string demangle_file_url(std::string_view url, std::optional<std::string_view> name) {
+    [[nodiscard]] static std::string
+      demangle_file_url(std::string_view url, std::optional<std::string_view> name) {
       if(name)
         return std::string(*name);
       try {

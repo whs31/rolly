@@ -18,7 +18,9 @@ namespace rolly::oslayer::win {
   }
 
   void* load_library(std::string_view name, fs::path const& path) {
-    return reinterpret_cast<void*>(LoadLibraryA(fmt::format("{}\\{}", path.string(), library_name(name)).c_str()));
+    return reinterpret_cast<void*>(
+      LoadLibraryA(fmt::format("{}\\{}", path.string(), library_name(name)).c_str())
+    );
   }
 
   void unload_library(void* handle) { FreeLibrary(HMODULE(handle)); }

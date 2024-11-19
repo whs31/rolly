@@ -36,8 +36,9 @@ namespace rolly {
 
   /**
    * @brief Class for getting location of system directories for a specific application.
-   * @details ProjectDirs computes the location of cache, config or data directories for a specific application,
-   * which are derived from the standard directories and the name of the project/organization.
+   * @details ProjectDirs computes the location of cache, config or data directories for a specific
+   * application, which are derived from the standard directories and the name of the
+   * project/organization.
    *
    * For example if user named <i>Alice</i>, the following code:
    * @code {.cpp}
@@ -45,7 +46,8 @@ namespace rolly {
    * using enum rolly::application_dirs::dir;
    *
    * auto dirs = application_dirs("com", "Foo Corp", "Bar App");
-   * std::cout << dirs[config].string() << std::endl; // or std::cout << dirs.config_dir() << std::endl;
+   * std::cout << dirs[config].string() << std::endl; // or std::cout << dirs.config_dir() <<
+   * std::endl;
    * @endcode
    * will produce the following output:
    * @code {.shell-session}
@@ -73,7 +75,8 @@ namespace rolly {
 
                      /**
                       * @brief Creates an application_dirs class from values describing the project.
-                      * @note Constructor can fail if no valid home directory could be retrieved from the operating system.
+                      * @note Constructor can fail if no valid home directory could be retrieved from the operating
+                      * system.
                       * @note Directories will be created if they do not exist.
                       * @param qualifier The reverse domain name notation of the application, excluding
                       * the organization or application name itself.
@@ -86,8 +89,8 @@ namespace rolly {
                       * <li><tt>"io"</tt></li>
                       * <li><tt>""</tt></li>
                       * </ul>
-                      * @param vendor The name of the organization that develops this application, or for which the application is
-                      * developed.
+                      * @param vendor The name of the organization that develops this application, or for which the
+                      * application is                  developed.
                       *
                       * Example values of vendor:
                       * <ul>
@@ -102,7 +105,8 @@ namespace rolly {
                       * <li><tt>"Bar App"</tt></li>
                       * <li><tt>"Foo App"</tt></li>
                       * </ul>
-                      * @throws std::runtime_error if no valid home directory could be retrieved from the operating system.
+                      * @throws std::runtime_error if no valid home directory could be retrieved from the operating
+                      * system.
                       */
 #ifndef ROLLY_DOC
     ___rolly_api___
@@ -111,10 +115,12 @@ namespace rolly {
 
         /**
          * @brief Creates an application_dirs class from values describing the project.
-         * @note Constuctor can fail if no valid home directory could be retrieved from the operating system.
+         * @note Constuctor can fail if no valid home directory could be retrieved from the operating
+         * system.
          * @note Directories will be created if they do not exist.
          * @param meta The project meta data.
-         * @throws std::runtime_error if no valid home directory could be retrieved from the operating system.
+         * @throws std::runtime_error if no valid home directory could be retrieved from the operating
+         * system.
          * @see meta::project_meta
          */
 #ifndef ROLLY_DOC
@@ -145,7 +151,8 @@ namespace rolly {
      * @param d The directory type.
      * @return The path to the directory.
      * @throws std::system_error If the directory does not exist on this platform.
-     * @note Use explicit functions such as @ref application_dirs::config_dir to avoid this exception.
+     * @note Use explicit functions such as @ref application_dirs::config_dir to avoid this
+     * exception.
      * @see operator[]
      */
     [[nodiscard]]
@@ -159,15 +166,18 @@ namespace rolly {
      * @param d The directory type.
      * @return The path to the directory.
      * @throws std::system_error If the directory does not exist on this platform.
-     * @note Use explicit functions such as @ref application_dirs::config_dir to avoid this exception.
+     * @note Use explicit functions such as @ref application_dirs::config_dir to avoid this
+     * exception.
      * @see get
      */
-    [[nodiscard]] inline std::filesystem::path const& operator[](dir d) const { return this->get(d); }
+    [[nodiscard]] inline std::filesystem::path const& operator[](dir d) const {
+      return this->get(d);
+    }
 
     /**
-     * \brief Returns the project path fragment used to compute the project's cache/config/data directories.
-     * \details The value is derived from the constructor call and is platform-dependent.
-     * \return The project path.
+     * \brief Returns the project path fragment used to compute the project's cache/config/data
+     * directories. \details The value is derived from the constructor call and is
+     * platform-dependent. \return The project path.
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
@@ -179,12 +189,13 @@ namespace rolly {
      * @brief Returns the path to the project's cache directory.
      * @details Values on different platforms:
      * <ul>
-     * <li><b>Linux</b>: <tt>$XDG_CACHE_HOME</tt>/<tt>project_path</tt> or <tt>$HOME</tt>/.cache/<tt>project_path</tt>,
-     * for example: <tt>/home/alice/.cache/barapp</tt></li> <li><b>MacOS</b>:
+     * <li><b>Linux</b>: <tt>$XDG_CACHE_HOME</tt>/<tt>project_path</tt> or
+     * <tt>$HOME</tt>/.cache/<tt>project_path</tt>, for example:
+     * <tt>/home/alice/.cache/barapp</tt></li> <li><b>MacOS</b>:
      * <tt>$HOME/Library/Caches</tt>/<tt>project_path</tt>, for example:
      * <tt>/Users/Alice/Library/Caches/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
-     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\cache, for example: <tt>C:\\Users\\Alice\\AppData\\Local\\Foo
-     * Corp\\Bar App\\cache</tt></li>
+     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\cache, for example:
+     * <tt>C:\\Users\\Alice\\AppData\\Local\\Foo Corp\\Bar App\\cache</tt></li>
      * </ul>
      * @return The path to the project's cache directory.
      */
@@ -199,11 +210,12 @@ namespace rolly {
      * @details Values on different platforms:
      * <ul>
      * <li><b>Linux</b>: <tt>$XDG_CONFIG_HOME</tt>/<tt>project_path</tt> or
-     * <tt>$HOME</tt>/.config/<tt>project_path</tt>, for example: <tt>/home/alice/.config/barapp</tt></li>
-     * <li><b>MacOS</b>: <tt>$HOME/Library/Application Support</tt>/<tt>project_path</tt>, for example:
-     * <tt>/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
-     * <tt>%APPDATA%</tt>\\<tt>project_path</tt>\\config, for example: <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo
-     * Corp\\Bar App\\config</tt></li>
+     * <tt>$HOME</tt>/.config/<tt>project_path</tt>, for example:
+     * <tt>/home/alice/.config/barapp</tt></li> <li><b>MacOS</b>: <tt>$HOME/Library/Application
+     * Support</tt>/<tt>project_path</tt>, for example: <tt>/Users/Alice/Library/Application
+     * Support/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
+     * <tt>%APPDATA%</tt>\\<tt>project_path</tt>\\config, for example:
+     * <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App\\config</tt></li>
      * </ul>
      * @return The path to the project's config directory.
      */
@@ -218,11 +230,12 @@ namespace rolly {
      * @details Values on different platforms:
      * <ul>
      * <li><b>Linux</b>: <tt>$XDG_CONFIG_HOME</tt>/<tt>project_path</tt> or
-     * <tt>$HOME</tt>/.config/<tt>project_path</tt>, for example: <tt>/home/alice/.config/barapp</tt></li>
-     * <li><b>MacOS</b>: <tt>$HOME/Library/Application Support</tt>/<tt>project_path</tt>, for example:
-     * <tt>/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
-     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\config, for example: <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo
-     * Corp\\Bar App\\config</tt></li>
+     * <tt>$HOME</tt>/.config/<tt>project_path</tt>, for example:
+     * <tt>/home/alice/.config/barapp</tt></li> <li><b>MacOS</b>: <tt>$HOME/Library/Application
+     * Support</tt>/<tt>project_path</tt>, for example: <tt>/Users/Alice/Library/Application
+     * Support/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
+     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\config, for example:
+     * <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App\\config</tt></li>
      * </ul>
      * @return The path to the project's config_local directory.
      */
@@ -237,11 +250,12 @@ namespace rolly {
      * @details Values on different platforms:
      * <ul>
      * <li><b>Linux</b>: <tt>$XDG_DATA_HOME</tt>/<tt>project_path</tt> or
-     * <tt>$HOME</tt>/.local/share/<tt>project_path</tt>, for example: <tt>/home/alice/.local/share/barapp</tt></li>
-     * <li><b>MacOS</b>: <tt>$HOME/Library/Application Support</tt>/<tt>project_path</tt>, for example:
-     * <tt>/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
-     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\data, for example: <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo
-     * Corp\\Bar App\\data</tt></li>
+     * <tt>$HOME</tt>/.local/share/<tt>project_path</tt>, for example:
+     * <tt>/home/alice/.local/share/barapp</tt></li> <li><b>MacOS</b>: <tt>$HOME/Library/Application
+     * Support</tt>/<tt>project_path</tt>, for example: <tt>/Users/Alice/Library/Application
+     * Support/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
+     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\data, for example:
+     * <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App\\data</tt></li>
      * </ul>
      * @return The path to the project's data directory.
      */
@@ -256,11 +270,12 @@ namespace rolly {
      * @details Values on different platforms:
      * <ul>
      * <li><b>Linux</b>: <tt>$XDG_DATA_HOME</tt>/<tt>project_path</tt> or
-     * <tt>$HOME</tt>/.local/share/<tt>project_path</tt>, for example: <tt>/home/alice/.local/share/barapp</tt></li>
-     * <li><b>MacOS</b>: <tt>$HOME/Library/Application Support</tt>/<tt>project_path</tt>, for example:
-     * <tt>/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
-     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\data, for example: <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo
-     * Corp\\Bar App\\data</tt></li>
+     * <tt>$HOME</tt>/.local/share/<tt>project_path</tt>, for example:
+     * <tt>/home/alice/.local/share/barapp</tt></li> <li><b>MacOS</b>: <tt>$HOME/Library/Application
+     * Support</tt>/<tt>project_path</tt>, for example: <tt>/Users/Alice/Library/Application
+     * Support/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
+     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\data, for example:
+     * <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App\\data</tt></li>
      * </ul>
      * @return The path to the project's data_local directory.
      */
@@ -275,11 +290,12 @@ namespace rolly {
      * \details Values on different platforms:
      * <ul>
      * <li><b>Linux</b>: <tt>$XDG_CONFIG_HOME</tt>/<tt>project_path</tt> or
-     * <tt>$HOME</tt>/.config/<tt>project_path</tt>, for example: <tt>/home/alice/.config/barapp</tt></li>
-     * <li><b>MacOS</b>: <tt>$HOME</tt>/Library/Preferences/<tt>project_path</tt>, for example:
+     * <tt>$HOME</tt>/.config/<tt>project_path</tt>, for example:
+     * <tt>/home/alice/.config/barapp</tt></li> <li><b>MacOS</b>:
+     * <tt>$HOME</tt>/Library/Preferences/<tt>project_path</tt>, for example:
      * <tt>/Users/Alice/Library/Preferences/com.Foo-Corp.Bar-App</tt></li> <li><b>Windows</b>:
-     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\config, for example: <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo
-     * Corp\\Bar App\\config</tt></li>
+     * <tt>%LOCALAPPDATA%</tt>\\<tt>project_path</tt>\\config, for example:
+     * <tt>C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App\\config</tt></li>
      * </ul>
      * \return
      */
@@ -292,12 +308,11 @@ namespace rolly {
     /**
      * @brief Returns the path to the project's runtime directory.
      * @details
-     * The runtime directory contains transient, non-essential data (like sockets or named pipes) that
-     * is expected to be cleared when the user's session ends.<br>
-     * Values on different platforms:
-     * <ul>
-     * <li><b>Linux</b>: <tt>XDG_RUNTIME_DIR</tt>/<tt>project_path</tt>, for example:
-     * <tt>/run/user/1001/barapp</tt></li> <li><b>MacOS</b>: -</li> <li><b>Windows</b>: -</li>
+     * The runtime directory contains transient, non-essential data (like sockets or named pipes)
+     * that is expected to be cleared when the user's session ends.<br> Values on different
+     * platforms: <ul> <li><b>Linux</b>: <tt>XDG_RUNTIME_DIR</tt>/<tt>project_path</tt>, for
+     * example: <tt>/run/user/1001/barapp</tt></li> <li><b>MacOS</b>: -</li> <li><b>Windows</b>:
+     * -</li>
      * </ul>
      * @note Only for Linux.
      * @return The path to the project's runtime directory or <tt>none</tt> if it is not available.
@@ -311,11 +326,13 @@ namespace rolly {
     /**
      * \brief Returns the path to the project's state directory.
      * \details
-     * The state directory contains data that should be retained between sessions (unlike the runtime directory),
-     * but may not be important/portable enough to be synchronized across machines (unlike the config/preferences/data
-     * directories).<br> Values on different platforms: <ul> <li><b>Linux</b>:
-     * <tt>$XDG_STATE_HOME</tt>/<tt>project_path</tt> or <tt>$HOME</tt>/.local/state/<tt>project_path</tt>, for example:
-     * <tt>/home/alice/.local/state/barapp</tt></li> <li><b>MacOS</b>: -</li> <li><b>Windows</b>: -</li>
+     * The state directory contains data that should be retained between sessions (unlike the
+     * runtime directory), but may not be important/portable enough to be synchronized across
+     * machines (unlike the config/preferences/data directories).<br> Values on different platforms:
+     * <ul> <li><b>Linux</b>: <tt>$XDG_STATE_HOME</tt>/<tt>project_path</tt> or
+     * <tt>$HOME</tt>/.local/state/<tt>project_path</tt>, for example:
+     * <tt>/home/alice/.local/state/barapp</tt></li> <li><b>MacOS</b>: -</li> <li><b>Windows</b>:
+     * -</li>
      * </ul>
      * \note Only for Linux.
      * \return The path to the project's state directory or <tt>none</tt> if it is not available.

@@ -149,8 +149,8 @@ namespace rolly {
 
       /**
        * @brief Returns string representation of the size2d.
-       * @details Size is represented as it's numeric values. If the underlying number type is floating
-       * point2d, it is rounded to two decimal places.
+       * @details Size is represented as it's numeric values. If the underlying number type is
+       * floating point2d, it is rounded to two decimal places.
        * @note Due to limitations of the language, units are not displayed.
        * @return String representation of the object.
        */
@@ -164,35 +164,48 @@ namespace rolly {
       /**
        * @brief Casts into an array of two values.
        */
-      [[nodiscard]] constexpr std::array<number_type, 2> to_array() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr std::array<number_type, 2> to_array() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Casts into a tuple of two values.
        */
-      [[nodiscard]] constexpr std::tuple<number_type, number_type> to_tuple() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr std::tuple<number_type, number_type> to_tuple() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Casts into a pair of two values.
        */
-      [[nodiscard]] constexpr std::pair<number_type, number_type> to_pair() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr std::pair<number_type, number_type> to_pair() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Rounds each component to the nearest integer value.
        * @details This behavior is preserved for negative values (unlike the basic cast).
        */
-      [[nodiscard]] constexpr size2d round() const { return {std::round(this->x_), std::round(this->y_)}; }
+      [[nodiscard]] constexpr size2d round() const {
+        return {std::round(this->x_), std::round(this->y_)};
+      }
 
       /**
-       * @brief Rounds each component to the smallest integer equal or greater than the original value.
+       * @brief Rounds each component to the smallest integer equal or greater than the original
+       * value.
        * @details This behavior is preserved for negative values (unlike the basic cast).
        */
-      [[nodiscard]] constexpr size2d ceil() const { return {std::ceil(this->x_), std::ceil(this->y_)}; }
+      [[nodiscard]] constexpr size2d ceil() const {
+        return {std::ceil(this->x_), std::ceil(this->y_)};
+      }
 
       /*
        * @brief Rounds each component to the largest integer equal or less than the original value.
        * @details This behavior is preserved for negative values (unlike the basic cast).
        */
-      [[nodiscard]] constexpr size2d floor() const { return {std::floor(this->x_), std::floor(this->y_)}; }
+      [[nodiscard]] constexpr size2d floor() const {
+        return {std::floor(this->x_), std::floor(this->y_)};
+      }
 
       /**
        * @brief Linearly interpolate between this size2d and another size2d.
@@ -243,7 +256,8 @@ namespace rolly {
       }
 
       /**
-       * @brief Returns the size2d each component of which clamped by corresponding components of start and end.
+       * @brief Returns the size2d each component of which clamped by corresponding components of
+       * start and end.
        * @param start The start size2d.
        * @param end The end size2d.
        * @return The clamped size2d.
@@ -256,7 +270,9 @@ namespace rolly {
        * @brief Returns the absolute value of each component.
        * @return The absolute value of each component.
        */
-      [[nodiscard]] constexpr size2d abs() const { return {std::abs(this->x_), std::abs(this->y_)}; }
+      [[nodiscard]] constexpr size2d abs() const {
+        return {std::abs(this->x_), std::abs(this->y_)};
+      }
 
       /**
        * @brief Returns dot product of this and another size2d.
@@ -281,12 +297,16 @@ namespace rolly {
       /**
        * @brief Returns true if all members are finite.
        */
-      [[nodiscard]] constexpr bool is_finite() const { return std::isfinite(this->x_) && std::isfinite(this->y_); }
+      [[nodiscard]] constexpr bool is_finite() const {
+        return std::isfinite(this->x_) && std::isfinite(this->y_);
+      }
 
       /**
        * @brief Returns true if all members are positive.
        */
-      [[nodiscard]] constexpr bool is_positive() const { return this->x_ > 0.0F and this->y_ > 0.0F; }
+      [[nodiscard]] constexpr bool is_positive() const {
+        return this->x_ > 0.0F and this->y_ > 0.0F;
+      }
 
       /**
        * @brief The same as <i>origin</i>.
@@ -332,14 +352,17 @@ namespace rolly {
        * @brief Constructs new size2d from <tt>std::pair</tt>.
        * @param other The other <tt>std::pair</tt>.
        */
-      [[nodiscard]] static constexpr size2d from_pair(std::pair<number_type, number_type> const& other) {
+      [[nodiscard]] static constexpr size2d from_pair(
+        std::pair<number_type, number_type> const& other
+      ) {
         return {other.first, other.second};
       }
 
       /**
-       * @brief Returns <tt>true</tt> if underlying values is both not <tt>0</tt> and not <tt>NaN</tt> or
-       * <tt>Infinity</tt> in case of floating point. \note Also returns <tt>false</tt> if underlying values is
-       * <tt>NaN</tt> or <tt>Infinity</tt> in case of floating point.
+       * @brief Returns <tt>true</tt> if underlying values is both not <tt>0</tt> and not
+       * <tt>NaN</tt> or <tt>Infinity</tt> in case of floating point. \note Also returns
+       * <tt>false</tt> if underlying values is <tt>NaN</tt> or <tt>Infinity</tt> in case of
+       * floating point.
        */
       [[nodiscard]] constexpr explicit operator bool() const {
         if constexpr(std::is_floating_point_v<number_type>) {
@@ -360,13 +383,17 @@ namespace rolly {
        * @brief Converts this size2d into <tt>point2d</tt>.
        * @return The resulting point2d.
        */
-      [[nodiscard]] constexpr point2d<number_type> to_point2d() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr point2d<number_type> to_point2d() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Converts this size2d into <tt>vector2d</tt>.
        * @return The resulting vector2d.
        */
-      [[nodiscard]] constexpr vector2d<number_type> to_vector2d() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr vector2d<number_type> to_vector2d() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Cast from one numeric representation to another, preserving the units.
@@ -536,8 +563,8 @@ namespace rolly {
       /**
        * @brief Constructs new size2d from <tt>QSize</tt>.
        * @param other The other <tt>QSize</tt>.
-       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for. \sa https://doc.qt.io/qt-5/qsize.html
+       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for. \sa https://doc.qt.io/qt-5/qsize.html
        */
       constexpr explicit size2d(QSize const& other)
         : size2d(other.width(), other.height()) {}
@@ -545,8 +572,8 @@ namespace rolly {
       /**
        * @brief Constructs new size2d from <tt>QSizeF</tt>.
        * @param other The other <tt>QSizeF</tt>.
-       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for. \sa https://doc.qt.io/qt-5/qsizef.html
+       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for. \sa https://doc.qt.io/qt-5/qsizef.html
        */
       constexpr explicit size2d(QSizeF const& other)
         : size2d(other.width(), other.height()) {}
@@ -554,8 +581,8 @@ namespace rolly {
       /**
        * @brief Constructs new size2d from <tt>QSize</tt>.
        * @param other The other <tt>QSize</tt>.
-       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for. \sa https://doc.qt.io/qt-5/qsize.html
+       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for. \sa https://doc.qt.io/qt-5/qsize.html
        */
       [[nodiscard]] static constexpr size2d from_qsize(QSize const& other) {
         return size2d(other.width(), other.height());
@@ -564,8 +591,8 @@ namespace rolly {
       /**
        * @brief Constructs new size2d from <tt>QSizeF</tt>.
        * @param other The other <tt>QSizeF</tt>.
-       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for. \sa https://doc.qt.io/qt-5/qsizef.html
+       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for. \sa https://doc.qt.io/qt-5/qsizef.html
        */
       [[nodiscard]] static constexpr size2d from_qsizef(QSizeF const& other) {
         return size2d(other.width(), other.height());
@@ -574,8 +601,8 @@ namespace rolly {
       /**
        * @brief Casts this size2d into <tt>QSize</tt>.
        * @return The resulting <tt>QSize</tt>.
-       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for. \sa https://doc.qt.io/qt-5/qsize.html
+       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for. \sa https://doc.qt.io/qt-5/qsize.html
        */
       [[nodiscard]] constexpr QSize to_qsize() const {
         return QSize(static_cast<i32>(this->x_), static_cast<i32>(this->y_));
@@ -584,8 +611,8 @@ namespace rolly {
       /**
        * @brief Casts this size2d into <tt>QSizeF</tt>.
        * @return The resulting <tt>QSizeF</tt>.
-       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for. \sa https://doc.qt.io/qt-5/qsizef.html
+       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for. \sa https://doc.qt.io/qt-5/qsizef.html
        */
       [[nodiscard]] constexpr QSizeF to_qsizef() const { return QSizeF(this->x_, this->y_); }
 #endif
