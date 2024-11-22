@@ -44,9 +44,13 @@ namespace rolly::dll {
 
     [[nodiscard]] operator bool() const { return this->valid(); }  // NOLINT(*-explicit-constructor)
 
+    [[nodiscard]] bool is_loaded() const { return this->loaded_; }
+
     [[nodiscard]] plugin* load() const;
 
     [[nodiscard]] result<plugin*> try_load() const noexcept;
+
+    friend class plugin_loader;
 
    private:
     using bootstrap_function_type = plugin* (*)();
@@ -57,5 +61,6 @@ namespace rolly::dll {
     void* handle_ = nullptr;
     std::filesystem::path path_;
     std::string soname_;
+    bool loaded_ = false;
   };
 }  // namespace rolly::dll

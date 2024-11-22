@@ -56,8 +56,14 @@ namespace rolly::dll {
     if(not plugin_ptr)
       return error(plugin_ptr.error());
     contracts::invariant(*plugin_ptr != nullptr);
+
+    if(this->query_raw([&plugin_ptr](auto const& p) { return p.uuid() == (*plugin_ptr)->uuid(); })
+       != nullptr)
+      return error("plugin with uuid '{}' is already loaded", (*plugin_ptr)->uuid());
+
     auto _ = std::unique_ptr<plugin>(*plugin_ptr);
     _->soname_ = lib.soname();
+    lib.loaded_ = true;
     this->plugins_.push_back(std::move(_));
     // NOLINTBEGIN(*-pro-type-reinterpret-cast)
     contracts::postcondition(
@@ -84,8 +90,14 @@ namespace rolly::dll {
     if(not plugin_ptr)
       return error(plugin_ptr.error());
     contracts::invariant(*plugin_ptr != nullptr);
+
+    if(this->query_raw([&plugin_ptr](auto const& p) { return p.uuid() == (*plugin_ptr)->uuid(); })
+       != nullptr)
+      return error("plugin with uuid '{}' is already loaded", (*plugin_ptr)->uuid());
+
     auto _ = std::unique_ptr<plugin>(*plugin_ptr);
     _->soname_ = lib.soname();
+    lib.loaded_ = true;
     this->plugins_.push_back(std::move(_));
     // NOLINTBEGIN(*-pro-type-reinterpret-cast)
     contracts::postcondition(
@@ -145,6 +157,9 @@ namespace rolly::dll {
       return error("plugin '{}' not found", name);
     std::ignore = it->get()->quit();
     this->plugins_.erase(it);
+    auto it_ = this->libraries_.find(name.data());
+    if(it_ != this->libraries_.end())
+      it_->second.loaded_ = false;
     return ok();
   }
 }  // namespace rolly::dll
