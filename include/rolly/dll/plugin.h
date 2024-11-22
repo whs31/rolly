@@ -315,7 +315,7 @@ namespace rolly::dll {
 #if defined(ROLLY_OS_LINUX)
       return "lib" + std::string(soname) + ".so";
 #elif defined(ROLLY_OS_WINDOWS)
-      return soname + ".dll";
+      return std::string(soname) + ".dll";
 #elif defined(ROLLY_OS_DARWIN)
       return "lib" + std::string(soname) + ".dylib";
 #endif
