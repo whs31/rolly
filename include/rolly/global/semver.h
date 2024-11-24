@@ -15,7 +15,8 @@
 #  pragma clang diagnostic ignored "-Wmissing-braces"
 #endif
 
-// NOLINTBEGIN(*-use-designated-initializers, *-pro-bounds-pointer-arithmetic, *-explicit-constructor,
+// NOLINTBEGIN(*-use-designated-initializers, *-pro-bounds-pointer-arithmetic,
+// *-explicit-constructor,
 // *-exception-escape, *-use-default-member-init, *-else-after-return)
 
 #if __cpp_impl_three_way_comparison >= 201'907L
@@ -77,7 +78,8 @@ namespace rolly {
       return 0;
     }
 
-    [[nodiscard]] constexpr bool equals(char const* first, char const* last, std::string_view str) noexcept {
+    [[nodiscard]] constexpr bool
+      equals(char const* first, char const* last, std::string_view str) noexcept {
       for(std::size_t i = 0; first != last && i < str.length(); ++i, ++first)
         if(to_lower(*first) != to_lower(str[i]))
           return false;
@@ -96,9 +98,9 @@ namespace rolly {
 
     [[nodiscard]] constexpr char* to_chars(char* str, prerelease t) noexcept {
       auto const p = t == prerelease::alpha ? alpha
-                   : t == prerelease::beta               // NOLINT(*-avoid-nested-conditional-operator)
+                   : t == prerelease::beta  // NOLINT(*-avoid-nested-conditional-operator)
                      ? beta
-                     : t == prerelease::rc               // NOLINT(*-avoid-nested-conditional-operator)
+                     : t == prerelease::rc  // NOLINT(*-avoid-nested-conditional-operator)
                          ? rc
                          : std::string_view {};
       if(not p.empty()) {
@@ -155,7 +157,8 @@ namespace rolly {
       return nullptr;
     }
 
-    [[nodiscard]] constexpr bool check_delimiter(char const* first, char const* last, char d) noexcept {
+    [[nodiscard]] constexpr bool
+      check_delimiter(char const* first, char const* last, char d) noexcept {
       return first != last && first != nullptr && *first == d;
     }
 
@@ -168,11 +171,13 @@ namespace rolly {
     };
 
     template <typename T>
-    struct resize_uninitialized<T, std::void_t<decltype(std::declval<T>().__resize_default_init(42))>> {
+    struct resize_uninitialized<
+      T,
+      std::void_t<decltype(std::declval<T>().__resize_default_init(42))>> {
       static void resize(T& str, std::size_t size) { str.__resize_default_init(size); }
     };
   }  // namespace detail
-#endif 
+#endif
 
   struct version {
     std::uint16_t major = 0;
@@ -195,12 +200,20 @@ namespace rolly {
       , prerelease_number {prt == prerelease::none ? std::nullopt : prn} {}
 
     ROLLY_SEMVER_CONSTEXPR
-      version(std::uint16_t mj, std::uint16_t mn, std::uint16_t pt, prerelease prt, std::uint16_t prn) noexcept
+    version(
+      std::uint16_t mj,
+      std::uint16_t mn,
+      std::uint16_t pt,
+      prerelease prt,
+      std::uint16_t prn
+    ) noexcept
       : major {mj}
       , minor {mn}
       , patch {pt}
       , prerelease_type {prt}
-      , prerelease_number {prt == prerelease::none ? std::nullopt : std::make_optional<std::uint16_t>(prn)} {}
+      , prerelease_number {
+          prt == prerelease::none ? std::nullopt : std::make_optional<std::uint16_t>(prn)
+        } {}
 
     explicit ROLLY_SEMVER_CONSTEXPR version(std::string_view str)
       : version(0, 0, 0, prerelease::none, std::nullopt) {
@@ -215,12 +228,14 @@ namespace rolly {
     version& operator=(version const&) = default;
     version& operator=(version&&) = default;
 
-    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR from_chars_result from_chars(char const* first, char const* last) noexcept {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR from_chars_result
+      from_chars(char const* first, char const* last) noexcept {
       if(first == nullptr or last == nullptr or (last - first) < detail::min_version_string_length)
         return {first, std::errc::invalid_argument};
       auto const* next = first;
       if(next = detail::from_chars(next, last, major); detail::check_delimiter(next, last, '.')) {
-        if(next = detail::from_chars(++next, last, minor); detail::check_delimiter(next, last, '.')) {
+        if(next = detail::from_chars(++next, last, minor);
+           detail::check_delimiter(next, last, '.')) {
           if(next = detail::from_chars(++next, last, patch); next == last) {
             prerelease_type = prerelease::none;
             prerelease_number = {};
@@ -240,7 +255,8 @@ namespace rolly {
       return {first, std::errc::invalid_argument};
     }
 
-    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR to_chars_result to_chars(char* first, char* last) const noexcept {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR to_chars_result
+      to_chars(char* first, char* last) const noexcept {
       auto const length = string_length();
       if(first == nullptr or last == nullptr or (last - first) < length)
         return {last, std::errc::value_too_large};
@@ -293,7 +309,8 @@ namespace rolly {
       if(patch != other.patch)
         return patch - other.patch;
       if(prerelease_type != other.prerelease_type)
-        return static_cast<std::uint8_t>(prerelease_type) - static_cast<std::uint8_t>(other.prerelease_type);
+        return static_cast<std::uint8_t>(prerelease_type)
+             - static_cast<std::uint8_t>(other.prerelease_type);
       if(prerelease_number.has_value()) {
         if(other.prerelease_number.has_value())
           return prerelease_number.value() - other.prerelease_number.value();
@@ -353,7 +370,8 @@ namespace rolly {
      * static_assert(v == rolly::version(1, 0, 0));
      * @endcode
      */
-    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR version operator""_version(char const* str, std::size_t length) {
+    [[nodiscard]] ROLLY_SEMVER_CONSTEXPR version
+      operator""_version(char const* str, std::size_t length) {
       return version {
         std::string_view {str, length}
       };
@@ -369,22 +387,28 @@ namespace rolly {
     return v.from_chars(first, last);
   }
 
-  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR to_chars_result to_chars(char* first, char* last, version const& v) noexcept {
+  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR to_chars_result
+    to_chars(char* first, char* last, version const& v) noexcept {
     return v.to_chars(first, last);
   }
 
-  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR std::optional<version> from_string_noexcept(std::string_view str) noexcept {
+  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR std::optional<version> from_string_noexcept(
+    std::string_view str
+  ) noexcept {
     if(version v {}; v.from_string_noexcept(str))
       return v;
     return std::nullopt;
   }
 
-  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR version from_string(std::string_view str) { return version {str}; }
+  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR version from_string(std::string_view str) {
+    return version {str};
+  }
 
   [[nodiscard]] inline std::string to_string(version const& v) { return v.to_string(); }
 
   template <typename Char, typename Traits>
-  inline std::basic_ostream<Char, Traits>& operator<<(std::basic_ostream<Char, Traits>& os, version const& v) {
+  inline std::basic_ostream<Char, Traits>&
+    operator<<(std::basic_ostream<Char, Traits>& os, version const& v) {
     for(auto const c : v.to_string())
       os.put(c);
     return os;
@@ -402,7 +426,9 @@ namespace rolly {
       comparators_option option = comparators_option::include_prerelease
     ) noexcept {
       if(option == comparators_option::exclude_prerelease)
-        return version {lhs.major, lhs.minor, lhs.patch}.compare(version {rhs.major, rhs.minor, rhs.patch});
+        return version {lhs.major, lhs.minor, lhs.patch}.compare(
+          version {rhs.major, rhs.minor, rhs.patch}
+        );
       return lhs.compare(rhs);
     }
 
@@ -474,7 +500,8 @@ namespace rolly {
 
           while(is_operator_token() or is_number_token()) {
             auto const range = parser.parse_range();
-            bool const equal_without_tags = equal_to(range.ver, ver, comparators_option::exclude_prerelease);
+            bool const equal_without_tags =
+              equal_to(range.ver, ver, comparators_option::exclude_prerelease);
             if(has_prerelease && equal_without_tags)
               allow_compare = true;
             if(! range.satisfies(ver)) {
@@ -743,7 +770,8 @@ struct [[maybe_unused]] fmt::formatter<rolly::version> : fmt::formatter<std::str
   }
 };
 
-// NOLINTEND(*-use-designated-initializers, *-pro-bounds-pointer-arithmetic, *-explicit-constructor, *-exception-escape,
+// NOLINTEND(*-use-designated-initializers, *-pro-bounds-pointer-arithmetic, *-explicit-constructor,
+// *-exception-escape,
 // *-use-default-member-init, *-else-after-return)
 
 #if defined(__clang__)

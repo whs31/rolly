@@ -13,8 +13,8 @@ namespace rolly::concepts {
    * @brief Pointer concept.
    * @details Will yield <code>true</code> for any type that is a pointer or reference.
    *
-   * Note that this concept will be evaluated to <code>false</code> for function pointers, <code>std::nullptr_t</code>
-   * and smart pointers.
+   * Note that this concept will be evaluated to <code>false</code> for function pointers,
+   * <code>std::nullptr_t</code> and smart pointers.
    * @tparam T Type to check.
    * @note Available only in C++20 mode.
    * @see c_ptr
@@ -26,10 +26,11 @@ namespace rolly::concepts {
 
   /**
    * @brief Raw pointer concept.
-   * @details Will yield <code>true</code> for any type that is a raw pointer <b>and not a reference</b>.
+   * @details Will yield <code>true</code> for any type that is a raw pointer <b>and not a
+   * reference</b>.
    *
-   * Note that this concept will be evaluated to <code>false</code> for function pointers, <code>std::nullptr_t</code>,
-   * <b>references</b> and smart pointers.
+   * Note that this concept will be evaluated to <code>false</code> for function pointers,
+   * <code>std::nullptr_t</code>, <b>references</b> and smart pointers.
    * @tparam T Type to check.
    * @note Available only in C++20 mode.
    * @see ptr
@@ -47,8 +48,9 @@ namespace rolly::concepts {
    * <ul>
    *   <li>Can be dereferenced</li>
    *   <li>Can be converted to <code>bool</code></li>
-   *   <li>Operator <code>operator-></code> must return a pointer of the same type as the dereferenced pointer</li>
-   *   <li>Method <code>get</code> must return the same type as the dereferenced pointer</li>
+   *   <li>Operator <code>operator-></code> must return a pointer of the same type as the
+   * dereferenced pointer</li> <li>Method <code>get</code> must return the same type as the
+   * dereferenced pointer</li>
    * </ul>
    * @tparam T Type to check.
    * @note Available only in C++20 mode.

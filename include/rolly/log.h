@@ -9,7 +9,9 @@
 namespace rolly {
   [[nodiscard]] inline spdlog::logger& logger() { return *spdlog::default_logger(); }
 
-  [[nodiscard]] inline spdlog::logger& logger(std::string_view const name) { return *spdlog::get(name.data()); }
+  [[nodiscard]] inline spdlog::logger& logger(std::string_view const name) {
+    return *spdlog::get(name.data());
+  }
 }  // namespace rolly
 #endif  // ROLLY_SPDLOG
 // NOLINTEND

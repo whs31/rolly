@@ -30,7 +30,7 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
        * @see empty
        */
       guid();
-      
+
       ~guid() = default;
 
       /**
@@ -64,9 +64,9 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
 
       /**
        * @brief Converts the <tt>guid</tt> to a string.
-       * @details String representation is in the form of <tt>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</tt>.
-       * All hex digits are lowercase.
-       * Bytes are separated by hyphens.
+       * @details String representation is in the form of
+       * <tt>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</tt>. All hex digits are lowercase. Bytes are
+       * separated by hyphens.
        * @return String representation of the <tt>guid</tt>.
        */
       [[nodiscard]] std::string to_string() const;
@@ -173,7 +173,8 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
 
     template <typename T, typename... Rest>
     struct hash<T, Rest...> {
-      inline std::size_t operator()(T const& v, Rest const&... rest) {  // NOLINT(*-redundant-inline-specifier)
+      inline std::size_t
+        operator()(T const& v, Rest const&... rest) {  // NOLINT(*-redundant-inline-specifier)
         auto seed = std::size_t(hash<Rest...> {}(rest...));
         seed ^= hash<T> {}(v) + 0x9E3779B9 + (seed << 6) + (seed >> 2);
         return seed;

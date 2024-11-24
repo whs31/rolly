@@ -22,9 +22,19 @@ namespace rolly::contracts {
         default: return "unknown";
       }
     };
-    fmt::print(stderr, fmt::emphasis::bold | fmt::fg(fmt::color::red), "Contract violation ({}):\n", type());
+    fmt::print(
+      stderr,
+      fmt::emphasis::bold | fmt::fg(fmt::color::red),
+      "Contract violation ({}):\n",
+      type()
+    );
     fmt::print(stderr, fmt::emphasis::bold, "\t{}\n", violation.message);
-    fmt::print(stderr, fmt::emphasis::bold, "\tin function '{}'\n", violation.location.function_name());
+    fmt::print(
+      stderr,
+      fmt::emphasis::bold,
+      "\tin function '{}'\n",
+      violation.location.function_name()
+    );
     fmt::print(stderr, fmt::emphasis::bold, "\tin file '{}'\n", violation.location.file_name());
     fmt::print(
       stderr,
@@ -46,8 +56,11 @@ namespace rolly::contracts {
     return old;
   }
 
-  contract_violation
-    detail::make_contract_violation(contract_type type, std::string_view message, source_location location) {
+  contract_violation detail::make_contract_violation(
+    contract_type type,
+    std::string_view message,
+    source_location location
+  ) {
     return {type, std::string(message), location};
   }
 

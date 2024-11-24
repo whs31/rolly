@@ -28,7 +28,8 @@ namespace rolly {
 #endif
     /**
      * @brief A two-dimensional point tagged with a unit.
-     * @tparam T Number type. Must satisfy concept <tt>floppy::concepts::num</tt>. Default is \c f32.
+     * @tparam T Number type. Must satisfy concept <tt>floppy::concepts::num</tt>. Default is \c
+     * f32.
      * @see rolly::types::size2d
      * @see rolly::types::vector2d
      */
@@ -141,7 +142,9 @@ namespace rolly {
       /**
        * @brief Casts into <tt>f64</tt> point2d.
        */
-      [[nodiscard]] constexpr point2d<f64> to_f64() const { return point2d<f64>(this->x_, this->y_); }
+      [[nodiscard]] constexpr point2d<f64> to_f64() const {
+        return point2d<f64>(this->x_, this->y_);
+      }
 
       /**
        * @brief Casts into <tt>u32</tt> point2d.
@@ -189,7 +192,10 @@ namespace rolly {
 #endif
           Q>
       [[nodiscard]] constexpr point2d div_euclid(Q const& other) const {
-        return point2d(math::div_euclid(this->x_, other.x()), math::div_euclid(this->y_, other.y()));
+        return point2d(
+          math::div_euclid(this->x_, other.x()),
+          math::div_euclid(this->y_, other.y())
+        );
       }
 
       /**
@@ -208,7 +214,10 @@ namespace rolly {
 #endif
           Q>
       [[nodiscard]] constexpr point2d rem_euclid(Q const& other) const {
-        return point2d(math::rem_euclid(this->x_, other.x()), math::rem_euclid(this->y_, other.y()));
+        return point2d(
+          math::rem_euclid(this->x_, other.x()),
+          math::rem_euclid(this->y_, other.y())
+        );
       }
 
       /**
@@ -244,7 +253,8 @@ namespace rolly {
 
       /**
        * @brief Sums point and either point2d, size2d or vector2d.
-       * @tparam Q The type of the summand. Can be <tt>point2d</tt>, <tt>vector2d</tt> or <tt>size2d</tt>.
+       * @tparam Q The type of the summand. Can be <tt>point2d</tt>, <tt>vector2d</tt> or
+       * <tt>size2d</tt>.
        * @param other The summand.
        * @return The sum.
        */
@@ -261,7 +271,8 @@ namespace rolly {
 
       /**
        * @brief Subtracts point and either point2d, size2d or vector2d.
-       * @tparam Q The type of the subtrahend. Can be <tt>point2d</tt>, <tt>vector2d</tt> or <tt>size2d</tt>.
+       * @tparam Q The type of the subtrahend. Can be <tt>point2d</tt>, <tt>vector2d</tt> or
+       * <tt>size2d</tt>.
        * @param other The subtrahend.
        * @return The difference.
        */
@@ -326,7 +337,8 @@ namespace rolly {
 
       /**
        * @brief Adds point and either point2d, size2d or vector2d.
-       * @tparam Q The type of the summand. Can be <tt>point2d</tt>, <tt>vector2d</tt> or <tt>size2d</tt>.
+       * @tparam Q The type of the summand. Can be <tt>point2d</tt>, <tt>vector2d</tt> or
+       * <tt>size2d</tt>.
        * @param other The summand.
        * @return The sum.
        */
@@ -345,7 +357,8 @@ namespace rolly {
 
       /**
        * @brief Subtracts point and either point2d, size2d or vector2d.
-       * @tparam Q The type of the subtrahend. Can be <tt>point2d</tt>, <tt>vector2d</tt> or <tt>size2d</tt>.
+       * @tparam Q The type of the subtrahend. Can be <tt>point2d</tt>, <tt>vector2d</tt> or
+       * <tt>size2d</tt>.
        * @param other The subtrahend.
        * @return The difference.
        */
@@ -388,12 +401,14 @@ namespace rolly {
        * @brief Constructs new point from size2d.
        * @param other The other size2d.
        */
-      [[nodiscard]] static constexpr point2d from_size2d(size2d_type const& other) { return {other}; }
+      [[nodiscard]] static constexpr point2d from_size2d(size2d_type const& other) {
+        return {other};
+      }
 
       /**
        * @brief Returns string representation of the point2d.
-       * @details Size is represented as it's numeric values. If the underlying number type is floating
-       * point2d, it is rounded to two decimal places.
+       * @details Size is represented as it's numeric values. If the underlying number type is
+       * floating point2d, it is rounded to two decimal places.
        * @note Due to limitations of the language, units are not displayed.
        * @return String representation of the object.
        */
@@ -407,35 +422,48 @@ namespace rolly {
       /**
        * @brief Casts into an array of two values.
        */
-      [[nodiscard]] constexpr std::array<number_type, 2> to_array() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr std::array<number_type, 2> to_array() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Casts into a tuple of two values.
        */
-      [[nodiscard]] constexpr std::tuple<number_type, number_type> to_tuple() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr std::tuple<number_type, number_type> to_tuple() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Casts into a pair of two values.
        */
-      [[nodiscard]] constexpr std::pair<number_type, number_type> to_pair() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr std::pair<number_type, number_type> to_pair() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Rounds each component to the nearest integer value.
        * @details This behavior is preserved for negative values (unlike the basic cast).
        */
-      [[nodiscard]] constexpr point2d round() const { return {std::round(this->x_), std::round(this->y_)}; }
+      [[nodiscard]] constexpr point2d round() const {
+        return {std::round(this->x_), std::round(this->y_)};
+      }
 
       /**
-       * @brief Rounds each component to the smallest integer equal or greater than the original value.
+       * @brief Rounds each component to the smallest integer equal or greater than the original
+       * value.
        * @details This behavior is preserved for negative values (unlike the basic cast).
        */
-      [[nodiscard]] constexpr point2d ceil() const { return {std::ceil(this->x_), std::ceil(this->y_)}; }
+      [[nodiscard]] constexpr point2d ceil() const {
+        return {std::ceil(this->x_), std::ceil(this->y_)};
+      }
 
       /**
        * @brief Rounds each component to the largest integer equal or less than the original value.
        * @details This behavior is preserved for negative values (unlike the basic cast).
        */
-      [[nodiscard]] constexpr point2d floor() const { return {std::floor(this->x_), std::floor(this->y_)}; }
+      [[nodiscard]] constexpr point2d floor() const {
+        return {std::floor(this->x_), std::floor(this->y_)};
+      }
 
       /**
        * @brief Linearly interpolate between this point2d and another point2d.
@@ -486,7 +514,8 @@ namespace rolly {
       }
 
       /**
-       * @brief Returns the point2d each component of which clamped by corresponding components of start and end.
+       * @brief Returns the point2d each component of which clamped by corresponding components of
+       * start and end.
        * @param start The start point2d.
        * @param end The end point2d.
        * @return The clamped point2d.
@@ -499,7 +528,9 @@ namespace rolly {
        * @brief Returns the absolute value of each component.
        * @return The absolute value of each component.
        */
-      [[nodiscard]] constexpr point2d abs() const { return {std::abs(this->x_), std::abs(this->y_)}; }
+      [[nodiscard]] constexpr point2d abs() const {
+        return {std::abs(this->x_), std::abs(this->y_)};
+      }
 
       /**
        * @brief Returns dot product of this and another point2d.
@@ -523,12 +554,16 @@ namespace rolly {
       /**
        * @brief Returns true if all members are finite.
        */
-      [[nodiscard]] constexpr bool is_finite() const { return std::isfinite(this->x_) && std::isfinite(this->y_); }
+      [[nodiscard]] constexpr bool is_finite() const {
+        return std::isfinite(this->x_) && std::isfinite(this->y_);
+      }
 
       /**
        * @brief Returns true if all members are positive.
        */
-      [[nodiscard]] constexpr bool is_positive() const { return this->x_ > 0.0F and this->y_ > 0.0F; }
+      [[nodiscard]] constexpr bool is_positive() const {
+        return this->x_ > 0.0F and this->y_ > 0.0F;
+      }
 
       /**
        * @brief The same as <i>origin</i>.
@@ -574,14 +609,17 @@ namespace rolly {
        * @brief Constructs new point2d from <tt>std::pair</tt>.
        * @param other The other <tt>std::pair</tt>.
        */
-      [[nodiscard]] static constexpr point2d from_pair(std::pair<number_type, number_type> const& other) {
+      [[nodiscard]] static constexpr point2d from_pair(
+        std::pair<number_type, number_type> const& other
+      ) {
         return {other.first, other.second};
       }
 
       /**
-       * @brief Returns <tt>true</tt> if underlying values is both not <tt>0</tt> and not <tt>NaN</tt> or
-       * <tt>Infinity</tt> in case of floating point. \note Also returns <tt>false</tt> if underlying values is
-       * <tt>NaN</tt> or <tt>Infinity</tt> in case of floating point.
+       * @brief Returns <tt>true</tt> if underlying values is both not <tt>0</tt> and not
+       * <tt>NaN</tt> or <tt>Infinity</tt> in case of floating point. \note Also returns
+       * <tt>false</tt> if underlying values is <tt>NaN</tt> or <tt>Infinity</tt> in case of
+       * floating point.
        */
       [[nodiscard]] constexpr explicit operator bool() const {
         if constexpr(std::is_floating_point_v<number_type>) {
@@ -601,8 +639,8 @@ namespace rolly {
 #if defined(ROLLY_QT_GUI) || defined(ROLLY_DOC)
       /**
        * @brief Casts this point2d into <tt>QPoint</tt>.
-       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for.
+       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for.
        */
       [[nodiscard]] constexpr QPoint to_qpoint() const {
         return QPoint(static_cast<i32>(this->x_), static_cast<i32>(this->y_));
@@ -610,16 +648,16 @@ namespace rolly {
 
       /**
        * @brief Casts this point2d into <tt>QPointF</tt>.
-       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for.
+       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for.
        */
       [[nodiscard]] constexpr QPointF to_qpointf() const { return QPointF(this->x_, this->y_); }
 
       /**
        * @brief Constructs new point from <tt>QPoint</tt>.
        * @param other The other <tt>QPoint</tt>.
-       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for.
+       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for.
        */
       constexpr explicit point2d(QPoint const& other)
         : point2d(other.x(), other.y()) {}
@@ -627,8 +665,8 @@ namespace rolly {
       /**
        * @brief Constructs new point from <tt>QPointF</tt>.
        * @param other The other <tt>QPointF</tt>.
-       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for.
+       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for.
        */
       constexpr explicit point2d(QPointF const& other)
         : point2d(other.x(), other.y()) {}
@@ -636,16 +674,19 @@ namespace rolly {
       /**
       * @brief Constructs new point from <tt>QPoint</tt>.
       * @param other The other <tt>QPoint</tt>.
-      * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
+      * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+      header is compiled
       * for.
       /**
-      [[nodiscard]] static constexpr point2d from_qpoint(QPoint const& other) { return point2d(other.x(), other.y());
+      [[nodiscard]] static constexpr point2d from_qpoint(QPoint const& other) { return
+      point2d(other.x(), other.y());
       }
 
       /**
       * @brief Constructs new point from <tt>QPointF</tt>.
       * @param other The other <tt>QPointF</tt>.
-      * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
+      * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+      header is compiled
       * for.
       */
       [[nodiscard]] static constexpr point2d from_qpointf(QPointF const& other) {

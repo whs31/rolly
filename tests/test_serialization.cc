@@ -40,7 +40,11 @@ DECLARE_SERIALIZABLE(DummyConfiguration, rolly::serialization::format::toml) {
      toml::table {
        {"ip", value.ip_address.ip},
        {"port", value.ip_address.port},
-       {"sock_mode", toml::table {{"tcp", value.ip_address.sock_mode.tcp}, {"udp", value.ip_address.sock_mode.udp}}}
+       {"sock_mode",
+        toml::table {
+          {"tcp", value.ip_address.sock_mode.tcp},
+          {"udp", value.ip_address.sock_mode.udp}
+        }}
      }                       }
   };
   auto ss = std::stringstream();
@@ -125,7 +129,8 @@ TEST_CASE("Serialization & filesystem") {
   SECTION("Savefile") {
     SECTION("Basic") {
       {
-        auto save = savefile<format::toml, DummyConfiguration>("test.toml", fs::current_path() / "test-save");
+        auto save =
+          savefile<format::toml, DummyConfiguration>("test.toml", fs::current_path() / "test-save");
 
         REQUIRE(save.valid());
         REQUIRE(save().test == 0);

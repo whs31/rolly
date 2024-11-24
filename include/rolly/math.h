@@ -18,7 +18,8 @@ namespace rolly {
 #ifdef DOXYGEN_GENERATING_OUTPUT
     template <std::floating_point T>
 #else
-    template <___concept___(std::floating_point) T ___sfinae_requirement___(std::is_floating_point_v<T>)>
+    template <___concept___(std::floating_point)
+                T ___sfinae_requirement___(std::is_floating_point_v<T>)>
 #endif
     [[nodiscard]] constexpr inline T floor(T val) {
       auto const val_int = static_cast<i64>(val);
@@ -116,7 +117,8 @@ namespace rolly {
 #ifdef DOXYGEN_GENERATING_OUTPUT
     template <concepts::num T>
 #else
-    template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>  // NOLINT(*-use-constraints)
+    template <___concept___(concepts::num)
+                T ___sfinae_requirement___(is_num_v<T>)>  // NOLINT(*-use-constraints)
 #endif
     [[nodiscard]] constexpr T to_radians(T degrees) noexcept {
       return degrees * numbers::pi_v<T> / static_cast<T>(180.0);
@@ -132,7 +134,8 @@ namespace rolly {
 #ifdef DOXYGEN_GENERATING_OUTPUT
     template <concepts::num T>
 #else
-    template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>  // NOLINT(*-use-constraints)
+    template <___concept___(concepts::num)
+                T ___sfinae_requirement___(is_num_v<T>)>  // NOLINT(*-use-constraints)
 #endif
     [[nodiscard]] constexpr T to_degrees(T radians) noexcept {
       return radians * static_cast<T>(180.0) / numbers::pi_v<T>;
@@ -140,16 +143,19 @@ namespace rolly {
 
     /**
      * @brief Returns true if numbers are approximately equal within given epsilon.
-     * @details Compares floating point values using formula <tt>|a - b| <= epsilon * epsilon_factor</tt>.
+     * @details Compares floating point values using formula <tt>|a - b| <= epsilon *
+     * epsilon_factor</tt>.
      * @tparam T Number type
      * @param a First number
      * @param b Second number
-     * @param epsilon Epsilon factor for comparison. Default is <tt>std::numeric_limits<T>::epsilon()</tt>.
+     * @param epsilon Epsilon factor for comparison. Default is
+     * <tt>std::numeric_limits<T>::epsilon()</tt>.
      * @return True if numbers are approximately equal within given epsilon.
      * @see is_null
      */
     template <typename T>
-    [[nodiscard]] constexpr bool approx_eq(T a, T b, T epsilon = std::numeric_limits<T>::epsilon()) {
+    [[nodiscard]] constexpr bool
+      approx_eq(T a, T b, T epsilon = std::numeric_limits<T>::epsilon()) {
       if constexpr(std::is_floating_point_v<T>)
         return std::abs(a - b) <= epsilon;
       else
@@ -158,10 +164,12 @@ namespace rolly {
 
     /**
      * @brief Returns true if number is approximately zero within given epsilon.
-     * @details Compares floating point values using formula <tt>|a| <= epsilon * epsilon_factor</tt>.
+     * @details Compares floating point values using formula <tt>|a| <= epsilon *
+     * epsilon_factor</tt>.
      * @tparam T Number type
      * @param a Number
-     * @param epsilon Epsilon factor for comparison. Default is <tt>std::numeric_limits<T>::epsilon()</tt>.
+     * @param epsilon Epsilon factor for comparison. Default is
+     * <tt>std::numeric_limits<T>::epsilon()</tt>.
      * @return True if number is zero within given epsilon.
      * @see approx_eq
      */

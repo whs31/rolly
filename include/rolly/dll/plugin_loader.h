@@ -4,6 +4,7 @@
 #include <functional>
 #include <unordered_map>
 #include <vector>
+#include <iterator>
 #include "../traits/pin.h"
 #include "plugin.h"
 #include "shared_library.h"
@@ -15,7 +16,8 @@ namespace rolly::dll {
 #endif
       /**
        * @brief Dynamic loader for @ref rolly::dll::plugin libraries.
-       * @details See @ref rolly::dll::plugin class reference for detailed usage examples and guidelines.
+       * @details See @ref rolly::dll::plugin class reference for detailed usage examples and
+       * guidelines.
        */
       plugin_loader : pin {
 
@@ -31,6 +33,25 @@ namespace rolly::dll {
     plugin_loader& operator=(plugin_loader&&) = delete;
 
     virtual ~plugin_loader();
+
+    using iterator = std::vector<std::unique_ptr<plugin>>::iterator;
+    using const_iterator = std::vector<std::unique_ptr<plugin>>::const_iterator;
+    using reverse_iterator = std::vector<std::unique_ptr<plugin>>::reverse_iterator;
+    using const_reverse_iterator = std::vector<std::unique_ptr<plugin>>::const_reverse_iterator;
+
+    iterator begin() noexcept { return this->plugins_.begin(); }
+
+    const_iterator begin() const noexcept { return this->plugins_.begin(); }
+
+    const_iterator cbegin() const noexcept { return this->plugins_.cbegin(); }
+
+    const_iterator cend() const noexcept { return this->plugins_.cend(); }
+
+    iterator end() noexcept { return this->plugins_.end(); }
+
+    reverse_iterator rbegin() noexcept { return this->plugins_.rbegin(); }
+
+    const_reverse_iterator rbegin() const noexcept { return this->plugins_.rbegin(); }
 
     /**
      * @brief Loads a plugin by name.
@@ -48,12 +69,21 @@ namespace rolly::dll {
     [[nodiscard]] result<plugin*> load(std::filesystem::path const& path, std::string_view name);
 
     /**
+     * @brief Unloads a plugin by name.
+     * @param name Name of the plugin to unload.
+     * @return Error if unloading fails.
+     */
+    [[nodiscard]] result<> unload(std::string_view name);
+
+    /**
      * @brief Loads all possible plugins in a directory.
      * @param path Path to directory where plugin files are located.
      * @return Returns error, if no plugins are located in provided directory.
      */
-    [[nodiscard]] result<>
-      load_all(std::filesystem::path const& path, std::string_view extension = plugin_loader::native_extension());
+    [[nodiscard]] result<> load_all(
+      std::filesystem::path const& path,
+      std::string_view extension = plugin_loader::native_extension()
+    );
 
     /**
      * @brief Returns native extension for dynamically loaded libraries on this platform.
@@ -66,7 +96,9 @@ namespace rolly::dll {
      * @brief Returns the internal vector of loaded plugins.
      * @return Internal vector of loaded plugins.
      */
-    [[nodiscard]] std::vector<std::unique_ptr<plugin>> const& plugins() const { return this->plugins_; }
+    [[nodiscard]] std::vector<std::unique_ptr<plugin>> const& plugins() const {
+      return this->plugins_;
+    }
 
     /**
      * @brief Returns a mutable reference to the internal vector of loaded plugins.
@@ -78,7 +110,7 @@ namespace rolly::dll {
     [[nodiscard]] bool is_loaded(guid const& uuid) const;
 
     [[nodiscard]] usize loaded_count() const;
-    
+
     [[nodiscard]] plugin* operator[](std::string_view name) const;
     [[nodiscard]] plugin* operator[](guid const& uuid) const;
 
@@ -86,20 +118,24 @@ namespace rolly::dll {
      * @brief Returns the internal map of loaded libraries.
      * @return Internal map of loaded libraries.
      */
-    [[nodiscard]] std::unordered_map<std::string, shared_library> const& libraries() const { return this->libraries_; }
+    [[nodiscard]] std::unordered_map<std::string, shared_library> const& libraries() const {
+      return this->libraries_;
+    }
 
     /**
      * @brief Returns a mutable reference to the internal map of loaded libraries.
      * @return Mutable reference to the internal map of loaded libraries.
      */
-    [[nodiscard]] std::unordered_map<std::string, shared_library>& libraries() { return this->libraries_; }
+    [[nodiscard]] std::unordered_map<std::string, shared_library>& libraries() {
+      return this->libraries_;
+    }
 
     /**
      * @brief Queries plugin interface by it's type via RTTI.
-     * @details Essentially iterates over all loaded plugins and tries to <code>dynamic_cast</code> their pointer to
-     * the requested interface.
-     * @warning This function can be slow, especially when many plugins are loaded. Much better solution will be to
-     * query by internal plugin interface name using method @ref query_interface
+     * @details Essentially iterates over all loaded plugins and tries to <code>dynamic_cast</code>
+     * their pointer to the requested interface.
+     * @warning This function can be slow, especially when many plugins are loaded. Much better
+     * solution will be to query by internal plugin interface name using method @ref query_interface
      * @tparam T Interface type.
      * @return Reference to the retrieved interface or none when no such interface is loaded.
      */
@@ -120,8 +156,12 @@ namespace rolly::dll {
      * @return Reference to the retrieved interface or none when no such interface is loaded.
      */
     template <typename T>
-    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_interface(std::string_view interface_name) const {
-      return this->query_by<T>([&interface_name](plugin const& p) { return p.name() == interface_name; });
+    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_interface(
+      std::string_view interface_name
+    ) const {
+      return this->query_by<T>([&interface_name](plugin const& p) {
+        return p.name() == interface_name;
+      });
     }
 
     /**
@@ -136,7 +176,8 @@ namespace rolly::dll {
     }
 
     template <typename T>
-    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_by(std::function<bool(plugin const&)> const& predicate
+    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_by(
+      std::function<bool(plugin const&)> const& predicate
     ) const {
       auto* p = this->query_raw(predicate);
       try {

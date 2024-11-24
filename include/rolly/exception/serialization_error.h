@@ -16,12 +16,16 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
     class serialization_error : public std::runtime_error {
      public:
       serialization_error()
-        : std::runtime_error(fmt::format("error during serialization to format \'{}\'", rtti::type_name<T>())) {}
+        : std::runtime_error(
+            fmt::format("error during serialization to format \'{}\'", rtti::type_name<T>())
+          ) {}
 
       explicit serialization_error(std::string_view message)
-        : std::runtime_error(
-            fmt::format("error during serialization to format \'{}\': {}", rtti::type_name<T>(), message)
-          ) {}
+        : std::runtime_error(fmt::format(
+            "error during serialization to format \'{}\': {}",
+            rtti::type_name<T>(),
+            message
+          )) {}
     };
 
     /**
@@ -32,12 +36,16 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
     class deserialization_error : public std::runtime_error {
      public:
       deserialization_error()
-        : std::runtime_error(fmt::format("error during deserialization from format \'{}\'", rtti::type_name<T>())) {}
+        : std::runtime_error(
+            fmt::format("error during deserialization from format \'{}\'", rtti::type_name<T>())
+          ) {}
 
       explicit deserialization_error(std::string_view message)
-        : std::runtime_error(
-            fmt::format("error during deserialization from format \'{}\': {}", rtti::type_name<T>(), message)
-          ) {}
+        : std::runtime_error(fmt::format(
+            "error during deserialization from format \'{}\': {}",
+            rtti::type_name<T>(),
+            message
+          )) {}
     };
   }  // namespace exceptions
 }  // namespace rolly

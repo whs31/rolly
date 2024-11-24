@@ -22,13 +22,14 @@ namespace rolly::concepts {
    * @details Will yield <code>true</code> for any type that is an integral or floating point type,
    * except for <code>bool</code> and <code>std::nullptr_t</code>.
    * @note This concept will also yield <code>true</code> for references to numbers.
-   * @note Available only in C++20 mode. Use @ref rolly::is_num or @ref rolly::is_num_v in C++17 mode instead
+   * @note Available only in C++20 mode. Use @ref rolly::is_num or @ref rolly::is_num_v in C++17
+   * mode instead
    * @tparam T Type to check.
    */
   template <typename T>
-  concept num = std::integral<plain_type_t<T>> or std::floating_point<plain_type_t<T>> and
-                                                    (not std::is_same_v<plain_type_t<T>, bool>) and
-                                                    (not std::is_same_v<plain_type_t<T>, std::nullptr_t>);
+  concept num = std::integral<plain_type_t<T>>
+             or std::floating_point<plain_type_t<T>> and (not std::is_same_v<plain_type_t<T>, bool>)
+                  and (not std::is_same_v<plain_type_t<T>, std::nullptr_t>);
 #endif  // defined(___rolly_cxx20___) || defined(ROLLY_DOC)
 }  // namespace rolly::concepts
 
@@ -42,7 +43,9 @@ namespace rolly {
    */
   template <typename T>
   struct is_num
-    : std::integral_constant<bool, std::is_integral_v<plain_type_t<T>> or std::is_floating_point_v<plain_type_t<T>>> {};
+    : std::integral_constant<
+        bool,
+        std::is_integral_v<plain_type_t<T>> or std::is_floating_point_v<plain_type_t<T>>> {};
 
   /**
    * @brief Helper type trait for checking if T is a number.

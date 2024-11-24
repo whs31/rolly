@@ -15,18 +15,20 @@
 namespace rolly {
   /**
    * @brief A smart pointer that holds a pointer to a value, but does not own it.
-   * @details observer_ptr is a non-owning pointer, or observer. The observer stores a pointer to a second object,
-   * known as the watched object. An observer_ptr may also have no watched object.
+   * @details observer_ptr is a non-owning pointer, or observer. The observer stores a pointer to a
+   * second object, known as the watched object. An observer_ptr may also have no watched object.
    *
-   * An observer is not responsible in any way for the watched object; there is no inherent relationship between an
-   * observer and the object it watches.
+   * An observer is not responsible in any way for the watched object; there is no inherent
+   * relationship between an observer and the object it watches.
    *
-   * It is intended as a near drop-in replacement for raw pointer types, with the advantage that, as a vocabulary
-   * type, it indicates its intended use without need for detailed analysis by code readers.
+   * It is intended as a near drop-in replacement for raw pointer types, with the advantage that, as
+   * a vocabulary type, it indicates its intended use without need for detailed analysis by code
+   * readers.
    *
    * @remarks This is a reimplementation of the LF TSv2 <tt>std::observer_ptr</tt> type.
    * @tparam T Type of the pointer
-   * #sa https://en.cppreference.com/w/cpp/experimental/observer_ptr
+   * @sa https://en.cppreference.com/w/cpp/experimental/observer_ptr
+   * @version 2.1.31
    */
   template <typename T>
   class observer_ptr {
@@ -270,7 +272,9 @@ namespace std {
    */
   template <typename T>
   struct hash<rolly::observer_ptr<T>> {
-    std::size_t operator()(rolly::observer_ptr<T> const& ptr) const noexcept { return std::hash<T*> {}(ptr.get()); }
+    std::size_t operator()(rolly::observer_ptr<T> const& ptr) const noexcept {
+      return std::hash<T*> {}(ptr.get());
+    }
   };
 }  // namespace std
 

@@ -106,7 +106,8 @@ namespace rolly {
       }
 
       /**
-       * @brief Applies the function <b>fn</b> to each component of this vector2d and the other vector2d.
+       * @brief Applies the function <b>fn</b> to each component of this vector2d and the other
+       * vector2d.
        * @tparam F The type of function to apply.
        * @param other The other vector2d to apply.
        * @param fn The function to apply.
@@ -183,8 +184,8 @@ namespace rolly {
 
       /**
        * @brief Returns string representation of the vector2d.
-       * @details Size is represented as it's numeric values. If the underlying number type is floating
-       * vector2d, it is rounded to two decimal places.
+       * @details Size is represented as it's numeric values. If the underlying number type is
+       * floating vector2d, it is rounded to two decimal places.
        * @note Due to limitations of the language, units are not displayed.
        * @return String representation of the object.
        */
@@ -198,35 +199,48 @@ namespace rolly {
       /**
        * @brief Casts into an array of two values.
        */
-      [[nodiscard]] constexpr std::array<number_type, 2> to_array() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr std::array<number_type, 2> to_array() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Casts into a tuple of two values.
        */
-      [[nodiscard]] constexpr std::tuple<number_type, number_type> to_tuple() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr std::tuple<number_type, number_type> to_tuple() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Casts into a pair of two values.
        */
-      [[nodiscard]] constexpr std::pair<number_type, number_type> to_pair() const { return {this->x_, this->y_}; }
+      [[nodiscard]] constexpr std::pair<number_type, number_type> to_pair() const {
+        return {this->x_, this->y_};
+      }
 
       /**
        * @brief Rounds each component to the nearest integer value.
        * @details This behavior is preserved for negative values (unlike the basic cast).
        */
-      [[nodiscard]] constexpr vector2d round() const { return {std::round(this->x_), std::round(this->y_)}; }
+      [[nodiscard]] constexpr vector2d round() const {
+        return {std::round(this->x_), std::round(this->y_)};
+      }
 
       /**
-       * @brief Rounds each component to the smallest integer equal or greater than the original value.
+       * @brief Rounds each component to the smallest integer equal or greater than the original
+       * value.
        * @details This behavior is preserved for negative values (unlike the basic cast).
        */
-      [[nodiscard]] constexpr vector2d ceil() const { return {std::ceil(this->x_), std::ceil(this->y_)}; }
+      [[nodiscard]] constexpr vector2d ceil() const {
+        return {std::ceil(this->x_), std::ceil(this->y_)};
+      }
 
       /**
        * @brief Rounds each component to the largest integer equal or less than the original value.
        * @details This behavior is preserved for negative values (unlike the basic cast).
        */
-      [[nodiscard]] constexpr vector2d floor() const { return T(std::floor(this->x_), std::floor(this->y_)); }
+      [[nodiscard]] constexpr vector2d floor() const {
+        return T(std::floor(this->x_), std::floor(this->y_));
+      }
 
       /**
        * @brief Linearly interpolate between this vector2d and another vector2d.
@@ -277,7 +291,8 @@ namespace rolly {
       }
 
       /**
-       * @brief Returns the vector2d each component of which clamped by corresponding components of start and end.
+       * @brief Returns the vector2d each component of which clamped by corresponding components of
+       * start and end.
        * @param start The start vector2d.
        * @param end The end vector2d.
        * @return The clamped vector2d.
@@ -309,7 +324,9 @@ namespace rolly {
        * @brief Returns the absolute value of each component.
        * @return The absolute value of each component.
        */
-      [[nodiscard]] constexpr vector2d abs() const { return {std::abs(this->x_), std::abs(this->y_)}; }
+      [[nodiscard]] constexpr vector2d abs() const {
+        return {std::abs(this->x_), std::abs(this->y_)};
+      }
 
       /**
        * @brief Returns this vector projected onto another vector.
@@ -334,12 +351,16 @@ namespace rolly {
       /**
        * @brief Returns true if all members are finite.
        */
-      [[nodiscard]] constexpr bool is_finite() const { return std::isfinite(this->x_) && std::isfinite(this->y_); }
+      [[nodiscard]] constexpr bool is_finite() const {
+        return std::isfinite(this->x_) && std::isfinite(this->y_);
+      }
 
       /**
        * @brief Returns true if all members are positive.
        */
-      [[nodiscard]] constexpr bool is_positive() const { return this->x_ > 0.0F and this->y_ > 0.0F; }
+      [[nodiscard]] constexpr bool is_positive() const {
+        return this->x_ > 0.0F and this->y_ > 0.0F;
+      }
 
       /**
        * @brief The same as <i>origin</i>.
@@ -385,14 +406,17 @@ namespace rolly {
        * @brief Constructs new vector2d from <tt>std::pair</tt>.
        * @param other The other <tt>std::pair</tt>.
        */
-      [[nodiscard]] static constexpr vector2d from_pair(std::pair<number_type, number_type> const& other) {
+      [[nodiscard]] static constexpr vector2d from_pair(
+        std::pair<number_type, number_type> const& other
+      ) {
         return {other.first, other.second};
       }
 
       /**
-       * @brief Returns <tt>true</tt> if underlying values is both not <tt>0</tt> and not <tt>NaN</tt> or
-       * <tt>Infinity</tt> in case of floating point. \note Also returns <tt>false</tt> if underlying values is
-       * <tt>NaN</tt> or <tt>Infinity</tt> in case of floating point.
+       * @brief Returns <tt>true</tt> if underlying values is both not <tt>0</tt> and not
+       * <tt>NaN</tt> or <tt>Infinity</tt> in case of floating point. \note Also returns
+       * <tt>false</tt> if underlying values is <tt>NaN</tt> or <tt>Infinity</tt> in case of
+       * floating point.
        */
       [[nodiscard]] constexpr explicit operator bool() const {
         if constexpr(std::is_floating_point_v<number_type>) {
@@ -420,8 +444,8 @@ namespace rolly {
 
       /**
        * @brief Returns the signed angle between this vector and the x axis.
-       * @details Positive values counted counterclockwise, where 0 is <tt>+x</tt> axis, and <tt>PI/2</tt>
-       * is <tt>+y</tt> axis.
+       * @details Positive values counted counterclockwise, where 0 is <tt>+x</tt> axis, and
+       * <tt>PI/2</tt> is <tt>+y</tt> axis.
        * @return The signed angle between this vector and the x axis.
        */
       [[nodiscard]] constexpr angle_type angle_to_x_axis() const {
@@ -432,7 +456,9 @@ namespace rolly {
        * @brief Returns the vector with length normalized.
        * @return The normalized vector.
        */
-      [[nodiscard]] constexpr vector2d normalized() const { return {*this / this->length_scalar()}; }
+      [[nodiscard]] constexpr vector2d normalized() const {
+        return {*this / this->length_scalar()};
+      }
 
       /**
        * @brief Returns a reflection vector using an incident ray and a surface normal.
@@ -516,13 +542,14 @@ namespace rolly {
        * @return <tt>true</tt> if the vector is not equal to the other vector.
        */
       [[nodiscard]] constexpr bool operator!=(vector2d const& other) const {
-        return not approx_eq(this->x_, other.x(), static_cast<number_type>(3.0F)) or
-               not approx_eq(this->y_, other.y(), static_cast<number_type>(3.0F));
+        return not approx_eq(this->x_, other.x(), static_cast<number_type>(3.0F))
+            or not approx_eq(this->y_, other.y(), static_cast<number_type>(3.0F));
       }
 
       /**
        * @brief Adds vector and either point2d, size2d or vector2d.
-       * @tparam Q The type of the summand. Can be <tt>point2d</tt>, <tt>vector2d</tt> or <tt>size2d</tt>.
+       * @tparam Q The type of the summand. Can be <tt>point2d</tt>, <tt>vector2d</tt> or
+       * <tt>size2d</tt>.
        * @param other The summand.
        * @return The sum.
        */
@@ -543,13 +570,14 @@ namespace rolly {
        * @return <tt>true</tt> if the vector is equal to the other vector.
        */
       [[nodiscard]] constexpr bool operator==(vector2d const& other) const {
-        return approx_eq(this->x_, other.x(), static_cast<number_type>(3.0F)) and
-               approx_eq(this->y_, other.y(), static_cast<number_type>(3.0F));
+        return approx_eq(this->x_, other.x(), static_cast<number_type>(3.0F))
+           and approx_eq(this->y_, other.y(), static_cast<number_type>(3.0F));
       }
 
       /**
        * @brief Subtracts vector and either point2d, size2d or vector2d.
-       * @tparam Q The type of the subtrahend. Can be <tt>point2d</tt>, <tt>vector2d</tt> or <tt>size2d</tt>.
+       * @tparam Q The type of the subtrahend. Can be <tt>point2d</tt>, <tt>vector2d</tt> or
+       * <tt>size2d</tt>.
        * @param other The subtrahend.
        * @return The difference.
        */
@@ -584,7 +612,8 @@ namespace rolly {
 
       /**
        * @brief Adds vector and either point2d, size2d or vector2d.
-       * @tparam Q The type of the summand. Can be <tt>point2d</tt>, <tt>vector2d</tt> or <tt>size2d</tt>.
+       * @tparam Q The type of the summand. Can be <tt>point2d</tt>, <tt>vector2d</tt> or
+       * <tt>size2d</tt>.
        * @param other The summand.
        * @return The sum.
        */
@@ -603,7 +632,8 @@ namespace rolly {
 
       /**
        * @brief Subtracts vector and either point2d, size2d or vector2d.
-       * @tparam Q The type of the subtrahend. Can be <tt>point2d</tt>, <tt>vector2d</tt> or <tt>size2d</tt>.
+       * @tparam Q The type of the subtrahend. Can be <tt>point2d</tt>, <tt>vector2d</tt> or
+       * <tt>size2d</tt>.
        * @param other The subtrahend.
        * @return The difference.
        */
@@ -646,8 +676,8 @@ namespace rolly {
       /**
        * @brief Constructs new vector2d from <tt>QVector2D</tt>.
        * @param other The other <tt>QVector2D</tt>.
-       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for.
+       * @remarks This constructor is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for.
        */
       constexpr explicit vector2d(QVector2D const& other)
         : vector2d(other.x(), other.y()) {}
@@ -655,8 +685,8 @@ namespace rolly {
       /**
        * @brief Constructs new vector2d from <tt>QVector2D</tt>.
        * @param other The other <tt>QVector2D</tt>.
-       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for.
+       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for.
        */
       [[nodiscard]] static constexpr vector2d from_qvector2d(QVector2D const& other) {
         return vector2d(other.x(), other.y());
@@ -664,10 +694,12 @@ namespace rolly {
 
       /**
        * @brief Casts this vector2d into <tt>QVector2D</tt>.
-       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this header is compiled
-       * for.
+       * @remarks This function is only available if <b>Qt Gui</b> is linked against the TU this
+       * header is compiled for.
        */
-      [[nodiscard]] constexpr QVector2D to_qvector2d() const { return QVector2D(this->x_, this->y_); }
+      [[nodiscard]] constexpr QVector2D to_qvector2d() const {
+        return QVector2D(this->x_, this->y_);
+      }
 
 #endif
 

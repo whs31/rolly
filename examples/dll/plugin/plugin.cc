@@ -2,6 +2,7 @@
 #include <fmt/format.h>
 #include <plugin-api/api.h>
 #include "rolly/dll/detail/macro.h"
+#include "rolly/dll/plugin.h"
 
 class ExamplePluginImpl final : public ExamplePlugin {
  private:
@@ -23,10 +24,7 @@ class ExamplePluginImpl final : public ExamplePlugin {
 
   [[nodiscard]] rolly::meta::project_meta const& meta() const final { return this->meta_; }
 
-  [[nodiscard]] rolly::guid const&
-    uuid() const final {
-    return this->uuid_;
-  }
+  [[nodiscard]] rolly::guid const& uuid() const final { return this->uuid_; }
 
   ExamplePluginImpl() { fmt::println("Plugin: constructor called"); }
 
@@ -36,8 +34,12 @@ class ExamplePluginImpl final : public ExamplePlugin {
 
  private:
   rolly::guid uuid_ = rolly::guid("00000000-0000-0000-0100-000123000000");
-  rolly::meta::project_meta meta_ =
-    rolly::meta::project_meta(rolly::version("1.0.1"), "Example Plugin", "io.github.rolly.example_plugin", "Radar-MMS");
+  rolly::meta::project_meta meta_ = rolly::meta::project_meta(
+    rolly::version("1.0.1"),
+    "Example Plugin",
+    "io.github.rolly.example_plugin",
+    "Radar-MMS"
+  );
 };
 
 DECLARE_PLUGIN(ExamplePluginImpl)  // NOLINT(*-pro-type-reinterpret-cast)

@@ -10,9 +10,10 @@ namespace rolly {
 #ifndef DOXYGEN_GENERATING_OUTPUT
   namespace detail {
     template <___concept___(std::invocable) F>
-#ifdef ___rolly_cxx20___
-      requires concepts::standard_copyable_and_movable<F> and (not std::is_reference_v<F>) and (not std::is_const_v<F>)
-#endif                        // ___rolly_cxx20___
+#  ifdef ___rolly_cxx20___
+      requires concepts::standard_copyable_and_movable<F> and (not std::is_reference_v<F>)
+           and (not std::is_const_v<F>)
+#  endif                      // ___rolly_cxx20___
     class lazy : noncopyable  // NOLINT(*-special-member-functions)
     {
 
@@ -22,8 +23,8 @@ namespace rolly {
       /**
        * @brief Constructs a lazy object from a given function object.
        * @details The constructor is explicit to avoid accidental copies.
-       * @param[in] f Function object to be evaluated when the value is requested the first time. The function object is
-       * moved into the lazy object.
+       * @param[in] f Function object to be evaluated when the value is requested the first time.
+       * The function object is moved into the lazy object.
        */
       explicit lazy(F&& f)
         : f_(std::move(f)) {}
@@ -67,10 +68,10 @@ namespace rolly {
 #endif
 
   /**
-    * @brief Constructs a lazy object from a given function object.
-    * @param[in] f Function object to be evaluated when the value is requested the first time. The function object is
-    * moved into the lazy object.
-    */
+   * @brief Constructs a lazy object from a given function object.
+   * @param[in] f Function object to be evaluated when the value is requested the first time. The
+   * function object is moved into the lazy object.
+   */
   template <typename F>
   [[nodiscard]] auto lazy(F&& f) {
     return detail::lazy<std::remove_cvref_t<F>>(std::forward<F>(f));

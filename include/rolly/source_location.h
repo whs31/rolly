@@ -27,7 +27,8 @@ namespace rolly {
    * I am called from main, 5:7 in file main.c++!
    * I am called from main.c++:main 6:7
    * @endcode
-   * @note This implementation can be aliased to `std::source_location`, if the compiler supports it.
+   * @note This implementation can be aliased to `std::source_location`, if the compiler supports
+   * it.
    * @see https://en.cppreference.com/w/cpp/utility/source_location
    */
   struct source_location {
@@ -79,7 +80,12 @@ namespace rolly {
      * @param function Function name
      * @param column Column number in the function. Defaults to 0
      */
-    constexpr source_location(char const* file, u32 const line, char const* function, u32 const column = 0) noexcept
+    constexpr source_location(
+      char const* file,
+      u32 const line,
+      char const* function,
+      u32 const column = 0
+    ) noexcept
       : file_(file)
       , function_(function)
       , line_(line)
@@ -95,7 +101,9 @@ namespace rolly {
     /**
      * @brief Returns the function name. NULL if unknown or not available on compiler
      */
-    [[nodiscard]] constexpr std::string_view function_name() const noexcept { return this->function_; }
+    [[nodiscard]] constexpr std::string_view function_name() const noexcept {
+      return this->function_;
+    }
 
     /**
      * @brief Returns the line number. 0 if unknown or not available on compiler.
@@ -126,15 +134,18 @@ namespace rolly {
   }
 
   inline bool operator==(source_location const& lhs, source_location const& rhs) noexcept {
-    return lhs.file_name() == rhs.file_name() and lhs.line() == rhs.line() and
-           lhs.function_name() == rhs.function_name() and lhs.column() == rhs.column();
+    return lhs.file_name() == rhs.file_name() and lhs.line() == rhs.line()
+       and lhs.function_name() == rhs.function_name() and lhs.column() == rhs.column();
   }
 
-  inline bool operator!=(source_location const& lhs, source_location const& rhs) noexcept { return not (lhs == rhs); }
+  inline bool operator!=(source_location const& lhs, source_location const& rhs) noexcept {
+    return not (lhs == rhs);
+  }
 }  // namespace rolly
 
 /**
- * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::source_location class.
+ * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::source_location
+ * class.
  * @relates rolly::source_location
  */
 template <>

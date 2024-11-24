@@ -85,8 +85,14 @@ namespace rolly {
       return owned_str;
     };
     auto const org = replaced(vendor, ' ', '-');
-    auto const path =
-      fmt::format("{}{}{}{}{}", qualifier, qualifier.empty() ? "" : ".", org, org.empty() ? "" : ".", app);
+    auto const path = fmt::format(
+      "{}{}{}{}{}",
+      qualifier,
+      qualifier.empty() ? "" : ".",
+      org,
+      org.empty() ? "" : ".",
+      app
+    );
     auto const home = oslayer::___os___::home_dir();
     this->project_path_ = path;
     this->cache_dir_ = home / "Library" / "Caches" / path;

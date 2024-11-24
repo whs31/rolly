@@ -17,26 +17,26 @@
 #    define TL_EXPECTED_EXCEPTIONS_ENABLED
 #  endif
 
-#  if (defined(_MSC_VER) && _MSC_VER == 1'900)
+#  if(defined(_MSC_VER) && _MSC_VER == 1'900)
 #    define TL_EXPECTED_MSVC2015
 #    define TL_EXPECTED_MSVC2015_CONSTEXPR
 #  else
 #    define TL_EXPECTED_MSVC2015_CONSTEXPR constexpr
 #  endif
 
-#  if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#  if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC49
 #  endif
 
-#  if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
+#  if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC54
 #  endif
 
-#  if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
+#  if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC55
 #  endif
 
-#  if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#  if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 // GCC < 5 doesn't support overloading on const&& for member functions
 
 #    define TL_EXPECTED_NO_CONSTRR
@@ -52,7 +52,7 @@
 
 // GCC 5 < v < 8 has a bug in is_trivially_copy_constructible which breaks
 // std::vector for non-copyable types
-#  elif (defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
+#  elif(defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
 #    ifndef TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 #      define TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 
@@ -93,7 +93,7 @@ namespace tl {
 #    define TL_EXPECTED_GCC49_CONSTEXPR constexpr
 #  endif
 
-#  if (__cplusplus == 201'103L || defined(TL_EXPECTED_MSVC2015) || defined(TL_EXPECTED_GCC49))
+#  if(__cplusplus == 201'103L || defined(TL_EXPECTED_MSVC2015) || defined(TL_EXPECTED_GCC49))
 #    define TL_EXPECTED_11_CONSTEXPR
 #  else
 #    define TL_EXPECTED_11_CONSTEXPR constexpr
@@ -116,14 +116,17 @@ namespace rolly {
     constexpr explicit unexpected(E&& e)
       : m_val(std::move(e)) {}
 
-    template <class... Args, typename std::enable_if<std::is_constructible<E, Args&&...>::value>::type* = nullptr>
+    template <
+      class... Args,
+      typename std::enable_if<std::is_constructible<E, Args&&...>::value>::type* = nullptr>
     constexpr explicit unexpected(Args&&... args)
       : m_val(std::forward<Args>(args)...) {}
 
     template <
       class U,
       class... Args,
-      typename std::enable_if<std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>::type* = nullptr>
+      typename std::enable_if<
+        std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>::type* = nullptr>
     constexpr explicit unexpected(std::initializer_list<U> l, Args&&... args)
       : m_val(l, std::forward<Args>(args)...) {}
 
@@ -145,7 +148,7 @@ namespace rolly {
 #  endif
 
   template <class E>
-  constexpr bool operator==(const unexpected<E>& lhs, const unexpected<E>& rhs) {
+  constexpr bool operator==(unexpected<E> const& lhs, unexpected<E> const& rhs) {
     return lhs.value() == rhs.value();
   }
 
@@ -269,18 +272,24 @@ namespace rolly {
       typename Fn,
       typename... Args,
 #    ifdef TL_TRAITS_LIBCXX_MEM_FN_WORKAROUND
-      typename =
-        enable_if_t<! (is_pointer_to_non_const_member_func<Fn>::value && is_const_or_const_ref<Args...>::value)>,
+      typename = enable_if_t<! (
+        is_pointer_to_non_const_member_func<Fn>::value && is_const_or_const_ref<Args...>::value
+      )>,
 #    endif
       typename = enable_if_t<std::is_member_pointer<decay_t<Fn>>::value>,
       int = 0>
-    constexpr auto invoke(Fn&& f, Args&&... args) noexcept(noexcept(std::mem_fn(f)(std::forward<Args>(args)...))
+    constexpr auto invoke(Fn&& f, Args&&... args) noexcept(
+      noexcept(std::mem_fn(f)(std::forward<Args>(args)...))
     ) -> decltype(std::mem_fn(f)(std::forward<Args>(args)...)) {
       return std::mem_fn(f)(std::forward<Args>(args)...);
     }
 
-    template <typename Fn, typename... Args, typename = enable_if_t<! std::is_member_pointer<decay_t<Fn>>::value>>
-    constexpr auto invoke(Fn&& f, Args&&... args) noexcept(noexcept(std::forward<Fn>(f)(std::forward<Args>(args)...))
+    template <
+      typename Fn,
+      typename... Args,
+      typename = enable_if_t<! std::is_member_pointer<decay_t<Fn>>::value>>
+    constexpr auto invoke(Fn&& f, Args&&... args) noexcept(
+      noexcept(std::forward<Fn>(f)(std::forward<Args>(args)...))
     ) -> decltype(std::forward<Fn>(f)(std::forward<Args>(args)...)) {
       return std::forward<Fn>(f)(std::forward<Args>(args)...);
     }
@@ -290,7 +299,10 @@ namespace rolly {
     struct invoke_result_impl;
 
     template <class F, class... Us>
-    struct invoke_result_impl<F, decltype(detail::invoke(std::declval<F>(), std::declval<Us>()...), void()), Us...> {
+    struct invoke_result_impl<
+      F,
+      decltype(detail::invoke(std::declval<F>(), std::declval<Us>()...), void()),
+      Us...> {
       using type = decltype(detail::invoke(std::declval<F>(), std::declval<Us>()...));
     };
 
@@ -332,10 +344,10 @@ namespace rolly {
       std::is_same<decltype(swap(std::declval<T&>(), std::declval<U&>())), tag> uses_std(int);
 
       template <class T>
-      struct is_std_swap_noexcept
-        : std::integral_constant<
-            bool,
-            std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value> {};
+      struct is_std_swap_noexcept : std::integral_constant<
+                                      bool,
+                                      std::is_nothrow_move_constructible<T>::value
+                                        && std::is_nothrow_move_assignable<T>::value> {};
 
       template <class T, std::size_t N>
       struct is_std_swap_noexcept<T[N]> : is_std_swap_noexcept<T> {};
@@ -345,27 +357,27 @@ namespace rolly {
     }  // namespace swap_adl_tests
 
     template <class T, class U = T>
-    struct is_swappable : std::integral_constant<
-                            bool,
-                            decltype(detail::swap_adl_tests::can_swap<T, U>(0))::value &&
-                              (! decltype(detail::swap_adl_tests::uses_std<T, U>(0))::value ||
-                               (std::is_move_assignable<T>::value && std::is_move_constructible<T>::value))> {};
+    struct is_swappable
+      : std::integral_constant<
+          bool,
+          decltype(detail::swap_adl_tests::can_swap<T, U>(0))::value
+            && (! decltype(detail::swap_adl_tests::uses_std<T, U>(0))::value || (std::is_move_assignable<T>::value && std::is_move_constructible<T>::value))> {
+    };
 
     template <class T, std::size_t N>
     struct is_swappable<T[N], T[N]>
       : std::integral_constant<
           bool,
-          decltype(detail::swap_adl_tests::can_swap<T[N], T[N]>(0))::value &&
-            (! decltype(detail::swap_adl_tests::uses_std<T[N], T[N]>(0))::value || is_swappable<T, T>::value)> {};
+          decltype(detail::swap_adl_tests::can_swap<T[N], T[N]>(0))::value
+            && (! decltype(detail::swap_adl_tests::uses_std<T[N], T[N]>(0))::value || is_swappable<T, T>::value)> {
+    };
 
     template <class T, class U = T>
-    struct is_nothrow_swappable
-      : std::integral_constant<
-          bool,
-          is_swappable<T, U>::value && ((decltype(detail::swap_adl_tests::uses_std<T, U>(0))::value &&
-                                         detail::swap_adl_tests::is_std_swap_noexcept<T>::value) ||
-                                        (! decltype(detail::swap_adl_tests::uses_std<T, U>(0))::value &&
-                                         detail::swap_adl_tests::is_adl_swap_noexcept<T, U>::value))> {};
+    struct is_nothrow_swappable : std::integral_constant<
+                                    bool,
+                                    is_swappable<T, U>::value
+                                      && ((decltype(detail::swap_adl_tests::uses_std<T, U>(0))::value && detail::swap_adl_tests::is_std_swap_noexcept<T>::value) || (! decltype(detail::swap_adl_tests::uses_std<T, U>(0))::value && detail::swap_adl_tests::is_adl_swap_noexcept<T, U>::value))> {
+    };
 #    endif
 #  endif
 
@@ -380,18 +392,22 @@ namespace rolly {
 
     template <class T, class E, class U>
     using expected_enable_forward_value = detail::enable_if_t<
-      std::is_constructible<T, U&&>::value && ! std::is_same<detail::decay_t<U>, std::in_place_t>::value &&
-      ! std::is_same<expected<T, E>, detail::decay_t<U>>::value &&
-      ! std::is_same<unexpected<E>, detail::decay_t<U>>::value>;
+      std::is_constructible<T, U&&>::value
+      && ! std::is_same<detail::decay_t<U>, std::in_place_t>::value
+      && ! std::is_same<expected<T, E>, detail::decay_t<U>>::value
+      && ! std::is_same<unexpected<E>, detail::decay_t<U>>::value>;
 
     template <class T, class E, class U, class G, class UR, class GR>
     using expected_enable_from_other = detail::enable_if_t<
-      std::is_constructible<T, UR>::value && std::is_constructible<E, GR>::value &&
-      ! std::is_constructible<T, expected<U, G>&>::value && ! std::is_constructible<T, expected<U, G>&&>::value &&
-      ! std::is_constructible<T, expected<U, G> const&>::value &&
-      ! std::is_constructible<T, expected<U, G> const&&>::value && ! std::is_convertible<expected<U, G>&, T>::value &&
-      ! std::is_convertible<expected<U, G>&&, T>::value && ! std::is_convertible<expected<U, G> const&, T>::value &&
-      ! std::is_convertible<expected<U, G> const&&, T>::value>;
+      std::is_constructible<T, UR>::value && std::is_constructible<E, GR>::value
+      && ! std::is_constructible<T, expected<U, G>&>::value
+      && ! std::is_constructible<T, expected<U, G>&&>::value
+      && ! std::is_constructible<T, expected<U, G> const&>::value
+      && ! std::is_constructible<T, expected<U, G> const&&>::value
+      && ! std::is_convertible<expected<U, G>&, T>::value
+      && ! std::is_convertible<expected<U, G>&&, T>::value
+      && ! std::is_convertible<expected<U, G> const&, T>::value
+      && ! std::is_convertible<expected<U, G> const&&, T>::value>;
 
     template <class T, class U>
     using is_void_or = conditional_t<std::is_void<T>::value, std::true_type, U>;
@@ -435,7 +451,9 @@ namespace rolly {
         : m_no_init()
         , m_has_val(false) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
       constexpr expected_storage_base(std::in_place_t, Args&&... args)
         : m_val(std::forward<Args>(args)...)
         , m_has_val(true) {}
@@ -443,12 +461,15 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+        detail::enable_if_t<
+          std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
       constexpr expected_storage_base(std::in_place_t, std::initializer_list<U> il, Args&&... args)
         : m_val(il, std::forward<Args>(args)...)
         , m_has_val(true) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
       constexpr explicit expected_storage_base(unexpect_t, Args&&... args)
         : m_unexpect(std::forward<Args>(args)...)
         , m_has_val(false) {}
@@ -456,8 +477,13 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
-      constexpr explicit expected_storage_base(unexpect_t, std::initializer_list<U> il, Args&&... args)
+        detail::enable_if_t<
+          std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      constexpr explicit expected_storage_base(
+        unexpect_t,
+        std::initializer_list<U> il,
+        Args&&... args
+      )
         : m_unexpect(il, std::forward<Args>(args)...)
         , m_has_val(false) {}
 
@@ -490,7 +516,9 @@ namespace rolly {
         : m_no_init()
         , m_has_val(false) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
       constexpr expected_storage_base(std::in_place_t, Args&&... args)
         : m_val(std::forward<Args>(args)...)
         , m_has_val(true) {}
@@ -498,12 +526,15 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+        detail::enable_if_t<
+          std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
       constexpr expected_storage_base(std::in_place_t, std::initializer_list<U> il, Args&&... args)
         : m_val(il, std::forward<Args>(args)...)
         , m_has_val(true) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
       constexpr explicit expected_storage_base(unexpect_t, Args&&... args)
         : m_unexpect(std::forward<Args>(args)...)
         , m_has_val(false) {}
@@ -511,8 +542,13 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
-      constexpr explicit expected_storage_base(unexpect_t, std::initializer_list<U> il, Args&&... args)
+        detail::enable_if_t<
+          std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      constexpr explicit expected_storage_base(
+        unexpect_t,
+        std::initializer_list<U> il,
+        Args&&... args
+      )
         : m_unexpect(il, std::forward<Args>(args)...)
         , m_has_val(false) {}
 
@@ -538,7 +574,9 @@ namespace rolly {
         : m_no_init()
         , m_has_val(false) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
       constexpr expected_storage_base(std::in_place_t, Args&&... args)
         : m_val(std::forward<Args>(args)...)
         , m_has_val(true) {}
@@ -546,12 +584,15 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+        detail::enable_if_t<
+          std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
       constexpr expected_storage_base(std::in_place_t, std::initializer_list<U> il, Args&&... args)
         : m_val(il, std::forward<Args>(args)...)
         , m_has_val(true) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
       constexpr explicit expected_storage_base(unexpect_t, Args&&... args)
         : m_unexpect(std::forward<Args>(args)...)
         , m_has_val(false) {}
@@ -559,8 +600,13 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
-      constexpr explicit expected_storage_base(unexpect_t, std::initializer_list<U> il, Args&&... args)
+        detail::enable_if_t<
+          std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      constexpr explicit expected_storage_base(
+        unexpect_t,
+        std::initializer_list<U> il,
+        Args&&... args
+      )
         : m_unexpect(il, std::forward<Args>(args)...)
         , m_has_val(false) {}
 
@@ -590,7 +636,9 @@ namespace rolly {
         : m_no_init()
         , m_has_val(false) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
       constexpr expected_storage_base(std::in_place_t, Args&&... args)
         : m_val(std::forward<Args>(args)...)
         , m_has_val(true) {}
@@ -598,12 +646,15 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+        detail::enable_if_t<
+          std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
       constexpr expected_storage_base(std::in_place_t, std::initializer_list<U> il, Args&&... args)
         : m_val(il, std::forward<Args>(args)...)
         , m_has_val(true) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
       constexpr explicit expected_storage_base(unexpect_t, Args&&... args)
         : m_unexpect(std::forward<Args>(args)...)
         , m_has_val(false) {}
@@ -611,8 +662,13 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
-      constexpr explicit expected_storage_base(unexpect_t, std::initializer_list<U> il, Args&&... args)
+        detail::enable_if_t<
+          std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      constexpr explicit expected_storage_base(
+        unexpect_t,
+        std::initializer_list<U> il,
+        Args&&... args
+      )
         : m_unexpect(il, std::forward<Args>(args)...)
         , m_has_val(false) {}
 
@@ -649,7 +705,9 @@ namespace rolly {
       constexpr expected_storage_base(std::in_place_t)
         : m_has_val(true) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
       constexpr explicit expected_storage_base(unexpect_t, Args&&... args)
         : m_unexpect(std::forward<Args>(args)...)
         , m_has_val(false) {}
@@ -657,8 +715,13 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
-      constexpr explicit expected_storage_base(unexpect_t, std::initializer_list<U> il, Args&&... args)
+        detail::enable_if_t<
+          std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      constexpr explicit expected_storage_base(
+        unexpect_t,
+        std::initializer_list<U> il,
+        Args&&... args
+      )
         : m_unexpect(il, std::forward<Args>(args)...)
         , m_has_val(false) {}
 
@@ -689,7 +752,9 @@ namespace rolly {
         : m_dummy()
         , m_has_val(true) {}
 
-      template <class... Args, detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
+      template <
+        class... Args,
+        detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
       constexpr explicit expected_storage_base(unexpect_t, Args&&... args)
         : m_unexpect(std::forward<Args>(args)...)
         , m_has_val(false) {}
@@ -697,8 +762,13 @@ namespace rolly {
       template <
         class U,
         class... Args,
-        detail::enable_if_t<std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
-      constexpr explicit expected_storage_base(unexpect_t, std::initializer_list<U> il, Args&&... args)
+        detail::enable_if_t<
+          std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      constexpr explicit expected_storage_base(
+        unexpect_t,
+        std::initializer_list<U> il,
+        Args&&... args
+      )
         : m_unexpect(il, std::forward<Args>(args)...)
         , m_has_val(false) {}
 
@@ -748,7 +818,9 @@ namespace rolly {
       //
       // This overload handles the case where we can just copy-construct `T`
       // directly into place without throwing.
-      template <class U = T, detail::enable_if_t<std::is_nothrow_copy_constructible<U>::value>* = nullptr>
+      template <
+        class U = T,
+        detail::enable_if_t<std::is_nothrow_copy_constructible<U>::value>* = nullptr>
       void assign(expected_operations_base const& rhs) noexcept {
         if(! this->m_has_val && rhs.m_has_val) {
           geterr().~unexpected<E>();
@@ -763,7 +835,8 @@ namespace rolly {
       template <
         class U = T,
         detail::enable_if_t<
-          ! std::is_nothrow_copy_constructible<U>::value && std::is_nothrow_move_constructible<U>::value>* = nullptr>
+          ! std::is_nothrow_copy_constructible<U>::value
+          && std::is_nothrow_move_constructible<U>::value>* = nullptr>
       void assign(expected_operations_base const& rhs) noexcept {
         if(! this->m_has_val && rhs.m_has_val) {
           T tmp = rhs.get();
@@ -782,7 +855,8 @@ namespace rolly {
       template <
         class U = T,
         detail::enable_if_t<
-          ! std::is_nothrow_copy_constructible<U>::value && ! std::is_nothrow_move_constructible<U>::value>* = nullptr>
+          ! std::is_nothrow_copy_constructible<U>::value
+          && ! std::is_nothrow_move_constructible<U>::value>* = nullptr>
       void assign(expected_operations_base const& rhs) {
         if(! this->m_has_val && rhs.m_has_val) {
           auto tmp = std::move(geterr());
@@ -804,7 +878,9 @@ namespace rolly {
       }
 
       // These overloads do the same as above, but for rvalues
-      template <class U = T, detail::enable_if_t<std::is_nothrow_move_constructible<U>::value>* = nullptr>
+      template <
+        class U = T,
+        detail::enable_if_t<std::is_nothrow_move_constructible<U>::value>* = nullptr>
       void assign(expected_operations_base&& rhs) noexcept {
         if(! this->m_has_val && rhs.m_has_val) {
           geterr().~unexpected<E>();
@@ -814,7 +890,9 @@ namespace rolly {
         }
       }
 
-      template <class U = T, detail::enable_if_t<! std::is_nothrow_move_constructible<U>::value>* = nullptr>
+      template <
+        class U = T,
+        detail::enable_if_t<! std::is_nothrow_move_constructible<U>::value>* = nullptr>
       void assign(expected_operations_base&& rhs) {
         if(! this->m_has_val && rhs.m_has_val) {
           auto tmp = std::move(geterr());
@@ -882,7 +960,7 @@ namespace rolly {
 
       TL_EXPECTED_11_CONSTEXPR T&& get() && { return std::move(this->m_val); }
 #  ifndef TL_EXPECTED_NO_CONSTRR
-      constexpr const T&& get() const&& { return std::move(this->m_val); }
+      constexpr T const&& get() const&& { return std::move(this->m_val); }
 #  endif
 
       TL_EXPECTED_11_CONSTEXPR unexpected<E>& geterr() & { return this->m_unexpect; }
@@ -891,7 +969,7 @@ namespace rolly {
 
       TL_EXPECTED_11_CONSTEXPR unexpected<E>&& geterr() && { return std::move(this->m_unexpect); }
 #  ifndef TL_EXPECTED_NO_CONSTRR
-      constexpr const unexpected<E>&& geterr() const&& { return std::move(this->m_unexpect); }
+      constexpr unexpected<E> const&& geterr() const&& { return std::move(this->m_unexpect); }
 #  endif
 
       TL_EXPECTED_11_CONSTEXPR void destroy_val() { get().~T(); }
@@ -945,7 +1023,7 @@ namespace rolly {
 
       TL_EXPECTED_11_CONSTEXPR unexpected<E>&& geterr() && { return std::move(this->m_unexpect); }
 #  ifndef TL_EXPECTED_NO_CONSTRR
-      constexpr const unexpected<E>&& geterr() const&& { return std::move(this->m_unexpect); }
+      constexpr unexpected<E> const&& geterr() const&& { return std::move(this->m_unexpect); }
 #  endif
 
       TL_EXPECTED_11_CONSTEXPR void destroy_val() {
@@ -958,8 +1036,8 @@ namespace rolly {
     template <
       class T,
       class E,
-      bool = is_void_or<T, TL_EXPECTED_IS_TRIVIALLY_COPY_CONSTRUCTIBLE(T)>::value &&
-             TL_EXPECTED_IS_TRIVIALLY_COPY_CONSTRUCTIBLE(E)::value>
+      bool = is_void_or<T, TL_EXPECTED_IS_TRIVIALLY_COPY_CONSTRUCTIBLE(T)>::value
+          && TL_EXPECTED_IS_TRIVIALLY_COPY_CONSTRUCTIBLE(E)::value>
     struct expected_copy_base : expected_operations_base<T, E> {
       using expected_operations_base<T, E>::expected_operations_base;
     };
@@ -994,8 +1072,8 @@ namespace rolly {
     template <
       class T,
       class E,
-      bool = is_void_or<T, std::is_trivially_move_constructible<T>>::value &&
-             std::is_trivially_move_constructible<E>::value>
+      bool = is_void_or<T, std::is_trivially_move_constructible<T>>::value
+          && std::is_trivially_move_constructible<E>::value>
     struct expected_move_base : expected_copy_base<T, E> {
       using expected_copy_base<T, E>::expected_copy_base;
     };
@@ -1010,7 +1088,8 @@ namespace rolly {
       expected_move_base() = default;
       expected_move_base(expected_move_base const& rhs) = default;
 
-      expected_move_base(expected_move_base&& rhs) noexcept(std::is_nothrow_move_constructible<T>::value)
+      expected_move_base(expected_move_base&& rhs
+      ) noexcept(std::is_nothrow_move_constructible<T>::value)
         : expected_copy_base<T, E>(no_init) {
         if(rhs.has_value()) {
           this->construct_with(std::move(rhs));
@@ -1032,9 +1111,10 @@ namespace rolly {
                conjunction<
                  TL_EXPECTED_IS_TRIVIALLY_COPY_ASSIGNABLE(T),
                  TL_EXPECTED_IS_TRIVIALLY_COPY_CONSTRUCTIBLE(T),
-                 TL_EXPECTED_IS_TRIVIALLY_DESTRUCTIBLE(T)>>::value &&
-             TL_EXPECTED_IS_TRIVIALLY_COPY_ASSIGNABLE(E)::value &&
-             TL_EXPECTED_IS_TRIVIALLY_COPY_CONSTRUCTIBLE(E)::value && TL_EXPECTED_IS_TRIVIALLY_DESTRUCTIBLE(E)::value>
+                 TL_EXPECTED_IS_TRIVIALLY_DESTRUCTIBLE(T)>>::value
+          && TL_EXPECTED_IS_TRIVIALLY_COPY_ASSIGNABLE(E)::value
+          && TL_EXPECTED_IS_TRIVIALLY_COPY_CONSTRUCTIBLE(E)::value
+          && TL_EXPECTED_IS_TRIVIALLY_DESTRUCTIBLE(E)::value>
     struct expected_copy_assign_base : expected_move_base<T, E> {
       using expected_move_base<T, E>::expected_move_base;
     };
@@ -1070,9 +1150,10 @@ namespace rolly {
                conjunction<
                  std::is_trivially_destructible<T>,
                  std::is_trivially_move_constructible<T>,
-                 std::is_trivially_move_assignable<T>>>::value &&
-             std::is_trivially_destructible<E>::value && std::is_trivially_move_constructible<E>::value &&
-             std::is_trivially_move_assignable<E>::value>
+                 std::is_trivially_move_assignable<T>>>::value
+          && std::is_trivially_destructible<E>::value
+          && std::is_trivially_move_constructible<E>::value
+          && std::is_trivially_move_assignable<E>::value>
     struct expected_move_assign_base : expected_copy_assign_base<T, E> {
       using expected_copy_assign_base<T, E>::expected_copy_assign_base;
     };
@@ -1092,8 +1173,9 @@ namespace rolly {
 
       expected_move_assign_base& operator=(expected_move_assign_base const& rhs) = default;
 
-      expected_move_assign_base& operator=(expected_move_assign_base&& rhs
-      ) noexcept(std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value) {
+      expected_move_assign_base& operator=(expected_move_assign_base&& rhs) noexcept(
+        std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value
+      ) {
         this->assign(std::move(rhs));
         return *this;
       }
@@ -1104,8 +1186,10 @@ namespace rolly {
     template <
       class T,
       class E,
-      bool EnableCopy = (is_copy_constructible_or_void<T>::value && std::is_copy_constructible<E>::value),
-      bool EnableMove = (is_move_constructible_or_void<T>::value && std::is_move_constructible<E>::value)>
+      bool EnableCopy =
+        (is_copy_constructible_or_void<T>::value && std::is_copy_constructible<E>::value),
+      bool EnableMove =
+        (is_move_constructible_or_void<T>::value && std::is_move_constructible<E>::value)>
     struct expected_delete_ctor_base {
       expected_delete_ctor_base() = default;
       expected_delete_ctor_base(expected_delete_ctor_base const&) = default;
@@ -1148,11 +1232,11 @@ namespace rolly {
       class T,
       class E,
       bool EnableCopy =
-        (is_copy_constructible_or_void<T>::value && std::is_copy_constructible<E>::value &&
-         is_copy_assignable_or_void<T>::value && std::is_copy_assignable<E>::value),
+        (is_copy_constructible_or_void<T>::value && std::is_copy_constructible<E>::value
+         && is_copy_assignable_or_void<T>::value && std::is_copy_assignable<E>::value),
       bool EnableMove =
-        (is_move_constructible_or_void<T>::value && std::is_move_constructible<E>::value &&
-         is_move_assignable_or_void<T>::value && std::is_move_assignable<E>::value)>
+        (is_move_constructible_or_void<T>::value && std::is_move_constructible<E>::value
+         && is_move_assignable_or_void<T>::value && std::is_move_assignable<E>::value)>
     struct expected_delete_assign_base {
       expected_delete_assign_base() = default;
       expected_delete_assign_base(expected_delete_assign_base const&) = default;
@@ -1197,7 +1281,10 @@ namespace rolly {
     // expected_default_ctor_base will ensure that expected has a deleted default
     // consturctor if T is not default constructible.
     // This specialization is for when T is default constructible
-    template <class T, class E, bool Enable = std::is_default_constructible<T>::value || std::is_void<T>::value>
+    template <
+      class T,
+      class E,
+      bool Enable = std::is_default_constructible<T>::value || std::is_void<T>::value>
     struct expected_default_ctor_base {
       constexpr expected_default_ctor_base() noexcept = default;
       constexpr expected_default_ctor_base(expected_default_ctor_base const&) noexcept = default;
@@ -1254,8 +1341,14 @@ namespace rolly {
                    private detail::expected_delete_assign_base<T, E>,
                    private detail::expected_default_ctor_base<T, E> {
     static_assert(! std::is_reference<T>::value, "T must not be a reference");
-    static_assert(! std::is_same<T, std::remove_cv<std::in_place_t>::type>::value, "T must not be in_place_t");
-    static_assert(! std::is_same<T, std::remove_cv<unexpect_t>::type>::value, "T must not be unexpect_t");
+    static_assert(
+      ! std::is_same<T, std::remove_cv<std::in_place_t>::type>::value,
+      "T must not be in_place_t"
+    );
+    static_assert(
+      ! std::is_same<T, std::remove_cv<unexpect_t>::type>::value,
+      "T must not be unexpect_t"
+    );
     static_assert(
       ! std::is_same<T, typename std::remove_cv<unexpected<E>>::type>::value,
       "T must not be unexpected<E>"
@@ -1292,8 +1385,8 @@ namespace rolly {
     typedef E error_type;
     typedef unexpected<E> unexpected_type;
 
-#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) && \
-    ! defined(TL_EXPECTED_GCC55)
+#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) \
+    && ! defined(TL_EXPECTED_GCC55)
     template <class F>
     TL_EXPECTED_11_CONSTEXPR auto and_then(F&& f) & {
       return and_then_impl(*this, std::forward<F>(f));
@@ -1330,8 +1423,8 @@ namespace rolly {
     }
 
     template <class F>
-    constexpr auto and_then(F&& f) const& -> decltype(and_then_impl(std::declval<expected const&>(), std::forward<F>(f))
-                                          ) {
+    constexpr auto and_then(F&& f
+    ) const& -> decltype(and_then_impl(std::declval<expected const&>(), std::forward<F>(f))) {
       return and_then_impl(*this, std::forward<F>(f));
     }
 
@@ -1344,8 +1437,8 @@ namespace rolly {
 #    endif
 #  endif
 
-#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) && \
-    ! defined(TL_EXPECTED_GCC55)
+#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) \
+    && ! defined(TL_EXPECTED_GCC55)
     template <class F>
     TL_EXPECTED_11_CONSTEXPR auto map(F&& f) & {
       return expected_map_impl(*this, std::forward<F>(f));
@@ -1367,30 +1460,38 @@ namespace rolly {
     }
 #  else
     template <class F>
-    TL_EXPECTED_11_CONSTEXPR decltype(expected_map_impl(std::declval<expected&>(), std::declval<F&&>())) map(F&& f) & {
+    TL_EXPECTED_11_CONSTEXPR decltype(expected_map_impl(
+      std::declval<expected&>(),
+      std::declval<F&&>()
+    )) map(F&& f) & {
       return expected_map_impl(*this, std::forward<F>(f));
     }
 
     template <class F>
-    TL_EXPECTED_11_CONSTEXPR decltype(expected_map_impl(std::declval<expected>(), std::declval<F&&>())) map(F&& f) && {
+    TL_EXPECTED_11_CONSTEXPR decltype(expected_map_impl(
+      std::declval<expected>(),
+      std::declval<F&&>()
+    )) map(F&& f) && {
       return expected_map_impl(std::move(*this), std::forward<F>(f));
     }
 
     template <class F>
-    constexpr decltype(expected_map_impl(std::declval<expected const&>(), std::declval<F&&>())) map(F&& f) const& {
+    constexpr decltype(expected_map_impl(std::declval<expected const&>(), std::declval<F&&>())
+    ) map(F&& f) const& {
       return expected_map_impl(*this, std::forward<F>(f));
     }
 
 #    ifndef TL_EXPECTED_NO_CONSTRR
     template <class F>
-    constexpr decltype(expected_map_impl(std::declval<const expected&&>(), std::declval<F&&>())) map(F&& f) const&& {
+    constexpr decltype(expected_map_impl(std::declval<expected const&&>(), std::declval<F&&>())
+    ) map(F&& f) const&& {
       return expected_map_impl(std::move(*this), std::forward<F>(f));
     }
 #    endif
 #  endif
 
-#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) && \
-    ! defined(TL_EXPECTED_GCC55)
+#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) \
+    && ! defined(TL_EXPECTED_GCC55)
     template <class F>
     TL_EXPECTED_11_CONSTEXPR auto transform(F&& f) & {
       return expected_map_impl(*this, std::forward<F>(f));
@@ -1412,34 +1513,38 @@ namespace rolly {
     }
 #  else
     template <class F>
-    TL_EXPECTED_11_CONSTEXPR decltype(expected_map_impl(std::declval<expected&>(), std::declval<F&&>())) transform(F&& f
-    ) & {
+    TL_EXPECTED_11_CONSTEXPR decltype(expected_map_impl(
+      std::declval<expected&>(),
+      std::declval<F&&>()
+    )) transform(F&& f) & {
       return expected_map_impl(*this, std::forward<F>(f));
     }
 
     template <class F>
-    TL_EXPECTED_11_CONSTEXPR decltype(expected_map_impl(std::declval<expected>(), std::declval<F&&>())) transform(F&& f
-    ) && {
+    TL_EXPECTED_11_CONSTEXPR decltype(expected_map_impl(
+      std::declval<expected>(),
+      std::declval<F&&>()
+    )) transform(F&& f) && {
       return expected_map_impl(std::move(*this), std::forward<F>(f));
     }
 
     template <class F>
-    constexpr decltype(expected_map_impl(std::declval<expected const&>(), std::declval<F&&>())) transform(F&& f
-    ) const& {
+    constexpr decltype(expected_map_impl(std::declval<expected const&>(), std::declval<F&&>())
+    ) transform(F&& f) const& {
       return expected_map_impl(*this, std::forward<F>(f));
     }
 
 #    ifndef TL_EXPECTED_NO_CONSTRR
     template <class F>
-    constexpr decltype(expected_map_impl(std::declval<const expected&&>(), std::declval<F&&>())) transform(F&& f
-    ) const&& {
+    constexpr decltype(expected_map_impl(std::declval<expected const&&>(), std::declval<F&&>())
+    ) transform(F&& f) const&& {
       return expected_map_impl(std::move(*this), std::forward<F>(f));
     }
 #    endif
 #  endif
 
-#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) && \
-    ! defined(TL_EXPECTED_GCC55)
+#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) \
+    && ! defined(TL_EXPECTED_GCC55)
     template <class F>
     TL_EXPECTED_11_CONSTEXPR auto map_error(F&& f) & {
       return map_error_impl(*this, std::forward<F>(f));
@@ -1461,31 +1566,35 @@ namespace rolly {
     }
 #  else
     template <class F>
-    TL_EXPECTED_11_CONSTEXPR decltype(map_error_impl(std::declval<expected&>(), std::declval<F&&>())) map_error(F&& f
-    ) & {
+    TL_EXPECTED_11_CONSTEXPR decltype(map_error_impl(std::declval<expected&>(), std::declval<F&&>())
+    ) map_error(F&& f) & {
       return map_error_impl(*this, std::forward<F>(f));
     }
 
     template <class F>
-    TL_EXPECTED_11_CONSTEXPR decltype(map_error_impl(std::declval<expected&&>(), std::declval<F&&>())) map_error(F&& f
-    ) && {
+    TL_EXPECTED_11_CONSTEXPR decltype(map_error_impl(
+      std::declval<expected&&>(),
+      std::declval<F&&>()
+    )) map_error(F&& f) && {
       return map_error_impl(std::move(*this), std::forward<F>(f));
     }
 
     template <class F>
-    constexpr decltype(map_error_impl(std::declval<expected const&>(), std::declval<F&&>())) map_error(F&& f) const& {
+    constexpr decltype(map_error_impl(std::declval<expected const&>(), std::declval<F&&>())
+    ) map_error(F&& f) const& {
       return map_error_impl(*this, std::forward<F>(f));
     }
 
 #    ifndef TL_EXPECTED_NO_CONSTRR
     template <class F>
-    constexpr decltype(map_error_impl(std::declval<const expected&&>(), std::declval<F&&>())) map_error(F&& f) const&& {
+    constexpr decltype(map_error_impl(std::declval<expected const&&>(), std::declval<F&&>())
+    ) map_error(F&& f) const&& {
       return map_error_impl(std::move(*this), std::forward<F>(f));
     }
 #    endif
 #  endif
-#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) && \
-    ! defined(TL_EXPECTED_GCC55)
+#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) \
+    && ! defined(TL_EXPECTED_GCC55)
     template <class F>
     TL_EXPECTED_11_CONSTEXPR auto transform_error(F&& f) & {
       return map_error_impl(*this, std::forward<F>(f));
@@ -1513,21 +1622,23 @@ namespace rolly {
     }
 
     template <class F>
-    TL_EXPECTED_11_CONSTEXPR decltype(map_error_impl(std::declval<expected&&>(), std::declval<F&&>())
-    ) transform_error(F&& f) && {
+    TL_EXPECTED_11_CONSTEXPR decltype(map_error_impl(
+      std::declval<expected&&>(),
+      std::declval<F&&>()
+    )) transform_error(F&& f) && {
       return map_error_impl(std::move(*this), std::forward<F>(f));
     }
 
     template <class F>
-    constexpr decltype(map_error_impl(std::declval<expected const&>(), std::declval<F&&>())) transform_error(F&& f
-    ) const& {
+    constexpr decltype(map_error_impl(std::declval<expected const&>(), std::declval<F&&>())
+    ) transform_error(F&& f) const& {
       return map_error_impl(*this, std::forward<F>(f));
     }
 
 #    ifndef TL_EXPECTED_NO_CONSTRR
     template <class F>
-    constexpr decltype(map_error_impl(std::declval<const expected&&>(), std::declval<F&&>())) transform_error(F&& f
-    ) const&& {
+    constexpr decltype(map_error_impl(std::declval<expected const&&>(), std::declval<F&&>())
+    ) transform_error(F&& f) const&& {
       return map_error_impl(std::move(*this), std::forward<F>(f));
     }
 #    endif
@@ -1559,7 +1670,9 @@ namespace rolly {
     expected& operator=(expected const& rhs) = default;
     expected& operator=(expected&& rhs) = default;
 
-    template <class... Args, detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
+    template <
+      class... Args,
+      detail::enable_if_t<std::is_constructible<T, Args&&...>::value>* = nullptr>
     constexpr expected(std::in_place_t, Args&&... args)
       : impl_base(std::in_place, std::forward<Args>(args)...)
       , ctor_base(detail::default_constructor_tag {}) {}
@@ -1567,7 +1680,8 @@ namespace rolly {
     template <
       class U,
       class... Args,
-      detail::enable_if_t<std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      detail::enable_if_t<std::is_constructible<T, std::initializer_list<U>&, Args&&...>::value>* =
+        nullptr>
     constexpr expected(std::in_place_t, std::initializer_list<U> il, Args&&... args)
       : impl_base(std::in_place, il, std::forward<Args>(args)...)
       , ctor_base(detail::default_constructor_tag {}) {}
@@ -1592,7 +1706,8 @@ namespace rolly {
       class G = E,
       detail::enable_if_t<std::is_constructible<E, G&&>::value>* = nullptr,
       detail::enable_if_t<! std::is_convertible<G&&, E>::value>* = nullptr>
-    explicit constexpr expected(unexpected<G>&& e) noexcept(std::is_nothrow_constructible<E, G&&>::value)
+    explicit constexpr expected(unexpected<G>&& e
+    ) noexcept(std::is_nothrow_constructible<E, G&&>::value)
       : impl_base(unexpect, std::move(e.value()))
       , ctor_base(detail::default_constructor_tag {}) {}
 
@@ -1604,7 +1719,9 @@ namespace rolly {
       : impl_base(unexpect, std::move(e.value()))
       , ctor_base(detail::default_constructor_tag {}) {}
 
-    template <class... Args, detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
+    template <
+      class... Args,
+      detail::enable_if_t<std::is_constructible<E, Args&&...>::value>* = nullptr>
     constexpr explicit expected(unexpect_t, Args&&... args)
       : impl_base(unexpect, std::forward<Args>(args)...)
       , ctor_base(detail::default_constructor_tag {}) {}
@@ -1612,7 +1729,8 @@ namespace rolly {
     template <
       class U,
       class... Args,
-      detail::enable_if_t<std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      detail::enable_if_t<std::is_constructible<E, std::initializer_list<U>&, Args&&...>::value>* =
+        nullptr>
     constexpr explicit expected(unexpect_t, std::initializer_list<U> il, Args&&... args)
       : impl_base(unexpect, il, std::forward<Args>(args)...)
       , ctor_base(detail::default_constructor_tag {}) {}
@@ -1620,7 +1738,8 @@ namespace rolly {
     template <
       class U,
       class G,
-      detail::enable_if_t<! (std::is_convertible<U const&, T>::value && std::is_convertible<G const&, E>::value)>* =
+      detail::enable_if_t<
+        ! (std::is_convertible<U const&, T>::value && std::is_convertible<G const&, E>::value)>* =
         nullptr,
       detail::expected_enable_from_other<T, E, U, G, U const&, G const&>* = nullptr>
     explicit TL_EXPECTED_11_CONSTEXPR expected(expected<U, G> const& rhs)
@@ -1635,7 +1754,8 @@ namespace rolly {
     template <
       class U,
       class G,
-      detail::enable_if_t<(std::is_convertible<U const&, T>::value && std::is_convertible<G const&, E>::value)>* =
+      detail::enable_if_t<
+        (std::is_convertible<U const&, T>::value && std::is_convertible<G const&, E>::value)>* =
         nullptr,
       detail::expected_enable_from_other<T, E, U, G, U const&, G const&>* = nullptr>
     TL_EXPECTED_11_CONSTEXPR expected(expected<U, G> const& rhs)
@@ -1650,7 +1770,8 @@ namespace rolly {
     template <
       class U,
       class G,
-      detail::enable_if_t<! (std::is_convertible<U&&, T>::value && std::is_convertible<G&&, E>::value)>* = nullptr,
+      detail::enable_if_t<
+        ! (std::is_convertible<U&&, T>::value && std::is_convertible<G&&, E>::value)>* = nullptr,
       detail::expected_enable_from_other<T, E, U, G, U&&, G&&>* = nullptr>
     explicit TL_EXPECTED_11_CONSTEXPR expected(expected<U, G>&& rhs)
       : ctor_base(detail::default_constructor_tag {}) {
@@ -1664,7 +1785,8 @@ namespace rolly {
     template <
       class U,
       class G,
-      detail::enable_if_t<(std::is_convertible<U&&, T>::value && std::is_convertible<G&&, E>::value)>* = nullptr,
+      detail::enable_if_t<
+        (std::is_convertible<U&&, T>::value && std::is_convertible<G&&, E>::value)>* = nullptr,
       detail::expected_enable_from_other<T, E, U, G, U&&, G&&>* = nullptr>
     TL_EXPECTED_11_CONSTEXPR expected(expected<U, G>&& rhs)
       : ctor_base(detail::default_constructor_tag {}) {
@@ -1695,10 +1817,10 @@ namespace rolly {
       detail::enable_if_t<std::is_nothrow_constructible<T, U&&>::value>* = nullptr,
       detail::enable_if_t<! std::is_void<G>::value>* = nullptr,
       detail::enable_if_t<
-        (! std::is_same<expected<T, E>, detail::decay_t<U>>::value &&
-         ! detail::conjunction<std::is_scalar<T>, std::is_same<T, detail::decay_t<U>>>::value &&
-         std::is_constructible<T, U>::value && std::is_assignable<G&, U>::value &&
-         std::is_nothrow_move_constructible<E>::value)>* = nullptr>
+        (! std::is_same<expected<T, E>, detail::decay_t<U>>::value
+         && ! detail::conjunction<std::is_scalar<T>, std::is_same<T, detail::decay_t<U>>>::value
+         && std::is_constructible<T, U>::value && std::is_assignable<G&, U>::value
+         && std::is_nothrow_move_constructible<E>::value)>* = nullptr>
     expected& operator=(U&& v) {
       if(has_value()) {
         val() = std::forward<U>(v);
@@ -1717,10 +1839,10 @@ namespace rolly {
       detail::enable_if_t<! std::is_nothrow_constructible<T, U&&>::value>* = nullptr,
       detail::enable_if_t<! std::is_void<U>::value>* = nullptr,
       detail::enable_if_t<
-        (! std::is_same<expected<T, E>, detail::decay_t<U>>::value &&
-         ! detail::conjunction<std::is_scalar<T>, std::is_same<T, detail::decay_t<U>>>::value &&
-         std::is_constructible<T, U>::value && std::is_assignable<G&, U>::value &&
-         std::is_nothrow_move_constructible<E>::value)>* = nullptr>
+        (! std::is_same<expected<T, E>, detail::decay_t<U>>::value
+         && ! detail::conjunction<std::is_scalar<T>, std::is_same<T, detail::decay_t<U>>>::value
+         && std::is_constructible<T, U>::value && std::is_assignable<G&, U>::value
+         && std::is_nothrow_move_constructible<E>::value)>* = nullptr>
     expected& operator=(U&& v) {
       if(has_value()) {
         val() = std::forward<U>(v);
@@ -1747,7 +1869,9 @@ namespace rolly {
 
     template <
       class G = E,
-      detail::enable_if_t<std::is_nothrow_copy_constructible<G>::value && std::is_assignable<G&, G>::value>* = nullptr>
+      detail::enable_if_t<
+        std::is_nothrow_copy_constructible<G>::value && std::is_assignable<G&, G>::value>* =
+        nullptr>
     expected& operator=(unexpected<G> const& rhs) {
       if(! has_value()) {
         err() = rhs;
@@ -1762,7 +1886,9 @@ namespace rolly {
 
     template <
       class G = E,
-      detail::enable_if_t<std::is_nothrow_move_constructible<G>::value && std::is_move_assignable<G>::value>* = nullptr>
+      detail::enable_if_t<
+        std::is_nothrow_move_constructible<G>::value && std::is_move_assignable<G>::value>* =
+        nullptr>
     expected& operator=(unexpected<G>&& rhs) noexcept {
       if(! has_value()) {
         err() = std::move(rhs);
@@ -1775,7 +1901,9 @@ namespace rolly {
       return *this;
     }
 
-    template <class... Args, detail::enable_if_t<std::is_nothrow_constructible<T, Args&&...>::value>* = nullptr>
+    template <
+      class... Args,
+      detail::enable_if_t<std::is_nothrow_constructible<T, Args&&...>::value>* = nullptr>
     void emplace(Args&&... args) {
       if(has_value()) {
         val().~T();
@@ -1786,7 +1914,9 @@ namespace rolly {
       ::new(valptr()) T(std::forward<Args>(args)...);
     }
 
-    template <class... Args, detail::enable_if_t<! std::is_nothrow_constructible<T, Args&&...>::value>* = nullptr>
+    template <
+      class... Args,
+      detail::enable_if_t<! std::is_nothrow_constructible<T, Args&&...>::value>* = nullptr>
     void emplace(Args&&... args) {
       if(has_value()) {
         val().~T();
@@ -1813,7 +1943,8 @@ namespace rolly {
     template <
       class U,
       class... Args,
-      detail::enable_if_t<std::is_nothrow_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      detail::enable_if_t<
+        std::is_nothrow_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
     void emplace(std::initializer_list<U> il, Args&&... args) {
       if(has_value()) {
         T t(il, std::forward<Args>(args)...);
@@ -1828,7 +1959,8 @@ namespace rolly {
     template <
       class U,
       class... Args,
-      detail::enable_if_t<! std::is_nothrow_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
+      detail::enable_if_t<
+        ! std::is_nothrow_constructible<T, std::initializer_list<U>&, Args&&...>::value>* = nullptr>
     void emplace(std::initializer_list<U> il, Args&&... args) {
       if(has_value()) {
         T t(il, std::forward<Args>(args)...);
@@ -1869,7 +2001,8 @@ namespace rolly {
       swap(val(), rhs.val());
     }
 
-    void swap_where_only_one_has_value(expected& rhs, t_is_void) noexcept(std::is_nothrow_move_constructible<E>::value
+    void swap_where_only_one_has_value(expected& rhs, t_is_void) noexcept(
+      std::is_nothrow_move_constructible<E>::value
     ) {
       ::new(errptr()) unexpected_type(std::move(rhs.err()));
       rhs.err().~unexpected_type();
@@ -1950,11 +2083,11 @@ namespace rolly {
    public:
     template <class OT = T, class OE = E>
     detail::enable_if_t<
-      detail::is_swappable<OT>::value && detail::is_swappable<OE>::value &&
-      (std::is_nothrow_move_constructible<OT>::value || std::is_nothrow_move_constructible<OE>::value)>
+      detail::is_swappable<OT>::value && detail::is_swappable<OE>::value
+      && (std::is_nothrow_move_constructible<OT>::value || std::is_nothrow_move_constructible<OE>::value)>
       swap(expected& rhs) noexcept(
-        std::is_nothrow_move_constructible<T>::value && detail::is_nothrow_swappable<T>::value &&
-        std::is_nothrow_move_constructible<E>::value && detail::is_nothrow_swappable<E>::value
+        std::is_nothrow_move_constructible<T>::value && detail::is_nothrow_swappable<T>::value
+        && std::is_nothrow_move_constructible<E>::value && detail::is_nothrow_swappable<E>::value
       ) {
       if(has_value() && rhs.has_value()) {
         swap_where_both_have_value(rhs, typename std::is_void<T>::type {});
@@ -2102,7 +2235,8 @@ namespace rolly {
     constexpr auto and_then_impl(Exp&& exp, F&& f) {
       static_assert(detail::is_expected<Ret>::value, "F must return an expected");
 
-      return exp.has_value() ? detail::invoke(std::forward<F>(f)) : Ret(unexpect, std::forward<Exp>(exp).error());
+      return exp.has_value() ? detail::invoke(std::forward<F>(f))
+                             : Ret(unexpect, std::forward<Exp>(exp).error());
     }
 #  else
     template <class>
@@ -2128,7 +2262,8 @@ namespace rolly {
     constexpr auto and_then_impl(Exp&& exp, F&& f) -> Ret {
       static_assert(detail::is_expected<Ret>::value, "F must return an expected");
 
-      return exp.has_value() ? detail::invoke(std::forward<F>(f)) : Ret(unexpect, std::forward<Exp>(exp).error());
+      return exp.has_value() ? detail::invoke(std::forward<F>(f))
+                             : Ret(unexpect, std::forward<Exp>(exp).error());
     }
 #  endif
 
@@ -2250,8 +2385,8 @@ namespace rolly {
     }
 #  endif
 
-#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) && \
-    ! defined(TL_EXPECTED_GCC55)
+#  if defined(TL_EXPECTED_CXX14) && ! defined(TL_EXPECTED_GCC49) && ! defined(TL_EXPECTED_GCC54) \
+    && ! defined(TL_EXPECTED_GCC55)
     template <
       class Exp,
       class F,
@@ -2260,8 +2395,9 @@ namespace rolly {
       detail::enable_if_t<! std::is_void<Ret>::value>* = nullptr>
     constexpr auto map_error_impl(Exp&& exp, F&& f) {
       using result = expected<exp_t<Exp>, detail::decay_t<Ret>>;
-      return exp.has_value() ? result(*std::forward<Exp>(exp))
-                             : result(unexpect, detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()));
+      return exp.has_value()
+             ? result(*std::forward<Exp>(exp))
+             : result(unexpect, detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()));
     }
 
     template <
@@ -2288,8 +2424,9 @@ namespace rolly {
       detail::enable_if_t<! std::is_void<Ret>::value>* = nullptr>
     constexpr auto map_error_impl(Exp&& exp, F&& f) {
       using result = expected<exp_t<Exp>, detail::decay_t<Ret>>;
-      return exp.has_value() ? result()
-                             : result(unexpect, detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()));
+      return exp.has_value()
+             ? result()
+             : result(unexpect, detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()));
     }
 
     template <
@@ -2317,8 +2454,9 @@ namespace rolly {
     constexpr auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, detail::decay_t<Ret>> {
       using result = expected<exp_t<Exp>, detail::decay_t<Ret>>;
 
-      return exp.has_value() ? result(*std::forward<Exp>(exp))
-                             : result(unexpect, detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()));
+      return exp.has_value()
+             ? result(*std::forward<Exp>(exp))
+             : result(unexpect, detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()));
     }
 
     template <
@@ -2346,8 +2484,9 @@ namespace rolly {
     constexpr auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, detail::decay_t<Ret>> {
       using result = expected<exp_t<Exp>, detail::decay_t<Ret>>;
 
-      return exp.has_value() ? result()
-                             : result(unexpect, detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()));
+      return exp.has_value()
+             ? result()
+             : result(unexpect, detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()));
     }
 
     template <
@@ -2385,9 +2524,9 @@ namespace rolly {
       class Ret = decltype(detail::invoke(std::declval<F>(), std::declval<Exp>().error())),
       detail::enable_if_t<std::is_void<Ret>::value>* = nullptr>
     detail::decay_t<Exp> or_else_impl(Exp&& exp, F&& f) {
-      return exp.has_value()
-             ? std::forward<Exp>(exp)
-             : (detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()), std::forward<Exp>(exp));
+      return exp.has_value() ? std::forward<Exp>(exp)
+                             : (detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()),
+                                std::forward<Exp>(exp));
     }
 #  else
     template <
@@ -2407,33 +2546,39 @@ namespace rolly {
       class Ret = decltype(detail::invoke(std::declval<F>(), std::declval<Exp>().error())),
       detail::enable_if_t<std::is_void<Ret>::value>* = nullptr>
     detail::decay_t<Exp> or_else_impl(Exp&& exp, F&& f) {
-      return exp.has_value()
-             ? std::forward<Exp>(exp)
-             : (detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()), std::forward<Exp>(exp));
+      return exp.has_value() ? std::forward<Exp>(exp)
+                             : (detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error()),
+                                std::forward<Exp>(exp));
     }
 #  endif
   }  // namespace detail
 
   template <class T, class E, class U, class F>
   constexpr bool operator==(expected<T, E> const& lhs, expected<U, F> const& rhs) {
-    return (lhs.has_value() != rhs.has_value()) ? false
-                                                : (! lhs.has_value() ? lhs.error() == rhs.error() : *lhs == *rhs);
+    return (lhs.has_value() != rhs.has_value())
+           ? false
+           : (! lhs.has_value() ? lhs.error() == rhs.error() : *lhs == *rhs);
   }
 
   template <class T, class E, class U, class F>
   constexpr bool operator!=(expected<T, E> const& lhs, expected<U, F> const& rhs) {
-    return (lhs.has_value() != rhs.has_value()) ? true
-                                                : (! lhs.has_value() ? lhs.error() != rhs.error() : *lhs != *rhs);
+    return (lhs.has_value() != rhs.has_value())
+           ? true
+           : (! lhs.has_value() ? lhs.error() != rhs.error() : *lhs != *rhs);
   }
 
   template <class E, class F>
   constexpr bool operator==(expected<void, E> const& lhs, expected<void, F> const& rhs) {
-    return (lhs.has_value() != rhs.has_value()) ? false : (! lhs.has_value() ? lhs.error() == rhs.error() : true);
+    return (lhs.has_value() != rhs.has_value())
+           ? false
+           : (! lhs.has_value() ? lhs.error() == rhs.error() : true);
   }
 
   template <class E, class F>
   constexpr bool operator!=(expected<void, E> const& lhs, expected<void, F> const& rhs) {
-    return (lhs.has_value() != rhs.has_value()) ? true : (! lhs.has_value() ? lhs.error() == rhs.error() : false);
+    return (lhs.has_value() != rhs.has_value())
+           ? true
+           : (! lhs.has_value() ? lhs.error() == rhs.error() : false);
   }
 
   template <class T, class E, class U>
@@ -2480,8 +2625,9 @@ namespace rolly {
     class T,
     class E,
     detail::enable_if_t<
-      (std::is_void<T>::value || std::is_move_constructible<T>::value) && detail::is_swappable<T>::value &&
-      std::is_move_constructible<E>::value && detail::is_swappable<E>::value>* = nullptr>
+      (std::is_void<T>::value || std::is_move_constructible<T>::value)
+      && detail::is_swappable<T>::value && std::is_move_constructible<E>::value
+      && detail::is_swappable<E>::value>* = nullptr>
   void swap(expected<T, E>& lhs, expected<T, E>& rhs) noexcept(noexcept(lhs.swap(rhs))) {
     lhs.swap(rhs);
   }
@@ -2507,8 +2653,11 @@ namespace rolly {
      * @return An `unexpected` object containing the formatted error message.
      */
     template <typename... Args>
-    [[nodiscard]] unexpected<std::decay_t<std::string>> error(std::string_view format, Args&&... args) {
-      return unexpected<std::decay_t<std::string>>(fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
+    [[nodiscard]] unexpected<std::decay_t<std::string>>
+      error(std::string_view format, Args&&... args) {
+      return unexpected<std::decay_t<std::string>>(
+        fmt::format(fmt::runtime(format), std::forward<Args>(args)...)
+      );
     }
 
     /**

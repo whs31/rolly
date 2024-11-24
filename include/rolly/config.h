@@ -15,9 +15,10 @@ namespace rolly {
 
   /**
    * @brief Configuration file that can be loaded and saved.
-   * @details This class is used to store configuration values in a configuration file in given format.
-   * Accepts any type that implements @ref rolly::serialization::serializable_and_deserializable with character type
-   * <code>char</code> and given format.
+   * @details This class is used to store configuration values in a configuration file in given
+   * format. Accepts any type that implements @ref
+   * rolly::serialization::serializable_and_deserializable with character type <code>char</code> and
+   * given format.
    *
    * Example usage:
    * @code {.cpp}
@@ -36,12 +37,12 @@ namespace rolly {
    *   } ip_address = { .ip = "127.0.0.1", .port = 25565 };
    * };
    * template <>
-   * auto rolly::serialization::serialize<fl::serialization::format::toml>(DummyConfiguration const& value) ->
-   * std::basic_string<char> { / implementation / }
+   * auto rolly::serialization::serialize<fl::serialization::format::toml>(DummyConfiguration const&
+   * value) -> std::basic_string<char> { / implementation / }
    *
    * template <>
-   * auto rolly::serialization::deserialize<fl::serialization::format::toml>(std::basic_string<char> const& value) ->
-   * DummyConfiguration { / implementation / }
+   * auto rolly::serialization::deserialize<fl::serialization::format::toml>(std::basic_string<char>
+   * const& value) -> DummyConfiguration { / implementation / }
    *
    * auto main() -> int
    * {
@@ -65,7 +66,8 @@ namespace rolly {
    *   return 0;
    * }
    * @endcode
-   * @tparam F Format type. Must be value of tag \ref rolly::serialization::format or your own format tag.
+   * @tparam F Format type. Must be value of tag \ref rolly::serialization::format or your own
+   * format tag.
    * @tparam T Type to serialize and deserialize. Must implement \ref
    * rolly::serialization::serializable_and_deserializable with character type <code>char</code>.
    * @see rolly::serialization::format
@@ -81,8 +83,8 @@ namespace rolly {
    public:
     /**
      * @brief Creates or loads configuration file from given path with saving policy.
-     * @note This constructor will not throw any error, but will return an invalid configuration file.
-     * Don't forget to check if configuration file is valid before using it.
+     * @note This constructor will not throw any error, but will return an invalid configuration
+     * file. Don't forget to check if configuration file is valid before using it.
      * @param path Path to configuration file.
      * @param policy Saving policy.
      * @see saving_policy
@@ -102,15 +104,19 @@ namespace rolly {
 
     /**
      * @brief Creates or loads configuration file from given path and folder with saving policy.
-     * @note This constructor will not throw any error, but will return an invalid configuration file.
-     * Don't forget to check if configuration file is valid before using it.
+     * @note This constructor will not throw any error, but will return an invalid configuration
+     * file. Don't forget to check if configuration file is valid before using it.
      * @param filename Filename of configuration file.
      * @param folder Folder where configuration file is located.
      * @param policy Saving policy.
      * @see saving_policy
      * @see valid
      */
-    explicit configuration_file(std::string_view filename, std::filesystem::path const& folder, saving_policy policy)
+    explicit configuration_file(
+      std::string_view filename,
+      std::filesystem::path const& folder,
+      saving_policy policy
+    )
       : configuration_file(folder / filename, policy) {}
 
     configuration_file(configuration_file const&) = default;
@@ -118,7 +124,8 @@ namespace rolly {
 
     /**
      * @brief Closes configuration file.
-     * @details If saving policy is set to @ref saving_policy::autosave, file will be saved automatically on closing.
+     * @details If saving policy is set to @ref saving_policy::autosave, file will be saved
+     * automatically on closing.
      */
     virtual ~configuration_file() noexcept {
       if(this->saving_policy() == saving_policy::autosave) {
@@ -212,7 +219,7 @@ namespace rolly {
      * @see values_mut
      */
     [[nodiscard]] T& operator()() { return this->values_; }
-    
+
     configuration_file& operator=(configuration_file const&) = default;
     configuration_file& operator=(configuration_file&&) = default;
 
