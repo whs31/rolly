@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structrolly_1_1plain__type" kind="struct" language="C++" prot="public">
     <compoundname>rolly::plain_type</compoundname>
-    <includes refid="type__traits_8h" local="no">type_traits.h</includes>
+    <includes refid="type__traits_8h" local="no">rolly/type_traits.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/type_traits.h" line="46" column="5" bodyfile="include/rolly/type_traits.h" bodystart="46" bodyend="-1"/>
+        <location file="rolly/type_traits.h" line="49" column="5" bodyfile="rolly/type_traits.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="structrolly_1_1plain__type_1a60926b56740fc6359cc46e3cc51f9289" prot="public" static="no">
         <type>std::add_const_t&lt; <ref refid="structrolly_1_1plain__type_1a277016564351770d54aaf0b63c7acfe4" kindref="member">type</ref> &gt;</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/type_traits.h" line="51" column="5" bodyfile="include/rolly/type_traits.h" bodystart="51" bodyend="-1"/>
+        <location file="rolly/type_traits.h" line="54" column="5" bodyfile="rolly/type_traits.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -69,7 +69,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/type_traits.h" line="42" column="19" bodyfile="include/rolly/type_traits.h" bodystart="42" bodyend="52"/>
+    <location file="rolly/type_traits.h" line="45" column="19" bodyfile="rolly/type_traits.h" bodystart="45" bodyend="55"/>
     <listofallmembers>
       <member refid="structrolly_1_1plain__type_1a60926b56740fc6359cc46e3cc51f9289" prot="public" virt="non-virtual"><scope>rolly::plain_type</scope><name>const_type</name></member>
       <member refid="structrolly_1_1plain__type_1a277016564351770d54aaf0b63c7acfe4" prot="public" virt="non-virtual"><scope>rolly::plain_type</scope><name>type</name></member>

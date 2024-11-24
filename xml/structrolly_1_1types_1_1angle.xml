@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structrolly_1_1types_1_1angle" kind="struct" language="C++" prot="public">
     <compoundname>rolly::types::angle</compoundname>
-    <includes refid="angle_8h" local="no">angle.h</includes>
+    <includes refid="angle_8h" local="no">rolly/types/angle.h</includes>
     <templateparamlist>
       <param>
         <type><ref refid="namespacerolly_1_1concepts_1aea9bb2c4075cdbbe6ae4d3b6eef46cda" kindref="member">concepts::num</ref></type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="36" column="7" bodyfile="include/rolly/types/angle.h" bodystart="36" bodyend="-1"/>
+        <location file="rolly/types/angle.h" line="37" column="7" bodyfile="rolly/types/angle.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="554" column="19" bodyfile="include/rolly/types/angle.h" bodystart="554" bodyend="-1"/>
+        <location file="rolly/types/angle.h" line="594" column="19" bodyfile="rolly/types/angle.h" bodystart="594" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="42" column="17" bodyfile="include/rolly/types/angle.h" bodystart="42" bodyend="43"/>
+        <location file="rolly/types/angle.h" line="43" column="17" bodyfile="rolly/types/angle.h" bodystart="43" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a33f20a9549cf6a2b79817fde3034aa33" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="49" column="26" bodyfile="include/rolly/types/angle.h" bodystart="49" bodyend="50"/>
+        <location file="rolly/types/angle.h" line="50" column="26" bodyfile="rolly/types/angle.h" bodystart="50" bodyend="51"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a62ac8ec6740b5914e8f9226c7714dbe6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="55" column="7"/>
+        <location file="rolly/types/angle.h" line="56" column="7"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a2ddf4eb45f66fc53a35a92fec3fd22b9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="60" column="17"/>
+        <location file="rolly/types/angle.h" line="61" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a908e7bc2c2d8e9a26301ff68ddbb023c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="65" column="17"/>
+        <location file="rolly/types/angle.h" line="66" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a02bfe50e08aad2328c0836a4c362ceb7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref> &amp;</type>
@@ -151,7 +151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="70" column="23"/>
+        <location file="rolly/types/angle.h" line="71" column="23"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ade8996f319db17f70ad5ce969e840558" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref> &amp;</type>
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="75" column="23"/>
+        <location file="rolly/types/angle.h" line="76" column="23"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="83" column="20" bodyfile="include/rolly/types/angle.h" bodystart="83" bodyend="88"/>
+        <location file="rolly/types/angle.h" line="84" column="20" bodyfile="rolly/types/angle.h" bodystart="84" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a88fdf66be062767e4090d10a7d1de681" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -215,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="95" column="30" bodyfile="include/rolly/types/angle.h" bodystart="95" bodyend="101"/>
+        <location file="rolly/types/angle.h" line="96" column="30" bodyfile="rolly/types/angle.h" bodystart="96" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a4d596e0bb6f37199a669740aab6256ac" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -232,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="107" column="30" bodyfile="include/rolly/types/angle.h" bodystart="107" bodyend="107"/>
+        <location file="rolly/types/angle.h" line="108" column="30" bodyfile="rolly/types/angle.h" bodystart="108" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a6133257e807ce7986b58d501bc09d734" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -249,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="113" column="30" bodyfile="include/rolly/types/angle.h" bodystart="113" bodyend="113"/>
+        <location file="rolly/types/angle.h" line="114" column="30" bodyfile="rolly/types/angle.h" bodystart="114" bodyend="114"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1aa0e06aa96b91570c0bf5a341e27a19b5" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="118" column="24" bodyfile="include/rolly/types/angle.h" bodystart="118" bodyend="126"/>
+        <location file="rolly/types/angle.h" line="119" column="24" bodyfile="rolly/types/angle.h" bodystart="119" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a65712cf7f7c8341f6ffb6f3604573e6d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -280,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="132" column="24" bodyfile="include/rolly/types/angle.h" bodystart="132" bodyend="137"/>
+        <location file="rolly/types/angle.h" line="137" column="24" bodyfile="rolly/types/angle.h" bodystart="137" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ad96ebdfffee4655081b053b19084c3d9" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -310,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="144" column="24" bodyfile="include/rolly/types/angle.h" bodystart="144" bodyend="148"/>
+        <location file="rolly/types/angle.h" line="149" column="24" bodyfile="rolly/types/angle.h" bodystart="149" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ab50fe362d80e4a70a8c67fc749d1a0fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -352,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="156" column="30" bodyfile="include/rolly/types/angle.h" bodystart="156" bodyend="162"/>
+        <location file="rolly/types/angle.h" line="161" column="30" bodyfile="rolly/types/angle.h" bodystart="161" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ac3ca04e925cf9e490eadfa612dcb2810" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/utility/pair" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::pair</ref>&lt; T, T &gt;</type>
@@ -369,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="168" column="28" bodyfile="include/rolly/types/angle.h" bodystart="168" bodyend="170"/>
+        <location file="rolly/types/angle.h" line="173" column="28" bodyfile="rolly/types/angle.h" bodystart="173" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ab4296efb618a5d97bd8779ec48fa7f56" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -402,7 +402,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="178" column="24" bodyfile="include/rolly/types/angle.h" bodystart="178" bodyend="180"/>
+        <location file="rolly/types/angle.h" line="183" column="24" bodyfile="rolly/types/angle.h" bodystart="183" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a524546a00e65da4c0a58a20d7913a593" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -419,7 +419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="246" column="30" bodyfile="include/rolly/types/angle.h" bodystart="246" bodyend="246"/>
+        <location file="rolly/types/angle.h" line="261" column="30" bodyfile="rolly/types/angle.h" bodystart="261" bodyend="261"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a7b1e681365ca2379776ba38496c8d9e1" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -450,7 +450,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="253" column="20" bodyfile="include/rolly/types/angle.h" bodystart="253" bodyend="255"/>
+        <location file="rolly/types/angle.h" line="268" column="20" bodyfile="rolly/types/angle.h" bodystart="268" bodyend="270"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a4eadd631845fcfea8cf526a58403cf9b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="namespacerolly_1_1types_1ad34d88453d37b65a09797bad37f2f527" kindref="member">f32</ref></type>
@@ -464,7 +464,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="260" column="23" bodyfile="include/rolly/types/angle.h" bodystart="260" bodyend="260"/>
+        <location file="rolly/types/angle.h" line="275" column="23" bodyfile="rolly/types/angle.h" bodystart="275" bodyend="275"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a4f3d1e4786e042fac8b82314a89439ce" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="namespacerolly_1_1types_1abc2f107791bd7c1d49ecf0f168c085a3" kindref="member">f64</ref></type>
@@ -478,7 +478,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="265" column="23" bodyfile="include/rolly/types/angle.h" bodystart="265" bodyend="265"/>
+        <location file="rolly/types/angle.h" line="280" column="23" bodyfile="rolly/types/angle.h" bodystart="280" bodyend="280"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a287bb4c3be885ca0f758ecfa8ad27682" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -492,7 +492,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="270" column="13" bodyfile="include/rolly/types/angle.h" bodystart="270" bodyend="270"/>
+        <location file="rolly/types/angle.h" line="285" column="13" bodyfile="rolly/types/angle.h" bodystart="285" bodyend="285"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a6affa04d1ef290bb34a5b569ca8798a5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -506,7 +506,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="275" column="36" bodyfile="include/rolly/types/angle.h" bodystart="275" bodyend="275"/>
+        <location file="rolly/types/angle.h" line="290" column="36" bodyfile="rolly/types/angle.h" bodystart="290" bodyend="290"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ab81f96b5cb802f028c83868875fa42c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -520,7 +520,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="280" column="36" bodyfile="include/rolly/types/angle.h" bodystart="280" bodyend="280"/>
+        <location file="rolly/types/angle.h" line="295" column="36" bodyfile="rolly/types/angle.h" bodystart="295" bodyend="295"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a0c7665e88eb32274796d8cefb28b1c30" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -534,7 +534,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="285" column="36" bodyfile="include/rolly/types/angle.h" bodystart="285" bodyend="285"/>
+        <location file="rolly/types/angle.h" line="300" column="36" bodyfile="rolly/types/angle.h" bodystart="300" bodyend="300"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1aa75b20c064709be7f48b79fbe1135fc2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -548,7 +548,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="290" column="36" bodyfile="include/rolly/types/angle.h" bodystart="290" bodyend="290"/>
+        <location file="rolly/types/angle.h" line="305" column="36" bodyfile="rolly/types/angle.h" bodystart="305" bodyend="305"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a13388a97dd44dac80896feb90613d45d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -562,7 +562,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="295" column="36" bodyfile="include/rolly/types/angle.h" bodystart="295" bodyend="295"/>
+        <location file="rolly/types/angle.h" line="310" column="36" bodyfile="rolly/types/angle.h" bodystart="310" bodyend="310"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a214638797f0f6df8d0c82c2a4d1a1266" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -576,7 +576,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="300" column="36" bodyfile="include/rolly/types/angle.h" bodystart="300" bodyend="300"/>
+        <location file="rolly/types/angle.h" line="315" column="36" bodyfile="rolly/types/angle.h" bodystart="315" bodyend="315"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a566265d7ea4ab6649c2bfdf2e96145af" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr T &amp;</type>
@@ -590,7 +590,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="305" column="20" bodyfile="include/rolly/types/angle.h" bodystart="305" bodyend="308"/>
+        <location file="rolly/types/angle.h" line="320" column="20" bodyfile="rolly/types/angle.h" bodystart="320" bodyend="323"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1afe13db0e1af81cd99e0f21f4b35561f1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr T &amp;</type>
@@ -607,7 +607,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="313" column="20" bodyfile="include/rolly/types/angle.h" bodystart="313" bodyend="316"/>
+        <location file="rolly/types/angle.h" line="328" column="20" bodyfile="rolly/types/angle.h" bodystart="328" bodyend="331"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1afd70a5715cd3b48b3a1f247e6f5bc0a8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr T &amp;</type>
@@ -621,7 +621,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="321" column="20" bodyfile="include/rolly/types/angle.h" bodystart="321" bodyend="324"/>
+        <location file="rolly/types/angle.h" line="336" column="20" bodyfile="rolly/types/angle.h" bodystart="336" bodyend="339"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a32ad7696f348d2811a994e27daf6cc67" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr T &amp;</type>
@@ -638,7 +638,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="329" column="20" bodyfile="include/rolly/types/angle.h" bodystart="329" bodyend="332"/>
+        <location file="rolly/types/angle.h" line="344" column="20" bodyfile="rolly/types/angle.h" bodystart="344" bodyend="347"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ad0ed9dded3dc4405713f0b9270930a92" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -652,7 +652,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="337" column="27" bodyfile="include/rolly/types/angle.h" bodystart="337" bodyend="337"/>
+        <location file="rolly/types/angle.h" line="352" column="27" bodyfile="rolly/types/angle.h" bodystart="352" bodyend="352"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a11f5e5b2d5a79d40ca187cb76f1c5fff" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -666,7 +666,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="342" column="27" bodyfile="include/rolly/types/angle.h" bodystart="342" bodyend="342"/>
+        <location file="rolly/types/angle.h" line="357" column="27" bodyfile="rolly/types/angle.h" bodystart="357" bodyend="357"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1aefd7979ce2368b9ef98210aa864b6295" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -696,7 +696,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="349" column="23" bodyfile="include/rolly/types/angle.h" bodystart="349" bodyend="351"/>
+        <location file="rolly/types/angle.h" line="364" column="23" bodyfile="rolly/types/angle.h" bodystart="364" bodyend="370"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a309d0757a973d6d2c6614d0581b45d92" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -726,7 +726,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="358" column="23" bodyfile="include/rolly/types/angle.h" bodystart="358" bodyend="358"/>
+        <location file="rolly/types/angle.h" line="378" column="23" bodyfile="rolly/types/angle.h" bodystart="378" bodyend="380"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1aa23ff0fac2171ad6ce2140c4cd965d42" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -756,7 +756,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="365" column="18" bodyfile="include/rolly/types/angle.h" bodystart="365" bodyend="365"/>
+        <location file="rolly/types/angle.h" line="387" column="18" bodyfile="rolly/types/angle.h" bodystart="387" bodyend="389"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a5ff964a65187ef94f6a280f9cbd5f2e5" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -786,7 +786,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="372" column="23" bodyfile="include/rolly/types/angle.h" bodystart="372" bodyend="372"/>
+        <location file="rolly/types/angle.h" line="396" column="23" bodyfile="rolly/types/angle.h" bodystart="396" bodyend="398"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ae2dbf39105d4518d91f4ac2783106737" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -816,7 +816,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="379" column="18" bodyfile="include/rolly/types/angle.h" bodystart="379" bodyend="379"/>
+        <location file="rolly/types/angle.h" line="406" column="18" bodyfile="rolly/types/angle.h" bodystart="406" bodyend="408"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a24164f3417a133a550089a5a276af6d9" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -846,7 +846,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="386" column="23" bodyfile="include/rolly/types/angle.h" bodystart="386" bodyend="386"/>
+        <location file="rolly/types/angle.h" line="416" column="23" bodyfile="rolly/types/angle.h" bodystart="416" bodyend="418"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a187480616a4887aa0d98538df458e26d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -863,7 +863,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="392" column="30" bodyfile="include/rolly/types/angle.h" bodystart="392" bodyend="392"/>
+        <location file="rolly/types/angle.h" line="424" column="30" bodyfile="rolly/types/angle.h" bodystart="424" bodyend="424"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ab6cb838c89f8d1f7082caaf515cccfbe" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -877,7 +877,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="397" column="24" bodyfile="include/rolly/types/angle.h" bodystart="397" bodyend="397"/>
+        <location file="rolly/types/angle.h" line="429" column="24" bodyfile="rolly/types/angle.h" bodystart="429" bodyend="429"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1af748c933998a173b97ccb5d74a9a9d10" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -891,7 +891,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="402" column="24" bodyfile="include/rolly/types/angle.h" bodystart="402" bodyend="402"/>
+        <location file="rolly/types/angle.h" line="434" column="24" bodyfile="rolly/types/angle.h" bodystart="434" bodyend="434"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ada7d9122b1eb43d1a63e0a661d49ea60" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -919,7 +919,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="408" column="24" bodyfile="include/rolly/types/angle.h" bodystart="408" bodyend="408"/>
+        <location file="rolly/types/angle.h" line="440" column="24" bodyfile="rolly/types/angle.h" bodystart="440" bodyend="442"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a9f62a83ad05047c663de6705ab6ce5f2" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -947,7 +947,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="414" column="24" bodyfile="include/rolly/types/angle.h" bodystart="414" bodyend="414"/>
+        <location file="rolly/types/angle.h" line="448" column="24" bodyfile="rolly/types/angle.h" bodystart="448" bodyend="450"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a75f902dd70e3e238bfff25510eb96123" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -975,7 +975,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="420" column="24" bodyfile="include/rolly/types/angle.h" bodystart="420" bodyend="420"/>
+        <location file="rolly/types/angle.h" line="456" column="24" bodyfile="rolly/types/angle.h" bodystart="456" bodyend="458"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1aea4139bbd4e98b1967da63f4390137f1" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -1003,7 +1003,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="426" column="24" bodyfile="include/rolly/types/angle.h" bodystart="426" bodyend="426"/>
+        <location file="rolly/types/angle.h" line="464" column="24" bodyfile="rolly/types/angle.h" bodystart="464" bodyend="466"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a70d5b448a690e5cfcdd24190b2bfb71c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref> &amp;</type>
@@ -1031,7 +1031,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="432" column="24" bodyfile="include/rolly/types/angle.h" bodystart="432" bodyend="435"/>
+        <location file="rolly/types/angle.h" line="472" column="24" bodyfile="rolly/types/angle.h" bodystart="472" bodyend="475"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a531456a8461a83f3cfebc5c7952c2e37" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref> &amp;</type>
@@ -1059,7 +1059,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="441" column="24" bodyfile="include/rolly/types/angle.h" bodystart="441" bodyend="444"/>
+        <location file="rolly/types/angle.h" line="481" column="24" bodyfile="rolly/types/angle.h" bodystart="481" bodyend="484"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ae1f0b69d4d88c07eb2e8b092cf379996" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref> &amp;</type>
@@ -1087,7 +1087,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="450" column="24" bodyfile="include/rolly/types/angle.h" bodystart="450" bodyend="453"/>
+        <location file="rolly/types/angle.h" line="490" column="24" bodyfile="rolly/types/angle.h" bodystart="490" bodyend="493"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a5bbe5bc05125c4ca21de9c8e367002f0" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref> &amp;</type>
@@ -1115,7 +1115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="459" column="24" bodyfile="include/rolly/types/angle.h" bodystart="459" bodyend="462"/>
+        <location file="rolly/types/angle.h" line="499" column="24" bodyfile="rolly/types/angle.h" bodystart="499" bodyend="502"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1acd68ed48b123c38fe645b4a9c6694e2c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1159,7 +1159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="470" column="24" bodyfile="include/rolly/types/angle.h" bodystart="470" bodyend="472"/>
+        <location file="rolly/types/angle.h" line="510" column="24" bodyfile="rolly/types/angle.h" bodystart="510" bodyend="512"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a69e3844905e49f7a8924565fba0a3c60" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1203,7 +1203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="480" column="24" bodyfile="include/rolly/types/angle.h" bodystart="480" bodyend="482"/>
+        <location file="rolly/types/angle.h" line="520" column="24" bodyfile="rolly/types/angle.h" bodystart="520" bodyend="522"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a09b3b0e8330ce76a89450f25a598b50e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1247,7 +1247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="490" column="24" bodyfile="include/rolly/types/angle.h" bodystart="490" bodyend="492"/>
+        <location file="rolly/types/angle.h" line="530" column="24" bodyfile="rolly/types/angle.h" bodystart="530" bodyend="532"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a0bb40c7d98c3638f5fea004246a7fb6f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1291,7 +1291,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="500" column="24" bodyfile="include/rolly/types/angle.h" bodystart="500" bodyend="502"/>
+        <location file="rolly/types/angle.h" line="540" column="24" bodyfile="rolly/types/angle.h" bodystart="540" bodyend="542"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1af503bc734615155e4f727bd9ed790209" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1335,7 +1335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="510" column="24" bodyfile="include/rolly/types/angle.h" bodystart="510" bodyend="513"/>
+        <location file="rolly/types/angle.h" line="550" column="24" bodyfile="rolly/types/angle.h" bodystart="550" bodyend="553"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a877410d1ce3c690a66da73c8c8cba6f0" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1379,7 +1379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="521" column="24" bodyfile="include/rolly/types/angle.h" bodystart="521" bodyend="524"/>
+        <location file="rolly/types/angle.h" line="561" column="24" bodyfile="rolly/types/angle.h" bodystart="561" bodyend="564"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a16b31742e4c2a0e80fdba6b94651064e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1423,7 +1423,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="532" column="24" bodyfile="include/rolly/types/angle.h" bodystart="532" bodyend="535"/>
+        <location file="rolly/types/angle.h" line="572" column="24" bodyfile="rolly/types/angle.h" bodystart="572" bodyend="575"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a45d33fea8994dd76e3964dc1aa72018e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1467,7 +1467,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="543" column="24" bodyfile="include/rolly/types/angle.h" bodystart="543" bodyend="546"/>
+        <location file="rolly/types/angle.h" line="583" column="24" bodyfile="rolly/types/angle.h" bodystart="583" bodyend="586"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1501,7 +1501,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="188" column="31" bodyfile="include/rolly/types/angle.h" bodystart="188" bodyend="188"/>
+        <location file="rolly/types/angle.h" line="193" column="31" bodyfile="rolly/types/angle.h" bodystart="193" bodyend="195"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a485ca2070340a13e5e78cb687dbc1465" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -1533,7 +1533,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="196" column="31" bodyfile="include/rolly/types/angle.h" bodystart="196" bodyend="196"/>
+        <location file="rolly/types/angle.h" line="203" column="31" bodyfile="rolly/types/angle.h" bodystart="203" bodyend="205"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a5c55f8db6f6cb4c73858af1e28f768e8" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -1575,7 +1575,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="204" column="31" bodyfile="include/rolly/types/angle.h" bodystart="204" bodyend="210"/>
+        <location file="rolly/types/angle.h" line="213" column="31" bodyfile="rolly/types/angle.h" bodystart="213" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1afa7805bec73a51bf1c0256515e28ee56" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -1589,7 +1589,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="215" column="31" bodyfile="include/rolly/types/angle.h" bodystart="215" bodyend="215"/>
+        <location file="rolly/types/angle.h" line="224" column="31" bodyfile="rolly/types/angle.h" bodystart="224" bodyend="224"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a206a627d4bbd55113b5eaac5ae4771fb" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -1603,7 +1603,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="220" column="31" bodyfile="include/rolly/types/angle.h" bodystart="220" bodyend="220"/>
+        <location file="rolly/types/angle.h" line="229" column="31" bodyfile="rolly/types/angle.h" bodystart="229" bodyend="229"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a99148853695ae53641609f542e18e4aa" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -1617,7 +1617,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="225" column="31" bodyfile="include/rolly/types/angle.h" bodystart="225" bodyend="225"/>
+        <location file="rolly/types/angle.h" line="234" column="31" bodyfile="rolly/types/angle.h" bodystart="234" bodyend="234"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ab67f404883d5c94e4f2cd95ab3566e5a" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -1631,7 +1631,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="230" column="31" bodyfile="include/rolly/types/angle.h" bodystart="230" bodyend="230"/>
+        <location file="rolly/types/angle.h" line="239" column="31" bodyfile="rolly/types/angle.h" bodystart="239" bodyend="241"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a4ae3c43c7e9c16d33bf52172f1f898db" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -1645,7 +1645,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="235" column="31" bodyfile="include/rolly/types/angle.h" bodystart="235" bodyend="235"/>
+        <location file="rolly/types/angle.h" line="246" column="31" bodyfile="rolly/types/angle.h" bodystart="246" bodyend="248"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a4eabbb298d080362e01c8ba722984785" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
@@ -1659,7 +1659,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="240" column="31" bodyfile="include/rolly/types/angle.h" bodystart="240" bodyend="240"/>
+        <location file="rolly/types/angle.h" line="253" column="31" bodyfile="rolly/types/angle.h" bodystart="253" bodyend="255"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -1682,7 +1682,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="548" column="14" bodyfile="include/rolly/types/angle.h" bodystart="548" bodyend="551"/>
+        <location file="rolly/types/angle.h" line="588" column="14" bodyfile="rolly/types/angle.h" bodystart="588" bodyend="591"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1700,7 +1700,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/angle.h" line="32" column="16" bodyfile="include/rolly/types/angle.h" bodystart="32" bodyend="555"/>
+    <location file="rolly/types/angle.h" line="33" column="16" bodyfile="rolly/types/angle.h" bodystart="33" bodyend="595"/>
     <listofallmembers>
       <member refid="structrolly_1_1types_1_1angle_1a13388a97dd44dac80896feb90613d45d" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>acos</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a0b3265454614c3cb2c563ec74dfeb851" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>angle</name></member>

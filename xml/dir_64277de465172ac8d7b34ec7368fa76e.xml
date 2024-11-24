@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
-  <compounddef id="dir_0eab440ba9a332a1603062a9ba6cf73b" kind="dir">
+  <compounddef id="dir_64277de465172ac8d7b34ec7368fa76e" kind="dir">
     <compoundname>traits</compoundname>
     <innerfile refid="noncopyable_8h">noncopyable.h</innerfile>
     <innerfile refid="nonmovable_8h">nonmovable.h</innerfile>
@@ -11,6 +11,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/traits/"/>
+    <location file="rolly/traits/"/>
   </compounddef>
 </doxygen>

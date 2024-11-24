@@ -10,6 +10,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/dll/plugin.h" line="14" column="15"/>
+    <location file="rolly/dll/plugin.h" line="14" column="15"/>
   </compounddef>
 </doxygen>

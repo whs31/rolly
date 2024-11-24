@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structstd_1_1hash_3_01rolly_1_1types_1_1point2d_3_01T_01_4_01_4" kind="struct" language="C++" prot="public">
     <compoundname>std::hash&lt; rolly::types::point2d&lt; T &gt; &gt;</compoundname>
-    <includes refid="point2d_8h" local="no">point2d.h</includes>
+    <includes refid="point2d_8h" local="no">rolly/types/point2d.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/point2d.h" line="689" column="12" bodyfile="include/rolly/types/point2d.h" bodystart="689" bodyend="691"/>
+        <location file="rolly/types/point2d.h" line="730" column="12" bodyfile="rolly/types/point2d.h" bodystart="730" bodyend="732"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -55,7 +55,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/point2d.h" line="688" column="15" bodyfile="include/rolly/types/point2d.h" bodystart="688" bodyend="692"/>
+    <location file="rolly/types/point2d.h" line="729" column="15" bodyfile="rolly/types/point2d.h" bodystart="729" bodyend="733"/>
     <listofallmembers>
       <member refid="structstd_1_1hash_3_01rolly_1_1types_1_1point2d_3_01T_01_4_01_4_1a005207feabac91b01c48c2a23f13e409" prot="public" virt="non-virtual"><scope>std::hash&lt; rolly::types::point2d&lt; T &gt; &gt;</scope><name>operator()</name></member>
     </listofallmembers>

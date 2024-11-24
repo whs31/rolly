@@ -52,6 +52,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/exception/compile_time_error.h"/>
+    <location file="rolly/exception/compile_time_error.h"/>
   </compounddef>
 </doxygen>

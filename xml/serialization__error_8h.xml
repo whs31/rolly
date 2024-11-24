@@ -114,6 +114,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/exception/serialization_error.h"/>
+    <location file="rolly/exception/serialization_error.h"/>
   </compounddef>
 </doxygen>

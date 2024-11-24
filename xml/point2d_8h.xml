@@ -370,6 +370,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/types/point2d.h"/>
+    <location file="rolly/types/point2d.h"/>
   </compounddef>
 </doxygen>

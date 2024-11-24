@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="178" column="19" bodyfile="include/rolly/global/semver.h" bodystart="178" bodyend="-1"/>
+        <location file="rolly/global/semver.h" line="183" column="19" bodyfile="rolly/global/semver.h" bodystart="183" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrolly_1_1version_1a825c2d4285fd4ef048480ea6854c5160" prot="public" static="no" mutable="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="179" column="19" bodyfile="include/rolly/global/semver.h" bodystart="179" bodyend="-1"/>
+        <location file="rolly/global/semver.h" line="184" column="19" bodyfile="rolly/global/semver.h" bodystart="184" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrolly_1_1version_1a225065c50c39b42012bde676d03d6131" prot="public" static="no" mutable="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="180" column="19" bodyfile="include/rolly/global/semver.h" bodystart="180" bodyend="-1"/>
+        <location file="rolly/global/semver.h" line="185" column="19" bodyfile="rolly/global/semver.h" bodystart="185" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrolly_1_1version_1a2b8218ebadf01154d8615cd9c31cf761" prot="public" static="no" mutable="no">
         <type>prerelease</type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="181" column="16" bodyfile="include/rolly/global/semver.h" bodystart="181" bodyend="-1"/>
+        <location file="rolly/global/semver.h" line="186" column="16" bodyfile="rolly/global/semver.h" bodystart="186" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrolly_1_1version_1ad3740d612f3a17f4c528f79417719ffb" prot="public" static="no" mutable="no">
         <type>std::optional&lt; <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref> &gt;</type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="182" column="19" bodyfile="include/rolly/global/semver.h" bodystart="182" bodyend="-1"/>
+        <location file="rolly/global/semver.h" line="187" column="19" bodyfile="rolly/global/semver.h" bodystart="187" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="184" column="28" bodyfile="include/rolly/global/semver.h" bodystart="184" bodyend="195"/>
+        <location file="rolly/global/semver.h" line="189" column="28" bodyfile="rolly/global/semver.h" bodystart="189" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1abfbcd4ebc1c178edd166a4e498757e81" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>ROLLY_SEMVER_CONSTEXPR</type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="198" column="7" bodyfile="include/rolly/global/semver.h" bodystart="198" bodyend="203"/>
+        <location file="rolly/global/semver.h" line="203" column="5" bodyfile="rolly/global/semver.h" bodystart="203" bodyend="216"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1a0332e593c889fac494451ff202c0a87f" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>ROLLY_SEMVER_CONSTEXPR</type>
@@ -158,7 +158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="205" column="37" bodyfile="include/rolly/global/semver.h" bodystart="205" bodyend="208"/>
+        <location file="rolly/global/semver.h" line="218" column="37" bodyfile="rolly/global/semver.h" bodystart="218" bodyend="221"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1ad856220a1bbc8168138d8933df54a80c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="210" column="15"/>
+        <location file="rolly/global/semver.h" line="223" column="15"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1a748f1eaa2c956e52db5be86ac3e0dc11" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -187,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="212" column="15"/>
+        <location file="rolly/global/semver.h" line="225" column="15"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1a90279a5685efb6855cb517c43aa8c5fe" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -203,7 +203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="213" column="15"/>
+        <location file="rolly/global/semver.h" line="226" column="15"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1a564ab9428288603955411dc30291c5b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -216,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="214" column="5"/>
+        <location file="rolly/global/semver.h" line="227" column="5"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1adb3e3d4ea43080ab1f9005af2272d3d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structrolly_1_1version" kindref="compound">version</ref> &amp;</type>
@@ -232,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="215" column="13"/>
+        <location file="rolly/global/semver.h" line="228" column="13"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1a9933342c7c56f68b9a00d715eb72a67b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structrolly_1_1version" kindref="compound">version</ref> &amp;</type>
@@ -248,7 +248,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="216" column="13"/>
+        <location file="rolly/global/semver.h" line="229" column="13"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1a820fc9cf24a6e75538595d60d78e49bf" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>ROLLY_SEMVER_CONSTEXPR from_chars_result</type>
@@ -269,7 +269,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="218" column="47" bodyfile="include/rolly/global/semver.h" bodystart="218" bodyend="241"/>
+        <location file="rolly/global/semver.h" line="232" column="7" bodyfile="rolly/global/semver.h" bodystart="232" bodyend="256"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1aa3121d43861bbf0ee9ab5449e694cdd2" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>ROLLY_SEMVER_CONSTEXPR to_chars_result</type>
@@ -290,7 +290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="243" column="45" bodyfile="include/rolly/global/semver.h" bodystart="243" bodyend="258"/>
+        <location file="rolly/global/semver.h" line="259" column="7" bodyfile="rolly/global/semver.h" bodystart="259" bodyend="274"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1a442c91bc047e34dc4198312b68319d83" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>ROLLY_SEMVER_CONSTEXPR bool</type>
@@ -307,7 +307,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="260" column="34" bodyfile="include/rolly/global/semver.h" bodystart="260" bodyend="262"/>
+        <location file="rolly/global/semver.h" line="276" column="34" bodyfile="rolly/global/semver.h" bodystart="276" bodyend="278"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1a183e7c66e50bf5962151444e623aad54" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>ROLLY_SEMVER_CONSTEXPR <ref refid="structrolly_1_1version" kindref="compound">version</ref> &amp;</type>
@@ -324,7 +324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="264" column="36" bodyfile="include/rolly/global/semver.h" bodystart="264" bodyend="268"/>
+        <location file="rolly/global/semver.h" line="280" column="36" bodyfile="rolly/global/semver.h" bodystart="280" bodyend="284"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
@@ -337,7 +337,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="270" column="18" bodyfile="include/rolly/global/semver.h" bodystart="270" bodyend="276"/>
+        <location file="rolly/global/semver.h" line="286" column="18" bodyfile="rolly/global/semver.h" bodystart="286" bodyend="292"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1a995e165483bb30e9f597773d0cf355c7" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>ROLLY_SEMVER_CONSTEXPR <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint8_t</ref></type>
@@ -350,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="278" column="42" bodyfile="include/rolly/global/semver.h" bodystart="278" bodyend="286"/>
+        <location file="rolly/global/semver.h" line="294" column="42" bodyfile="rolly/global/semver.h" bodystart="294" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1version_1afc4db1cc397888cafbdedebb1da7e337" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr int</type>
@@ -367,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="288" column="20" bodyfile="include/rolly/global/semver.h" bodystart="288" bodyend="304"/>
+        <location file="rolly/global/semver.h" line="304" column="20" bodyfile="rolly/global/semver.h" bodystart="304" bodyend="321"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -389,7 +389,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/global/semver.h" line="177" column="16" bodyfile="include/rolly/global/semver.h" bodystart="177" bodyend="305"/>
+    <location file="rolly/global/semver.h" line="182" column="16" bodyfile="rolly/global/semver.h" bodystart="182" bodyend="322"/>
     <listofallmembers>
       <member refid="structrolly_1_1version_1afc4db1cc397888cafbdedebb1da7e337" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>compare</name></member>
       <member refid="structrolly_1_1version_1a820fc9cf24a6e75538595d60d78e49bf" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>from_chars</name></member>

@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="75" column="27" bodyfile="include/rolly/contracts.h" bodystart="75" bodyend="79"/>
+        <location file="rolly/contracts.h" line="78" column="27" bodyfile="rolly/contracts.h" bodystart="78" bodyend="82"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="97" column="3" bodyfile="include/rolly/contracts.h" bodystart="97" bodyend="-1"/>
+        <location file="rolly/contracts.h" line="100" column="3" bodyfile="rolly/contracts.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="123" column="10" declfile="include/rolly/contracts.h" declline="123" declcolumn="10"/>
+        <location file="rolly/contracts.h" line="126" column="10" declfile="rolly/contracts.h" declline="126" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1aecea849c17224c0824619ce3e30c5f8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacerolly_1_1contracts_1aca5defb1c056aa55df22bc093159c32e" kindref="member">contract_violation_handler</ref> &amp;</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="135" column="32" declfile="include/rolly/contracts.h" declline="135" declcolumn="32"/>
+        <location file="rolly/contracts.h" line="138" column="32" declfile="rolly/contracts.h" declline="138" declcolumn="32"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1ad4881604e9bfa8b79bcb9c1e23f1e7af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacerolly_1_1contracts_1aca5defb1c056aa55df22bc093159c32e" kindref="member">contract_violation_handler</ref></type>
@@ -156,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="150" column="5" declfile="include/rolly/contracts.h" declline="150" declcolumn="5"/>
+        <location file="rolly/contracts.h" line="153" column="5" declfile="rolly/contracts.h" declline="153" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1ad298c10384725ecb46aa64acbe8f7d07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -203,7 +203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="202" column="5" bodyfile="include/rolly/contracts.h" bodystart="202" bodyend="211"/>
+        <location file="rolly/contracts.h" line="211" column="5" bodyfile="rolly/contracts.h" bodystart="211" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1aa8946f97218fccab5c3252ded10a82dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -258,7 +258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="227" column="5" bodyfile="include/rolly/contracts.h" bodystart="227" bodyend="236"/>
+        <location file="rolly/contracts.h" line="238" column="5" bodyfile="rolly/contracts.h" bodystart="238" bodyend="247"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1a6fc741e9082a3b9384dfd50c1b36e64b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -305,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="251" column="5" bodyfile="include/rolly/contracts.h" bodystart="251" bodyend="260"/>
+        <location file="rolly/contracts.h" line="264" column="5" bodyfile="rolly/contracts.h" bodystart="264" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1a85522a06efdcca823d5c7119ebafb850" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -336,7 +336,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="273" column="10" bodyfile="include/rolly/contracts.h" bodystart="273" bodyend="280"/>
+        <location file="rolly/contracts.h" line="287" column="10" bodyfile="rolly/contracts.h" bodystart="287" bodyend="294"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1ab1f48107fb7de5e343fb595d41219bfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -367,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="292" column="10" bodyfile="include/rolly/contracts.h" bodystart="292" bodyend="299"/>
+        <location file="rolly/contracts.h" line="306" column="10" bodyfile="rolly/contracts.h" bodystart="306" bodyend="313"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1a4660f2a90742b97d33d90f3dfd4ee812" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -398,7 +398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="311" column="10" bodyfile="include/rolly/contracts.h" bodystart="311" bodyend="318"/>
+        <location file="rolly/contracts.h" line="325" column="10" bodyfile="rolly/contracts.h" bodystart="325" bodyend="332"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1adfba2187b8f7e9795c0fb5ec669a15a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -415,7 +415,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="330" column="10" bodyfile="include/rolly/contracts.h" bodystart="330" bodyend="336"/>
+        <location file="rolly/contracts.h" line="344" column="10" bodyfile="rolly/contracts.h" bodystart="344" bodyend="350"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -467,6 +467,6 @@
 </para>
 </sect4>
     </detaileddescription>
-    <location file="include/rolly/contracts.h" line="71" column="26"/>
+    <location file="rolly/contracts.h" line="74" column="26"/>
   </compounddef>
 </doxygen>

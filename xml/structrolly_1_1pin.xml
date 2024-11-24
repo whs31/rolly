@@ -6,7 +6,7 @@
     <basecompoundref refid="structrolly_1_1nonmovable" prot="public" virt="non-virtual">nonmovable</basecompoundref>
     <derivedcompoundref refid="classrolly_1_1dll_1_1plugin__loader" prot="private" virt="non-virtual">plugin_loader</derivedcompoundref>
     <derivedcompoundref refid="structrolly_1_1singleton" prot="public" virt="non-virtual">singleton&lt; T &gt;</derivedcompoundref>
-    <includes refid="pin_8h" local="no">pin.h</includes>
+    <includes refid="pin_8h" local="no">rolly/traits/pin.h</includes>
     <briefdescription>
 <para>Disallows copy and move operations for a type. </para>
     </briefdescription>
@@ -75,7 +75,7 @@
         <link refid="structrolly_1_1noncopyable"/>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/traits/pin.h" line="27" column="26" bodyfile="include/rolly/traits/pin.h" bodystart="26" bodyend="27"/>
+    <location file="rolly/traits/pin.h" line="27" column="26" bodyfile="rolly/traits/pin.h" bodystart="26" bodyend="27"/>
     <listofallmembers>
       <member refid="structrolly_1_1noncopyable_1a9a7cb0757f3a96b9862062e348f20577" prot="public" virt="non-virtual"><scope>rolly::pin</scope><name>noncopyable</name></member>
       <member refid="structrolly_1_1noncopyable_1ad5e07eb25f4ba34b072cbccadfe23044" prot="public" virt="non-virtual"><scope>rolly::pin</scope><name>noncopyable</name></member>

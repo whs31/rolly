@@ -3,7 +3,7 @@
   <compounddef id="structrolly_1_1singleton" kind="struct" language="C++" prot="public">
     <compoundname>rolly::singleton</compoundname>
     <basecompoundref refid="structrolly_1_1pin" prot="public" virt="non-virtual">pin</basecompoundref>
-    <includes refid="singleton_8h" local="no">singleton.h</includes>
+    <includes refid="singleton_8h" local="no">rolly/traits/singleton.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/traits/singleton.h" line="43" column="15" bodyfile="include/rolly/traits/singleton.h" bodystart="43" bodyend="46"/>
+        <location file="rolly/traits/singleton.h" line="43" column="15" bodyfile="rolly/traits/singleton.h" bodystart="43" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1singleton_1abb031ad0c88c2300b56966f2fbefe2e1" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>T const  *</type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/traits/singleton.h" line="53" column="21" bodyfile="include/rolly/traits/singleton.h" bodystart="53" bodyend="53"/>
+        <location file="rolly/traits/singleton.h" line="53" column="21" bodyfile="rolly/traits/singleton.h" bodystart="53" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1singleton_1ac16bb149a26982caaa359e84b3ce4f42" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>T const  &amp;</type>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/traits/singleton.h" line="60" column="21" bodyfile="include/rolly/traits/singleton.h" bodystart="60" bodyend="60"/>
+        <location file="rolly/traits/singleton.h" line="60" column="21" bodyfile="rolly/traits/singleton.h" bodystart="60" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1singleton_1abf6b2ca64d1ba903a546941f62779d4c" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>T &amp;</type>
@@ -84,7 +84,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/traits/singleton.h" line="67" column="15" bodyfile="include/rolly/traits/singleton.h" bodystart="67" bodyend="67"/>
+        <location file="rolly/traits/singleton.h" line="67" column="15" bodyfile="rolly/traits/singleton.h" bodystart="67" bodyend="67"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/traits/singleton.h" line="69" column="5"/>
+        <location file="rolly/traits/singleton.h" line="69" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -185,7 +185,7 @@
         <link refid="structrolly_1_1noncopyable"/>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/traits/singleton.h" line="37" column="22" bodyfile="include/rolly/traits/singleton.h" bodystart="37" bodyend="70"/>
+    <location file="rolly/traits/singleton.h" line="37" column="22" bodyfile="rolly/traits/singleton.h" bodystart="37" bodyend="70"/>
     <listofallmembers>
       <member refid="structrolly_1_1noncopyable_1a9a7cb0757f3a96b9862062e348f20577" prot="public" virt="non-virtual"><scope>rolly::singleton</scope><name>noncopyable</name></member>
       <member refid="structrolly_1_1noncopyable_1ad5e07eb25f4ba34b072cbccadfe23044" prot="public" virt="non-virtual"><scope>rolly::singleton</scope><name>noncopyable</name></member>

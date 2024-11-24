@@ -113,6 +113,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/traits/noncopyable.h"/>
+    <location file="rolly/traits/noncopyable.h"/>
   </compounddef>
 </doxygen>

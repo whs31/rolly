@@ -5,7 +5,7 @@
     <derivedcompoundref refid="classrolly_1_1box" prot="private" virt="non-virtual">box&lt; T &gt;</derivedcompoundref>
     <derivedcompoundref refid="classrolly_1_1dll_1_1shared__library" prot="private" virt="non-virtual">shared_library</derivedcompoundref>
     <derivedcompoundref refid="structrolly_1_1pin" prot="public" virt="non-virtual">pin</derivedcompoundref>
-    <includes refid="noncopyable_8h" local="no">noncopyable.h</includes>
+    <includes refid="noncopyable_8h" local="no">rolly/traits/noncopyable.h</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="structrolly_1_1noncopyable_1a9a7cb0757f3a96b9862062e348f20577" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/traits/noncopyable.h" line="19" column="5"/>
+        <location file="rolly/traits/noncopyable.h" line="19" column="5"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1noncopyable_1a60dec0098f04c2bedcf32fc41e8bd203" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/traits/noncopyable.h" line="20" column="5"/>
+        <location file="rolly/traits/noncopyable.h" line="20" column="5"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1noncopyable_1ad5e07eb25f4ba34b072cbccadfe23044" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/traits/noncopyable.h" line="21" column="5"/>
+        <location file="rolly/traits/noncopyable.h" line="21" column="5"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1noncopyable_1abf5d0a96e554770dbe7f2470901b23f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structrolly_1_1noncopyable" kindref="compound">noncopyable</ref> &amp;</type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/traits/noncopyable.h" line="22" column="17"/>
+        <location file="rolly/traits/noncopyable.h" line="22" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -117,7 +117,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="include/rolly/traits/noncopyable.h" line="18" column="1" bodyfile="include/rolly/traits/noncopyable.h" bodystart="17" bodyend="23"/>
+    <location file="rolly/traits/noncopyable.h" line="18" column="1" bodyfile="rolly/traits/noncopyable.h" bodystart="17" bodyend="23"/>
     <listofallmembers>
       <member refid="structrolly_1_1noncopyable_1a9a7cb0757f3a96b9862062e348f20577" prot="public" virt="non-virtual"><scope>rolly::noncopyable</scope><name>noncopyable</name></member>
       <member refid="structrolly_1_1noncopyable_1ad5e07eb25f4ba34b072cbccadfe23044" prot="public" virt="non-virtual"><scope>rolly::noncopyable</scope><name>noncopyable</name></member>

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classrolly_1_1application__dirs" kind="class" language="C++" prot="public">
     <compoundname>rolly::application_dirs</compoundname>
-    <includes refid="directories_8h" local="no">directories.h</includes>
+    <includes refid="directories_8h" local="no">rolly/directories.h</includes>
       <sectiondef kind="public-type">
       <memberdef kind="enum" id="classrolly_1_1application__dirs_1aa671c41b56810ab4bfd94587e8507a75" prot="public" static="no" strong="yes">
         <type><ref refid="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" kindref="member">u8</ref></type>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="63" column="19" bodyfile="include/rolly/directories.h" bodystart="63" bodyend="72"/>
+        <location file="rolly/directories.h" line="65" column="19" bodyfile="rolly/directories.h" bodystart="65" bodyend="74"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="330" column="27" bodyfile="include/rolly/directories.h" bodystart="330" bodyend="-1"/>
+        <location file="rolly/directories.h" line="347" column="27" bodyfile="rolly/directories.h" bodystart="347" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1application__dirs_1a8708b6187e9976237b9516c21aadf822" prot="private" static="no" mutable="no">
         <type>std::filesystem::path</type>
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="331" column="27" bodyfile="include/rolly/directories.h" bodystart="331" bodyend="-1"/>
+        <location file="rolly/directories.h" line="348" column="27" bodyfile="rolly/directories.h" bodystart="348" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1application__dirs_1aaba55b6678ac34ecd42f5e3b0646d126" prot="private" static="no" mutable="no">
         <type>std::filesystem::path</type>
@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="332" column="27" bodyfile="include/rolly/directories.h" bodystart="332" bodyend="-1"/>
+        <location file="rolly/directories.h" line="349" column="27" bodyfile="rolly/directories.h" bodystart="349" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1application__dirs_1a14a686f4d5a0cfdfd7fc17aa4d34ecde" prot="private" static="no" mutable="no">
         <type>std::filesystem::path</type>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="333" column="27" bodyfile="include/rolly/directories.h" bodystart="333" bodyend="-1"/>
+        <location file="rolly/directories.h" line="350" column="27" bodyfile="rolly/directories.h" bodystart="350" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1application__dirs_1a93e41434d609c7f2a1a54d414af96a56" prot="private" static="no" mutable="no">
         <type>std::filesystem::path</type>
@@ -145,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="334" column="27" bodyfile="include/rolly/directories.h" bodystart="334" bodyend="-1"/>
+        <location file="rolly/directories.h" line="351" column="27" bodyfile="rolly/directories.h" bodystart="351" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1application__dirs_1acd8e104438a18f60bd7b83ef7dd37181" prot="private" static="no" mutable="no">
         <type>std::filesystem::path</type>
@@ -158,7 +158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="335" column="27" bodyfile="include/rolly/directories.h" bodystart="335" bodyend="-1"/>
+        <location file="rolly/directories.h" line="352" column="27" bodyfile="rolly/directories.h" bodystart="352" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1application__dirs_1a31b336dba18a4108e441e83c8a732e27" prot="private" static="no" mutable="no">
         <type>std::filesystem::path</type>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="336" column="27" bodyfile="include/rolly/directories.h" bodystart="336" bodyend="-1"/>
+        <location file="rolly/directories.h" line="353" column="27" bodyfile="rolly/directories.h" bodystart="353" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1application__dirs_1a14e4a14d14983d8f904f4901b7e048ee" prot="private" static="no" mutable="no">
         <type>std::optional&lt; std::filesystem::path &gt;</type>
@@ -184,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="337" column="19" bodyfile="include/rolly/directories.h" bodystart="337" bodyend="-1"/>
+        <location file="rolly/directories.h" line="354" column="19" bodyfile="rolly/directories.h" bodystart="354" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1application__dirs_1a4aa7f02371f0ad22bd13d2c80f0da1e9" prot="private" static="no" mutable="no">
         <type>std::optional&lt; std::filesystem::path &gt;</type>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="338" column="19" bodyfile="include/rolly/directories.h" bodystart="338" bodyend="-1"/>
+        <location file="rolly/directories.h" line="355" column="19" bodyfile="rolly/directories.h" bodystart="355" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -302,7 +302,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="110" column="7"/>
+        <location file="rolly/directories.h" line="114" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a9d30264f6f4177a75053575e5e04f771" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -345,7 +345,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="123" column="16"/>
+        <location file="rolly/directories.h" line="129" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a2d42730a391790d4be3c9fe14af5327e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -359,7 +359,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="132" column="7"/>
+        <location file="rolly/directories.h" line="138" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a83b6c3587991d0a3afeac89f2c61de17" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -373,7 +373,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="141" column="7"/>
+        <location file="rolly/directories.h" line="147" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a877c175fe97261a9b214ed7152481482" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -416,7 +416,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="155" column="35"/>
+        <location file="rolly/directories.h" line="162" column="35"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a00ff1719edd03ad0aff4a10010eb503b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -459,7 +459,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="165" column="41" bodyfile="include/rolly/directories.h" bodystart="165" bodyend="165"/>
+        <location file="rolly/directories.h" line="173" column="41" bodyfile="rolly/directories.h" bodystart="173" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a30e2c864bb359337268ceea8388e6a70" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -476,7 +476,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="176" column="35"/>
+        <location file="rolly/directories.h" line="186" column="35"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a16a0cf395395ae824d875bd7e6d8a842" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -504,7 +504,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="195" column="35"/>
+        <location file="rolly/directories.h" line="206" column="35"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a59c6f1acf971116e29638f2603ddab24" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -532,7 +532,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="214" column="35"/>
+        <location file="rolly/directories.h" line="226" column="35"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1af397d204a53b4d8663cab8fe3290f7e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -560,7 +560,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="233" column="35"/>
+        <location file="rolly/directories.h" line="246" column="35"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a4bc1b913553cb31ddf0c37cc55c6c4c5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -588,7 +588,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="252" column="35"/>
+        <location file="rolly/directories.h" line="266" column="35"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a9515233f07cdc7f8626c6e85e2ff6fe2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -616,7 +616,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="271" column="35"/>
+        <location file="rolly/directories.h" line="286" column="35"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1ac0c60c9ab055e4fbe6e2faecd6722a9a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -644,7 +644,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="290" column="35"/>
+        <location file="rolly/directories.h" line="306" column="35"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a559edd679316c7ced41fef5119788cef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::optional&lt; std::filesystem::path &gt; const  &amp;</type>
@@ -675,7 +675,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="309" column="27"/>
+        <location file="rolly/directories.h" line="324" column="27"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1application__dirs_1a2523855bb47cadb2a77c10fa2351ba67" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::optional&lt; std::filesystem::path &gt; const  &amp;</type>
@@ -706,7 +706,7 @@ Example values of app: <itemizedlist>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="327" column="27"/>
+        <location file="rolly/directories.h" line="344" column="27"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -718,7 +718,8 @@ Example values of app: <itemizedlist>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classrolly_1_1application__dirs_1aa671c41b56810ab4bfd94587e8507a75" kindref="member">rolly::application_dirs::dir</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dirs<sp/>=<sp/><ref refid="classrolly_1_1application__dirs_1a55c0e5e3ac7e710af26c992fd49dec50" kindref="member">application_dirs</ref>(</highlight><highlight class="stringliteral">&quot;com&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Foo<sp/>Corp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Bar<sp/>App&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::cout</ref><sp/>&lt;&lt;<sp/>dirs[config].string()<sp/>&lt;&lt;<sp/><ref refid="cpp/io/manip/endl" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::endl</ref>;<sp/></highlight><highlight class="comment">//<sp/>or<sp/>std::cout<sp/>&lt;&lt;<sp/>dirs.config_dir()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::cout</ref><sp/>&lt;&lt;<sp/>dirs[config].string()<sp/>&lt;&lt;<sp/><ref refid="cpp/io/manip/endl" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::endl</ref>;<sp/></highlight><highlight class="comment">//<sp/>or<sp/>std::cout<sp/>&lt;&lt;<sp/>dirs.config_dir()<sp/>&lt;&lt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="cpp/io/manip/endl" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::endl</ref>;</highlight></codeline>
 </programlisting> will produce the following output: <programlisting filename=".shell-session"><codeline><highlight class="normal">Linux:<sp/><sp/><sp/>&apos;/home/alice/.config/barapp&apos;</highlight></codeline>
 <codeline><highlight class="normal">Windows:<sp/>&apos;C:\\Users\\Alice\\AppData\\Roaming\\Foo<sp/>Corp\\Bar<sp/>App&apos;</highlight></codeline>
 <codeline><highlight class="normal">MacOS:<sp/><sp/><sp/>&apos;/Users/Alice/Library/Application<sp/>Support/com.Foo-Corp.Bar-App&apos;</highlight></codeline>
@@ -726,7 +727,7 @@ Example values of app: <itemizedlist>
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/directories.h" line="58" column="25" bodyfile="include/rolly/directories.h" bodystart="58" bodyend="339"/>
+    <location file="rolly/directories.h" line="60" column="25" bodyfile="rolly/directories.h" bodystart="60" bodyend="356"/>
     <listofallmembers>
       <member refid="classrolly_1_1application__dirs_1a55c0e5e3ac7e710af26c992fd49dec50" prot="public" virt="non-virtual"><scope>rolly::application_dirs</scope><name>application_dirs</name></member>
       <member refid="classrolly_1_1application__dirs_1a9d30264f6f4177a75053575e5e04f771" prot="public" virt="non-virtual"><scope>rolly::application_dirs</scope><name>application_dirs</name></member>

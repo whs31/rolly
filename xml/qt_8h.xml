@@ -298,6 +298,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/qt.h"/>
+    <location file="rolly/qt.h"/>
   </compounddef>
 </doxygen>

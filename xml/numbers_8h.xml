@@ -233,7 +233,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/numbers.h" line="17" column="22" bodyfile="include/rolly/numbers.h" bodystart="17" bodyend="-1"/>
+        <location file="rolly/numbers.h" line="18" column="22" bodyfile="rolly/numbers.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1numbers_1a0b0f1ccd0f6d9d51ca5644ad4c252475" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
@@ -252,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/numbers.h" line="20" column="22" bodyfile="include/rolly/numbers.h" bodystart="20" bodyend="-1"/>
+        <location file="rolly/numbers.h" line="22" column="22" bodyfile="rolly/numbers.h" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1numbers_1a95ed8d1f751904d69454dbb31f1f247d" prot="public" static="no" constexpr="yes" mutable="no">
         <type>constexpr auto</type>
@@ -268,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/numbers.h" line="26" column="25" bodyfile="include/rolly/numbers.h" bodystart="26" bodyend="-1"/>
+        <location file="rolly/numbers.h" line="28" column="25" bodyfile="rolly/numbers.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1numbers_1ab7374b6e3094e3cf3c26ef8d96348200" prot="public" static="no" constexpr="yes" mutable="no">
         <type>constexpr auto</type>
@@ -284,13 +284,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/numbers.h" line="32" column="25" bodyfile="include/rolly/numbers.h" bodystart="32" bodyend="-1"/>
+        <location file="rolly/numbers.h" line="35" column="25" bodyfile="rolly/numbers.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/numbers.h"/>
+    <location file="rolly/numbers.h"/>
   </compounddef>
 </doxygen>

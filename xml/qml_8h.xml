@@ -328,7 +328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/qml.h" line="22" column="26" bodyfile="include/rolly/qt/qml.h" bodystart="22" bodyend="26"/>
+        <location file="rolly/qt/qml.h" line="22" column="26" bodyfile="rolly/qt/qml.h" bodystart="22" bodyend="26"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -351,13 +351,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/qml.h" line="28" column="25" bodyfile="include/rolly/qt/qml.h" bodystart="28" bodyend="50"/>
+        <location file="rolly/qt/qml.h" line="28" column="25" bodyfile="rolly/qt/qml.h" bodystart="28" bodyend="50"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/qt/qml.h"/>
+    <location file="rolly/qt/qml.h"/>
   </compounddef>
 </doxygen>

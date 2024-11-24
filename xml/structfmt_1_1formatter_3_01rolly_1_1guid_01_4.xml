@@ -3,7 +3,7 @@
   <compounddef id="structfmt_1_1formatter_3_01rolly_1_1guid_01_4" kind="struct" language="C++" prot="public">
     <compoundname>fmt::formatter&lt; rolly::guid &gt;</compoundname>
     <basecompoundref prot="public" virt="non-virtual">fmt::formatter&lt; std::string_view &gt;</basecompoundref>
-    <includes refid="guid_8h" local="no">guid.h</includes>
+    <includes refid="guid_8h" local="no">rolly/types/guid.h</includes>
     <templateparamlist>
     </templateparamlist>
       <sectiondef kind="public-func">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="221" column="8" bodyfile="include/rolly/types/guid.h" bodystart="221" bodyend="223"/>
+        <location file="rolly/types/guid.h" line="222" column="8" bodyfile="rolly/types/guid.h" bodystart="222" bodyend="224"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -61,7 +61,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/types/guid.h" line="219" column="38" bodyfile="include/rolly/types/guid.h" bodystart="219" bodyend="224"/>
+    <location file="rolly/types/guid.h" line="220" column="38" bodyfile="rolly/types/guid.h" bodystart="220" bodyend="225"/>
     <listofallmembers>
       <member refid="structfmt_1_1formatter_3_01rolly_1_1guid_01_4_1ad4cfc194875e2a403337411a170ddc7f" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::guid &gt;</scope><name>format</name></member>
     </listofallmembers>

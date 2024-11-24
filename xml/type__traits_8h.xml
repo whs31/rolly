@@ -204,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/type_traits.h" line="27" column="3" bodyfile="include/rolly/type_traits.h" bodystart="27" bodyend="-1"/>
+        <location file="rolly/type_traits.h" line="30" column="3" bodyfile="rolly/type_traits.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" prot="public" static="no">
         <templateparamlist>
@@ -226,13 +226,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/type_traits.h" line="59" column="3" bodyfile="include/rolly/type_traits.h" bodystart="59" bodyend="-1"/>
+        <location file="rolly/type_traits.h" line="62" column="3" bodyfile="rolly/type_traits.h" bodystart="62" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/type_traits.h"/>
+    <location file="rolly/type_traits.h"/>
   </compounddef>
 </doxygen>

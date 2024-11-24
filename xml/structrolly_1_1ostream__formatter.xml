@@ -3,7 +3,7 @@
   <compounddef id="structrolly_1_1ostream__formatter" kind="struct" language="C++" prot="public">
     <compoundname>rolly::ostream_formatter</compoundname>
     <basecompoundref prot="public" virt="non-virtual">fmt::formatter&lt; std::basic_string_view&lt; C &gt;, C &gt;</basecompoundref>
-    <includes refid="ostream__formatter_8h" local="no">ostream_formatter.h</includes>
+    <includes refid="ostream__formatter_8h" local="no">rolly/format/ostream_formatter.h</includes>
     <templateparamlist>
       <param>
         <type>typename C</type>
@@ -38,16 +38,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/format/ostream_formatter.h" line="28" column="14" bodyfile="include/rolly/format/ostream_formatter.h" bodystart="28" bodyend="32"/>
+        <location file="rolly/format/ostream_formatter.h" line="30" column="14" bodyfile="rolly/format/ostream_formatter.h" bodystart="30" bodyend="34"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Formatter for types which support stream output. </para>
     </briefdescription>
     <detaileddescription>
-<para>Example usage for <computeroutput><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::ostream</ref></computeroutput>: <programlisting filename=".cpp"><codeline><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">[[maybe_unused]]<sp/>fmt::formatter&lt;YourType&gt;<sp/>:<sp/><ref refid="structrolly_1_1ostream__formatter" kindref="compound">rolly::ostream_formatter</ref>&lt;char&gt;<sp/>{};</highlight></codeline>
+<para>Example usage for <computeroutput><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::ostream</ref></computeroutput>: <programlisting filename=".cpp"><codeline><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">[[maybe_unused]]<sp/>fmt::formatter&lt;YourType&gt;<sp/>:<sp/><ref refid="structrolly_1_1ostream__formatter" kindref="compound">rolly::ostream_formatter</ref>&lt;char&gt;</highlight></codeline>
+<codeline><highlight class="normal">{};</highlight></codeline>
 </programlisting></para>
-<para>Example usage for <computeroutput><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::wostream</ref></computeroutput>: <programlisting filename=".cpp"><codeline><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">[[maybe_unused]]<sp/>fmt::formatter&lt;YourType&gt;<sp/>:<sp/><ref refid="structrolly_1_1ostream__formatter" kindref="compound">rolly::ostream_formatter</ref>&lt;wchar_t&gt;<sp/>{};</highlight></codeline>
+<para>Example usage for <computeroutput><ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::wostream</ref></computeroutput>: <programlisting filename=".cpp"><codeline><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">[[maybe_unused]]<sp/>fmt::formatter&lt;YourType&gt;<sp/>:</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="structrolly_1_1ostream__formatter" kindref="compound">rolly::ostream_formatter</ref>&lt;wchar_t&gt;<sp/>{};</highlight></codeline>
 </programlisting> <parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>C</parametername>
@@ -94,7 +96,7 @@
         <label>formatter&lt; std::basic_string_view&lt; C &gt;, C &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/format/ostream_formatter.h" line="23" column="43" bodyfile="include/rolly/format/ostream_formatter.h" bodystart="23" bodyend="33"/>
+    <location file="rolly/format/ostream_formatter.h" line="25" column="43" bodyfile="rolly/format/ostream_formatter.h" bodystart="25" bodyend="35"/>
     <listofallmembers>
       <member refid="structrolly_1_1ostream__formatter_1a530ff3c61e787d95ed7ee018d3a26ca2" prot="public" virt="non-virtual"><scope>rolly::ostream_formatter</scope><name>format</name></member>
     </listofallmembers>

@@ -234,6 +234,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/format/ostream_formatter.h"/>
+    <location file="rolly/format/ostream_formatter.h"/>
   </compounddef>
 </doxygen>

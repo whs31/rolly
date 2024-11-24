@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structfmt_1_1formatter_3_01rolly_1_1point2d_3_01T_01_4_01_4" kind="struct" language="C++" prot="public">
     <compoundname>fmt::formatter&lt; rolly::point2d&lt; T &gt; &gt;</compoundname>
-    <includes refid="point2d_8h" local="no">point2d.h</includes>
+    <includes refid="point2d_8h" local="no">rolly/types/point2d.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/point2d.h" line="670" column="18" bodyfile="include/rolly/types/point2d.h" bodystart="670" bodyend="670"/>
+        <location file="rolly/types/point2d.h" line="711" column="18" bodyfile="rolly/types/point2d.h" bodystart="711" bodyend="711"/>
       </memberdef>
       <memberdef kind="function" id="structfmt_1_1formatter_3_01rolly_1_1point2d_3_01T_01_4_01_4_1a46810b6cde2ea30a56109e7635693034" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/point2d.h" line="672" column="8" bodyfile="include/rolly/types/point2d.h" bodystart="672" bodyend="675"/>
+        <location file="rolly/types/point2d.h" line="713" column="8" bodyfile="rolly/types/point2d.h" bodystart="713" bodyend="716"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -63,7 +63,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/point2d.h" line="669" column="23" bodyfile="include/rolly/types/point2d.h" bodystart="669" bodyend="676"/>
+    <location file="rolly/types/point2d.h" line="710" column="23" bodyfile="rolly/types/point2d.h" bodystart="710" bodyend="717"/>
     <listofallmembers>
       <member refid="structfmt_1_1formatter_3_01rolly_1_1point2d_3_01T_01_4_01_4_1a46810b6cde2ea30a56109e7635693034" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::point2d&lt; T &gt; &gt;</scope><name>format</name></member>
       <member refid="structfmt_1_1formatter_3_01rolly_1_1point2d_3_01T_01_4_01_4_1ace7073dae42bf3e88060cd4f66d6a01f" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::point2d&lt; T &gt; &gt;</scope><name>parse</name></member>

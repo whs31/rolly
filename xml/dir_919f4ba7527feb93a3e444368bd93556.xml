@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
-  <compounddef id="dir_5d8153cc577da5c0ce23fef2bbc4bcde" kind="dir">
+  <compounddef id="dir_919f4ba7527feb93a3e444368bd93556" kind="dir">
     <compoundname>io</compoundname>
     <innerfile refid="filedevice_8h">filedevice.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/io/"/>
+    <location file="rolly/io/"/>
   </compounddef>
 </doxygen>

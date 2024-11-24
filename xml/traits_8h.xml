@@ -202,6 +202,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/traits.h"/>
+    <location file="rolly/traits.h"/>
   </compounddef>
 </doxygen>

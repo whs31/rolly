@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structstd_1_1hash_3_01rolly_1_1box_3_01T_01_4_01_4" kind="struct" language="C++" prot="public">
     <compoundname>std::hash&lt; rolly::box&lt; T &gt; &gt;</compoundname>
-    <includes refid="box_8h" local="no">box.h</includes>
+    <includes refid="box_8h" local="no">rolly/memory/box.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/box.h" line="313" column="18" bodyfile="include/rolly/memory/box.h" bodystart="313" bodyend="315"/>
+        <location file="rolly/memory/box.h" line="317" column="18" bodyfile="rolly/memory/box.h" bodystart="317" bodyend="319"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -55,7 +55,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/memory/box.h" line="312" column="15" bodyfile="include/rolly/memory/box.h" bodystart="312" bodyend="316"/>
+    <location file="rolly/memory/box.h" line="316" column="15" bodyfile="rolly/memory/box.h" bodystart="316" bodyend="320"/>
     <listofallmembers>
       <member refid="structstd_1_1hash_3_01rolly_1_1box_3_01T_01_4_01_4_1a09f6786214eb98bb574f3b21e27f7ea7" prot="public" virt="non-virtual"><scope>std::hash&lt; rolly::box&lt; T &gt; &gt;</scope><name>operator()</name></member>
     </listofallmembers>

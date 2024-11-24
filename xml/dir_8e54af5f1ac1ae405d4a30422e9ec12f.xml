@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
-  <compounddef id="dir_69c40b2d5627d47a18ef9ba4da954b85" kind="dir">
+  <compounddef id="dir_8e54af5f1ac1ae405d4a30422e9ec12f" kind="dir">
     <compoundname>types</compoundname>
     <innerfile refid="angle_8h">angle.h</innerfile>
     <innerfile refid="guid_8h">guid.h</innerfile>
@@ -14,6 +14,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/types/"/>
+    <location file="rolly/types/"/>
   </compounddef>
 </doxygen>

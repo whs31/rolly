@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classrolly_1_1meta_1_1project__meta" kind="class" language="C++" prot="public">
     <compoundname>rolly::meta::project_meta</compoundname>
-    <includes refid="version_8h" local="no">version.h</includes>
+    <includes refid="version_8h" local="no">rolly/global/version.h</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classrolly_1_1meta_1_1project__meta_1a57ea2e18ffb95f496ec29a0bd9fa4c75" prot="private" static="no" mutable="no">
         <type>struct <ref refid="structrolly_1_1version" kindref="compound">version</ref></type>
@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="57" column="35" bodyfile="include/rolly/global/version.h" bodystart="60" bodyend="-1"/>
+        <location file="rolly/global/version.h" line="58" column="35" bodyfile="rolly/global/version.h" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1meta_1_1project__meta_1a5f334163123b6db7ae068a6ccdb06a34" prot="private" static="no" mutable="no">
         <type>std::string_view</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="61" column="24" bodyfile="include/rolly/global/version.h" bodystart="61" bodyend="-1"/>
+        <location file="rolly/global/version.h" line="64" column="24" bodyfile="rolly/global/version.h" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1meta_1_1project__meta_1ae762fb49635ffd9139da75ebd5fefb79" prot="private" static="no" mutable="no">
         <type>std::string_view</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="62" column="24" bodyfile="include/rolly/global/version.h" bodystart="62" bodyend="-1"/>
+        <location file="rolly/global/version.h" line="65" column="24" bodyfile="rolly/global/version.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1meta_1_1project__meta_1afa5420d2f47a72fd0f3cc3c5224f1e48" prot="private" static="no" mutable="no">
         <type>std::string_view</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="63" column="24" bodyfile="include/rolly/global/version.h" bodystart="63" bodyend="-1"/>
+        <location file="rolly/global/version.h" line="66" column="24" bodyfile="rolly/global/version.h" bodystart="66" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="28" column="17" bodyfile="include/rolly/global/version.h" bodystart="28" bodyend="37"/>
+        <location file="rolly/global/version.h" line="29" column="17" bodyfile="rolly/global/version.h" bodystart="29" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1meta_1_1project__meta_1a00fa0078220b94333ca2fc508e401daa" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr struct <ref refid="structrolly_1_1version" kindref="compound">version</ref></type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="28" column="17" bodyfile="include/rolly/global/version.h" bodystart="42" bodyend="42"/>
+        <location file="rolly/global/version.h" line="29" column="17" bodyfile="rolly/global/version.h" bodystart="43" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1meta_1_1project__meta_1a6dbef6eba3f6e10e6214264935416840" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr std::string_view</type>
@@ -148,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="47" column="35" bodyfile="include/rolly/global/version.h" bodystart="47" bodyend="47"/>
+        <location file="rolly/global/version.h" line="48" column="35" bodyfile="rolly/global/version.h" bodystart="48" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1meta_1_1project__meta_1a82b2a19d47f1a52d8d8e7369f46e85fa" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr std::string_view</type>
@@ -162,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="52" column="35" bodyfile="include/rolly/global/version.h" bodystart="52" bodyend="52"/>
+        <location file="rolly/global/version.h" line="53" column="35" bodyfile="rolly/global/version.h" bodystart="53" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1meta_1_1project__meta_1ab9a206438e0c206e925fcd11f4722b8a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr std::string_view</type>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="57" column="35" bodyfile="include/rolly/global/version.h" bodystart="57" bodyend="57"/>
+        <location file="rolly/global/version.h" line="58" column="35" bodyfile="rolly/global/version.h" bodystart="58" bodyend="60"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -188,7 +188,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/global/version.h" line="19" column="23" bodyfile="include/rolly/global/version.h" bodystart="19" bodyend="64"/>
+    <location file="rolly/global/version.h" line="20" column="23" bodyfile="rolly/global/version.h" bodystart="20" bodyend="67"/>
     <listofallmembers>
       <member refid="classrolly_1_1meta_1_1project__meta_1a82b2a19d47f1a52d8d8e7369f46e85fa" prot="public" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>domain</name></member>
       <member refid="classrolly_1_1meta_1_1project__meta_1ae762fb49635ffd9139da75ebd5fefb79" prot="private" virt="non-virtual"><scope>rolly::meta::project_meta</scope><name>domain_</name></member>

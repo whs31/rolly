@@ -186,6 +186,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/io/filedevice.h"/>
+    <location file="rolly/io/filedevice.h"/>
   </compounddef>
 </doxygen>

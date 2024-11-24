@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structstd_1_1hash_3_01rolly_1_1types_1_1vector2d_3_01T_01_4_01_4" kind="struct" language="C++" prot="public">
     <compoundname>std::hash&lt; rolly::types::vector2d&lt; T &gt; &gt;</compoundname>
-    <includes refid="vector2d_8h" local="no">vector2d.h</includes>
+    <includes refid="vector2d_8h" local="no">rolly/types/vector2d.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="707" column="12" bodyfile="include/rolly/types/vector2d.h" bodystart="707" bodyend="709"/>
+        <location file="rolly/types/vector2d.h" line="739" column="12" bodyfile="rolly/types/vector2d.h" bodystart="739" bodyend="741"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -55,7 +55,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/vector2d.h" line="706" column="15" bodyfile="include/rolly/types/vector2d.h" bodystart="706" bodyend="710"/>
+    <location file="rolly/types/vector2d.h" line="738" column="15" bodyfile="rolly/types/vector2d.h" bodystart="738" bodyend="742"/>
     <listofallmembers>
       <member refid="structstd_1_1hash_3_01rolly_1_1types_1_1vector2d_3_01T_01_4_01_4_1a9f5a4cf3ced83f32656370754976c765" prot="public" virt="non-virtual"><scope>std::hash&lt; rolly::types::vector2d&lt; T &gt; &gt;</scope><name>operator()</name></member>
     </listofallmembers>

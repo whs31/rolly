@@ -6,12 +6,12 @@
     <includes refid="plugin__loader_8h" local="yes">dll/plugin_loader.h</includes>
     <includedby refid="rolly_8h" local="yes">rolly.h</includedby>
     <incdepgraph>
-      <node id="43">
+      <node id="44">
         <label>format/ostream_formatter.h</label>
         <link refid="ostream__formatter_8h_source"/>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
@@ -27,8 +27,11 @@
       <node id="20">
         <label>limits</label>
       </node>
-      <node id="45">
+      <node id="46">
         <label>filesystem</label>
+      </node>
+      <node id="34">
+        <label>iterator</label>
       </node>
       <node id="14">
         <label>cstdint</label>
@@ -46,15 +49,15 @@
       <node id="19">
         <label>charconv</label>
       </node>
-      <node id="34">
+      <node id="35">
         <label>../traits/pin.h</label>
         <link refid="pin_8h_source"/>
-        <childnode refid="35" relation="include">
-        </childnode>
         <childnode refid="36" relation="include">
         </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
       </node>
-      <node id="40">
+      <node id="41">
         <label>variant</label>
       </node>
       <node id="5">
@@ -93,25 +96,25 @@
       <node id="4">
         <label>string</label>
       </node>
-      <node id="37">
+      <node id="38">
         <label>shared_library.h</label>
         <link refid="shared__library_8h_source"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="46" relation="include">
         </childnode>
       </node>
       <node id="12">
         <label>../global/export.h</label>
         <link refid="export_8h_source"/>
       </node>
-      <node id="39">
+      <node id="40">
         <label>exception</label>
       </node>
       <node id="28">
@@ -187,9 +190,11 @@
         </childnode>
         <childnode refid="34" relation="include">
         </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
       </node>
       <node id="21">
@@ -204,15 +209,15 @@
       <node id="7">
         <label>array</label>
       </node>
-      <node id="44">
+      <node id="45">
         <label>sstream</label>
       </node>
-      <node id="38">
+      <node id="39">
         <label>../types/result.h</label>
         <link refid="result_8h_source"/>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
@@ -220,13 +225,13 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -264,25 +269,25 @@
       <node id="32">
         <label>unordered_map</label>
       </node>
-      <node id="42">
+      <node id="43">
         <label>source_location.h</label>
         <link refid="source__location_8h_source"/>
-        <childnode refid="43" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="36">
+      <node id="37">
         <label>nonmovable.h</label>
         <link refid="nonmovable_8h_source"/>
       </node>
-      <node id="35">
+      <node id="36">
         <label>noncopyable.h</label>
         <link refid="noncopyable_8h_source"/>
       </node>
-      <node id="41">
+      <node id="42">
         <label>../contracts.h</label>
         <link refid="contracts_8h_source"/>
         <childnode refid="4" relation="include">
@@ -297,7 +302,7 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
       </node>
       <node id="26">
@@ -343,6 +348,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/dll.h"/>
+    <location file="rolly/dll.h"/>
   </compounddef>
 </doxygen>

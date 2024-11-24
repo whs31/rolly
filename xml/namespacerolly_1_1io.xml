@@ -8,6 +8,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/io/filedevice.h" line="14" column="14"/>
+    <location file="rolly/io/filedevice.h" line="14" column="14"/>
   </compounddef>
 </doxygen>

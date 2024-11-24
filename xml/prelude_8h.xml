@@ -275,6 +275,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/prelude.h"/>
+    <location file="rolly/prelude.h"/>
   </compounddef>
 </doxygen>

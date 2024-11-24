@@ -16,6 +16,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/serialization/tags.h" line="14" column="18"/>
+    <location file="rolly/serialization/tags.h" line="14" column="18"/>
   </compounddef>
 </doxygen>

@@ -48,7 +48,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacerolly_1_1dll.html">dll</a>::<wbr/></span>plugin_loader <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="plugin__loader_8h.html">&lt;include/rolly/dll/plugin_loader.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="plugin__loader_8h.html">&lt;rolly/dll/plugin_loader.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -57,6 +57,7 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
@@ -64,6 +65,27 @@
             </li>
           </ul>
         </nav>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a961bef5ac3dd84bcb8152907385b72af">
+              using <a href="#a961bef5ac3dd84bcb8152907385b72af" class="m-doc-self">iterator</a> = <a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>&gt;&gt;::iterator
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a46f847da5b0efbe0d2e79e5f63a89b65">
+              using <a href="#a46f847da5b0efbe0d2e79e5f63a89b65" class="m-doc-self">const_iterator</a> = <a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>&gt;&gt;::const_iterator
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a67de980163e16db12c3c50e7eb4eff9e">
+              using <a href="#a67de980163e16db12c3c50e7eb4eff9e" class="m-doc-self">reverse_iterator</a> = <a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>&gt;&gt;::reverse_iterator
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1ab09913180db3f0013a6e547108688">
+              using <a href="#aa1ab09913180db3f0013a6e547108688" class="m-doc-self">const_reverse_iterator</a> = <a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" class="m-doc-external">std::<wbr />unique_ptr</a>&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>&gt;&gt;::const_reverse_iterator
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
@@ -105,6 +127,34 @@
               <span class="m-dox-wrap-bumper">auto <a href="#a2da6d8311065fc4f2353b41a989d479c" class="m-dox-self" name="a2da6d8311065fc4f2353b41a989d479c">operator=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a>&amp;&amp;) -&gt; <a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">plugin_<wbr />loader</a>&amp; <span class="m-label m-flat m-danger">deleted</span></span>
             </dt>
             <dd><span></span></dd>
+            <dt id="a979556eb331ec35eb33472a90a160f99">
+              <span class="m-dox-wrap-bumper">auto <a href="#a979556eb331ec35eb33472a90a160f99" class="m-dox-self" name="a979556eb331ec35eb33472a90a160f99">begin</a>(</span><span class="m-dox-wrap">) -&gt; iterator <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1ca1fc2c9fc3e169d5d0decfd1e54221">
+              <span class="m-dox-wrap-bumper">auto <a href="#a1ca1fc2c9fc3e169d5d0decfd1e54221" class="m-dox-self" name="a1ca1fc2c9fc3e169d5d0decfd1e54221">begin</a>(</span><span class="m-dox-wrap">) const -&gt; const_iterator <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abeb76f7f3414f270020e6f467586bd93">
+              <span class="m-dox-wrap-bumper">auto <a href="#abeb76f7f3414f270020e6f467586bd93" class="m-dox-self" name="abeb76f7f3414f270020e6f467586bd93">cbegin</a>(</span><span class="m-dox-wrap">) const -&gt; const_iterator <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9859a454bb6f50c654e280274d6a9d13">
+              <span class="m-dox-wrap-bumper">auto <a href="#a9859a454bb6f50c654e280274d6a9d13" class="m-dox-self" name="a9859a454bb6f50c654e280274d6a9d13">cend</a>(</span><span class="m-dox-wrap">) const -&gt; const_iterator <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afc5380afa64b233d0df01a147616974b">
+              <span class="m-dox-wrap-bumper">auto <a href="#afc5380afa64b233d0df01a147616974b" class="m-dox-self" name="afc5380afa64b233d0df01a147616974b">end</a>(</span><span class="m-dox-wrap">) -&gt; iterator <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac7cd69c57ab7c76ac6eb26c474a43053">
+              <span class="m-dox-wrap-bumper">auto <a href="#ac7cd69c57ab7c76ac6eb26c474a43053" class="m-dox-self" name="ac7cd69c57ab7c76ac6eb26c474a43053">rbegin</a>(</span><span class="m-dox-wrap">) -&gt; reverse_iterator <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aff2c14a4e54378db02316aa5dacce912">
+              <span class="m-dox-wrap-bumper">auto <a href="#aff2c14a4e54378db02316aa5dacce912" class="m-dox-self" name="aff2c14a4e54378db02316aa5dacce912">rbegin</a>(</span><span class="m-dox-wrap">) const -&gt; const_reverse_iterator <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#a042cb25dc22561bcc289d2364bf6b4d8" class="m-dox">load</a>(</span><span class="m-dox-wrap">std::string_view name) -&gt; result&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>*&gt;</span>
             </dt>
@@ -114,6 +164,10 @@
               std::string_view name) -&gt; result&lt;<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a>*&gt;</span>
             </dt>
             <dd>Loads a plugin by name and path.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a38b487643397a2f0c29c120f8ede3ba1" class="m-dox">unload</a>(</span><span class="m-dox-wrap">std::string_view name) -&gt; result</span>
+            </dt>
+            <dd>Unloads a plugin by name.</dd>
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#a929e00117a988f8c03074599eae5316a" class="m-dox">load_all</a>(</span><span class="m-dox-wrap">std::filesystem::path const&amp; path,
               std::string_view extension = <a href="classrolly_1_1dll_1_1plugin__loader.html#aa5ddc06c4d3be94b529d49e9b8c0d19e" class="m-doc">plugin_loader::<wbr />native_extension</a>()) -&gt; result</span>
@@ -262,6 +316,29 @@
                 <tr>
                   <th>Returns</th>
                   <td>Pointer to the loaded plugin or error if loading fails.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a38b487643397a2f0c29c120f8ede3ba1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">result rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a38b487643397a2f0c29c120f8ede3ba1" class="m-doc-self">unload</a>(</span><span class="m-doc-wrap">std::string_view name)</span></span>
+            </h3>
+            <p>Unloads a plugin by name.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">name</td>
+                  <td>Name of the plugin to unload.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Error if unloading fails.</td>
                 </tr>
               </tfoot>
             </table>

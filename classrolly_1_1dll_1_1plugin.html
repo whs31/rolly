@@ -48,7 +48,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacerolly_1_1dll.html">dll</a>::<wbr/></span>plugin <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="plugin_8h.html">&lt;include/rolly/dll/plugin.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="plugin_8h.html">&lt;rolly/dll/plugin.h&gt;</a></div>
         </h1>
         <p>Plugin interface.</p>
         <nav class="m-block m-default">
@@ -62,8 +62,10 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
               </ul>
             </li>
           </ul>
@@ -86,8 +88,10 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">ExamplePlugin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">rolly</span><span class="o">::</span><span class="n">dll</span><span class="o">::</span><span class="n">plugin</span><span class="w"> </span><span class="p">{</span>
 <span class="w"> </span><span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">hello</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// example function - part of your plugin&#39;s public API.</span>
-<span class="w">                                                       </span><span class="c1">// we will call this function in the application later.</span>
+<span class="w">  </span><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">hello</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// example function - part of your</span>
+<span class="n">plugin</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">API</span><span class="p">.</span>
+<span class="w">                                                       </span><span class="c1">// we will call this function in the</span>
+<span class="n">application</span><span class="w"> </span><span class="n">later</span><span class="p">.</span>
 <span class="p">};</span></pre></section><section id="plugin_example_plugin_impl"><h5><a href="#plugin_example_plugin_impl">Example plugin implementation</a></h5><p>Implementation of the plugin interface must be compiled as a <strong>SHARED</strong> library, which links to the <strong>INTERFACE</strong> library described above.</p><aside class="m-note m-danger"><h4>Warning</h4><p><a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">rolly::<wbr />dll::<wbr />plugin_loader</a> expects libraries on Linux to be named with the prefix <code>lib</code>, e.g. <code>libplugin-impl</code>. In Windows, it expects the same, but without the prefix. By default, CMake with MingW compiles the libraries with the prefix <code>lib</code>, so don&#x27;t forget to set the prefix to <code>&quot;&quot;</code>., e.g.</p><pre class="m-code"><span class="nb">if</span><span class="p">(</span><span class="s">WIN32</span><span class="p">)</span>
 <span class="w">  </span><span class="nb">set_target_properties</span><span class="p">(</span><span class="s">plugin-impl</span><span class="w"> </span><span class="s">PROPERTIES</span><span class="w"> </span><span class="s">PREFIX</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="nb">endif</span><span class="p">()</span></pre></aside><p><strong>CMakeLists.txt</strong></p><pre class="m-code"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.16</span><span class="p">)</span>
@@ -142,8 +146,8 @@
 <span class="nb">if</span><span class="w"> </span><span class="p">(</span><span class="s">WIN32</span><span class="p">)</span>
 <span class="w">  </span><span class="nb">add_custom_command</span><span class="p">(</span><span class="s">TARGET</span><span class="w"> </span><span class="s">plugin-host</span>
 <span class="w">    </span><span class="s">POST_BUILD</span>
-<span class="w">    </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">copy</span><span class="w"> </span><span class="o">$&lt;</span><span class="nv">TARGET_RUNTIME_DLLS:plugin-host</span><span class="o">&gt;</span><span class="w"> </span><span class="o">$&lt;</span><span class="nv">TARGET_FILE_DIR:plugin-host</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="s">COMMAND_EXPAND_LISTS</span>
+<span class="w">    </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">copy</span><span class="w"> </span><span class="o">$&lt;</span><span class="nv">TARGET_RUNTIME_DLLS:plugin-host</span><span class="o">&gt;</span>
+<span class="o">$&lt;</span><span class="nv">TARGET_FILE_DIR:plugin-host</span><span class="o">&gt;</span><span class="w"> </span><span class="s">COMMAND_EXPAND_LISTS</span>
 <span class="w">  </span><span class="p">)</span>
 <span class="nb">endif</span><span class="w"> </span><span class="p">()</span></pre><p><strong>main.cc</strong></p><pre class="m-code"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fmt/core.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rolly/dll/plugin_loader.h&gt;</span>
@@ -188,6 +192,15 @@
 <span class="go">-a----       12.11.2024     15:33           2404   libplugin-host.dll.a</span>
 <span class="go">-a----       12.11.2024     15:33       14017647   librolly.dll</span>
 <span class="go">-a----       12.11.2024     15:33       10949254   plugin-host.exe</span></pre><aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1dll_1_1plugin__loader.html" class="m-doc">rolly::<wbr />dll::<wbr />plugin_loader</a></p></aside></section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aae655bdcd443a53e8cf6b3bd51d824ed">
+              <span class="m-dox-wrap-bumper">static auto <a href="#aae655bdcd443a53e8cf6b3bd51d824ed" class="m-dox-self" name="aae655bdcd443a53e8cf6b3bd51d824ed">native_soname</a>(</span><span class="m-dox-wrap">std::string_view soname) -&gt; <a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -225,13 +238,21 @@
             </dt>
             <dd>Plugin internal interface name.</dd>
             <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a8abfaef9c352d1a3bd0fd8b433081584" class="m-dox">soname</a>(</span><span class="m-dox-wrap">) const -&gt; std::string_view <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Returns name of the plugin&#x27;s shared object file without platform specific extension and <code>lib</code> prefix.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a7effe5b83e10d37f18fb13a2fb35a082" class="m-dox">description</a>(</span><span class="m-dox-wrap">) const -&gt; std::string_view <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Plugin description.</dd>
+            <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#ad293e4b7e7d88a16a360415cca9ad9f1" class="m-dox">meta</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1meta_1_1project__meta.html" class="m-doc">meta::<wbr />project_meta</a> const &amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Plugin metadata.</dd>
-            <dt id="a70ebc47aa2a08a0d5dc1e2222dc2f606">
-              <span class="m-dox-wrap-bumper">auto <a href="#a70ebc47aa2a08a0d5dc1e2222dc2f606" class="m-dox-self" name="a70ebc47aa2a08a0d5dc1e2222dc2f606">uuid</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const &amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a70ebc47aa2a08a0d5dc1e2222dc2f606" class="m-dox">uuid</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const &amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Plugin UUID.</dd>
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#a91048bac1d9f2557cc86c9eb8b39ca59" class="m-dox">init</a>(</span><span class="m-dox-wrap">std::any&amp; init_interface) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -240,6 +261,15 @@
               <span class="m-dox-wrap-bumper">auto <a href="#a4d4fdef23d3fbfb46cfcabc3562e7981" class="m-dox">quit</a>(</span><span class="m-dox-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Called directly before plugin destructor during plugin unloading.</dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a7cfe8ba698ae3d3e7f2448e2e4009b31">
+              <a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> <a href="#a7cfe8ba698ae3d3e7f2448e2e4009b31" class="m-doc-self">soname_</a>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section>
@@ -259,6 +289,36 @@
             </table>
 <p>This function should return unique interface name.</p><p>It is recommended to document this function&#x27;s return value in your plugin documentation.</p><p>Used in <a href="classrolly_1_1dll_1_1plugin__loader.html#a3e3f5ed68afe55f658cf58b604224925" class="m-doc">rolly::<wbr />dll::<wbr />plugin_loader::<wbr />query_interface</a> method for iterating over plugins.</p>
           </div></section>
+          <section class="m-doc-details" id="a8abfaef9c352d1a3bd0fd8b433081584"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string_view rolly::<wbr />dll::<wbr />plugin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8abfaef9c352d1a3bd0fd8b433081584" class="m-doc-self">soname</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Returns name of the plugin&#x27;s shared object file without platform specific extension and <code>lib</code> prefix.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Name of the related shared object file without platform specific extension and <code>lib</code> prefix.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>For example, if <code>libtest.so</code> is loaded, then <code>soname</code> will return <code>test</code>.</p><aside class="m-note m-default"><h4>Version</h4><p>2.1.33</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a7effe5b83e10d37f18fb13a2fb35a082"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string_view rolly::<wbr />dll::<wbr />plugin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7effe5b83e10d37f18fb13a2fb35a082" class="m-doc-self">description</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Plugin description.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Plugin description string or <code>&quot;No description&quot;</code> if empty.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This function should return plugin description. It can be left empty in case if you don&#x27;t want to document your plugin.</p><aside class="m-note m-default"><h4>Version</h4><p>2.1.33</p></aside>
+          </div></section>
           <section class="m-doc-details" id="ad293e4b7e7d88a16a360415cca9ad9f1"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classrolly_1_1meta_1_1project__meta.html" class="m-doc">meta::<wbr />project_meta</a> const &amp; rolly::<wbr />dll::<wbr />plugin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad293e4b7e7d88a16a360415cca9ad9f1" class="m-doc-self">meta</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
@@ -273,6 +333,21 @@
               </tfoot>
             </table>
 <p>Plugins are described by:</p><ul><li>name</li><li>version</li><li>vendor domain</li><li>vendor name</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a70ebc47aa2a08a0d5dc1e2222dc2f606"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const &amp; rolly::<wbr />dll::<wbr />plugin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70ebc47aa2a08a0d5dc1e2222dc2f606" class="m-doc-self">uuid</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Plugin UUID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Reference to the plugin UUID.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Plugins are described by UUID.</p><aside class="m-note m-info"><h4>Note</h4><p>You can generate UUIDs using <a href="https://www.uuidgenerator.net/">UUID generator</a>.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1types_1_1guid.html" class="m-doc">rolly::<wbr />types::<wbr />guid</a></p></aside>
           </div></section>
           <section class="m-doc-details" id="a91048bac1d9f2557cc86c9eb8b39ca59"><div>
             <h3>

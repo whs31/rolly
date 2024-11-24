@@ -240,7 +240,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/registrable.h" line="10" column="23" bodyfile="include/rolly/qt/registrable.h" bodystart="10" bodyend="13"/>
+        <location file="rolly/qt/registrable.h" line="10" column="23" bodyfile="rolly/qt/registrable.h" bodystart="10" bodyend="13"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -256,13 +256,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/registrable.h" line="16" column="30" bodyfile="include/rolly/qt/registrable.h" bodystart="16" bodyend="-1"/>
+        <location file="rolly/qt/registrable.h" line="16" column="30" bodyfile="rolly/qt/registrable.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/qt/registrable.h"/>
+    <location file="rolly/qt/registrable.h"/>
   </compounddef>
 </doxygen>

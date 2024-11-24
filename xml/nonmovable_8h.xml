@@ -58,6 +58,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/traits/nonmovable.h"/>
+    <location file="rolly/traits/nonmovable.h"/>
   </compounddef>
 </doxygen>

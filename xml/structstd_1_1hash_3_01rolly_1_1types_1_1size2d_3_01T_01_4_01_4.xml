@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structstd_1_1hash_3_01rolly_1_1types_1_1size2d_3_01T_01_4_01_4" kind="struct" language="C++" prot="public">
     <compoundname>std::hash&lt; rolly::types::size2d&lt; T &gt; &gt;</compoundname>
-    <includes refid="size2d_8h" local="no">size2d.h</includes>
+    <includes refid="size2d_8h" local="no">rolly/types/size2d.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="626" column="12" bodyfile="include/rolly/types/size2d.h" bodystart="626" bodyend="628"/>
+        <location file="rolly/types/size2d.h" line="653" column="12" bodyfile="rolly/types/size2d.h" bodystart="653" bodyend="655"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -55,7 +55,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/size2d.h" line="625" column="15" bodyfile="include/rolly/types/size2d.h" bodystart="625" bodyend="629"/>
+    <location file="rolly/types/size2d.h" line="652" column="15" bodyfile="rolly/types/size2d.h" bodystart="652" bodyend="656"/>
     <listofallmembers>
       <member refid="structstd_1_1hash_3_01rolly_1_1types_1_1size2d_3_01T_01_4_01_4_1a5b30aaef5d8d9506d2f3aa4cbbd51fc1" prot="public" virt="non-virtual"><scope>std::hash&lt; rolly::types::size2d&lt; T &gt; &gt;</scope><name>operator()</name></member>
     </listofallmembers>

@@ -68,6 +68,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/serialization/tags.h"/>
+    <location file="rolly/serialization/tags.h"/>
   </compounddef>
 </doxygen>

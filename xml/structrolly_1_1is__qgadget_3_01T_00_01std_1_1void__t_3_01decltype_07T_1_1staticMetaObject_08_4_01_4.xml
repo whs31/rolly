@@ -36,7 +36,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/qt/concepts.h" line="35" column="36" bodyfile="include/rolly/qt/concepts.h" bodystart="35" bodyend="35"/>
+    <location file="rolly/qt/concepts.h" line="35" column="36" bodyfile="rolly/qt/concepts.h" bodystart="35" bodyend="35"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

@@ -36,14 +36,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/deleter.h" line="7" column="10" bodyfile="include/rolly/memory/deleter.h" bodystart="7" bodyend="9"/>
+        <location file="rolly/memory/deleter.h" line="7" column="10" bodyfile="rolly/memory/deleter.h" bodystart="7" bodyend="9"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/memory/deleter.h" line="5" column="16" bodyfile="include/rolly/memory/deleter.h" bodystart="5" bodyend="10"/>
+    <location file="rolly/memory/deleter.h" line="5" column="16" bodyfile="rolly/memory/deleter.h" bodystart="5" bodyend="10"/>
     <listofallmembers>
       <member refid="structrolly_1_1deleter_1a75cb36ad2764eb41578552dd0161a0c8" prot="public" virt="non-virtual"><scope>rolly::deleter</scope><name>operator()</name></member>
     </listofallmembers>

@@ -273,6 +273,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/global.h"/>
+    <location file="rolly/global.h"/>
   </compounddef>
 </doxygen>

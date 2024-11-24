@@ -6,7 +6,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/serialization/tags.h" line="21" column="15" bodyfile="include/rolly/serialization/tags.h" bodystart="21" bodyend="21"/>
+    <location file="rolly/serialization/tags.h" line="21" column="15" bodyfile="rolly/serialization/tags.h" bodystart="21" bodyend="21"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

@@ -84,6 +84,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/memory/propagate_const.h"/>
+    <location file="rolly/memory/propagate_const.h"/>
   </compounddef>
 </doxygen>

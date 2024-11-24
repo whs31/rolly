@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="168" column="26" declfile="include/rolly/contracts.h" declline="168" declcolumn="26"/>
+        <location file="rolly/contracts.h" line="171" column="26" declfile="rolly/contracts.h" declline="171" declcolumn="26"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1contracts_1_1detail_1a51d1323752d48a6e020de21fbda1e7f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/contracts.h" line="186" column="12" declfile="include/rolly/contracts.h" declline="186" declcolumn="12"/>
+        <location file="rolly/contracts.h" line="189" column="12" declfile="rolly/contracts.h" declline="189" declcolumn="12"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -121,6 +121,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/contracts.h" line="155" column="18"/>
+    <location file="rolly/contracts.h" line="158" column="18"/>
   </compounddef>
 </doxygen>

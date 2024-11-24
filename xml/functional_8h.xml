@@ -79,6 +79,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/functional.h"/>
+    <location file="rolly/functional.h"/>
   </compounddef>
 </doxygen>

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
-  <compounddef id="dir_152931fe84ca4ad2be2616dee72f3349" kind="dir">
+  <compounddef id="dir_99ee433805cba2df134345d948cb9b54" kind="dir">
     <compoundname>memory</compoundname>
     <innerfile refid="box_8h">box.h</innerfile>
     <innerfile refid="deleter_8h">deleter.h</innerfile>
@@ -11,6 +11,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/memory/"/>
+    <location file="rolly/memory/"/>
   </compounddef>
 </doxygen>

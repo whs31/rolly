@@ -813,6 +813,24 @@
             <dd><span></span></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename C&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a52f0f95f66a33f7d0b9198eaa16d5443" class="m-dox">starts_with</a>(</span><span class="m-dox-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              std::basic_string_view&lt;C&gt; sv) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename C&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a14d506298003ef35c958fe68476f4066" class="m-dox">starts_with</a>(</span><span class="m-dox-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              C c) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename C&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a1ca483b4bf62bac4fa78ebf1c7795c04" class="m-dox">starts_with</a>(</span><span class="m-dox-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              C const* chp) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename C&gt;</div>
               <span class="m-dox-wrap-bumper">auto <a href="#aea74ed9754268ce0924b9578ff6cd02c" class="m-dox">ends_with</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />basic_string</a>&lt;C&gt; const&amp; input,
               std::basic_string_view&lt;C&gt; sv) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -826,6 +844,24 @@
             <dt>
               <div class="m-doc-template">template&lt;typename C&gt;</div>
               <span class="m-dox-wrap-bumper">auto <a href="#acddd0f67ccfd58a04d5321b3dc5647ee" class="m-dox">ends_with</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />basic_string</a>&lt;C&gt; const&amp; input,
+              C const* chp) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename C&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a933cca7a9de88df2acc76cc8a2f3d488" class="m-dox">ends_with</a>(</span><span class="m-dox-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              std::basic_string_view&lt;C&gt; sv) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename C&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a03f2f18b9050b2aa9a69a73fed3806c4" class="m-dox">ends_with</a>(</span><span class="m-dox-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              C c) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename C&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a1c635fda25cb408b341062ad44576c45" class="m-dox">ends_with</a>(</span><span class="m-dox-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
               C const* chp) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd><span></span></dd>
@@ -957,7 +993,7 @@
           <section class="m-doc-details" id="a7db57d2dfe8e47b6753b16adee1ddcd0"><div>
             <h3>
               enum class rolly::<wbr /><a href="#a7db57d2dfe8e47b6753b16adee1ddcd0" class="m-doc-self">endian</a>: signed int
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rolly/bit.h&gt;</a></div>
             </h3>
             <p>Endianness.</p>
 <p>This is the backport of <code>std::endian</code>.</p><aside class="m-note m-default"><h4>Version</h4><p>2.1.32</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="https://en.cppreference.com/w/cpp/types/endian">https:/<wbr />/<wbr />en.cppreference.com/<wbr />w/<wbr />cpp/<wbr />types/<wbr />endian</a></p></aside>
@@ -988,7 +1024,7 @@
           <section class="m-doc-details" id="ae1e5f60a57661fe4d13cf754e0a8d6ae"><div>
             <h3>
               enum class rolly::<wbr /><a href="#ae1e5f60a57661fe4d13cf754e0a8d6ae" class="m-doc-self">saving_policy</a>: <a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="config_8h.html">&lt;include/rolly/config.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="config_8h.html">&lt;rolly/config.h&gt;</a></div>
             </h3>
             <p>Determines the policy used for autosaving configuration files.</p>
             <table class="m-table m-fullwidth m-flat m-doc">
@@ -1012,14 +1048,14 @@
           <section class="m-doc-details" id="afd32bbfaaac78f0211ed4bcc528b15de"><div>
             <h3>
               enum class rolly::<wbr /><a href="#afd32bbfaaac78f0211ed4bcc528b15de" class="m-doc-self">prerelease</a>: <a href="http://en.cppreference.com/w/cpp/types/integer.html" class="m-doc-external">std::<wbr />uint8_t</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="aac165e3d48efbaab7e97d5139d630875"><div>
             <h3>
               enum class rolly::<wbr /><a href="#aac165e3d48efbaab7e97d5139d630875" class="m-doc-self">comparators_option</a>: <a href="http://en.cppreference.com/w/cpp/types/integer.html" class="m-doc-external">std::<wbr />uint8_t</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1029,41 +1065,41 @@
           <section class="m-doc-details" id="adee8f199e8943479e2e7ba5269bf0e37"><div>
             <h3>
               using rolly::<wbr /><a href="#adee8f199e8943479e2e7ba5269bf0e37" class="m-doc-self">big_endian_t</a> = <a href="http://en.cppreference.com/w/cpp/types/integral_constant.html" class="m-doc-external">std::<wbr />integral_constant</a>&lt;int, static_cast&lt;signed int&gt;(<a href="namespacerolly.html#a7db57d2dfe8e47b6753b16adee1ddcd0ad861877da56b8b4ceb35c8cbfdf65bb4" class="m-doc">endian::<wbr />big</a>)&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rolly/bit.h&gt;</a></div>
             </h3>
 <aside class="m-note m-default"><h4>Version</h4><p>2.1.32</p></aside>
           </div></section>
           <section class="m-doc-details" id="a3d7bc8c2e9c71c3e2399b4623676a000"><div>
             <h3>
               using rolly::<wbr /><a href="#a3d7bc8c2e9c71c3e2399b4623676a000" class="m-doc-self">little_endian_t</a> = <a href="http://en.cppreference.com/w/cpp/types/integral_constant.html" class="m-doc-external">std::<wbr />integral_constant</a>&lt;int, static_cast&lt;signed int&gt;(<a href="namespacerolly.html#a7db57d2dfe8e47b6753b16adee1ddcd0aaae6635e044ac56046b2893a529b5114" class="m-doc">endian::<wbr />little</a>)&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rolly/bit.h&gt;</a></div>
             </h3>
 <aside class="m-note m-default"><h4>Version</h4><p>2.1.32</p></aside>
           </div></section>
           <section class="m-doc-details" id="a1a021e92d7e75961d5ee7400ad081fc9"><div>
             <h3>
               using rolly::<wbr /><a href="#a1a021e92d7e75961d5ee7400ad081fc9" class="m-doc-self">native_endian_t</a> = <a href="http://en.cppreference.com/w/cpp/types/integral_constant.html" class="m-doc-external">std::<wbr />integral_constant</a>&lt;int, static_cast&lt;signed int&gt;(<a href="namespacerolly.html#a7db57d2dfe8e47b6753b16adee1ddcd0a8e5f3adee38c8fccc13c1f3be0143796" class="m-doc">endian::<wbr />native</a>)&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rolly/bit.h&gt;</a></div>
             </h3>
 <aside class="m-note m-default"><h4>Version</h4><p>2.1.32</p></aside>
           </div></section>
           <section class="m-doc-details" id="a0129ca85eb0fd2fc4f9c8425333c357a"><div>
             <h3>
               using rolly::<wbr /><a href="#a0129ca85eb0fd2fc4f9c8425333c357a" class="m-doc-self">version_range</a> = detail::range
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a83f09cfe4e868bb4b36a157a0887b0d6"><div>
             <h3>
               using rolly::<wbr /><a href="#a83f09cfe4e868bb4b36a157a0887b0d6" class="m-doc-self">version_range_option</a> = detail::satisfies_option
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a003e7028327d1c1243f546af6e61d80f"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="owner_8h.html">&lt;include/rolly/memory/owner.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="owner_8h.html">&lt;rolly/memory/owner.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;___concept___(concepts::c_ptr) T&gt;
               </div>
@@ -1085,7 +1121,7 @@
           </div></section>
           <section class="m-doc-details" id="a454d33bccebd3c6eba3dd0c57a547365"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="pimpl_8h.html">&lt;include/rolly/traits/pimpl.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="pimpl_8h.html">&lt;rolly/traits/pimpl.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -1125,7 +1161,7 @@
           </div></section>
           <section class="m-doc-details" id="a3c0600da43d6867a247432fcc43ce84f"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__traits_8h.html">&lt;include/rolly/type_traits.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__traits_8h.html">&lt;rolly/type_traits.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -1135,7 +1171,7 @@
           </div></section>
           <section class="m-doc-details" id="abb6b740122d8db472da8ccec3de5ec9c"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__traits_8h.html">&lt;include/rolly/type_traits.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__traits_8h.html">&lt;rolly/type_traits.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -1149,7 +1185,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a99bfcde93b3d479813abecbbc877a5c0"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rolly/bit.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;class To, class From&gt;
               </div>
@@ -1190,7 +1226,7 @@
           </div></section>
           <section class="m-doc-details" id="a50b397be3a6964a1f150ceb189afabb5"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rolly/bit.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;concepts::num T&gt;
               </div>
@@ -1227,7 +1263,7 @@
           </div></section>
           <section class="m-doc-details" id="a5764cccca8658c6880ab03364b4fcda5"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rolly/bit.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;concepts::num T&gt;
               </div>
@@ -1264,7 +1300,7 @@
           </div></section>
           <section class="m-doc-details" id="a571786331157b178e73d2ac05d14751b"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;include/rolly/bit.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rolly/bit.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;concepts::num T&gt;
               </div>
@@ -1301,7 +1337,7 @@
           </div></section>
           <section class="m-doc-details" id="a702fe0cca3278589eeca41da81cd2e5b"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="lazy_8h.html">&lt;include/rolly/functional/lazy.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="lazy_8h.html">&lt;rolly/functional/lazy.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F&gt;
               </div>
@@ -1323,83 +1359,83 @@
           <section class="m-doc-details" id="a373760a3c5836375681456b6c51f1e93"><div>
             <h3>
               <span class="m-doc-wrap-bumper">char rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a373760a3c5836375681456b6c51f1e93" class="m-doc-self">to_lower</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a6f31057710263260dde372ac14417b07"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f31057710263260dde372ac14417b07" class="m-doc-self">is_digit</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a68be1add7d0d715e53b0689ac056f0d2"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a68be1add7d0d715e53b0689ac056f0d2" class="m-doc-self">is_space</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="aa86605562968255acbd911ed427a2e26"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa86605562968255acbd911ed427a2e26" class="m-doc-self">is_operator</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a3a9735d38642d18354f18e961f06c9f2"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3a9735d38642d18354f18e961f06c9f2" class="m-doc-self">is_dot</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a011123e17c8b3dcf68f082eb03f376df"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a011123e17c8b3dcf68f082eb03f376df" class="m-doc-self">is_logical_or</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a7694a2c16fb00e6162dec784e4ab5681"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7694a2c16fb00e6162dec784e4ab5681" class="m-doc-self">is_hyphen</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a95a56ea6e001b20d4537755511f94436"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a95a56ea6e001b20d4537755511f94436" class="m-doc-self">is_letter</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="adaa0a5242a018519c3cba5f3374e6c15"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adaa0a5242a018519c3cba5f3374e6c15" class="m-doc-self">is_hex</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a29d324f3499898f4676605869b55449c"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/types/integer.html" class="m-doc-external">std::<wbr />uint16_t</a> rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29d324f3499898f4676605869b55449c" class="m-doc-self">to_digit</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a9cd77251f15016f95592878e29c5a6e7"><div>
             <h3>
               <span class="m-doc-wrap-bumper">unsigned char rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9cd77251f15016f95592878e29c5a6e7" class="m-doc-self">hex_to_char</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;include/rolly/global/char_utils.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="char__utils_8h.html">&lt;rolly/global/char_utils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="abed9db28b478cd89e3f00adba8f6632a"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="charconv_8h.html">&lt;include/rolly/global/charconv.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="charconv_8h.html">&lt;rolly/global/charconv.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename C = char&gt;
               </div>
@@ -1439,7 +1475,7 @@
           </div></section>
           <section class="m-doc-details" id="a0caf7f4c7ee8a9aa65b3dd556e1e656c"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="charconv_8h.html">&lt;include/rolly/global/charconv.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="charconv_8h.html">&lt;rolly/global/charconv.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename C = char&gt;
               </div>
@@ -1470,7 +1506,7 @@
           </div></section>
           <section class="m-doc-details" id="aeb6cbc9c9826b7eef31366ea5d000db2"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="charconv_8h.html">&lt;include/rolly/global/charconv.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="charconv_8h.html">&lt;rolly/global/charconv.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename C = char&gt;
               </div>
@@ -1512,7 +1548,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5f41175811a2f4a42eca6bc6e6f01d3" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1520,7 +1556,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6a0829fd71ded700e13174ae89c009e1" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1528,7 +1564,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1af20d5b7b707c993d1930a863f7760" class="m-doc-self">operator&gt;</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1536,7 +1572,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8330ddf4c9dcf3b881130a2f07010c66" class="m-doc-self">operator&gt;=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1544,7 +1580,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a909ee63bac59a1e69a6d558596311f43" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1552,14 +1588,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1bb0f54264509f56b5481cbd437b05ae" class="m-doc-self">operator&lt;=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a176758c28587a73dfa5cf233d853d23d"><div>
             <h3>
               <span class="m-doc-wrap-bumper">ROLLY_SEMVER_CONSTEXPR bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a176758c28587a73dfa5cf233d853d23d" class="m-doc-self">valid</a>(</span><span class="m-doc-wrap">std::string_view str) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1568,7 +1604,7 @@
               <span class="m-doc-wrap-bumper">ROLLY_SEMVER_CONSTEXPR from_chars_result rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a25e9b3ba291a589983345addab86e319" class="m-doc-self">from_chars</a>(</span><span class="m-doc-wrap">char const* first,
               char const* last,
               <a href="structrolly_1_1version.html" class="m-doc">version</a>&amp; v) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1577,34 +1613,34 @@
               <span class="m-doc-wrap-bumper">ROLLY_SEMVER_CONSTEXPR to_chars_result rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad27abc9860dd15c159be04b022aeb5a0" class="m-doc-self">to_chars</a>(</span><span class="m-doc-wrap">char* first,
               char* last,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; v) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a29bf2b257aae11af86113305689df183"><div>
             <h3>
               <span class="m-doc-wrap-bumper">ROLLY_SEMVER_CONSTEXPR std::optional&lt;<a href="structrolly_1_1version.html" class="m-doc">version</a>&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29bf2b257aae11af86113305689df183" class="m-doc-self">from_string_noexcept</a>(</span><span class="m-doc-wrap">std::string_view str) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a6472f585e4160c186d682782d57ab7ac"><div>
             <h3>
               <span class="m-doc-wrap-bumper">ROLLY_SEMVER_CONSTEXPR <a href="structrolly_1_1version.html" class="m-doc">version</a> rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6472f585e4160c186d682782d57ab7ac" class="m-doc-self">from_string</a>(</span><span class="m-doc-wrap">std::string_view str)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="ad687023e3333f2a28121709aa2ec8b92"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad687023e3333f2a28121709aa2ec8b92" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; v)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="ae775c2f85b0bbc89c8ea6633708b2b47"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename Char, typename Traits&gt;
               </div>
@@ -1618,7 +1654,7 @@
               <span class="m-doc-wrap-bumper">int rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a073e020abb8d49be9a4ed3f6e05d31f0" class="m-doc-self">compare</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs,
               comparators_option option = comparators_option::include_prerelease) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1627,7 +1663,7 @@
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#add78f2c5593250a4d8635e8ab86231a1" class="m-doc-self">equal_to</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs,
               comparators_option option = comparators_option::include_prerelease) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1636,7 +1672,7 @@
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aac20f4b292436c8f853d8450305a3728" class="m-doc-self">not_equal_to</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs,
               comparators_option option = comparators_option::include_prerelease) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1645,7 +1681,7 @@
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0ddad7c8ac3da88058d6f7404199b478" class="m-doc-self">greater</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs,
               comparators_option option = comparators_option::include_prerelease) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1654,7 +1690,7 @@
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a765c39fb28cd5b799f4cd9fdaded9393" class="m-doc-self">greater_equal</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs,
               comparators_option option = comparators_option::include_prerelease) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1663,7 +1699,7 @@
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8cdeab0eaeaf885f90902d1ac7d5e3e6" class="m-doc-self">less</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs,
               comparators_option option = comparators_option::include_prerelease) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1672,13 +1708,13 @@
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d7d7f80bcbd1558d975988d8fefa0d8" class="m-doc-self">less_equal</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; lhs,
               <a href="structrolly_1_1version.html" class="m-doc">version</a> const&amp; rhs,
               comparators_option option = comparators_option::include_prerelease) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;include/rolly/global/semver.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="aabeeaf9aa00d84c95bb09cfd5fd20941"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;include/rolly/memory/observer_ptr.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;rolly/memory/observer_ptr.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename U&gt;
               </div>
@@ -1689,7 +1725,7 @@
           </div></section>
           <section class="m-doc-details" id="acd9c29fd1dfc4acb916584a7107c22be"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;include/rolly/memory/observer_ptr.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;rolly/memory/observer_ptr.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename U&gt;
               </div>
@@ -1700,7 +1736,7 @@
           </div></section>
           <section class="m-doc-details" id="ab1df93f72b112c11789cfac379ddee96"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;include/rolly/memory/observer_ptr.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;rolly/memory/observer_ptr.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename U&gt;
               </div>
@@ -1711,7 +1747,7 @@
           </div></section>
           <section class="m-doc-details" id="acee4f46a0677c1eec00cb57737ecb713"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;include/rolly/memory/observer_ptr.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;rolly/memory/observer_ptr.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename U&gt;
               </div>
@@ -1722,7 +1758,7 @@
           </div></section>
           <section class="m-doc-details" id="a7a824308dfef800197ebdca72ca577de"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;include/rolly/memory/observer_ptr.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;rolly/memory/observer_ptr.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename U&gt;
               </div>
@@ -1733,7 +1769,7 @@
           </div></section>
           <section class="m-doc-details" id="a563f446fdf15d40728b98c5153cb8632"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;include/rolly/memory/observer_ptr.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;rolly/memory/observer_ptr.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename U&gt;
               </div>
@@ -1744,7 +1780,7 @@
           </div></section>
           <section class="m-doc-details" id="a7c4d06266a7101dad5226fe5f296354b"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;include/rolly/memory/observer_ptr.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="observer__ptr_8h.html">&lt;rolly/memory/observer_ptr.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -1754,7 +1790,7 @@
           </div></section>
           <section class="m-doc-details" id="a862fc8debabdcf89cfbecdeaa41c8798"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="source__location_8h.html">&lt;include/rolly/source_location.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="source__location_8h.html">&lt;rolly/source_location.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;class E, class T&gt;
               </div>
@@ -1767,7 +1803,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac8e7afed7eafff55cdb28549abe23c74" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1source__location.html" class="m-doc">source_<wbr />location</a> const&amp; lhs,
               <a href="structrolly_1_1source__location.html" class="m-doc">source_<wbr />location</a> const&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="source__location_8h.html">&lt;include/rolly/source_location.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="source__location_8h.html">&lt;rolly/source_location.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1775,21 +1811,21 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae7474ad0df463e7fc1cb98605706c3bb" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1source__location.html" class="m-doc">source_<wbr />location</a> const&amp; lhs,
               <a href="structrolly_1_1source__location.html" class="m-doc">source_<wbr />location</a> const&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="source__location_8h.html">&lt;include/rolly/source_location.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="source__location_8h.html">&lt;rolly/source_location.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a9d0a17c2da385b9fdd03560792c0bab3"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d0a17c2da385b9fdd03560792c0bab3" class="m-doc-self">split</a>(</span><span class="m-doc-wrap"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> const&amp; input)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a4fffede0e041c8ac069640149b823f35"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4fffede0e041c8ac069640149b823f35" class="m-doc-self">split</a>(</span><span class="m-doc-wrap">std::string_view input)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1797,7 +1833,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3550c846d77c5b1c9a9c85b5b588d890" class="m-doc-self">split_by</a>(</span><span class="m-doc-wrap"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> const&amp; input,
               char delimiter)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1805,20 +1841,20 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/vector.html" class="m-doc-external">std::<wbr />vector</a>&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab2f4183b11c82cc7bad02825b8e74717" class="m-doc-self">split_by</a>(</span><span class="m-doc-wrap">std::string_view input,
               char delimiter)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a4cee505f1280fd2a0f8354e2efd7fd01"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cee505f1280fd2a0f8354e2efd7fd01" class="m-doc-self">to_lower</a>(</span><span class="m-doc-wrap">std::string_view input)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a92f9cae32654fc69e69e56418a20c551"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename C&gt;
               </div>
@@ -1829,7 +1865,7 @@
           </div></section>
           <section class="m-doc-details" id="a7f7b41082b35952624e4871f8ae855ed"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename C&gt;
               </div>
@@ -1840,7 +1876,7 @@
           </div></section>
           <section class="m-doc-details" id="a9adf9e794ef1d06475cdfd66dd6a6b57"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename C&gt;
               </div>
@@ -1849,9 +1885,42 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a52f0f95f66a33f7d0b9198eaa16d5443"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename C&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52f0f95f66a33f7d0b9198eaa16d5443" class="m-doc-self">starts_with</a>(</span><span class="m-doc-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              std::basic_string_view&lt;C&gt; sv) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a14d506298003ef35c958fe68476f4066"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename C&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14d506298003ef35c958fe68476f4066" class="m-doc-self">starts_with</a>(</span><span class="m-doc-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              C c) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1ca483b4bf62bac4fa78ebf1c7795c04"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename C&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ca483b4bf62bac4fa78ebf1c7795c04" class="m-doc-self">starts_with</a>(</span><span class="m-doc-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              C const* chp) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="aea74ed9754268ce0924b9578ff6cd02c"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename C&gt;
               </div>
@@ -1862,7 +1931,7 @@
           </div></section>
           <section class="m-doc-details" id="a0d34216c96023f88cd65d547a38b1616"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename C&gt;
               </div>
@@ -1873,7 +1942,7 @@
           </div></section>
           <section class="m-doc-details" id="acddd0f67ccfd58a04d5321b3dc5647ee"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;include/rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename C&gt;
               </div>
@@ -1882,10 +1951,43 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a933cca7a9de88df2acc76cc8a2f3d488"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename C&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a933cca7a9de88df2acc76cc8a2f3d488" class="m-doc-self">ends_with</a>(</span><span class="m-doc-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              std::basic_string_view&lt;C&gt; sv) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a03f2f18b9050b2aa9a69a73fed3806c4"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename C&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a03f2f18b9050b2aa9a69a73fed3806c4" class="m-doc-self">ends_with</a>(</span><span class="m-doc-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              C c) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1c635fda25cb408b341062ad44576c45"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename C&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c635fda25cb408b341062ad44576c45" class="m-doc-self">ends_with</a>(</span><span class="m-doc-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
+              C const* chp) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a50d147e6e631344b3cde7c0675356297"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a50d147e6e631344b3cde7c0675356297" class="m-doc-self">unreachable</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;include/rolly/utility.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
             </h3>
             <p>Informs the compiler that the current location is unreachable.</p>
 <p>If the compiler can prove that the current location is unreachable, it is free to optimize the program as if the current location did not exist. This is a very powerful optimization hint.</p><p>This function is very useful when you write code that should never be executed (for example, in a switch-case statement where you have already handled all possible values), as it allows the compiler to optimize away the unreachable code.</p><p>Example:</p><pre class="m-code"><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Color</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Red</span><span class="p">,</span><span class="w"> </span><span class="n">Green</span><span class="p">,</span><span class="w"> </span><span class="n">Blue</span><span class="w"> </span><span class="p">};</span>
@@ -1901,7 +2003,7 @@
           </div></section>
           <section class="m-doc-details" id="affa14ea3afee7f187363d2bb66d8c619"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;include/rolly/utility.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;___concept___(concepts::enum_) T ___sfinae_requirement___(std::is_enum_v&lt;T&gt;)&gt;
               </div>
@@ -1929,7 +2031,7 @@
           </div></section>
           <section class="m-doc-details" id="abf3ef4a99974a2fcedfe0ac54b5ce08b"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;include/rolly/utility.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -1983,7 +2085,7 @@
           </div></section>
           <section class="m-doc-details" id="a465d8eeb6dc8eb48d3dbcc894577fc01"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;include/rolly/utility.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -2037,7 +2139,7 @@
           </div></section>
           <section class="m-doc-details" id="a93cbb2ec6fa2e2831cc8f031e5e2643b"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;include/rolly/utility.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -2091,7 +2193,7 @@
           </div></section>
           <section class="m-doc-details" id="a73fb6abc29e2a6fc0e6a4f71f4500a79"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;include/rolly/utility.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -2134,7 +2236,7 @@
           <h2>Variable documentation</h2>
           <section class="m-doc-details" id="a97300837e35e483d3cf7b20dd724250b"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="any__of_8h.html">&lt;include/rolly/concepts/any_of.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="any__of_8h.html">&lt;rolly/concepts/any_of.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T, typename... U&gt;
               </div>

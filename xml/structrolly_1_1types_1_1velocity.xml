@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structrolly_1_1types_1_1velocity" kind="struct" language="C++" prot="public">
     <compoundname>rolly::types::velocity</compoundname>
-    <includes refid="velocity_8h" local="no">velocity.h</includes>
+    <includes refid="velocity_8h" local="no">rolly/types/velocity.h</includes>
     <templateparamlist>
       <param>
         <type><ref refid="namespacerolly_1_1concepts_1aea9bb2c4075cdbbe6ae4d3b6eef46cda" kindref="member">concepts::num</ref></type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="35" column="7" bodyfile="include/rolly/types/velocity.h" bodystart="35" bodyend="-1"/>
+        <location file="rolly/types/velocity.h" line="36" column="7" bodyfile="rolly/types/velocity.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="451" column="19" bodyfile="include/rolly/types/velocity.h" bodystart="451" bodyend="-1"/>
+        <location file="rolly/types/velocity.h" line="486" column="19" bodyfile="rolly/types/velocity.h" bodystart="486" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="41" column="17" bodyfile="include/rolly/types/velocity.h" bodystart="41" bodyend="42"/>
+        <location file="rolly/types/velocity.h" line="42" column="17" bodyfile="rolly/types/velocity.h" bodystart="42" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a7c93c75912bcbce960ab8da8ff204125" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="48" column="26" bodyfile="include/rolly/types/velocity.h" bodystart="48" bodyend="49"/>
+        <location file="rolly/types/velocity.h" line="49" column="26" bodyfile="rolly/types/velocity.h" bodystart="49" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1aaf12ef801ad20d51faf41826b8c18b83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="54" column="7"/>
+        <location file="rolly/types/velocity.h" line="55" column="7"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a083bb7b47f044b047fafda458c5ba161" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="59" column="17"/>
+        <location file="rolly/types/velocity.h" line="60" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a0c02bd8d238e9e3f5ed913376337e9ce" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="64" column="17"/>
+        <location file="rolly/types/velocity.h" line="65" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1ac160707298a3b02b93dd89fecf4b5ed4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref> &amp;</type>
@@ -151,7 +151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="69" column="26"/>
+        <location file="rolly/types/velocity.h" line="70" column="26"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a9d449959748f6ef550258665862aebf4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref> &amp;</type>
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="74" column="26"/>
+        <location file="rolly/types/velocity.h" line="75" column="26"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a767242fe07f6a7d1091a32c0462822c4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
@@ -199,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="83" column="20" bodyfile="include/rolly/types/velocity.h" bodystart="83" bodyend="95"/>
+        <location file="rolly/types/velocity.h" line="84" column="20" bodyfile="rolly/types/velocity.h" bodystart="84" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a9218853344b2ab6f68c559b2e1e38b04" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -229,7 +229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="102" column="30" bodyfile="include/rolly/types/velocity.h" bodystart="102" bodyend="108"/>
+        <location file="rolly/types/velocity.h" line="104" column="30" bodyfile="rolly/types/velocity.h" bodystart="104" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1abfb7a96dc22e28517d1886226f908146" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -246,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="114" column="30" bodyfile="include/rolly/types/velocity.h" bodystart="114" bodyend="116"/>
+        <location file="rolly/types/velocity.h" line="116" column="30" bodyfile="rolly/types/velocity.h" bodystart="116" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1aca506cd9750552c9afe0902eff87f277" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="122" column="30" bodyfile="include/rolly/types/velocity.h" bodystart="122" bodyend="122"/>
+        <location file="rolly/types/velocity.h" line="124" column="30" bodyfile="rolly/types/velocity.h" bodystart="124" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a022c0ba5543853b07cc8247eab3ced66" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -294,7 +294,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="130" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="130" bodyend="132"/>
+        <location file="rolly/types/velocity.h" line="132" column="27" bodyfile="rolly/types/velocity.h" bodystart="132" bodyend="134"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a524546a00e65da4c0a58a20d7913a593" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -311,7 +311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="173" column="30" bodyfile="include/rolly/types/velocity.h" bodystart="173" bodyend="173"/>
+        <location file="rolly/types/velocity.h" line="179" column="30" bodyfile="rolly/types/velocity.h" bodystart="179" bodyend="179"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a7b1e681365ca2379776ba38496c8d9e1" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -340,7 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="180" column="20" bodyfile="include/rolly/types/velocity.h" bodystart="180" bodyend="182"/>
+        <location file="rolly/types/velocity.h" line="186" column="20" bodyfile="rolly/types/velocity.h" bodystart="186" bodyend="188"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a4eadd631845fcfea8cf526a58403cf9b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="namespacerolly_1_1types_1ad34d88453d37b65a09797bad37f2f527" kindref="member">f32</ref></type>
@@ -354,7 +354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="187" column="23" bodyfile="include/rolly/types/velocity.h" bodystart="187" bodyend="187"/>
+        <location file="rolly/types/velocity.h" line="193" column="23" bodyfile="rolly/types/velocity.h" bodystart="193" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a4f3d1e4786e042fac8b82314a89439ce" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="namespacerolly_1_1types_1abc2f107791bd7c1d49ecf0f168c085a3" kindref="member">f64</ref></type>
@@ -368,7 +368,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="192" column="23" bodyfile="include/rolly/types/velocity.h" bodystart="192" bodyend="192"/>
+        <location file="rolly/types/velocity.h" line="198" column="23" bodyfile="rolly/types/velocity.h" bodystart="198" bodyend="198"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a287bb4c3be885ca0f758ecfa8ad27682" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -382,7 +382,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="197" column="13" bodyfile="include/rolly/types/velocity.h" bodystart="197" bodyend="197"/>
+        <location file="rolly/types/velocity.h" line="203" column="13" bodyfile="rolly/types/velocity.h" bodystart="203" bodyend="203"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a566265d7ea4ab6649c2bfdf2e96145af" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr T &amp;</type>
@@ -396,7 +396,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="202" column="20" bodyfile="include/rolly/types/velocity.h" bodystart="202" bodyend="205"/>
+        <location file="rolly/types/velocity.h" line="208" column="20" bodyfile="rolly/types/velocity.h" bodystart="208" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1afe13db0e1af81cd99e0f21f4b35561f1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr T &amp;</type>
@@ -413,7 +413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="210" column="20" bodyfile="include/rolly/types/velocity.h" bodystart="210" bodyend="213"/>
+        <location file="rolly/types/velocity.h" line="216" column="20" bodyfile="rolly/types/velocity.h" bodystart="216" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1afd70a5715cd3b48b3a1f247e6f5bc0a8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr T &amp;</type>
@@ -427,7 +427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="218" column="20" bodyfile="include/rolly/types/velocity.h" bodystart="218" bodyend="221"/>
+        <location file="rolly/types/velocity.h" line="224" column="20" bodyfile="rolly/types/velocity.h" bodystart="224" bodyend="227"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a32ad7696f348d2811a994e27daf6cc67" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr T &amp;</type>
@@ -444,7 +444,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="226" column="20" bodyfile="include/rolly/types/velocity.h" bodystart="226" bodyend="229"/>
+        <location file="rolly/types/velocity.h" line="232" column="20" bodyfile="rolly/types/velocity.h" bodystart="232" bodyend="235"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1ad0ed9dded3dc4405713f0b9270930a92" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -458,7 +458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="234" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="234" bodyend="234"/>
+        <location file="rolly/types/velocity.h" line="240" column="27" bodyfile="rolly/types/velocity.h" bodystart="240" bodyend="240"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a11f5e5b2d5a79d40ca187cb76f1c5fff" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -472,7 +472,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="239" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="239" bodyend="239"/>
+        <location file="rolly/types/velocity.h" line="245" column="27" bodyfile="rolly/types/velocity.h" bodystart="245" bodyend="245"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a1e17ad59806c8576b924b05d15851839" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -502,7 +502,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="246" column="23" bodyfile="include/rolly/types/velocity.h" bodystart="246" bodyend="248"/>
+        <location file="rolly/types/velocity.h" line="253" column="23" bodyfile="rolly/types/velocity.h" bodystart="253" bodyend="259"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a44625f37f3945facae3ce6df3e309eac" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -532,7 +532,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="255" column="23" bodyfile="include/rolly/types/velocity.h" bodystart="255" bodyend="255"/>
+        <location file="rolly/types/velocity.h" line="268" column="23" bodyfile="rolly/types/velocity.h" bodystart="268" bodyend="270"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a26f06a2a5f0d1922d7014306f7f3452f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -562,7 +562,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="262" column="18" bodyfile="include/rolly/types/velocity.h" bodystart="262" bodyend="262"/>
+        <location file="rolly/types/velocity.h" line="278" column="18" bodyfile="rolly/types/velocity.h" bodystart="278" bodyend="280"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1ac4a2a5ddb00771e4811cfcbd650046f9" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -592,7 +592,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="269" column="23" bodyfile="include/rolly/types/velocity.h" bodystart="269" bodyend="269"/>
+        <location file="rolly/types/velocity.h" line="288" column="23" bodyfile="rolly/types/velocity.h" bodystart="288" bodyend="290"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1ac994ac0cc109e2af0899a906c8ea7ff7" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -622,7 +622,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="276" column="18" bodyfile="include/rolly/types/velocity.h" bodystart="276" bodyend="276"/>
+        <location file="rolly/types/velocity.h" line="298" column="18" bodyfile="rolly/types/velocity.h" bodystart="298" bodyend="300"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a06337aa6ef04fcdef9c227e7ba0425f1" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -652,7 +652,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="283" column="23" bodyfile="include/rolly/types/velocity.h" bodystart="283" bodyend="283"/>
+        <location file="rolly/types/velocity.h" line="308" column="23" bodyfile="rolly/types/velocity.h" bodystart="308" bodyend="310"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a187480616a4887aa0d98538df458e26d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -669,7 +669,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="289" column="30" bodyfile="include/rolly/types/velocity.h" bodystart="289" bodyend="289"/>
+        <location file="rolly/types/velocity.h" line="316" column="30" bodyfile="rolly/types/velocity.h" bodystart="316" bodyend="316"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1ac84fad9a679cc80ce232892f98fecc9b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref></type>
@@ -683,7 +683,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="294" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="294" bodyend="294"/>
+        <location file="rolly/types/velocity.h" line="321" column="27" bodyfile="rolly/types/velocity.h" bodystart="321" bodyend="321"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1ab87eef98ea02d51865c0015577da93fe" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref></type>
@@ -697,7 +697,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="299" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="299" bodyend="299"/>
+        <location file="rolly/types/velocity.h" line="326" column="27" bodyfile="rolly/types/velocity.h" bodystart="326" bodyend="326"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1ad286b16bdcf8102ba1827d7d2c2fbcab" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref></type>
@@ -725,7 +725,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="305" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="305" bodyend="305"/>
+        <location file="rolly/types/velocity.h" line="332" column="27" bodyfile="rolly/types/velocity.h" bodystart="332" bodyend="334"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a244abd0b1f7a7aa4f078bd8fa584716d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref></type>
@@ -753,7 +753,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="311" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="311" bodyend="311"/>
+        <location file="rolly/types/velocity.h" line="340" column="27" bodyfile="rolly/types/velocity.h" bodystart="340" bodyend="342"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a8a9e24904130c4dc7a3916d81e356346" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref></type>
@@ -781,7 +781,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="317" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="317" bodyend="317"/>
+        <location file="rolly/types/velocity.h" line="348" column="27" bodyfile="rolly/types/velocity.h" bodystart="348" bodyend="350"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a5560374113833ba2c819cdcc130ec525" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref></type>
@@ -809,7 +809,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="323" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="323" bodyend="323"/>
+        <location file="rolly/types/velocity.h" line="356" column="27" bodyfile="rolly/types/velocity.h" bodystart="356" bodyend="358"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a28373e32a7af5f56f5ab6ea01d9a7485" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref> &amp;</type>
@@ -837,7 +837,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="329" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="329" bodyend="332"/>
+        <location file="rolly/types/velocity.h" line="364" column="27" bodyfile="rolly/types/velocity.h" bodystart="364" bodyend="367"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1ae8c8d72b46fc352afedee6ecdfa8de9c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref> &amp;</type>
@@ -865,7 +865,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="338" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="338" bodyend="341"/>
+        <location file="rolly/types/velocity.h" line="373" column="27" bodyfile="rolly/types/velocity.h" bodystart="373" bodyend="376"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a071e223a9a68a4e4c41bb5e4ddcf7fac" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref> &amp;</type>
@@ -893,7 +893,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="347" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="347" bodyend="350"/>
+        <location file="rolly/types/velocity.h" line="382" column="27" bodyfile="rolly/types/velocity.h" bodystart="382" bodyend="385"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a2e24cc856d4994531f3059dc89a8c540" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref> &amp;</type>
@@ -921,7 +921,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="356" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="356" bodyend="359"/>
+        <location file="rolly/types/velocity.h" line="391" column="27" bodyfile="rolly/types/velocity.h" bodystart="391" bodyend="394"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a3f0519ec8fc6c583fc26b36954a0d03f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -963,7 +963,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="367" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="367" bodyend="369"/>
+        <location file="rolly/types/velocity.h" line="402" column="27" bodyfile="rolly/types/velocity.h" bodystart="402" bodyend="404"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a185fdef36e7499d7bcc7236405e39cdc" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1005,7 +1005,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="377" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="377" bodyend="379"/>
+        <location file="rolly/types/velocity.h" line="412" column="27" bodyfile="rolly/types/velocity.h" bodystart="412" bodyend="414"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a2b8ec0ab01f877aa6a67eb206341c0bb" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1047,7 +1047,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="387" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="387" bodyend="389"/>
+        <location file="rolly/types/velocity.h" line="422" column="27" bodyfile="rolly/types/velocity.h" bodystart="422" bodyend="424"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a4fffa2df465e306a8a2e8a04059ed272" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1089,7 +1089,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="397" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="397" bodyend="399"/>
+        <location file="rolly/types/velocity.h" line="432" column="27" bodyfile="rolly/types/velocity.h" bodystart="432" bodyend="434"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1aa33f5800f942e7dc9c7371e3ecfc6cb5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1131,7 +1131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="407" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="407" bodyend="410"/>
+        <location file="rolly/types/velocity.h" line="442" column="27" bodyfile="rolly/types/velocity.h" bodystart="442" bodyend="445"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a7fbac48decbd498b61e79b0519e4d38c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1173,7 +1173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="418" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="418" bodyend="421"/>
+        <location file="rolly/types/velocity.h" line="453" column="27" bodyfile="rolly/types/velocity.h" bodystart="453" bodyend="456"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a2a8c27b81885c6db64253e9d2e726fc2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1215,7 +1215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="429" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="429" bodyend="432"/>
+        <location file="rolly/types/velocity.h" line="464" column="27" bodyfile="rolly/types/velocity.h" bodystart="464" bodyend="467"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1a3d17bb9efd9a4b0f7d574fb4a62b14a6" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1257,7 +1257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="440" column="27" bodyfile="include/rolly/types/velocity.h" bodystart="440" bodyend="443"/>
+        <location file="rolly/types/velocity.h" line="475" column="27" bodyfile="rolly/types/velocity.h" bodystart="475" bodyend="478"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1291,7 +1291,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="140" column="34" bodyfile="include/rolly/types/velocity.h" bodystart="140" bodyend="140"/>
+        <location file="rolly/types/velocity.h" line="142" column="34" bodyfile="rolly/types/velocity.h" bodystart="142" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1aea9b49172055d70939d24b3a9c44fa1f" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref></type>
@@ -1323,7 +1323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="148" column="34" bodyfile="include/rolly/types/velocity.h" bodystart="148" bodyend="148"/>
+        <location file="rolly/types/velocity.h" line="152" column="34" bodyfile="rolly/types/velocity.h" bodystart="152" bodyend="152"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1ad5674a85926fdc6e0d32347f5256525f" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref></type>
@@ -1365,7 +1365,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="156" column="34" bodyfile="include/rolly/types/velocity.h" bodystart="156" bodyend="162"/>
+        <location file="rolly/types/velocity.h" line="160" column="34" bodyfile="rolly/types/velocity.h" bodystart="160" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1velocity_1af98329d98332c5de7d68db12f21cb7e6" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1velocity" kindref="compound">velocity</ref></type>
@@ -1379,7 +1379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="167" column="34" bodyfile="include/rolly/types/velocity.h" bodystart="167" bodyend="167"/>
+        <location file="rolly/types/velocity.h" line="171" column="34" bodyfile="rolly/types/velocity.h" bodystart="171" bodyend="173"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -1402,7 +1402,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="445" column="14" bodyfile="include/rolly/types/velocity.h" bodystart="445" bodyend="448"/>
+        <location file="rolly/types/velocity.h" line="480" column="14" bodyfile="rolly/types/velocity.h" bodystart="480" bodyend="483"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1420,7 +1420,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/velocity.h" line="31" column="19" bodyfile="include/rolly/types/velocity.h" bodystart="31" bodyend="452"/>
+    <location file="rolly/types/velocity.h" line="32" column="19" bodyfile="rolly/types/velocity.h" bodystart="32" bodyend="487"/>
     <listofallmembers>
       <member refid="structrolly_1_1types_1_1velocity_1a7b1e681365ca2379776ba38496c8d9e1" prot="public" virt="non-virtual"><scope>rolly::types::velocity</scope><name>as</name></member>
       <member refid="structrolly_1_1types_1_1velocity_1a4eadd631845fcfea8cf526a58403cf9b" prot="public" virt="non-virtual"><scope>rolly::types::velocity</scope><name>as_f32</name></member>

@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="34" column="27" bodyfile="include/rolly/directories.h" bodystart="34" bodyend="-1"/>
+        <location file="rolly/directories.h" line="34" column="27" bodyfile="rolly/directories.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="20" column="7"/>
+        <location file="rolly/directories.h" line="20" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dirs_1a17cd9b2915858b12030d9025355e234e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="21" column="5"/>
+        <location file="rolly/directories.h" line="21" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dirs_1a4d5aa3343262bfa77e2528a510ec201f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="22" column="5"/>
+        <location file="rolly/directories.h" line="22" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dirs_1ac7387de60e67201a1a843c04a7c86709" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="23" column="5"/>
+        <location file="rolly/directories.h" line="23" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dirs_1ace7dab2abf6afccf9e422d4c09095919" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classrolly_1_1dirs" kindref="compound">dirs</ref> &amp;</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="24" column="10"/>
+        <location file="rolly/directories.h" line="24" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dirs_1a75c2d60667a1b0349b5def98d57f872c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classrolly_1_1dirs" kindref="compound">dirs</ref> &amp;</type>
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="25" column="10"/>
+        <location file="rolly/directories.h" line="25" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dirs_1a52ba3d4e210c32f3f5ac0abe2186b7a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::filesystem::path const  &amp;</type>
@@ -119,14 +119,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/directories.h" line="31" column="35"/>
+        <location file="rolly/directories.h" line="31" column="35"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/directories.h" line="15" column="13" bodyfile="include/rolly/directories.h" bodystart="15" bodyend="35"/>
+    <location file="rolly/directories.h" line="15" column="13" bodyfile="rolly/directories.h" bodystart="15" bodyend="35"/>
     <listofallmembers>
       <member refid="classrolly_1_1dirs_1ad06c44cb7ad6541d285b3a7aba8472ee" prot="public" virt="non-virtual"><scope>rolly::dirs</scope><name>dirs</name></member>
       <member refid="classrolly_1_1dirs_1a4d5aa3343262bfa77e2528a510ec201f" prot="public" virt="non-virtual"><scope>rolly::dirs</scope><name>dirs</name></member>

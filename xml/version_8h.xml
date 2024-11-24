@@ -295,13 +295,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/version.h" line="86" column="32" bodyfile="include/rolly/global/version.h" bodystart="86" bodyend="-1"/>
+        <location file="rolly/global/version.h" line="89" column="32" bodyfile="rolly/global/version.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/global/version.h"/>
+    <location file="rolly/global/version.h"/>
   </compounddef>
 </doxygen>

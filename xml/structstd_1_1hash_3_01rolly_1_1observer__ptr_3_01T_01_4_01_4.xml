@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structstd_1_1hash_3_01rolly_1_1observer__ptr_3_01T_01_4_01_4" kind="struct" language="C++" prot="public">
     <compoundname>std::hash&lt; rolly::observer_ptr&lt; T &gt; &gt;</compoundname>
-    <includes refid="observer__ptr_8h" local="no">observer_ptr.h</includes>
+    <includes refid="observer__ptr_8h" local="no">rolly/memory/observer_ptr.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="273" column="17" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="273" bodyend="273"/>
+        <location file="rolly/memory/observer_ptr.h" line="275" column="17" bodyfile="rolly/memory/observer_ptr.h" bodystart="275" bodyend="277"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -42,7 +42,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="include/rolly/memory/observer_ptr.h" line="272" column="15" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="272" bodyend="274"/>
+    <location file="rolly/memory/observer_ptr.h" line="274" column="15" bodyfile="rolly/memory/observer_ptr.h" bodystart="274" bodyend="278"/>
     <listofallmembers>
       <member refid="structstd_1_1hash_3_01rolly_1_1observer__ptr_3_01T_01_4_01_4_1a99d1b5a961d2f4ba5a95c300f2c659ff" prot="public" virt="non-virtual"><scope>std::hash&lt; rolly::observer_ptr&lt; T &gt; &gt;</scope><name>operator()</name></member>
     </listofallmembers>

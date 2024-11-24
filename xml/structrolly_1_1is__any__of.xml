@@ -39,7 +39,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/concepts/any_of.h" line="18" column="37" bodyfile="include/rolly/concepts/any_of.h" bodystart="18" bodyend="18"/>
+    <location file="rolly/concepts/any_of.h" line="18" column="37" bodyfile="rolly/concepts/any_of.h" bodystart="18" bodyend="18"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

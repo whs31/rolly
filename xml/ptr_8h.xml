@@ -149,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/ptr.h" line="25" column="11" bodyfile="include/rolly/concepts/ptr.h" bodystart="25" bodyend="-1"/>
+        <location file="rolly/concepts/ptr.h" line="25" column="11" bodyfile="rolly/concepts/ptr.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a24803776179d4c83561a9694a844d2c6" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -188,7 +188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/ptr.h" line="40" column="11" bodyfile="include/rolly/concepts/ptr.h" bodystart="40" bodyend="-1"/>
+        <location file="rolly/concepts/ptr.h" line="41" column="11" bodyfile="rolly/concepts/ptr.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1abed47d96e090d873adc3791a1733dd43" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -244,7 +244,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/ptr.h" line="59" column="11" bodyfile="include/rolly/concepts/ptr.h" bodystart="59" bodyend="-1"/>
+        <location file="rolly/concepts/ptr.h" line="61" column="11" bodyfile="rolly/concepts/ptr.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a70606b9cb7fe0186e2e3c0fe8e05d9f6" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -280,13 +280,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/ptr.h" line="74" column="11" bodyfile="include/rolly/concepts/ptr.h" bodystart="74" bodyend="-1"/>
+        <location file="rolly/concepts/ptr.h" line="76" column="11" bodyfile="rolly/concepts/ptr.h" bodystart="76" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/concepts/ptr.h"/>
+    <location file="rolly/concepts/ptr.h"/>
   </compounddef>
 </doxygen>

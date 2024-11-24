@@ -282,7 +282,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/source_location.h" line="1" column="0" bodyfile="include/rolly/source_location.h" bodystart="115" bodyend="126"/>
+        <location file="rolly/source_location.h" line="1" column="0" bodyfile="rolly/source_location.h" bodystart="123" bodyend="134"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1ac8e7afed7eafff55cdb28549abe23c74" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -303,7 +303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/source_location.h" line="128" column="15" bodyfile="include/rolly/source_location.h" bodystart="128" bodyend="131"/>
+        <location file="rolly/source_location.h" line="136" column="15" bodyfile="rolly/source_location.h" bodystart="136" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1ae7474ad0df463e7fc1cb98605706c3bb" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -324,13 +324,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/source_location.h" line="133" column="15" bodyfile="include/rolly/source_location.h" bodystart="133" bodyend="133"/>
+        <location file="rolly/source_location.h" line="141" column="15" bodyfile="rolly/source_location.h" bodystart="141" bodyend="143"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/source_location.h"/>
+    <location file="rolly/source_location.h"/>
   </compounddef>
 </doxygen>

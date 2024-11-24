@@ -40,7 +40,7 @@
         <link refid="cpp/types/integral_constant" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml"/>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/qt/concepts.h" line="32" column="35" bodyfile="include/rolly/qt/concepts.h" bodystart="32" bodyend="32"/>
+    <location file="rolly/qt/concepts.h" line="32" column="35" bodyfile="rolly/qt/concepts.h" bodystart="32" bodyend="32"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

@@ -6,6 +6,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/global/groups.dox"/>
+    <location file="rolly/global/groups.dox"/>
   </compounddef>
 </doxygen>

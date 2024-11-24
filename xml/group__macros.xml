@@ -13,7 +13,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/definitions.h" line="12" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="12" bodyend="-1"/>
+        <location file="rolly/global/definitions.h" line="12" column="11" bodyfile="rolly/global/definitions.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" prot="public" static="no">
         <name>___constexpr___</name>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/definitions.h" line="18" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="18" bodyend="-1"/>
+        <location file="rolly/global/definitions.h" line="18" column="11" bodyfile="rolly/global/definitions.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__macros_1gaa032e9c37560d16eb522f6ad25d09893" prot="public" static="no">
         <name>ROLLY_QT_CORE</name>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/definitions.h" line="26" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="26" bodyend="-1"/>
+        <location file="rolly/global/definitions.h" line="26" column="11" bodyfile="rolly/global/definitions.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__macros_1gacdcb0a5fcef3d4a927a21b45ab4242a2" prot="public" static="no">
         <name>ROLLY_QT_GUI</name>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/definitions.h" line="32" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="32" bodyend="-1"/>
+        <location file="rolly/global/definitions.h" line="32" column="11" bodyfile="rolly/global/definitions.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__macros_1ga7529dd8806261ce6d42e74b6b8640645" prot="public" static="no">
         <name>ROLLY_DEBUG</name>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/definitions.h" line="40" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="40" bodyend="-1"/>
+        <location file="rolly/global/definitions.h" line="40" column="11" bodyfile="rolly/global/definitions.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__macros_1ga4bd557993872c902c6e785cb8a606e81" prot="public" static="no">
         <name>ROLLY_NO_DEBUG</name>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/definitions.h" line="48" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="48" bodyend="-1"/>
+        <location file="rolly/global/definitions.h" line="48" column="11" bodyfile="rolly/global/definitions.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__macros_1ga145bb0d26bb2157f4dc7874127366986" prot="public" static="no">
         <name>___noinline___</name>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/definitions.h" line="62" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="62" bodyend="-1"/>
+        <location file="rolly/global/definitions.h" line="62" column="11" bodyfile="rolly/global/definitions.h" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__macros_1ga791216d5be3d4ee7f5b5b04f597a7fcb" prot="public" static="no">
         <name>___inline___</name>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/definitions.h" line="85" column="11" bodyfile="include/rolly/global/definitions.h" bodystart="85" bodyend="-1"/>
+        <location file="rolly/global/definitions.h" line="86" column="11" bodyfile="rolly/global/definitions.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

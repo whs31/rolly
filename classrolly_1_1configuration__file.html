@@ -47,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="config_8h.html">&lt;include/rolly/config.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="config_8h.html">&lt;rolly/config.h&gt;</a></div>
           <div class="m-doc-template">template&lt;typename F, typename T&gt;</div>
           <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>configuration_file <span class="m-thin">class</span>
         </h1>
@@ -97,12 +97,12 @@
 <span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">.</span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25565</span><span class="w"> </span><span class="p">};</span>
 <span class="p">};</span>
 <span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">rolly</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">serialize</span><span class="o">&lt;</span><span class="n">fl</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">format</span><span class="o">::</span><span class="n">toml</span><span class="o">&gt;</span><span class="p">(</span><span class="n">DummyConfiguration</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">basic_string</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">implementation</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">}</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">rolly</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">serialize</span><span class="o">&lt;</span><span class="n">fl</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">format</span><span class="o">::</span><span class="n">toml</span><span class="o">&gt;</span><span class="p">(</span><span class="n">DummyConfiguration</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span>
+<span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">basic_string</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">implementation</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">}</span>
 
 <span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">rolly</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">deserialize</span><span class="o">&lt;</span><span class="n">fl</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">format</span><span class="o">::</span><span class="n">toml</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">basic_string</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="n">DummyConfiguration</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">implementation</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">}</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">rolly</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">deserialize</span><span class="o">&lt;</span><span class="n">fl</span><span class="o">::</span><span class="n">serialization</span><span class="o">::</span><span class="n">format</span><span class="o">::</span><span class="n">toml</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">basic_string</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span>
+<span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">DummyConfiguration</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">implementation</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">}</span>
 
 <span class="k">auto</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">int</span>
 <span class="p">{</span>
@@ -291,7 +291,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a0c8308e2ccfa43c99a02dfb2cd6089ef"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -301,7 +301,7 @@
           </div></section>
           <section class="m-doc-details" id="a8007f9e387b60936bb962035c645c430"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -311,7 +311,7 @@
           </div></section>
           <section class="m-doc-details" id="a0216cd840232d838604b8f3f859eedde"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -322,7 +322,7 @@
           </div></section>
           <section class="m-doc-details" id="a56105d753006a32aa832a7ad76390f01"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -490,7 +490,7 @@
           </div></section>
           <section class="m-doc-details" id="a552d7f392bb1a0fa04a64f737962f1b2"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -500,7 +500,7 @@
           </div></section>
           <section class="m-doc-details" id="abdd96853741d33edcb6d31cae7d30440"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -510,7 +510,7 @@
           </div></section>
           <section class="m-doc-details" id="aa7d8623150e6d43ab4bf7493aa8cbc1a"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -520,7 +520,7 @@
           </div></section>
           <section class="m-doc-details" id="a9679f146b538754acbf087378a3ddaad"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -530,7 +530,7 @@
           </div></section>
           <section class="m-doc-details" id="abe8e2e9db3d4ce712d36196439e748f7"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -540,7 +540,7 @@
           </div></section>
           <section class="m-doc-details" id="a0d339d4d2a65c872eb96721d4d9fc5de"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -550,7 +550,7 @@
           </div></section>
           <section class="m-doc-details" id="a50fec7e7d10e5475e0ccf14adbaf7db0"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -560,7 +560,7 @@
           </div></section>
           <section class="m-doc-details" id="a3c3bc25a16c19968d1381cb89df6458b"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>
@@ -573,7 +573,7 @@
           <h2>Variable documentation</h2>
           <section class="m-doc-details" id="a5963243bd4dde422ba389da63fb2cab1"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;include/rolly/io/filedevice.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="filedevice_8h.html">&lt;rolly/io/filedevice.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename F, typename T&gt;
               </div>

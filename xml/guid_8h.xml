@@ -167,13 +167,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="159" column="24" bodyfile="include/rolly/types/guid.h" bodystart="159" bodyend="161"/>
+        <location file="rolly/types/guid.h" line="159" column="24" bodyfile="rolly/types/guid.h" bodystart="159" bodyend="161"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/types/guid.h"/>
+    <location file="rolly/types/guid.h"/>
   </compounddef>
 </doxygen>

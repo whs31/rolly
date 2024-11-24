@@ -228,7 +228,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2494" column="5" bodyfile="include/rolly/types/result.h" bodystart="2494" bodyend="-1"/>
+        <location file="rolly/types/result.h" line="2640" column="5" bodyfile="rolly/types/result.h" bodystart="2640" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -251,7 +251,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2559" column="27" bodyfile="include/rolly/types/result.h" bodystart="2559" bodyend="-1"/>
+        <location file="rolly/types/result.h" line="2708" column="27" bodyfile="rolly/types/result.h" bodystart="2708" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -303,7 +303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2510" column="17" bodyfile="include/rolly/types/result.h" bodystart="2510" bodyend="2512"/>
+        <location file="rolly/types/result.h" line="2657" column="7" bodyfile="rolly/types/result.h" bodystart="2657" bodyend="2661"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -332,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2526" column="15" bodyfile="include/rolly/types/result.h" bodystart="2526" bodyend="2528"/>
+        <location file="rolly/types/result.h" line="2675" column="15" bodyfile="rolly/types/result.h" bodystart="2675" bodyend="2677"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1types_1a07a110d824e251b17a6bb94f8e4fed5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>result</type>
@@ -345,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2530" column="14" bodyfile="include/rolly/types/result.h" bodystart="2530" bodyend="2530"/>
+        <location file="rolly/types/result.h" line="2679" column="14" bodyfile="rolly/types/result.h" bodystart="2679" bodyend="2679"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1types_1a023b1eb8a485614d2ea9c48632d275c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -374,13 +374,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2544" column="20" bodyfile="include/rolly/types/result.h" bodystart="2544" bodyend="2546"/>
+        <location file="rolly/types/result.h" line="2693" column="20" bodyfile="rolly/types/result.h" bodystart="2693" bodyend="2695"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/types/result.h"/>
+    <location file="rolly/types/result.h"/>
   </compounddef>
 </doxygen>

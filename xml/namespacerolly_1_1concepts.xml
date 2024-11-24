@@ -25,7 +25,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/any_of.h" line="12" column="11" bodyfile="include/rolly/concepts/any_of.h" bodystart="12" bodyend="-1"/>
+        <location file="rolly/concepts/any_of.h" line="12" column="11" bodyfile="rolly/concepts/any_of.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a0b007b1ce299704da471216af2c258b8" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/enum.h" line="15" column="11" bodyfile="include/rolly/concepts/enum.h" bodystart="15" bodyend="-1"/>
+        <location file="rolly/concepts/enum.h" line="15" column="11" bodyfile="rolly/concepts/enum.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1aea9bb2c4075cdbbe6ae4d3b6eef46cda" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -69,9 +69,9 @@
         <definition>concept num</definition>
         <argsstring></argsstring>
         <name>num</name>
-        <initializer>= std::integral&lt;<ref refid="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" kindref="member">plain_type_t</ref>&lt;T&gt;&gt; or std::floating_point&lt;<ref refid="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" kindref="member">plain_type_t</ref>&lt;T&gt;&gt; and
-                                                    (not std::is_same_v&lt;<ref refid="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" kindref="member">plain_type_t</ref>&lt;T&gt;, bool&gt;) and
-                                                    (not std::is_same_v&lt;<ref refid="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" kindref="member">plain_type_t</ref>&lt;T&gt;, <ref refid="cpp/types/nullptr_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::nullptr_t</ref>&gt;)</initializer>
+        <initializer>= std::integral&lt;<ref refid="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" kindref="member">plain_type_t</ref>&lt;T&gt;&gt;
+             or std::floating_point&lt;<ref refid="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" kindref="member">plain_type_t</ref>&lt;T&gt;&gt; and (not std::is_same_v&lt;<ref refid="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" kindref="member">plain_type_t</ref>&lt;T&gt;, bool&gt;)
+                  and (not std::is_same_v&lt;<ref refid="namespacerolly_1abb6b740122d8db472da8ccec3de5ec9c" kindref="member">plain_type_t</ref>&lt;T&gt;, <ref refid="cpp/types/nullptr_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::nullptr_t</ref>&gt;)</initializer>
         <briefdescription>
 <para>Concept that is true if T is a number. </para>
         </briefdescription>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/num.h" line="29" column="11" bodyfile="include/rolly/concepts/num.h" bodystart="29" bodyend="-1"/>
+        <location file="rolly/concepts/num.h" line="30" column="11" bodyfile="rolly/concepts/num.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1ab11672aee126fbc1d72aa1d291083b25" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/ptr.h" line="25" column="11" bodyfile="include/rolly/concepts/ptr.h" bodystart="25" bodyend="-1"/>
+        <location file="rolly/concepts/ptr.h" line="25" column="11" bodyfile="rolly/concepts/ptr.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a24803776179d4c83561a9694a844d2c6" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/ptr.h" line="40" column="11" bodyfile="include/rolly/concepts/ptr.h" bodystart="40" bodyend="-1"/>
+        <location file="rolly/concepts/ptr.h" line="41" column="11" bodyfile="rolly/concepts/ptr.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1abed47d96e090d873adc3791a1733dd43" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -227,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/ptr.h" line="59" column="11" bodyfile="include/rolly/concepts/ptr.h" bodystart="59" bodyend="-1"/>
+        <location file="rolly/concepts/ptr.h" line="61" column="11" bodyfile="rolly/concepts/ptr.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a70606b9cb7fe0186e2e3c0fe8e05d9f6" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/ptr.h" line="74" column="11" bodyfile="include/rolly/concepts/ptr.h" bodystart="74" bodyend="-1"/>
+        <location file="rolly/concepts/ptr.h" line="76" column="11" bodyfile="rolly/concepts/ptr.h" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a4e85a3493f53e852cc6c696ff8f01774" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -275,8 +275,8 @@
         <definition>concept standard_copyable_and_movable</definition>
         <argsstring></argsstring>
         <name>standard_copyable_and_movable</name>
-        <initializer>= std::is_nothrow_move_constructible_v&lt;T&gt; and
-                                          std::is_nothrow_move_assignable_v&lt;T&gt; and std::copyable&lt;T&gt;</initializer>
+        <initializer>= std::is_nothrow_move_constructible_v&lt;T&gt;
+                                      and std::is_nothrow_move_assignable_v&lt;T&gt; and std::copyable&lt;T&gt;</initializer>
         <briefdescription>
 <para>Concept that is true if T is a standard copyable and movable type. </para>
         </briefdescription>
@@ -296,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/standard_copyable_and_movable.h" line="18" column="11" bodyfile="include/rolly/concepts/standard_copyable_and_movable.h" bodystart="18" bodyend="-1"/>
+        <location file="rolly/concepts/standard_copyable_and_movable.h" line="18" column="11" bodyfile="rolly/concepts/standard_copyable_and_movable.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a256eaf11e6fe6f4b4cb5c15f4c2bb67c" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -345,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/threading.h" line="28" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="28" bodyend="-1"/>
+        <location file="rolly/concepts/threading.h" line="28" column="11" bodyfile="rolly/concepts/threading.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -392,7 +392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/threading.h" line="49" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="49" bodyend="-1"/>
+        <location file="rolly/concepts/threading.h" line="51" column="11" bodyfile="rolly/concepts/threading.h" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a52c57da298d52036a7b419d018d30d37" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -410,12 +410,15 @@
         <definition>concept timed_lockable</definition>
         <argsstring></argsstring>
         <name>timed_lockable</name>
-        <initializer>=
-    <ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref>&lt;T&gt; and
-    requires(T t, <ref refid="cpp/chrono/duration" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::duration</ref>&lt;Duration&gt; rel_time, <ref refid="cpp/chrono/time_point" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::time_point</ref>&lt;TimePoint&gt; abs_time) {
-      { t.try_lock_for(rel_time) } -&gt; std::convertible_to&lt;bool&gt;;
-      { t.try_lock_until(abs_time) } -&gt; std::convertible_to&lt;bool&gt;;
-    }</initializer>
+        <initializer>= <ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref>&lt;T&gt;
+                       and requires(
+                             T t,
+                             <ref refid="cpp/chrono/duration" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::duration</ref>&lt;Duration&gt; rel_time,
+                             <ref refid="cpp/chrono/time_point" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::time_point</ref>&lt;TimePoint&gt; abs_time
+                       ) {
+                             { t.try_lock_for(rel_time) } -&gt; std::convertible_to&lt;bool&gt;;
+                             { t.try_lock_until(abs_time) } -&gt; std::convertible_to&lt;bool&gt;;
+                           }</initializer>
         <briefdescription>
 <para>Timed lockable concept. </para>
         </briefdescription>
@@ -469,7 +472,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/threading.h" line="74" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="74" bodyend="-1"/>
+        <location file="rolly/concepts/threading.h" line="77" column="11" bodyfile="rolly/concepts/threading.h" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a6b5e1f3d81caf56871288a0922106fba" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -525,7 +528,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/threading.h" line="103" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="103" bodyend="-1"/>
+        <location file="rolly/concepts/threading.h" line="110" column="11" bodyfile="rolly/concepts/threading.h" bodystart="110" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a7ac96a877f45b8fe4d206f5a3b4227d1" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -543,12 +546,19 @@
         <definition>concept shared_timed_lockable</definition>
         <argsstring></argsstring>
         <name>shared_timed_lockable</name>
-        <initializer>=
-    <ref refid="namespacerolly_1_1concepts_1a52c57da298d52036a7b419d018d30d37" kindref="member">timed_lockable</ref>&lt;T, Duration, TimePoint&gt; and
-    requires(T t, <ref refid="cpp/chrono/duration" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::duration</ref>&lt;Duration&gt; rel_time, <ref refid="cpp/chrono/time_point" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::time_point</ref>&lt;TimePoint&gt; abs_time) {
-      { t.try_lock_shared_for(rel_time) } -&gt; std::convertible_to&lt;bool&gt;;
-      { t.try_lock_shared_until(abs_time) } -&gt; std::convertible_to&lt;bool&gt;;
-    }</initializer>
+        <initializer>= <ref refid="namespacerolly_1_1concepts_1a52c57da298d52036a7b419d018d30d37" kindref="member">timed_lockable</ref>&lt;T, Duration, TimePoint&gt;
+                              and requires(
+                                    T t,
+                                    <ref refid="cpp/chrono/duration" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::duration</ref>&lt;Duration&gt; rel_time,
+                                    <ref refid="cpp/chrono/time_point" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::time_point</ref>&lt;TimePoint&gt; abs_time
+                              ) {
+                                    {
+                                      t.try_lock_shared_for(rel_time)
+                                    } -&gt; std::convertible_to&lt;bool&gt;;
+                                    {
+                                      t.try_lock_shared_until(abs_time)
+                                    } -&gt; std::convertible_to&lt;bool&gt;;
+                                  }</initializer>
         <briefdescription>
 <para>Shared timed lockable concept. </para>
         </briefdescription>
@@ -604,7 +614,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/threading.h" line="132" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="132" bodyend="-1"/>
+        <location file="rolly/concepts/threading.h" line="140" column="11" bodyfile="rolly/concepts/threading.h" bodystart="140" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a9f03a450503a49209711d9aabb33235b" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -616,8 +626,8 @@
         <definition>concept mutex</definition>
         <argsstring></argsstring>
         <name>mutex</name>
-        <initializer>= <ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref>&lt;T&gt; and std::default_initializable&lt;T&gt; and std::destructible&lt;T&gt; and
-                  not std::copy_constructible&lt;T&gt; and not std::move_constructible&lt;T&gt;</initializer>
+        <initializer>= <ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref>&lt;T&gt; and std::default_initializable&lt;T&gt; and std::destructible&lt;T&gt;
+              and not std::copy_constructible&lt;T&gt; and not std::move_constructible&lt;T&gt;</initializer>
         <briefdescription>
 <para>Mutex concept. </para>
         </briefdescription>
@@ -665,7 +675,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/threading.h" line="160" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="160" bodyend="-1"/>
+        <location file="rolly/concepts/threading.h" line="176" column="11" bodyfile="rolly/concepts/threading.h" bodystart="176" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1af2eae4a13cdc90beea2c6cd6f2af64e6" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -736,7 +746,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/threading.h" line="183" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="183" bodyend="-1"/>
+        <location file="rolly/concepts/threading.h" line="199" column="11" bodyfile="rolly/concepts/threading.h" bodystart="199" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1aac94bac785c4e7e42c81dd7c46c8a4ff" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -785,7 +795,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/threading.h" line="203" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="203" bodyend="-1"/>
+        <location file="rolly/concepts/threading.h" line="219" column="11" bodyfile="rolly/concepts/threading.h" bodystart="219" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a286dcad460016fe53f98e8d0c6cf6be1" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -856,7 +866,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/threading.h" line="225" column="11" bodyfile="include/rolly/concepts/threading.h" bodystart="225" bodyend="-1"/>
+        <location file="rolly/concepts/threading.h" line="241" column="11" bodyfile="rolly/concepts/threading.h" bodystart="241" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a54517dd6c801c2bdb84ed8974d446fa1" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -875,7 +885,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/concepts.h" line="15" column="11" bodyfile="include/rolly/qt/concepts.h" bodystart="15" bodyend="-1"/>
+        <location file="rolly/qt/concepts.h" line="15" column="11" bodyfile="rolly/qt/concepts.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerolly_1_1concepts_1a49ea049c3043b72fe3c0590e98adfa9a" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -896,7 +906,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/concepts.h" line="18" column="11" bodyfile="include/rolly/qt/concepts.h" bodystart="18" bodyend="-1"/>
+        <location file="rolly/qt/concepts.h" line="18" column="11" bodyfile="rolly/qt/concepts.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -907,6 +917,6 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/concepts/any_of.h" line="9" column="25"/>
+    <location file="rolly/concepts/any_of.h" line="9" column="25"/>
   </compounddef>
 </doxygen>

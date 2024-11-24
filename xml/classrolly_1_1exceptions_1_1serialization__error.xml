@@ -3,7 +3,7 @@
   <compounddef id="classrolly_1_1exceptions_1_1serialization__error" kind="class" language="C++" prot="public">
     <compoundname>rolly::exceptions::serialization_error</compoundname>
     <basecompoundref refid="cpp/error/runtime_error" prot="public" virt="non-virtual">runtime_error</basecompoundref>
-    <includes refid="serialization__error_8h" local="no">serialization_error.h</includes>
+    <includes refid="serialization__error_8h" local="no">rolly/exception/serialization_error.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/exception/serialization_error.h" line="18" column="7" bodyfile="include/rolly/exception/serialization_error.h" bodystart="18" bodyend="19"/>
+        <location file="rolly/exception/serialization_error.h" line="18" column="7" bodyfile="rolly/exception/serialization_error.h" bodystart="18" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1exceptions_1_1serialization__error_1acb6822a4eee38c2b4dfd9aa6c34eb192" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/exception/serialization_error.h" line="21" column="16" bodyfile="include/rolly/exception/serialization_error.h" bodystart="21" bodyend="24"/>
+        <location file="rolly/exception/serialization_error.h" line="23" column="16" bodyfile="rolly/exception/serialization_error.h" bodystart="23" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="cpp/error/exception/what_1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="doxygen/cppreference-doxygen-web.tag.xml" line="1" column="1"/>
+        <location file="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml" line="1" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -91,7 +91,7 @@
         <link refid="cpp/error/runtime_error" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml"/>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/exception/serialization_error.h" line="16" column="56" bodyfile="include/rolly/exception/serialization_error.h" bodystart="16" bodyend="25"/>
+    <location file="rolly/exception/serialization_error.h" line="16" column="56" bodyfile="rolly/exception/serialization_error.h" bodystart="16" bodyend="29"/>
     <listofallmembers>
       <member refid="cpp/error/runtime_error_1" prot="public" virt="non-virtual"><scope>rolly::exceptions::serialization_error</scope><name>runtime_error</name></member>
       <member refid="classrolly_1_1exceptions_1_1serialization__error_1a91b1f8bd8bc83f7417118d65910d0385" prot="public" virt="non-virtual"><scope>rolly::exceptions::serialization_error</scope><name>serialization_error</name></member>

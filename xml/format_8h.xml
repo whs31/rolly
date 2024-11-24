@@ -59,6 +59,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/format.h"/>
+    <location file="rolly/format.h"/>
   </compounddef>
 </doxygen>

@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/charconv.h" line="39" column="9" bodyfile="include/rolly/global/charconv.h" bodystart="39" bodyend="-1"/>
+        <location file="rolly/global/charconv.h" line="39" column="9" bodyfile="rolly/global/charconv.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="charconv_8h_1a4fcbd720adba1662ad994ab67588e058" prot="public" static="no">
         <name>DECLARE_CONVERTIBLE_TO_STRING</name>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/charconv.h" line="40" column="9" bodyfile="include/rolly/global/charconv.h" bodystart="40" bodyend="-1"/>
+        <location file="rolly/global/charconv.h" line="40" column="9" bodyfile="rolly/global/charconv.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="charconv_8h_1ab62a8d7c4fb893156c4787b98a896443" prot="public" static="no">
         <name>DECLARE_CONVERTIBLE_TO_STRING_DEFAULT</name>
@@ -209,7 +209,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/charconv.h" line="41" column="9" bodyfile="include/rolly/global/charconv.h" bodystart="41" bodyend="-1"/>
+        <location file="rolly/global/charconv.h" line="41" column="9" bodyfile="rolly/global/charconv.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="charconv_8h_1a274d7677a5e67a64ef79d2c530a33595" prot="public" static="no">
         <name>DECLARE_CONVERTIBLE_FROM_STRING</name>
@@ -221,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/charconv.h" line="42" column="9" bodyfile="include/rolly/global/charconv.h" bodystart="42" bodyend="-1"/>
+        <location file="rolly/global/charconv.h" line="42" column="9" bodyfile="rolly/global/charconv.h" bodystart="42" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -279,7 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/charconv.h" line="16" column="29" declfile="include/rolly/global/charconv.h" declline="16" declcolumn="29"/>
+        <location file="rolly/global/charconv.h" line="16" column="29" declfile="rolly/global/charconv.h" declline="16" declcolumn="29"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a0caf7f4c7ee8a9aa65b3dd556e1e656c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -335,7 +335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/charconv.h" line="26" column="44" declfile="include/rolly/global/charconv.h" declline="26" declcolumn="44"/>
+        <location file="rolly/global/charconv.h" line="26" column="44" declfile="rolly/global/charconv.h" declline="26" declcolumn="44"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1aeb6cbc9c9826b7eef31366ea5d000db2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -391,13 +391,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/charconv.h" line="36" column="23" declfile="include/rolly/global/charconv.h" declline="36" declcolumn="23"/>
+        <location file="rolly/global/charconv.h" line="36" column="23" declfile="rolly/global/charconv.h" declline="36" declcolumn="23"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/global/charconv.h"/>
+    <location file="rolly/global/charconv.h"/>
   </compounddef>
 </doxygen>

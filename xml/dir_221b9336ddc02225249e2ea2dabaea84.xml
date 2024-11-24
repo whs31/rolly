@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
-  <compounddef id="dir_f234de31f565d8abf8ea98c3e3f44169" kind="dir">
-    <compoundname>serialization</compoundname>
-    <innerfile refid="tags_8h">tags.h</innerfile>
+  <compounddef id="dir_221b9336ddc02225249e2ea2dabaea84" kind="dir">
+    <compoundname>detail</compoundname>
+    <innerfile refid="macro_8h">macro.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/serialization/"/>
+    <location file="rolly/dll/detail/"/>
   </compounddef>
 </doxygen>

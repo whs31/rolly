@@ -325,13 +325,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/config.h" line="11" column="27" bodyfile="include/rolly/config.h" bodystart="11" bodyend="14"/>
+        <location file="rolly/config.h" line="11" column="27" bodyfile="rolly/config.h" bodystart="11" bodyend="14"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/config.h"/>
+    <location file="rolly/config.h"/>
   </compounddef>
 </doxygen>

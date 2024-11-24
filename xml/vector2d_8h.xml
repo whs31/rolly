@@ -347,6 +347,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/types/vector2d.h"/>
+    <location file="rolly/types/vector2d.h"/>
   </compounddef>
 </doxygen>

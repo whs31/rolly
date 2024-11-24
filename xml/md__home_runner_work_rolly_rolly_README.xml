@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
-  <compounddef id="md_README" kind="page">
-    <compoundname>md_README</compoundname>
+  <compounddef id="md__home_runner_work_rolly_rolly_README" kind="page">
+    <compoundname>md__home_runner_work_rolly_rolly_README</compoundname>
     <title>Rolly</title>
     <briefdescription>
     </briefdescription>
@@ -17,7 +17,7 @@
 <image type="html" name="badge_cmake.svg" inline="yes"></image>
  </heading>
 </para>
-<sect3 id="md_README_1autotoc_md1">
+<sect3 id="md__home_runner_work_rolly_rolly_README_1autotoc_md1">
 <title>Documentation</title>
 <para><itemizedlist>
 <listitem><para><image type="html" name="logo_gitlab.png">gitlab_logo</image>
@@ -33,7 +33,7 @@
 </listitem></itemizedlist>
 </para>
 </sect3>
-<sect3 id="md_README_1autotoc_md2">
+<sect3 id="md__home_runner_work_rolly_rolly_README_1autotoc_md2">
 <title>Dependencies</title>
 <para><itemizedlist>
 <listitem><para><ulink url="https://github.com/fmtlib/fmt"><bold>fmt</bold></ulink> - modern formatting library ( proposal for <computeroutput>std::format</computeroutput>) (<bold>MIT</bold>)</para>
@@ -42,7 +42,7 @@
 </listitem></itemizedlist>
 </para>
 </sect3>
-<sect3 id="md_README_1autotoc_md3">
+<sect3 id="md__home_runner_work_rolly_rolly_README_1autotoc_md3">
 <title>Licensing</title>
 <para><emphasis>Rolly</emphasis> library is distributed under the MIT license. See <ulink url="./LICENSE">LICENSE</ulink> for details. </para>
 </sect3>

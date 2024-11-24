@@ -444,6 +444,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/types.h"/>
+    <location file="rolly/types.h"/>
   </compounddef>
 </doxygen>

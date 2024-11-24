@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/dll/detail/macro.h" line="5" column="9" bodyfile="include/rolly/dll/detail/macro.h" bodystart="5" bodyend="-1"/>
+        <location file="rolly/dll/detail/macro.h" line="5" column="9" bodyfile="rolly/dll/detail/macro.h" bodystart="5" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="macro_8h_1a82afd6a29e58cbbcfe0e876b8ed43cf6" prot="public" static="no">
         <name>___rolly_dll_proc_name_string___</name>
@@ -187,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/dll/detail/macro.h" line="6" column="9" bodyfile="include/rolly/dll/detail/macro.h" bodystart="6" bodyend="-1"/>
+        <location file="rolly/dll/detail/macro.h" line="6" column="9" bodyfile="rolly/dll/detail/macro.h" bodystart="6" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="macro_8h_1ae6f7b2d1500706f724b98b9420ce919b" prot="public" static="no">
         <name>___rolly_dll_api___</name>
@@ -198,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/dll/detail/macro.h" line="8" column="11" bodyfile="include/rolly/dll/detail/macro.h" bodystart="8" bodyend="-1"/>
+        <location file="rolly/dll/detail/macro.h" line="8" column="11" bodyfile="rolly/dll/detail/macro.h" bodystart="8" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="macro_8h_1a315558e8b1d56dba9f5dafecb8bc2c3e" prot="public" static="no">
         <name>DECLARE_PLUGIN</name>
@@ -210,13 +210,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/dll/detail/macro.h" line="12" column="10" bodyfile="include/rolly/dll/detail/macro.h" bodystart="12" bodyend="-1"/>
+        <location file="rolly/dll/detail/macro.h" line="12" column="10" bodyfile="rolly/dll/detail/macro.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/dll/detail/macro.h"/>
+    <location file="rolly/dll/detail/macro.h"/>
   </compounddef>
 </doxygen>

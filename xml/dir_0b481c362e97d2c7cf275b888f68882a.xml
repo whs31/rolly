@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
-  <compounddef id="dir_219ebe85f32c2a3640586b647addb428" kind="dir">
-    <compoundname>format</compoundname>
-    <innerfile refid="ostream__formatter_8h">ostream_formatter.h</innerfile>
+  <compounddef id="dir_0b481c362e97d2c7cf275b888f68882a" kind="dir">
+    <compoundname>serialization</compoundname>
+    <innerfile refid="tags_8h">tags.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/format/"/>
+    <location file="rolly/serialization/"/>
   </compounddef>
 </doxygen>

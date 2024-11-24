@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structrolly_1_1types_1_1size2d" kind="struct" language="C++" prot="public">
     <compoundname>rolly::types::size2d</compoundname>
-    <includes refid="size2d_8h" local="no">size2d.h</includes>
+    <includes refid="size2d_8h" local="no">rolly/types/size2d.h</includes>
     <templateparamlist>
       <param>
         <type><ref refid="namespacerolly_1_1concepts_1aea9bb2c4075cdbbe6ae4d3b6eef46cda" kindref="member">concepts::num</ref></type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="38" column="7" bodyfile="include/rolly/types/size2d.h" bodystart="38" bodyend="-1"/>
+        <location file="rolly/types/size2d.h" line="38" column="7" bodyfile="rolly/types/size2d.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="594" column="19" bodyfile="include/rolly/types/size2d.h" bodystart="594" bodyend="-1"/>
+        <location file="rolly/types/size2d.h" line="621" column="19" bodyfile="rolly/types/size2d.h" bodystart="621" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrolly_1_1types_1_1size2d_1aec0f04620860b55b130d230fa5591b86" prot="private" static="no" mutable="no">
         <type><ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="595" column="19" bodyfile="include/rolly/types/size2d.h" bodystart="595" bodyend="-1"/>
+        <location file="rolly/types/size2d.h" line="622" column="19" bodyfile="rolly/types/size2d.h" bodystart="622" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="43" column="17"/>
+        <location file="rolly/types/size2d.h" line="43" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a618109a64ac4cba549e2a6d25f6c0cd9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> &amp;</type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="48" column="24"/>
+        <location file="rolly/types/size2d.h" line="48" column="24"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a2d50877007a22752a7292a88c95ed6f8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="53" column="17"/>
+        <location file="rolly/types/size2d.h" line="53" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a94676acb5e8ff50209cf6886e09b6b43" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> &amp;</type>
@@ -122,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="58" column="24"/>
+        <location file="rolly/types/size2d.h" line="58" column="24"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1af511b2e0426d957343779166907439fe" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -136,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="63" column="17" bodyfile="include/rolly/types/size2d.h" bodystart="63" bodyend="65"/>
+        <location file="rolly/types/size2d.h" line="63" column="17" bodyfile="rolly/types/size2d.h" bodystart="63" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a292f11d09851adc68f8f60b50216cd9e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="72" column="17" bodyfile="include/rolly/types/size2d.h" bodystart="72" bodyend="74"/>
+        <location file="rolly/types/size2d.h" line="72" column="17" bodyfile="rolly/types/size2d.h" bodystart="72" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a90090e51fc91401ed1ba552cbf1b05f1" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -204,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="80" column="26" bodyfile="include/rolly/types/size2d.h" bodystart="80" bodyend="82"/>
+        <location file="rolly/types/size2d.h" line="80" column="26" bodyfile="rolly/types/size2d.h" bodystart="80" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ac189045668ab39657be7db09f34d6f15" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -232,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="88" column="26" bodyfile="include/rolly/types/size2d.h" bodystart="88" bodyend="90"/>
+        <location file="rolly/types/size2d.h" line="88" column="26" bodyfile="rolly/types/size2d.h" bodystart="88" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aa11dc7bf967ab05052263482133a03ff" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -260,7 +260,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="96" column="26" bodyfile="include/rolly/types/size2d.h" bodystart="96" bodyend="98"/>
+        <location file="rolly/types/size2d.h" line="96" column="26" bodyfile="rolly/types/size2d.h" bodystart="96" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a9f83aeaabb5dca616513668ff812f165" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -277,7 +277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="104" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="104" bodyend="104"/>
+        <location file="rolly/types/size2d.h" line="104" column="25" bodyfile="rolly/types/size2d.h" bodystart="104" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a23d20565ed8828ea60602ae5f69d45b6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -294,7 +294,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="110" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="110" bodyend="110"/>
+        <location file="rolly/types/size2d.h" line="110" column="30" bodyfile="rolly/types/size2d.h" bodystart="110" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ad8e273c4442bfd92a64727fd411385a6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -311,7 +311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="116" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="116" bodyend="116"/>
+        <location file="rolly/types/size2d.h" line="116" column="30" bodyfile="rolly/types/size2d.h" bodystart="116" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a9e764a6a4f38cbdb7711383af5fa8d18" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &amp;</type>
@@ -328,7 +328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="122" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="122" bodyend="122"/>
+        <location file="rolly/types/size2d.h" line="122" column="30" bodyfile="rolly/types/size2d.h" bodystart="122" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a7212185fd6ab59c60da53e8e15606a4e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &amp;</type>
@@ -345,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="128" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="128" bodyend="128"/>
+        <location file="rolly/types/size2d.h" line="128" column="30" bodyfile="rolly/types/size2d.h" bodystart="128" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1afd175a8ec445e68f164ae4d65673cc28" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -359,7 +359,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="133" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="133" bodyend="133"/>
+        <location file="rolly/types/size2d.h" line="133" column="30" bodyfile="rolly/types/size2d.h" bodystart="133" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a4b978383c4f7e8992279ac67e3193bda" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -373,7 +373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="138" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="138" bodyend="138"/>
+        <location file="rolly/types/size2d.h" line="138" column="30" bodyfile="rolly/types/size2d.h" bodystart="138" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ada99cbb83067f0f172dcc766d04a4c68" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &amp;</type>
@@ -387,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="143" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="143" bodyend="143"/>
+        <location file="rolly/types/size2d.h" line="143" column="30" bodyfile="rolly/types/size2d.h" bodystart="143" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aa7aaa79cc094a08c7ddc39c056b927c4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &amp;</type>
@@ -401,7 +401,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="148" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="148" bodyend="148"/>
+        <location file="rolly/types/size2d.h" line="148" column="30" bodyfile="rolly/types/size2d.h" bodystart="148" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
@@ -420,7 +420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="157" column="20" bodyfile="include/rolly/types/size2d.h" bodystart="157" bodyend="162"/>
+        <location file="rolly/types/size2d.h" line="157" column="20" bodyfile="rolly/types/size2d.h" bodystart="157" bodyend="162"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a25129afd086e1ed1078677311854d7ab" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, 2 &gt;</type>
@@ -434,7 +434,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="167" column="29" bodyfile="include/rolly/types/size2d.h" bodystart="167" bodyend="167"/>
+        <location file="rolly/types/size2d.h" line="167" column="29" bodyfile="rolly/types/size2d.h" bodystart="167" bodyend="169"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a773014d9be700f99ca76e9990945e509" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/utility/tuple" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::tuple</ref>&lt; <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
@@ -448,7 +448,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="172" column="29" bodyfile="include/rolly/types/size2d.h" bodystart="172" bodyend="172"/>
+        <location file="rolly/types/size2d.h" line="174" column="29" bodyfile="rolly/types/size2d.h" bodystart="174" bodyend="176"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a67ac57bed3924789d4157e4a9487749c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/utility/pair" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::pair</ref>&lt; <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
@@ -462,7 +462,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="177" column="28" bodyfile="include/rolly/types/size2d.h" bodystart="177" bodyend="177"/>
+        <location file="rolly/types/size2d.h" line="181" column="28" bodyfile="rolly/types/size2d.h" bodystart="181" bodyend="183"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aeffd93a88852c0ba4d0c92f5d737cd90" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -477,7 +477,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="183" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="183" bodyend="183"/>
+        <location file="rolly/types/size2d.h" line="189" column="25" bodyfile="rolly/types/size2d.h" bodystart="189" bodyend="191"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ae798bbf805c9e9b542ec541534ec0a18" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -492,7 +492,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="189" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="189" bodyend="189"/>
+        <location file="rolly/types/size2d.h" line="198" column="25" bodyfile="rolly/types/size2d.h" bodystart="198" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a7565a914b1a24ca2de6de6808d054ee1" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -505,7 +505,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="195" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="195" bodyend="195"/>
+        <location file="rolly/types/size2d.h" line="206" column="25" bodyfile="rolly/types/size2d.h" bodystart="206" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1abb313668b1c479efda4864fa5e702b18" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -561,7 +561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="223" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="223" bodyend="225"/>
+        <location file="rolly/types/size2d.h" line="236" column="25" bodyfile="rolly/types/size2d.h" bodystart="236" bodyend="238"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1afefbf271cf6c7924e08116c924878f28" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -591,7 +591,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="232" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="232" bodyend="234"/>
+        <location file="rolly/types/size2d.h" line="245" column="25" bodyfile="rolly/types/size2d.h" bodystart="245" bodyend="247"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a0d01e5ac468318f504b6493c901ec463" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -621,7 +621,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="241" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="241" bodyend="243"/>
+        <location file="rolly/types/size2d.h" line="254" column="25" bodyfile="rolly/types/size2d.h" bodystart="254" bodyend="256"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a2aabf4fe2af2e63d0f014260e9d13e37" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -663,7 +663,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="251" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="251" bodyend="253"/>
+        <location file="rolly/types/size2d.h" line="265" column="25" bodyfile="rolly/types/size2d.h" bodystart="265" bodyend="267"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a1e9f97bd0d5587b31d117df29c28e55a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -680,7 +680,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="259" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="259" bodyend="259"/>
+        <location file="rolly/types/size2d.h" line="273" column="25" bodyfile="rolly/types/size2d.h" bodystart="273" bodyend="275"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ae00ce5f8010628203d96c9c83d57549f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -710,7 +710,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="267" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="267" bodyend="269"/>
+        <location file="rolly/types/size2d.h" line="283" column="30" bodyfile="rolly/types/size2d.h" bodystart="283" bodyend="285"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a2901bb7d1cac020c38b1564de50cfed3" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -740,7 +740,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="277" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="277" bodyend="279"/>
+        <location file="rolly/types/size2d.h" line="293" column="30" bodyfile="rolly/types/size2d.h" bodystart="293" bodyend="295"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a09eb0be0be1b9fb26096c1fccbe3d9ca" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -754,7 +754,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="284" column="23" bodyfile="include/rolly/types/size2d.h" bodystart="284" bodyend="284"/>
+        <location file="rolly/types/size2d.h" line="300" column="23" bodyfile="rolly/types/size2d.h" bodystart="300" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a231e8ba696d19d5efb24deba2b63c471" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -768,7 +768,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="289" column="23" bodyfile="include/rolly/types/size2d.h" bodystart="289" bodyend="289"/>
+        <location file="rolly/types/size2d.h" line="307" column="23" bodyfile="rolly/types/size2d.h" bodystart="307" bodyend="309"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a7d2bbc553fa9b07157c1e60536c45cd5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -812,7 +812,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="323" column="9" bodyfile="include/rolly/types/size2d.h" bodystart="323" bodyend="329"/>
+        <location file="rolly/types/size2d.h" line="343" column="9" bodyfile="rolly/types/size2d.h" bodystart="343" bodyend="349"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ad0ed9dded3dc4405713f0b9270930a92" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -829,7 +829,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="344" column="27" bodyfile="include/rolly/types/size2d.h" bodystart="344" bodyend="352"/>
+        <location file="rolly/types/size2d.h" line="367" column="27" bodyfile="rolly/types/size2d.h" bodystart="367" bodyend="375"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ac252a44c73ef696bf047b7b7b0ea13bc" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -843,7 +843,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="357" column="23" bodyfile="include/rolly/types/size2d.h" bodystart="357" bodyend="357"/>
+        <location file="rolly/types/size2d.h" line="380" column="23" bodyfile="rolly/types/size2d.h" bodystart="380" bodyend="380"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ab9ac4cd426342503f1f042a51470593c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>&lt; <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
@@ -860,7 +860,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="363" column="26" bodyfile="include/rolly/types/size2d.h" bodystart="363" bodyend="363"/>
+        <location file="rolly/types/size2d.h" line="386" column="26" bodyfile="rolly/types/size2d.h" bodystart="386" bodyend="388"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ac2b0983e1aef983282f639f645773e14" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
@@ -877,7 +877,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="369" column="27" bodyfile="include/rolly/types/size2d.h" bodystart="369" bodyend="369"/>
+        <location file="rolly/types/size2d.h" line="394" column="27" bodyfile="rolly/types/size2d.h" bodystart="394" bodyend="396"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a6d1f5ab120dc1249f3957364ea4ca08c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -910,7 +910,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="377" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="377" bodyend="379"/>
+        <location file="rolly/types/size2d.h" line="404" column="25" bodyfile="rolly/types/size2d.h" bodystart="404" bodyend="406"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a2a9968f570f4b9c725759a8e01965ab7" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -924,7 +924,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="384" column="19" bodyfile="include/rolly/types/size2d.h" bodystart="384" bodyend="384"/>
+        <location file="rolly/types/size2d.h" line="411" column="19" bodyfile="rolly/types/size2d.h" bodystart="411" bodyend="411"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1abc3f0758e4708e6ec5268bc04124fa1f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>&lt; <ref refid="namespacerolly_1_1types_1abc2f107791bd7c1d49ecf0f168c085a3" kindref="member">f64</ref> &gt;</type>
@@ -938,7 +938,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="389" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="389" bodyend="389"/>
+        <location file="rolly/types/size2d.h" line="416" column="25" bodyfile="rolly/types/size2d.h" bodystart="416" bodyend="416"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a0d7edb63dd4ea49c014b9453eb5f59c1" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>&lt; <ref refid="namespacerolly_1_1types_1a65cf28726f89e62ccf2f1354bc2716df" kindref="member">u32</ref> &gt;</type>
@@ -952,7 +952,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="394" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="394" bodyend="394"/>
+        <location file="rolly/types/size2d.h" line="421" column="25" bodyfile="rolly/types/size2d.h" bodystart="421" bodyend="421"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aed2e608b3dfd13e494846164b6a862fd" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>&lt; <ref refid="namespacerolly_1_1types_1a66e1d499241ccae9a18a20a1f4f0590d" kindref="member">u64</ref> &gt;</type>
@@ -966,7 +966,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="399" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="399" bodyend="399"/>
+        <location file="rolly/types/size2d.h" line="426" column="25" bodyfile="rolly/types/size2d.h" bodystart="426" bodyend="426"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ab77fb89662764e0ebf0ffb88d2ee1a83" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>&lt; <ref refid="namespacerolly_1_1types_1ac47ac2e28dd2cb38fbf05ce10f810407" kindref="member">usize</ref> &gt;</type>
@@ -980,7 +980,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="404" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="404" bodyend="404"/>
+        <location file="rolly/types/size2d.h" line="431" column="25" bodyfile="rolly/types/size2d.h" bodystart="431" bodyend="431"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a2d49c1c8f75b5118e483e60301d663a6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>&lt; <ref refid="namespacerolly_1_1types_1aec4a1429cc91fb7ff41599b263c348cc" kindref="member">i32</ref> &gt;</type>
@@ -994,7 +994,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="409" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="409" bodyend="409"/>
+        <location file="rolly/types/size2d.h" line="436" column="25" bodyfile="rolly/types/size2d.h" bodystart="436" bodyend="436"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ab700c0137734d4d31361e41ad5b19e01" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>&lt; <ref refid="namespacerolly_1_1types_1ae72e52134285dbd83ca4227ec77394a2" kindref="member">i64</ref> &gt;</type>
@@ -1008,7 +1008,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="414" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="414" bodyend="414"/>
+        <location file="rolly/types/size2d.h" line="441" column="25" bodyfile="rolly/types/size2d.h" bodystart="441" bodyend="441"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a75645228e93837e8b95cdfa72c81b23d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>&lt; <ref refid="namespacerolly_1_1types_1a30f901b0e451a40d688c0fe8ec125c85" kindref="member">isize</ref> &gt;</type>
@@ -1022,7 +1022,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="419" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="419" bodyend="419"/>
+        <location file="rolly/types/size2d.h" line="446" column="25" bodyfile="rolly/types/size2d.h" bodystart="446" bodyend="446"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a93372fd934b4d48851c3744d3b2459e3" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -1039,7 +1039,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="425" column="30" bodyfile="include/rolly/types/size2d.h" bodystart="425" bodyend="425"/>
+        <location file="rolly/types/size2d.h" line="452" column="30" bodyfile="rolly/types/size2d.h" bodystart="452" bodyend="452"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a3820c3154aeba18fca212d9e0cfe15eb" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1053,7 +1053,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="430" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="430" bodyend="430"/>
+        <location file="rolly/types/size2d.h" line="457" column="25" bodyfile="rolly/types/size2d.h" bodystart="457" bodyend="457"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a091915ad3b593bfdb1b91cfbab628806" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1067,7 +1067,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="435" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="435" bodyend="435"/>
+        <location file="rolly/types/size2d.h" line="462" column="25" bodyfile="rolly/types/size2d.h" bodystart="462" bodyend="462"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1afe58c4ae5a1b86722f1bb7e493d9c4c7" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1097,7 +1097,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="442" column="23" bodyfile="include/rolly/types/size2d.h" bodystart="442" bodyend="444"/>
+        <location file="rolly/types/size2d.h" line="469" column="23" bodyfile="rolly/types/size2d.h" bodystart="469" bodyend="471"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aa8e1a22e8c56a57174744d5f29381cb3" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1127,7 +1127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="451" column="23" bodyfile="include/rolly/types/size2d.h" bodystart="451" bodyend="453"/>
+        <location file="rolly/types/size2d.h" line="478" column="23" bodyfile="rolly/types/size2d.h" bodystart="478" bodyend="480"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a03bb0c520217a5ec4d674ef5919a67fd" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1157,7 +1157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="460" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="460" bodyend="462"/>
+        <location file="rolly/types/size2d.h" line="487" column="25" bodyfile="rolly/types/size2d.h" bodystart="487" bodyend="489"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a1bbe18feced3a808007b32c01a468f5c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1187,7 +1187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="469" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="469" bodyend="471"/>
+        <location file="rolly/types/size2d.h" line="496" column="25" bodyfile="rolly/types/size2d.h" bodystart="496" bodyend="498"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a4e50cf45daf31c0230ad9817e9505617" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1217,7 +1217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="478" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="478" bodyend="480"/>
+        <location file="rolly/types/size2d.h" line="505" column="25" bodyfile="rolly/types/size2d.h" bodystart="505" bodyend="507"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a7b3f9ee15a663bff92cd2fc18ad1449b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1247,7 +1247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="487" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="487" bodyend="489"/>
+        <location file="rolly/types/size2d.h" line="514" column="25" bodyfile="rolly/types/size2d.h" bodystart="514" bodyend="516"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a48b3ca3c60b15e28feb97078b842df53" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> &amp;</type>
@@ -1277,7 +1277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="496" column="24" bodyfile="include/rolly/types/size2d.h" bodystart="496" bodyend="500"/>
+        <location file="rolly/types/size2d.h" line="523" column="24" bodyfile="rolly/types/size2d.h" bodystart="523" bodyend="527"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a004d06472b0bc95ea68d8109e6881f23" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> &amp;</type>
@@ -1307,7 +1307,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="507" column="24" bodyfile="include/rolly/types/size2d.h" bodystart="507" bodyend="511"/>
+        <location file="rolly/types/size2d.h" line="534" column="24" bodyfile="rolly/types/size2d.h" bodystart="534" bodyend="538"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ac021356eb669cb80b1fe88a0409ddacd" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> &amp;</type>
@@ -1337,7 +1337,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="518" column="24" bodyfile="include/rolly/types/size2d.h" bodystart="518" bodyend="522"/>
+        <location file="rolly/types/size2d.h" line="545" column="24" bodyfile="rolly/types/size2d.h" bodystart="545" bodyend="549"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aed9513e93bda0b6d5437f27b5efb5b6a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref> &amp;</type>
@@ -1367,7 +1367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="529" column="24" bodyfile="include/rolly/types/size2d.h" bodystart="529" bodyend="533"/>
+        <location file="rolly/types/size2d.h" line="556" column="24" bodyfile="rolly/types/size2d.h" bodystart="556" bodyend="560"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a6d6a33b6751a162fe8ae5fa9afdca5ad" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -1399,7 +1399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="542" column="26" bodyfile="include/rolly/types/size2d.h" bodystart="542" bodyend="543"/>
+        <location file="rolly/types/size2d.h" line="569" column="26" bodyfile="rolly/types/size2d.h" bodystart="569" bodyend="570"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ab32b02ca1608f0e8eb61fcdda22b8b0a" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -1431,7 +1431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="551" column="26" bodyfile="include/rolly/types/size2d.h" bodystart="551" bodyend="552"/>
+        <location file="rolly/types/size2d.h" line="578" column="26" bodyfile="rolly/types/size2d.h" bodystart="578" bodyend="579"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ab618ae49b64028b5f82e1576dc1caac8" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr QSize</type>
@@ -1452,7 +1452,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="580" column="24" bodyfile="include/rolly/types/size2d.h" bodystart="580" bodyend="582"/>
+        <location file="rolly/types/size2d.h" line="607" column="24" bodyfile="rolly/types/size2d.h" bodystart="607" bodyend="609"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aad6f8c3ba195944ffd3afe60bc5168c6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr QSizeF</type>
@@ -1473,7 +1473,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="590" column="25" bodyfile="include/rolly/types/size2d.h" bodystart="590" bodyend="590"/>
+        <location file="rolly/types/size2d.h" line="617" column="25" bodyfile="rolly/types/size2d.h" bodystart="617" bodyend="617"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1489,7 +1489,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="294" column="32" bodyfile="include/rolly/types/size2d.h" bodystart="294" bodyend="294"/>
+        <location file="rolly/types/size2d.h" line="314" column="32" bodyfile="rolly/types/size2d.h" bodystart="314" bodyend="314"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1ae153e1878556244a110e988e13dbf38a" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1517,7 +1517,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="300" column="32" bodyfile="include/rolly/types/size2d.h" bodystart="300" bodyend="300"/>
+        <location file="rolly/types/size2d.h" line="320" column="32" bodyfile="rolly/types/size2d.h" bodystart="320" bodyend="320"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aba8cc630689bb12a861e755ebf08b1dd" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1552,7 +1552,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="312" column="32" bodyfile="include/rolly/types/size2d.h" bodystart="312" bodyend="314"/>
+        <location file="rolly/types/size2d.h" line="332" column="32" bodyfile="rolly/types/size2d.h" bodystart="332" bodyend="334"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a13769708074262c9f8e6c275fe50a637" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1580,7 +1580,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="335" column="32" bodyfile="include/rolly/types/size2d.h" bodystart="335" bodyend="337"/>
+        <location file="rolly/types/size2d.h" line="355" column="32" bodyfile="rolly/types/size2d.h" bodystart="355" bodyend="359"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1a86e6953410f514fcbb502a3d6c49f4e2" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1612,7 +1612,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="560" column="32" bodyfile="include/rolly/types/size2d.h" bodystart="560" bodyend="562"/>
+        <location file="rolly/types/size2d.h" line="587" column="32" bodyfile="rolly/types/size2d.h" bodystart="587" bodyend="589"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1size2d_1aadbb4ede8a4953dc30569ab2996ee350" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref></type>
@@ -1644,7 +1644,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/size2d.h" line="570" column="32" bodyfile="include/rolly/types/size2d.h" bodystart="570" bodyend="572"/>
+        <location file="rolly/types/size2d.h" line="597" column="32" bodyfile="rolly/types/size2d.h" bodystart="597" bodyend="599"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1668,7 +1668,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/size2d.h" line="34" column="17" bodyfile="include/rolly/types/size2d.h" bodystart="34" bodyend="596"/>
+    <location file="rolly/types/size2d.h" line="34" column="17" bodyfile="rolly/types/size2d.h" bodystart="34" bodyend="623"/>
     <listofallmembers>
       <member refid="structrolly_1_1types_1_1size2d_1a1e9f97bd0d5587b31d117df29c28e55a" prot="public" virt="non-virtual"><scope>rolly::types::size2d</scope><name>abs</name></member>
       <member refid="structrolly_1_1types_1_1size2d_1a93372fd934b4d48851c3744d3b2459e3" prot="public" virt="non-virtual"><scope>rolly::types::size2d</scope><name>area</name></member>

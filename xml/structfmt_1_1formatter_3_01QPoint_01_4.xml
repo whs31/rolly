@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structfmt_1_1formatter_3_01QPoint_01_4" kind="struct" language="C++" prot="public">
     <compoundname>fmt::formatter&lt; QPoint &gt;</compoundname>
-    <includes refid="formatters_8h" local="no">formatters.h</includes>
+    <includes refid="formatters_8h" local="no">rolly/qt/formatters.h</includes>
     <templateparamlist>
     </templateparamlist>
       <sectiondef kind="public-static-func">
@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/formatters.h" line="112" column="27" bodyfile="include/rolly/qt/formatters.h" bodystart="112" bodyend="114"/>
+        <location file="rolly/qt/formatters.h" line="114" column="27" bodyfile="rolly/qt/formatters.h" bodystart="114" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="structfmt_1_1formatter_3_01QPoint_01_4_1acee641c4239c8e2652ad2f4ff7e22450" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/formatters.h" line="117" column="17" bodyfile="include/rolly/qt/formatters.h" bodystart="117" bodyend="119"/>
+        <location file="rolly/qt/formatters.h" line="119" column="17" bodyfile="rolly/qt/formatters.h" bodystart="119" bodyend="121"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -63,7 +63,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/qt/formatters.h" line="110" column="19" bodyfile="include/rolly/qt/formatters.h" bodystart="110" bodyend="120"/>
+    <location file="rolly/qt/formatters.h" line="112" column="19" bodyfile="rolly/qt/formatters.h" bodystart="112" bodyend="122"/>
     <listofallmembers>
       <member refid="structfmt_1_1formatter_3_01QPoint_01_4_1acee641c4239c8e2652ad2f4ff7e22450" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; QPoint &gt;</scope><name>format</name></member>
       <member refid="structfmt_1_1formatter_3_01QPoint_01_4_1a3fb66fb3f7d1b83ddf09547c7494e062" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; QPoint &gt;</scope><name>parse</name></member>

@@ -231,6 +231,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/dll/plugin.h"/>
+    <location file="rolly/dll/plugin.h"/>
   </compounddef>
 </doxygen>

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classrolly_1_1types_1_1vector2d" kind="struct" language="C++" prot="public">
     <compoundname>rolly::types::vector2d</compoundname>
-    <includes refid="vector2d_8h" local="no">vector2d.h</includes>
+    <includes refid="vector2d_8h" local="no">rolly/types/vector2d.h</includes>
     <templateparamlist>
       <param>
         <type><ref refid="namespacerolly_1_1concepts_1aea9bb2c4075cdbbe6ae4d3b6eef46cda" kindref="member">concepts::num</ref></type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="35" column="7" bodyfile="include/rolly/types/vector2d.h" bodystart="35" bodyend="-1"/>
+        <location file="rolly/types/vector2d.h" line="35" column="7" bodyfile="rolly/types/vector2d.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" prot="public" static="no">
         <type><ref refid="structrolly_1_1types_1_1size2d" kindref="compound">size2d</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
@@ -38,7 +38,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="40" column="7" bodyfile="include/rolly/types/vector2d.h" bodystart="40" bodyend="-1"/>
+        <location file="rolly/types/vector2d.h" line="40" column="7" bodyfile="rolly/types/vector2d.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classrolly_1_1types_1_1vector2d_1a1d5735ed4c41bd513ff41fb16bd7b6ac" prot="public" static="no">
         <type><ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="45" column="7" bodyfile="include/rolly/types/vector2d.h" bodystart="45" bodyend="-1"/>
+        <location file="rolly/types/vector2d.h" line="45" column="7" bodyfile="rolly/types/vector2d.h" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classrolly_1_1types_1_1vector2d_1a8357a890991f50704b194bfdaf6db653" prot="public" static="no">
         <type><ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="50" column="7" bodyfile="include/rolly/types/vector2d.h" bodystart="50" bodyend="-1"/>
+        <location file="rolly/types/vector2d.h" line="50" column="7" bodyfile="rolly/types/vector2d.h" bodystart="50" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="675" column="9" bodyfile="include/rolly/types/vector2d.h" bodystart="675" bodyend="-1"/>
+        <location file="rolly/types/vector2d.h" line="707" column="9" bodyfile="rolly/types/vector2d.h" bodystart="707" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1types_1_1vector2d_1a644d1b6657ad3f073d95487bdd5d08a9" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="676" column="9" bodyfile="include/rolly/types/vector2d.h" bodystart="676" bodyend="-1"/>
+        <location file="rolly/types/vector2d.h" line="708" column="9" bodyfile="rolly/types/vector2d.h" bodystart="708" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -110,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="55" column="17" bodyfile="include/rolly/types/vector2d.h" bodystart="55" bodyend="57"/>
+        <location file="rolly/types/vector2d.h" line="55" column="17" bodyfile="rolly/types/vector2d.h" bodystart="55" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ada46fed9c6b7cf483e202a0f6c10c4de" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="64" column="17" bodyfile="include/rolly/types/vector2d.h" bodystart="64" bodyend="66"/>
+        <location file="rolly/types/vector2d.h" line="64" column="17" bodyfile="rolly/types/vector2d.h" bodystart="64" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a857c3c56d7047d36aa760fc80fa14f08" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -178,7 +178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="72" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="72" bodyend="74"/>
+        <location file="rolly/types/vector2d.h" line="72" column="26" bodyfile="rolly/types/vector2d.h" bodystart="72" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ab3903622b5a9c151ad0566b0f08356da" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -206,7 +206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="80" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="80" bodyend="81"/>
+        <location file="rolly/types/vector2d.h" line="80" column="27" bodyfile="rolly/types/vector2d.h" bodystart="80" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a12a757b7f4ae40284ce07a0d8215d096" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -234,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="87" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="87" bodyend="89"/>
+        <location file="rolly/types/vector2d.h" line="87" column="27" bodyfile="rolly/types/vector2d.h" bodystart="87" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad0bb20b92dba09e01dfe5b5bcc40db90" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -278,7 +278,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="101" column="22" bodyfile="include/rolly/types/vector2d.h" bodystart="101" bodyend="106"/>
+        <location file="rolly/types/vector2d.h" line="101" column="22" bodyfile="rolly/types/vector2d.h" bodystart="101" bodyend="106"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a9287d4cce8079a793e2afe63a8ec60d0" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -332,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="121" column="22" bodyfile="include/rolly/types/vector2d.h" bodystart="121" bodyend="124"/>
+        <location file="rolly/types/vector2d.h" line="122" column="22" bodyfile="rolly/types/vector2d.h" bodystart="122" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae2f0dff27f264a72bd885ec6ae87fec7" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref></type>
@@ -349,7 +349,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="130" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="130" bodyend="130"/>
+        <location file="rolly/types/vector2d.h" line="131" column="30" bodyfile="rolly/types/vector2d.h" bodystart="131" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a37f992c89080866042767b6bf3ad7995" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a1d5735ed4c41bd513ff41fb16bd7b6ac" kindref="member">point2d_type</ref></type>
@@ -366,7 +366,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="136" column="31" bodyfile="include/rolly/types/vector2d.h" bodystart="136" bodyend="136"/>
+        <location file="rolly/types/vector2d.h" line="137" column="31" bodyfile="rolly/types/vector2d.h" bodystart="137" bodyend="137"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aba19e8ffeec6286f6832bec689f4bd5b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -383,7 +383,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="142" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="142" bodyend="144"/>
+        <location file="rolly/types/vector2d.h" line="143" column="30" bodyfile="rolly/types/vector2d.h" bodystart="143" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a641f5298f25ad854f24229789b78b92a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -400,7 +400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="150" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="150" bodyend="152"/>
+        <location file="rolly/types/vector2d.h" line="151" column="30" bodyfile="rolly/types/vector2d.h" bodystart="151" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aa84a741a0bfe46fb4ce8bf4878ed58cc" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -417,7 +417,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="158" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="158" bodyend="158"/>
+        <location file="rolly/types/vector2d.h" line="159" column="27" bodyfile="rolly/types/vector2d.h" bodystart="159" bodyend="159"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a23d20565ed8828ea60602ae5f69d45b6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -434,7 +434,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="164" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="164" bodyend="164"/>
+        <location file="rolly/types/vector2d.h" line="165" column="30" bodyfile="rolly/types/vector2d.h" bodystart="165" bodyend="165"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad8e273c4442bfd92a64727fd411385a6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -451,7 +451,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="170" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="170" bodyend="170"/>
+        <location file="rolly/types/vector2d.h" line="171" column="30" bodyfile="rolly/types/vector2d.h" bodystart="171" bodyend="171"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a9e764a6a4f38cbdb7711383af5fa8d18" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &amp;</type>
@@ -468,7 +468,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="176" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="176" bodyend="176"/>
+        <location file="rolly/types/vector2d.h" line="177" column="30" bodyfile="rolly/types/vector2d.h" bodystart="177" bodyend="177"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a7212185fd6ab59c60da53e8e15606a4e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &amp;</type>
@@ -485,7 +485,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="182" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="182" bodyend="182"/>
+        <location file="rolly/types/vector2d.h" line="183" column="30" bodyfile="rolly/types/vector2d.h" bodystart="183" bodyend="183"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
@@ -504,7 +504,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="191" column="20" bodyfile="include/rolly/types/vector2d.h" bodystart="191" bodyend="196"/>
+        <location file="rolly/types/vector2d.h" line="192" column="20" bodyfile="rolly/types/vector2d.h" bodystart="192" bodyend="197"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a25129afd086e1ed1078677311854d7ab" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, 2 &gt;</type>
@@ -518,7 +518,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="201" column="29" bodyfile="include/rolly/types/vector2d.h" bodystart="201" bodyend="201"/>
+        <location file="rolly/types/vector2d.h" line="202" column="29" bodyfile="rolly/types/vector2d.h" bodystart="202" bodyend="204"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a773014d9be700f99ca76e9990945e509" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/utility/tuple" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::tuple</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
@@ -532,7 +532,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="206" column="29" bodyfile="include/rolly/types/vector2d.h" bodystart="206" bodyend="206"/>
+        <location file="rolly/types/vector2d.h" line="209" column="29" bodyfile="rolly/types/vector2d.h" bodystart="209" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a67ac57bed3924789d4157e4a9487749c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/utility/pair" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::pair</ref>&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
@@ -546,7 +546,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="211" column="28" bodyfile="include/rolly/types/vector2d.h" bodystart="211" bodyend="211"/>
+        <location file="rolly/types/vector2d.h" line="216" column="28" bodyfile="rolly/types/vector2d.h" bodystart="216" bodyend="218"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a97747374c3a29bcfa312be97fd4e1e53" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -561,7 +561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="217" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="217" bodyend="217"/>
+        <location file="rolly/types/vector2d.h" line="224" column="27" bodyfile="rolly/types/vector2d.h" bodystart="224" bodyend="226"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8937db5747cbb32c466cedc8740f06c8" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -576,7 +576,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="223" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="223" bodyend="223"/>
+        <location file="rolly/types/vector2d.h" line="233" column="27" bodyfile="rolly/types/vector2d.h" bodystart="233" bodyend="235"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a783bd4f0e1a867d1e0261899124fb640" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -591,7 +591,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="229" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="229" bodyend="229"/>
+        <location file="rolly/types/vector2d.h" line="241" column="27" bodyfile="rolly/types/vector2d.h" bodystart="241" bodyend="243"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad86148d27d61ca09bbab7c37b841a7ea" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -647,7 +647,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="257" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="257" bodyend="259"/>
+        <location file="rolly/types/vector2d.h" line="271" column="27" bodyfile="rolly/types/vector2d.h" bodystart="271" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae266a2489cfe2529a5ba1ede03d94b6b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -677,7 +677,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="266" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="266" bodyend="268"/>
+        <location file="rolly/types/vector2d.h" line="280" column="27" bodyfile="rolly/types/vector2d.h" bodystart="280" bodyend="282"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a921a9d3d4e46ca766139644751a3249b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -707,7 +707,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="275" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="275" bodyend="277"/>
+        <location file="rolly/types/vector2d.h" line="289" column="27" bodyfile="rolly/types/vector2d.h" bodystart="289" bodyend="291"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ac6095fccd7008abe861a426979eac90a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -749,7 +749,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="285" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="285" bodyend="287"/>
+        <location file="rolly/types/vector2d.h" line="300" column="27" bodyfile="rolly/types/vector2d.h" bodystart="300" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a2eb5fce88833aeedc48a8b9540e4c331" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -779,7 +779,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="294" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="294" bodyend="296"/>
+        <location file="rolly/types/vector2d.h" line="309" column="30" bodyfile="rolly/types/vector2d.h" bodystart="309" bodyend="311"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1acd8165ec48627828963b6d6c00458c4a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -809,7 +809,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="304" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="304" bodyend="306"/>
+        <location file="rolly/types/vector2d.h" line="319" column="30" bodyfile="rolly/types/vector2d.h" bodystart="319" bodyend="321"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a7b6d8c066c62800ec8f9dc54e748f705" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -826,7 +826,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="312" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="312" bodyend="312"/>
+        <location file="rolly/types/vector2d.h" line="327" column="27" bodyfile="rolly/types/vector2d.h" bodystart="327" bodyend="329"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a69b18d171f435a723a6695a3d23d46db" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -858,7 +858,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="320" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="320" bodyend="322"/>
+        <location file="rolly/types/vector2d.h" line="337" column="27" bodyfile="rolly/types/vector2d.h" bodystart="337" bodyend="339"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a0aa4a338eae196cea530b881c28031c9" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
@@ -888,7 +888,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="330" column="30" bodyfile="include/rolly/types/vector2d.h" bodystart="330" bodyend="332"/>
+        <location file="rolly/types/vector2d.h" line="347" column="30" bodyfile="rolly/types/vector2d.h" bodystart="347" bodyend="349"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a09eb0be0be1b9fb26096c1fccbe3d9ca" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -902,7 +902,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="337" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="337" bodyend="337"/>
+        <location file="rolly/types/vector2d.h" line="354" column="23" bodyfile="rolly/types/vector2d.h" bodystart="354" bodyend="356"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a231e8ba696d19d5efb24deba2b63c471" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -916,7 +916,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="342" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="342" bodyend="342"/>
+        <location file="rolly/types/vector2d.h" line="361" column="23" bodyfile="rolly/types/vector2d.h" bodystart="361" bodyend="363"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ab002902ffa14c206196ac5048757d0cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -960,7 +960,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="376" column="9" bodyfile="include/rolly/types/vector2d.h" bodystart="376" bodyend="382"/>
+        <location file="rolly/types/vector2d.h" line="397" column="9" bodyfile="rolly/types/vector2d.h" bodystart="397" bodyend="403"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad0ed9dded3dc4405713f0b9270930a92" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -977,7 +977,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="397" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="397" bodyend="405"/>
+        <location file="rolly/types/vector2d.h" line="421" column="27" bodyfile="rolly/types/vector2d.h" bodystart="421" bodyend="429"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ac252a44c73ef696bf047b7b7b0ea13bc" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -991,7 +991,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="410" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="410" bodyend="410"/>
+        <location file="rolly/types/vector2d.h" line="434" column="23" bodyfile="rolly/types/vector2d.h" bodystart="434" bodyend="434"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae4b63807bd0a4dba2d7b50026954830a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a8357a890991f50704b194bfdaf6db653" kindref="member">angle_type</ref></type>
@@ -1021,7 +1021,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="417" column="29" bodyfile="include/rolly/types/vector2d.h" bodystart="417" bodyend="419"/>
+        <location file="rolly/types/vector2d.h" line="441" column="29" bodyfile="rolly/types/vector2d.h" bodystart="441" bodyend="443"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a07c9e872f7efce9314325103915c140f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d_1a8357a890991f50704b194bfdaf6db653" kindref="member">angle_type</ref></type>
@@ -1038,7 +1038,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="427" column="29" bodyfile="include/rolly/types/vector2d.h" bodystart="427" bodyend="429"/>
+        <location file="rolly/types/vector2d.h" line="451" column="29" bodyfile="rolly/types/vector2d.h" bodystart="451" bodyend="453"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1afb75e5f86524f9a3ed4c83c0f84b9df7" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1055,7 +1055,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="435" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="435" bodyend="435"/>
+        <location file="rolly/types/vector2d.h" line="459" column="27" bodyfile="rolly/types/vector2d.h" bodystart="459" bodyend="461"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8bffb7234774d3ab69d9593c3bac1429" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1085,7 +1085,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="442" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="442" bodyend="444"/>
+        <location file="rolly/types/vector2d.h" line="468" column="27" bodyfile="rolly/types/vector2d.h" bodystart="468" bodyend="470"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aa89ade0ea46daffaf17d29940cc4991d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1118,7 +1118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="452" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="452" bodyend="454"/>
+        <location file="rolly/types/vector2d.h" line="478" column="27" bodyfile="rolly/types/vector2d.h" bodystart="478" bodyend="480"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad9cf886fded0e42bd136002993414e31" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1132,7 +1132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="459" column="19" bodyfile="include/rolly/types/vector2d.h" bodystart="459" bodyend="459"/>
+        <location file="rolly/types/vector2d.h" line="485" column="19" bodyfile="rolly/types/vector2d.h" bodystart="485" bodyend="485"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a58ed5a277b603e4642732653aefda9bf" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1abc2f107791bd7c1d49ecf0f168c085a3" kindref="member">f64</ref> &gt;</type>
@@ -1146,7 +1146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="464" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="464" bodyend="464"/>
+        <location file="rolly/types/vector2d.h" line="490" column="27" bodyfile="rolly/types/vector2d.h" bodystart="490" bodyend="490"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a887b052249d9eea4fc59a73f06139089" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1a65cf28726f89e62ccf2f1354bc2716df" kindref="member">u32</ref> &gt;</type>
@@ -1160,7 +1160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="469" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="469" bodyend="469"/>
+        <location file="rolly/types/vector2d.h" line="495" column="27" bodyfile="rolly/types/vector2d.h" bodystart="495" bodyend="495"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a392137cf12aaac4c80d5d2455bfb35b6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1a66e1d499241ccae9a18a20a1f4f0590d" kindref="member">u64</ref> &gt;</type>
@@ -1174,7 +1174,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="474" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="474" bodyend="474"/>
+        <location file="rolly/types/vector2d.h" line="500" column="27" bodyfile="rolly/types/vector2d.h" bodystart="500" bodyend="500"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a450184d2d99eb13abc133c3ae27e243e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1ac47ac2e28dd2cb38fbf05ce10f810407" kindref="member">usize</ref> &gt;</type>
@@ -1188,7 +1188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="479" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="479" bodyend="479"/>
+        <location file="rolly/types/vector2d.h" line="505" column="27" bodyfile="rolly/types/vector2d.h" bodystart="505" bodyend="505"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aea5d3113a001031c7d3a8d1993cf2cd8" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1aec4a1429cc91fb7ff41599b263c348cc" kindref="member">i32</ref> &gt;</type>
@@ -1202,7 +1202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="484" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="484" bodyend="484"/>
+        <location file="rolly/types/vector2d.h" line="510" column="27" bodyfile="rolly/types/vector2d.h" bodystart="510" bodyend="510"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aec7169fdf8348242d8966fb5129f8f3e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1ae72e52134285dbd83ca4227ec77394a2" kindref="member">i64</ref> &gt;</type>
@@ -1216,7 +1216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="489" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="489" bodyend="489"/>
+        <location file="rolly/types/vector2d.h" line="515" column="27" bodyfile="rolly/types/vector2d.h" bodystart="515" bodyend="515"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aa6beccc006821d44b8d762a215839157" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>&lt; <ref refid="namespacerolly_1_1types_1a30f901b0e451a40d688c0fe8ec125c85" kindref="member">isize</ref> &gt;</type>
@@ -1230,7 +1230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="494" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="494" bodyend="494"/>
+        <location file="rolly/types/vector2d.h" line="520" column="27" bodyfile="rolly/types/vector2d.h" bodystart="520" bodyend="520"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1acba331faf26529e484bb777e86acaf17" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1247,7 +1247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="505" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="505" bodyend="505"/>
+        <location file="rolly/types/vector2d.h" line="531" column="27" bodyfile="rolly/types/vector2d.h" bodystart="531" bodyend="531"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1afcfa2ea6cc2776a9d9f38e7e26cd8229" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1264,7 +1264,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="511" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="511" bodyend="511"/>
+        <location file="rolly/types/vector2d.h" line="537" column="27" bodyfile="rolly/types/vector2d.h" bodystart="537" bodyend="537"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ade843849c4c632880d7cb189b80d7f6c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1294,7 +1294,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="518" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="518" bodyend="521"/>
+        <location file="rolly/types/vector2d.h" line="544" column="23" bodyfile="rolly/types/vector2d.h" bodystart="544" bodyend="547"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a50628fcf9d858a6a4c7c13076479b2dd" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1338,7 +1338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="536" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="536" bodyend="538"/>
+        <location file="rolly/types/vector2d.h" line="563" column="27" bodyfile="rolly/types/vector2d.h" bodystart="563" bodyend="565"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a2f661ebdadffdd3a3ae66ec32110d995" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1368,7 +1368,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="545" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="545" bodyend="548"/>
+        <location file="rolly/types/vector2d.h" line="572" column="23" bodyfile="rolly/types/vector2d.h" bodystart="572" bodyend="575"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad1de12dc49fa4dcea5ed19214ea7cfd5" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1412,7 +1412,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="563" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="563" bodyend="565"/>
+        <location file="rolly/types/vector2d.h" line="591" column="27" bodyfile="rolly/types/vector2d.h" bodystart="591" bodyend="593"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8770dfe270833d5bc8c3a3de43af4500" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1442,7 +1442,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="572" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="572" bodyend="574"/>
+        <location file="rolly/types/vector2d.h" line="600" column="27" bodyfile="rolly/types/vector2d.h" bodystart="600" bodyend="602"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a4925eb64a9c4990537c6cf98646c44b0" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1472,7 +1472,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="581" column="27" bodyfile="include/rolly/types/vector2d.h" bodystart="581" bodyend="583"/>
+        <location file="rolly/types/vector2d.h" line="609" column="27" bodyfile="rolly/types/vector2d.h" bodystart="609" bodyend="611"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aa6529687089035a3f4a5cd8814749e01" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1516,7 +1516,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="598" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="598" bodyend="602"/>
+        <location file="rolly/types/vector2d.h" line="627" column="26" bodyfile="rolly/types/vector2d.h" bodystart="627" bodyend="631"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a07632ba1cb25331e137a0ad94a936845" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1560,7 +1560,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="617" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="617" bodyend="621"/>
+        <location file="rolly/types/vector2d.h" line="647" column="26" bodyfile="rolly/types/vector2d.h" bodystart="647" bodyend="651"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a30311cf9345b9d54ca5e679f1c4d3ebd" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> &amp;</type>
@@ -1590,7 +1590,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="628" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="628" bodyend="632"/>
+        <location file="rolly/types/vector2d.h" line="658" column="26" bodyfile="rolly/types/vector2d.h" bodystart="658" bodyend="662"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1abea34b1d175efe7e5b5cd1fde44bffd2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> &amp;</type>
@@ -1620,7 +1620,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="639" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="639" bodyend="643"/>
+        <location file="rolly/types/vector2d.h" line="669" column="26" bodyfile="rolly/types/vector2d.h" bodystart="669" bodyend="673"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8390fa9124293f298d9ef42c276a9304" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -1650,7 +1650,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="652" column="26" bodyfile="include/rolly/types/vector2d.h" bodystart="652" bodyend="653"/>
+        <location file="rolly/types/vector2d.h" line="682" column="26" bodyfile="rolly/types/vector2d.h" bodystart="682" bodyend="683"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a3ad2d6a454f038367c91804def5ec521" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr QVector2D</type>
@@ -1667,7 +1667,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="670" column="28" bodyfile="include/rolly/types/vector2d.h" bodystart="670" bodyend="670"/>
+        <location file="rolly/types/vector2d.h" line="700" column="28" bodyfile="rolly/types/vector2d.h" bodystart="700" bodyend="702"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1683,7 +1683,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="347" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="347" bodyend="347"/>
+        <location file="rolly/types/vector2d.h" line="368" column="34" bodyfile="rolly/types/vector2d.h" bodystart="368" bodyend="368"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae0cdbad8a42afb341e9e28c05e4297a7" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1711,7 +1711,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="353" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="353" bodyend="353"/>
+        <location file="rolly/types/vector2d.h" line="374" column="34" bodyfile="rolly/types/vector2d.h" bodystart="374" bodyend="374"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ac7bff978b48e1a895e77d1900fb65ddc" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1746,7 +1746,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="365" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="365" bodyend="367"/>
+        <location file="rolly/types/vector2d.h" line="386" column="34" bodyfile="rolly/types/vector2d.h" bodystart="386" bodyend="388"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ae98595dc9943409ffa7360864f1156ad" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1774,7 +1774,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="388" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="388" bodyend="390"/>
+        <location file="rolly/types/vector2d.h" line="409" column="34" bodyfile="rolly/types/vector2d.h" bodystart="409" bodyend="413"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a8251d0051470489a585612a3c4cf821f" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1788,7 +1788,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="499" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="499" bodyend="499"/>
+        <location file="rolly/types/vector2d.h" line="525" column="34" bodyfile="rolly/types/vector2d.h" bodystart="525" bodyend="525"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1adac189c18610be0ec4e01d6ebc30f617" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1818,7 +1818,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="661" column="34" bodyfile="include/rolly/types/vector2d.h" bodystart="661" bodyend="663"/>
+        <location file="rolly/types/vector2d.h" line="691" column="34" bodyfile="rolly/types/vector2d.h" bodystart="691" bodyend="693"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1836,7 +1836,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/size2d.h" line="20" column="5" bodyfile="include/rolly/types/size2d.h" bodystart="20" bodyend="-1"/>
+    <location file="rolly/types/size2d.h" line="20" column="5" bodyfile="rolly/types/size2d.h" bodystart="20" bodyend="-1"/>
     <listofallmembers>
       <member refid="classrolly_1_1types_1_1vector2d_1a7b6d8c066c62800ec8f9dc54e748f705" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>abs</name></member>
       <member refid="classrolly_1_1types_1_1vector2d_1ae4b63807bd0a4dba2d7b50026954830a" prot="public" virt="non-virtual"><scope>rolly::types::vector2d</scope><name>angle_to</name></member>

@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="17" column="26" bodyfile="include/rolly/types/angle.h" bodystart="17" bodyend="20"/>
+        <location file="rolly/types/angle.h" line="17" column="26" bodyfile="rolly/types/angle.h" bodystart="17" bodyend="20"/>
       </memberdef>
       <memberdef kind="enum" id="namespacerolly_1_1types_1a48de939a7ab495a5cd0a8e834673d6d7" prot="public" static="no" strong="yes">
         <type>char</type>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/velocity.h" line="15" column="29" bodyfile="include/rolly/types/velocity.h" bodystart="15" bodyend="20"/>
+        <location file="rolly/types/velocity.h" line="15" column="29" bodyfile="rolly/types/velocity.h" bodystart="15" bodyend="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2494" column="5" bodyfile="include/rolly/types/result.h" bodystart="2494" bodyend="-1"/>
+        <location file="rolly/types/result.h" line="2640" column="5" bodyfile="rolly/types/result.h" bodystart="2640" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" prot="public" static="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint8_t</ref></type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="12" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="12" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="12" column="5" bodyfile="rolly/types/stdint.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1a917e58b0692c2df778a27350534cbfe7" prot="public" static="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="13" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="13" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="13" column="5" bodyfile="rolly/types/stdint.h" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1a65cf28726f89e62ccf2f1354bc2716df" prot="public" static="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint32_t</ref></type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="14" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="14" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="14" column="5" bodyfile="rolly/types/stdint.h" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1a66e1d499241ccae9a18a20a1f4f0590d" prot="public" static="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint64_t</ref></type>
@@ -155,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="15" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="15" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="15" column="5" bodyfile="rolly/types/stdint.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1a090e14ab721404d80f4404634d5c79cc" prot="public" static="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::int8_t</ref></type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="16" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="16" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="16" column="5" bodyfile="rolly/types/stdint.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1aa9061c03e78b5c69a2e90542f956b1b9" prot="public" static="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::int16_t</ref></type>
@@ -183,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="17" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="17" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="17" column="5" bodyfile="rolly/types/stdint.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1aec4a1429cc91fb7ff41599b263c348cc" prot="public" static="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::int32_t</ref></type>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="18" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="18" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="18" column="5" bodyfile="rolly/types/stdint.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1ae72e52134285dbd83ca4227ec77394a2" prot="public" static="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::int64_t</ref></type>
@@ -211,7 +211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="19" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="19" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="19" column="5" bodyfile="rolly/types/stdint.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1ac47ac2e28dd2cb38fbf05ce10f810407" prot="public" static="no">
         <type><ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::size_t</ref></type>
@@ -225,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="20" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="20" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="20" column="5" bodyfile="rolly/types/stdint.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1a30f901b0e451a40d688c0fe8ec125c85" prot="public" static="no">
         <type>std::make_signed_t&lt; <ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::size_t</ref> &gt;</type>
@@ -239,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="21" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="21" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="21" column="5" bodyfile="rolly/types/stdint.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1ad34d88453d37b65a09797bad37f2f527" prot="public" static="no">
         <type>float</type>
@@ -253,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="22" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="22" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="22" column="5" bodyfile="rolly/types/stdint.h" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1abc2f107791bd7c1d49ecf0f168c085a3" prot="public" static="no">
         <type>double</type>
@@ -267,7 +267,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="23" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="23" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="23" column="5" bodyfile="rolly/types/stdint.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1aa2dce0ff04d649f59f59d9008b781747" prot="public" static="no">
         <type>long double</type>
@@ -281,7 +281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="24" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="24" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="24" column="5" bodyfile="rolly/types/stdint.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1adbee524399dbb70a713e4c94d3bc00be" prot="public" static="no">
         <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uintptr_t</ref></type>
@@ -295,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="25" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="25" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="25" column="5" bodyfile="rolly/types/stdint.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1a70c2c38542d55bfe51d75907a6c8125a" prot="public" static="no">
         <type>unsigned long long</type>
@@ -309,7 +309,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="28" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="28" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="28" column="5" bodyfile="rolly/types/stdint.h" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerolly_1_1types_1a69aa29b598b851b0640aa225a9e5d61d" prot="public" static="no">
         <type>unsigned int</type>
@@ -323,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/stdint.h" line="31" column="5" bodyfile="include/rolly/types/stdint.h" bodystart="31" bodyend="-1"/>
+        <location file="rolly/types/stdint.h" line="32" column="5" bodyfile="rolly/types/stdint.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -346,7 +346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2559" column="27" bodyfile="include/rolly/types/result.h" bodystart="2559" bodyend="-1"/>
+        <location file="rolly/types/result.h" line="2708" column="27" bodyfile="rolly/types/result.h" bodystart="2708" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -398,7 +398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2510" column="17" bodyfile="include/rolly/types/result.h" bodystart="2510" bodyend="2512"/>
+        <location file="rolly/types/result.h" line="2657" column="7" bodyfile="rolly/types/result.h" bodystart="2657" bodyend="2661"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -427,7 +427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2526" column="15" bodyfile="include/rolly/types/result.h" bodystart="2526" bodyend="2528"/>
+        <location file="rolly/types/result.h" line="2675" column="15" bodyfile="rolly/types/result.h" bodystart="2675" bodyend="2677"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1types_1a07a110d824e251b17a6bb94f8e4fed5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>result</type>
@@ -440,7 +440,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2530" column="14" bodyfile="include/rolly/types/result.h" bodystart="2530" bodyend="2530"/>
+        <location file="rolly/types/result.h" line="2679" column="14" bodyfile="rolly/types/result.h" bodystart="2679" bodyend="2679"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1types_1a023b1eb8a485614d2ea9c48632d275c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -469,7 +469,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/result.h" line="2544" column="20" bodyfile="include/rolly/types/result.h" bodystart="2544" bodyend="2546"/>
+        <location file="rolly/types/result.h" line="2693" column="20" bodyfile="rolly/types/result.h" bodystart="2693" bodyend="2695"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -477,6 +477,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/types/angle.h" line="10" column="24"/>
+    <location file="rolly/types/angle.h" line="10" column="24"/>
   </compounddef>
 </doxygen>

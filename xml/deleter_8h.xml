@@ -27,6 +27,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/memory/deleter.h"/>
+    <location file="rolly/memory/deleter.h"/>
   </compounddef>
 </doxygen>

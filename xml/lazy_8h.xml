@@ -112,13 +112,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/functional/lazy.h" line="75" column="9" bodyfile="include/rolly/functional/lazy.h" bodystart="75" bodyend="77"/>
+        <location file="rolly/functional/lazy.h" line="76" column="9" bodyfile="rolly/functional/lazy.h" bodystart="76" bodyend="78"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/functional/lazy.h"/>
+    <location file="rolly/functional/lazy.h"/>
   </compounddef>
 </doxygen>

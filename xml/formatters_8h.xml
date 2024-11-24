@@ -87,6 +87,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/qt/formatters.h"/>
+    <location file="rolly/qt/formatters.h"/>
   </compounddef>
 </doxygen>

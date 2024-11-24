@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/literals.h" line="12" column="23" bodyfile="include/rolly/qt/literals.h" bodystart="12" bodyend="19"/>
+        <location file="rolly/qt/literals.h" line="13" column="7" bodyfile="rolly/qt/literals.h" bodystart="13" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1literals_1a4f9c6921ea6ed3cf7b672ffc7aae74ac" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>::QUrl</type>
@@ -104,13 +104,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/qt/literals.h" line="21" column="20" bodyfile="include/rolly/qt/literals.h" bodystart="21" bodyend="23"/>
+        <location file="rolly/qt/literals.h" line="23" column="20" bodyfile="rolly/qt/literals.h" bodystart="23" bodyend="25"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/qt/literals.h"/>
+    <location file="rolly/qt/literals.h"/>
   </compounddef>
 </doxygen>

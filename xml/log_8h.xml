@@ -44,6 +44,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/log.h"/>
+    <location file="rolly/log.h"/>
   </compounddef>
 </doxygen>

@@ -3,7 +3,7 @@
   <compounddef id="structfmt_1_1formatter_3_01rolly_1_1version_01_4" kind="struct" language="C++" prot="public">
     <compoundname>fmt::formatter&lt; rolly::version &gt;</compoundname>
     <basecompoundref prot="public" virt="non-virtual">fmt::formatter&lt; std::string_view &gt;</basecompoundref>
-    <includes refid="semver_8h" local="no">semver.h</includes>
+    <includes refid="semver_8h" local="no">rolly/global/semver.h</includes>
     <templateparamlist>
     </templateparamlist>
       <sectiondef kind="public-func">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/global/semver.h" line="741" column="8" bodyfile="include/rolly/global/semver.h" bodystart="741" bodyend="743"/>
+        <location file="rolly/global/semver.h" line="768" column="8" bodyfile="rolly/global/semver.h" bodystart="768" bodyend="770"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -61,7 +61,7 @@
         <label>formatter&lt; std::string_view &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/global/semver.h" line="739" column="38" bodyfile="include/rolly/global/semver.h" bodystart="739" bodyend="744"/>
+    <location file="rolly/global/semver.h" line="766" column="38" bodyfile="rolly/global/semver.h" bodystart="766" bodyend="771"/>
     <listofallmembers>
       <member refid="structfmt_1_1formatter_3_01rolly_1_1version_01_4_1a12ce03b424fbf53c75ee97d7108e6c1c" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::version &gt;</scope><name>format</name></member>
     </listofallmembers>

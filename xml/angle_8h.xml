@@ -304,13 +304,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/angle.h" line="17" column="26" bodyfile="include/rolly/types/angle.h" bodystart="17" bodyend="20"/>
+        <location file="rolly/types/angle.h" line="17" column="26" bodyfile="rolly/types/angle.h" bodystart="17" bodyend="20"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/types/angle.h"/>
+    <location file="rolly/types/angle.h"/>
   </compounddef>
 </doxygen>

@@ -3,7 +3,7 @@
   <compounddef id="structrolly_1_1is__num" kind="struct" language="C++" prot="public">
     <compoundname>rolly::is_num</compoundname>
     <basecompoundref refid="cpp/types/integral_constant" prot="public" virt="non-virtual">integral_constant&lt; bool, std::is_integral_v&lt; plain_type_t&lt; T &gt; &gt; or std::is_floating_point_v&lt; plain_type_t&lt; T &gt; &gt; &gt;</basecompoundref>
-    <includes refid="num_8h" local="no">num.h</includes>
+    <includes refid="num_8h" local="no">rolly/concepts/num.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -38,7 +38,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/concepts/num.h" line="53" column="25" bodyfile="include/rolly/concepts/num.h" bodystart="53" bodyend="-1"/>
+        <location file="rolly/concepts/num.h" line="56" column="25" bodyfile="rolly/concepts/num.h" bodystart="56" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -98,7 +98,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/concepts/num.h" line="45" column="31" bodyfile="include/rolly/concepts/num.h" bodystart="44" bodyend="45"/>
+    <location file="rolly/concepts/num.h" line="48" column="14" bodyfile="rolly/concepts/num.h" bodystart="45" bodyend="48"/>
     <listofallmembers>
       <member refid="structrolly_1_1is__num_1a23272b2567f5687eaec97876db4f96c2" prot="public" virt="non-virtual"><scope>rolly::is_num</scope><name>is_num_v</name></member>
     </listofallmembers>

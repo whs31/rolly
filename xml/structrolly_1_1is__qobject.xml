@@ -50,7 +50,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/qt/concepts.h" line="26" column="46" bodyfile="include/rolly/qt/concepts.h" bodystart="26" bodyend="26"/>
+    <location file="rolly/qt/concepts.h" line="26" column="46" bodyfile="rolly/qt/concepts.h" bodystart="26" bodyend="26"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

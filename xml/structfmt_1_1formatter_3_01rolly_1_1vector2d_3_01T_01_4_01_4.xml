@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structfmt_1_1formatter_3_01rolly_1_1vector2d_3_01T_01_4_01_4" kind="struct" language="C++" prot="public">
     <compoundname>fmt::formatter&lt; rolly::vector2d&lt; T &gt; &gt;</compoundname>
-    <includes refid="vector2d_8h" local="no">vector2d.h</includes>
+    <includes refid="vector2d_8h" local="no">rolly/types/vector2d.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="688" column="18" bodyfile="include/rolly/types/vector2d.h" bodystart="688" bodyend="688"/>
+        <location file="rolly/types/vector2d.h" line="720" column="18" bodyfile="rolly/types/vector2d.h" bodystart="720" bodyend="720"/>
       </memberdef>
       <memberdef kind="function" id="structfmt_1_1formatter_3_01rolly_1_1vector2d_3_01T_01_4_01_4_1a0b7e51ced5f7749abc8bdf1b17021313" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/vector2d.h" line="690" column="8" bodyfile="include/rolly/types/vector2d.h" bodystart="690" bodyend="693"/>
+        <location file="rolly/types/vector2d.h" line="722" column="8" bodyfile="rolly/types/vector2d.h" bodystart="722" bodyend="725"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -63,7 +63,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/vector2d.h" line="687" column="23" bodyfile="include/rolly/types/vector2d.h" bodystart="687" bodyend="694"/>
+    <location file="rolly/types/vector2d.h" line="719" column="23" bodyfile="rolly/types/vector2d.h" bodystart="719" bodyend="726"/>
     <listofallmembers>
       <member refid="structfmt_1_1formatter_3_01rolly_1_1vector2d_3_01T_01_4_01_4_1a0b7e51ced5f7749abc8bdf1b17021313" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::vector2d&lt; T &gt; &gt;</scope><name>format</name></member>
       <member refid="structfmt_1_1formatter_3_01rolly_1_1vector2d_3_01T_01_4_01_4_1ace7073dae42bf3e88060cd4f66d6a01f" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::vector2d&lt; T &gt; &gt;</scope><name>parse</name></member>

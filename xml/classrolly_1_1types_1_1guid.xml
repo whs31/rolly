@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classrolly_1_1types_1_1guid" kind="class" language="C++" prot="public">
     <compoundname>rolly::types::guid</compoundname>
-    <includes refid="guid_8h" local="no">guid.h</includes>
+    <includes refid="guid_8h" local="no">rolly/types/guid.h</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classrolly_1_1types_1_1guid_1a12dfa471359cc40e28009e2ff6a37996" prot="private" static="no" mutable="no">
         <type><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" kindref="member">u8</ref>, 16 &gt;</type>
@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="149" column="18" bodyfile="include/rolly/types/guid.h" bodystart="149" bodyend="-1"/>
+        <location file="rolly/types/guid.h" line="149" column="18" bodyfile="rolly/types/guid.h" bodystart="149" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="32" column="7"/>
+        <location file="rolly/types/guid.h" line="32" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1abe9997ddaf63a9309892c45b82185132" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="34" column="7"/>
+        <location file="rolly/types/guid.h" line="34" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a4c3dc0740c44eca5f83d88b9b8b8e184" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="40" column="16"/>
+        <location file="rolly/types/guid.h" line="40" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1aaec18b3d519f5d8651d3736e45b49645" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="46" column="16"/>
+        <location file="rolly/types/guid.h" line="46" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a411fd77fafa3952b4bdb3738c5ceaa81" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="52" column="16"/>
+        <location file="rolly/types/guid.h" line="52" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1abff2c6e274edc4e7e8e032d7e640fd5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -147,7 +147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="54" column="7"/>
+        <location file="rolly/types/guid.h" line="54" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a0802bb3c50a6ea37b4ffa65b7f5330bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -163,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="55" column="7"/>
+        <location file="rolly/types/guid.h" line="55" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a4cedf8ab7d04407b11c681253b1a15e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> &amp;</type>
@@ -179,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="56" column="12"/>
+        <location file="rolly/types/guid.h" line="56" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a52829572d8b952093cf8f327a52401fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> &amp;</type>
@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="57" column="12"/>
+        <location file="rolly/types/guid.h" line="57" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a99f77f09f364b20c3a30ab6bffa4c24b" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -212,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="63" column="13"/>
+        <location file="rolly/types/guid.h" line="63" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
@@ -229,7 +229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="72" column="20"/>
+        <location file="rolly/types/guid.h" line="72" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a524e6e4494a17e99baef3044ea221ae7" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" kindref="member">u8</ref>, 16 &gt; const  &amp;</type>
@@ -246,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="78" column="25"/>
+        <location file="rolly/types/guid.h" line="78" column="25"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a97546fb989ab2746f1c269e2569babbf" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="cpp/container/array" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::array</ref>&lt; <ref refid="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" kindref="member">u8</ref>, 16 &gt; &amp;</type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="84" column="19"/>
+        <location file="rolly/types/guid.h" line="84" column="19"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1af687d7ba21b4110f46c09401156f8c90" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespacerolly_1_1types_1a66e1d499241ccae9a18a20a1f4f0590d" kindref="member">u64</ref></type>
@@ -280,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="90" column="12"/>
+        <location file="rolly/types/guid.h" line="90" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a420e60e9788bfa3b52aa3aab72ea3a5e" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -299,7 +299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="97" column="8" bodyfile="include/rolly/types/guid.h" bodystart="97" bodyend="99"/>
+        <location file="rolly/types/guid.h" line="97" column="8" bodyfile="rolly/types/guid.h" bodystart="97" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1a6c033d63da52b8181d4d8c2732298838" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -329,7 +329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="106" column="13"/>
+        <location file="rolly/types/guid.h" line="106" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1aa6ee004e31ca7c2ac05666230519348b" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -359,7 +359,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="113" column="13"/>
+        <location file="rolly/types/guid.h" line="113" column="13"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -403,7 +403,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="121" column="14"/>
+        <location file="rolly/types/guid.h" line="121" column="14"/>
       </memberdef>
       <memberdef kind="friend" id="classrolly_1_1types_1_1guid_1a499ec739efb1085811f95c07cc4c4065" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="cpp/io/basic_ostream" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::ostream</ref> &amp;</type>
@@ -447,7 +447,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="133" column="16"/>
+        <location file="rolly/types/guid.h" line="133" column="16"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -466,7 +466,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="140" column="20"/>
+        <location file="rolly/types/guid.h" line="140" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1types_1_1guid_1adf9915d8b34d4ef59625f281ba18c90d" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref></type>
@@ -483,7 +483,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="146" column="20"/>
+        <location file="rolly/types/guid.h" line="146" column="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="related">
@@ -527,7 +527,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="194" column="16" bodyfile="include/rolly/types/guid.h" bodystart="194" bodyend="196"/>
+        <location file="rolly/types/guid.h" line="195" column="16" bodyfile="rolly/types/guid.h" bodystart="195" bodyend="197"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -538,7 +538,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/guid.h" line="22" column="15" bodyfile="include/rolly/types/guid.h" bodystart="22" bodyend="150"/>
+    <location file="rolly/types/guid.h" line="22" column="15" bodyfile="rolly/types/guid.h" bodystart="22" bodyend="150"/>
     <listofallmembers>
       <member refid="classrolly_1_1types_1_1guid_1a524e6e4494a17e99baef3044ea221ae7" prot="public" virt="non-virtual"><scope>rolly::types::guid</scope><name>bytes</name></member>
       <member refid="classrolly_1_1types_1_1guid_1a12dfa471359cc40e28009e2ff6a37996" prot="private" virt="non-virtual"><scope>rolly::types::guid</scope><name>bytes_</name></member>

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structstd_1_1hash_3_01rolly_1_1guid_01_4" kind="struct" language="C++" prot="public">
     <compoundname>std::hash&lt; rolly::guid &gt;</compoundname>
-    <includes refid="guid_8h" local="no">guid.h</includes>
+    <includes refid="guid_8h" local="no">rolly/types/guid.h</includes>
     <templateparamlist>
     </templateparamlist>
       <sectiondef kind="public-func">
@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/types/guid.h" line="208" column="18" bodyfile="include/rolly/types/guid.h" bodystart="208" bodyend="210"/>
+        <location file="rolly/types/guid.h" line="209" column="18" bodyfile="rolly/types/guid.h" bodystart="209" bodyend="211"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -52,7 +52,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/types/guid.h" line="207" column="14" bodyfile="include/rolly/types/guid.h" bodystart="207" bodyend="211"/>
+    <location file="rolly/types/guid.h" line="208" column="14" bodyfile="rolly/types/guid.h" bodystart="208" bodyend="212"/>
     <listofallmembers>
       <member refid="structstd_1_1hash_3_01rolly_1_1guid_01_4_1a9a052081acdcabe104501304271aa92e" prot="public" virt="non-virtual"><scope>std::hash&lt; rolly::guid &gt;</scope><name>operator()</name></member>
     </listofallmembers>

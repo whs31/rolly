@@ -3,7 +3,7 @@
   <compounddef id="structfmt_1_1formatter_3_01rolly_1_1source__location_01_4" kind="struct" language="C++" prot="public">
     <compoundname>fmt::formatter&lt; rolly::source_location &gt;</compoundname>
     <basecompoundref refid="structrolly_1_1ostream__formatter" prot="public" virt="non-virtual">ostream_formatter&lt; char &gt;</basecompoundref>
-    <includes refid="source__location_8h" local="no">source_location.h</includes>
+    <includes refid="source__location_8h" local="no">rolly/source_location.h</includes>
     <templateparamlist>
     </templateparamlist>
       <sectiondef kind="public-func">
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/format/ostream_formatter.h" line="28" column="14" bodyfile="include/rolly/format/ostream_formatter.h" bodystart="28" bodyend="32"/>
+        <location file="rolly/format/ostream_formatter.h" line="30" column="14" bodyfile="rolly/format/ostream_formatter.h" bodystart="30" bodyend="34"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -93,7 +93,7 @@
         <label>formatter&lt; std::basic_string_view&lt; C &gt;, C &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="include/rolly/source_location.h" line="141" column="48" bodyfile="include/rolly/source_location.h" bodystart="141" bodyend="141"/>
+    <location file="rolly/source_location.h" line="152" column="48" bodyfile="rolly/source_location.h" bodystart="152" bodyend="152"/>
     <listofallmembers>
       <member refid="structrolly_1_1ostream__formatter_1a530ff3c61e787d95ed7ee018d3a26ca2" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; rolly::source_location &gt;</scope><name>format</name></member>
     </listofallmembers>

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classrolly_1_1observer__ptr" kind="class" language="C++" prot="public">
     <compoundname>rolly::observer_ptr</compoundname>
-    <includes refid="observer__ptr_8h" local="no">observer_ptr.h</includes>
+    <includes refid="observer__ptr_8h" local="no">rolly/memory/observer_ptr.h</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="37" column="5" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="37" bodyend="-1"/>
+        <location file="rolly/memory/observer_ptr.h" line="39" column="5" bodyfile="rolly/memory/observer_ptr.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classrolly_1_1observer__ptr_1ab088798d28525c0befe3c707b95c5bc2" prot="public" static="no">
         <type>T *</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="42" column="5" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="42" bodyend="-1"/>
+        <location file="rolly/memory/observer_ptr.h" line="44" column="5" bodyfile="rolly/memory/observer_ptr.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classrolly_1_1observer__ptr_1ada8ef625b97396676e3e2303a84535be" prot="public" static="no">
         <type>T const  *</type>
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="47" column="5" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="47" bodyend="-1"/>
+        <location file="rolly/memory/observer_ptr.h" line="49" column="5" bodyfile="rolly/memory/observer_ptr.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classrolly_1_1observer__ptr_1a0c5a1541ecf7ad17925583cf6abd2c65" prot="public" static="no">
         <type>T &amp;</type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="52" column="5" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="52" bodyend="-1"/>
+        <location file="rolly/memory/observer_ptr.h" line="54" column="5" bodyfile="rolly/memory/observer_ptr.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classrolly_1_1observer__ptr_1af73227c77834d27f9c89e0a92ea698d8" prot="public" static="no">
         <type>T const  &amp;</type>
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="57" column="5" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="57" bodyend="-1"/>
+        <location file="rolly/memory/observer_ptr.h" line="59" column="5" bodyfile="rolly/memory/observer_ptr.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classrolly_1_1observer__ptr_1a31c872a1c5784bf8eb67039d36047f6c" prot="public" static="no">
         <type>std::remove_cv_t&lt; T &gt;</type>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="62" column="5" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="62" bodyend="-1"/>
+        <location file="rolly/memory/observer_ptr.h" line="64" column="5" bodyfile="rolly/memory/observer_ptr.h" bodystart="64" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="214" column="13" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="214" bodyend="-1"/>
+        <location file="rolly/memory/observer_ptr.h" line="216" column="13" bodyfile="rolly/memory/observer_ptr.h" bodystart="216" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -122,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="67" column="15" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="67" bodyend="68"/>
+        <location file="rolly/memory/observer_ptr.h" line="69" column="15" bodyfile="rolly/memory/observer_ptr.h" bodystart="69" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a7db273aa4945dc39fe351d7616f5f814" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="73" column="15" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="73" bodyend="74"/>
+        <location file="rolly/memory/observer_ptr.h" line="75" column="15" bodyfile="rolly/memory/observer_ptr.h" bodystart="75" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a0735d4b4c42a4327cf8ae6d1d88359eb" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="80" column="15" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="80" bodyend="81"/>
+        <location file="rolly/memory/observer_ptr.h" line="82" column="15" bodyfile="rolly/memory/observer_ptr.h" bodystart="82" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1aae0f7514210dafde3695c0aa984f9ae7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -209,7 +209,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="98" column="15" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="98" bodyend="100"/>
+        <location file="rolly/memory/observer_ptr.h" line="100" column="15" bodyfile="rolly/memory/observer_ptr.h" bodystart="100" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1afd0d8fef5e2e709ecfe34e465412be05" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -251,7 +251,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="117" column="15" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="117" bodyend="119"/>
+        <location file="rolly/memory/observer_ptr.h" line="119" column="15" bodyfile="rolly/memory/observer_ptr.h" bodystart="119" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a8888e9dd9db1435a172232db23e264c1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -293,7 +293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="136" column="15" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="136" bodyend="138"/>
+        <location file="rolly/memory/observer_ptr.h" line="138" column="15" bodyfile="rolly/memory/observer_ptr.h" bodystart="138" bodyend="140"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a5b3070b1e5da32efba368f18ab9f611c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1observer__ptr_1ab088798d28525c0befe3c707b95c5bc2" kindref="member">pointer</ref></type>
@@ -310,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="144" column="24" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="144" bodyend="144"/>
+        <location file="rolly/memory/observer_ptr.h" line="146" column="24" bodyfile="rolly/memory/observer_ptr.h" bodystart="146" bodyend="146"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a8dd31bf0ddc9809655d6f66827013865" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1observer__ptr_1af73227c77834d27f9c89e0a92ea698d8" kindref="member">const_reference</ref></type>
@@ -329,7 +329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="151" column="32" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="151" bodyend="151"/>
+        <location file="rolly/memory/observer_ptr.h" line="153" column="32" bodyfile="rolly/memory/observer_ptr.h" bodystart="153" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a14bee89e538427a25cc1e361d8a86140" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1observer__ptr_1a0c5a1541ecf7ad17925583cf6abd2c65" kindref="member">reference</ref></type>
@@ -348,7 +348,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="158" column="26" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="158" bodyend="158"/>
+        <location file="rolly/memory/observer_ptr.h" line="160" column="26" bodyfile="rolly/memory/observer_ptr.h" bodystart="160" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a95a453b6d6fe6d168aa9748d7bee076c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1observer__ptr_1a0c5a1541ecf7ad17925583cf6abd2c65" kindref="member">reference</ref></type>
@@ -367,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="165" column="26" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="165" bodyend="168"/>
+        <location file="rolly/memory/observer_ptr.h" line="167" column="26" bodyfile="rolly/memory/observer_ptr.h" bodystart="167" bodyend="170"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a4d87e2ceab34e71e890d84482bfd5dfa" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1observer__ptr_1ab088798d28525c0befe3c707b95c5bc2" kindref="member">pointer</ref></type>
@@ -386,7 +386,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="175" column="24" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="175" bodyend="178"/>
+        <location file="rolly/memory/observer_ptr.h" line="177" column="24" bodyfile="rolly/memory/observer_ptr.h" bodystart="177" bodyend="180"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a420e60e9788bfa3b52aa3aab72ea3a5e" prot="public" static="no" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -400,7 +400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="183" column="15" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="183" bodyend="183"/>
+        <location file="rolly/memory/observer_ptr.h" line="185" column="15" bodyfile="rolly/memory/observer_ptr.h" bodystart="185" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a5ea4d6faed311cd6bf7af821ef2f038e" prot="public" static="no" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -417,7 +417,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="189" column="15" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="189" bodyend="189"/>
+        <location file="rolly/memory/observer_ptr.h" line="191" column="15" bodyfile="rolly/memory/observer_ptr.h" bodystart="191" bodyend="191"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1a6a68b7063d23d1c5ff1dcd0cdd33ec36" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="classrolly_1_1observer__ptr_1ab088798d28525c0befe3c707b95c5bc2" kindref="member">pointer</ref></type>
@@ -434,7 +434,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="195" column="23" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="195" bodyend="199"/>
+        <location file="rolly/memory/observer_ptr.h" line="197" column="23" bodyfile="rolly/memory/observer_ptr.h" bodystart="197" bodyend="201"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1af9f22cb37d3edae4b12382631e95ec76" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr void</type>
@@ -463,7 +463,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="205" column="20" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="205" bodyend="205"/>
+        <location file="rolly/memory/observer_ptr.h" line="207" column="20" bodyfile="rolly/memory/observer_ptr.h" bodystart="207" bodyend="207"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1observer__ptr_1adf6f1fb30d64991e6bf834d69bc34018" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr void</type>
@@ -491,7 +491,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="211" column="20" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="211" bodyend="211"/>
+        <location file="rolly/memory/observer_ptr.h" line="213" column="20" bodyfile="rolly/memory/observer_ptr.h" bodystart="213" bodyend="213"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="related">
@@ -547,7 +547,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/rolly/memory/observer_ptr.h" line="262" column="8" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="262" bodyend="264"/>
+        <location file="rolly/memory/observer_ptr.h" line="264" column="8" bodyfile="rolly/memory/observer_ptr.h" bodystart="264" bodyend="266"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -564,13 +564,17 @@
 <parametername>T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Type of the pointer #sa <ulink url="https://en.cppreference.com/w/cpp/experimental/observer_ptr">https://en.cppreference.com/w/cpp/experimental/observer_ptr</ulink> </para>
+<para>Type of the pointer </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
+<simplesect kind="see"><para><ulink url="https://en.cppreference.com/w/cpp/experimental/observer_ptr">https://en.cppreference.com/w/cpp/experimental/observer_ptr</ulink> </para>
+</simplesect>
+<simplesect kind="version"><para>2.1.31 </para>
+</simplesect>
 </para>
     </detaileddescription>
-    <location file="include/rolly/memory/observer_ptr.h" line="32" column="21" bodyfile="include/rolly/memory/observer_ptr.h" bodystart="32" bodyend="215"/>
+    <location file="rolly/memory/observer_ptr.h" line="34" column="21" bodyfile="rolly/memory/observer_ptr.h" bodystart="34" bodyend="217"/>
     <listofallmembers>
       <member refid="classrolly_1_1observer__ptr_1ada8ef625b97396676e3e2303a84535be" prot="public" virt="non-virtual"><scope>rolly::observer_ptr</scope><name>const_pointer</name></member>
       <member refid="classrolly_1_1observer__ptr_1af73227c77834d27f9c89e0a92ea698d8" prot="public" virt="non-virtual"><scope>rolly::observer_ptr</scope><name>const_reference</name></member>

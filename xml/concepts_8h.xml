@@ -121,6 +121,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/rolly/concepts.h"/>
+    <location file="rolly/concepts.h"/>
   </compounddef>
 </doxygen>

@@ -48,7 +48,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacerolly_1_1dll.html">dll</a>::<wbr/></span>shared_library <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="shared__library_8h.html">&lt;include/rolly/dll/shared_library.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="shared__library_8h.html">&lt;rolly/dll/shared_library.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -112,8 +112,16 @@
               <span class="m-dox-wrap-bumper">auto <a href="#a3b311ad7b66f230479b19b47c094cb41" class="m-dox-self" name="a3b311ad7b66f230479b19b47c094cb41">name</a>(</span><span class="m-dox-wrap">) const -&gt; std::string_view</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a367ef6b434a999724cfc85dfc006badb" class="m-dox">soname</a>(</span><span class="m-dox-wrap">) const -&gt; std::string_view</span>
+            </dt>
+            <dd>Returns name of the shared object file without platform specific extension and <code>lib</code> prefix.</dd>
             <dt id="a315419f26d3c59fa143b49b90a019049">
               <span class="m-dox-wrap-bumper">auto <a href="#a315419f26d3c59fa143b49b90a019049" class="m-dox-self" name="a315419f26d3c59fa143b49b90a019049">valid</a>(</span><span class="m-dox-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af9f242e4ddbce9050c4864c7fc960284">
+              <span class="m-dox-wrap-bumper">auto <a href="#af9f242e4ddbce9050c4864c7fc960284" class="m-dox-self" name="af9f242e4ddbce9050c4864c7fc960284">is_loaded</a>(</span><span class="m-dox-wrap">) const -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt id="af5acc1f38091c0eece64aa0186f44689">
@@ -125,6 +133,24 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a367ef6b434a999724cfc85dfc006badb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string_view rolly::<wbr />dll::<wbr />shared_library::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a367ef6b434a999724cfc85dfc006badb" class="m-doc-self">soname</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns name of the shared object file without platform specific extension and <code>lib</code> prefix.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Name of the shared object file without platform specific extension and <code>lib</code> prefix.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>For example, if <code>libtest.so</code> is loaded, then <code>soname</code> will return <code>test</code>.</p><aside class="m-note m-default"><h4>Version</h4><p>2.1.33</p></aside>
+          </div></section>
         </section>
       </div>
     </div>

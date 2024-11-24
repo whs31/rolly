@@ -48,7 +48,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>application_dirs <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="directories_8h.html">&lt;include/rolly/directories.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="directories_8h.html">&lt;rolly/directories.h&gt;</a></div>
         </h1>
         <p>Class for getting location of system directories for a specific application.</p>
         <nav class="m-block m-default">
@@ -68,7 +68,8 @@
 <span class="k">using</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">rolly</span><span class="o">::</span><span class="n">application_dirs</span><span class="o">::</span><span class="n">dir</span><span class="p">;</span>
 
 <span class="k">auto</span><span class="w"> </span><span class="n">dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">application_dirs</span><span class="p">(</span><span class="s">&quot;com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Foo Corp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bar App&quot;</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dirs</span><span class="p">[</span><span class="n">config</span><span class="p">].</span><span class="n">string</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// or std::cout &lt;&lt; dirs.config_dir() &lt;&lt; std::endl;</span></pre><p>will produce the following output:</p><pre class="m-console"><span class="go">Linux:   &#39;/home/alice/.config/barapp&#39;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dirs</span><span class="p">[</span><span class="n">config</span><span class="p">].</span><span class="n">string</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// or std::cout &lt;&lt; dirs.config_dir() &lt;&lt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></pre><p>will produce the following output:</p><pre class="m-console"><span class="go">Linux:   &#39;/home/alice/.config/barapp&#39;</span>
 <span class="go">Windows: &#39;C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App&#39;</span>
 <span class="go">MacOS:   &#39;/Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App&#39;</span></pre><aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1dirs.html" class="m-doc">dirs</a></p></aside>
         <section id="pub-types">
