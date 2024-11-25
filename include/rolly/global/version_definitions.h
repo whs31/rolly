@@ -29,7 +29,7 @@
  * @note Consider using <i>meta::library_metadata</i> variable to access this value.
  * @version 2.1.32
  */
-#define ROLLY_VERSION_PATCH 34
+#define ROLLY_VERSION_PATCH 35
 
 /**
  * @internal

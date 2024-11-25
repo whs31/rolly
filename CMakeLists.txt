@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.1.34
+  VERSION 2.1.35
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -32,7 +32,7 @@ endif ()
 
 message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 
-# -- dependencies --
+# <-- dependencies -->
 find_package(fmt REQUIRED)
 find_package(spdlog REQUIRED)
 if (ROLLY_QT)
@@ -92,6 +92,12 @@ if (ROLLY_QT)
     Qt::Qml
   )
 endif ()
+
+# <-- msvc-specific options -->
+if (MSVC)
+  target_include_directories(${PROJECT_NAME} PUBLIC ${FMT_INCLUDE_DIR} ${SPDLOG_INCLUDE_DIR})
+endif ()
+
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src)
 
 if (BUILD_SHARED_LIBS)

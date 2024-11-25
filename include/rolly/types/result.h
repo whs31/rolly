@@ -17,26 +17,26 @@
 #    define TL_EXPECTED_EXCEPTIONS_ENABLED
 #  endif
 
-#  if(defined(_MSC_VER) && _MSC_VER == 1'900)
+#  if (defined(_MSC_VER) && _MSC_VER == 1'900)
 #    define TL_EXPECTED_MSVC2015
 #    define TL_EXPECTED_MSVC2015_CONSTEXPR
 #  else
 #    define TL_EXPECTED_MSVC2015_CONSTEXPR constexpr
 #  endif
 
-#  if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#  if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC49
 #  endif
 
-#  if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
+#  if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC54
 #  endif
 
-#  if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
+#  if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC55
 #  endif
 
-#  if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#  if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 // GCC < 5 doesn't support overloading on const&& for member functions
 
 #    define TL_EXPECTED_NO_CONSTRR
@@ -52,7 +52,7 @@
 
 // GCC 5 < v < 8 has a bug in is_trivially_copy_constructible which breaks
 // std::vector for non-copyable types
-#  elif(defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
+#  elif (defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
 #    ifndef TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 #      define TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 
@@ -93,7 +93,7 @@ namespace tl {
 #    define TL_EXPECTED_GCC49_CONSTEXPR constexpr
 #  endif
 
-#  if(__cplusplus == 201'103L || defined(TL_EXPECTED_MSVC2015) || defined(TL_EXPECTED_GCC49))
+#  if (__cplusplus == 201'103L || defined(TL_EXPECTED_MSVC2015) || defined(TL_EXPECTED_GCC49))
 #    define TL_EXPECTED_11_CONSTEXPR
 #  else
 #    define TL_EXPECTED_11_CONSTEXPR constexpr
@@ -2465,14 +2465,14 @@ namespace rolly {
       detail::enable_if_t<! std::is_void<exp_t<Exp>>::value>* = nullptr,
       class Ret = decltype(detail::invoke(std::declval<F>(), std::declval<Exp>().error())),
       detail::enable_if_t<std::is_void<Ret>::value>* = nullptr>
-    auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, monostate> {
-      using result = expected<exp_t<Exp>, monostate>;
+    auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, std::monostate> {
+      using result = expected<exp_t<Exp>, std::monostate>;
       if(exp.has_value()) {
         return result(*std::forward<Exp>(exp));
       }
 
       detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error());
-      return result(unexpect, monostate {});
+      return result(unexpect, std::monostate {});
     }
 
     template <
@@ -2495,14 +2495,14 @@ namespace rolly {
       detail::enable_if_t<std::is_void<exp_t<Exp>>::value>* = nullptr,
       class Ret = decltype(detail::invoke(std::declval<F>(), std::declval<Exp>().error())),
       detail::enable_if_t<std::is_void<Ret>::value>* = nullptr>
-    auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, monostate> {
-      using result = expected<exp_t<Exp>, monostate>;
+    auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, std::monostate> {
+      using result = expected<exp_t<Exp>, std::monostate>;
       if(exp.has_value()) {
         return result();
       }
 
       detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error());
-      return result(unexpect, monostate {});
+      return result(unexpect, std::monostate {});
     }
 #  endif
 
