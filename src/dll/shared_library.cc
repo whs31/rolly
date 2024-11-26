@@ -2,12 +2,7 @@
 
 #include <stdexcept>
 #include <rolly/string_util.h>
-#include "oslayer/base.h"
-#ifdef ROLLY_OS_WINDOWS
-#  include "oslayer/win/dll.h"
-#else
-#  include "oslayer/linux/dll.h"
-#endif
+#include <rolly/dll/dl.h>
 
 namespace {
   using namespace std::string_view_literals;
@@ -25,13 +20,13 @@ namespace {
 namespace rolly::dll {
   shared_library::shared_library(std::string name)
     : name_(std::move(name))
-    , handle_(oslayer::___os___::load_library(this->name()))
+    , handle_(load_library(this->name()))
     , path_(std::filesystem::current_path())
     , soname_(::cut_soname(this->name())) {}
 
   shared_library::shared_library(std::filesystem::path const& path, std::string name)
     : name_(std::move(name))
-    , handle_(oslayer::___os___::load_library(this->name(), path))
+    , handle_(load_library(this->name(), path))
     , path_(path)
     , soname_(::cut_soname(this->name())) {}
 
@@ -48,7 +43,7 @@ namespace rolly::dll {
 
   shared_library::~shared_library() {
     if(this->valid())
-      oslayer::___os___::unload_library(this->handle_);
+      unload_library(this->handle_);
     this->handle_ = nullptr;
   }
 
@@ -89,9 +84,9 @@ namespace rolly::dll {
   }
 
   shared_library::bootstrap_function_type shared_library::locate_entry() const {
-    return reinterpret_cast<
-      shared_library::bootstrap_function_type>(  // NOLINT(*-pro-type-reinterpret-cast)
-      oslayer::___os___::get_proc_address(this->handle_, ___rolly_dll_proc_name_string___)
+    return reinterpret_cast<  // NOLINT(*-pro-type-reinterpret-cast)
+      shared_library::bootstrap_function_type>(
+      proc_address(this->handle_, ___rolly_dll_proc_name_string___)
     );
   }
 }  // namespace rolly::dll
