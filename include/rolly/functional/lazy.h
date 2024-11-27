@@ -3,6 +3,7 @@
 #include <utility>
 #include <type_traits>
 #include <optional>
+#include <functional>
 #include "../concepts/standard_copyable_and_movable.h"
 #include "../traits/noncopyable.h"
 

@@ -13,7 +13,8 @@ namespace rolly::dll {
 #ifndef DOXYGEN_GENERATING_OUTPUT
     ___rolly_api___
 #endif
-      shared_library : noncopyable {
+    [[deprecated("Plugin related functions and classes are deprecated. Write your own plugin system"
+    )]] shared_library : noncopyable {
 
    public:
     shared_library() = default;

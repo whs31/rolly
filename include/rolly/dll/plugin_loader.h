@@ -14,12 +14,13 @@ namespace rolly::dll {
 #ifndef DOXYGEN_GENERATING_OUTPUT
     ___rolly_api___
 #endif
-      /**
-       * @brief Dynamic loader for @ref rolly::dll::plugin libraries.
-       * @details See @ref rolly::dll::plugin class reference for detailed usage examples and
-       * guidelines.
-       */
-      plugin_loader : pin {
+    /**
+     * @brief Dynamic loader for @ref rolly::dll::plugin libraries.
+     * @details See @ref rolly::dll::plugin class reference for detailed usage examples and
+     * guidelines.
+     */
+    [[deprecated("Plugin related functions and classes are deprecated. Write your own plugin system"
+    )]] plugin_loader : pin {
 
    public:
     /**
