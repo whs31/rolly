@@ -30,13 +30,13 @@ struct s {
 struct Sender {
   void trigger() { this->triggered(); }
 
-  signal<> triggered;
+  rolly::signal<> triggered;
 };
 
 TEST_CASE("Functional", "[functional]") {
   SECTION("Signals") {
     SECTION("Lambda connection") {
-      auto sig = signal<int>();
+      auto sig = rolly::signal<int>();
       auto p = s();
       sig.connect(&s::f1, &p);
       REQUIRE(sig.slot_count() == 1);

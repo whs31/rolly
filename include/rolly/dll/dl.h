@@ -3,6 +3,7 @@
 #include <string>
 #include <string_view>
 #include "../global/export.h"
+#include "../global/platform_definitions.h"
 #ifndef Q_MOC_RUN
 #  include <filesystem>
 #endif
