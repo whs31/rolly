@@ -6,9 +6,9 @@
 #include <type_traits>
 #include <utility>
 #include <variant>
-#include <optional>
 #include <fmt/format.h>
 #include "../contracts.h"
+#include "optional.h"
 
 // NOLINTBEGIN(*-avoid-c-arrays, *-pro-type-union-access)
 
@@ -17,26 +17,26 @@
 #    define TL_EXPECTED_EXCEPTIONS_ENABLED
 #  endif
 
-#  if (defined(_MSC_VER) && _MSC_VER == 1'900)
+#  if(defined(_MSC_VER) && _MSC_VER == 1'900)
 #    define TL_EXPECTED_MSVC2015
 #    define TL_EXPECTED_MSVC2015_CONSTEXPR
 #  else
 #    define TL_EXPECTED_MSVC2015_CONSTEXPR constexpr
 #  endif
 
-#  if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#  if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC49
 #  endif
 
-#  if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
+#  if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC54
 #  endif
 
-#  if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
+#  if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC55
 #  endif
 
-#  if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#  if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 // GCC < 5 doesn't support overloading on const&& for member functions
 
 #    define TL_EXPECTED_NO_CONSTRR
@@ -52,7 +52,7 @@
 
 // GCC 5 < v < 8 has a bug in is_trivially_copy_constructible which breaks
 // std::vector for non-copyable types
-#  elif (defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
+#  elif(defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
 #    ifndef TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 #      define TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 
@@ -93,7 +93,7 @@ namespace tl {
 #    define TL_EXPECTED_GCC49_CONSTEXPR constexpr
 #  endif
 
-#  if (__cplusplus == 201'103L || defined(TL_EXPECTED_MSVC2015) || defined(TL_EXPECTED_GCC49))
+#  if(__cplusplus == 201'103L || defined(TL_EXPECTED_MSVC2015) || defined(TL_EXPECTED_GCC49))
 #    define TL_EXPECTED_11_CONSTEXPR
 #  else
 #    define TL_EXPECTED_11_CONSTEXPR constexpr
@@ -2677,35 +2677,6 @@ namespace rolly {
     }
 
     [[nodiscard]] inline result<> ok() { return {}; }
-
-    /**
-     * @brief Wrap a value in an std::optional.
-     *
-     * @details
-     * This function is a helper for creating an std::optional from a value.
-     * It is mostly useful when working with generic code that needs to work with
-     * both expected and optional types.
-     *
-     * @see ok
-     * @see none
-     */
-    template <typename T>
-    [[nodiscard]] std::optional<std::decay_t<T>> some(T&& t) {
-      return std::optional<std::decay_t<T>>(std::forward<T>(t));
-    }
-
-    /**
-     * @brief Wrap an empty value in an std::optional.
-     *
-     * @details
-     * This function is a helper for creating an std::optional from a value.
-     * It is mostly useful when working with generic code that needs to work with
-     * both expected and optional types.
-     *
-     * @see ok
-     * @see some
-     */
-    inline constexpr auto none = std::nullopt;
   }  // namespace types
 }  // namespace rolly
 

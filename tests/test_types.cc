@@ -67,7 +67,6 @@ TEST_CASE("Types", "[types]") {
     SECTION("Literal") { REQUIRE(s1 == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"_guid); }
   }  // GUID
 
-#ifdef ___rolly_cxx20___
   SECTION("Result", "[types.result]") {
     SECTION("Assignment") {
       expected<int, int> e1 = 42;
@@ -1097,7 +1096,41 @@ TEST_CASE("Types", "[types]") {
       }
     }
   }  // Result
-#endif
+
+  SECTION("Optional", "[types.optional]") {
+    SECTION("Make optional") {
+      auto o1 = make_optional(42);
+      auto o2 = optional<int>(42);
+
+      constexpr bool is_same = std::is_same<decltype(o1), optional<int>>::value;
+      REQUIRE(is_same);
+      REQUIRE(o1 == o2);
+
+      auto o3 = make_optional<std::tuple<int, int, int, int>>(0, 1, 2, 3);
+      REQUIRE(std::get<0>(*o3) == 0);
+      REQUIRE(std::get<1>(*o3) == 1);
+      REQUIRE(std::get<2>(*o3) == 2);
+      REQUIRE(std::get<3>(*o3) == 3);
+
+      auto o4 = make_optional<std::vector<int>>({0, 1, 2, 3});
+      REQUIRE(o4.value()[0] == 0);
+      REQUIRE(o4.value()[1] == 1);
+      REQUIRE(o4.value()[2] == 2);
+      REQUIRE(o4.value()[3] == 3);
+
+      auto o5 = make_optional<takes_init_and_variadic>({0, 1}, 2, 3);
+      REQUIRE(o5->v[0] == 0);
+      REQUIRE(o5->v[1] == 1);
+      REQUIRE(std::get<0>(o5->t) == 2);
+      REQUIRE(std::get<1>(o5->t) == 3);
+
+      auto i = 42;
+      auto o6 = make_optional<int&>(i);
+      REQUIRE((std::is_same<decltype(o6), optional<int&>>::value));
+      REQUIRE(o6);
+      REQUIRE(*o6 == 42);
+    }
+  }
 
   SECTION("Angle", "[types.angle]") {
     SECTION("Wrap") {

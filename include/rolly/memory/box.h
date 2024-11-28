@@ -1,10 +1,10 @@
 #pragma once
 
 #include <memory>
-#include <optional>
 #include "../contracts.h"
 #include "../traits/noncopyable.h"
 #include "../concepts/ptr.h"
+#include "../types/optional.h"
 
 namespace rolly {
   /**
@@ -199,15 +199,15 @@ namespace rolly {
      * @invariant <code>box::leak</code> was not called before.
      */
     template <typename U>
-    [[nodiscard]] std::optional<std::reference_wrapper<U>> downcast() {
+    [[nodiscard]] optional<std::reference_wrapper<U>> downcast() {
       contracts::invariant(this->ptr_ != nullptr, "use after consume");
       try {
         auto& r = dynamic_cast<U&>(this->ref_mut());
-        return std::make_optional(std::ref(r));
+        return make_optional(std::ref(r));
       } catch(std::bad_cast const&) {  // NOLINT(*-empty-catch)
-        return std::nullopt;
+        return nullopt;
       } catch(...) {                   // NOLINT(*-empty-catch)
-        return std::nullopt;
+        return nullopt;
       }
     }
 

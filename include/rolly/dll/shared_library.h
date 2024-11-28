@@ -2,8 +2,9 @@
 
 #include <string>
 #include "../traits/noncopyable.h"
-#include "plugin.h"
 #include "../types/result.h"
+#include "../types/optional.h"
+#include "plugin.h"
 #ifndef Q_MOC_RUN
 #  include <filesystem>
 #endif

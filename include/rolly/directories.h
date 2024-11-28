@@ -2,11 +2,11 @@
 
 #include <string>
 #include <string_view>
-#include <optional>
 #include "global/export.h"
 #include "global/version.h"
 #include "global/definitions.h"
 #include "types/stdint.h"
+#include "types/optional.h"
 #ifndef Q_MOC_RUN
 #  include <filesystem>
 #endif
@@ -321,7 +321,7 @@ namespace rolly {
 #ifndef ROLLY_DOC
     ___rolly_api___
 #endif  // ROLLY_DOC
-      std::optional<std::filesystem::path> const& runtime_dir() const;
+      optional<std::filesystem::path> const& runtime_dir() const;
 
     /**
      * \brief Returns the path to the project's state directory.
@@ -341,7 +341,7 @@ namespace rolly {
 #ifndef ROLLY_DOC
     ___rolly_api___
 #endif  // ROLLY_DOC
-      std::optional<std::filesystem::path> const& state_dir() const;
+      optional<std::filesystem::path> const& state_dir() const;
 
    private:
     std::filesystem::path project_path_;
@@ -351,7 +351,7 @@ namespace rolly {
     std::filesystem::path data_dir_;
     std::filesystem::path data_local_dir_;
     std::filesystem::path preference_dir_;
-    std::optional<std::filesystem::path> runtime_dir_;
-    std::optional<std::filesystem::path> state_dir_;
+    optional<std::filesystem::path> runtime_dir_;
+    optional<std::filesystem::path> state_dir_;
   };
 }  // namespace rolly

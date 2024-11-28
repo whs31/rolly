@@ -5,10 +5,10 @@
 #include <charconv>
 #include <iosfwd>
 #include <limits>
-#include <optional>
 #include <stdexcept>
 #include "char_utils.h"
 #include "version_definitions.h"
+#include "../types/optional.h"
 
 #if defined(__clang__)
 #  pragma clang diagnostic push
@@ -126,7 +126,7 @@ namespace rolly {
     }
 
     [[nodiscard]] ROLLY_SEMVER_CONSTEXPR char const*
-      from_chars(char const* first, char const* last, std::optional<std::uint16_t>& d) noexcept {
+      from_chars(char const* first, char const* last, optional<std::uint16_t>& d) noexcept {
       if(first != last && is_digit(*first)) {
         std::int32_t t = 0;
         for(; first != last && is_digit(*first); ++first)
@@ -184,20 +184,20 @@ namespace rolly {
     std::uint16_t minor = 1;
     std::uint16_t patch = 0;
     prerelease prerelease_type = prerelease::none;
-    std::optional<std::uint16_t> prerelease_number = std::nullopt;
+    optional<std::uint16_t> prerelease_number = nullopt;
 
     ROLLY_SEMVER_CONSTEXPR version(
       std::uint16_t mj,
       std::uint16_t mn,
       std::uint16_t pt,
       prerelease prt = prerelease::none,
-      std::optional<std::uint16_t> prn = std::nullopt
+      optional<std::uint16_t> prn = nullopt
     ) noexcept
       : major {mj}
       , minor {mn}
       , patch {pt}
       , prerelease_type {prt}
-      , prerelease_number {prt == prerelease::none ? std::nullopt : prn} {}
+      , prerelease_number {prt == prerelease::none ? nullopt : prn} {}
 
     ROLLY_SEMVER_CONSTEXPR
     version(
@@ -212,11 +212,11 @@ namespace rolly {
       , patch {pt}
       , prerelease_type {prt}
       , prerelease_number {
-          prt == prerelease::none ? std::nullopt : std::make_optional<std::uint16_t>(prn)
+          prt == prerelease::none ? nullopt : make_optional<std::uint16_t>(prn)
         } {}
 
     explicit ROLLY_SEMVER_CONSTEXPR version(std::string_view str)
-      : version(0, 0, 0, prerelease::none, std::nullopt) {
+      : version(0, 0, 0, prerelease::none, nullopt) {
       from_string(str);
     }
 
@@ -392,12 +392,12 @@ namespace rolly {
     return v.to_chars(first, last);
   }
 
-  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR std::optional<version> from_string_noexcept(
+  [[nodiscard]] ROLLY_SEMVER_CONSTEXPR optional<version> from_string_noexcept(
     std::string_view str
   ) noexcept {
     if(version v {}; v.from_string_noexcept(str))
       return v;
-    return std::nullopt;
+    return nullopt;
   }
 
   [[nodiscard]] ROLLY_SEMVER_CONSTEXPR version from_string(std::string_view str) {
@@ -693,7 +693,7 @@ namespace rolly {
           advance_token(range_token_type::dot);
           auto const patch = parse_number();
           prerelease prerelease = prerelease::none;
-          std::optional<std::uint16_t> prerelease_number = std::nullopt;
+          optional<std::uint16_t> prerelease_number = nullopt;
 
           if(current_token.type == range_token_type::hyphen) {
             advance_token(range_token_type::hyphen);

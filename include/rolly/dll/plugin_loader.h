@@ -141,7 +141,7 @@ namespace rolly::dll {
      * @return Reference to the retrieved interface or none when no such interface is loaded.
      */
     template <typename T>
-    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_interface_by_type() const {
+    [[nodiscard]] optional<std::reference_wrapper<T>> query_interface_by_type() const {
       for(auto const& p : this->plugins())
         try {
           return std::ref(*dynamic_cast<T*>(p.get()));
@@ -157,7 +157,7 @@ namespace rolly::dll {
      * @return Reference to the retrieved interface or none when no such interface is loaded.
      */
     template <typename T>
-    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_interface(
+    [[nodiscard]] optional<std::reference_wrapper<T>> query_interface(
       std::string_view interface_name
     ) const {
       return this->query_by<T>([&interface_name](plugin const& p) {
@@ -172,12 +172,12 @@ namespace rolly::dll {
      * @return Reference to the retrieved interface or none when no such interface is loaded.
      */
     template <typename T>
-    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_interface(guid const& uuid) const {
+    [[nodiscard]] optional<std::reference_wrapper<T>> query_interface(guid const& uuid) const {
       return this->query_by<T>([&uuid](plugin const& p) { return p.uuid() == uuid; });
     }
 
     template <typename T>
-    [[nodiscard]] std::optional<std::reference_wrapper<T>> query_by(
+    [[nodiscard]] optional<std::reference_wrapper<T>> query_by(
       std::function<bool(plugin const&)> const& predicate
     ) const {
       auto* p = this->query_raw(predicate);

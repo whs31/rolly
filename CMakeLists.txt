@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.1.37
+  VERSION 2.1.38
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -23,6 +23,9 @@ endif ()
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+include(CheckCCompilerFlag)
+check_c_compiler_flag(-Wdeprecated-declarations ROLLY_CXX_FLAG_DEPRECATED_DECLARATIONS)
 
 if (ROLLY_COMPAT)
   set(ROLLY_CXX_STANDARD 17)
@@ -113,6 +116,11 @@ if (ROLLY_COMPAT)
   target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_COMPAT=1)
 endif ()
 
+if(ROLLY_CXX_FLAG_DEPRECATED_DECLARATIONS)
+  message(STATUS "[${PROJECT_FULL_NAME}] adding compiler flag: -Wdeprecated-declarations")
+  target_compile_options(${PROJECT_NAME} PRIVATE -Wdeprecated-declarations)
+endif()
+
 if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug)
 endif ()
@@ -128,7 +136,6 @@ if (ROLLY_TESTS)
   enable_testing()
   add_subdirectory(tests)
   add_subdirectory(bin)
-  add_subdirectory(examples)
 endif ()
 
 # -- installation --

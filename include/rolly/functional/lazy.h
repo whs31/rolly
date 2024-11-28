@@ -2,10 +2,11 @@
 
 #include <utility>
 #include <type_traits>
-#include <optional>
 #include <functional>
 #include "../concepts/standard_copyable_and_movable.h"
 #include "../traits/noncopyable.h"
+#include "../types/optional.h"
+#include "../type_traits.h"
 
 namespace rolly {
 #ifndef DOXYGEN_GENERATING_OUTPUT
@@ -62,7 +63,7 @@ namespace rolly {
           this->value_ = std::invoke(this->f_);
       }
 
-      mutable std::optional<result_type> value_;
+      mutable optional<result_type> value_;
       mutable F f_;
     };
   }  // namespace detail
@@ -75,6 +76,6 @@ namespace rolly {
    */
   template <typename F>
   [[nodiscard]] auto lazy(F&& f) {
-    return detail::lazy<std::remove_cvref_t<F>>(std::forward<F>(f));
+    return detail::lazy<remove_cvref_t<F>>(std::forward<F>(f));
   }
 }  // namespace rolly
