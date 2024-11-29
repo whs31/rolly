@@ -3,13 +3,13 @@
 #include <list>
 #include "formatters.h"
 #include "literals.h"
+#include "../types/optional.h"
 
 #if defined(ROLLY_QT_GUI) || defined(ROLLY_DOC)
 #  include <algorithm>
 #  include <stdexcept>
 #  include <string>
 #  include <string_view>
-#  include <optional>
 #  include <qobject.h>
 #  include <qqml.h>
 #  include <qqmlengine.h>
@@ -70,7 +70,7 @@ namespace rolly::qt::qml {
 
     template <___concept___(std::derived_from<::QObject>)
                 T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
-    module& component(optional<std::string_view> name = std::nullopt) {
+    module& component(optional<std::string_view> name = nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
@@ -87,7 +87,7 @@ namespace rolly::qt::qml {
     }
 
     template <___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v<T>)>
-    module& singleton(T* instance, optional<std::string_view> name = std::nullopt) {
+    module& singleton(T* instance, optional<std::string_view> name = nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
@@ -105,7 +105,7 @@ namespace rolly::qt::qml {
     }
 
     template <___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v<T>)>
-    module& singleton(optional<std::string_view> name = std::nullopt) {
+    module& singleton(optional<std::string_view> name = nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
@@ -125,7 +125,7 @@ namespace rolly::qt::qml {
       return *this;
     }
 
-    module& file(std::string_view url, optional<std::string_view> name = std::nullopt) {
+    module& file(std::string_view url, optional<std::string_view> name = nullopt) {
       auto const component_name = module::demangle_file_url(url, name);
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
@@ -145,8 +145,8 @@ namespace rolly::qt::qml {
 
     template <___concept___(concepts::qgadget) T ___sfinae_requirement___(is_qgadget_v<T>)>
     module& uncreatable(
-      optional<std::string_view> name = std::nullopt,
-      optional<std::string_view> reason = std::nullopt
+      optional<std::string_view> name = nullopt,
+      optional<std::string_view> reason = nullopt
     ) {
       auto const component_name = module::demangle_class_name<T>(name);
       auto const reason_string = [&]() -> std::string {
