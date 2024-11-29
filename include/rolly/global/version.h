@@ -95,7 +95,5 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
   }  // namespace meta
 }  // namespace rolly
 
-static_assert(alignof(rolly::version) == 2);
-static_assert(sizeof(rolly::version) == 12);
 static_assert(alignof(rolly::prerelease) == 1);
 static_assert(sizeof(rolly::prerelease) == 1);

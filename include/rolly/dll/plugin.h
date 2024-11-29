@@ -233,7 +233,9 @@ namespace rolly::dll {
    * @endcode
    * @see rolly::dll::plugin_loader
    */
-  class plugin {
+  class [[deprecated(
+    "Plugin related functions and classes are deprecated. Write your own plugin system"
+  )]] plugin {
    public:
     plugin() = default;
     plugin(plugin const&) = default;

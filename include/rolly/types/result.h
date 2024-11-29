@@ -6,9 +6,9 @@
 #include <type_traits>
 #include <utility>
 #include <variant>
-#include <optional>
 #include <fmt/format.h>
 #include "../contracts.h"
+#include "optional.h"
 
 // NOLINTBEGIN(*-avoid-c-arrays, *-pro-type-union-access)
 
@@ -2465,14 +2465,14 @@ namespace rolly {
       detail::enable_if_t<! std::is_void<exp_t<Exp>>::value>* = nullptr,
       class Ret = decltype(detail::invoke(std::declval<F>(), std::declval<Exp>().error())),
       detail::enable_if_t<std::is_void<Ret>::value>* = nullptr>
-    auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, monostate> {
-      using result = expected<exp_t<Exp>, monostate>;
+    auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, std::monostate> {
+      using result = expected<exp_t<Exp>, std::monostate>;
       if(exp.has_value()) {
         return result(*std::forward<Exp>(exp));
       }
 
       detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error());
-      return result(unexpect, monostate {});
+      return result(unexpect, std::monostate {});
     }
 
     template <
@@ -2495,14 +2495,14 @@ namespace rolly {
       detail::enable_if_t<std::is_void<exp_t<Exp>>::value>* = nullptr,
       class Ret = decltype(detail::invoke(std::declval<F>(), std::declval<Exp>().error())),
       detail::enable_if_t<std::is_void<Ret>::value>* = nullptr>
-    auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, monostate> {
-      using result = expected<exp_t<Exp>, monostate>;
+    auto map_error_impl(Exp&& exp, F&& f) -> expected<exp_t<Exp>, std::monostate> {
+      using result = expected<exp_t<Exp>, std::monostate>;
       if(exp.has_value()) {
         return result();
       }
 
       detail::invoke(std::forward<F>(f), std::forward<Exp>(exp).error());
-      return result(unexpect, monostate {});
+      return result(unexpect, std::monostate {});
     }
 #  endif
 
@@ -2677,35 +2677,6 @@ namespace rolly {
     }
 
     [[nodiscard]] inline result<> ok() { return {}; }
-
-    /**
-     * @brief Wrap a value in an std::optional.
-     *
-     * @details
-     * This function is a helper for creating an std::optional from a value.
-     * It is mostly useful when working with generic code that needs to work with
-     * both expected and optional types.
-     *
-     * @see ok
-     * @see none
-     */
-    template <typename T>
-    [[nodiscard]] std::optional<std::decay_t<T>> some(T&& t) {
-      return std::optional<std::decay_t<T>>(std::forward<T>(t));
-    }
-
-    /**
-     * @brief Wrap an empty value in an std::optional.
-     *
-     * @details
-     * This function is a helper for creating an std::optional from a value.
-     * It is mostly useful when working with generic code that needs to work with
-     * both expected and optional types.
-     *
-     * @see ok
-     * @see some
-     */
-    inline constexpr auto none = std::nullopt;
   }  // namespace types
 }  // namespace rolly
 

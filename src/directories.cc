@@ -1,4 +1,3 @@
-#include <optional>
 #include <rolly/directories.h>
 
 #include <stdexcept>
@@ -59,8 +58,8 @@ namespace rolly {
     this->data_dir_ = appdata / p / "data";
     this->data_local_dir_ = local_appdata / p / "data";
     this->preference_dir_ = this->config_dir_;  // NOLINT
-    this->runtime_dir_ = std::nullopt;          // NOLINT
-    this->state_dir_ = std::nullopt;            // NOLINT
+    this->runtime_dir_ = nullopt;               // NOLINT
+    this->state_dir_ = nullopt;                 // NOLINT
 #elif defined(ROLLY_OS_LINUX)
     auto const p = path(::trim(app, ""));
     auto const home = oslayer::___os___::home_dir();
@@ -75,7 +74,7 @@ namespace rolly {
     try {
       this->runtime_dir_ = oslayer::___os___::xdg_runtime_dir();
     } catch(std::exception const&) {
-      this->runtime_dir_ = std::nullopt;
+      this->runtime_dir_ = nullopt;
     }
     this->state_dir_ = home / ".local" / "state" / p;
 #elif defined(ROLLY_OS_DARWIN)
@@ -101,8 +100,8 @@ namespace rolly {
     this->data_dir_ = this->config_dir_;          // NOLINT
     this->data_local_dir_ = this->config_dir_;    // NOLINT
     this->preference_dir_ = this->config_dir_;    // NOLINT
-    this->runtime_dir_ = std::nullopt;            // NOLINT
-    this->state_dir_ = std::nullopt;              // NOLINT
+    this->runtime_dir_ = nullopt;                 // NOLINT
+    this->state_dir_ = nullopt;                   // NOLINT
 #endif                                          // OS
   }
 
@@ -163,7 +162,7 @@ namespace rolly {
 
   path const& application_dirs::preference_dir() const { return this->preference_dir_; }
 
-  std::optional<path> const& application_dirs::runtime_dir() const { return this->runtime_dir_; }
+  optional<path> const& application_dirs::runtime_dir() const { return this->runtime_dir_; }
 
-  std::optional<path> const& application_dirs::state_dir() const { return this->state_dir_; }
+  optional<path> const& application_dirs::state_dir() const { return this->state_dir_; }
 }  // namespace rolly

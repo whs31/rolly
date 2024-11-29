@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.1.34
+  VERSION 2.1.39
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly" # todo
   LANGUAGES C CXX
@@ -24,6 +24,9 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
+include(CheckCCompilerFlag)
+check_c_compiler_flag(-Wdeprecated-declarations ROLLY_CXX_FLAG_DEPRECATED_DECLARATIONS)
+
 if (ROLLY_COMPAT)
   set(ROLLY_CXX_STANDARD 17)
 else ()
@@ -32,7 +35,7 @@ endif ()
 
 message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 
-# -- dependencies --
+# <-- dependencies -->
 find_package(fmt REQUIRED)
 find_package(spdlog REQUIRED)
 if (ROLLY_QT)
@@ -68,6 +71,7 @@ target_sources(${PROJECT_NAME}
 
   ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/shared_library.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/plugin_loader.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/dl.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dll.cc
@@ -92,6 +96,12 @@ if (ROLLY_QT)
     Qt::Qml
   )
 endif ()
+
+# <-- msvc-specific options -->
+if (MSVC)
+  target_include_directories(${PROJECT_NAME} PUBLIC ${FMT_INCLUDE_DIR} ${SPDLOG_INCLUDE_DIR})
+endif ()
+
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>$<INSTALL_INTERFACE:include> PRIVATE src)
 
 if (BUILD_SHARED_LIBS)
@@ -105,6 +115,11 @@ endif ()
 if (ROLLY_COMPAT)
   target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_COMPAT=1)
 endif ()
+
+if(ROLLY_CXX_FLAG_DEPRECATED_DECLARATIONS)
+  message(STATUS "[${PROJECT_FULL_NAME}] adding compiler flag: -Wdeprecated-declarations")
+  target_compile_options(${PROJECT_NAME} PRIVATE -Wdeprecated-declarations)
+endif()
 
 if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug)
@@ -121,7 +136,6 @@ if (ROLLY_TESTS)
   enable_testing()
   add_subdirectory(tests)
   add_subdirectory(bin)
-  add_subdirectory(examples)
 endif ()
 
 # -- installation --

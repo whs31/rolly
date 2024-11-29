@@ -70,7 +70,7 @@ namespace rolly::qt::qml {
 
     template <___concept___(std::derived_from<::QObject>)
                 T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
-    module& component(std::optional<std::string_view> name = std::nullopt) {
+    module& component(optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
@@ -87,7 +87,7 @@ namespace rolly::qt::qml {
     }
 
     template <___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v<T>)>
-    module& singleton(T* instance, std::optional<std::string_view> name = std::nullopt) {
+    module& singleton(T* instance, optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
@@ -105,7 +105,7 @@ namespace rolly::qt::qml {
     }
 
     template <___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v<T>)>
-    module& singleton(std::optional<std::string_view> name = std::nullopt) {
+    module& singleton(optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
@@ -125,7 +125,7 @@ namespace rolly::qt::qml {
       return *this;
     }
 
-    module& file(std::string_view url, std::optional<std::string_view> name = std::nullopt) {
+    module& file(std::string_view url, optional<std::string_view> name = std::nullopt) {
       auto const component_name = module::demangle_file_url(url, name);
       if constexpr(implicit_verbosity == verbosity::verbose)
         fmt::println(
@@ -145,8 +145,8 @@ namespace rolly::qt::qml {
 
     template <___concept___(concepts::qgadget) T ___sfinae_requirement___(is_qgadget_v<T>)>
     module& uncreatable(
-      std::optional<std::string_view> name = std::nullopt,
-      std::optional<std::string_view> reason = std::nullopt
+      optional<std::string_view> name = std::nullopt,
+      optional<std::string_view> reason = std::nullopt
     ) {
       auto const component_name = module::demangle_class_name<T>(name);
       auto const reason_string = [&]() -> std::string {
@@ -187,7 +187,7 @@ namespace rolly::qt::qml {
 
    private:
     template <___concept___(concepts::qgadget) T ___sfinae_requirement___(is_qgadget_v<T>)>
-    [[nodiscard]] static std::string demangle_class_name(std::optional<std::string_view> name) {
+    [[nodiscard]] static std::string demangle_class_name(optional<std::string_view> name) {
       if(name)
         return std::string(*name);
       auto const meta_name =
@@ -196,7 +196,7 @@ namespace rolly::qt::qml {
     }
 
     [[nodiscard]] static std::string
-      demangle_file_url(std::string_view url, std::optional<std::string_view> name) {
+      demangle_file_url(std::string_view url, optional<std::string_view> name) {
       if(name)
         return std::string(*name);
       try {

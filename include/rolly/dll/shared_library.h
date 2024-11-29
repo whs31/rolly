@@ -2,8 +2,9 @@
 
 #include <string>
 #include "../traits/noncopyable.h"
-#include "plugin.h"
 #include "../types/result.h"
+#include "../types/optional.h"
+#include "plugin.h"
 #ifndef Q_MOC_RUN
 #  include <filesystem>
 #endif
@@ -13,7 +14,8 @@ namespace rolly::dll {
 #ifndef DOXYGEN_GENERATING_OUTPUT
     ___rolly_api___
 #endif
-      shared_library : noncopyable {
+    [[deprecated("Plugin related functions and classes are deprecated. Write your own plugin system"
+    )]] shared_library : noncopyable {
 
    public:
     shared_library() = default;

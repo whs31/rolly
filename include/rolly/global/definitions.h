@@ -140,4 +140,9 @@
 #if __has_include(<spdlog/spdlog.h>)
 #  define ROLLY_SPDLOG 1
 #endif    // __has_include(<spdlog/spdlog.h>)
-          // NOLINTEND(*-macro-usage)
+
+#if defined(__GXX_RTTI) || defined(__cpp_rtti) || defined(_CPPRTTI)
+#  define ROLLY_RTTI 1
+#endif
+
+// NOLINTEND(*-macro-usage)

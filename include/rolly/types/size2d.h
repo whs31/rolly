@@ -5,7 +5,7 @@
 #include <string>
 #include <array>
 #include <tuple>
-#include <bits/stl_algo.h>
+#include <algorithm>
 
 #if defined(ROLLY_QT_GUI)
 #  include <qsize.h>
