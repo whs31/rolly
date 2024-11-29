@@ -592,11 +592,11 @@
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1a4d739cc5d335052eb9f5b2ca559b81d1" kind="variable"><name>name_</name></member>
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1a29b70db64168b74a789f3990e273c3d0" kind="variable"><name>version_</name></member>
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1a6e561fea65626a84736a8933096d18ef" kind="function"><name>module</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a1f8d4c59f9a1640890482e844b0a8e0e" kind="function"><name>component</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a425691f72bda43ecd3e4a9f38e89b49e" kind="function"><name>singleton</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a9df71904b9d6009dedaf888ccd5908b9" kind="function"><name>singleton</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1ac9065f0e0de2669e96cb78c15be92354" kind="function"><name>file</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1ae94c90f5c50d5eb38c541f5fbcdd5e5b" kind="function"><name>uncreatable</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a423ee9764db43a533b2dfd48219b2f46" kind="function"><name>component</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a3c5b5b3574c56b29470e23774be10da3" kind="function"><name>singleton</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1aee567b2c77450a9edef8abbd3d5b1be2" kind="function"><name>singleton</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a8578814f28c9ea61fbd2ceb4797a193d" kind="function"><name>file</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1ae40188831d44fd437e6f81672f72f250" kind="function"><name>uncreatable</name></member>
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1ad6cd0b9a9751c5608a2182299d9da58a" kind="function"><name>push</name></member>
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1ae6070434ac37e030975ed0188390e71b" kind="function"><name>push_all</name></member>
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1aef32f3f36b7526d37cb0bbc7f864d157" kind="function"><name>demangle_class_name</name></member>

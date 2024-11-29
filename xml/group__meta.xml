@@ -73,7 +73,7 @@
       </memberdef>
       <memberdef kind="define" id="group__meta_1ga637777bfc47867a8af6831a84ba402e8" prot="public" static="no">
         <name>ROLLY_VERSION_PATCH</name>
-        <initializer>39</initializer>
+        <initializer>40</initializer>
         <briefdescription>
 <para>Patch version number of this library build. </para>
         </briefdescription>

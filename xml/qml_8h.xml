@@ -5,11 +5,11 @@
     <includes local="no">list</includes>
     <includes refid="formatters_8h" local="yes">formatters.h</includes>
     <includes refid="literals_8h" local="yes">literals.h</includes>
+    <includes refid="optional_8h" local="yes">../types/optional.h</includes>
     <includes local="no">algorithm</includes>
     <includes local="no">stdexcept</includes>
     <includes local="no">string</includes>
     <includes local="no">string_view</includes>
-    <includes local="no">optional</includes>
     <includes local="no">qobject.h</includes>
     <includes local="no">qqml.h</includes>
     <includes local="no">qqmlengine.h</includes>
@@ -21,69 +21,69 @@
       <node id="2">
         <label>list</label>
       </node>
-      <node id="42">
+      <node id="41">
         <label>format/ostream_formatter.h</label>
         <link refid="ostream__formatter_8h_source"/>
-        <childnode refid="16" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="36">
+      <node id="15">
         <label>functional</label>
       </node>
       <node id="10">
         <label>fmt/format.h</label>
       </node>
-      <node id="32">
+      <node id="37">
         <label>limits</label>
       </node>
-      <node id="20">
+      <node id="26">
         <label>qqmlengine.h</label>
       </node>
-      <node id="25">
+      <node id="31">
         <label>cstdint</label>
       </node>
-      <node id="27">
+      <node id="32">
         <label>../global/version.h</label>
         <link refid="version_8h_source"/>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
       </node>
-      <node id="30">
+      <node id="35">
         <label>charconv</label>
       </node>
-      <node id="39">
+      <node id="19">
         <label>variant</label>
       </node>
       <node id="7">
         <label>qstring.h</label>
       </node>
-      <node id="18">
+      <node id="24">
         <label>qobject.h</label>
       </node>
-      <node id="14">
+      <node id="21">
         <label>stdexcept</label>
       </node>
-      <node id="44">
+      <node id="43">
         <label>./concepts.h</label>
         <link refid="qt_2concepts_8h_source"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="22">
         <label>string</label>
       </node>
       <node id="8">
@@ -93,72 +93,72 @@
         <label>export.h</label>
         <link refid="export_8h_source"/>
       </node>
-      <node id="35">
+      <node id="14">
         <label>exception</label>
       </node>
-      <node id="34">
+      <node id="13">
         <label>../types/optional.h</label>
         <link refid="optional_8h_source"/>
-        <childnode refid="35" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>platform_definitions.h</label>
         <link refid="platform__definitions_8h_source"/>
       </node>
-      <node id="28">
+      <node id="33">
         <label>version_definitions.h</label>
         <link refid="version__definitions_8h_source"/>
       </node>
-      <node id="19">
+      <node id="25">
         <label>qqml.h</label>
       </node>
       <node id="9">
         <label>fmt/core.h</label>
       </node>
-      <node id="33">
+      <node id="38">
         <label>char_utils.h</label>
         <link refid="char__utils_8h_source"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="29">
+      <node id="34">
         <label>semver.h</label>
         <link refid="semver_8h_source"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
         <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
         </childnode>
         <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="23">
         <label>string_view</label>
       </node>
       <node id="4">
@@ -172,22 +172,19 @@
       <node id="12">
         <label>qurl.h</label>
       </node>
-      <node id="22">
+      <node id="28">
         <label>./registrable.h</label>
         <link refid="registrable_8h_source"/>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
-      </node>
-      <node id="17">
-        <label>optional</label>
       </node>
       <node id="1">
         <label>qml.h</label>
@@ -200,34 +197,34 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
         <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
       </node>
-      <node id="37">
+      <node id="16">
         <label>new</label>
       </node>
-      <node id="38">
+      <node id="18">
         <label>utility</label>
       </node>
-      <node id="43">
+      <node id="42">
         <label>sstream</label>
       </node>
       <node id="11">
@@ -240,30 +237,30 @@
         <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="31">
+      <node id="36">
         <label>iosfwd</label>
       </node>
-      <node id="24">
+      <node id="30">
         <label>cstddef</label>
       </node>
-      <node id="41">
+      <node id="40">
         <label>source_location.h</label>
         <link refid="source__location_8h_source"/>
-        <childnode refid="42" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
       </node>
-      <node id="40">
+      <node id="39">
         <label>../contracts.h</label>
         <link refid="contracts_8h_source"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
         <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
@@ -271,26 +268,26 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="17">
         <label>type_traits</label>
       </node>
-      <node id="13">
+      <node id="20">
         <label>algorithm</label>
       </node>
-      <node id="21">
+      <node id="27">
         <label>fmt/color.h</label>
       </node>
-      <node id="23">
+      <node id="29">
         <label>../types/stdint.h</label>
         <link refid="stdint_8h_source"/>
-        <childnode refid="24" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="3">
