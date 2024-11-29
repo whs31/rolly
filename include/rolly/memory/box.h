@@ -203,7 +203,7 @@ namespace rolly {
       contracts::invariant(this->ptr_ != nullptr, "use after consume");
       try {
         auto& r = dynamic_cast<U&>(this->ref_mut());
-        return make_optional(std::ref(r));
+        return rolly::make_optional(std::ref(r));
       } catch(std::bad_cast const&) {  // NOLINT(*-empty-catch)
         return nullopt;
       } catch(...) {                   // NOLINT(*-empty-catch)
