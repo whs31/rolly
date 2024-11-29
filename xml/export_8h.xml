@@ -7,6 +7,7 @@
     <includedby refid="rtti_8h" local="yes">rtti.h</includedby>
     <includedby refid="contracts_8h" local="yes">contracts.h</includedby>
     <includedby refid="directories_8h" local="yes">directories.h</includedby>
+    <includedby refid="dl_8h" local="yes">dl.h</includedby>
     <includedby refid="guid_8h" local="yes">guid.h</includedby>
     <invincdepgraph>
       <node id="34">
@@ -37,7 +38,7 @@
         <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="56">
+      <node id="58">
         <label>guid.h</label>
         <link refid="guid_8h_source"/>
         <childnode refid="9" relation="include">
@@ -69,7 +70,7 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="51">
+      <node id="52">
         <label>log.h</label>
         <link refid="log_8h_source"/>
         <childnode refid="20" relation="include">
@@ -85,7 +86,7 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="52">
+      <node id="53">
         <label>concepts.h</label>
         <link refid="qt_2concepts_8h_source"/>
         <childnode refid="46" relation="include">
@@ -132,7 +133,9 @@
         </childnode>
         <childnode refid="50" relation="include">
         </childnode>
-        <childnode refid="56" relation="include">
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
         </childnode>
       </node>
       <node id="41">
@@ -147,6 +150,12 @@
         <label>utility.h</label>
         <link refid="utility_8h_source"/>
         <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>dl.h</label>
+        <link refid="dl_8h_source"/>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="35">
@@ -221,6 +230,8 @@
         <childnode refid="54" relation="include">
         </childnode>
         <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
         </childnode>
       </node>
       <node id="16">
@@ -331,7 +342,7 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="55">
+      <node id="56">
         <label>literals.h</label>
         <link refid="literals_8h_source"/>
         <childnode refid="47" relation="include">
@@ -339,7 +350,7 @@
         <childnode refid="48" relation="include">
         </childnode>
       </node>
-      <node id="53">
+      <node id="54">
         <label>format.h</label>
         <link refid="qt_2format_8h_source"/>
         <childnode refid="48" relation="include">
@@ -385,6 +396,12 @@
         <label>threading.h</label>
         <link refid="threading_8h_source"/>
         <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>signals.h</label>
+        <link refid="signals_8h_source"/>
+        <childnode refid="38" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -477,7 +494,7 @@
         <label>rolly.h</label>
         <link refid="rolly_8h_source"/>
       </node>
-      <node id="54">
+      <node id="55">
         <label>formatters.h</label>
         <link refid="formatters_8h_source"/>
         <childnode refid="47" relation="include">

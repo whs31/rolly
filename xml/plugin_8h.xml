@@ -11,6 +11,9 @@
     <includedby refid="shared__library_8h" local="yes">shared_library.h</includedby>
     <includedby refid="dll_8h" local="yes">dll.h</includedby>
     <incdepgraph>
+      <node id="24">
+        <label>functional</label>
+      </node>
       <node id="10">
         <label>fmt/format.h</label>
       </node>
@@ -32,6 +35,9 @@
       </node>
       <node id="18">
         <label>charconv</label>
+      </node>
+      <node id="26">
+        <label>variant</label>
       </node>
       <node id="4">
         <label>../types/guid.h</label>
@@ -55,7 +61,7 @@
         <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="20">
         <label>stdexcept</label>
       </node>
       <node id="3">
@@ -65,7 +71,26 @@
         <label>../global/export.h</label>
         <link refid="export_8h_source"/>
       </node>
-      <node id="27">
+      <node id="23">
+        <label>exception</label>
+      </node>
+      <node id="22">
+        <label>../types/optional.h</label>
+        <link refid="optional_8h_source"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
         <label>platform_definitions.h</label>
         <link refid="platform__definitions_8h_source"/>
       </node>
@@ -73,13 +98,13 @@
         <label>version_definitions.h</label>
         <link refid="version__definitions_8h_source"/>
       </node>
-      <node id="23">
+      <node id="27">
         <label>detail/macro.h</label>
         <link refid="macro_8h_source"/>
-        <childnode refid="24" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="21">
         <label>char_utils.h</label>
         <link refid="char__utils_8h_source"/>
         <childnode refid="3" relation="include">
@@ -109,24 +134,24 @@
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
         <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="9">
         <label>string_view</label>
       </node>
-      <node id="26">
+      <node id="30">
         <label>global/definitions.h</label>
         <link refid="definitions_8h_source"/>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="20">
-        <label>optional</label>
+      <node id="25">
+        <label>new</label>
       </node>
       <node id="8">
         <label>utility</label>
@@ -145,28 +170,28 @@
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
       </node>
       <node id="7">
         <label>iosfwd</label>
       </node>
-      <node id="24">
+      <node id="28">
         <label>../../global.h</label>
         <link refid="global_8h"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
       </node>
       <node id="5">
         <label>cstddef</label>
       </node>
-      <node id="25">
+      <node id="29">
         <label>global/charconv.h</label>
         <link refid="charconv_8h_source"/>
         <childnode refid="18" relation="include">

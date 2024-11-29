@@ -11,19 +11,19 @@
       <node id="14">
         <label>list</label>
       </node>
-      <node id="39">
+      <node id="44">
         <label>format/ostream_formatter.h</label>
         <link refid="ostream__formatter_8h_source"/>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
         <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="37">
+      <node id="38">
         <label>functional</label>
       </node>
       <node id="10">
@@ -51,6 +51,9 @@
       <node id="32">
         <label>charconv</label>
       </node>
+      <node id="41">
+        <label>variant</label>
+      </node>
       <node id="6">
         <label>qstring.h</label>
       </node>
@@ -60,7 +63,7 @@
       <node id="16">
         <label>stdexcept</label>
       </node>
-      <node id="41">
+      <node id="46">
         <label>./concepts.h</label>
         <link refid="qt_2concepts_8h_source"/>
         <childnode refid="3" relation="include">
@@ -79,6 +82,25 @@
       <node id="4">
         <label>export.h</label>
         <link refid="export_8h_source"/>
+      </node>
+      <node id="37">
+        <label>exception</label>
+      </node>
+      <node id="36">
+        <label>../types/optional.h</label>
+        <link refid="optional_8h_source"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
       </node>
       <node id="5">
         <label>platform_definitions.h</label>
@@ -131,13 +153,13 @@
         </childnode>
         <childnode refid="34" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
         <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
       <node id="18">
@@ -163,9 +185,9 @@
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="46" relation="include">
         </childnode>
       </node>
       <node id="19">
@@ -203,7 +225,13 @@
         <childnode refid="24" relation="include">
         </childnode>
       </node>
+      <node id="39">
+        <label>new</label>
+      </node>
       <node id="40">
+        <label>utility</label>
+      </node>
+      <node id="45">
         <label>sstream</label>
       </node>
       <node id="11">
@@ -232,24 +260,24 @@
       <node id="26">
         <label>cstddef</label>
       </node>
-      <node id="38">
+      <node id="43">
         <label>source_location.h</label>
         <link refid="source__location_8h_source"/>
-        <childnode refid="39" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="36">
+      <node id="42">
         <label>../contracts.h</label>
         <link refid="contracts_8h_source"/>
         <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
@@ -257,7 +285,7 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
       </node>
       <node id="28">

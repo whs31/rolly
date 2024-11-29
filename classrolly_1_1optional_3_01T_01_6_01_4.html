@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>rolly::optional&lt;T&amp;&gt; class | Rolly Radar core library</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Handbook</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;class T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>optional&lt;T&amp;&gt; <span class="m-thin">class</span>
+        </h1>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>Specialization for when <code>T</code> is a reference. <code>optional&lt;T&amp;&gt;</code> acts similarly to a <code>T*</code>, but provides more operations and shows intent more clearly.</p>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a39ccab77232f593b549808ed33e586d2">
+              using <a href="#a39ccab77232f593b549808ed33e586d2" class="m-doc-self">value_type</a> = T&amp;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a3df66b23e958382bf9cfe8947b8bb2e6">
+              <span class="m-dox-wrap-bumper"><a href="#a3df66b23e958382bf9cfe8947b8bb2e6" class="m-dox-self" name="a3df66b23e958382bf9cfe8947b8bb2e6">optional</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs an optional that does not contain a value.</dd>
+            <dt id="af94e1e8370f4ccce1e2178e73e73108d">
+              <span class="m-dox-wrap-bumper"><a href="#af94e1e8370f4ccce1e2178e73e73108d" class="m-dox-self" name="af94e1e8370f4ccce1e2178e73e73108d">optional</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a61926a40c1250da2f07fe7a37c606943">
+              <div class="m-doc-template">template&lt;class U = T, detail::enable_if_t&lt;! detail::is_optional&lt;detail::decay_t&lt;U&gt;&gt;::<a href="classrolly_1_1optional_3_01T_01_6_01_4.html#a4cef207fdf17b420d2d0874ce712ade3" class="m-doc">value</a>&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper"><a href="#a61926a40c1250da2f07fe7a37c606943" class="m-dox-self" name="a61926a40c1250da2f07fe7a37c606943">optional</a>(</span><span class="m-dox-wrap">U&amp;&amp; u) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs the stored value with <code>u</code>.</dd>
+            <dt id="a3c4d4c0419f12cddaca2418bc2260d7d">
+              <div class="m-doc-template">template&lt;class U&gt;</div>
+              <span class="m-dox-wrap-bumper"><a href="#a3c4d4c0419f12cddaca2418bc2260d7d" class="m-dox-self" name="a3c4d4c0419f12cddaca2418bc2260d7d">optional</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ade59530744da512b5db911ad67ce654a">
+              <span class="m-dox-wrap-bumper"><a href="#ade59530744da512b5db911ad67ce654a" class="m-dox-self" name="ade59530744da512b5db911ad67ce654a">~optional</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd>No-op.</dd>
+            <dt id="a7990d8e87d9eab2383f94c88c23a6488">
+              <span class="m-dox-wrap-bumper"><a href="#a7990d8e87d9eab2383f94c88c23a6488" class="m-dox-self" name="a7990d8e87d9eab2383f94c88c23a6488">operator bool</a>(</span><span class="m-dox-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a8e0758cd5aa728222538ce6dbbda3e66" class="m-dox">and_then</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) &amp; -&gt; TL_OPTIONAL_11_CONSTEXPR detail::invoke_result_t&lt;F, T&amp;&gt;</span>
+            </dt>
+            <dd></dd>
+            <dt id="a11c40dfeef92b62c6f88616c48a0a7b2">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a11c40dfeef92b62c6f88616c48a0a7b2" class="m-dox-self" name="a11c40dfeef92b62c6f88616c48a0a7b2">and_then</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) &amp;&amp; -&gt; TL_OPTIONAL_11_CONSTEXPR detail::invoke_result_t&lt;F, T&amp;&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5a54ddc726627b58b248d66d398561c0">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a5a54ddc726627b58b248d66d398561c0" class="m-dox-self" name="a5a54ddc726627b58b248d66d398561c0">and_then</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) const &amp; -&gt; detail::invoke_result_t&lt;F, T const &amp;&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae6b73d19fcfb1f2e2d89bb4cbb33249a">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ae6b73d19fcfb1f2e2d89bb4cbb33249a" class="m-dox-self" name="ae6b73d19fcfb1f2e2d89bb4cbb33249a">and_then</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) const &amp;&amp; -&gt; detail::invoke_result_t&lt;F, T const &amp;&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abe174e282f9736d9e539b492797d9d7e">
+              <div class="m-doc-template">template&lt;class F, detail::enable_if_ret_void&lt;F&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#abe174e282f9736d9e539b492797d9d7e" class="m-dox-self" name="abe174e282f9736d9e539b492797d9d7e">or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) &amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; TL_OPTIONAL_11_CONSTEXPR</span>
+            </dt>
+            <dd>Calls <code>f</code> if the optional is empty.</dd>
+            <dt id="abe174e282f9736d9e539b492797d9d7e">
+              <div class="m-doc-template">template&lt;class F, detail::disable_if_ret_void&lt;F&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#abe174e282f9736d9e539b492797d9d7e" class="m-dox-self" name="abe174e282f9736d9e539b492797d9d7e">or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) &amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; TL_OPTIONAL_11_CONSTEXPR</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1bdb07fd42a57e40efd4b8a12fccad75">
+              <div class="m-doc-template">template&lt;class F, detail::enable_if_ret_void&lt;F&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a1bdb07fd42a57e40efd4b8a12fccad75" class="m-dox-self" name="a1bdb07fd42a57e40efd4b8a12fccad75">or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) &amp;&amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa9e538d9fcdaedb8d067e4b41ee5703f">
+              <div class="m-doc-template">template&lt;class F, detail::disable_if_ret_void&lt;F&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aa9e538d9fcdaedb8d067e4b41ee5703f" class="m-dox-self" name="aa9e538d9fcdaedb8d067e4b41ee5703f">or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) &amp;&amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; TL_OPTIONAL_11_CONSTEXPR</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a87b8d34c2b2e67affad11297594229f1">
+              <div class="m-doc-template">template&lt;class F, detail::enable_if_ret_void&lt;F&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a87b8d34c2b2e67affad11297594229f1" class="m-dox-self" name="a87b8d34c2b2e67affad11297594229f1">or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) const &amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8e69d1fbc614e2efd3057f8591f08e0f">
+              <div class="m-doc-template">template&lt;class F, detail::disable_if_ret_void&lt;F&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a8e69d1fbc614e2efd3057f8591f08e0f" class="m-dox-self" name="a8e69d1fbc614e2efd3057f8591f08e0f">or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) const &amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; TL_OPTIONAL_11_CONSTEXPR</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a49497a7c8beee3262c0eba26b2cf3aa7">
+              <div class="m-doc-template">template&lt;class F, detail::enable_if_ret_void&lt;F&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a49497a7c8beee3262c0eba26b2cf3aa7" class="m-dox-self" name="a49497a7c8beee3262c0eba26b2cf3aa7">or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) const &amp;&amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a49497a7c8beee3262c0eba26b2cf3aa7">
+              <div class="m-doc-template">template&lt;class F, detail::disable_if_ret_void&lt;F&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a49497a7c8beee3262c0eba26b2cf3aa7" class="m-dox-self" name="a49497a7c8beee3262c0eba26b2cf3aa7">or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f) const &amp;&amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a707e7a79788137cb02a7175cb6eea34d">
+              <div class="m-doc-template">template&lt;class F, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a707e7a79788137cb02a7175cb6eea34d" class="m-dox-self" name="a707e7a79788137cb02a7175cb6eea34d">map_or</a>(</span><span class="m-dox-wrap">F&amp;&amp; f,
+              U&amp;&amp; u) &amp; -&gt; U</span>
+            </dt>
+            <dd>Maps the stored value with <code>f</code> if there is one, otherwise returns <code>u</code></dd>
+            <dt id="a70a442682b0d52b7904dcba448ab8c11">
+              <div class="m-doc-template">template&lt;class F, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a70a442682b0d52b7904dcba448ab8c11" class="m-dox-self" name="a70a442682b0d52b7904dcba448ab8c11">map_or</a>(</span><span class="m-dox-wrap">F&amp;&amp; f,
+              U&amp;&amp; u) &amp;&amp; -&gt; U</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3009dd1f894482812bc782a855ff3e01">
+              <div class="m-doc-template">template&lt;class F, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a3009dd1f894482812bc782a855ff3e01" class="m-dox-self" name="a3009dd1f894482812bc782a855ff3e01">map_or</a>(</span><span class="m-dox-wrap">F&amp;&amp; f,
+              U&amp;&amp; u) const &amp; -&gt; U</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a580f04de31229bfb2aedf52157947d5c">
+              <div class="m-doc-template">template&lt;class F, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a580f04de31229bfb2aedf52157947d5c" class="m-dox-self" name="a580f04de31229bfb2aedf52157947d5c">map_or</a>(</span><span class="m-dox-wrap">F&amp;&amp; f,
+              U&amp;&amp; u) const &amp;&amp; -&gt; U</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class F, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a14e5d060ddbbed0bc38f2248f099e664" class="m-dox">map_or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f,
+              U&amp;&amp; u) &amp; -&gt; detail::invoke_result_t&lt;U&gt;</span>
+            </dt>
+            <dd></dd>
+            <dt id="ad6069cace64a1fee3e54524ae6791cdf">
+              <div class="m-doc-template">template&lt;class F, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ad6069cace64a1fee3e54524ae6791cdf" class="m-dox-self" name="ad6069cace64a1fee3e54524ae6791cdf">map_or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f,
+              U&amp;&amp; u) &amp;&amp; -&gt; detail::invoke_result_t&lt;U&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6698843f817a0de1c84035bea1bd9033">
+              <div class="m-doc-template">template&lt;class F, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a6698843f817a0de1c84035bea1bd9033" class="m-dox-self" name="a6698843f817a0de1c84035bea1bd9033">map_or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f,
+              U&amp;&amp; u) const &amp; -&gt; detail::invoke_result_t&lt;U&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa5e7d838f719add6d1553cbb12a73d91">
+              <div class="m-doc-template">template&lt;class F, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aa5e7d838f719add6d1553cbb12a73d91" class="m-dox-self" name="aa5e7d838f719add6d1553cbb12a73d91">map_or_else</a>(</span><span class="m-dox-wrap">F&amp;&amp; f,
+              U&amp;&amp; u) const &amp;&amp; -&gt; detail::invoke_result_t&lt;U&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5e8d520b9233bf52ed72127d4afbda32">
+              <div class="m-doc-template">template&lt;class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a5e8d520b9233bf52ed72127d4afbda32" class="m-dox-self" name="a5e8d520b9233bf52ed72127d4afbda32">conjunction</a>(</span><span class="m-dox-wrap">U&amp;&amp; u) const -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;typename <a href="http://en.cppreference.com/w/cpp/types/decay.html" class="m-doc-external">std::<wbr />decay</a>&lt;U&gt;::type&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>u</code> if <code>*this</code> has a value, otherwise an empty optional.</dd>
+            <dt id="a56d9e9e39dc0131e687ae77dc2e44ba1">
+              <span class="m-dox-wrap-bumper">auto <a href="#a56d9e9e39dc0131e687ae77dc2e44ba1" class="m-dox-self" name="a56d9e9e39dc0131e687ae77dc2e44ba1">disjunction</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a> const&amp; rhs) &amp; -&gt; TL_OPTIONAL_11_CONSTEXPR <a href="classrolly_1_1optional.html" class="m-doc">optional</a></span>
+            </dt>
+            <dd>Returns <code>rhs</code> if <code>*this</code> is empty, otherwise the current value.</dd>
+            <dt id="a62b4c17f4f935877558dbd8a87fad1bd">
+              <span class="m-dox-wrap-bumper">auto <a href="#a62b4c17f4f935877558dbd8a87fad1bd" class="m-dox-self" name="a62b4c17f4f935877558dbd8a87fad1bd">disjunction</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a> const&amp; rhs) const &amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad5a93e8697443439435ef33a1bd044ef">
+              <span class="m-dox-wrap-bumper">auto <a href="#ad5a93e8697443439435ef33a1bd044ef" class="m-dox-self" name="ad5a93e8697443439435ef33a1bd044ef">disjunction</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a> const&amp; rhs) &amp;&amp; -&gt; TL_OPTIONAL_11_CONSTEXPR <a href="classrolly_1_1optional.html" class="m-doc">optional</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a17cec32a7bfbcc8f405850d3907a308e">
+              <span class="m-dox-wrap-bumper">auto <a href="#a17cec32a7bfbcc8f405850d3907a308e" class="m-dox-self" name="a17cec32a7bfbcc8f405850d3907a308e">disjunction</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a> const&amp; rhs) const &amp;&amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5b995d711225752957614f1144660c49">
+              <span class="m-dox-wrap-bumper">auto <a href="#a5b995d711225752957614f1144660c49" class="m-dox-self" name="a5b995d711225752957614f1144660c49">disjunction</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp;&amp; rhs) &amp; -&gt; TL_OPTIONAL_11_CONSTEXPR <a href="classrolly_1_1optional.html" class="m-doc">optional</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4a130d66feeb3bac00c2bfe98763ba42">
+              <span class="m-dox-wrap-bumper">auto <a href="#a4a130d66feeb3bac00c2bfe98763ba42" class="m-dox-self" name="a4a130d66feeb3bac00c2bfe98763ba42">disjunction</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp;&amp; rhs) const &amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d0158ec8c513401198becf6554089d8">
+              <span class="m-dox-wrap-bumper">auto <a href="#a6d0158ec8c513401198becf6554089d8" class="m-dox-self" name="a6d0158ec8c513401198becf6554089d8">disjunction</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp;&amp; rhs) &amp;&amp; -&gt; TL_OPTIONAL_11_CONSTEXPR <a href="classrolly_1_1optional.html" class="m-doc">optional</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac50f45b19cabe5d1eb12b6fc3177880a">
+              <span class="m-dox-wrap-bumper">auto <a href="#ac50f45b19cabe5d1eb12b6fc3177880a" class="m-dox-self" name="ac50f45b19cabe5d1eb12b6fc3177880a">disjunction</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp;&amp; rhs) const &amp;&amp; -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ace16d6b8d42636f88f85384468f1e320">
+              <span class="m-dox-wrap-bumper">auto <a href="#ace16d6b8d42636f88f85384468f1e320" class="m-dox-self" name="ace16d6b8d42636f88f85384468f1e320">take</a>(</span><span class="m-dox-wrap">) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a></span>
+            </dt>
+            <dd>Takes the value out of the optional, leaving it empty.</dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a18e9f387dd9d46b4056cb233b3ef5b21" class="m-dox">optional</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a> const&amp; rhs) -&gt; TL_OPTIONAL_11_CONSTEXPR <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a0d171a7fcb0cf7e0810d79d975c5b650" class="m-dox">optional</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp;&amp; rhs) -&gt; TL_OPTIONAL_11_CONSTEXPR <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#ae30f6090cf50374e6b557e03b7072f7e" class="m-dox">operator=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-dox-wrap-bumper">auto <a href="#a8cddc70a4e034595a82f96cfb28afc65" class="m-dox">operator=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a> const&amp; rhs) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp; <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a1e8eae689be775a76bd60bf463792c0c">
+              <div class="m-doc-template">template&lt;class U = T, detail::enable_if_t&lt;! detail::is_optional&lt;detail::decay_t&lt;U&gt;&gt;::<a href="classrolly_1_1optional_3_01T_01_6_01_4.html#a4cef207fdf17b420d2d0874ce712ade3" class="m-doc">value</a>&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a1e8eae689be775a76bd60bf463792c0c" class="m-dox-self" name="a1e8eae689be775a76bd60bf463792c0c">operator=</a>(</span><span class="m-dox-wrap">U&amp;&amp; u) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp;</span>
+            </dt>
+            <dd>Rebinds this optional to <code>u</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a5beb351051a1f20a45e3cab0d2b6db80" class="m-dox">operator=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a9b9773faed27da10a29261798883e3de">
+              <div class="m-doc-template">template&lt;class U = T, detail::enable_if_t&lt;! detail::is_optional&lt;detail::decay_t&lt;U&gt;&gt;::<a href="classrolly_1_1optional_3_01T_01_6_01_4.html#a4cef207fdf17b420d2d0874ce712ade3" class="m-doc">value</a>&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a9b9773faed27da10a29261798883e3de" class="m-dox-self" name="a9b9773faed27da10a29261798883e3de">emplace</a>(</span><span class="m-dox-wrap">U&amp;&amp; u) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Rebinds this optional to <code>u</code>.</dd>
+            <dt id="acb7015d1360fe3929c7ba9663566c3c8">
+              <span class="m-dox-wrap-bumper">void <a href="#acb7015d1360fe3929c7ba9663566c3c8" class="m-dox-self" name="acb7015d1360fe3929c7ba9663566c3c8">swap</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab4aee760c2c288ec7637b28bcd1877e8">
+              <span class="m-dox-wrap-bumper">auto <a href="#ab4aee760c2c288ec7637b28bcd1877e8" class="m-dox-self" name="ab4aee760c2c288ec7637b28bcd1877e8">operator-&gt;</a>(</span><span class="m-dox-wrap">) const -&gt; T const * <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns a pointer to the stored value.</dd>
+            <dt id="a2954c9dbd5bf1aa1d25b74bd2e681ebf">
+              <span class="m-dox-wrap-bumper">auto <a href="#a2954c9dbd5bf1aa1d25b74bd2e681ebf" class="m-dox-self" name="a2954c9dbd5bf1aa1d25b74bd2e681ebf">operator-&gt;</a>(</span><span class="m-dox-wrap">) -&gt; TL_OPTIONAL_11_CONSTEXPR T* <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acec5a45b59dc445fa9a2364d572e10f3">
+              <span class="m-dox-wrap-bumper">auto <a href="#acec5a45b59dc445fa9a2364d572e10f3" class="m-dox-self" name="acec5a45b59dc445fa9a2364d572e10f3">operator*</a>(</span><span class="m-dox-wrap">) -&gt; TL_OPTIONAL_11_CONSTEXPR T&amp; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the stored value.</dd>
+            <dt id="aa50148320bfb442bb833390d0e8692d0">
+              <span class="m-dox-wrap-bumper">auto <a href="#aa50148320bfb442bb833390d0e8692d0" class="m-dox-self" name="aa50148320bfb442bb833390d0e8692d0">operator*</a>(</span><span class="m-dox-wrap">) const -&gt; T const &amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6988ba57722f67cbb444b0931468282e">
+              <span class="m-dox-wrap-bumper">auto <a href="#a6988ba57722f67cbb444b0931468282e" class="m-dox-self" name="a6988ba57722f67cbb444b0931468282e">has_value</a>(</span><span class="m-dox-wrap">) const -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4cef207fdf17b420d2d0874ce712ade3">
+              <span class="m-dox-wrap-bumper">auto <a href="#a4cef207fdf17b420d2d0874ce712ade3" class="m-dox-self" name="a4cef207fdf17b420d2d0874ce712ade3">value</a>(</span><span class="m-dox-wrap">) -&gt; TL_OPTIONAL_11_CONSTEXPR T&amp;</span>
+            </dt>
+            <dd>Returns the contained value if there is one, otherwise throws <a href="classrolly_1_1bad__optional__access.html" class="m-doc">bad_<wbr />optional_<wbr />access</a>.</dd>
+            <dt id="a4978c19dacf1249763786c58cbd18e13">
+              <span class="m-dox-wrap-bumper">auto <a href="#a4978c19dacf1249763786c58cbd18e13" class="m-dox-self" name="a4978c19dacf1249763786c58cbd18e13">value</a>(</span><span class="m-dox-wrap">) const -&gt; const TL_OPTIONAL_11_CONSTEXPR T&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a123a9c8624ac86abfec8be6730075458">
+              <div class="m-doc-template">template&lt;class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a123a9c8624ac86abfec8be6730075458" class="m-dox-self" name="a123a9c8624ac86abfec8be6730075458">value_or</a>(</span><span class="m-dox-wrap">U&amp;&amp; u) const &amp; -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the stored value if there is one, otherwise returns <code>u</code></dd>
+            <dt id="a7060b3e537ab8323ea24bb515102ed6b">
+              <div class="m-doc-template">template&lt;class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a7060b3e537ab8323ea24bb515102ed6b" class="m-dox-self" name="a7060b3e537ab8323ea24bb515102ed6b">value_or</a>(</span><span class="m-dox-wrap">U&amp;&amp; u) &amp;&amp; -&gt; TL_OPTIONAL_11_CONSTEXPR T <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>\group value_or</dd>
+            <dt id="a20194325f0380eb3bbc6bc6c8b2697d9">
+              <span class="m-dox-wrap-bumper">void <a href="#a20194325f0380eb3bbc6bc6c8b2697d9" class="m-dox-self" name="a20194325f0380eb3bbc6bc6c8b2697d9">reset</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Destroys the stored value if one exists, making the optional empty.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="abba7a74c703766bd1a7fd90e2aee6b08">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              decltype(detail::optional_map_impl(<a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;<a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp;&gt;(), <a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;F &amp;&amp; &gt;())) TL_OPTIONAL_11_CONSTEXPR <a href="#abba7a74c703766bd1a7fd90e2aee6b08" class="m-doc-self">map</a>
+            </dt>
+            <dd>Carries out some operation on the stored object if there is one.</dd>
+            <dt id="a9a7ae98a69c4434973e5c3c408509b6c">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              decltype(detail::optional_map_impl(<a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;<a href="classrolly_1_1optional.html" class="m-doc">optional</a> &amp;&amp; &gt;(), <a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;F &amp;&amp; &gt;())) TL_OPTIONAL_11_CONSTEXPR <a href="#a9a7ae98a69c4434973e5c3c408509b6c" class="m-doc-self">map</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8269eb4d316cd62ad55fa3204073864e">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              decltype(detail::optional_map_impl(<a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;<a href="classrolly_1_1optional.html" class="m-doc">optional</a> const &amp;&gt;(), <a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;F &amp;&amp; &gt;())) <a href="#a8269eb4d316cd62ad55fa3204073864e" class="m-doc-self">map</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac8f1e8be78abf0ab273c9488014ea8cc">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              decltype(detail::optional_map_impl(<a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;<a href="classrolly_1_1optional.html" class="m-doc">optional</a> const &amp;&amp;&gt;(), <a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;F &amp;&amp; &gt;())) <a href="#ac8f1e8be78abf0ab273c9488014ea8cc" class="m-doc-self">map</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a51798d8a828a414fbfab5e638c8209ea">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              decltype(detail::optional_map_impl(<a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;<a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp;&gt;(), <a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;F &amp;&amp; &gt;())) TL_OPTIONAL_11_CONSTEXPR <a href="#a51798d8a828a414fbfab5e638c8209ea" class="m-doc-self">transform</a>
+            </dt>
+            <dd>Carries out some operation on the stored object if there is one.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              decltype(detail::optional_map_impl(<a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;<a href="classrolly_1_1optional.html" class="m-doc">optional</a> &amp;&amp; &gt;(), <a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;F &amp;&amp; &gt;())) TL_OPTIONAL_11_CONSTEXPR <a href="#a5ee56b4c121bc7835ce4c68bfae9fbe6" class="m-doc">transform</a>
+            </dt>
+            <dd></dd>
+            <dt id="a7f8494a9191a3551cefe1ec5a7d4ccb8">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              decltype(detail::optional_map_impl(<a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;<a href="classrolly_1_1optional.html" class="m-doc">optional</a> const &amp;&gt;(), <a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;F &amp;&amp; &gt;())) <a href="#a7f8494a9191a3551cefe1ec5a7d4ccb8" class="m-doc-self">transform</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8ab54a421bbda1267b8734a8fd24e461">
+              <div class="m-doc-template">template&lt;class F&gt;</div>
+              decltype(detail::optional_map_impl(<a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;<a href="classrolly_1_1optional.html" class="m-doc">optional</a> const &amp;&amp;&gt;(), <a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;F &amp;&amp; &gt;())) <a href="#a8ab54a421bbda1267b8734a8fd24e461" class="m-doc-self">transform</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a8e0758cd5aa728222538ce6dbbda3e66"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+                template&lt;class F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">TL_OPTIONAL_11_CONSTEXPR detail::invoke_result_t&lt;F, T&amp;&gt; rolly::<wbr />optional&lt;T&amp;&gt;&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e0758cd5aa728222538ce6dbbda3e66" class="m-doc-self">and_then</a>(</span><span class="m-doc-wrap">F&amp;&amp; f) &amp;</span></span>
+            </h3>
+<p>Carries out some operation which returns an optional on the stored object if there is one.</p>
+          </div></section>
+          <section class="m-doc-details" id="a14e5d060ddbbed0bc38f2248f099e664"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+                template&lt;class F, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">detail::invoke_result_t&lt;U&gt; rolly::<wbr />optional&lt;T&amp;&gt;&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14e5d060ddbbed0bc38f2248f099e664" class="m-doc-self">map_or_else</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
+              U&amp;&amp; u) &amp;</span></span>
+            </h3>
+<p>Maps the stored value with <code>f</code> if there is one, otherwise calls <code>u</code> and returns the result.</p>
+          </div></section>
+          <section class="m-doc-details" id="a18e9f387dd9d46b4056cb233b3ef5b21"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">TL_OPTIONAL_11_CONSTEXPR rolly::<wbr />optional&lt;T&amp;&gt;&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18e9f387dd9d46b4056cb233b3ef5b21" class="m-doc-self">optional</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a> const&amp; rhs) <span class="m-label m-info">defaulted</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Copy constructor</p><p>If <code>rhs</code> contains a value, the stored value is direct-initialized with it. Otherwise, the constructed optional is empty.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0d171a7fcb0cf7e0810d79d975c5b650"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">TL_OPTIONAL_11_CONSTEXPR rolly::<wbr />optional&lt;T&amp;&gt;&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0d171a7fcb0cf7e0810d79d975c5b650" class="m-doc-self">optional</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp;&amp; rhs) <span class="m-label m-info">defaulted</span></span></span>
+            </h3>
+<p>Move constructor</p><p>If <code>rhs</code> contains a value, the stored value is direct-initialized with it. Otherwise, the constructed optional is empty.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae30f6090cf50374e6b557e03b7072f7e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp; rolly::<wbr />optional&lt;T&amp;&gt;&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae30f6090cf50374e6b557e03b7072f7e" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Assignment to empty.</p><p>Destroys the current value if there is one.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8cddc70a4e034595a82f96cfb28afc65"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp; rolly::<wbr />optional&lt;T&amp;&gt;&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8cddc70a4e034595a82f96cfb28afc65" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a> const&amp; rhs) <span class="m-label m-info">defaulted</span></span></span>
+            </h3>
+<p>Copy assignment.</p><p>Rebinds this optional to the referee of <code>rhs</code> if there is one. Otherwise resets the stored value in <code>*this</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5beb351051a1f20a45e3cab0d2b6db80"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+                template&lt;class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&amp; rolly::<wbr />optional&lt;T&amp;&gt;&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5beb351051a1f20a45e3cab0d2b6db80" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Converting copy assignment operator.</p><p>Rebinds this optional to the referee of <code>rhs</code> if there is one. Otherwise resets the stored value in <code>*this</code>.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="a5ee56b4c121bc7835ce4c68bfae9fbe6"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+                template&lt;class F&gt;
+              </div>
+              decltype(detail::optional_map_impl(<a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;<a href="classrolly_1_1optional.html" class="m-doc">optional</a> &amp;&amp; &gt;(), <a href="http://en.cppreference.com/w/cpp/utility/declval.html" class="m-doc-external">std::<wbr />declval</a>&lt;F &amp;&amp; &gt;())) TL_OPTIONAL_11_CONSTEXPR rolly::<wbr />optional&lt;T&amp;&gt;&lt;T&gt;::<wbr /><a href="#a5ee56b4c121bc7835ce4c68bfae9fbe6" class="m-doc-self">transform</a>
+            </h3>
+<p>\group map \synopsis template &lt;class F&gt; auto transform(F &amp;&amp;f) &amp;&amp;;</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -421,14 +421,14 @@
         </inbodydescription>
         <location file="rolly/memory/box.h" line="192" column="8" bodyfile="rolly/memory/box.h" bodystart="192" bodyend="192"/>
       </memberdef>
-      <memberdef kind="function" id="classrolly_1_1box_1a0752489c60608212fdfd8a66ae0c90ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classrolly_1_1box_1abd452a397c01521fa9b941a2ff58fd01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename U</type>
           </param>
         </templateparamlist>
-        <type>std::optional&lt; <ref refid="cpp/utility/functional/reference_wrapper" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::reference_wrapper</ref>&lt; U &gt; &gt;</type>
-        <definition>std::optional&lt;std::reference_wrapper&lt;U&gt; &gt; downcast</definition>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; <ref refid="cpp/utility/functional/reference_wrapper" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::reference_wrapper</ref>&lt; U &gt; &gt;</type>
+        <definition>optional&lt;std::reference_wrapper&lt;U&gt; &gt; downcast</definition>
         <argsstring>()</argsstring>
         <name>downcast</name>
         <briefdescription>
@@ -452,7 +452,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/memory/box.h" line="202" column="20" bodyfile="rolly/memory/box.h" bodystart="202" bodyend="212"/>
+        <location file="rolly/memory/box.h" line="202" column="15" bodyfile="rolly/memory/box.h" bodystart="202" bodyend="212"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1box_1a821c701c77d3231e978182beedefb8a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -806,7 +806,7 @@
       <member refid="classrolly_1_1box_1afedba7a5968b231fd3cd82508b5efa6c" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>box</name></member>
       <member refid="classrolly_1_1box_1ad8cc9017530df9d616762f4e8ba1139b" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>box</name></member>
       <member refid="classrolly_1_1box_1a0c1fd9156b859a52a4928f84cefd6777" prot="private" virt="non-virtual"><scope>rolly::box</scope><name>box</name></member>
-      <member refid="classrolly_1_1box_1a0752489c60608212fdfd8a66ae0c90ba" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>downcast</name></member>
+      <member refid="classrolly_1_1box_1abd452a397c01521fa9b941a2ff58fd01" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>downcast</name></member>
       <member refid="classrolly_1_1box_1ab09edc4b568d547d04da66f947f5595a" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>element_type</name></member>
       <member refid="classrolly_1_1box_1a8cd3929c3ea66c2b5595f0b1d78c03f7" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>get</name></member>
       <member refid="classrolly_1_1box_1ac051b2568208e363ae2dffb23c0ad9ba" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>get</name></member>

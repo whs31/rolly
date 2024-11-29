@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>detail::function_traits&lt; T, std::enable_if_t&lt; trait::has_call_operator_v&lt; T &gt; &gt; &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a8ffe58ac0dbde867819fc64d50e13212" prot="public" static="no">
+        <type>decltype(&amp;<ref refid="cpp/types/remove_reference" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::remove_reference</ref>&lt; T &gt;::type::operator())</type>
+        <definition>using call_type =  decltype(&amp;std::remove_reference&lt;T&gt;::type::operator())</definition>
+        <argsstring></argsstring>
+        <name>call_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="287" column="7" bodyfile="rolly/functional/signals.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a45d0d3292ccf281de02f4dc7de0dba6c" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool is_disconnectable</definition>
+        <argsstring></argsstring>
+        <name>is_disconnectable</name>
+        <initializer>= <ref refid="structdetail_1_1function__traits" kindref="compound">function_traits</ref>&lt;call_type&gt;::is_disconnectable</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="297" column="29" bodyfile="rolly/functional/signals.h" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a7602976e3ba49ec8ccebe9c28f467891" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool must_check_object</definition>
+        <argsstring></argsstring>
+        <name>must_check_object</name>
+        <initializer>= <ref refid="structdetail_1_1function__traits" kindref="compound">function_traits</ref>&lt;call_type&gt;::must_check_object</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="298" column="29" bodyfile="rolly/functional/signals.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1aa0aa844f1a29dbedab53a4c780139935" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ptr</definition>
+        <argsstring>(T const &amp;, func_ptr &amp;d)</argsstring>
+        <name>ptr</name>
+        <param>
+          <type>T const &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="structdetail_1_1func__ptr" kindref="compound">func_ptr</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="289" column="19" bodyfile="rolly/functional/signals.h" bodystart="289" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a2e36b44b650aa2a8d56647d299467f1e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool eq</definition>
+        <argsstring>(T const &amp;, func_ptr const &amp;d)</argsstring>
+        <name>eq</name>
+        <param>
+          <type>T const &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="structdetail_1_1func__ptr" kindref="compound">func_ptr</ref> const &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="293" column="19" bodyfile="rolly/functional/signals.h" bodystart="293" bodyend="295"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/functional/signals.h" line="286" column="29" bodyfile="rolly/functional/signals.h" bodystart="286" bodyend="299"/>
+    <listofallmembers>
+      <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a8ffe58ac0dbde867819fc64d50e13212" prot="public" virt="non-virtual"><scope>detail::function_traits&lt; T, std::enable_if_t&lt; trait::has_call_operator_v&lt; T &gt; &gt; &gt;</scope><name>call_type</name></member>
+      <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a2e36b44b650aa2a8d56647d299467f1e" prot="public" virt="non-virtual"><scope>detail::function_traits&lt; T, std::enable_if_t&lt; trait::has_call_operator_v&lt; T &gt; &gt; &gt;</scope><name>eq</name></member>
+      <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a45d0d3292ccf281de02f4dc7de0dba6c" prot="public" virt="non-virtual"><scope>detail::function_traits&lt; T, std::enable_if_t&lt; trait::has_call_operator_v&lt; T &gt; &gt; &gt;</scope><name>is_disconnectable</name></member>
+      <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a7602976e3ba49ec8ccebe9c28f467891" prot="public" virt="non-virtual"><scope>detail::function_traits&lt; T, std::enable_if_t&lt; trait::has_call_operator_v&lt; T &gt; &gt; &gt;</scope><name>must_check_object</name></member>
+      <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1aa0aa844f1a29dbedab53a4c780139935" prot="public" virt="non-virtual"><scope>detail::function_traits&lt; T, std::enable_if_t&lt; trait::has_call_operator_v&lt; T &gt; &gt; &gt;</scope><name>ptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

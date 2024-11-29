@@ -59,26 +59,26 @@
         </inbodydescription>
         <location file="rolly/global/semver.h" line="186" column="16" bodyfile="rolly/global/semver.h" bodystart="186" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structrolly_1_1version_1ad3740d612f3a17f4c528f79417719ffb" prot="public" static="no" mutable="no">
-        <type>std::optional&lt; <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref> &gt;</type>
-        <definition>std::optional&lt;std::uint16_t&gt; prerelease_number</definition>
+      <memberdef kind="variable" id="structrolly_1_1version_1a8d279ec4c5f1d306dbfad5dd1c0b1645" prot="public" static="no" mutable="no">
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref> &gt;</type>
+        <definition>optional&lt;std::uint16_t&gt; prerelease_number</definition>
         <argsstring></argsstring>
         <name>prerelease_number</name>
-        <initializer>= std::nullopt</initializer>
+        <initializer>= <ref refid="namespacerolly_1a3052f5fbb6fc7bc98ecb11360c416a8f" kindref="member">nullopt</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/semver.h" line="187" column="19" bodyfile="rolly/global/semver.h" bodystart="187" bodyend="-1"/>
+        <location file="rolly/global/semver.h" line="187" column="14" bodyfile="rolly/global/semver.h" bodystart="187" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structrolly_1_1version_1a2d3783c5a1bde4c3ad462eb2dff4d6a7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structrolly_1_1version_1a00dfdaada39db75b4733ae2d04cd9053" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>ROLLY_SEMVER_CONSTEXPR</type>
         <definition>ROLLY_SEMVER_CONSTEXPR version</definition>
-        <argsstring>(std::uint16_t mj, std::uint16_t mn, std::uint16_t pt, prerelease prt=prerelease::none, std::optional&lt; std::uint16_t &gt; prn=std::nullopt) noexcept</argsstring>
+        <argsstring>(std::uint16_t mj, std::uint16_t mn, std::uint16_t pt, prerelease prt=prerelease::none, optional&lt; std::uint16_t &gt; prn=nullopt) noexcept</argsstring>
         <name>version</name>
         <param>
           <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
@@ -98,9 +98,9 @@
           <defval>prerelease::none</defval>
         </param>
         <param>
-          <type>std::optional&lt; <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref> &gt;</type>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref> &gt;</type>
           <declname>prn</declname>
-          <defval>std::nullopt</defval>
+          <defval><ref refid="namespacerolly_1a3052f5fbb6fc7bc98ecb11360c416a8f" kindref="member">nullopt</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -375,9 +375,20 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
+      <node id="4">
+        <label>optional&lt; T &gt;</label>
+        <link refid="classrolly_1_1optional"/>
+      </node>
       <node id="2">
         <label>uint16_t</label>
         <link refid="cpp/types/integer" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml"/>
+      </node>
+      <node id="3">
+        <label>optional&lt; std::uint16_t &gt;</label>
+        <link refid="classrolly_1_1optional"/>
+        <childnode refid="4" relation="template-instance">
+          <edgelabel>&lt; std::uint16_t &gt;</edgelabel>
+        </childnode>
       </node>
       <node id="1">
         <label>version</label>
@@ -386,6 +397,9 @@
           <edgelabel>patch</edgelabel>
           <edgelabel>major</edgelabel>
           <edgelabel>minor</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>prerelease_number</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
@@ -400,12 +414,12 @@
       <member refid="structrolly_1_1version_1adb3e3d4ea43080ab1f9005af2272d3d0" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>operator=</name></member>
       <member refid="structrolly_1_1version_1a9933342c7c56f68b9a00d715eb72a67b" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>operator=</name></member>
       <member refid="structrolly_1_1version_1a225065c50c39b42012bde676d03d6131" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>patch</name></member>
-      <member refid="structrolly_1_1version_1ad3740d612f3a17f4c528f79417719ffb" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>prerelease_number</name></member>
+      <member refid="structrolly_1_1version_1a8d279ec4c5f1d306dbfad5dd1c0b1645" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>prerelease_number</name></member>
       <member refid="structrolly_1_1version_1a2b8218ebadf01154d8615cd9c31cf761" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>prerelease_type</name></member>
       <member refid="structrolly_1_1version_1a995e165483bb30e9f597773d0cf355c7" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>string_length</name></member>
       <member refid="structrolly_1_1version_1aa3121d43861bbf0ee9ab5449e694cdd2" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>to_chars</name></member>
       <member refid="structrolly_1_1version_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>to_string</name></member>
-      <member refid="structrolly_1_1version_1a2d3783c5a1bde4c3ad462eb2dff4d6a7" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
+      <member refid="structrolly_1_1version_1a00dfdaada39db75b4733ae2d04cd9053" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
       <member refid="structrolly_1_1version_1abfbcd4ebc1c178edd166a4e498757e81" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
       <member refid="structrolly_1_1version_1a0332e593c889fac494451ff202c0a87f" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>
       <member refid="structrolly_1_1version_1ad856220a1bbc8168138d8933df54a80c" prot="public" virt="non-virtual"><scope>rolly::version</scope><name>version</name></member>

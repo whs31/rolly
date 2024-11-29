@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structrolly_1_1trait_1_1is__weak__ptr" kind="struct" language="C++" prot="public">
+    <compoundname>rolly::trait::is_weak_ptr</compoundname>
+    <basecompoundref refid="cpp/types/integral_constant" prot="public" virt="non-virtual">false_type</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename</type>
+        <defval>void</defval>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>false_type</label>
+        <link refid="cpp/types/integral_constant" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml"/>
+      </node>
+      <node id="1">
+        <label>is_weak_ptr&lt; T, typename &gt;</label>
+        <link refid="structrolly_1_1trait_1_1is__weak__ptr"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>is_weak_ptr&lt; decltype(to_weak(std::declval&lt; T &gt;()))&gt;</label>
+        <link refid="structrolly_1_1trait_1_1is__weak__ptr"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; decltype(to_weak(std::declval&lt; T &gt;()))&gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>is_weak_ptr_compatible&lt; T, void_t&lt; decltype(to_weak(std::declval&lt; T &gt;()))&gt; &gt;</label>
+        <link refid="structrolly_1_1trait_1_1is__weak__ptr__compatible_3_01T_00_01void__t_3_01decltype_07to__weak_07s21218c6e5bd4c76e56da307adfbeb012"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>false_type</label>
+        <link refid="cpp/types/integral_constant" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml"/>
+      </node>
+      <node id="1">
+        <label>is_weak_ptr&lt; T, typename &gt;</label>
+        <link refid="structrolly_1_1trait_1_1is__weak__ptr"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="rolly/functional/signals.h" line="81" column="40" bodyfile="rolly/functional/signals.h" bodystart="81" bodyend="81"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

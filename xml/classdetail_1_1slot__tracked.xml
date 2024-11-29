@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classdetail_1_1slot__tracked" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>detail::slot_tracked</compoundname>
+    <basecompoundref refid="classdetail_1_1slot__base" prot="public" virt="non-virtual">slot_base&lt; Args... &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename Func</type>
+      </param>
+      <param>
+        <type>typename WeakPtr</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>Args</declname>
+        <defname>Args</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdetail_1_1slot__tracked_1a18e38fcdf1a1e45db5114c474b0c3c94" prot="private" static="no" mutable="no">
+        <type>std::decay_t&lt; Func &gt;</type>
+        <definition>std::decay_t&lt;Func&gt; func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="1002" column="20" bodyfile="rolly/functional/signals.h" bodystart="1002" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdetail_1_1slot__tracked_1a0d3c3feeefd03edd56f74578374553cb" prot="private" static="no" mutable="no">
+        <type>std::decay_t&lt; WeakPtr &gt;</type>
+        <definition>std::decay_t&lt;WeakPtr&gt; ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="1003" column="20" bodyfile="rolly/functional/signals.h" bodystart="1003" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdetail_1_1slot__tracked_1a3cede04d57d344b39f34914ccc4d49c3" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename P</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr slot_tracked</definition>
+        <argsstring>(cleanable &amp;c, F &amp;&amp;f, P &amp;&amp;p, group_id gid)</argsstring>
+        <name>slot_tracked</name>
+        <param>
+          <type><ref refid="structdetail_1_1cleanable" kindref="compound">cleanable</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>P &amp;&amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">group_id</ref></type>
+          <declname>gid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="972" column="17" bodyfile="rolly/functional/signals.h" bodystart="972" bodyend="975"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__tracked_1a85f9d7864024b1e3c29358a316f5c894" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool connected</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>connected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="977" column="12" bodyfile="rolly/functional/signals.h" bodystart="977" bodyend="979"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__base_1a1beeea2f7f97d5c0957cd37bf72e8a2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void operator()</definition>
+        <argsstring>(U &amp;&amp;... u)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>U &amp;&amp;...</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="791" column="12" bodyfile="rolly/functional/signals.h" bodystart="791" bodyend="795"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__base_1a08383d81089707d4b5e9bc4f1cb403d0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool has_callable</definition>
+        <argsstring>(C const &amp;c) const</argsstring>
+        <name>has_callable</name>
+        <param>
+          <type>C const &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="799" column="12" bodyfile="rolly/functional/signals.h" bodystart="799" bodyend="802"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__base_1a7d4a7ef88b8a5644c6685e56634edd4b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::enable_if_t&lt; <ref refid="structdetail_1_1function__traits" kindref="compound">function_traits</ref>&lt; C &gt;::must_check_object, bool &gt;</type>
+        <definition>std::enable_if_t&lt;function_traits&lt;C&gt;::must_check_object, bool&gt; has_full_callable</definition>
+        <argsstring>(C const &amp;c) const</argsstring>
+        <name>has_full_callable</name>
+        <param>
+          <type>C const &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="805" column="25" bodyfile="rolly/functional/signals.h" bodystart="805" bodyend="808"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__base_1ae1611b64afa973096b5f9ea2f8765780" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::enable_if_t&lt;! <ref refid="structdetail_1_1function__traits" kindref="compound">function_traits</ref>&lt; C &gt;::must_check_object, bool &gt;</type>
+        <definition>std::enable_if_t&lt;! function_traits&lt;C&gt;::must_check_object, bool&gt; has_full_callable</definition>
+        <argsstring>(C const &amp;c) const</argsstring>
+        <name>has_full_callable</name>
+        <param>
+          <type>C const &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="811" column="25" bodyfile="rolly/functional/signals.h" bodystart="811" bodyend="814"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__base_1ab721675029206075028b659e7f17d0d7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool has_object</definition>
+        <argsstring>(O const &amp;o) const</argsstring>
+        <name>has_object</name>
+        <param>
+          <type>O const &amp;</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="818" column="12" bodyfile="rolly/functional/signals.h" bodystart="818" bodyend="820"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classdetail_1_1slot__tracked_1a217f098878cea12bf14e712a14e03e56" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void call_slot</definition>
+        <argsstring>(Args... args) override</argsstring>
+        <name>call_slot</name>
+        <reimplements refid="classdetail_1_1slot__base_1ab93b904534716f70f3dc4505143211e6">call_slot</reimplements>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="982" column="12" bodyfile="rolly/functional/signals.h" bodystart="982" bodyend="991"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__tracked_1ae872ce0d896a2babc419af4dbe8c3bbb" prot="protected" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structdetail_1_1func__ptr" kindref="compound">func_ptr</ref></type>
+        <definition>func_ptr get_callable</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>get_callable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="993" column="16" bodyfile="rolly/functional/signals.h" bodystart="993" bodyend="993"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__tracked_1a71e75a657a7c221eaf2bf30a7d4e7b14" prot="protected" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>obj_ptr</type>
+        <definition>obj_ptr get_object</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>get_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="995" column="15" bodyfile="rolly/functional/signals.h" bodystart="995" bodyend="995"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__base_1ac44bc183cfe07086abd8d7013b6143d7" prot="protected" static="no" const="no" explicit="no" inline="yes" final="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void do_disconnect</definition>
+        <argsstring>() final</argsstring>
+        <name>do_disconnect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="823" column="12" bodyfile="rolly/functional/signals.h" bodystart="823" bodyend="823"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__base_1a5cc5f95df1f78505a332c610530f872b" prot="protected" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="virtual">
+        <type>obj_ptr</type>
+        <definition>virtual obj_ptr get_object</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>get_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="826" column="23" bodyfile="rolly/functional/signals.h" bodystart="826" bodyend="826"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__base_1abb9e01d94e333a4ee2b1768dc240ab8c" prot="protected" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="virtual">
+        <type><ref refid="structdetail_1_1func__ptr" kindref="compound">func_ptr</ref></type>
+        <definition>virtual func_ptr get_callable</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>get_callable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="829" column="24" bodyfile="rolly/functional/signals.h" bodystart="829" bodyend="829"/>
+      </memberdef>
+      <memberdef kind="function" id="classdetail_1_1slot__base_1a7f29cbbf9b3dbe5908e3727a7b56ded7" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool check_class_type</definition>
+        <argsstring>() const</argsstring>
+        <name>check_class_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="843" column="10" bodyfile="rolly/functional/signals.h" bodystart="843" bodyend="845"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classdetail_1_1slot__base_1a93fd071830907ea31bcfbd799bea082b" prot="public" static="no">
+        <type>trait::typelist&lt; Args... &gt;</type>
+        <definition>using base_types =  trait::typelist&lt;Args...&gt;</definition>
+        <argsstring></argsstring>
+        <name>base_types</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="778" column="7" bodyfile="rolly/functional/signals.h" bodystart="778" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>slot_tracked&lt; Func, WeakPtr, Args &gt;</label>
+        <link refid="classdetail_1_1slot__tracked"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>slot_base&lt; Args... &gt;</label>
+        <link refid="classdetail_1_1slot__base"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; Args... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>slot_base&lt; Args &gt;</label>
+        <link refid="classdetail_1_1slot__base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>slot_tracked&lt; Func, WeakPtr, Args &gt;</label>
+        <link refid="classdetail_1_1slot__tracked"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>slot_base&lt; Args... &gt;</label>
+        <link refid="classdetail_1_1slot__base"/>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; Args... &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>slot_base&lt; Args &gt;</label>
+        <link refid="classdetail_1_1slot__base"/>
+      </node>
+    </collaborationgraph>
+    <location file="rolly/functional/signals.h" line="969" column="41" bodyfile="rolly/functional/signals.h" bodystart="969" bodyend="1004"/>
+    <listofallmembers>
+      <member refid="classdetail_1_1slot__base_1a93fd071830907ea31bcfbd799bea082b" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>base_types</name></member>
+      <member refid="classdetail_1_1slot__tracked_1a217f098878cea12bf14e712a14e03e56" prot="protected" virt="virtual"><scope>detail::slot_tracked</scope><name>call_slot</name></member>
+      <member refid="classdetail_1_1slot__base_1a7f29cbbf9b3dbe5908e3727a7b56ded7" prot="protected" virt="non-virtual"><scope>detail::slot_tracked</scope><name>check_class_type</name></member>
+      <member refid="classdetail_1_1slot__tracked_1a85f9d7864024b1e3c29358a316f5c894" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>connected</name></member>
+      <member refid="classdetail_1_1slot__base_1ac44bc183cfe07086abd8d7013b6143d7" prot="protected" virt="non-virtual"><scope>detail::slot_tracked</scope><name>do_disconnect</name></member>
+      <member refid="classdetail_1_1slot__tracked_1a18e38fcdf1a1e45db5114c474b0c3c94" prot="private" virt="non-virtual"><scope>detail::slot_tracked</scope><name>func</name></member>
+      <member refid="classdetail_1_1slot__tracked_1ae872ce0d896a2babc419af4dbe8c3bbb" prot="protected" virt="non-virtual"><scope>detail::slot_tracked</scope><name>get_callable</name></member>
+      <member refid="classdetail_1_1slot__base_1abb9e01d94e333a4ee2b1768dc240ab8c" prot="protected" virt="virtual" ambiguityscope="slot_base&lt; Args... &gt;::"><scope>detail::slot_tracked</scope><name>get_callable</name></member>
+      <member refid="classdetail_1_1slot__tracked_1a71e75a657a7c221eaf2bf30a7d4e7b14" prot="protected" virt="non-virtual"><scope>detail::slot_tracked</scope><name>get_object</name></member>
+      <member refid="classdetail_1_1slot__base_1a5cc5f95df1f78505a332c610530f872b" prot="protected" virt="virtual" ambiguityscope="slot_base&lt; Args... &gt;::"><scope>detail::slot_tracked</scope><name>get_object</name></member>
+      <member refid="classdetail_1_1slot__base_1a08383d81089707d4b5e9bc4f1cb403d0" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>has_callable</name></member>
+      <member refid="classdetail_1_1slot__base_1a7d4a7ef88b8a5644c6685e56634edd4b" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>has_full_callable</name></member>
+      <member refid="classdetail_1_1slot__base_1ae1611b64afa973096b5f9ea2f8765780" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>has_full_callable</name></member>
+      <member refid="classdetail_1_1slot__base_1ab721675029206075028b659e7f17d0d7" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>has_object</name></member>
+      <member refid="classdetail_1_1slot__base_1a1beeea2f7f97d5c0957cd37bf72e8a2f" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>operator()</name></member>
+      <member refid="classdetail_1_1slot__tracked_1a0d3c3feeefd03edd56f74578374553cb" prot="private" virt="non-virtual"><scope>detail::slot_tracked</scope><name>ptr</name></member>
+      <member refid="classdetail_1_1slot__base_1a0e26ef61f9110726e453806ff7473dce" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>slot_base</name></member>
+      <member refid="classdetail_1_1slot__tracked_1a3cede04d57d344b39f34914ccc4d49c3" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>slot_tracked</name></member>
+      <member refid="classdetail_1_1slot__base_1a0557d50a5083756f9d8d089d684f23a6" prot="public" virt="non-virtual"><scope>detail::slot_tracked</scope><name>~slot_base</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

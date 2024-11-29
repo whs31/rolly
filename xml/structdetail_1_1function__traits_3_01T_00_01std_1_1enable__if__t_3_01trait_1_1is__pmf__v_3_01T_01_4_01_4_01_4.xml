@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>detail::function_traits&lt; T, std::enable_if_t&lt; trait::is_pmf_v&lt; T &gt; &gt; &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1a45d0d3292ccf281de02f4dc7de0dba6c" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool is_disconnectable</definition>
+        <argsstring></argsstring>
+        <name>is_disconnectable</name>
+        <initializer>= trait::with_rtti</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="280" column="29" bodyfile="rolly/functional/signals.h" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1a7602976e3ba49ec8ccebe9c28f467891" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool must_check_object</definition>
+        <argsstring></argsstring>
+        <name>must_check_object</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="281" column="29" bodyfile="rolly/functional/signals.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1af8b8cde8255012263c95b9fc2903d47e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ptr</definition>
+        <argsstring>(T t, func_ptr &amp;d)</argsstring>
+        <name>ptr</name>
+        <param>
+          <type>T</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetail_1_1func__ptr" kindref="compound">func_ptr</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="273" column="19" bodyfile="rolly/functional/signals.h" bodystart="273" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1a91c99e317dabb39c91d235530eb20df2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool eq</definition>
+        <argsstring>(T t, func_ptr const &amp;d)</argsstring>
+        <name>eq</name>
+        <param>
+          <type>T</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetail_1_1func__ptr" kindref="compound">func_ptr</ref> const &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="275" column="19" bodyfile="rolly/functional/signals.h" bodystart="275" bodyend="278"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/functional/signals.h" line="272" column="29" bodyfile="rolly/functional/signals.h" bodystart="272" bodyend="282"/>
+    <listofallmembers>
+      <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1a91c99e317dabb39c91d235530eb20df2" prot="public" virt="non-virtual"><scope>detail::function_traits&lt; T, std::enable_if_t&lt; trait::is_pmf_v&lt; T &gt; &gt; &gt;</scope><name>eq</name></member>
+      <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1a45d0d3292ccf281de02f4dc7de0dba6c" prot="public" virt="non-virtual"><scope>detail::function_traits&lt; T, std::enable_if_t&lt; trait::is_pmf_v&lt; T &gt; &gt; &gt;</scope><name>is_disconnectable</name></member>
+      <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1a7602976e3ba49ec8ccebe9c28f467891" prot="public" virt="non-virtual"><scope>detail::function_traits&lt; T, std::enable_if_t&lt; trait::is_pmf_v&lt; T &gt; &gt; &gt;</scope><name>must_check_object</name></member>
+      <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1af8b8cde8255012263c95b9fc2903d47e" prot="public" virt="non-virtual"><scope>detail::function_traits&lt; T, std::enable_if_t&lt; trait::is_pmf_v&lt; T &gt; &gt; &gt;</scope><name>ptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

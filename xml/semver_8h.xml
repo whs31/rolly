@@ -7,13 +7,16 @@
     <includes local="no">charconv</includes>
     <includes local="no">iosfwd</includes>
     <includes local="no">limits</includes>
-    <includes local="no">optional</includes>
     <includes local="no">stdexcept</includes>
     <includes refid="char__utils_8h" local="yes">char_utils.h</includes>
     <includes refid="version__definitions_8h" local="yes">version_definitions.h</includes>
+    <includes refid="optional_8h" local="yes">../types/optional.h</includes>
     <includedby refid="version_8h" local="yes">version.h</includedby>
     <incdepgraph>
-      <node id="12">
+      <node id="15">
+        <label>functional</label>
+      </node>
+      <node id="11">
         <label>fmt/format.h</label>
       </node>
       <node id="6">
@@ -25,24 +28,46 @@
       <node id="4">
         <label>charconv</label>
       </node>
-      <node id="8">
+      <node id="19">
+        <label>variant</label>
+      </node>
+      <node id="7">
         <label>stdexcept</label>
       </node>
-      <node id="10">
+      <node id="9">
         <label>string</label>
       </node>
+      <node id="14">
+        <label>exception</label>
+      </node>
       <node id="13">
+        <label>../types/optional.h</label>
+        <link refid="optional_8h_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
         <label>version_definitions.h</label>
         <link refid="version__definitions_8h_source"/>
       </node>
-      <node id="9">
+      <node id="8">
         <label>char_utils.h</label>
         <link refid="char__utils_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -62,22 +87,28 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>string_view</label>
       </node>
-      <node id="7">
-        <label>optional</label>
+      <node id="16">
+        <label>new</label>
+      </node>
+      <node id="18">
+        <label>utility</label>
       </node>
       <node id="5">
         <label>iosfwd</label>
       </node>
       <node id="2">
         <label>cstddef</label>
+      </node>
+      <node id="17">
+        <label>type_traits</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -601,9 +632,9 @@
         </inbodydescription>
         <location file="rolly/global/semver.h" line="391" column="5" bodyfile="rolly/global/semver.h" bodystart="391" bodyend="393"/>
       </memberdef>
-      <memberdef kind="function" id="namespacerolly_1a29bf2b257aae11af86113305689df183" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type>ROLLY_SEMVER_CONSTEXPR std::optional&lt; version &gt;</type>
-        <definition>ROLLY_SEMVER_CONSTEXPR std::optional&lt;version&gt; rolly::from_string_noexcept</definition>
+      <memberdef kind="function" id="namespacerolly_1ad62ddd144b14ae7ce815d7d57c37cf9d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>ROLLY_SEMVER_CONSTEXPR optional&lt; version &gt;</type>
+        <definition>ROLLY_SEMVER_CONSTEXPR optional&lt;version&gt; rolly::from_string_noexcept</definition>
         <argsstring>(std::string_view str) noexcept</argsstring>
         <name>from_string_noexcept</name>
         <param>
@@ -616,7 +647,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/semver.h" line="395" column="41" bodyfile="rolly/global/semver.h" bodystart="395" bodyend="401"/>
+        <location file="rolly/global/semver.h" line="395" column="36" bodyfile="rolly/global/semver.h" bodystart="395" bodyend="401"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a6472f585e4160c186d682782d57ab7ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ROLLY_SEMVER_CONSTEXPR version</type>

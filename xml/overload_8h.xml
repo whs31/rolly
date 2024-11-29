@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="overload_8h" kind="file" language="C++">
+    <compoundname>overload.h</compoundname>
+    <includedby refid="functional_8h" local="yes">functional.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>functional.h</label>
+        <link refid="functional_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>overload.h</label>
+        <link refid="overload_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrolly_1_1non__const__overload__t" prot="public">rolly::non_const_overload_t</innerclass>
+    <innerclass refid="structrolly_1_1const__overload__t" prot="public">rolly::const_overload_t</innerclass>
+    <innerclass refid="structrolly_1_1overload__t" prot="public">rolly::overload_t</innerclass>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacerolly_1af4c439f294424a3f11f9908de0dca2f6" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr overload_t&lt; Args... &gt;</type>
+        <definition>constexpr overload_t&lt;Args...&gt; overload</definition>
+        <argsstring></argsstring>
+        <name>overload</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/overload.h" line="50" column="31" bodyfile="rolly/functional/overload.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1a85cfe4055bff1f633f6bbedb33f2e93b" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const_overload_t&lt; Args... &gt;</type>
+        <definition>constexpr const_overload_t&lt;Args...&gt; const_overload</definition>
+        <argsstring></argsstring>
+        <name>const_overload</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/overload.h" line="53" column="37" bodyfile="rolly/functional/overload.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerolly_1ae3c7f1453d02210f5dedfa448b6b4697" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr non_const_overload_t&lt; Args... &gt;</type>
+        <definition>constexpr non_const_overload_t&lt;Args...&gt; non_const_overload</definition>
+        <argsstring></argsstring>
+        <name>non_const_overload</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/overload.h" line="56" column="41" bodyfile="rolly/functional/overload.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/functional/overload.h"/>
+  </compounddef>
+</doxygen>

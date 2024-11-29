@@ -3,6 +3,8 @@
   <compounddef id="dir_91def4deb79ef7e7214a01588171731f" kind="dir">
     <compoundname>functional</compoundname>
     <innerfile refid="lazy_8h">lazy.h</innerfile>
+    <innerfile refid="overload_8h">overload.h</innerfile>
+    <innerfile refid="signals_8h">signals.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

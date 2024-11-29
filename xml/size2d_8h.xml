@@ -7,7 +7,7 @@
     <includes local="no">string</includes>
     <includes local="no">array</includes>
     <includes local="no">tuple</includes>
-    <includes local="no">bits/stl_algo.h</includes>
+    <includes local="no">algorithm</includes>
     <includes local="no">qsize.h</includes>
     <includedby refid="point2d_8h" local="yes">point2d.h</includedby>
     <includedby refid="vector2d_8h" local="yes">vector2d.h</includedby>
@@ -74,6 +74,9 @@
       <node id="7">
         <label>type_traits</label>
       </node>
+      <node id="14">
+        <label>algorithm</label>
+      </node>
       <node id="2">
         <label>../concepts/num.h</label>
         <link refid="num_8h_source"/>
@@ -81,9 +84,6 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-      </node>
-      <node id="14">
-        <label>bits/stl_algo.h</label>
       </node>
       <node id="8">
         <label>./stdint.h</label>

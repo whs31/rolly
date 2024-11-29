@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structdetail_1_1cleanable" kind="struct" language="C++" prot="public" abstract="yes">
+    <compoundname>detail::cleanable</compoundname>
+    <derivedcompoundref refid="classsignal__base" prot="public" virt="non-virtual">signal_base&lt; Lockable, T &gt;</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structdetail_1_1cleanable_1a82e22447aef3fa270c72d0dd6b9b4d18" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ~cleanable</definition>
+        <argsstring>()=default</argsstring>
+        <name>~cleanable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="761" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="structdetail_1_1cleanable_1a345a05a2d450246eca94da2ec99309e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void clean</definition>
+        <argsstring>(slot_state *)=0</argsstring>
+        <name>clean</name>
+        <reimplementedby refid="classsignal__base_1a28774e1a1bc1350680ee08faf26e8ff9">clean</reimplementedby>
+        <param>
+          <type><ref refid="classdetail_1_1slot__state" kindref="compound">slot_state</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="762" column="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>cleanable</label>
+        <link refid="structdetail_1_1cleanable"/>
+      </node>
+      <node id="2">
+        <label>signal_base&lt; Lockable, T &gt;</label>
+        <link refid="classsignal__base"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="rolly/functional/signals.h" line="760" column="20" bodyfile="rolly/functional/signals.h" bodystart="760" bodyend="763"/>
+    <listofallmembers>
+      <member refid="structdetail_1_1cleanable_1a345a05a2d450246eca94da2ec99309e8" prot="public" virt="pure-virtual"><scope>detail::cleanable</scope><name>clean</name></member>
+      <member refid="structdetail_1_1cleanable_1a82e22447aef3fa270c72d0dd6b9b4d18" prot="public" virt="virtual"><scope>detail::cleanable</scope><name>~cleanable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

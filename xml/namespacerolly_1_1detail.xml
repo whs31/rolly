@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacerolly_1_1detail" kind="namespace" language="C++">
+    <compoundname>rolly::detail</compoundname>
+    <innerclass refid="structrolly_1_1detail_1_1observer__type" prot="public">rolly::detail::observer_type</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/functional/signals.h" line="21" column="18"/>
+  </compounddef>
+</doxygen>

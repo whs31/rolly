@@ -163,8 +163,8 @@
     <member refid="classrolly_1_1application__dirs_1a93e41434d609c7f2a1a54d414af96a56" kind="variable"><name>data_dir_</name></member>
     <member refid="classrolly_1_1application__dirs_1acd8e104438a18f60bd7b83ef7dd37181" kind="variable"><name>data_local_dir_</name></member>
     <member refid="classrolly_1_1application__dirs_1a31b336dba18a4108e441e83c8a732e27" kind="variable"><name>preference_dir_</name></member>
-    <member refid="classrolly_1_1application__dirs_1a14e4a14d14983d8f904f4901b7e048ee" kind="variable"><name>runtime_dir_</name></member>
-    <member refid="classrolly_1_1application__dirs_1a4aa7f02371f0ad22bd13d2c80f0da1e9" kind="variable"><name>state_dir_</name></member>
+    <member refid="classrolly_1_1application__dirs_1a31014c8f439355f13b6f605922b97e41" kind="variable"><name>runtime_dir_</name></member>
+    <member refid="classrolly_1_1application__dirs_1a965b2c801f8e81dca90faa3a10b07455" kind="variable"><name>state_dir_</name></member>
     <member refid="classrolly_1_1application__dirs_1a55c0e5e3ac7e710af26c992fd49dec50" kind="function"><name>application_dirs</name></member>
     <member refid="classrolly_1_1application__dirs_1a9d30264f6f4177a75053575e5e04f771" kind="function"><name>application_dirs</name></member>
     <member refid="classrolly_1_1application__dirs_1a2d42730a391790d4be3c9fe14af5327e" kind="function"><name>create</name></member>
@@ -178,8 +178,13 @@
     <member refid="classrolly_1_1application__dirs_1a4bc1b913553cb31ddf0c37cc55c6c4c5" kind="function"><name>data_dir</name></member>
     <member refid="classrolly_1_1application__dirs_1a9515233f07cdc7f8626c6e85e2ff6fe2" kind="function"><name>data_local_dir</name></member>
     <member refid="classrolly_1_1application__dirs_1ac0c60c9ab055e4fbe6e2faecd6722a9a" kind="function"><name>preference_dir</name></member>
-    <member refid="classrolly_1_1application__dirs_1a559edd679316c7ced41fef5119788cef" kind="function"><name>runtime_dir</name></member>
-    <member refid="classrolly_1_1application__dirs_1a2523855bb47cadb2a77c10fa2351ba67" kind="function"><name>state_dir</name></member>
+    <member refid="classrolly_1_1application__dirs_1a24c10522c9c2298dedda84c57d524dbc" kind="function"><name>runtime_dir</name></member>
+    <member refid="classrolly_1_1application__dirs_1a817e8af54a15afcda79fa74f2cecc89b" kind="function"><name>state_dir</name></member>
+  </compound>
+  <compound refid="classrolly_1_1bad__optional__access" kind="class"><name>rolly::bad_optional_access</name>
+    <member refid="classrolly_1_1bad__optional__access_1a3ada2a80545374efa2b30defcf3461d8" kind="function"><name>bad_optional_access</name></member>
+    <member refid="classrolly_1_1bad__optional__access_1ab1b009d583f7839ae3a1c4c4b2f1c2a6" kind="function"><name>what</name></member>
+    <member refid="cpp/error/exception/what_1" kind="function"><name>what</name></member>
   </compound>
   <compound refid="classrolly_1_1box" kind="class"><name>rolly::box</name>
     <member refid="classrolly_1_1box_1afb9ded5f49336ae503bb9f2035ea902b" kind="typedef"><name>value_type</name></member>
@@ -203,7 +208,7 @@
     <member refid="classrolly_1_1box_1a6b85f584a4a8c1b98b84e1ab81a670ae" kind="function"><name>as_unique_ptr</name></member>
     <member refid="classrolly_1_1box_1a292afa7d9b939b261835165270ccb828" kind="function"><name>as_unique_ptr</name></member>
     <member refid="classrolly_1_1box_1a9e0803457f22fb3201520a7e00be7fca" kind="function"><name>leak</name></member>
-    <member refid="classrolly_1_1box_1a0752489c60608212fdfd8a66ae0c90ba" kind="function"><name>downcast</name></member>
+    <member refid="classrolly_1_1box_1abd452a397c01521fa9b941a2ff58fd01" kind="function"><name>downcast</name></member>
     <member refid="classrolly_1_1box_1a821c701c77d3231e978182beedefb8a4" kind="function"><name>as</name></member>
     <member refid="classrolly_1_1box_1a246ff03289ee9a88e936eafb6bd7b026" kind="function"><name>as</name></member>
     <member refid="classrolly_1_1box_1a420e60e9788bfa3b52aa3aab72ea3a5e" kind="function"><name>operator bool</name></member>
@@ -216,6 +221,10 @@
   <compound refid="structrolly_1_1serialization_1_1format_1_1bson" kind="struct"><name>rolly::serialization::format::bson</name>
   </compound>
   <compound refid="structrolly_1_1serialization_1_1format_1_1cbor" kind="struct"><name>rolly::serialization::format::cbor</name>
+  </compound>
+  <compound refid="structdetail_1_1cleanable" kind="struct"><name>detail::cleanable</name>
+    <member refid="structdetail_1_1cleanable_1a82e22447aef3fa270c72d0dd6b9b4d18" kind="function"><name>~cleanable</name></member>
+    <member refid="structdetail_1_1cleanable_1a345a05a2d450246eca94da2ec99309e8" kind="function"><name>clean</name></member>
   </compound>
   <compound refid="classrolly_1_1exceptions_1_1compile__time__error" kind="class"><name>rolly::exceptions::compile_time_error</name>
     <member refid="classrolly_1_1exceptions_1_1compile__time__error_1a4136f421e413f118b2b0da52e128ba5b" kind="variable"><name>message_</name></member>
@@ -281,10 +290,59 @@
     <member refid="classrolly_1_1io_1_1filedevice_1a0216cd840232d838604b8f3f859eedde" kind="function"><name>write_to</name></member>
     <member refid="classrolly_1_1io_1_1filedevice_1a56105d753006a32aa832a7ad76390f01" kind="function"><name>try_write_to</name></member>
   </compound>
+  <compound refid="classconnection" kind="class"><name>connection</name>
+    <member refid="classconnection_1adbb76e465a87aaefbf548116710130bf" kind="friend"><name>signal_base</name></member>
+    <member refid="classconnection_1a4fd0ecc2a51f1be13a65560171452093" kind="variable"><name>m_state</name></member>
+    <member refid="classconnection_1ac93b88a59735e1aa120d27c016c2113f" kind="function"><name>connection</name></member>
+    <member refid="classconnection_1a77dd271f002f3dbc047d94f1e88da91b" kind="function"><name>~connection</name></member>
+    <member refid="classconnection_1a19cd24cb7851115e90d9ad2ff630e74f" kind="function"><name>connection</name></member>
+    <member refid="classconnection_1adcb82a67a3fe746d2936c7cc75e56354" kind="function"><name>operator=</name></member>
+    <member refid="classconnection_1a42f193ca0dca23b2fb0277edc0594306" kind="function"><name>connection</name></member>
+    <member refid="classconnection_1ab9b26762feadf9a6485f577fa1f62042" kind="function"><name>operator=</name></member>
+    <member refid="classconnection_1a99f77f09f364b20c3a30ab6bffa4c24b" kind="function"><name>valid</name></member>
+    <member refid="classconnection_1aea98f17ec82a508709705113fa8e8142" kind="function"><name>connected</name></member>
+    <member refid="classconnection_1aad44f9fa60edb612ecd1fdd909d2c5f3" kind="function"><name>disconnect</name></member>
+    <member refid="classconnection_1abc95cfa1a604cb7c20dd0fbb1b1a4c3d" kind="function"><name>blocked</name></member>
+    <member refid="classconnection_1a6492f4e68ba91c40f179d15508a679e4" kind="function"><name>block</name></member>
+    <member refid="classconnection_1a27e7a6a740ea8eeb2791b996adce72b4" kind="function"><name>unblock</name></member>
+    <member refid="classconnection_1a1c01523b85d7528e4f9ac8a0c7915442" kind="function"><name>blocker</name></member>
+    <member refid="classconnection_1a44e902fc44fb936716a808984ec21e4a" kind="function"><name>connection</name></member>
+  </compound>
+  <compound refid="classconnection__blocker" kind="class"><name>connection_blocker</name>
+    <member refid="classconnection__blocker_1adb115488bb4890f7fc705ee527ad71e0" kind="friend"><name>connection</name></member>
+    <member refid="classconnection__blocker_1a4fd0ecc2a51f1be13a65560171452093" kind="variable"><name>m_state</name></member>
+    <member refid="classconnection__blocker_1ad005f3ebee7220842e808a916dc4a1c2" kind="function"><name>connection_blocker</name></member>
+    <member refid="classconnection__blocker_1af1680dd59a4a50aa80d66c78e29d3544" kind="function"><name>~connection_blocker</name></member>
+    <member refid="classconnection__blocker_1a4c67fb38d5c259b1be9638285eee046b" kind="function"><name>connection_blocker</name></member>
+    <member refid="classconnection__blocker_1ada0b59c6b27dd4ce44bae1cfb6bc7ebe" kind="function"><name>operator=</name></member>
+    <member refid="classconnection__blocker_1a08e32fd43a34d6daf7050815fe822590" kind="function"><name>connection_blocker</name></member>
+    <member refid="classconnection__blocker_1a0784181d67b859ddb5144326e8cc0c95" kind="function"><name>operator=</name></member>
+    <member refid="classconnection__blocker_1a89c564158c1d726b5eeba9dfdf11be81" kind="function"><name>connection_blocker</name></member>
+    <member refid="classconnection__blocker_1a4fd0fa43d212f9effc3366b8bce40fb5" kind="function"><name>release</name></member>
+  </compound>
+  <compound refid="structrolly_1_1const__overload__t" kind="struct"><name>rolly::const_overload_t</name>
+    <member refid="structrolly_1_1const__overload__t_1a0c5d7b17febdf313a401bb45080df101" kind="function"><name>operator()</name></member>
+    <member refid="structrolly_1_1const__overload__t_1afd14a7e28ff84c3ace3febb49396d781" kind="function"><name>of</name></member>
+  </compound>
   <compound refid="structrolly_1_1contracts_1_1contract__violation" kind="struct"><name>rolly::contracts::contract_violation</name>
     <member refid="structrolly_1_1contracts_1_1contract__violation_1a291a73e9618c042c608372d489b8e8b3" kind="variable"><name>type</name></member>
     <member refid="structrolly_1_1contracts_1_1contract__violation_1a36bd74109f547f7f8198faf5a12d2879" kind="variable"><name>message</name></member>
     <member refid="structrolly_1_1contracts_1_1contract__violation_1a729bab6ed1cfcc043916f1c4abd7d2c7" kind="variable"><name>location</name></member>
+  </compound>
+  <compound refid="classdetail_1_1copy__on__write" kind="class"><name>detail::copy_on_write</name>
+    <member refid="classdetail_1_1copy__on__write_1ab09edc4b568d547d04da66f947f5595a" kind="typedef"><name>element_type</name></member>
+    <member refid="classdetail_1_1copy__on__write_1a993105802e018e70be0f91fc6aa581ff" kind="variable"><name>m_data</name></member>
+    <member refid="classdetail_1_1copy__on__write_1adf1d2dce525a8c07bce090fb3526934e" kind="function"><name>copy_on_write</name></member>
+    <member refid="classdetail_1_1copy__on__write_1aa695e83695bbdae5144bad6255fd5026" kind="function"><name>copy_on_write</name></member>
+    <member refid="classdetail_1_1copy__on__write_1a1e386486c2cde2c0a4d103a5bc541f57" kind="function"><name>copy_on_write</name></member>
+    <member refid="classdetail_1_1copy__on__write_1a8d7b2f02f32320620d3c815616675780" kind="function"><name>copy_on_write</name></member>
+    <member refid="classdetail_1_1copy__on__write_1af6720899f39da8d39e4e28ff2d88caa5" kind="function"><name>~copy_on_write</name></member>
+    <member refid="classdetail_1_1copy__on__write_1a5c516f55a4760cbfe76a3411da0e3631" kind="function"><name>operator=</name></member>
+    <member refid="classdetail_1_1copy__on__write_1a38f641611e2fa6f0210caeaec3b198d2" kind="function"><name>operator=</name></member>
+    <member refid="classdetail_1_1copy__on__write_1a931513eba433b0f72dbbe57a46ebcd24" kind="function"><name>write</name></member>
+    <member refid="classdetail_1_1copy__on__write_1afcc506b8af482d93f080cb9a28eadfd2" kind="function"><name>read</name></member>
+    <member refid="classdetail_1_1copy__on__write_1a0f9109d0f1cb46a24ebe770147376b44" kind="friend"><name>swap</name></member>
+    <member refid="classdetail_1_1copy__on__write_1a17f79efcc0f2e0d5cb9afcdee013e64c" kind="function"><name>unique</name></member>
   </compound>
   <compound refid="structrolly_1_1deleter" kind="struct"><name>rolly::deleter</name>
     <member refid="structrolly_1_1deleter_1a75cb36ad2764eb41578552dd0161a0c8" kind="function"><name>operator()</name></member>
@@ -308,6 +366,8 @@
     <member refid="classrolly_1_1dirs_1ace7dab2abf6afccf9e422d4c09095919" kind="function"><name>operator=</name></member>
     <member refid="classrolly_1_1dirs_1a75c2d60667a1b0349b5def98d57f872c" kind="function"><name>operator=</name></member>
     <member refid="classrolly_1_1dirs_1a52ba3d4e210c32f3f5ac0abe2186b7a6" kind="function"><name>user_home</name></member>
+  </compound>
+  <compound refid="structrolly_1_1nullopt__t_1_1do__not__use" kind="struct"><name>rolly::nullopt_t::do_not_use</name>
   </compound>
   <compound refid="classrolly_1_1io_1_1filedevice" kind="class"><name>rolly::io::filedevice</name>
     <member refid="classrolly_1_1io_1_1filedevice_1a5963243bd4dde422ba389da63fb2cab1" kind="variable"><name>write_permissions</name></member>
@@ -385,7 +445,49 @@
   <compound refid="structfmt_1_1formatter_3_01rolly_1_1version_01_4" kind="struct"><name>fmt::formatter&lt; rolly::version &gt;</name>
     <member refid="structfmt_1_1formatter_3_01rolly_1_1version_01_4_1a12ce03b424fbf53c75ee97d7108e6c1c" kind="function"><name>format</name></member>
   </compound>
+  <compound refid="structdetail_1_1func__ptr" kind="struct"><name>detail::func_ptr</name>
+    <member refid="structdetail_1_1func__ptr_1a3bec24eaaf383629c62beebc20439a52" kind="variable"><name>data</name></member>
+    <member refid="structdetail_1_1func__ptr_1aad50db3bff52eed270f16ef9e6acd8b1" kind="variable"><name>sz</name></member>
+    <member refid="structdetail_1_1func__ptr_1a0998eae3f4406168157826c2ccc7a509" kind="function"><name>func_ptr</name></member>
+    <member refid="structdetail_1_1func__ptr_1a37608f959b4fc1043dad26a87e154507" kind="function"><name>store</name></member>
+    <member refid="structdetail_1_1func__ptr_1ab2294c7a89177a5a2e72418be77ca3a8" kind="function"><name>as</name></member>
+  </compound>
+  <compound refid="structdetail_1_1function__traits" kind="struct"><name>detail::function_traits</name>
+    <member refid="structdetail_1_1function__traits_1a45d0d3292ccf281de02f4dc7de0dba6c" kind="variable"><name>is_disconnectable</name></member>
+    <member refid="structdetail_1_1function__traits_1a7602976e3ba49ec8ccebe9c28f467891" kind="variable"><name>must_check_object</name></member>
+    <member refid="structdetail_1_1function__traits_1a7fb3391b366f87854d3dcef5d6b720fe" kind="function"><name>ptr</name></member>
+    <member refid="structdetail_1_1function__traits_1a021aa202fb5341171fa1acbf80124ddf" kind="function"><name>eq</name></member>
+  </compound>
+  <compound refid="structdetail_1_1function__traits_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4" kind="struct"><name>detail::function_traits&lt; T *, std::enable_if_t&lt; trait::is_func_v&lt; T &gt; &gt; &gt;</name>
+    <member refid="structdetail_1_1function__traits_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4_1a45d0d3292ccf281de02f4dc7de0dba6c" kind="variable"><name>is_disconnectable</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4_1a7602976e3ba49ec8ccebe9c28f467891" kind="variable"><name>must_check_object</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4_1a85ccda2dc77da5d05352f0050460f1d7" kind="function"><name>ptr</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4_1aa8fc52ac00dd16448db1340a7851dc83" kind="function"><name>eq</name></member>
+  </compound>
+  <compound refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4" kind="struct"><name>detail::function_traits&lt; T, std::enable_if_t&lt; trait::has_call_operator_v&lt; T &gt; &gt; &gt;</name>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a8ffe58ac0dbde867819fc64d50e13212" kind="typedef"><name>call_type</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a45d0d3292ccf281de02f4dc7de0dba6c" kind="variable"><name>is_disconnectable</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a7602976e3ba49ec8ccebe9c28f467891" kind="variable"><name>must_check_object</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1aa0aa844f1a29dbedab53a4c780139935" kind="function"><name>ptr</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4_1a2e36b44b650aa2a8d56647d299467f1e" kind="function"><name>eq</name></member>
+  </compound>
+  <compound refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4" kind="struct"><name>detail::function_traits&lt; T, std::enable_if_t&lt; trait::is_func_v&lt; T &gt; &gt; &gt;</name>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4_1a45d0d3292ccf281de02f4dc7de0dba6c" kind="variable"><name>is_disconnectable</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4_1a7602976e3ba49ec8ccebe9c28f467891" kind="variable"><name>must_check_object</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4_1a2242c2bf5da6d1c23a388dad87d2138e" kind="function"><name>ptr</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4_1ac1be1f97abb9bddc3d9c8f27cef684d3" kind="function"><name>eq</name></member>
+  </compound>
+  <compound refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4" kind="struct"><name>detail::function_traits&lt; T, std::enable_if_t&lt; trait::is_pmf_v&lt; T &gt; &gt; &gt;</name>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1a45d0d3292ccf281de02f4dc7de0dba6c" kind="variable"><name>is_disconnectable</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1a7602976e3ba49ec8ccebe9c28f467891" kind="variable"><name>must_check_object</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1af8b8cde8255012263c95b9fc2903d47e" kind="function"><name>ptr</name></member>
+    <member refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4_1a91c99e317dabb39c91d235530eb20df2" kind="function"><name>eq</name></member>
+  </compound>
   <compound refid="structrolly_1_1serialization_1_1format_1_1generic" kind="struct"><name>rolly::serialization::format::generic</name>
+  </compound>
+  <compound refid="structsignal__base_1_1group__type" kind="struct"><name>signal_base::group_type</name>
+    <member refid="structsignal__base_1_1group__type_1a5e3330d7bda193216d6769f0a8c21abf" kind="variable"><name>slts</name></member>
+    <member refid="structsignal__base_1_1group__type_1aa9c8e066bb96692070121f9a86a7979e" kind="variable"><name>gid</name></member>
   </compound>
   <compound refid="classrolly_1_1types_1_1guid" kind="class"><name>rolly::types::guid</name>
     <member refid="classrolly_1_1types_1_1guid_1a12dfa471359cc40e28009e2ff6a37996" kind="variable"><name>bytes_</name></member>
@@ -446,6 +548,9 @@
   <compound refid="structstd_1_1hash_3_01rolly_1_1observer__ptr_3_01T_01_4_01_4" kind="struct"><name>std::hash&lt; rolly::observer_ptr&lt; T &gt; &gt;</name>
     <member refid="structstd_1_1hash_3_01rolly_1_1observer__ptr_3_01T_01_4_01_4_1a99d1b5a961d2f4ba5a95c300f2c659ff" kind="function"><name>operator()</name></member>
   </compound>
+  <compound refid="structstd_1_1hash_3_01rolly_1_1optional_3_01T_01_4_01_4" kind="struct"><name>std::hash&lt; rolly::optional&lt; T &gt; &gt;</name>
+    <member refid="structstd_1_1hash_3_01rolly_1_1optional_3_01T_01_4_01_4_1ae31b9ae677f86f694e4c418ecfa25d53" kind="function"><name>operator()</name></member>
+  </compound>
   <compound refid="structstd_1_1hash_3_01rolly_1_1types_1_1point2d_3_01T_01_4_01_4" kind="struct"><name>std::hash&lt; rolly::types::point2d&lt; T &gt; &gt;</name>
     <member refid="structstd_1_1hash_3_01rolly_1_1types_1_1point2d_3_01T_01_4_01_4_1a005207feabac91b01c48c2a23f13e409" kind="function"><name>operator()</name></member>
   </compound>
@@ -457,6 +562,8 @@
   </compound>
   <compound refid="structrolly_1_1is__any__of" kind="struct"><name>rolly::is_any_of</name>
   </compound>
+  <compound refid="structrolly_1_1trait_1_1is__callable_3_01F_00_01typelist_3_01T_8_8_8_01_4_00_01void__t_3_01declt66028bba37b643a5c2d0222823d22cb8" kind="struct"><name>rolly::trait::is_callable&lt; F, typelist&lt; T... &gt;, void_t&lt; decltype(std::declval&lt; F &gt;()(std::declval&lt; T &gt;()...))&gt; &gt;</name>
+  </compound>
   <compound refid="structrolly_1_1is__num" kind="struct"><name>rolly::is_num</name>
     <member refid="structrolly_1_1is__num_1a23272b2567f5687eaec97876db4f96c2" kind="variable"><name>is_num_v</name></member>
   </compound>
@@ -466,6 +573,18 @@
   </compound>
   <compound refid="structrolly_1_1is__qobject" kind="struct"><name>rolly::is_qobject</name>
   </compound>
+  <compound refid="structrolly_1_1trait_1_1is__signal" kind="struct"><name>rolly::trait::is_signal</name>
+  </compound>
+  <compound refid="structrolly_1_1trait_1_1is__signal_3_01signal__base_3_01L_00_01T_8_8_8_01_4_01_4" kind="struct"><name>rolly::trait::is_signal&lt; signal_base&lt; L, T... &gt; &gt;</name>
+  </compound>
+  <compound refid="structrolly_1_1trait_1_1is__weak__ptr" kind="struct"><name>rolly::trait::is_weak_ptr</name>
+  </compound>
+  <compound refid="structrolly_1_1trait_1_1is__weak__ptr_3_01T_00_01void__t_3_01decltype_07std_1_1declval_3_01T_01_13fd328036332a30c13445a07df30ceb" kind="struct"><name>rolly::trait::is_weak_ptr&lt; T, void_t&lt; decltype(std::declval&lt; T &gt;().expired()), decltype(std::declval&lt; T &gt;().lock()), decltype(std::declval&lt; T &gt;().reset())&gt; &gt;</name>
+  </compound>
+  <compound refid="structrolly_1_1trait_1_1is__weak__ptr__compatible" kind="struct"><name>rolly::trait::is_weak_ptr_compatible</name>
+  </compound>
+  <compound refid="structrolly_1_1trait_1_1is__weak__ptr__compatible_3_01T_00_01void__t_3_01decltype_07to__weak_07s21218c6e5bd4c76e56da307adfbeb012" kind="struct"><name>rolly::trait::is_weak_ptr_compatible&lt; T, void_t&lt; decltype(to_weak(std::declval&lt; T &gt;()))&gt; &gt;</name>
+  </compound>
   <compound refid="structrolly_1_1serialization_1_1format_1_1json" kind="struct"><name>rolly::serialization::format::json</name>
   </compound>
   <compound refid="classrolly_1_1qt_1_1qml_1_1module" kind="class"><name>rolly::qt::qml::module</name>
@@ -473,17 +592,21 @@
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1a4d739cc5d335052eb9f5b2ca559b81d1" kind="variable"><name>name_</name></member>
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1a29b70db64168b74a789f3990e273c3d0" kind="variable"><name>version_</name></member>
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1a6e561fea65626a84736a8933096d18ef" kind="function"><name>module</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1ac7202b57d7facc087c7ba3c54ef31c18" kind="function"><name>component</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a4e6a45ec79c518ed49853e8995bb9553" kind="function"><name>singleton</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a76c79bedc2db496b0d4b599bcee32cc8" kind="function"><name>singleton</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1ad788a07f7e141b6cf1137317ea5fcd9f" kind="function"><name>file</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a10e0b90aaea8b67fa3e091cb47380314" kind="function"><name>uncreatable</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a1f8d4c59f9a1640890482e844b0a8e0e" kind="function"><name>component</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a425691f72bda43ecd3e4a9f38e89b49e" kind="function"><name>singleton</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a9df71904b9d6009dedaf888ccd5908b9" kind="function"><name>singleton</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1ac9065f0e0de2669e96cb78c15be92354" kind="function"><name>file</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1ae94c90f5c50d5eb38c541f5fbcdd5e5b" kind="function"><name>uncreatable</name></member>
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1ad6cd0b9a9751c5608a2182299d9da58a" kind="function"><name>push</name></member>
     <member refid="classrolly_1_1qt_1_1qml_1_1module_1ae6070434ac37e030975ed0188390e71b" kind="function"><name>push_all</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1ad2f54fd0205c52348ec7733322b761a8" kind="function"><name>demangle_class_name</name></member>
-    <member refid="classrolly_1_1qt_1_1qml_1_1module_1acf7de62cb4cacdeb8d7a4ded4442a3bd" kind="function"><name>demangle_file_url</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1aef32f3f36b7526d37cb0bbc7f864d157" kind="function"><name>demangle_class_name</name></member>
+    <member refid="classrolly_1_1qt_1_1qml_1_1module_1a7241abd8586c920b753d1e0e6ece5c98" kind="function"><name>demangle_file_url</name></member>
   </compound>
   <compound refid="structrolly_1_1serialization_1_1format_1_1msgpack" kind="struct"><name>rolly::serialization::format::msgpack</name>
+  </compound>
+  <compound refid="structrolly_1_1non__const__overload__t" kind="struct"><name>rolly::non_const_overload_t</name>
+    <member refid="structrolly_1_1non__const__overload__t_1abaeeb2a90ff9866eff005fa9f8413f1f" kind="function"><name>operator()</name></member>
+    <member refid="structrolly_1_1non__const__overload__t_1a0e60f2f1eebb24b5124fcd88ee0a2b30" kind="function"><name>of</name></member>
   </compound>
   <compound refid="structrolly_1_1noncopyable" kind="struct"><name>rolly::noncopyable</name>
     <member refid="structrolly_1_1noncopyable_1a9a7cb0757f3a96b9862062e348f20577" kind="function"><name>noncopyable</name></member>
@@ -496,6 +619,40 @@
     <member refid="structrolly_1_1nonmovable_1a4352173bc3c30a542b3c5166f31ebf9b" kind="function"><name>~nonmovable</name></member>
     <member refid="structrolly_1_1nonmovable_1add65207e9c46232f479124c747f3abb5" kind="function"><name>nonmovable</name></member>
     <member refid="structrolly_1_1nonmovable_1a7e86c1b2d7c0aeb233f86cdde473389b" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="structdetail_1_1null__mutex" kind="struct"><name>detail::null_mutex</name>
+    <member refid="structdetail_1_1null__mutex_1ab44fccccf509683e29f5083031d880c9" kind="function"><name>null_mutex</name></member>
+    <member refid="structdetail_1_1null__mutex_1aa879c15babb4528c7871bab7ebafacfe" kind="function"><name>~null_mutex</name></member>
+    <member refid="structdetail_1_1null__mutex_1a5647f1f0cd472453a79df17a6a5ef32a" kind="function"><name>null_mutex</name></member>
+    <member refid="structdetail_1_1null__mutex_1a9f1b381a0ed9dccece91dd08a6ca1c2c" kind="function"><name>operator=</name></member>
+    <member refid="structdetail_1_1null__mutex_1a3c1f81ead8851dff36a7ba229445f278" kind="function"><name>null_mutex</name></member>
+    <member refid="structdetail_1_1null__mutex_1ae78a514cdc1366884f426d209de97986" kind="function"><name>operator=</name></member>
+    <member refid="structdetail_1_1null__mutex_1aaad48f59834eeecf8ba9d698859b79c5" kind="function"><name>try_lock</name></member>
+    <member refid="structdetail_1_1null__mutex_1a5d1ca4288b3113f745f548d81f90573c" kind="function"><name>lock</name></member>
+    <member refid="structdetail_1_1null__mutex_1a4b7c1039f47fca6ca12bbf9134a543a1" kind="function"><name>unlock</name></member>
+  </compound>
+  <compound refid="structrolly_1_1nullopt__t" kind="struct"><name>rolly::nullopt_t</name>
+    <member refid="structrolly_1_1nullopt__t_1a816afdd27a30f9b02f87d058066d12e2" kind="function"><name>nullopt_t</name></member>
+  </compound>
+  <compound refid="structdetail_1_1object__pointer" kind="struct"><name>detail::object_pointer</name>
+    <member refid="structdetail_1_1object__pointer_1abca2f4314792369e65b96a31e17d4e6c" kind="function"><name>get</name></member>
+  </compound>
+  <compound refid="structdetail_1_1object__pointer_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__pointer__v_3_01T_01_5_01_4_01_4_01_4" kind="struct"><name>detail::object_pointer&lt; T *, std::enable_if_t&lt; trait::is_pointer_v&lt; T * &gt; &gt; &gt;</name>
+    <member refid="structdetail_1_1object__pointer_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__pointer__v_3_01T_01_5_01_4_01_4_01_4_1a337dfdf0802e2465587ebd37fbeb7ebd" kind="function"><name>get</name></member>
+  </compound>
+  <compound refid="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01_9_01trait_1_1is__pointer__v9d17afaa4d8ddd746027d98f7cb68c51" kind="struct"><name>detail::object_pointer&lt; T, std::enable_if_t&lt; ! trait::is_pointer_v&lt; T &gt; &amp;&amp;! trait::is_weak_ptr_v&lt; T &gt; &amp;&amp;trait::is_weak_ptr_compatible_v&lt; T &gt; &gt; &gt;</name>
+    <member refid="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01_9_01trait_1_1is__pointer__v9d17afaa4d8ddd746027d98f7cb68c51_1a714aa80bfb7cf2a7b66690feb6b9fe4c" kind="function"><name>get</name></member>
+  </compound>
+  <compound refid="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__weak__ptr__v_3_01T_01_4_01_4_01_4" kind="struct"><name>detail::object_pointer&lt; T, std::enable_if_t&lt; trait::is_weak_ptr_v&lt; T &gt; &gt; &gt;</name>
+    <member refid="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__weak__ptr__v_3_01T_01_4_01_4_01_4_1a714aa80bfb7cf2a7b66690feb6b9fe4c" kind="function"><name>get</name></member>
+  </compound>
+  <compound refid="structobserver__base" kind="struct"><name>observer_base</name>
+    <member refid="structobserver__base_1adbb76e465a87aaefbf548116710130bf" kind="friend"><name>signal_base</name></member>
+    <member refid="structobserver__base_1a1b4dcadd74e4b032b90a244bf0e670b5" kind="variable"><name>m_mutex</name></member>
+    <member refid="structobserver__base_1a78ff765e693eb0d4b2ab91999d92e2a5" kind="variable"><name>m_connections</name></member>
+    <member refid="structobserver__base_1a43293f37a2694f95b11fc44e262de540" kind="function"><name>~observer_base</name></member>
+    <member refid="structobserver__base_1a02922e7231c3a315b2bfd1049b675365" kind="function"><name>disconnect_all</name></member>
+    <member refid="structobserver__base_1a7689f9078669014a659e3c42d478d5dd" kind="function"><name>add_connection</name></member>
   </compound>
   <compound refid="classrolly_1_1observer__ptr" kind="class"><name>rolly::observer_ptr</name>
     <member refid="classrolly_1_1observer__ptr_1ab09edc4b568d547d04da66f947f5595a" kind="typedef"><name>element_type</name></member>
@@ -523,8 +680,169 @@
     <member refid="classrolly_1_1observer__ptr_1adf6f1fb30d64991e6bf834d69bc34018" kind="function"><name>swap</name></member>
     <member refid="classrolly_1_1observer__ptr_1ac869794e3e52c6f5416d5ebc7d720767" kind="function"><name>swap</name></member>
   </compound>
+  <compound refid="structrolly_1_1detail_1_1observer__type" kind="struct"><name>rolly::detail::observer_type</name>
+  </compound>
+  <compound refid="classrolly_1_1optional" kind="class"><name>rolly::optional</name>
+    <member refid="classrolly_1_1optional_1a5d5b2a1437d3fa7b61a1fa08d714d893" kind="typedef"><name>base</name></member>
+    <member refid="classrolly_1_1optional_1afb9ded5f49336ae503bb9f2035ea902b" kind="typedef"><name>value_type</name></member>
+    <member refid="classrolly_1_1optional_1ad9d975250ca8c6f2c78a440519ef2221" kind="variable"><name>map</name></member>
+    <member refid="classrolly_1_1optional_1a73507de5deb52450b0b71dc5b9afc157" kind="variable"><name>map</name></member>
+    <member refid="classrolly_1_1optional_1a99d96478120e0f445433d377722f58a6" kind="variable"><name>map</name></member>
+    <member refid="classrolly_1_1optional_1a5372d6cde59f809b46eefe5b3bb09daa" kind="variable"><name>map</name></member>
+    <member refid="classrolly_1_1optional_1aa888e9b68cadd11c18f674f25e814a54" kind="variable"><name>transform</name></member>
+    <member refid="classrolly_1_1optional_1a7e3c7fdab790728c6b2e1be2741b0827" kind="variable"><name>transform</name></member>
+    <member refid="classrolly_1_1optional_1a2d6066a7ff662584a53ce60602396be5" kind="variable"><name>transform</name></member>
+    <member refid="classrolly_1_1optional_1a405c9b4cc2765797f1676a45daf0b810" kind="variable"><name>transform</name></member>
+    <member refid="classrolly_1_1optional_1a8e0758cd5aa728222538ce6dbbda3e66" kind="function"><name>and_then</name></member>
+    <member refid="classrolly_1_1optional_1a65bd9a94b5c616737a43ff82a69ee2df" kind="function"><name>and_then</name></member>
+    <member refid="classrolly_1_1optional_1a5a54ddc726627b58b248d66d398561c0" kind="function"><name>and_then</name></member>
+    <member refid="classrolly_1_1optional_1a17b250c7983da32bf602aafe7d808ceb" kind="function"><name>and_then</name></member>
+    <member refid="classrolly_1_1optional_1abe174e282f9736d9e539b492797d9d7e" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_1abe174e282f9736d9e539b492797d9d7e" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_1a1bdb07fd42a57e40efd4b8a12fccad75" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_1aa9e538d9fcdaedb8d067e4b41ee5703f" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_1a87b8d34c2b2e67affad11297594229f1" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_1a8e69d1fbc614e2efd3057f8591f08e0f" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_1a49497a7c8beee3262c0eba26b2cf3aa7" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_1a49497a7c8beee3262c0eba26b2cf3aa7" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_1a707e7a79788137cb02a7175cb6eea34d" kind="function"><name>map_or</name></member>
+    <member refid="classrolly_1_1optional_1a70a442682b0d52b7904dcba448ab8c11" kind="function"><name>map_or</name></member>
+    <member refid="classrolly_1_1optional_1a3009dd1f894482812bc782a855ff3e01" kind="function"><name>map_or</name></member>
+    <member refid="classrolly_1_1optional_1a580f04de31229bfb2aedf52157947d5c" kind="function"><name>map_or</name></member>
+    <member refid="classrolly_1_1optional_1a14e5d060ddbbed0bc38f2248f099e664" kind="function"><name>map_or_else</name></member>
+    <member refid="classrolly_1_1optional_1ad6069cace64a1fee3e54524ae6791cdf" kind="function"><name>map_or_else</name></member>
+    <member refid="classrolly_1_1optional_1a6698843f817a0de1c84035bea1bd9033" kind="function"><name>map_or_else</name></member>
+    <member refid="classrolly_1_1optional_1aa5e7d838f719add6d1553cbb12a73d91" kind="function"><name>map_or_else</name></member>
+    <member refid="classrolly_1_1optional_1a5e8d520b9233bf52ed72127d4afbda32" kind="function"><name>conjunction</name></member>
+    <member refid="classrolly_1_1optional_1a56d9e9e39dc0131e687ae77dc2e44ba1" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_1a62b4c17f4f935877558dbd8a87fad1bd" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_1ad5a93e8697443439435ef33a1bd044ef" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_1a17cec32a7bfbcc8f405850d3907a308e" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_1a5b995d711225752957614f1144660c49" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_1a4a130d66feeb3bac00c2bfe98763ba42" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_1a6d0158ec8c513401198becf6554089d8" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_1ac50f45b19cabe5d1eb12b6fc3177880a" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_1ace16d6b8d42636f88f85384468f1e320" kind="function"><name>take</name></member>
+    <member refid="classrolly_1_1optional_1a656aa74c72d602923ed13edff9402f74" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1af94e1e8370f4ccce1e2178e73e73108d" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1a216902450eccba2bdf6879099b5c5c3a" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1a0d171a7fcb0cf7e0810d79d975c5b650" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1ad4b8af1c9f52104c17f96412651d348f" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1aefd7f821f43043867b8dea98e1e817a0" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1a42e8846bfd635be7e07abab2246f9290" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1a42e8846bfd635be7e07abab2246f9290" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1a1134dde259855c909af75fce04f83d90" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1a1134dde259855c909af75fce04f83d90" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1a3e331ef5e402e08a5e2e6e1ef0227d6b" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1a3e331ef5e402e08a5e2e6e1ef0227d6b" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_1ade59530744da512b5db911ad67ce654a" kind="function"><name>~optional</name></member>
+    <member refid="classrolly_1_1optional_1ae30f6090cf50374e6b557e03b7072f7e" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_1a8cddc70a4e034595a82f96cfb28afc65" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_1a78e7ac1a509871e7103af26986c96370" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_1a1e8eae689be775a76bd60bf463792c0c" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_1a2c243f07022f23f344d7799f1a793db5" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_1a88be0d77564a849dd53900482a083d75" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_1a3767e074b147bda4e01ee30f5177c2c0" kind="function"><name>emplace</name></member>
+    <member refid="classrolly_1_1optional_1ab0e864a77748e223a01b9fe28b614562" kind="function"><name>emplace</name></member>
+    <member refid="classrolly_1_1optional_1ac6a29c658efe77e50b87910e8bd5b5c5" kind="function"><name>swap</name></member>
+    <member refid="classrolly_1_1optional_1a2c28eb8838dbbf8c9a7076b01ae6cddb" kind="function"><name>operator-&gt;</name></member>
+    <member refid="classrolly_1_1optional_1a9b59d913de60b72bbd07a44effae7525" kind="function"><name>operator-&gt;</name></member>
+    <member refid="classrolly_1_1optional_1a83ab4df2d81fc87fcfe0a9ffcc1c95de" kind="function"><name>operator*</name></member>
+    <member refid="classrolly_1_1optional_1ac24f08a948afa8b7762d13c3fce4c695" kind="function"><name>operator*</name></member>
+    <member refid="classrolly_1_1optional_1af066d780c7314b15b85416fc9b41a659" kind="function"><name>operator*</name></member>
+    <member refid="classrolly_1_1optional_1ace1a78338836e5c2b98be7497fc53aa1" kind="function"><name>operator*</name></member>
+    <member refid="classrolly_1_1optional_1a6988ba57722f67cbb444b0931468282e" kind="function"><name>has_value</name></member>
+    <member refid="classrolly_1_1optional_1a7990d8e87d9eab2383f94c88c23a6488" kind="function"><name>operator bool</name></member>
+    <member refid="classrolly_1_1optional_1a82e4009f91421b2e75385ca0d481b5d1" kind="function"><name>value</name></member>
+    <member refid="classrolly_1_1optional_1ad6550d266fee511288034272f15842cc" kind="function"><name>value</name></member>
+    <member refid="classrolly_1_1optional_1ad8310e1c6beff5f69f829abeed06d3f5" kind="function"><name>value</name></member>
+    <member refid="classrolly_1_1optional_1ac2cbc1a81887e2603670871b9bcf0d77" kind="function"><name>value</name></member>
+    <member refid="classrolly_1_1optional_1aa3ea73a17e5f9b6f3d820d08f29a7681" kind="function"><name>value_or</name></member>
+    <member refid="classrolly_1_1optional_1a6d6d1f09e09d5345ed1e43ff85ef4e05" kind="function"><name>value_or</name></member>
+    <member refid="classrolly_1_1optional_1a20194325f0380eb3bbc6bc6c8b2697d9" kind="function"><name>reset</name></member>
+  </compound>
+  <compound refid="classrolly_1_1optional_3_01T_01_6_01_4" kind="class"><name>rolly::optional&lt; T &amp; &gt;</name>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a39ccab77232f593b549808ed33e586d2" kind="typedef"><name>value_type</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1abba7a74c703766bd1a7fd90e2aee6b08" kind="variable"><name>map</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a9a7ae98a69c4434973e5c3c408509b6c" kind="variable"><name>map</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8269eb4d316cd62ad55fa3204073864e" kind="variable"><name>map</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ac8f1e8be78abf0ab273c9488014ea8cc" kind="variable"><name>map</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a51798d8a828a414fbfab5e638c8209ea" kind="variable"><name>transform</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5ee56b4c121bc7835ce4c68bfae9fbe6" kind="variable"><name>transform</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a7f8494a9191a3551cefe1ec5a7d4ccb8" kind="variable"><name>transform</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8ab54a421bbda1267b8734a8fd24e461" kind="variable"><name>transform</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a7b8d357575101636a346f6a9edc67bd9" kind="variable"><name>m_value</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8e0758cd5aa728222538ce6dbbda3e66" kind="function"><name>and_then</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a11c40dfeef92b62c6f88616c48a0a7b2" kind="function"><name>and_then</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5a54ddc726627b58b248d66d398561c0" kind="function"><name>and_then</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ae6b73d19fcfb1f2e2d89bb4cbb33249a" kind="function"><name>and_then</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1abe174e282f9736d9e539b492797d9d7e" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1abe174e282f9736d9e539b492797d9d7e" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a1bdb07fd42a57e40efd4b8a12fccad75" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1aa9e538d9fcdaedb8d067e4b41ee5703f" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a87b8d34c2b2e67affad11297594229f1" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8e69d1fbc614e2efd3057f8591f08e0f" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a49497a7c8beee3262c0eba26b2cf3aa7" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a49497a7c8beee3262c0eba26b2cf3aa7" kind="function"><name>or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a707e7a79788137cb02a7175cb6eea34d" kind="function"><name>map_or</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a70a442682b0d52b7904dcba448ab8c11" kind="function"><name>map_or</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a3009dd1f894482812bc782a855ff3e01" kind="function"><name>map_or</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a580f04de31229bfb2aedf52157947d5c" kind="function"><name>map_or</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a14e5d060ddbbed0bc38f2248f099e664" kind="function"><name>map_or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ad6069cace64a1fee3e54524ae6791cdf" kind="function"><name>map_or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a6698843f817a0de1c84035bea1bd9033" kind="function"><name>map_or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1aa5e7d838f719add6d1553cbb12a73d91" kind="function"><name>map_or_else</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5e8d520b9233bf52ed72127d4afbda32" kind="function"><name>conjunction</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a56d9e9e39dc0131e687ae77dc2e44ba1" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a62b4c17f4f935877558dbd8a87fad1bd" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ad5a93e8697443439435ef33a1bd044ef" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a17cec32a7bfbcc8f405850d3907a308e" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5b995d711225752957614f1144660c49" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a4a130d66feeb3bac00c2bfe98763ba42" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a6d0158ec8c513401198becf6554089d8" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ac50f45b19cabe5d1eb12b6fc3177880a" kind="function"><name>disjunction</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ace16d6b8d42636f88f85384468f1e320" kind="function"><name>take</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a3df66b23e958382bf9cfe8947b8bb2e6" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1af94e1e8370f4ccce1e2178e73e73108d" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a18e9f387dd9d46b4056cb233b3ef5b21" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a0d171a7fcb0cf7e0810d79d975c5b650" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a61926a40c1250da2f07fe7a37c606943" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a3c4d4c0419f12cddaca2418bc2260d7d" kind="function"><name>optional</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ade59530744da512b5db911ad67ce654a" kind="function"><name>~optional</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ae30f6090cf50374e6b557e03b7072f7e" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8cddc70a4e034595a82f96cfb28afc65" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a1e8eae689be775a76bd60bf463792c0c" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5beb351051a1f20a45e3cab0d2b6db80" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a9b9773faed27da10a29261798883e3de" kind="function"><name>emplace</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1acb7015d1360fe3929c7ba9663566c3c8" kind="function"><name>swap</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ab4aee760c2c288ec7637b28bcd1877e8" kind="function"><name>operator-&gt;</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a2954c9dbd5bf1aa1d25b74bd2e681ebf" kind="function"><name>operator-&gt;</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1acec5a45b59dc445fa9a2364d572e10f3" kind="function"><name>operator*</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1aa50148320bfb442bb833390d0e8692d0" kind="function"><name>operator*</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a6988ba57722f67cbb444b0931468282e" kind="function"><name>has_value</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a7990d8e87d9eab2383f94c88c23a6488" kind="function"><name>operator bool</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a4cef207fdf17b420d2d0874ce712ade3" kind="function"><name>value</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a4978c19dacf1249763786c58cbd18e13" kind="function"><name>value</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a123a9c8624ac86abfec8be6730075458" kind="function"><name>value_or</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a7060b3e537ab8323ea24bb515102ed6b" kind="function"><name>value_or</name></member>
+    <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a20194325f0380eb3bbc6bc6c8b2697d9" kind="function"><name>reset</name></member>
+  </compound>
   <compound refid="structrolly_1_1ostream__formatter" kind="struct"><name>rolly::ostream_formatter</name>
     <member refid="structrolly_1_1ostream__formatter_1a530ff3c61e787d95ed7ee018d3a26ca2" kind="function"><name>format</name></member>
+  </compound>
+  <compound refid="structrolly_1_1overload__t" kind="struct"><name>rolly::overload_t</name>
+    <member refid="structrolly_1_1overload__t_1a66f98b236f6fcdbc377aeca6281896e6" kind="function"><name>operator()</name></member>
+    <member refid="structrolly_1_1const__overload__t_1a0c5d7b17febdf313a401bb45080df101" kind="function"><name>operator()</name></member>
+    <member refid="structrolly_1_1non__const__overload__t_1abaeeb2a90ff9866eff005fa9f8413f1f" kind="function"><name>operator()</name></member>
+    <member refid="structrolly_1_1overload__t_1abb99928dd2b7a73bd23a5dcbe92a70ea" kind="function"><name>of</name></member>
+    <member refid="structrolly_1_1const__overload__t_1afd14a7e28ff84c3ace3febb49396d781" kind="function"><name>of</name></member>
+    <member refid="structrolly_1_1non__const__overload__t_1a0e60f2f1eebb24b5124fcd88ee0a2b30" kind="function"><name>of</name></member>
+  </compound>
+  <compound refid="structdetail_1_1copy__on__write_1_1payload" kind="struct"><name>detail::copy_on_write::payload</name>
+    <member refid="structdetail_1_1copy__on__write_1_1payload_1ac585d8f6e04a9e0aceb1e6973019172a" kind="variable"><name>count</name></member>
+    <member refid="structdetail_1_1copy__on__write_1_1payload_1a4fc7f59e3113e19697159919a5aad095" kind="variable"><name>value</name></member>
+    <member refid="structdetail_1_1copy__on__write_1_1payload_1a2a9b713ac28d195902d1d1f51d940eb4" kind="function"><name>payload</name></member>
+    <member refid="structdetail_1_1copy__on__write_1_1payload_1a373eae11a5ed905e5fe4f8cdae3bdca7" kind="function"><name>payload</name></member>
   </compound>
   <compound refid="structrolly_1_1pin" kind="struct"><name>rolly::pin</name>
   </compound>
@@ -585,10 +903,10 @@
     <member refid="classrolly_1_1dll_1_1plugin__loader_1a563f7a5d2614222aa2c8bbc0c86499f6" kind="function"><name>operator[]</name></member>
     <member refid="classrolly_1_1dll_1_1plugin__loader_1ab8b37e40341d625d21a8e0f4d9fe4bcb" kind="function"><name>libraries</name></member>
     <member refid="classrolly_1_1dll_1_1plugin__loader_1a9ad17968ce6970294a52ce19058d3a86" kind="function"><name>libraries</name></member>
-    <member refid="classrolly_1_1dll_1_1plugin__loader_1a8f7748dedbb8beb54decf63f462dc3a8" kind="function"><name>query_interface_by_type</name></member>
-    <member refid="classrolly_1_1dll_1_1plugin__loader_1a3e3f5ed68afe55f658cf58b604224925" kind="function"><name>query_interface</name></member>
-    <member refid="classrolly_1_1dll_1_1plugin__loader_1af8eca129abedfe379d04ade437f5a53e" kind="function"><name>query_interface</name></member>
-    <member refid="classrolly_1_1dll_1_1plugin__loader_1a7a425be3cb615b7c8009d27a87d0fa29" kind="function"><name>query_by</name></member>
+    <member refid="classrolly_1_1dll_1_1plugin__loader_1a726c11a3dfad18e7b56ae55fa24bd6b9" kind="function"><name>query_interface_by_type</name></member>
+    <member refid="classrolly_1_1dll_1_1plugin__loader_1abb17c3456dfe332d00c39917da83812d" kind="function"><name>query_interface</name></member>
+    <member refid="classrolly_1_1dll_1_1plugin__loader_1a7406040b9d002d107ec477cf677110e5" kind="function"><name>query_interface</name></member>
+    <member refid="classrolly_1_1dll_1_1plugin__loader_1abc14ab7ea9ec22a543d6b15fa3089d72" kind="function"><name>query_by</name></member>
     <member refid="classrolly_1_1dll_1_1plugin__loader_1add8e0fe685ab80b2cab50ab8ac09bb5d" kind="function"><name>query_raw</name></member>
     <member refid="classrolly_1_1dll_1_1plugin__loader_1aa5ddc06c4d3be94b529d49e9b8c0d19e" kind="function"><name>native_extension</name></member>
   </compound>
@@ -811,6 +1129,26 @@
     <member refid="classrolly_1_1io_1_1filedevice_1a0216cd840232d838604b8f3f859eedde" kind="function"><name>write_to</name></member>
     <member refid="classrolly_1_1io_1_1filedevice_1a56105d753006a32aa832a7ad76390f01" kind="function"><name>try_write_to</name></member>
   </compound>
+  <compound refid="classscoped__connection" kind="class"><name>scoped_connection</name>
+    <member refid="classscoped__connection_1adbb76e465a87aaefbf548116710130bf" kind="friend"><name>signal_base</name></member>
+    <member refid="classscoped__connection_1a84c1dfb65c3cad698d425a9cf0f9a7dd" kind="function"><name>scoped_connection</name></member>
+    <member refid="classscoped__connection_1a79b5caf933098a4caa51a8ea4e0f601e" kind="function"><name>~scoped_connection</name></member>
+    <member refid="classscoped__connection_1a4fcdd7f4f00eb6551ed0e02685fae5d4" kind="function"><name>scoped_connection</name></member>
+    <member refid="classscoped__connection_1a69ff03656bb2cff1251e82f50f44e5a9" kind="function"><name>scoped_connection</name></member>
+    <member refid="classscoped__connection_1ad28d2ac62422fbce0d049d0aa4f3c518" kind="function"><name>scoped_connection</name></member>
+    <member refid="classscoped__connection_1a2cc5d978048d6c2d591a88897e6bf262" kind="function"><name>operator=</name></member>
+    <member refid="classscoped__connection_1a82d794e881a08e302d6e3de0737b2dc3" kind="function"><name>scoped_connection</name></member>
+    <member refid="classscoped__connection_1ac730b174db1899465b2fb863b700ae54" kind="function"><name>operator=</name></member>
+    <member refid="classconnection_1a99f77f09f364b20c3a30ab6bffa4c24b" kind="function"><name>valid</name></member>
+    <member refid="classconnection_1aea98f17ec82a508709705113fa8e8142" kind="function"><name>connected</name></member>
+    <member refid="classconnection_1aad44f9fa60edb612ecd1fdd909d2c5f3" kind="function"><name>disconnect</name></member>
+    <member refid="classconnection_1abc95cfa1a604cb7c20dd0fbb1b1a4c3d" kind="function"><name>blocked</name></member>
+    <member refid="classconnection_1a6492f4e68ba91c40f179d15508a679e4" kind="function"><name>block</name></member>
+    <member refid="classconnection_1a27e7a6a740ea8eeb2791b996adce72b4" kind="function"><name>unblock</name></member>
+    <member refid="classconnection_1a1c01523b85d7528e4f9ac8a0c7915442" kind="function"><name>blocker</name></member>
+    <member refid="classscoped__connection_1a69106803a0f5fc37932088d59e1bde47" kind="function"><name>scoped_connection</name></member>
+    <member refid="classconnection_1a4fd0ecc2a51f1be13a65560171452093" kind="variable"><name>m_state</name></member>
+  </compound>
   <compound refid="classrolly_1_1exceptions_1_1serialization__error" kind="class"><name>rolly::exceptions::serialization_error</name>
     <member refid="classrolly_1_1exceptions_1_1serialization__error_1a91b1f8bd8bc83f7417118d65910d0385" kind="function"><name>serialization_error</name></member>
     <member refid="classrolly_1_1exceptions_1_1serialization__error_1acb6822a4eee38c2b4dfd9aa6c34eb192" kind="function"><name>serialization_error</name></member>
@@ -845,6 +1183,57 @@
     <member refid="classrolly_1_1dll_1_1shared__library_1af5acc1f38091c0eece64aa0186f44689" kind="function"><name>load</name></member>
     <member refid="classrolly_1_1dll_1_1shared__library_1aad536e71012b5d60d29287b7f644f236" kind="function"><name>try_load</name></member>
     <member refid="classrolly_1_1dll_1_1shared__library_1a17e0e86fbb2456154de9f88bc60bb2f0" kind="function"><name>locate_entry</name></member>
+  </compound>
+  <compound refid="classrolly_1_1signal__base" kind="class"><name>rolly::signal_base</name>
+  </compound>
+  <compound refid="classsignal__base" kind="class"><name>signal_base</name>
+    <member refid="classsignal__base_1a3c85546c070f774e5b17b5ca08ef358f" kind="typedef"><name>is_thread_safe</name></member>
+    <member refid="classsignal__base_1a21aaaef7b9d12121c5af4d27bf3f69e4" kind="typedef"><name>cow_type</name></member>
+    <member refid="classsignal__base_1aa6a744c9054331f13290a2bf5f7674cb" kind="typedef"><name>cow_copy_type</name></member>
+    <member refid="classsignal__base_1a57ff225b322751b4c64359f70e032f37" kind="typedef"><name>lock_type</name></member>
+    <member refid="classsignal__base_1ad19135e347a3d08be483b50d21267901" kind="typedef"><name>slot_base</name></member>
+    <member refid="classsignal__base_1aa097e33a3cd8391d57dd51c253764725" kind="typedef"><name>slot_ptr</name></member>
+    <member refid="classsignal__base_1a997736347e58e312ac7373d2d1c39be7" kind="typedef"><name>slots_type</name></member>
+    <member refid="classsignal__base_1a5b3fb4ffb0fa1a0bd31dcfc011d0d807" kind="typedef"><name>list_type</name></member>
+    <member refid="classsignal__base_1ae6246084a39469baf1386d17e13953ae" kind="typedef"><name>arg_list</name></member>
+    <member refid="classsignal__base_1a1a8c1a987b01dc0d3043a2aa94b5db05" kind="typedef"><name>ext_arg_list</name></member>
+    <member refid="classsignal__base_1a1b4dcadd74e4b032b90a244bf0e670b5" kind="variable"><name>m_mutex</name></member>
+    <member refid="classsignal__base_1a82d38ae64b8523c4ab71f20c23038e70" kind="variable"><name>m_slots</name></member>
+    <member refid="classsignal__base_1ac99b848aac74c450762b3e1ae0469f04" kind="variable"><name>m_block</name></member>
+    <member refid="classsignal__base_1a0319ae1544070cd262b42d215c4951e4" kind="function"><name>signal_base</name></member>
+    <member refid="classsignal__base_1a745f75aa912b0e320e6437f7a3e31dc8" kind="function"><name>~signal_base</name></member>
+    <member refid="classsignal__base_1a67e8bb741b13dd964d008b43d8789053" kind="function"><name>signal_base</name></member>
+    <member refid="classsignal__base_1a557e4406dccc4274f857e7513787915d" kind="function"><name>operator=</name></member>
+    <member refid="classsignal__base_1adadc76f932427b93677bae0d71852d8d" kind="function"><name>signal_base</name></member>
+    <member refid="classsignal__base_1a81e2fcaaa06342dfe4bc572b6bf396f0" kind="function"><name>operator=</name></member>
+    <member refid="classsignal__base_1adc61e3f20182ec18fe7b33e3f31e670d" kind="function"><name>operator()</name></member>
+    <member refid="classsignal__base_1a416fd3f71ad61dfa22a70b274496f576" kind="function"><name>connect</name></member>
+    <member refid="classsignal__base_1a20320695ff13b2c29d5705aadef9b68d" kind="function"><name>connect_extended</name></member>
+    <member refid="classsignal__base_1a02c22b38fb69ac4dbd4213ac46041e05" kind="function"><name>connect</name></member>
+    <member refid="classsignal__base_1a14f21af9bba5f6a415b6903ab8976ade" kind="function"><name>connect</name></member>
+    <member refid="classsignal__base_1a7465de5a78da9273f2e0d2271749904e" kind="function"><name>connect_extended</name></member>
+    <member refid="classsignal__base_1aa093137f1fee7e7d3794e3524aec579f" kind="function"><name>connect</name></member>
+    <member refid="classsignal__base_1a22daf56f4c425148e89277f4173b48f8" kind="function"><name>connect</name></member>
+    <member refid="classsignal__base_1a4ed3027626b8d475a8bb4085b5fb32f2" kind="function"><name>connect_scoped</name></member>
+    <member refid="classsignal__base_1ae65354dca29c9244b5ddce4893c7e050" kind="function"><name>disconnect</name></member>
+    <member refid="classsignal__base_1a3f3f7f2dd387a0dd96c939dcbaec92fa" kind="function"><name>disconnect</name></member>
+    <member refid="classsignal__base_1acbdfdfd1a4812f3b7fa36599e6762414" kind="function"><name>disconnect</name></member>
+    <member refid="classsignal__base_1a581fa6bed07a4abaea3dec3a4a4605e1" kind="function"><name>disconnect</name></member>
+    <member refid="classsignal__base_1a02922e7231c3a315b2bfd1049b675365" kind="function"><name>disconnect_all</name></member>
+    <member refid="classsignal__base_1a6492f4e68ba91c40f179d15508a679e4" kind="function"><name>block</name></member>
+    <member refid="classsignal__base_1a27e7a6a740ea8eeb2791b996adce72b4" kind="function"><name>unblock</name></member>
+    <member refid="classsignal__base_1abc95cfa1a604cb7c20dd0fbb1b1a4c3d" kind="function"><name>blocked</name></member>
+    <member refid="classsignal__base_1aec593142dca44f0123df15cf2793bc29" kind="function"><name>slot_count</name></member>
+    <member refid="classsignal__base_1a28774e1a1bc1350680ee08faf26e8ff9" kind="function"><name>clean</name></member>
+    <member refid="classsignal__base_1a7e34cb89d2e34e5647eb837697b5f461" kind="function"><name>slots_reference</name></member>
+    <member refid="classsignal__base_1aefc462d5903bed6e92b54a3706dc83d0" kind="function"><name>make_slot</name></member>
+    <member refid="classsignal__base_1a0252893d2737887db21bcf4aa72565e8" kind="function"><name>add_slot</name></member>
+    <member refid="classsignal__base_1a4a32613c3e2a34e14b3b2e32cb2793c4" kind="function"><name>disconnect_if</name></member>
+    <member refid="classsignal__base_1ac8bb3912a3ce86b15842e79d0b421204" kind="function"><name>clear</name></member>
+  </compound>
+  <compound refid="structdetail_1_1signal__wrapper" kind="struct"><name>detail::signal_wrapper</name>
+    <member refid="structdetail_1_1signal__wrapper_1aa67c6d97c8157251cb1e553ca1a4045b" kind="variable"><name>m_sig</name></member>
+    <member refid="structdetail_1_1signal__wrapper_1a1beeea2f7f97d5c0957cd37bf72e8a2f" kind="function"><name>operator()</name></member>
   </compound>
   <compound refid="structrolly_1_1singleton" kind="struct"><name>rolly::singleton</name>
     <member refid="structrolly_1_1singleton_1a6bb8491f2df12f623ddc298edbfb788c" kind="function"><name>ptr_mut</name></member>
@@ -1005,6 +1394,148 @@
     <member refid="structrolly_1_1types_1_1size2d_1a86e6953410f514fcbb502a3d6c49f4e2" kind="function"><name>from_qsize</name></member>
     <member refid="structrolly_1_1types_1_1size2d_1aadbb4ede8a4953dc30569ab2996ee350" kind="function"><name>from_qsizef</name></member>
   </compound>
+  <compound refid="classdetail_1_1slot" kind="class"><name>detail::slot</name>
+    <member refid="classdetail_1_1slot_1a18e38fcdf1a1e45db5114c474b0c3c94" kind="variable"><name>func</name></member>
+    <member refid="classdetail_1_1slot_1a2bbe2b144f7aa249d0aed3ac5d21ff87" kind="function"><name>slot</name></member>
+    <member refid="classdetail_1_1slot__base_1a1beeea2f7f97d5c0957cd37bf72e8a2f" kind="function"><name>operator()</name></member>
+    <member refid="classdetail_1_1slot__base_1a08383d81089707d4b5e9bc4f1cb403d0" kind="function"><name>has_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7d4a7ef88b8a5644c6685e56634edd4b" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ae1611b64afa973096b5f9ea2f8765780" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ab721675029206075028b659e7f17d0d7" kind="function"><name>has_object</name></member>
+    <member refid="classdetail_1_1slot_1a217f098878cea12bf14e712a14e03e56" kind="function"><name>call_slot</name></member>
+    <member refid="classdetail_1_1slot_1ae872ce0d896a2babc419af4dbe8c3bbb" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ac44bc183cfe07086abd8d7013b6143d7" kind="function"><name>do_disconnect</name></member>
+    <member refid="classdetail_1_1slot__base_1a5cc5f95df1f78505a332c610530f872b" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1abb9e01d94e333a4ee2b1768dc240ab8c" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7f29cbbf9b3dbe5908e3727a7b56ded7" kind="function"><name>check_class_type</name></member>
+    <member refid="classdetail_1_1slot__base_1a93fd071830907ea31bcfbd799bea082b" kind="typedef"><name>base_types</name></member>
+  </compound>
+  <compound refid="classdetail_1_1slot__base" kind="class"><name>detail::slot_base</name>
+    <member refid="classdetail_1_1slot__base_1a93fd071830907ea31bcfbd799bea082b" kind="typedef"><name>base_types</name></member>
+    <member refid="classdetail_1_1slot__base_1af516bcb25a70dcaea6878f62459a583f" kind="variable"><name>cleaner</name></member>
+    <member refid="classdetail_1_1slot__base_1a0e26ef61f9110726e453806ff7473dce" kind="function"><name>slot_base</name></member>
+    <member refid="classdetail_1_1slot__base_1a0557d50a5083756f9d8d089d684f23a6" kind="function"><name>~slot_base</name></member>
+    <member refid="classdetail_1_1slot__base_1ab93b904534716f70f3dc4505143211e6" kind="function"><name>call_slot</name></member>
+    <member refid="classdetail_1_1slot__base_1a1beeea2f7f97d5c0957cd37bf72e8a2f" kind="function"><name>operator()</name></member>
+    <member refid="classdetail_1_1slot__base_1a08383d81089707d4b5e9bc4f1cb403d0" kind="function"><name>has_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7d4a7ef88b8a5644c6685e56634edd4b" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ae1611b64afa973096b5f9ea2f8765780" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ab721675029206075028b659e7f17d0d7" kind="function"><name>has_object</name></member>
+    <member refid="classdetail_1_1slot__base_1ac44bc183cfe07086abd8d7013b6143d7" kind="function"><name>do_disconnect</name></member>
+    <member refid="classdetail_1_1slot__base_1a5cc5f95df1f78505a332c610530f872b" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1abb9e01d94e333a4ee2b1768dc240ab8c" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7f29cbbf9b3dbe5908e3727a7b56ded7" kind="function"><name>check_class_type</name></member>
+  </compound>
+  <compound refid="classdetail_1_1slot__extended" kind="class"><name>detail::slot_extended</name>
+    <member refid="classdetail_1_1slot__extended_1a2adf24670bfae1865478049ddaab9859" kind="variable"><name>conn</name></member>
+    <member refid="classdetail_1_1slot__extended_1a18e38fcdf1a1e45db5114c474b0c3c94" kind="variable"><name>func</name></member>
+    <member refid="classdetail_1_1slot__extended_1aaced06afc5e9f5a9b316705f817ab16b" kind="function"><name>slot_extended</name></member>
+    <member refid="classdetail_1_1slot__base_1a1beeea2f7f97d5c0957cd37bf72e8a2f" kind="function"><name>operator()</name></member>
+    <member refid="classdetail_1_1slot__base_1a08383d81089707d4b5e9bc4f1cb403d0" kind="function"><name>has_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7d4a7ef88b8a5644c6685e56634edd4b" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ae1611b64afa973096b5f9ea2f8765780" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ab721675029206075028b659e7f17d0d7" kind="function"><name>has_object</name></member>
+    <member refid="classdetail_1_1slot__extended_1a217f098878cea12bf14e712a14e03e56" kind="function"><name>call_slot</name></member>
+    <member refid="classdetail_1_1slot__extended_1ae872ce0d896a2babc419af4dbe8c3bbb" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ac44bc183cfe07086abd8d7013b6143d7" kind="function"><name>do_disconnect</name></member>
+    <member refid="classdetail_1_1slot__base_1a5cc5f95df1f78505a332c610530f872b" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1abb9e01d94e333a4ee2b1768dc240ab8c" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7f29cbbf9b3dbe5908e3727a7b56ded7" kind="function"><name>check_class_type</name></member>
+    <member refid="classdetail_1_1slot__base_1a93fd071830907ea31bcfbd799bea082b" kind="typedef"><name>base_types</name></member>
+  </compound>
+  <compound refid="classdetail_1_1slot__pmf" kind="class"><name>detail::slot_pmf</name>
+    <member refid="classdetail_1_1slot__pmf_1a35d5eecb7c49c7d3935cb6fea00a7518" kind="variable"><name>pmf</name></member>
+    <member refid="classdetail_1_1slot__pmf_1a222b9124b1eadcf9efa7a7ae36ebd776" kind="variable"><name>ptr</name></member>
+    <member refid="classdetail_1_1slot__pmf_1a99baf0c34556b9c827240bccfce1a12e" kind="function"><name>slot_pmf</name></member>
+    <member refid="classdetail_1_1slot__base_1a1beeea2f7f97d5c0957cd37bf72e8a2f" kind="function"><name>operator()</name></member>
+    <member refid="classdetail_1_1slot__base_1a08383d81089707d4b5e9bc4f1cb403d0" kind="function"><name>has_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7d4a7ef88b8a5644c6685e56634edd4b" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ae1611b64afa973096b5f9ea2f8765780" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ab721675029206075028b659e7f17d0d7" kind="function"><name>has_object</name></member>
+    <member refid="classdetail_1_1slot__pmf_1a217f098878cea12bf14e712a14e03e56" kind="function"><name>call_slot</name></member>
+    <member refid="classdetail_1_1slot__pmf_1ae872ce0d896a2babc419af4dbe8c3bbb" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__pmf_1a71e75a657a7c221eaf2bf30a7d4e7b14" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1ac44bc183cfe07086abd8d7013b6143d7" kind="function"><name>do_disconnect</name></member>
+    <member refid="classdetail_1_1slot__base_1a5cc5f95df1f78505a332c610530f872b" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1abb9e01d94e333a4ee2b1768dc240ab8c" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7f29cbbf9b3dbe5908e3727a7b56ded7" kind="function"><name>check_class_type</name></member>
+    <member refid="classdetail_1_1slot__base_1a93fd071830907ea31bcfbd799bea082b" kind="typedef"><name>base_types</name></member>
+  </compound>
+  <compound refid="classdetail_1_1slot__pmf__extended" kind="class"><name>detail::slot_pmf_extended</name>
+    <member refid="classdetail_1_1slot__pmf__extended_1a2adf24670bfae1865478049ddaab9859" kind="variable"><name>conn</name></member>
+    <member refid="classdetail_1_1slot__pmf__extended_1a35d5eecb7c49c7d3935cb6fea00a7518" kind="variable"><name>pmf</name></member>
+    <member refid="classdetail_1_1slot__pmf__extended_1a222b9124b1eadcf9efa7a7ae36ebd776" kind="variable"><name>ptr</name></member>
+    <member refid="classdetail_1_1slot__pmf__extended_1a9beb3ed551eb7ba137f07166bacd8199" kind="function"><name>slot_pmf_extended</name></member>
+    <member refid="classdetail_1_1slot__base_1a1beeea2f7f97d5c0957cd37bf72e8a2f" kind="function"><name>operator()</name></member>
+    <member refid="classdetail_1_1slot__base_1a08383d81089707d4b5e9bc4f1cb403d0" kind="function"><name>has_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7d4a7ef88b8a5644c6685e56634edd4b" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ae1611b64afa973096b5f9ea2f8765780" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ab721675029206075028b659e7f17d0d7" kind="function"><name>has_object</name></member>
+    <member refid="classdetail_1_1slot__pmf__extended_1a217f098878cea12bf14e712a14e03e56" kind="function"><name>call_slot</name></member>
+    <member refid="classdetail_1_1slot__pmf__extended_1ae872ce0d896a2babc419af4dbe8c3bbb" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__pmf__extended_1a71e75a657a7c221eaf2bf30a7d4e7b14" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1ac44bc183cfe07086abd8d7013b6143d7" kind="function"><name>do_disconnect</name></member>
+    <member refid="classdetail_1_1slot__base_1a5cc5f95df1f78505a332c610530f872b" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1abb9e01d94e333a4ee2b1768dc240ab8c" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7f29cbbf9b3dbe5908e3727a7b56ded7" kind="function"><name>check_class_type</name></member>
+    <member refid="classdetail_1_1slot__base_1a93fd071830907ea31bcfbd799bea082b" kind="typedef"><name>base_types</name></member>
+  </compound>
+  <compound refid="classdetail_1_1slot__pmf__tracked" kind="class"><name>detail::slot_pmf_tracked</name>
+    <member refid="classdetail_1_1slot__pmf__tracked_1a35d5eecb7c49c7d3935cb6fea00a7518" kind="variable"><name>pmf</name></member>
+    <member refid="classdetail_1_1slot__pmf__tracked_1a0d3c3feeefd03edd56f74578374553cb" kind="variable"><name>ptr</name></member>
+    <member refid="classdetail_1_1slot__pmf__tracked_1ab15b53350c2a7be563ef432948d1fa64" kind="function"><name>slot_pmf_tracked</name></member>
+    <member refid="classdetail_1_1slot__pmf__tracked_1a85f9d7864024b1e3c29358a316f5c894" kind="function"><name>connected</name></member>
+    <member refid="classdetail_1_1slot__base_1a1beeea2f7f97d5c0957cd37bf72e8a2f" kind="function"><name>operator()</name></member>
+    <member refid="classdetail_1_1slot__base_1a08383d81089707d4b5e9bc4f1cb403d0" kind="function"><name>has_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7d4a7ef88b8a5644c6685e56634edd4b" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ae1611b64afa973096b5f9ea2f8765780" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ab721675029206075028b659e7f17d0d7" kind="function"><name>has_object</name></member>
+    <member refid="classdetail_1_1slot__pmf__tracked_1a217f098878cea12bf14e712a14e03e56" kind="function"><name>call_slot</name></member>
+    <member refid="classdetail_1_1slot__pmf__tracked_1ae872ce0d896a2babc419af4dbe8c3bbb" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__pmf__tracked_1a71e75a657a7c221eaf2bf30a7d4e7b14" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1ac44bc183cfe07086abd8d7013b6143d7" kind="function"><name>do_disconnect</name></member>
+    <member refid="classdetail_1_1slot__base_1a5cc5f95df1f78505a332c610530f872b" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1abb9e01d94e333a4ee2b1768dc240ab8c" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7f29cbbf9b3dbe5908e3727a7b56ded7" kind="function"><name>check_class_type</name></member>
+    <member refid="classdetail_1_1slot__base_1a93fd071830907ea31bcfbd799bea082b" kind="typedef"><name>base_types</name></member>
+  </compound>
+  <compound refid="classdetail_1_1slot__state" kind="class"><name>detail::slot_state</name>
+    <member refid="classdetail_1_1slot__state_1aa94d8d37c690631f75737b8d2da7af0a" kind="friend"><name>::rolly::signal_base</name></member>
+    <member refid="classdetail_1_1slot__state_1a6d270fececf9be29f306f40854078dee" kind="variable"><name>m_index</name></member>
+    <member refid="classdetail_1_1slot__state_1a6ab025f11199f04f995b596dbe8d0900" kind="variable"><name>m_group</name></member>
+    <member refid="classdetail_1_1slot__state_1aa29e9f3ebd177fa3cb7f59d5553b28ae" kind="variable"><name>m_connected</name></member>
+    <member refid="classdetail_1_1slot__state_1af07e96f587bc0e8bae27ad0c605c3e39" kind="variable"><name>m_blocked</name></member>
+    <member refid="classdetail_1_1slot__state_1aab95bf76bf344e8b5398bfc1b4914e10" kind="function"><name>slot_state</name></member>
+    <member refid="classdetail_1_1slot__state_1a0362df0dc83e082564b79bfe081bed01" kind="function"><name>~slot_state</name></member>
+    <member refid="classdetail_1_1slot__state_1af0bdfae8c64a1560370630c4720e1f59" kind="function"><name>connected</name></member>
+    <member refid="classdetail_1_1slot__state_1aad44f9fa60edb612ecd1fdd909d2c5f3" kind="function"><name>disconnect</name></member>
+    <member refid="classdetail_1_1slot__state_1abc95cfa1a604cb7c20dd0fbb1b1a4c3d" kind="function"><name>blocked</name></member>
+    <member refid="classdetail_1_1slot__state_1a6492f4e68ba91c40f179d15508a679e4" kind="function"><name>block</name></member>
+    <member refid="classdetail_1_1slot__state_1a27e7a6a740ea8eeb2791b996adce72b4" kind="function"><name>unblock</name></member>
+    <member refid="classdetail_1_1slot__state_1ad8c37bb12d720bd84c40d9b24d4d97b0" kind="function"><name>do_disconnect</name></member>
+    <member refid="classdetail_1_1slot__state_1aab35401d941872acae315ece495d9b96" kind="function"><name>index</name></member>
+    <member refid="classdetail_1_1slot__state_1a43e50c2aac7beb8f13bb4c1fb2d50bc0" kind="function"><name>index</name></member>
+    <member refid="classdetail_1_1slot__state_1a1489e520ba8972b32ebd67620c316309" kind="function"><name>group</name></member>
+  </compound>
+  <compound refid="classdetail_1_1slot__tracked" kind="class"><name>detail::slot_tracked</name>
+    <member refid="classdetail_1_1slot__tracked_1a18e38fcdf1a1e45db5114c474b0c3c94" kind="variable"><name>func</name></member>
+    <member refid="classdetail_1_1slot__tracked_1a0d3c3feeefd03edd56f74578374553cb" kind="variable"><name>ptr</name></member>
+    <member refid="classdetail_1_1slot__tracked_1a3cede04d57d344b39f34914ccc4d49c3" kind="function"><name>slot_tracked</name></member>
+    <member refid="classdetail_1_1slot__tracked_1a85f9d7864024b1e3c29358a316f5c894" kind="function"><name>connected</name></member>
+    <member refid="classdetail_1_1slot__base_1a1beeea2f7f97d5c0957cd37bf72e8a2f" kind="function"><name>operator()</name></member>
+    <member refid="classdetail_1_1slot__base_1a08383d81089707d4b5e9bc4f1cb403d0" kind="function"><name>has_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7d4a7ef88b8a5644c6685e56634edd4b" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ae1611b64afa973096b5f9ea2f8765780" kind="function"><name>has_full_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1ab721675029206075028b659e7f17d0d7" kind="function"><name>has_object</name></member>
+    <member refid="classdetail_1_1slot__tracked_1a217f098878cea12bf14e712a14e03e56" kind="function"><name>call_slot</name></member>
+    <member refid="classdetail_1_1slot__tracked_1ae872ce0d896a2babc419af4dbe8c3bbb" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__tracked_1a71e75a657a7c221eaf2bf30a7d4e7b14" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1ac44bc183cfe07086abd8d7013b6143d7" kind="function"><name>do_disconnect</name></member>
+    <member refid="classdetail_1_1slot__base_1a5cc5f95df1f78505a332c610530f872b" kind="function"><name>get_object</name></member>
+    <member refid="classdetail_1_1slot__base_1abb9e01d94e333a4ee2b1768dc240ab8c" kind="function"><name>get_callable</name></member>
+    <member refid="classdetail_1_1slot__base_1a7f29cbbf9b3dbe5908e3727a7b56ded7" kind="function"><name>check_class_type</name></member>
+    <member refid="classdetail_1_1slot__base_1a93fd071830907ea31bcfbd799bea082b" kind="typedef"><name>base_types</name></member>
+  </compound>
   <compound refid="structrolly_1_1source__location" kind="struct"><name>rolly::source_location</name>
     <member refid="structrolly_1_1source__location_1a62b2570f0048a4c3c338321c63b84b9d" kind="variable"><name>unknown</name></member>
     <member refid="structrolly_1_1source__location_1a4b27c800a6c4985f99a3e15a1ab6ba2c" kind="variable"><name>file_</name></member>
@@ -1020,7 +1551,21 @@
     <member refid="structrolly_1_1source__location_1ae80537f8deeb62f3a096942c712e3514" kind="function"><name>line</name></member>
     <member refid="structrolly_1_1source__location_1ad13c9f520c7bf10be0046ae4c80de266" kind="function"><name>column</name></member>
   </compound>
+  <compound refid="structdetail_1_1spin__mutex" kind="struct"><name>detail::spin_mutex</name>
+    <member refid="structdetail_1_1spin__mutex_1abaccfbebd266bb98af1d3bcd3b1032ff" kind="variable"><name>state</name></member>
+    <member refid="structdetail_1_1spin__mutex_1abe2148f11078eadab6e61382136690a0" kind="function"><name>spin_mutex</name></member>
+    <member refid="structdetail_1_1spin__mutex_1ad110af3f1a09d51f1f832e2a2d6bccb6" kind="function"><name>~spin_mutex</name></member>
+    <member refid="structdetail_1_1spin__mutex_1aa9138a0a5ee6c5966bae2c048821b067" kind="function"><name>spin_mutex</name></member>
+    <member refid="structdetail_1_1spin__mutex_1a925f73a485f8b6076442d2ed320331aa" kind="function"><name>operator=</name></member>
+    <member refid="structdetail_1_1spin__mutex_1adca04da1e4882a605012ea9f943f8055" kind="function"><name>spin_mutex</name></member>
+    <member refid="structdetail_1_1spin__mutex_1ad43e3e0f7172b10c666f6b5bb1e3525f" kind="function"><name>operator=</name></member>
+    <member refid="structdetail_1_1spin__mutex_1a5d1ca4288b3113f745f548d81f90573c" kind="function"><name>lock</name></member>
+    <member refid="structdetail_1_1spin__mutex_1aaad48f59834eeecf8ba9d698859b79c5" kind="function"><name>try_lock</name></member>
+    <member refid="structdetail_1_1spin__mutex_1a4b7c1039f47fca6ca12bbf9134a543a1" kind="function"><name>unlock</name></member>
+  </compound>
   <compound refid="structrolly_1_1serialization_1_1format_1_1toml" kind="struct"><name>rolly::serialization::format::toml</name>
+  </compound>
+  <compound refid="structrolly_1_1trait_1_1typelist" kind="struct"><name>rolly::trait::typelist</name>
   </compound>
   <compound refid="classrolly_1_1types_1_1vector2d" kind="struct"><name>rolly::types::vector2d</name>
     <member refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kind="typedef"><name>number_type</name></member>
@@ -1297,8 +1842,8 @@
     <member refid="structrolly_1_1version_1a825c2d4285fd4ef048480ea6854c5160" kind="variable"><name>minor</name></member>
     <member refid="structrolly_1_1version_1a225065c50c39b42012bde676d03d6131" kind="variable"><name>patch</name></member>
     <member refid="structrolly_1_1version_1a2b8218ebadf01154d8615cd9c31cf761" kind="variable"><name>prerelease_type</name></member>
-    <member refid="structrolly_1_1version_1ad3740d612f3a17f4c528f79417719ffb" kind="variable"><name>prerelease_number</name></member>
-    <member refid="structrolly_1_1version_1a2d3783c5a1bde4c3ad462eb2dff4d6a7" kind="function"><name>version</name></member>
+    <member refid="structrolly_1_1version_1a8d279ec4c5f1d306dbfad5dd1c0b1645" kind="variable"><name>prerelease_number</name></member>
+    <member refid="structrolly_1_1version_1a00dfdaada39db75b4733ae2d04cd9053" kind="function"><name>version</name></member>
     <member refid="structrolly_1_1version_1abfbcd4ebc1c178edd166a4e498757e81" kind="function"><name>version</name></member>
     <member refid="structrolly_1_1version_1a0332e593c889fac494451ff202c0a87f" kind="function"><name>version</name></member>
     <member refid="structrolly_1_1version_1ad856220a1bbc8168138d8933df54a80c" kind="function"><name>version</name></member>
@@ -1318,6 +1863,18 @@
   <compound refid="structrolly_1_1serialization_1_1format_1_1xml" kind="struct"><name>rolly::serialization::format::xml</name>
   </compound>
   <compound refid="structrolly_1_1serialization_1_1format_1_1yaml" kind="struct"><name>rolly::serialization::format::yaml</name>
+  </compound>
+  <compound refid="namespacedetail" kind="namespace"><name>detail</name>
+    <member refid="signals_8h_1ae42c0e8811996ab532903d47deea5d7d" kind="typedef"><name>obj_ptr</name></member>
+    <member refid="signals_8h_1ac576ce92b5bf16a54f83d46e023897d7" kind="typedef"><name>slot_ptr</name></member>
+    <member refid="signals_8h_1a73e115fc79b33407c9eef0068d911895" kind="function"><name>get_function_ptr</name></member>
+    <member refid="signals_8h_1a09bd2025da2246a3e57d8ca73804b1a4" kind="function"><name>eq_function_ptr</name></member>
+    <member refid="signals_8h_1aac03fdb1eac801324961de1429865071" kind="function"><name>get_object_ptr</name></member>
+    <member refid="signals_8h_1a295045e13c2fdaa99bf88534b05bddaf" kind="function"><name>cow_read</name></member>
+    <member refid="signals_8h_1a86340467e86f20672c9f295024b21476" kind="function"><name>cow_read</name></member>
+    <member refid="signals_8h_1a91f8bfa713f665b8ff5b297726914fb7" kind="function"><name>cow_write</name></member>
+    <member refid="signals_8h_1a32fc39fc81cbdbc015eb1e7d6b0b0dac" kind="function"><name>cow_write</name></member>
+    <member refid="signals_8h_1ad2038027f0da5ce4a6c7cc1d8bbc5c2d" kind="function"><name>make_shared</name></member>
   </compound>
   <compound refid="namespacefmt" kind="namespace"><name>fmt</name>
   </compound>
@@ -1372,9 +1929,23 @@
     <member refid="namespacerolly_1_1types_1a70c2c38542d55bfe51d75907a6c8125a" kind="typedef"><name>ulonglong</name></member>
     <member refid="namespacerolly_1_1types_1a69aa29b598b851b0640aa225a9e5d61d" kind="typedef"><name>uint</name></member>
     <member refid="namespacerolly_1a97300837e35e483d3cf7b20dd724250b" kind="variable"><name>is_any_of_v</name></member>
+    <member refid="namespacerolly_1af4c439f294424a3f11f9908de0dca2f6" kind="variable"><name>overload</name></member>
+    <member refid="namespacerolly_1a85cfe4055bff1f633f6bbedb33f2e93b" kind="variable"><name>const_overload</name></member>
+    <member refid="namespacerolly_1ae3c7f1453d02210f5dedfa448b6b4697" kind="variable"><name>non_const_overload</name></member>
+    <member refid="namespacerolly_1aaa49597f11fa34841f1e7c48b7fe1fb8" kind="variable"><name>with_rtti</name></member>
+    <member refid="namespacerolly_1a666a4e9726827588e42f0857d8a87c68" kind="variable"><name>is_weak_ptr_compatible_v</name></member>
+    <member refid="namespacerolly_1a0ce1d8dcc7700b383ed4cab2a35ef160" kind="variable"><name>is_callable_v</name></member>
+    <member refid="namespacerolly_1ad73fb921872b6292fd6244b46ea4ebeb" kind="variable"><name>is_weak_ptr_v</name></member>
+    <member refid="namespacerolly_1a26520841c8b04240e098d1360c774d08" kind="variable"><name>has_call_operator_v</name></member>
+    <member refid="namespacerolly_1a60d8a43ca3d5d473f1651ef5114c2628" kind="variable"><name>is_pointer_v</name></member>
+    <member refid="namespacerolly_1a803db4963a7d275f1f2dc56ab3a33e0b" kind="variable"><name>is_func_v</name></member>
+    <member refid="namespacerolly_1a2bc53fe616698994943b2b23620e7749" kind="variable"><name>is_pmf_v</name></member>
+    <member refid="namespacerolly_1aa06dc940ac021f05e56d97c2dac9adeb" kind="variable"><name>is_observer_v</name></member>
+    <member refid="namespacerolly_1a908ba454a2355d53f9831b0570f348e7" kind="variable"><name>is_signal_v</name></member>
     <member refid="namespacerolly_1a6fc52902ed4e616aadff50883c255f9d" kind="variable"><name>is_qobject_v</name></member>
     <member refid="namespacerolly_1a4a2bc3187d7a879894ffd775ab861ac7" kind="variable"><name>is_qgadget_v</name></member>
-    <member refid="namespacerolly_1_1types_1a9365b793fe547271e48fa719a7f4854d" kind="variable"><name>none</name></member>
+    <member refid="namespacerolly_1a3052f5fbb6fc7bc98ecb11360c416a8f" kind="variable"><name>nullopt</name></member>
+    <member refid="namespacerolly_1a9365b793fe547271e48fa719a7f4854d" kind="variable"><name>none</name></member>
     <member refid="namespacerolly_1_1math_1a2264e542a12579ea469c63ecdee1883d" kind="function"><name>popcount</name></member>
     <member refid="namespacerolly_1_1math_1ac856a1cb702219f1d1035f0ce0945492" kind="function"><name>has_single_bit</name></member>
     <member refid="namespacerolly_1_1math_1a9f9d00ff5e0c49434b60e113d83be45e" kind="function"><name>is_pow2</name></member>
@@ -1408,7 +1979,7 @@
     <member refid="namespacerolly_1a176758c28587a73dfa5cf233d853d23d" kind="function"><name>valid</name></member>
     <member refid="namespacerolly_1a25e9b3ba291a589983345addab86e319" kind="function"><name>from_chars</name></member>
     <member refid="namespacerolly_1ad27abc9860dd15c159be04b022aeb5a0" kind="function"><name>to_chars</name></member>
-    <member refid="namespacerolly_1a29bf2b257aae11af86113305689df183" kind="function"><name>from_string_noexcept</name></member>
+    <member refid="namespacerolly_1ad62ddd144b14ae7ce815d7d57c37cf9d" kind="function"><name>from_string_noexcept</name></member>
     <member refid="namespacerolly_1a6472f585e4160c186d682782d57ab7ac" kind="function"><name>from_string</name></member>
     <member refid="namespacerolly_1ad687023e3333f2a28121709aa2ec8b92" kind="function"><name>to_string</name></member>
     <member refid="namespacerolly_1ae775c2f85b0bbc89c8ea6633708b2b47" kind="function"><name>operator&lt;&lt;</name></member>
@@ -1463,10 +2034,44 @@
     <member refid="namespacerolly_1a03f2f18b9050b2aa9a69a73fed3806c4" kind="function"><name>ends_with</name></member>
     <member refid="namespacerolly_1a1c635fda25cb408b341062ad44576c45" kind="function"><name>ends_with</name></member>
     <member refid="namespacerolly_1_1literals_1adcd4361bfe366803ba692d748c203b47" kind="function"><name>operator&quot;&quot;_guid</name></member>
+    <member refid="namespacerolly_1ae42bed75bde5f4d4e4c715b00c5cdec5" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1aaeabd0a43849c96e6a189456e64a9e80" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1aa200248ad0ba62c49766a7f23f0ab244" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1a198e1526e34437f608e39bf6b3b77f28" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1aeb7fb289dc87f67607f0f9cd76de2fba" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1aa469315a3b3d370d5b2e586cb681b11d" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1a43e660efbbd21846c0099fd98d7e7974" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1a65f34be32d65e60a6ae72cb06481d041" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1a2835f5e825e9642a4ab30e9b80da8832" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1a137e7622b0b5826d767aa21b10bf8a4c" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1ac4d264d4fa3093b68a6fbc5d8b864beb" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1acb7364ea0a1e0438ae84214ced329b4d" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1a17605135b9c4fbe2d0d006d5cb0cb0df" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1aeb5122e9a208a1d01d21b87705dd8219" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1ad9721a2da6cd3210b3d12cfba5a02b9d" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1aee4d261d62ca7e4c397b061c3345ffc0" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1ab95b1dc683d04c96118a1b6e13862827" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1ac32dbce08b465c015066197343543a66" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1acb3873114fe93ce619a39084b59b2a2f" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1adce9e5a2185ca737f529b12e7b115255" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1a443a871c46e6e084799f9c8973d9e51f" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1a584bd404eee977379de223dc0647e348" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1acc1d8d195c6b5a3493d65e34a9b82e2d" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1a640100316b3156a07377038175c5e9e2" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1a2829a36208a02c6a07fbb3bf7ea98cde" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1ab70c8e8c4439a8be3e5be7b11a880ddc" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1a8a7913965e6fbab14332eb19133451f3" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1a436961c16e6e95f486b0ed58d9a221bf" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1a1b3470d1556c16994c691b0a7af7ee48" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1acbd31892e6da85b55b99c07bf005b112" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1ad0cdea02ac170e2603b7a4491036b298" kind="function"><name>swap</name></member>
+    <member refid="namespacerolly_1a95d13b9563bf751c816a8ccd194410b8" kind="function"><name>make_optional</name></member>
+    <member refid="namespacerolly_1ab0f9d87f10324655edd29d2312df8f90" kind="function"><name>make_optional</name></member>
+    <member refid="namespacerolly_1a2fc860684dfb51f96cef87b70a678076" kind="function"><name>make_optional</name></member>
+    <member refid="namespacerolly_1a4d27def5f33f561207ecbc421b842d55" kind="function"><name>some</name></member>
     <member refid="namespacerolly_1_1types_1a2c2d7fe1f4fcd1432bb6ee51c059306f" kind="function"><name>error</name></member>
     <member refid="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" kind="function"><name>ok</name></member>
     <member refid="namespacerolly_1_1types_1a07a110d824e251b17a6bb94f8e4fed5f" kind="function"><name>ok</name></member>
-    <member refid="namespacerolly_1_1types_1a023b1eb8a485614d2ea9c48632d275c3" kind="function"><name>some</name></member>
     <member refid="namespacerolly_1_1literals_1acf433e8d6e87da7af978d013539d49a1" kind="function"><name>operator&quot;&quot;_u8</name></member>
     <member refid="namespacerolly_1_1literals_1aa51af4429132793804e7cbd58cbbb475" kind="function"><name>operator&quot;&quot;_u16</name></member>
     <member refid="namespacerolly_1_1literals_1a504d921fb134987c823035c51e67b34e" kind="function"><name>operator&quot;&quot;_u32</name></member>
@@ -1537,7 +2142,14 @@
     <member refid="namespacerolly_1_1contracts_1_1detail_1a85609edb0083695bff46154dd637729f" kind="function"><name>make_contract_violation</name></member>
     <member refid="namespacerolly_1_1contracts_1_1detail_1a51d1323752d48a6e020de21fbda1e7f5" kind="function"><name>violate</name></member>
   </compound>
+  <compound refid="namespacerolly_1_1detail" kind="namespace"><name>rolly::detail</name>
+  </compound>
   <compound refid="namespacerolly_1_1dll" kind="namespace"><name>rolly::dll</name>
+    <member refid="namespacerolly_1_1dll_1a0900dd1a82f6eb7bff05e50fe712119e" kind="function"><name>library_name</name></member>
+    <member refid="namespacerolly_1_1dll_1a7fd63e0663da1d7ea919140f660c973c" kind="function"><name>load_library</name></member>
+    <member refid="namespacerolly_1_1dll_1a1cd16d3b4094b42e0857b9a4e9704ab0" kind="function"><name>load_library</name></member>
+    <member refid="namespacerolly_1_1dll_1a79d0fb6d3b9fe80bf61cfe015ebb8fbf" kind="function"><name>unload_library</name></member>
+    <member refid="namespacerolly_1_1dll_1a12104c7255b010904d5f975b0208fcb4" kind="function"><name>proc_address</name></member>
   </compound>
   <compound refid="namespacerolly_1_1exceptions" kind="namespace"><name>rolly::exceptions</name>
   </compound>
@@ -1620,6 +2232,10 @@
   </compound>
   <compound refid="namespacerolly_1_1serialization_1_1format" kind="namespace"><name>rolly::serialization::format</name>
   </compound>
+  <compound refid="namespacerolly_1_1trait" kind="namespace"><name>rolly::trait</name>
+    <member refid="signals_8h_1adeb27d2b612c4dc5278075ac28de887f" kind="function"><name>to_weak</name></member>
+    <member refid="signals_8h_1ae2cd9e10c3e6cc9120e19c324ba099bd" kind="function"><name>to_weak</name></member>
+  </compound>
   <compound refid="namespacerolly_1_1types" kind="namespace"><name>rolly::types</name>
     <member refid="namespacerolly_1_1types_1a3f652efe88945dad9f5db87673b0909e" kind="enum"><name>angle_unit</name></member>
     <member refid="namespacerolly_1_1types_1a3f652efe88945dad9f5db87673b0909ea18daee01fc6e54aacd7f4c2eef60ff4d" kind="enumvalue"><name>degrees</name></member>
@@ -1646,11 +2262,9 @@
     <member refid="namespacerolly_1_1types_1adbee524399dbb70a713e4c94d3bc00be" kind="typedef"><name>uptr</name></member>
     <member refid="namespacerolly_1_1types_1a70c2c38542d55bfe51d75907a6c8125a" kind="typedef"><name>ulonglong</name></member>
     <member refid="namespacerolly_1_1types_1a69aa29b598b851b0640aa225a9e5d61d" kind="typedef"><name>uint</name></member>
-    <member refid="namespacerolly_1_1types_1a9365b793fe547271e48fa719a7f4854d" kind="variable"><name>none</name></member>
     <member refid="namespacerolly_1_1types_1a2c2d7fe1f4fcd1432bb6ee51c059306f" kind="function"><name>error</name></member>
     <member refid="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" kind="function"><name>ok</name></member>
     <member refid="namespacerolly_1_1types_1a07a110d824e251b17a6bb94f8e4fed5f" kind="function"><name>ok</name></member>
-    <member refid="namespacerolly_1_1types_1a023b1eb8a485614d2ea9c48632d275c3" kind="function"><name>some</name></member>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
     <member refid="cpp/atomic/atomic_fetch_sub_1" kind="function"><name>atomic_fetch_and_explicit</name></member>
@@ -2286,6 +2900,13 @@
   </compound>
   <compound refid="directories_8h" kind="file"><name>directories.h</name>
   </compound>
+  <compound refid="dl_8h" kind="file"><name>dl.h</name>
+    <member refid="namespacerolly_1_1dll_1a0900dd1a82f6eb7bff05e50fe712119e" kind="function"><name>library_name</name></member>
+    <member refid="namespacerolly_1_1dll_1a7fd63e0663da1d7ea919140f660c973c" kind="function"><name>load_library</name></member>
+    <member refid="namespacerolly_1_1dll_1a1cd16d3b4094b42e0857b9a4e9704ab0" kind="function"><name>load_library</name></member>
+    <member refid="namespacerolly_1_1dll_1a79d0fb6d3b9fe80bf61cfe015ebb8fbf" kind="function"><name>unload_library</name></member>
+    <member refid="namespacerolly_1_1dll_1a12104c7255b010904d5f975b0208fcb4" kind="function"><name>proc_address</name></member>
+  </compound>
   <compound refid="dll_8h" kind="file"><name>dll.h</name>
   </compound>
   <compound refid="enum_8h" kind="file"><name>enum.h</name>
@@ -2373,7 +2994,55 @@
     <member refid="namespacerolly_1a563f446fdf15d40728b98c5153cb8632" kind="function"><name>operator&gt;=</name></member>
     <member refid="namespacerolly_1a7c4d06266a7101dad5226fe5f296354b" kind="function"><name>make_observer</name></member>
   </compound>
+  <compound refid="optional_8h" kind="file"><name>optional.h</name>
+    <member refid="optional_8h_1aaa63d17874c7d1b6b715183d21c2be35" kind="define"><name>TL_OPTIONAL_IS_TRIVIALLY_COPY_CONSTRUCTIBLE</name></member>
+    <member refid="optional_8h_1a7f33879e981f40bb99f40d8d41701aab" kind="define"><name>TL_OPTIONAL_IS_TRIVIALLY_COPY_ASSIGNABLE</name></member>
+    <member refid="optional_8h_1a09d77a005b8205210f42a7889f854520" kind="define"><name>TL_OPTIONAL_IS_TRIVIALLY_DESTRUCTIBLE</name></member>
+    <member refid="optional_8h_1a871c57934f04050d51dc9f568870b63f" kind="define"><name>TL_OPTIONAL_11_CONSTEXPR</name></member>
+    <member refid="namespacerolly_1a3052f5fbb6fc7bc98ecb11360c416a8f" kind="variable"><name>nullopt</name></member>
+    <member refid="namespacerolly_1a9365b793fe547271e48fa719a7f4854d" kind="variable"><name>none</name></member>
+    <member refid="namespacerolly_1ae42bed75bde5f4d4e4c715b00c5cdec5" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1aaeabd0a43849c96e6a189456e64a9e80" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1aa200248ad0ba62c49766a7f23f0ab244" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1a198e1526e34437f608e39bf6b3b77f28" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1aeb7fb289dc87f67607f0f9cd76de2fba" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1aa469315a3b3d370d5b2e586cb681b11d" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1a43e660efbbd21846c0099fd98d7e7974" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1a65f34be32d65e60a6ae72cb06481d041" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1a2835f5e825e9642a4ab30e9b80da8832" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1a137e7622b0b5826d767aa21b10bf8a4c" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1ac4d264d4fa3093b68a6fbc5d8b864beb" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1acb7364ea0a1e0438ae84214ced329b4d" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1a17605135b9c4fbe2d0d006d5cb0cb0df" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1aeb5122e9a208a1d01d21b87705dd8219" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1ad9721a2da6cd3210b3d12cfba5a02b9d" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1aee4d261d62ca7e4c397b061c3345ffc0" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1ab95b1dc683d04c96118a1b6e13862827" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1ac32dbce08b465c015066197343543a66" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1acb3873114fe93ce619a39084b59b2a2f" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1adce9e5a2185ca737f529b12e7b115255" kind="function"><name>operator==</name></member>
+    <member refid="namespacerolly_1a443a871c46e6e084799f9c8973d9e51f" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1a584bd404eee977379de223dc0647e348" kind="function"><name>operator!=</name></member>
+    <member refid="namespacerolly_1acc1d8d195c6b5a3493d65e34a9b82e2d" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1a640100316b3156a07377038175c5e9e2" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespacerolly_1a2829a36208a02c6a07fbb3bf7ea98cde" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1ab70c8e8c4439a8be3e5be7b11a880ddc" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespacerolly_1a8a7913965e6fbab14332eb19133451f3" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1a436961c16e6e95f486b0ed58d9a221bf" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespacerolly_1a1b3470d1556c16994c691b0a7af7ee48" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1acbd31892e6da85b55b99c07bf005b112" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacerolly_1ad0cdea02ac170e2603b7a4491036b298" kind="function"><name>swap</name></member>
+    <member refid="namespacerolly_1a95d13b9563bf751c816a8ccd194410b8" kind="function"><name>make_optional</name></member>
+    <member refid="namespacerolly_1ab0f9d87f10324655edd29d2312df8f90" kind="function"><name>make_optional</name></member>
+    <member refid="namespacerolly_1a2fc860684dfb51f96cef87b70a678076" kind="function"><name>make_optional</name></member>
+    <member refid="namespacerolly_1a4d27def5f33f561207ecbc421b842d55" kind="function"><name>some</name></member>
+  </compound>
   <compound refid="ostream__formatter_8h" kind="file"><name>ostream_formatter.h</name>
+  </compound>
+  <compound refid="overload_8h" kind="file"><name>overload.h</name>
+    <member refid="namespacerolly_1af4c439f294424a3f11f9908de0dca2f6" kind="variable"><name>overload</name></member>
+    <member refid="namespacerolly_1a85cfe4055bff1f633f6bbedb33f2e93b" kind="variable"><name>const_overload</name></member>
+    <member refid="namespacerolly_1ae3c7f1453d02210f5dedfa448b6b4697" kind="variable"><name>non_const_overload</name></member>
   </compound>
   <compound refid="owner_8h" kind="file"><name>owner.h</name>
     <member refid="namespacerolly_1a003e7028327d1c1243f546af6e61d80f" kind="typedef"><name>owner</name></member>
@@ -2462,11 +3131,9 @@
   </compound>
   <compound refid="result_8h" kind="file"><name>result.h</name>
     <member refid="namespacerolly_1_1types_1a918453fbe2927b6410675e5eb5606441" kind="typedef"><name>result</name></member>
-    <member refid="namespacerolly_1_1types_1a9365b793fe547271e48fa719a7f4854d" kind="variable"><name>none</name></member>
     <member refid="namespacerolly_1_1types_1a2c2d7fe1f4fcd1432bb6ee51c059306f" kind="function"><name>error</name></member>
     <member refid="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" kind="function"><name>ok</name></member>
     <member refid="namespacerolly_1_1types_1a07a110d824e251b17a6bb94f8e4fed5f" kind="function"><name>ok</name></member>
-    <member refid="namespacerolly_1_1types_1a023b1eb8a485614d2ea9c48632d275c3" kind="function"><name>some</name></member>
   </compound>
   <compound refid="rolly_8h" kind="file"><name>rolly.h</name>
   </compound>
@@ -2498,7 +3165,7 @@
     <member refid="namespacerolly_1a176758c28587a73dfa5cf233d853d23d" kind="function"><name>valid</name></member>
     <member refid="namespacerolly_1a25e9b3ba291a589983345addab86e319" kind="function"><name>from_chars</name></member>
     <member refid="namespacerolly_1ad27abc9860dd15c159be04b022aeb5a0" kind="function"><name>to_chars</name></member>
-    <member refid="namespacerolly_1a29bf2b257aae11af86113305689df183" kind="function"><name>from_string_noexcept</name></member>
+    <member refid="namespacerolly_1ad62ddd144b14ae7ce815d7d57c37cf9d" kind="function"><name>from_string_noexcept</name></member>
     <member refid="namespacerolly_1a6472f585e4160c186d682782d57ab7ac" kind="function"><name>from_string</name></member>
     <member refid="namespacerolly_1ad687023e3333f2a28121709aa2ec8b92" kind="function"><name>to_string</name></member>
     <member refid="namespacerolly_1ae775c2f85b0bbc89c8ea6633708b2b47" kind="function"><name>operator&lt;&lt;</name></member>
@@ -2524,6 +3191,37 @@
   <compound refid="serialization__error_8h" kind="file"><name>serialization_error.h</name>
   </compound>
   <compound refid="shared__library_8h" kind="file"><name>shared_library.h</name>
+  </compound>
+  <compound refid="signals_8h" kind="file"><name>signals.h</name>
+    <member refid="signals_8h_1a7a2842dcf41230a75b5a413092d072a0" kind="typedef"><name>group_id</name></member>
+    <member refid="signals_8h_1ae42c0e8811996ab532903d47deea5d7d" kind="typedef"><name>obj_ptr</name></member>
+    <member refid="signals_8h_1abcafe0a6d0b19652cdaaff7972a8913f" kind="typedef"><name>observer_st</name></member>
+    <member refid="signals_8h_1ae0ab6731432a68886ecdf0eaab68dfd3" kind="typedef"><name>observer</name></member>
+    <member refid="signals_8h_1ac576ce92b5bf16a54f83d46e023897d7" kind="typedef"><name>slot_ptr</name></member>
+    <member refid="signals_8h_1af36a1262b557206b85e8089c51ec6e52" kind="typedef"><name>signal_st</name></member>
+    <member refid="signals_8h_1a702f70cb6e382f634a0ab7e3c8021cc1" kind="typedef"><name>signal</name></member>
+    <member refid="namespacerolly_1aaa49597f11fa34841f1e7c48b7fe1fb8" kind="variable"><name>with_rtti</name></member>
+    <member refid="namespacerolly_1a666a4e9726827588e42f0857d8a87c68" kind="variable"><name>is_weak_ptr_compatible_v</name></member>
+    <member refid="namespacerolly_1a0ce1d8dcc7700b383ed4cab2a35ef160" kind="variable"><name>is_callable_v</name></member>
+    <member refid="namespacerolly_1ad73fb921872b6292fd6244b46ea4ebeb" kind="variable"><name>is_weak_ptr_v</name></member>
+    <member refid="namespacerolly_1a26520841c8b04240e098d1360c774d08" kind="variable"><name>has_call_operator_v</name></member>
+    <member refid="namespacerolly_1a60d8a43ca3d5d473f1651ef5114c2628" kind="variable"><name>is_pointer_v</name></member>
+    <member refid="namespacerolly_1a803db4963a7d275f1f2dc56ab3a33e0b" kind="variable"><name>is_func_v</name></member>
+    <member refid="namespacerolly_1a2bc53fe616698994943b2b23620e7749" kind="variable"><name>is_pmf_v</name></member>
+    <member refid="namespacerolly_1aa06dc940ac021f05e56d97c2dac9adeb" kind="variable"><name>is_observer_v</name></member>
+    <member refid="namespacerolly_1a908ba454a2355d53f9831b0570f348e7" kind="variable"><name>is_signal_v</name></member>
+    <member refid="signals_8h_1adeb27d2b612c4dc5278075ac28de887f" kind="function"><name>to_weak</name></member>
+    <member refid="signals_8h_1ae2cd9e10c3e6cc9120e19c324ba099bd" kind="function"><name>to_weak</name></member>
+    <member refid="signals_8h_1a73e115fc79b33407c9eef0068d911895" kind="function"><name>get_function_ptr</name></member>
+    <member refid="signals_8h_1a09bd2025da2246a3e57d8ca73804b1a4" kind="function"><name>eq_function_ptr</name></member>
+    <member refid="signals_8h_1aac03fdb1eac801324961de1429865071" kind="function"><name>get_object_ptr</name></member>
+    <member refid="signals_8h_1a295045e13c2fdaa99bf88534b05bddaf" kind="function"><name>cow_read</name></member>
+    <member refid="signals_8h_1a86340467e86f20672c9f295024b21476" kind="function"><name>cow_read</name></member>
+    <member refid="signals_8h_1a91f8bfa713f665b8ff5b297726914fb7" kind="function"><name>cow_write</name></member>
+    <member refid="signals_8h_1a32fc39fc81cbdbc015eb1e7d6b0b0dac" kind="function"><name>cow_write</name></member>
+    <member refid="signals_8h_1ad2038027f0da5ce4a6c7cc1d8bbc5c2d" kind="function"><name>make_shared</name></member>
+    <member refid="signals_8h_1a0f80269fcd1de453f2d6219cf29c475c" kind="function"><name>connect</name></member>
+    <member refid="signals_8h_1a7ed5753445baad800ce7f8c62fe2dfc9" kind="function"><name>connect</name></member>
   </compound>
   <compound refid="singleton_8h" kind="file"><name>singleton.h</name>
   </compound>

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="324" column="5" bodyfile="rolly/dll/plugin.h" bodystart="324" bodyend="-1"/>
+        <location file="rolly/dll/plugin.h" line="326" column="5" bodyfile="rolly/dll/plugin.h" bodystart="326" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="327" column="17" bodyfile="rolly/dll/plugin.h" bodystart="327" bodyend="-1"/>
+        <location file="rolly/dll/plugin.h" line="329" column="17" bodyfile="rolly/dll/plugin.h" bodystart="329" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="238" column="5"/>
+        <location file="rolly/dll/plugin.h" line="240" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a631057f87fff9b84136f55161da38721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="239" column="5"/>
+        <location file="rolly/dll/plugin.h" line="241" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1ab94285591dc3045c5f7c91c0da011486" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="240" column="5"/>
+        <location file="rolly/dll/plugin.h" line="242" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a3273be2887eac65ebd74a7ac5bed6779" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> &amp;</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="241" column="12"/>
+        <location file="rolly/dll/plugin.h" line="243" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a6375f40e8349a91b610973c7fb67aa75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classrolly_1_1dll_1_1plugin" kindref="compound">plugin</ref> &amp;</type>
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="242" column="12"/>
+        <location file="rolly/dll/plugin.h" line="244" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a480eb1084925d7ab72ca200724c6a27c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -122,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="243" column="13"/>
+        <location file="rolly/dll/plugin.h" line="245" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a782a8f03cca96caa964b019fdf81da84" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>std::string_view</type>
@@ -135,13 +135,13 @@
         <detaileddescription>
 <para>This function should return unique interface name.</para>
 <para>It is recommended to document this function&apos;s return value in your plugin documentation.</para>
-<para>Used in <ref refid="classrolly_1_1dll_1_1plugin__loader_1a3e3f5ed68afe55f658cf58b604224925" kindref="member">rolly::dll::plugin_loader::query_interface</ref> method for iterating over plugins. <simplesect kind="return"><para>Internal interface name. </para>
+<para>Used in <ref refid="classrolly_1_1dll_1_1plugin__loader_1abb17c3456dfe332d00c39917da83812d" kindref="member">rolly::dll::plugin_loader::query_interface</ref> method for iterating over plugins. <simplesect kind="return"><para>Internal interface name. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="254" column="31"/>
+        <location file="rolly/dll/plugin.h" line="256" column="31"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a8abfaef9c352d1a3bd0fd8b433081584" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>std::string_view</type>
@@ -160,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="265" column="31" bodyfile="rolly/dll/plugin.h" bodystart="265" bodyend="265"/>
+        <location file="rolly/dll/plugin.h" line="267" column="31" bodyfile="rolly/dll/plugin.h" bodystart="267" bodyend="267"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a7effe5b83e10d37f18fb13a2fb35a082" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>std::string_view</type>
@@ -179,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="274" column="31" bodyfile="rolly/dll/plugin.h" bodystart="274" bodyend="274"/>
+        <location file="rolly/dll/plugin.h" line="276" column="31" bodyfile="rolly/dll/plugin.h" bodystart="276" bodyend="276"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1ad293e4b7e7d88a16a360415cca9ad9f1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classrolly_1_1meta_1_1project__meta" kindref="compound">meta::project_meta</ref> const  &amp;</type>
@@ -210,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="287" column="39"/>
+        <location file="rolly/dll/plugin.h" line="289" column="39"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a70ebc47aa2a08a0d5dc1e2222dc2f606" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">guid</ref> const  &amp;</type>
@@ -231,7 +231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="297" column="25"/>
+        <location file="rolly/dll/plugin.h" line="299" column="25"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a91048bac1d9f2557cc86c9eb8b39ca59" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -261,7 +261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="306" column="19"/>
+        <location file="rolly/dll/plugin.h" line="308" column="19"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1dll_1_1plugin_1a4d4fdef23d3fbfb46cfcabc3562e7981" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -278,7 +278,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="312" column="19"/>
+        <location file="rolly/dll/plugin.h" line="314" column="19"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -297,7 +297,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="314" column="25" bodyfile="rolly/dll/plugin.h" bodystart="314" bodyend="322"/>
+        <location file="rolly/dll/plugin.h" line="316" column="25" bodyfile="rolly/dll/plugin.h" bodystart="316" bodyend="324"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -316,7 +316,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/dll/plugin.h" line="330" column="5" bodyfile="rolly/dll/plugin.h" bodystart="330" bodyend="331"/>
+        <location file="rolly/dll/plugin.h" line="332" column="5" bodyfile="rolly/dll/plugin.h" bodystart="332" bodyend="333"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -518,7 +518,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="rolly/dll/plugin.h" line="236" column="15" bodyfile="rolly/dll/plugin.h" bodystart="236" bodyend="332"/>
+    <location file="rolly/dll/plugin.h" line="238" column="7" bodyfile="rolly/dll/plugin.h" bodystart="236" bodyend="334"/>
     <listofallmembers>
       <member refid="classrolly_1_1dll_1_1plugin_1a7effe5b83e10d37f18fb13a2fb35a082" prot="public" virt="virtual"><scope>rolly::dll::plugin</scope><name>description</name></member>
       <member refid="classrolly_1_1dll_1_1plugin_1a91048bac1d9f2557cc86c9eb8b39ca59" prot="public" virt="pure-virtual"><scope>rolly::dll::plugin</scope><name>init</name></member>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structdetail_1_1object__pointer" kind="struct" language="C++" prot="public">
+    <compoundname>detail::object_pointer</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename</type>
+        <defval>void</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structdetail_1_1object__pointer_1abca2f4314792369e65b96a31e17d4e6c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>obj_ptr</type>
+        <definition>static obj_ptr get</definition>
+        <argsstring>(T const &amp;)</argsstring>
+        <name>get</name>
+        <param>
+          <type>T const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="325" column="22" bodyfile="rolly/functional/signals.h" bodystart="325" bodyend="325"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/functional/signals.h" line="324" column="25" bodyfile="rolly/functional/signals.h" bodystart="324" bodyend="326"/>
+    <listofallmembers>
+      <member refid="structdetail_1_1object__pointer_1abca2f4314792369e65b96a31e17d4e6c" prot="public" virt="non-virtual"><scope>detail::object_pointer</scope><name>get</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

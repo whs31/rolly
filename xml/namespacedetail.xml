@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacedetail" kind="namespace" language="C++">
+    <compoundname>detail</compoundname>
+    <innerclass refid="structdetail_1_1cleanable" prot="public">detail::cleanable</innerclass>
+    <innerclass refid="classdetail_1_1copy__on__write" prot="public">detail::copy_on_write</innerclass>
+    <innerclass refid="structdetail_1_1func__ptr" prot="public">detail::func_ptr</innerclass>
+    <innerclass refid="structdetail_1_1function__traits" prot="public">detail::function_traits</innerclass>
+    <innerclass refid="structdetail_1_1function__traits_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4" prot="public">detail::function_traits&lt; T *, std::enable_if_t&lt; trait::is_func_v&lt; T &gt; &gt; &gt;</innerclass>
+    <innerclass refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4" prot="public">detail::function_traits&lt; T, std::enable_if_t&lt; trait::has_call_operator_v&lt; T &gt; &gt; &gt;</innerclass>
+    <innerclass refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4" prot="public">detail::function_traits&lt; T, std::enable_if_t&lt; trait::is_func_v&lt; T &gt; &gt; &gt;</innerclass>
+    <innerclass refid="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4" prot="public">detail::function_traits&lt; T, std::enable_if_t&lt; trait::is_pmf_v&lt; T &gt; &gt; &gt;</innerclass>
+    <innerclass refid="structdetail_1_1null__mutex" prot="public">detail::null_mutex</innerclass>
+    <innerclass refid="structdetail_1_1object__pointer" prot="public">detail::object_pointer</innerclass>
+    <innerclass refid="structdetail_1_1object__pointer_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__pointer__v_3_01T_01_5_01_4_01_4_01_4" prot="public">detail::object_pointer&lt; T *, std::enable_if_t&lt; trait::is_pointer_v&lt; T * &gt; &gt; &gt;</innerclass>
+    <innerclass refid="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01_9_01trait_1_1is__pointer__v9d17afaa4d8ddd746027d98f7cb68c51" prot="public">detail::object_pointer&lt; T, std::enable_if_t&lt; ! trait::is_pointer_v&lt; T &gt; &amp;&amp;! trait::is_weak_ptr_v&lt; T &gt; &amp;&amp;trait::is_weak_ptr_compatible_v&lt; T &gt; &gt; &gt;</innerclass>
+    <innerclass refid="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__weak__ptr__v_3_01T_01_4_01_4_01_4" prot="public">detail::object_pointer&lt; T, std::enable_if_t&lt; trait::is_weak_ptr_v&lt; T &gt; &gt; &gt;</innerclass>
+    <innerclass refid="structdetail_1_1signal__wrapper" prot="public">detail::signal_wrapper</innerclass>
+    <innerclass refid="classdetail_1_1slot" prot="public">detail::slot</innerclass>
+    <innerclass refid="classdetail_1_1slot__base" prot="public">detail::slot_base</innerclass>
+    <innerclass refid="classdetail_1_1slot__extended" prot="public">detail::slot_extended</innerclass>
+    <innerclass refid="classdetail_1_1slot__pmf" prot="public">detail::slot_pmf</innerclass>
+    <innerclass refid="classdetail_1_1slot__pmf__extended" prot="public">detail::slot_pmf_extended</innerclass>
+    <innerclass refid="classdetail_1_1slot__pmf__tracked" prot="public">detail::slot_pmf_tracked</innerclass>
+    <innerclass refid="classdetail_1_1slot__state" prot="public">detail::slot_state</innerclass>
+    <innerclass refid="classdetail_1_1slot__tracked" prot="public">detail::slot_tracked</innerclass>
+    <innerclass refid="structdetail_1_1spin__mutex" prot="public">detail::spin_mutex</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="signals_8h_1ae42c0e8811996ab532903d47deea5d7d" prot="public" static="no">
+        <type>void const  *</type>
+        <definition>using obj_ptr =  void const*</definition>
+        <argsstring></argsstring>
+        <name>obj_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="318" column="5" bodyfile="rolly/functional/signals.h" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="signals_8h_1ac576ce92b5bf16a54f83d46e023897d7" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="cpp/memory/shared_ptr" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::shared_ptr</ref>&lt; <ref refid="classdetail_1_1slot__base" kindref="compound">slot_base</ref>&lt; T... &gt; &gt;</type>
+        <definition>using slot_ptr =  std::shared_ptr&lt;slot_base&lt;T...&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>slot_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="769" column="5" bodyfile="rolly/functional/signals.h" bodystart="769" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="signals_8h_1a73e115fc79b33407c9eef0068d911895" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structdetail_1_1func__ptr" kindref="compound">func_ptr</ref></type>
+        <definition>func_ptr detail::get_function_ptr</definition>
+        <argsstring>(T const &amp;t)</argsstring>
+        <name>get_function_ptr</name>
+        <param>
+          <type>T const &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="302" column="14" bodyfile="rolly/functional/signals.h" bodystart="302" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="signals_8h_1a09bd2025da2246a3e57d8ca73804b1a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool detail::eq_function_ptr</definition>
+        <argsstring>(T const &amp;t, func_ptr const &amp;d)</argsstring>
+        <name>eq_function_ptr</name>
+        <param>
+          <type>T const &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="structdetail_1_1func__ptr" kindref="compound">func_ptr</ref> const &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="309" column="10" bodyfile="rolly/functional/signals.h" bodystart="309" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="signals_8h_1aac03fdb1eac801324961de1429865071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>obj_ptr</type>
+        <definition>obj_ptr get_object_ptr</definition>
+        <argsstring>(T const &amp;t)</argsstring>
+        <name>get_object_ptr</name>
+        <param>
+          <type>T const &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="351" column="13" bodyfile="rolly/functional/signals.h" bodystart="351" bodyend="353" declfile="rolly/functional/signals.h" declline="321" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="signals_8h_1a295045e13c2fdaa99bf88534b05bddaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T const  &amp;</type>
+        <definition>T const&amp; detail::cow_read</definition>
+        <argsstring>(T const &amp;v)</argsstring>
+        <name>cow_read</name>
+        <param>
+          <type>T const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Specializations for thread-safe code path </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="488" column="13" bodyfile="rolly/functional/signals.h" bodystart="488" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="signals_8h_1a86340467e86f20672c9f295024b21476" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T const  &amp;</type>
+        <definition>T const&amp; detail::cow_read</definition>
+        <argsstring>(copy_on_write&lt; T &gt; &amp;v)</argsstring>
+        <name>cow_read</name>
+        <param>
+          <type><ref refid="classdetail_1_1copy__on__write" kindref="compound">copy_on_write</ref>&lt; T &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="493" column="13" bodyfile="rolly/functional/signals.h" bodystart="493" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="signals_8h_1a91f8bfa713f665b8ff5b297726914fb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T &amp;</type>
+        <definition>T&amp; detail::cow_write</definition>
+        <argsstring>(T &amp;v)</argsstring>
+        <name>cow_write</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="498" column="7" bodyfile="rolly/functional/signals.h" bodystart="498" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="signals_8h_1a32fc39fc81cbdbc015eb1e7d6b0b0dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T &amp;</type>
+        <definition>T&amp; detail::cow_write</definition>
+        <argsstring>(copy_on_write&lt; T &gt; &amp;v)</argsstring>
+        <name>cow_write</name>
+        <param>
+          <type><ref refid="classdetail_1_1copy__on__write" kindref="compound">copy_on_write</ref>&lt; T &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="503" column="7" bodyfile="rolly/functional/signals.h" bodystart="503" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="signals_8h_1ad2038027f0da5ce4a6c7cc1d8bbc5c2d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename B</type>
+          </param>
+          <param>
+            <type>typename D</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Arg</declname>
+            <defname>Arg</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="cpp/memory/shared_ptr" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::shared_ptr</ref>&lt; B &gt;</type>
+        <definition>std::shared_ptr&lt;B&gt; detail::make_shared</definition>
+        <argsstring>(Arg &amp;&amp;... arg)</argsstring>
+        <name>make_shared</name>
+        <param>
+          <type>Arg &amp;&amp;...</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="508" column="28" bodyfile="rolly/functional/signals.h" bodystart="508" bodyend="510"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/functional/signals.h" line="152" column="18"/>
+  </compounddef>
+</doxygen>

@@ -151,11 +151,11 @@
             </dt>
             <dd>Returns the path to the project&#x27;s preference directory.</dd>
             <dt>
-              <span class="m-dox-wrap-bumper">auto <a href="#a559edd679316c7ced41fef5119788cef" class="m-dox">runtime_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::optional&lt;std::filesystem::path&gt; const &amp;</span>
+              <span class="m-dox-wrap-bumper">auto <a href="#a24c10522c9c2298dedda84c57d524dbc" class="m-dox">runtime_dir</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;std::filesystem::path&gt; const &amp;</span>
             </dt>
             <dd>Returns the path to the project&#x27;s runtime directory.</dd>
             <dt>
-              <span class="m-dox-wrap-bumper">auto <a href="#a2523855bb47cadb2a77c10fa2351ba67" class="m-dox">state_dir</a>(</span><span class="m-dox-wrap">) const -&gt; std::optional&lt;std::filesystem::path&gt; const &amp;</span>
+              <span class="m-dox-wrap-bumper">auto <a href="#a817e8af54a15afcda79fa74f2cecc89b" class="m-dox">state_dir</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;std::filesystem::path&gt; const &amp;</span>
             </dt>
             <dd>Returns the path to the project&#x27;s state directory.</dd>
           </dl>
@@ -453,9 +453,9 @@
             <p>Returns the path to the project&#x27;s preference directory.</p>
 <p>Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>$XDG_CONFIG_HOME</code>/<code>project_path</code> or <code>$HOME</code>/.config/<code>project_path</code>, for example: <code>/home/alice/.config/barapp</code></li><li><strong>MacOS</strong>: <code>$HOME</code>/Library/Preferences/<code>project_path</code>, for example: <code>/Users/Alice/Library/Preferences/com.Foo-Corp.Bar-App</code></li><li><strong>Windows</strong>: <code>LOCALAPPDATA%</code>\<code>project_path</code>\config, for example: <code>C:\Users\Alice\AppData\Roaming\Foo Corp\Bar App\config</code></li></ul>
           </div></section>
-          <section class="m-doc-details" id="a559edd679316c7ced41fef5119788cef"><div>
+          <section class="m-doc-details" id="a24c10522c9c2298dedda84c57d524dbc"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::optional&lt;std::filesystem::path&gt; const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a559edd679316c7ced41fef5119788cef" class="m-doc-self">runtime_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;std::filesystem::path&gt; const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a24c10522c9c2298dedda84c57d524dbc" class="m-doc-self">runtime_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Returns the path to the project&#x27;s runtime directory.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -468,9 +468,9 @@
             </table>
 <p>The runtime directory contains transient, non-essential data (like sockets or named pipes) that is expected to be cleared when the user&#x27;s session ends.<br />Values on different platforms:</p><ul><li><strong>Linux</strong>: <code>XDG_RUNTIME_DIR</code>/<code>project_path</code>, for example: <code>/run/user/1001/barapp</code></li><li><strong>MacOS</strong>: -</li><li><strong>Windows</strong>: -</li></ul><aside class="m-note m-info"><h4>Note</h4><p>Only for Linux.</p></aside>
           </div></section>
-          <section class="m-doc-details" id="a2523855bb47cadb2a77c10fa2351ba67"><div>
+          <section class="m-doc-details" id="a817e8af54a15afcda79fa74f2cecc89b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::optional&lt;std::filesystem::path&gt; const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2523855bb47cadb2a77c10fa2351ba67" class="m-doc-self">state_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;std::filesystem::path&gt; const &amp; rolly::<wbr />application_dirs::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a817e8af54a15afcda79fa74f2cecc89b" class="m-doc-self">state_dir</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Returns the path to the project&#x27;s state directory.</p>
             <table class="m-table m-fullwidth m-flat">

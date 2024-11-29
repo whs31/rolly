@@ -211,22 +211,22 @@
             <dd>Returns a mutable reference to the internal map of loaded libraries.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a8f7748dedbb8beb54decf63f462dc3a8" class="m-dox">query_interface_by_type</a>(</span><span class="m-dox-wrap">) const -&gt; std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
+              <span class="m-dox-wrap-bumper">auto <a href="#a726c11a3dfad18e7b56ae55fa24bd6b9" class="m-dox">query_interface_by_type</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
             </dt>
             <dd>Queries plugin interface by it&#x27;s type via RTTI.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a3e3f5ed68afe55f658cf58b604224925" class="m-dox">query_interface</a>(</span><span class="m-dox-wrap">std::string_view interface_name) const -&gt; std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
+              <span class="m-dox-wrap-bumper">auto <a href="#abb17c3456dfe332d00c39917da83812d" class="m-dox">query_interface</a>(</span><span class="m-dox-wrap">std::string_view interface_name) const -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
             </dt>
             <dd>Queries plugin interface by it&#x27;s internal name.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#af8eca129abedfe379d04ade437f5a53e" class="m-dox">query_interface</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; uuid) const -&gt; std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
+              <span class="m-dox-wrap-bumper">auto <a href="#a7406040b9d002d107ec477cf677110e5" class="m-dox">query_interface</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; uuid) const -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
             </dt>
             <dd>Queries plugin interface by it&#x27;s unique ID (UUID).</dd>
-            <dt id="a7a425be3cb615b7c8009d27a87d0fa29">
+            <dt id="abc14ab7ea9ec22a543d6b15fa3089d72">
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a7a425be3cb615b7c8009d27a87d0fa29" class="m-dox-self" name="a7a425be3cb615b7c8009d27a87d0fa29">query_by</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/utility/functional/function.html" class="m-doc-external">std::<wbr />function</a>&lt;bool(<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a> const&amp;)&gt; const&amp; predicate) const -&gt; std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
+              <span class="m-dox-wrap-bumper">auto <a href="#abc14ab7ea9ec22a543d6b15fa3089d72" class="m-dox-self" name="abc14ab7ea9ec22a543d6b15fa3089d72">query_by</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/utility/functional/function.html" class="m-doc-external">std::<wbr />function</a>&lt;bool(<a href="classrolly_1_1dll_1_1plugin.html" class="m-doc">plugin</a> const&amp;)&gt; const&amp; predicate) const -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt;</span>
             </dt>
             <dd><span></span></dd>
             <dt id="add8e0fe685ab80b2cab50ab8ac09bb5d">
@@ -427,12 +427,12 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a8f7748dedbb8beb54decf63f462dc3a8"><div>
+          <section class="m-doc-details" id="a726c11a3dfad18e7b56ae55fa24bd6b9"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8f7748dedbb8beb54decf63f462dc3a8" class="m-doc-self">query_interface_by_type</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a726c11a3dfad18e7b56ae55fa24bd6b9" class="m-doc-self">query_interface_by_type</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Queries plugin interface by it&#x27;s type via RTTI.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -452,14 +452,14 @@
                 </tr>
               </tfoot>
             </table>
-<p>Essentially iterates over all loaded plugins and tries to <code>dynamic_cast</code> their pointer to the requested interface.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This function can be slow, especially when many plugins are loaded. Much better solution will be to query by internal plugin interface name using method <a href="classrolly_1_1dll_1_1plugin__loader.html#a3e3f5ed68afe55f658cf58b604224925" class="m-doc">query_<wbr />interface</a></p></aside>
+<p>Essentially iterates over all loaded plugins and tries to <code>dynamic_cast</code> their pointer to the requested interface.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This function can be slow, especially when many plugins are loaded. Much better solution will be to query by internal plugin interface name using method <a href="classrolly_1_1dll_1_1plugin__loader.html#abb17c3456dfe332d00c39917da83812d" class="m-doc">query_<wbr />interface</a></p></aside>
           </div></section>
-          <section class="m-doc-details" id="a3e3f5ed68afe55f658cf58b604224925"><div>
+          <section class="m-doc-details" id="abb17c3456dfe332d00c39917da83812d"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3e3f5ed68afe55f658cf58b604224925" class="m-doc-self">query_interface</a>(</span><span class="m-doc-wrap">std::string_view interface_name) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb17c3456dfe332d00c39917da83812d" class="m-doc-self">query_interface</a>(</span><span class="m-doc-wrap">std::string_view interface_name) const</span></span>
             </h3>
             <p>Queries plugin interface by it&#x27;s internal name.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -489,12 +489,12 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="af8eca129abedfe379d04ade437f5a53e"><div>
+          <section class="m-doc-details" id="a7406040b9d002d107ec477cf677110e5"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">std::optional&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8eca129abedfe379d04ade437f5a53e" class="m-doc-self">query_interface</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; uuid) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;<a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html" class="m-doc-external">std::<wbr />reference_wrapper</a>&lt;T&gt;&gt; rolly::<wbr />dll::<wbr />plugin_loader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7406040b9d002d107ec477cf677110e5" class="m-doc-self">query_interface</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; uuid) const</span></span>
             </h3>
             <p>Queries plugin interface by it&#x27;s unique ID (UUID).</p>
             <table class="m-table m-fullwidth m-flat">

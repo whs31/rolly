@@ -3,6 +3,7 @@
   <compounddef id="platform__definitions_8h" kind="file" language="C++">
     <compoundname>platform_definitions.h</compoundname>
     <includedby refid="definitions_8h" local="yes">definitions.h</includedby>
+    <includedby refid="dl_8h" local="yes">dl.h</includedby>
     <invincdepgraph>
       <node id="34">
         <label>owner.h</label>
@@ -56,7 +57,7 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="51">
+      <node id="52">
         <label>log.h</label>
         <link refid="log_8h_source"/>
         <childnode refid="21" relation="include">
@@ -72,7 +73,7 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="52">
+      <node id="53">
         <label>concepts.h</label>
         <link refid="qt_2concepts_8h_source"/>
         <childnode refid="46" relation="include">
@@ -124,6 +125,14 @@
         <label>platform_definitions.h</label>
         <link refid="platform__definitions_8h"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>dl.h</label>
+        <link refid="dl_8h_source"/>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="35">
@@ -198,6 +207,8 @@
         <childnode refid="54" relation="include">
         </childnode>
         <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
         </childnode>
       </node>
       <node id="17">
@@ -308,7 +319,7 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="55">
+      <node id="56">
         <label>literals.h</label>
         <link refid="literals_8h_source"/>
         <childnode refid="47" relation="include">
@@ -316,7 +327,7 @@
         <childnode refid="48" relation="include">
         </childnode>
       </node>
-      <node id="53">
+      <node id="54">
         <label>format.h</label>
         <link refid="qt_2format_8h_source"/>
         <childnode refid="48" relation="include">
@@ -362,6 +373,12 @@
         <label>threading.h</label>
         <link refid="threading_8h_source"/>
         <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>signals.h</label>
+        <link refid="signals_8h_source"/>
+        <childnode refid="38" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -454,7 +471,7 @@
         <label>rolly.h</label>
         <link refid="rolly_8h_source"/>
       </node>
-      <node id="54">
+      <node id="55">
         <label>formatters.h</label>
         <link refid="formatters_8h_source"/>
         <childnode refid="47" relation="include">

@@ -10,17 +10,17 @@
     <includes local="no">string</includes>
     <includes local="no">array</includes>
     <includes local="no">tuple</includes>
-    <includes local="no">bits/stl_algo.h</includes>
+    <includes local="no">algorithm</includes>
     <includes local="no">qvector2d.h</includes>
     <includedby refid="point2d_8h" local="yes">point2d.h</includedby>
     <includedby refid="types_8h" local="yes">types.h</includedby>
     <incdepgraph>
-      <node id="39">
+      <node id="43">
         <label>format/ostream_formatter.h</label>
         <link refid="ostream__formatter_8h_source"/>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
@@ -43,11 +43,11 @@
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
       </node>
       <node id="12">
@@ -66,6 +66,9 @@
       <node id="26">
         <label>charconv</label>
       </node>
+      <node id="40">
+        <label>variant</label>
+      </node>
       <node id="20">
         <label>../math.h</label>
         <link refid="math_8h_source"/>
@@ -79,7 +82,7 @@
       <node id="21">
         <label>cmath</label>
       </node>
-      <node id="34">
+      <node id="33">
         <label>stdexcept</label>
       </node>
       <node id="8">
@@ -97,6 +100,25 @@
         <label>export.h</label>
         <link refid="export_8h_source"/>
       </node>
+      <node id="36">
+        <label>exception</label>
+      </node>
+      <node id="35">
+        <label>../types/optional.h</label>
+        <link refid="optional_8h_source"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
       <node id="5">
         <label>platform_definitions.h</label>
         <link refid="platform__definitions_8h_source"/>
@@ -105,7 +127,7 @@
         <label>version_definitions.h</label>
         <link refid="version__definitions_8h_source"/>
       </node>
-      <node id="35">
+      <node id="34">
         <label>char_utils.h</label>
         <link refid="char__utils_8h_source"/>
         <childnode refid="13" relation="include">
@@ -132,9 +154,9 @@
         </childnode>
         <childnode refid="34" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
         <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
       <node id="27">
@@ -151,8 +173,11 @@
       <node id="15">
         <label>tuple</label>
       </node>
-      <node id="33">
-        <label>optional</label>
+      <node id="38">
+        <label>new</label>
+      </node>
+      <node id="39">
+        <label>utility</label>
       </node>
       <node id="9">
         <label>./size2d.h</label>
@@ -175,7 +200,7 @@
       <node id="14">
         <label>array</label>
       </node>
-      <node id="40">
+      <node id="44">
         <label>sstream</label>
       </node>
       <node id="22">
@@ -211,10 +236,10 @@
       <node id="11">
         <label>cstddef</label>
       </node>
-      <node id="38">
+      <node id="42">
         <label>source_location.h</label>
         <link refid="source__location_8h_source"/>
-        <childnode refid="39" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
@@ -224,7 +249,7 @@
       <node id="17">
         <label>qsize.h</label>
       </node>
-      <node id="36">
+      <node id="41">
         <label>../contracts.h</label>
         <link refid="contracts_8h_source"/>
         <childnode refid="13" relation="include">
@@ -239,7 +264,7 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -248,7 +273,7 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="45">
         <label>qvector2d.h</label>
       </node>
       <node id="25">
@@ -263,6 +288,9 @@
       </node>
       <node id="7">
         <label>type_traits</label>
+      </node>
+      <node id="16">
+        <label>algorithm</label>
       </node>
       <node id="2">
         <label>../concepts/num.h</label>
@@ -293,11 +321,8 @@
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
-      </node>
-      <node id="16">
-        <label>bits/stl_algo.h</label>
       </node>
       <node id="10">
         <label>./stdint.h</label>

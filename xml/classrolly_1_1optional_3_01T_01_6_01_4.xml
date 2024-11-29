@@ -1,0 +1,1404 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrolly_1_1optional_3_01T_01_6_01_4" kind="class" language="C++" prot="public">
+    <compoundname>rolly::optional&lt; T &amp; &gt;</compoundname>
+    <includes refid="optional_8h" local="no">rolly/types/optional.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classrolly_1_1optional_3_01T_01_6_01_4_1a39ccab77232f593b549808ed33e586d2" prot="public" static="no">
+        <type>T &amp;</type>
+        <definition>using value_type =  T&amp;</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1956" column="5" bodyfile="rolly/types/optional.h" bodystart="1956" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classrolly_1_1optional_3_01T_01_6_01_4_1abba7a74c703766bd1a7fd90e2aee6b08" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>decltype(detail::optional_map_impl(<ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; <ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp; &gt;(), <ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; F &amp;&amp; &gt;())) TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>decltype(detail::optional_map_impl( std::declval&lt;optional&amp;&gt;(), std::declval&lt;F&amp;&amp;&gt;() )) TL_OPTIONAL_11_CONSTEXPR map(F &amp;&amp;f) &amp;</definition>
+        <argsstring>(F &amp;&amp;f) &amp;</argsstring>
+        <name>map</name>
+        <briefdescription>
+<para>Carries out some operation on the stored object if there is one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1705" column="2" bodyfile="rolly/types/optional.h" bodystart="1705" bodyend="1707"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1optional_3_01T_01_6_01_4_1a9a7ae98a69c4434973e5c3c408509b6c" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>decltype(detail::optional_map_impl(<ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; <ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;&amp; &gt;(), <ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; F &amp;&amp; &gt;())) TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>decltype(detail::optional_map_impl( std::declval&lt;optional&amp;&amp;&gt;(), std::declval&lt;F&amp;&amp;&gt;() )) TL_OPTIONAL_11_CONSTEXPR map(F &amp;&amp;f) &amp;&amp;</definition>
+        <argsstring>(F &amp;&amp;f) &amp;&amp;</argsstring>
+        <name>map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1713" column="2" bodyfile="rolly/types/optional.h" bodystart="1713" bodyend="1715"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1optional_3_01T_01_6_01_4_1a8269eb4d316cd62ad55fa3204073864e" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr decltype(detail::optional_map_impl(<ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; <ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const  &amp; &gt;(), <ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; F &amp;&amp; &gt;()))</type>
+        <definition>constexpr decltype(detail::optional_map_impl( std::declval&lt;optional const&amp;&gt;(), std::declval&lt;F&amp;&amp;&gt;() )) map(F &amp;&amp;f) const &amp;</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;</argsstring>
+        <name>map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1721" column="2" bodyfile="rolly/types/optional.h" bodystart="1721" bodyend="1723"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1optional_3_01T_01_6_01_4_1ac8f1e8be78abf0ab273c9488014ea8cc" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr decltype(detail::optional_map_impl(<ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; <ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const  &amp;&amp; &gt;(), <ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; F &amp;&amp; &gt;()))</type>
+        <definition>constexpr decltype(detail::optional_map_impl( std::declval&lt;optional const&amp;&amp;&gt;(), std::declval&lt;F&amp;&amp;&gt;() )) map(F &amp;&amp;f) const &amp;&amp;</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;&amp;</argsstring>
+        <name>map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1730" column="2" bodyfile="rolly/types/optional.h" bodystart="1730" bodyend="1732"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1optional_3_01T_01_6_01_4_1a51798d8a828a414fbfab5e638c8209ea" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>decltype(detail::optional_map_impl(<ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; <ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp; &gt;(), <ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; F &amp;&amp; &gt;())) TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>decltype(detail::optional_map_impl( std::declval&lt;optional&amp;&gt;(), std::declval&lt;F&amp;&amp;&gt;() )) TL_OPTIONAL_11_CONSTEXPR transform(F &amp;&amp;f) &amp;</definition>
+        <argsstring>(F &amp;&amp;f) &amp;</argsstring>
+        <name>transform</name>
+        <briefdescription>
+<para>Carries out some operation on the stored object if there is one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1764" column="2" bodyfile="rolly/types/optional.h" bodystart="1764" bodyend="1766"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1optional_3_01T_01_6_01_4_1a5ee56b4c121bc7835ce4c68bfae9fbe6" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>decltype(detail::optional_map_impl(<ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; <ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;&amp; &gt;(), <ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; F &amp;&amp; &gt;())) TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>decltype(detail::optional_map_impl( std::declval&lt;optional&amp;&amp;&gt;(), std::declval&lt;F&amp;&amp;&gt;() )) TL_OPTIONAL_11_CONSTEXPR transform(F &amp;&amp;f) &amp;&amp;</definition>
+        <argsstring>(F &amp;&amp;f) &amp;&amp;</argsstring>
+        <name>transform</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>\group map \synopsis template &lt;class F&gt; auto transform(F &amp;&amp;f) &amp;&amp;; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1774" column="2" bodyfile="rolly/types/optional.h" bodystart="1774" bodyend="1776"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1optional_3_01T_01_6_01_4_1a7f8494a9191a3551cefe1ec5a7d4ccb8" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr decltype(detail::optional_map_impl(<ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; <ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const  &amp; &gt;(), <ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; F &amp;&amp; &gt;()))</type>
+        <definition>constexpr decltype(detail::optional_map_impl( std::declval&lt;optional const&amp;&gt;(), std::declval&lt;F&amp;&amp;&gt;() )) transform(F &amp;&amp;f) const &amp;</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;</argsstring>
+        <name>transform</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1782" column="2" bodyfile="rolly/types/optional.h" bodystart="1782" bodyend="1784"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrolly_1_1optional_3_01T_01_6_01_4_1a8ab54a421bbda1267b8734a8fd24e461" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr decltype(detail::optional_map_impl(<ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; <ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const  &amp;&amp; &gt;(), <ref refid="cpp/utility/declval" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::declval</ref>&lt; F &amp;&amp; &gt;()))</type>
+        <definition>constexpr decltype(detail::optional_map_impl( std::declval&lt;optional const&amp;&amp;&gt;(), std::declval&lt;F&amp;&amp;&gt;() )) transform(F &amp;&amp;f) const &amp;&amp;</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;&amp;</argsstring>
+        <name>transform</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1791" column="2" bodyfile="rolly/types/optional.h" bodystart="1791" bodyend="1793"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrolly_1_1optional_3_01T_01_6_01_4_1a7b8d357575101636a346f6a9edc67bd9" prot="private" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* m_value</definition>
+        <argsstring></argsstring>
+        <name>m_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2088" column="7" bodyfile="rolly/types/optional.h" bodystart="2088" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a8e0758cd5aa728222538ce6dbbda3e66" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>TL_OPTIONAL_11_CONSTEXPR detail::invoke_result_t&lt; F, T &amp; &gt;</type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR detail::invoke_result_t&lt;F, T&amp;&gt; and_then</definition>
+        <argsstring>(F &amp;&amp;f) &amp;</argsstring>
+        <name>and_then</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Carries out some operation which returns an optional on the stored object if there is one. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1643" column="54" bodyfile="rolly/types/optional.h" bodystart="1643" bodyend="1648"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a11c40dfeef92b62c6f88616c48a0a7b2" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>TL_OPTIONAL_11_CONSTEXPR detail::invoke_result_t&lt; F, T &amp; &gt;</type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR detail::invoke_result_t&lt;F, T&amp;&gt; and_then</definition>
+        <argsstring>(F &amp;&amp;f) &amp;&amp;</argsstring>
+        <name>and_then</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1651" column="54" bodyfile="rolly/types/optional.h" bodystart="1651" bodyend="1656"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a5a54ddc726627b58b248d66d398561c0" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr detail::invoke_result_t&lt; F, T const  &amp; &gt;</type>
+        <definition>constexpr detail::invoke_result_t&lt;F, T const&amp;&gt; and_then</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;</argsstring>
+        <name>and_then</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1659" column="39" bodyfile="rolly/types/optional.h" bodystart="1659" bodyend="1664"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1ae6b73d19fcfb1f2e2d89bb4cbb33249a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr detail::invoke_result_t&lt; F, T const  &amp; &gt;</type>
+        <definition>constexpr detail::invoke_result_t&lt;F, T const&amp;&gt; and_then</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;&amp;</argsstring>
+        <name>and_then</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1668" column="39" bodyfile="rolly/types/optional.h" bodystart="1668" bodyend="1673"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1abe174e282f9736d9e539b492797d9d7e" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>detail::enable_if_ret_void&lt; F &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; T &gt; TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>optional&lt;T&gt; TL_OPTIONAL_11_CONSTEXPR or_else</definition>
+        <argsstring>(F &amp;&amp;f) &amp;</argsstring>
+        <name>or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Calls <computeroutput>f</computeroutput> if the optional is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1799" column="39" bodyfile="rolly/types/optional.h" bodystart="1799" bodyend="1805"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1abe174e282f9736d9e539b492797d9d7e" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>detail::disable_if_ret_void&lt; F &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; T &gt; TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>optional&lt;T&gt; TL_OPTIONAL_11_CONSTEXPR or_else</definition>
+        <argsstring>(F &amp;&amp;f) &amp;</argsstring>
+        <name>or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1808" column="39" bodyfile="rolly/types/optional.h" bodystart="1808" bodyend="1810"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a1bdb07fd42a57e40efd4b8a12fccad75" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>detail::enable_if_ret_void&lt; F &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; T &gt;</type>
+        <definition>optional&lt;T&gt; or_else</definition>
+        <argsstring>(F &amp;&amp;f) &amp;&amp;</argsstring>
+        <name>or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1813" column="14" bodyfile="rolly/types/optional.h" bodystart="1813" bodyend="1819"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1aa9e538d9fcdaedb8d067e4b41ee5703f" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>detail::disable_if_ret_void&lt; F &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; T &gt; TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>optional&lt;T&gt; TL_OPTIONAL_11_CONSTEXPR or_else</definition>
+        <argsstring>(F &amp;&amp;f) &amp;&amp;</argsstring>
+        <name>or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1822" column="39" bodyfile="rolly/types/optional.h" bodystart="1822" bodyend="1824"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a87b8d34c2b2e67affad11297594229f1" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>detail::enable_if_ret_void&lt; F &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; T &gt;</type>
+        <definition>optional&lt;T&gt; or_else</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;</argsstring>
+        <name>or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1827" column="14" bodyfile="rolly/types/optional.h" bodystart="1827" bodyend="1833"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a8e69d1fbc614e2efd3057f8591f08e0f" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>detail::disable_if_ret_void&lt; F &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; T &gt; TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>optional&lt;T&gt; TL_OPTIONAL_11_CONSTEXPR or_else</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;</argsstring>
+        <name>or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1836" column="39" bodyfile="rolly/types/optional.h" bodystart="1836" bodyend="1838"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a49497a7c8beee3262c0eba26b2cf3aa7" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>detail::enable_if_ret_void&lt; F &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; T &gt;</type>
+        <definition>optional&lt;T&gt; or_else</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;&amp;</argsstring>
+        <name>or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1842" column="14" bodyfile="rolly/types/optional.h" bodystart="1842" bodyend="1848"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a49497a7c8beee3262c0eba26b2cf3aa7" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>detail::disable_if_ret_void&lt; F &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; T &gt;</type>
+        <definition>optional&lt;T&gt; or_else</definition>
+        <argsstring>(F &amp;&amp;f) const &amp;&amp;</argsstring>
+        <name>or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1851" column="14" bodyfile="rolly/types/optional.h" bodystart="1851" bodyend="1853"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a707e7a79788137cb02a7175cb6eea34d" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>U</type>
+        <definition>U map_or</definition>
+        <argsstring>(F &amp;&amp;f, U &amp;&amp;u) &amp;</argsstring>
+        <name>map_or</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+<para>Maps the stored value with <computeroutput>f</computeroutput> if there is one, otherwise returns <computeroutput>u</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1858" column="7" bodyfile="rolly/types/optional.h" bodystart="1858" bodyend="1860"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a70a442682b0d52b7904dcba448ab8c11" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>U</type>
+        <definition>U map_or</definition>
+        <argsstring>(F &amp;&amp;f, U &amp;&amp;u) &amp;&amp;</argsstring>
+        <name>map_or</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1863" column="7" bodyfile="rolly/types/optional.h" bodystart="1863" bodyend="1866"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a3009dd1f894482812bc782a855ff3e01" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>U</type>
+        <definition>U map_or</definition>
+        <argsstring>(F &amp;&amp;f, U &amp;&amp;u) const &amp;</argsstring>
+        <name>map_or</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1869" column="7" bodyfile="rolly/types/optional.h" bodystart="1869" bodyend="1871"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a580f04de31229bfb2aedf52157947d5c" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>U</type>
+        <definition>U map_or</definition>
+        <argsstring>(F &amp;&amp;f, U &amp;&amp;u) const &amp;&amp;</argsstring>
+        <name>map_or</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1875" column="7" bodyfile="rolly/types/optional.h" bodystart="1875" bodyend="1878"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a14e5d060ddbbed0bc38f2248f099e664" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>detail::invoke_result_t&lt; U &gt;</type>
+        <definition>detail::invoke_result_t&lt;U&gt; map_or_else</definition>
+        <argsstring>(F &amp;&amp;f, U &amp;&amp;u) &amp;</argsstring>
+        <name>map_or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maps the stored value with <computeroutput>f</computeroutput> if there is one, otherwise calls <computeroutput>u</computeroutput> and returns the result. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1884" column="29" bodyfile="rolly/types/optional.h" bodystart="1884" bodyend="1886"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1ad6069cace64a1fee3e54524ae6791cdf" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>detail::invoke_result_t&lt; U &gt;</type>
+        <definition>detail::invoke_result_t&lt;U&gt; map_or_else</definition>
+        <argsstring>(F &amp;&amp;f, U &amp;&amp;u) &amp;&amp;</argsstring>
+        <name>map_or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1889" column="29" bodyfile="rolly/types/optional.h" bodystart="1889" bodyend="1892"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a6698843f817a0de1c84035bea1bd9033" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>detail::invoke_result_t&lt; U &gt;</type>
+        <definition>detail::invoke_result_t&lt;U&gt; map_or_else</definition>
+        <argsstring>(F &amp;&amp;f, U &amp;&amp;u) const &amp;</argsstring>
+        <name>map_or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1895" column="29" bodyfile="rolly/types/optional.h" bodystart="1895" bodyend="1897"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1aa5e7d838f719add6d1553cbb12a73d91" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>detail::invoke_result_t&lt; U &gt;</type>
+        <definition>detail::invoke_result_t&lt;U&gt; map_or_else</definition>
+        <argsstring>(F &amp;&amp;f, U &amp;&amp;u) const &amp;&amp;</argsstring>
+        <name>map_or_else</name>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1901" column="29" bodyfile="rolly/types/optional.h" bodystart="1901" bodyend="1904"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a5e8d520b9233bf52ed72127d4afbda32" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; typename <ref refid="cpp/types/decay" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::decay</ref>&lt; U &gt;::type &gt;</type>
+        <definition>constexpr optional&lt;typename std::decay&lt;U&gt;::type&gt; conjunction</definition>
+        <argsstring>(U &amp;&amp;u) const</argsstring>
+        <name>conjunction</name>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+<para>Returns <computeroutput>u</computeroutput> if <computeroutput>*this</computeroutput> has a value, otherwise an empty optional. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1909" column="25" bodyfile="rolly/types/optional.h" bodystart="1909" bodyend="1912"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a56d9e9e39dc0131e687ae77dc2e44ba1" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <type>TL_OPTIONAL_11_CONSTEXPR <ref refid="classrolly_1_1optional" kindref="compound">optional</ref></type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR optional disjunction</definition>
+        <argsstring>(optional const &amp;rhs) &amp;</argsstring>
+        <name>disjunction</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Returns <computeroutput>rhs</computeroutput> if <computeroutput>*this</computeroutput> is empty, otherwise the current value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1915" column="39" bodyfile="rolly/types/optional.h" bodystart="1915" bodyend="1917"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a62b4c17f4f935877558dbd8a87fad1bd" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1optional" kindref="compound">optional</ref></type>
+        <definition>constexpr optional disjunction</definition>
+        <argsstring>(optional const &amp;rhs) const &amp;</argsstring>
+        <name>disjunction</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1919" column="24" bodyfile="rolly/types/optional.h" bodystart="1919" bodyend="1919"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1ad5a93e8697443439435ef33a1bd044ef" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <type>TL_OPTIONAL_11_CONSTEXPR <ref refid="classrolly_1_1optional" kindref="compound">optional</ref></type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR optional disjunction</definition>
+        <argsstring>(optional const &amp;rhs) &amp;&amp;</argsstring>
+        <name>disjunction</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1921" column="39" bodyfile="rolly/types/optional.h" bodystart="1921" bodyend="1923"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a17cec32a7bfbcc8f405850d3907a308e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1optional" kindref="compound">optional</ref></type>
+        <definition>constexpr optional disjunction</definition>
+        <argsstring>(optional const &amp;rhs) const &amp;&amp;</argsstring>
+        <name>disjunction</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1926" column="24" bodyfile="rolly/types/optional.h" bodystart="1926" bodyend="1928"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a5b995d711225752957614f1144660c49" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <type>TL_OPTIONAL_11_CONSTEXPR <ref refid="classrolly_1_1optional" kindref="compound">optional</ref></type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR optional disjunction</definition>
+        <argsstring>(optional &amp;&amp;rhs) &amp;</argsstring>
+        <name>disjunction</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1931" column="39" bodyfile="rolly/types/optional.h" bodystart="1931" bodyend="1933"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a4a130d66feeb3bac00c2bfe98763ba42" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1optional" kindref="compound">optional</ref></type>
+        <definition>constexpr optional disjunction</definition>
+        <argsstring>(optional &amp;&amp;rhs) const &amp;</argsstring>
+        <name>disjunction</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1935" column="24" bodyfile="rolly/types/optional.h" bodystart="1935" bodyend="1937"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a6d0158ec8c513401198becf6554089d8" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <type>TL_OPTIONAL_11_CONSTEXPR <ref refid="classrolly_1_1optional" kindref="compound">optional</ref></type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR optional disjunction</definition>
+        <argsstring>(optional &amp;&amp;rhs) &amp;&amp;</argsstring>
+        <name>disjunction</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1939" column="39" bodyfile="rolly/types/optional.h" bodystart="1939" bodyend="1941"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1ac50f45b19cabe5d1eb12b6fc3177880a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" refqual="rvalue" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1optional" kindref="compound">optional</ref></type>
+        <definition>constexpr optional disjunction</definition>
+        <argsstring>(optional &amp;&amp;rhs) const &amp;&amp;</argsstring>
+        <name>disjunction</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1944" column="24" bodyfile="rolly/types/optional.h" bodystart="1944" bodyend="1946"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1ace16d6b8d42636f88f85384468f1e320" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref></type>
+        <definition>optional take</definition>
+        <argsstring>()</argsstring>
+        <name>take</name>
+        <briefdescription>
+<para>Takes the value out of the optional, leaving it empty. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1950" column="14" bodyfile="rolly/types/optional.h" bodystart="1950" bodyend="1954"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a3df66b23e958382bf9cfe8947b8bb2e6" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr optional</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>optional</name>
+        <briefdescription>
+<para>Constructs an optional that does not contain a value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1959" column="15" bodyfile="rolly/types/optional.h" bodystart="1959" bodyend="1960"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1af94e1e8370f4ccce1e2178e73e73108d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr optional</definition>
+        <argsstring>(nullopt_t) noexcept</argsstring>
+        <name>optional</name>
+        <param>
+          <type><ref refid="structrolly_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1962" column="15" bodyfile="rolly/types/optional.h" bodystart="1962" bodyend="1963"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a18e9f387dd9d46b4056cb233b3ef5b21" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR optional</definition>
+        <argsstring>(optional const &amp;rhs) noexcept=default</argsstring>
+        <name>optional</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy constructor</para>
+<para>If <computeroutput>rhs</computeroutput> contains a value, the stored value is direct-initialized with it. Otherwise, the constructed optional is empty. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1969" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a0d171a7fcb0cf7e0810d79d975c5b650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TL_OPTIONAL_11_CONSTEXPR</type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR optional</definition>
+        <argsstring>(optional &amp;&amp;rhs)=default</argsstring>
+        <name>optional</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Move constructor</para>
+<para>If <computeroutput>rhs</computeroutput> contains a value, the stored value is direct-initialized with it. Otherwise, the constructed optional is empty. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1975" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a61926a40c1250da2f07fe7a37c606943" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>detail::enable_if_t&lt;! detail::is_optional&lt; detail::decay_t&lt; U &gt;&gt;::<ref refid="classrolly_1_1optional_3_01T_01_6_01_4_1a4cef207fdf17b420d2d0874ce712ade3" kindref="member">value</ref> &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr optional</definition>
+        <argsstring>(U &amp;&amp;u) noexcept</argsstring>
+        <name>optional</name>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+<para>Constructs the stored value with <computeroutput>u</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1981" column="15" bodyfile="rolly/types/optional.h" bodystart="1981" bodyend="1984"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a3c4d4c0419f12cddaca2418bc2260d7d" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr optional</definition>
+        <argsstring>(optional&lt; U &gt; const &amp;rhs) noexcept</argsstring>
+        <name>optional</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; U &gt; const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1987" column="24" bodyfile="rolly/types/optional.h" bodystart="1987" bodyend="1988"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1ade59530744da512b5db911ad67ce654a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>~optional</definition>
+        <argsstring>()=default</argsstring>
+        <name>~optional</name>
+        <briefdescription>
+<para>No-op. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1991" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1ae30f6090cf50374e6b557e03b7072f7e" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;</type>
+        <definition>optional&amp; operator=</definition>
+        <argsstring>(nullopt_t) noexcept</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="structrolly_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Assignment to empty.</para>
+<para>Destroys the current value if there is one. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="1996" column="14" bodyfile="rolly/types/optional.h" bodystart="1996" bodyend="1999"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a8cddc70a4e034595a82f96cfb28afc65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;</type>
+        <definition>optional&amp; operator=</definition>
+        <argsstring>(optional const &amp;rhs)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy assignment.</para>
+<para>Rebinds this optional to the referee of <computeroutput>rhs</computeroutput> if there is one. Otherwise resets the stored value in <computeroutput>*this</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2005" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a1e8eae689be775a76bd60bf463792c0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>detail::enable_if_t&lt;! detail::is_optional&lt; detail::decay_t&lt; U &gt;&gt;::<ref refid="classrolly_1_1optional_3_01T_01_6_01_4_1a4cef207fdf17b420d2d0874ce712ade3" kindref="member">value</ref> &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;</type>
+        <definition>optional&amp; operator=</definition>
+        <argsstring>(U &amp;&amp;u)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+<para>Rebinds this optional to <computeroutput>u</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2011" column="14" bodyfile="rolly/types/optional.h" bodystart="2011" bodyend="2015"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a5beb351051a1f20a45e3cab0d2b6db80" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;</type>
+        <definition>optional&amp; operator=</definition>
+        <argsstring>(optional&lt; U &gt; const &amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; U &gt; const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converting copy assignment operator.</para>
+<para>Rebinds this optional to the referee of <computeroutput>rhs</computeroutput> if there is one. Otherwise resets the stored value in <computeroutput>*this</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2022" column="14" bodyfile="rolly/types/optional.h" bodystart="2022" bodyend="2025"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a9b9773faed27da10a29261798883e3de" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>detail::enable_if_t&lt;! detail::is_optional&lt; detail::decay_t&lt; U &gt;&gt;::<ref refid="classrolly_1_1optional_3_01T_01_6_01_4_1a4cef207fdf17b420d2d0874ce712ade3" kindref="member">value</ref> &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;</type>
+        <definition>optional&amp; emplace</definition>
+        <argsstring>(U &amp;&amp;u) noexcept</argsstring>
+        <name>emplace</name>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+<para>Rebinds this optional to <computeroutput>u</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2031" column="14" bodyfile="rolly/types/optional.h" bodystart="2031" bodyend="2033"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1acb7015d1360fe3929c7ba9663566c3c8" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void swap</definition>
+        <argsstring>(optional &amp;rhs) noexcept</argsstring>
+        <name>swap</name>
+        <param>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2035" column="10" bodyfile="rolly/types/optional.h" bodystart="2035" bodyend="2035"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1ab4aee760c2c288ec7637b28bcd1877e8" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr T const  *</type>
+        <definition>constexpr T const* operator-&gt;</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator-&gt;</name>
+        <briefdescription>
+<para>Returns a pointer to the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2038" column="23" bodyfile="rolly/types/optional.h" bodystart="2038" bodyend="2038"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a2954c9dbd5bf1aa1d25b74bd2e681ebf" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>TL_OPTIONAL_11_CONSTEXPR T *</type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR T* operator-&gt;</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>operator-&gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2040" column="32" bodyfile="rolly/types/optional.h" bodystart="2040" bodyend="2040"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1acec5a45b59dc445fa9a2364d572e10f3" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>TL_OPTIONAL_11_CONSTEXPR T &amp;</type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR T&amp; operator*</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+<para>Returns the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2043" column="32" bodyfile="rolly/types/optional.h" bodystart="2043" bodyend="2043"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1aa50148320bfb442bb833390d0e8692d0" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr T const  &amp;</type>
+        <definition>constexpr T const&amp; operator*</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2045" column="23" bodyfile="rolly/types/optional.h" bodystart="2045" bodyend="2045"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a6988ba57722f67cbb444b0931468282e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool has_value</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>has_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2047" column="20" bodyfile="rolly/types/optional.h" bodystart="2047" bodyend="2047"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a7990d8e87d9eab2383f94c88c23a6488" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr operator bool</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2049" column="24" bodyfile="rolly/types/optional.h" bodystart="2049" bodyend="2049"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a4cef207fdf17b420d2d0874ce712ade3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TL_OPTIONAL_11_CONSTEXPR T &amp;</type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR T&amp; value</definition>
+        <argsstring>()</argsstring>
+        <name>value</name>
+        <briefdescription>
+<para>Returns the contained value if there is one, otherwise throws <ref refid="classrolly_1_1bad__optional__access" kindref="compound">bad_optional_access</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2052" column="32" bodyfile="rolly/types/optional.h" bodystart="2052" bodyend="2056"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a4978c19dacf1249763786c58cbd18e13" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const TL_OPTIONAL_11_CONSTEXPR T &amp;</type>
+        <definition>const TL_OPTIONAL_11_CONSTEXPR T&amp; value</definition>
+        <argsstring>() const</argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2058" column="38" bodyfile="rolly/types/optional.h" bodystart="2058" bodyend="2062"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a123a9c8624ac86abfec8be6730075458" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr T</type>
+        <definition>constexpr T value_or</definition>
+        <argsstring>(U &amp;&amp;u) const &amp;noexcept</argsstring>
+        <name>value_or</name>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+<para>Returns the stored value if there is one, otherwise returns <computeroutput>u</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2066" column="17" bodyfile="rolly/types/optional.h" bodystart="2066" bodyend="2072"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a7060b3e537ab8323ea24bb515102ed6b" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="rvalue" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>TL_OPTIONAL_11_CONSTEXPR T</type>
+        <definition>TL_OPTIONAL_11_CONSTEXPR T value_or</definition>
+        <argsstring>(U &amp;&amp;u) &amp;&amp;noexcept</argsstring>
+        <name>value_or</name>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+<para>\group value_or </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2076" column="32" bodyfile="rolly/types/optional.h" bodystart="2076" bodyend="2082"/>
+      </memberdef>
+      <memberdef kind="function" id="classrolly_1_1optional_3_01T_01_6_01_4_1a20194325f0380eb3bbc6bc6c8b2697d9" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void reset</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para>Destroys the stored value if one exists, making the optional empty. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="2085" column="10" bodyfile="rolly/types/optional.h" bodystart="2085" bodyend="2085"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Specialization for when <computeroutput>T</computeroutput> is a reference. <computeroutput>optional&lt;T&amp;&gt;</computeroutput> acts similarly to a <computeroutput>T*</computeroutput>, but provides more operations and shows intent more clearly. </para>
+    </detaileddescription>
+    <location file="rolly/types/optional.h" line="1595" column="18" bodyfile="rolly/types/optional.h" bodystart="1595" bodyend="2089"/>
+    <listofallmembers>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8e0758cd5aa728222538ce6dbbda3e66" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>and_then</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a11c40dfeef92b62c6f88616c48a0a7b2" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>and_then</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5a54ddc726627b58b248d66d398561c0" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>and_then</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ae6b73d19fcfb1f2e2d89bb4cbb33249a" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>and_then</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5e8d520b9233bf52ed72127d4afbda32" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>conjunction</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a56d9e9e39dc0131e687ae77dc2e44ba1" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>disjunction</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a62b4c17f4f935877558dbd8a87fad1bd" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>disjunction</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ad5a93e8697443439435ef33a1bd044ef" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>disjunction</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a17cec32a7bfbcc8f405850d3907a308e" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>disjunction</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5b995d711225752957614f1144660c49" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>disjunction</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a4a130d66feeb3bac00c2bfe98763ba42" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>disjunction</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a6d0158ec8c513401198becf6554089d8" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>disjunction</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ac50f45b19cabe5d1eb12b6fc3177880a" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>disjunction</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a9b9773faed27da10a29261798883e3de" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>emplace</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a6988ba57722f67cbb444b0931468282e" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>has_value</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a7b8d357575101636a346f6a9edc67bd9" prot="private" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>m_value</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1abba7a74c703766bd1a7fd90e2aee6b08" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a9a7ae98a69c4434973e5c3c408509b6c" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8269eb4d316cd62ad55fa3204073864e" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ac8f1e8be78abf0ab273c9488014ea8cc" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a707e7a79788137cb02a7175cb6eea34d" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map_or</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a70a442682b0d52b7904dcba448ab8c11" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map_or</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a3009dd1f894482812bc782a855ff3e01" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map_or</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a580f04de31229bfb2aedf52157947d5c" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map_or</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a14e5d060ddbbed0bc38f2248f099e664" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map_or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ad6069cace64a1fee3e54524ae6791cdf" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map_or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a6698843f817a0de1c84035bea1bd9033" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map_or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1aa5e7d838f719add6d1553cbb12a73d91" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>map_or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a7990d8e87d9eab2383f94c88c23a6488" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>operator bool</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1acec5a45b59dc445fa9a2364d572e10f3" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>operator*</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1aa50148320bfb442bb833390d0e8692d0" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>operator*</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ab4aee760c2c288ec7637b28bcd1877e8" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>operator-&gt;</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a2954c9dbd5bf1aa1d25b74bd2e681ebf" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>operator-&gt;</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ae30f6090cf50374e6b557e03b7072f7e" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>operator=</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8cddc70a4e034595a82f96cfb28afc65" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>operator=</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a1e8eae689be775a76bd60bf463792c0c" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>operator=</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5beb351051a1f20a45e3cab0d2b6db80" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>operator=</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a3df66b23e958382bf9cfe8947b8bb2e6" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>optional</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1af94e1e8370f4ccce1e2178e73e73108d" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>optional</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a18e9f387dd9d46b4056cb233b3ef5b21" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>optional</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a0d171a7fcb0cf7e0810d79d975c5b650" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>optional</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a61926a40c1250da2f07fe7a37c606943" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>optional</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a3c4d4c0419f12cddaca2418bc2260d7d" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>optional</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1abe174e282f9736d9e539b492797d9d7e" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1abe174e282f9736d9e539b492797d9d7e" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a1bdb07fd42a57e40efd4b8a12fccad75" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1aa9e538d9fcdaedb8d067e4b41ee5703f" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a87b8d34c2b2e67affad11297594229f1" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8e69d1fbc614e2efd3057f8591f08e0f" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a49497a7c8beee3262c0eba26b2cf3aa7" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a49497a7c8beee3262c0eba26b2cf3aa7" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>or_else</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a20194325f0380eb3bbc6bc6c8b2697d9" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>reset</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1acb7015d1360fe3929c7ba9663566c3c8" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>swap</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ace16d6b8d42636f88f85384468f1e320" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>take</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a51798d8a828a414fbfab5e638c8209ea" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>transform</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a5ee56b4c121bc7835ce4c68bfae9fbe6" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>transform</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a7f8494a9191a3551cefe1ec5a7d4ccb8" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>transform</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a8ab54a421bbda1267b8734a8fd24e461" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>transform</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a4cef207fdf17b420d2d0874ce712ade3" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>value</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a4978c19dacf1249763786c58cbd18e13" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>value</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a123a9c8624ac86abfec8be6730075458" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>value_or</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a7060b3e537ab8323ea24bb515102ed6b" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>value_or</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1a39ccab77232f593b549808ed33e586d2" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>value_type</name></member>
+      <member refid="classrolly_1_1optional_3_01T_01_6_01_4_1ade59530744da512b5db911ad67ce654a" prot="public" virt="non-virtual"><scope>rolly::optional&lt; T &amp; &gt;</scope><name>~optional</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

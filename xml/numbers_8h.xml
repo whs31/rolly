@@ -9,6 +9,9 @@
     <includedby refid="math_8h" local="yes">math.h</includedby>
     <includedby refid="rolly_8h" local="yes">rolly.h</includedby>
     <incdepgraph>
+      <node id="21">
+        <label>functional</label>
+      </node>
       <node id="11">
         <label>fmt/format.h</label>
       </node>
@@ -31,7 +34,10 @@
       <node id="6">
         <label>charconv</label>
       </node>
-      <node id="18">
+      <node id="24">
+        <label>variant</label>
+      </node>
+      <node id="17">
         <label>stdexcept</label>
       </node>
       <node id="7">
@@ -41,7 +47,26 @@
         <label>global/export.h</label>
         <link refid="export_8h_source"/>
       </node>
-      <node id="21">
+      <node id="20">
+        <label>exception</label>
+      </node>
+      <node id="19">
+        <label>../types/optional.h</label>
+        <link refid="optional_8h_source"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
         <label>platform_definitions.h</label>
         <link refid="platform__definitions_8h_source"/>
       </node>
@@ -49,7 +74,7 @@
         <label>version_definitions.h</label>
         <link refid="version__definitions_8h_source"/>
       </node>
-      <node id="19">
+      <node id="18">
         <label>char_utils.h</label>
         <link refid="char__utils_8h_source"/>
         <childnode refid="7" relation="include">
@@ -76,24 +101,27 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
         <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="8">
         <label>string_view</label>
       </node>
-      <node id="20">
+      <node id="25">
         <label>global/definitions.h</label>
         <link refid="definitions_8h_source"/>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="17">
-        <label>optional</label>
+      <node id="22">
+        <label>new</label>
+      </node>
+      <node id="23">
+        <label>utility</label>
       </node>
       <node id="1">
         <label>numbers.h</label>
@@ -104,7 +132,7 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
       </node>
       <node id="16">
@@ -122,10 +150,10 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="28">
         <label>../type_traits.h</label>
         <link refid="type__traits_8h_source"/>
         <childnode refid="3" relation="include">
@@ -144,12 +172,12 @@
       <node id="3">
         <label>type_traits</label>
       </node>
-      <node id="22">
+      <node id="27">
         <label>concepts/num.h</label>
         <link refid="num_8h_source"/>
-        <childnode refid="20" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
     </incdepgraph>

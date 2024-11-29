@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structrolly_1_1trait_1_1typelist" kind="struct" language="C++" prot="public">
+    <compoundname>rolly::trait::typelist</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename...</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/functional/signals.h" line="27" column="19" bodyfile="rolly/functional/signals.h" bodystart="27" bodyend="27"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

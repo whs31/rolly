@@ -75,6 +75,8 @@
             <dd>Concepts namespace.</dd>
             <dt>namespace <a href="namespacerolly_1_1contracts.html" class="m-doc">contracts</a></dt>
             <dd>Contract-programming related functions and classes.</dd>
+            <dt>namespace <a href="namespacerolly_1_1detail.html" class="m-doc">detail</a></dt>
+            <dd><span></span></dd>
             <dt>namespace <a href="namespacerolly_1_1dll.html" class="m-doc">dll</a></dt>
             <dd>Dynamic libraries and plugins.</dd>
             <dt>namespace <a href="namespacerolly_1_1exceptions.html" class="m-doc">exceptions</a></dt>
@@ -97,6 +99,8 @@
             <dd>Runtime type information-related functions and classes.</dd>
             <dt>namespace <a href="namespacerolly_1_1serialization.html" class="m-doc">serialization</a></dt>
             <dd>Functions and types related to serialization and deserialization.</dd>
+            <dt>namespace <a href="namespacerolly_1_1trait.html" class="m-doc">trait</a></dt>
+            <dd><span></span></dd>
             <dt>namespace <a href="namespacerolly_1_1types.html" class="m-doc">types</a></dt>
             <dd>Inline namespace for simple types.</dd>
           </dl>
@@ -114,6 +118,10 @@
             </dt>
             <dd>Class for getting location of system directories for a specific application.</dd>
             <dt>
+              class <a href="classrolly_1_1bad__optional__access.html" class="m-doc">bad_optional_access</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               class <a href="classrolly_1_1box.html" class="m-doc">box</a>
             </dt>
@@ -127,6 +135,11 @@
               class <a href="classrolly_1_1configuration__file.html" class="m-doc">configuration_file</a>
             </dt>
             <dd>Configuration file that can be loaded and saved.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
+              struct <a href="structrolly_1_1const__overload__t.html" class="m-doc">const_overload_t</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename R, typename T, R(*)(T) F&gt;</div>
               struct <a href="structrolly_1_1deleter.html" class="m-doc">deleter</a>
@@ -171,6 +184,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
+              struct <a href="structrolly_1_1non__const__overload__t.html" class="m-doc">non_const_overload_t</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               struct <a href="structrolly_1_1noncopyable.html" class="m-doc">noncopyable</a>
             </dt>
             <dd>Disallows copy operations for a type.</dd>
@@ -179,15 +197,34 @@
             </dt>
             <dd>Disallows move operations for a type.</dd>
             <dt>
+              struct <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_t</a>
+            </dt>
+            <dd>A tag type to represent an empty optional.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               class <a href="classrolly_1_1observer__ptr.html" class="m-doc">observer_ptr</a>
             </dt>
             <dd>A smart pointer that holds a pointer to a value, but does not own it.</dd>
             <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              class <a href="classrolly_1_1optional.html" class="m-doc">optional</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              class <a href="classrolly_1_1optional_3_01T_01_6_01_4.html" class="m-doc">optional&lt;T&amp;&gt;</a>
+            </dt>
+            <dd></dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename C&gt;</div>
               struct <a href="structrolly_1_1ostream__formatter.html" class="m-doc">ostream_formatter</a>
             </dt>
             <dd>Formatter for types which support stream output.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
+              struct <a href="structrolly_1_1overload__t.html" class="m-doc">overload_t</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               struct <a href="structrolly_1_1pin.html" class="m-doc">pin</a>
             </dt>
@@ -222,6 +259,11 @@
               class <a href="classrolly_1_1exceptions_1_1serialization__error.html" class="m-doc">exceptions::serialization_error</a>
             </dt>
             <dd>Serialization error exception class.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename, typename...&gt;</div>
+              class <a href="classrolly_1_1signal__base.html" class="m-doc">signal_base</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               struct <a href="structrolly_1_1singleton.html" class="m-doc">singleton</a>
@@ -565,7 +607,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-dox-wrap-bumper">auto <a href="#a29bf2b257aae11af86113305689df183" class="m-dox">from_string_noexcept</a>(</span><span class="m-dox-wrap">std::string_view str) -&gt; ROLLY_SEMVER_CONSTEXPR std::optional&lt;<a href="structrolly_1_1version.html" class="m-doc">version</a>&gt; <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper">auto <a href="#ad62ddd144b14ae7ce815d7d57c37cf9d" class="m-dox">from_string_noexcept</a>(</span><span class="m-dox-wrap">std::string_view str) -&gt; ROLLY_SEMVER_CONSTEXPR <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;<a href="structrolly_1_1version.html" class="m-doc">version</a>&gt; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -871,6 +913,213 @@
             </dt>
             <dd>Literal operator for <code>guid</code>.</dd>
             <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ae42bed75bde5f4d4e4c715b00c5cdec5" class="m-dox">operator==</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Compares two optional objects.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aaeabd0a43849c96e6a189456e64a9e80" class="m-dox">operator!=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aa200248ad0ba62c49766a7f23f0ab244" class="m-dox">operator&lt;</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a198e1526e34437f608e39bf6b3b77f28" class="m-dox">operator&gt;</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aeb7fb289dc87f67607f0f9cd76de2fba" class="m-dox">operator&lt;=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aa469315a3b3d370d5b2e586cb681b11d" class="m-dox">operator&gt;=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a43e660efbbd21846c0099fd98d7e7974" class="m-dox">operator==</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Compares an optional to a <code>nullopt</code></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a65f34be32d65e60a6ae72cb06481d041" class="m-dox">operator==</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a2835f5e825e9642a4ab30e9b80da8832" class="m-dox">operator!=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a137e7622b0b5826d767aa21b10bf8a4c" class="m-dox">operator!=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ac4d264d4fa3093b68a6fbc5d8b864beb" class="m-dox">operator&lt;</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp;,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#acb7364ea0a1e0438ae84214ced329b4d" class="m-dox">operator&lt;</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a17605135b9c4fbe2d0d006d5cb0cb0df" class="m-dox">operator&lt;=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aeb5122e9a208a1d01d21b87705dd8219" class="m-dox">operator&lt;=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp;) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ad9721a2da6cd3210b3d12cfba5a02b9d" class="m-dox">operator&gt;</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aee4d261d62ca7e4c397b061c3345ffc0" class="m-dox">operator&gt;</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp;) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ab95b1dc683d04c96118a1b6e13862827" class="m-dox">operator&gt;=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp;,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ac32dbce08b465c015066197343543a66" class="m-dox">operator&gt;=</a>(</span><span class="m-dox-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#acb3873114fe93ce619a39084b59b2a2f" class="m-dox">operator==</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Compares the optional with a value.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#adce9e5a2185ca737f529b12e7b115255" class="m-dox">operator==</a>(</span><span class="m-dox-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a443a871c46e6e084799f9c8973d9e51f" class="m-dox">operator!=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a584bd404eee977379de223dc0647e348" class="m-dox">operator!=</a>(</span><span class="m-dox-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#acc1d8d195c6b5a3493d65e34a9b82e2d" class="m-dox">operator&lt;</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a640100316b3156a07377038175c5e9e2" class="m-dox">operator&lt;</a>(</span><span class="m-dox-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a2829a36208a02c6a07fbb3bf7ea98cde" class="m-dox">operator&lt;=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ab70c8e8c4439a8be3e5be7b11a880ddc" class="m-dox">operator&lt;=</a>(</span><span class="m-dox-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a8a7913965e6fbab14332eb19133451f3" class="m-dox">operator&gt;</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a436961c16e6e95f486b0ed58d9a221bf" class="m-dox">operator&gt;</a>(</span><span class="m-dox-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a1b3470d1556c16994c691b0a7af7ee48" class="m-dox">operator&gt;=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#acbd31892e6da85b55b99c07bf005b112" class="m-dox">operator&gt;=</a>(</span><span class="m-dox-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) -&gt; bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, detail::enable_if_t&lt;<a href="http://en.cppreference.com/w/cpp/types/is_move_constructible.html" class="m-doc-external">std::<wbr />is_move_constructible</a>&lt;T&gt;::value&gt;* = nullptr, detail::enable_if_t&lt;detail::is_swappable&lt;T&gt;::value&gt;* = nullptr&gt;</div>
+              <span class="m-dox-wrap-bumper">void <a href="#ad0cdea02ac170e2603b7a4491036b298" class="m-dox">swap</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt;&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt;&amp; rhs) <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T = detail::i_am_secret, class U, class Ret = detail::conditional_t&lt;<a href="http://en.cppreference.com/w/cpp/types/is_same.html" class="m-doc-external">std::<wbr />is_same</a>&lt;T, detail::i_am_secret&gt;::value, detail::decay_t&lt;U&gt;, T&gt;&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a95d13b9563bf751c816a8ccd194410b8" class="m-dox">make_optional</a>(</span><span class="m-dox-wrap">U&amp;&amp; v) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;Ret&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class... Args&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ab0f9d87f10324655edd29d2312df8f90" class="m-dox">make_optional</a>(</span><span class="m-dox-wrap">Args &amp;&amp; ... args) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, class U, class... Args&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a2fc860684dfb51f96cef87b70a678076" class="m-dox">make_optional</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/utility/initializer_list.html" class="m-doc-external">std::<wbr />initializer_list</a>&lt;U&gt; il,
+              Args &amp;&amp; ... args) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a4d27def5f33f561207ecbc421b842d55" class="m-dox">some</a>(</span><span class="m-dox-wrap">T&amp;&amp; t) -&gt; <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;std::decay_t&lt;T&gt;&gt;</span>
+            </dt>
+            <dd>Wrap a value in an optional.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename... Args&gt;</div>
               <span class="m-dox-wrap-bumper">auto <a href="namespacerolly_1_1types.html#a2c2d7fe1f4fcd1432bb6ee51c059306f" class="m-dox">error</a>(</span><span class="m-dox-wrap">std::string_view format,
               Args &amp;&amp; ... args) -&gt; unexpected&lt;std::decay_t&lt;<a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a>&gt;&gt;</span>
@@ -885,11 +1134,6 @@
               <span class="m-dox-wrap-bumper">auto <a href="namespacerolly_1_1types.html#a07a110d824e251b17a6bb94f8e4fed5f" class="m-dox">ok</a>(</span><span class="m-dox-wrap">) -&gt; result</span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly_1_1types.html#a023b1eb8a485614d2ea9c48632d275c3" class="m-dox">some</a>(</span><span class="m-dox-wrap">T&amp;&amp; t) -&gt; std::optional&lt;std::decay_t&lt;T&gt;&gt;</span>
-            </dt>
-            <dd>Wrap a value in an std::optional.</dd>
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="namespacerolly_1_1literals.html#acf433e8d6e87da7af978d013539d49a1" class="m-dox">operator&quot;&quot;_u8</a>(</span><span class="m-dox-wrap"><a href="namespacerolly_1_1types.html#a70c2c38542d55bfe51d75907a6c8125a" class="m-doc">ulonglong</a> value) -&gt; <a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a> <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
@@ -972,6 +1216,70 @@
               bool <a href="#a97300837e35e483d3cf7b20dd724250b" class="m-doc">is_any_of_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
+              <a href="structrolly_1_1overload__t.html" class="m-doc">overload_<wbr />t</a>&lt;Args...&gt; <a href="#af4c439f294424a3f11f9908de0dca2f6" class="m-doc">overload</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
+              <a href="structrolly_1_1const__overload__t.html" class="m-doc">const_<wbr />overload_<wbr />t</a>&lt;Args...&gt; <a href="#a85cfe4055bff1f633f6bbedb33f2e93b" class="m-doc">const_overload</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
+              <a href="structrolly_1_1non__const__overload__t.html" class="m-doc">non_<wbr />const_<wbr />overload_<wbr />t</a>&lt;Args...&gt; <a href="#ae3c7f1453d02210f5dedfa448b6b4697" class="m-doc">non_const_overload</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              static bool <a href="#aaa49597f11fa34841f1e7c48b7fe1fb8" class="m-doc">with_rtti</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename P&gt;</div>
+              bool <a href="#a666a4e9726827588e42f0857d8a87c68" class="m-doc">is_weak_ptr_compatible_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>determine if a pointer is convertible into a &quot;weak&quot; pointer</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename L, typename... T&gt;</div>
+              bool <a href="#a0ce1d8dcc7700b383ed4cab2a35ef160" class="m-doc">is_callable_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>determine if a type T (Callable or Pmf) is callable with supplied arguments</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              bool <a href="#ad73fb921872b6292fd6244b46ea4ebeb" class="m-doc">is_weak_ptr_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              bool <a href="#a26520841c8b04240e098d1360c774d08" class="m-doc">has_call_operator_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              bool <a href="#a60d8a43ca3d5d473f1651ef5114c2628" class="m-doc">is_pointer_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              bool <a href="#a803db4963a7d275f1f2dc56ab3a33e0b" class="m-doc">is_func_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              bool <a href="#a2bc53fe616698994943b2b23620e7749" class="m-doc">is_pmf_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              bool <a href="#aa06dc940ac021f05e56d97c2dac9adeb" class="m-doc">is_observer_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename S&gt;</div>
+              bool <a href="#a908ba454a2355d53f9831b0570f348e7" class="m-doc">is_signal_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a6fc52902ed4e616aadff50883c255f9d">
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               bool <a href="#a6fc52902ed4e616aadff50883c255f9d" class="m-doc-self">is_qobject_v</a> <span class="m-label m-flat m-primary">constexpr</span>
@@ -983,9 +1291,13 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              auto <a href="namespacerolly_1_1types.html#a9365b793fe547271e48fa719a7f4854d" class="m-doc">none</a> <span class="m-label m-flat m-primary">constexpr</span>
+              static <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a> <a href="#a3052f5fbb6fc7bc98ecb11360c416a8f" class="m-doc">nullopt</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd>Wrap an empty value in an std::optional.</dd>
+            <dd>Represents an empty optional.</dd>
+            <dt>
+              auto <a href="#a9365b793fe547271e48fa719a7f4854d" class="m-doc">none</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Wrap an empty value in an optional.</dd>
           </dl>
         </section>
         <section>
@@ -1617,9 +1929,9 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a29bf2b257aae11af86113305689df183"><div>
+          <section class="m-doc-details" id="ad62ddd144b14ae7ce815d7d57c37cf9d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">ROLLY_SEMVER_CONSTEXPR std::optional&lt;<a href="structrolly_1_1version.html" class="m-doc">version</a>&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29bf2b257aae11af86113305689df183" class="m-doc-self">from_string_noexcept</a>(</span><span class="m-doc-wrap">std::string_view str) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">ROLLY_SEMVER_CONSTEXPR <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;<a href="structrolly_1_1version.html" class="m-doc">version</a>&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad62ddd144b14ae7ce815d7d57c37cf9d" class="m-doc-self">from_string_noexcept</a>(</span><span class="m-doc-wrap">std::string_view str) <span class="m-label m-success">noexcept</span></span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="semver_8h.html">&lt;rolly/global/semver.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -1984,6 +2296,389 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ae42bed75bde5f4d4e4c715b00c5cdec5"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae42bed75bde5f4d4e4c715b00c5cdec5" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Compares two optional objects.</p>
+          </div></section>
+          <section class="m-doc-details" id="aaeabd0a43849c96e6a189456e64a9e80"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaeabd0a43849c96e6a189456e64a9e80" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa200248ad0ba62c49766a7f23f0ab244"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa200248ad0ba62c49766a7f23f0ab244" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a198e1526e34437f608e39bf6b3b77f28"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a198e1526e34437f608e39bf6b3b77f28" class="m-doc-self">operator&gt;</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aeb7fb289dc87f67607f0f9cd76de2fba"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeb7fb289dc87f67607f0f9cd76de2fba" class="m-doc-self">operator&lt;=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa469315a3b3d370d5b2e586cb681b11d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa469315a3b3d370d5b2e586cb681b11d" class="m-doc-self">operator&gt;=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;U&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a43e660efbbd21846c0099fd98d7e7974"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a43e660efbbd21846c0099fd98d7e7974" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Compares an optional to a <code>nullopt</code></p>
+          </div></section>
+          <section class="m-doc-details" id="a65f34be32d65e60a6ae72cb06481d041"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a65f34be32d65e60a6ae72cb06481d041" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2835f5e825e9642a4ab30e9b80da8832"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2835f5e825e9642a4ab30e9b80da8832" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a137e7622b0b5826d767aa21b10bf8a4c"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a137e7622b0b5826d767aa21b10bf8a4c" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac4d264d4fa3093b68a6fbc5d8b864beb"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4d264d4fa3093b68a6fbc5d8b864beb" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp;,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="acb7364ea0a1e0438ae84214ced329b4d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acb7364ea0a1e0438ae84214ced329b4d" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a17605135b9c4fbe2d0d006d5cb0cb0df"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17605135b9c4fbe2d0d006d5cb0cb0df" class="m-doc-self">operator&lt;=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aeb5122e9a208a1d01d21b87705dd8219"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeb5122e9a208a1d01d21b87705dd8219" class="m-doc-self">operator&lt;=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp;) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad9721a2da6cd3210b3d12cfba5a02b9d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad9721a2da6cd3210b3d12cfba5a02b9d" class="m-doc-self">operator&gt;</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aee4d261d62ca7e4c397b061c3345ffc0"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee4d261d62ca7e4c397b061c3345ffc0" class="m-doc-self">operator&gt;</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp;) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab95b1dc683d04c96118a1b6e13862827"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab95b1dc683d04c96118a1b6e13862827" class="m-doc-self">operator&gt;=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp;,
+              <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac32dbce08b465c015066197343543a66"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac32dbce08b465c015066197343543a66" class="m-doc-self">operator&gt;=</a>(</span><span class="m-doc-wrap"><a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a>,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="acb3873114fe93ce619a39084b59b2a2f"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acb3873114fe93ce619a39084b59b2a2f" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Compares the optional with a value.</p>
+          </div></section>
+          <section class="m-doc-details" id="adce9e5a2185ca737f529b12e7b115255"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adce9e5a2185ca737f529b12e7b115255" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a443a871c46e6e084799f9c8973d9e51f"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a443a871c46e6e084799f9c8973d9e51f" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a584bd404eee977379de223dc0647e348"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a584bd404eee977379de223dc0647e348" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="acc1d8d195c6b5a3493d65e34a9b82e2d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acc1d8d195c6b5a3493d65e34a9b82e2d" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a640100316b3156a07377038175c5e9e2"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a640100316b3156a07377038175c5e9e2" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2829a36208a02c6a07fbb3bf7ea98cde"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2829a36208a02c6a07fbb3bf7ea98cde" class="m-doc-self">operator&lt;=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab70c8e8c4439a8be3e5be7b11a880ddc"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab70c8e8c4439a8be3e5be7b11a880ddc" class="m-doc-self">operator&lt;=</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a8a7913965e6fbab14332eb19133451f3"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a7913965e6fbab14332eb19133451f3" class="m-doc-self">operator&gt;</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a436961c16e6e95f486b0ed58d9a221bf"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a436961c16e6e95f486b0ed58d9a221bf" class="m-doc-self">operator&gt;</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1b3470d1556c16994c691b0a7af7ee48"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b3470d1556c16994c691b0a7af7ee48" class="m-doc-self">operator&gt;=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; lhs,
+              U const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="acbd31892e6da85b55b99c07bf005b112"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acbd31892e6da85b55b99c07bf005b112" class="m-doc-self">operator&gt;=</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad0cdea02ac170e2603b7a4491036b298"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, detail::enable_if_t&lt;<a href="http://en.cppreference.com/w/cpp/types/is_move_constructible.html" class="m-doc-external">std::<wbr />is_move_constructible</a>&lt;T&gt;::value&gt;* = nullptr, detail::enable_if_t&lt;detail::is_swappable&lt;T&gt;::value&gt;* = nullptr&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad0cdea02ac170e2603b7a4491036b298" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt;&amp; lhs,
+              <a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt;&amp; rhs) <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a95d13b9563bf751c816a8ccd194410b8"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T = detail::i_am_secret, class U, class Ret = detail::conditional_t&lt;<a href="http://en.cppreference.com/w/cpp/types/is_same.html" class="m-doc-external">std::<wbr />is_same</a>&lt;T, detail::i_am_secret&gt;::value, detail::decay_t&lt;U&gt;, T&gt;&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;Ret&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a95d13b9563bf751c816a8ccd194410b8" class="m-doc-self">make_optional</a>(</span><span class="m-doc-wrap">U&amp;&amp; v) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab0f9d87f10324655edd29d2312df8f90"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class... Args&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab0f9d87f10324655edd29d2312df8f90" class="m-doc-self">make_optional</a>(</span><span class="m-doc-wrap">Args &amp;&amp; ... args) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2fc860684dfb51f96cef87b70a678076"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, class U, class... Args&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;T&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2fc860684dfb51f96cef87b70a678076" class="m-doc-self">make_optional</a>(</span><span class="m-doc-wrap"><a href="http://en.cppreference.com/w/cpp/utility/initializer_list.html" class="m-doc-external">std::<wbr />initializer_list</a>&lt;U&gt; il,
+              Args &amp;&amp; ... args) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4d27def5f33f561207ecbc421b842d55"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classrolly_1_1optional.html" class="m-doc">optional</a>&lt;std::decay_t&lt;T&gt;&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d27def5f33f561207ecbc421b842d55" class="m-doc-self">some</a>(</span><span class="m-doc-wrap">T&amp;&amp; t)</span></span>
+            </h3>
+            <p>Wrap a value in an optional.</p>
+<p>This function is a helper for creating an optional from a value. It is mostly useful when working with generic code that needs to work with both expected and optional types.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1types.html#a80f2e5353f29a764733f510a9a2481c9" class="m-doc">ok</a></p><p><a href="namespacerolly.html#a9365b793fe547271e48fa719a7f4854d" class="m-doc">none</a></p></aside>
+          </div></section>
           <section class="m-doc-details" id="a50d147e6e631344b3cde7c0675356297"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a50d147e6e631344b3cde7c0675356297" class="m-doc-self">unreachable</a>(</span><span class="m-doc-wrap">)</span></span>
@@ -2243,6 +2938,148 @@
               bool rolly::<wbr /><a href="#a97300837e35e483d3cf7b20dd724250b" class="m-doc-self">is_any_of_v</a> <span class="m-label m-primary">constexpr</span>
             </h3>
             <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af4c439f294424a3f11f9908de0dca2f6"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="overload_8h.html">&lt;rolly/functional/overload.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename... Args&gt;
+              </div>
+              <a href="structrolly_1_1overload__t.html" class="m-doc">overload_<wbr />t</a>&lt;Args...&gt; rolly::<wbr /><a href="#af4c439f294424a3f11f9908de0dca2f6" class="m-doc-self">overload</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a85cfe4055bff1f633f6bbedb33f2e93b"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="overload_8h.html">&lt;rolly/functional/overload.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename... Args&gt;
+              </div>
+              <a href="structrolly_1_1const__overload__t.html" class="m-doc">const_<wbr />overload_<wbr />t</a>&lt;Args...&gt; rolly::<wbr /><a href="#a85cfe4055bff1f633f6bbedb33f2e93b" class="m-doc-self">const_overload</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae3c7f1453d02210f5dedfa448b6b4697"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="overload_8h.html">&lt;rolly/functional/overload.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename... Args&gt;
+              </div>
+              <a href="structrolly_1_1non__const__overload__t.html" class="m-doc">non_<wbr />const_<wbr />overload_<wbr />t</a>&lt;Args...&gt; rolly::<wbr /><a href="#ae3c7f1453d02210f5dedfa448b6b4697" class="m-doc-self">non_const_overload</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aaa49597f11fa34841f1e7c48b7fe1fb8"><div>
+            <h3>
+              static bool rolly::<wbr /><a href="#aaa49597f11fa34841f1e7c48b7fe1fb8" class="m-doc-self">with_rtti</a> <span class="m-label m-primary">constexpr</span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a666a4e9726827588e42f0857d8a87c68"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename P&gt;
+              </div>
+              bool rolly::<wbr /><a href="#a666a4e9726827588e42f0857d8a87c68" class="m-doc-self">is_weak_ptr_compatible_v</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p>determine if a pointer is convertible into a &quot;weak&quot; pointer</p>
+          </div></section>
+          <section class="m-doc-details" id="a0ce1d8dcc7700b383ed4cab2a35ef160"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename L, typename... T&gt;
+              </div>
+              bool rolly::<wbr /><a href="#a0ce1d8dcc7700b383ed4cab2a35ef160" class="m-doc-self">is_callable_v</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p>determine if a type T (Callable or Pmf) is callable with supplied arguments</p>
+          </div></section>
+          <section class="m-doc-details" id="ad73fb921872b6292fd6244b46ea4ebeb"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              bool rolly::<wbr /><a href="#ad73fb921872b6292fd6244b46ea4ebeb" class="m-doc-self">is_weak_ptr_v</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a26520841c8b04240e098d1360c774d08"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              bool rolly::<wbr /><a href="#a26520841c8b04240e098d1360c774d08" class="m-doc-self">has_call_operator_v</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a60d8a43ca3d5d473f1651ef5114c2628"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              bool rolly::<wbr /><a href="#a60d8a43ca3d5d473f1651ef5114c2628" class="m-doc-self">is_pointer_v</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a803db4963a7d275f1f2dc56ab3a33e0b"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              bool rolly::<wbr /><a href="#a803db4963a7d275f1f2dc56ab3a33e0b" class="m-doc-self">is_func_v</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2bc53fe616698994943b2b23620e7749"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              bool rolly::<wbr /><a href="#a2bc53fe616698994943b2b23620e7749" class="m-doc-self">is_pmf_v</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa06dc940ac021f05e56d97c2dac9adeb"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              bool rolly::<wbr /><a href="#aa06dc940ac021f05e56d97c2dac9adeb" class="m-doc-self">is_observer_v</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a908ba454a2355d53f9831b0570f348e7"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename S&gt;
+              </div>
+              bool rolly::<wbr /><a href="#a908ba454a2355d53f9831b0570f348e7" class="m-doc-self">is_signal_v</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3052f5fbb6fc7bc98ecb11360c416a8f"><div>
+            <h3>
+              static <a href="structrolly_1_1nullopt__t.html" class="m-doc">nullopt_<wbr />t</a> rolly::<wbr /><a href="#a3052f5fbb6fc7bc98ecb11360c416a8f" class="m-doc-self">nullopt</a> <span class="m-label m-primary">constexpr</span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+            </h3>
+            <p>Represents an empty optional.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9365b793fe547271e48fa719a7f4854d"><div>
+            <h3>
+              auto rolly::<wbr /><a href="#a9365b793fe547271e48fa719a7f4854d" class="m-doc-self">none</a> <span class="m-label m-primary">constexpr</span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="optional_8h.html">&lt;rolly/types/optional.h&gt;</a></div>
+            </h3>
+            <p>Wrap an empty value in an optional.</p>
+<p>This function is a helper for creating an optional from a value. It is mostly useful when working with generic code that needs to work with both expected and optional types.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1types.html#a80f2e5353f29a764733f510a9a2481c9" class="m-doc">ok</a></p><p><a href="namespacerolly.html#a4d27def5f33f561207ecbc421b842d55" class="m-doc">some</a></p></aside>
           </div></section>
         </section>
       </div>

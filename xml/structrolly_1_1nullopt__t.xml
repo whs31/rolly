@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structrolly_1_1nullopt__t" kind="struct" language="C++" prot="public">
+    <compoundname>rolly::nullopt_t</compoundname>
+    <includes refid="optional_8h" local="no">rolly/types/optional.h</includes>
+    <innerclass refid="structrolly_1_1nullopt__t_1_1do__not__use" prot="public">rolly::nullopt_t::do_not_use</innerclass>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structrolly_1_1nullopt__t_1a816afdd27a30f9b02f87d058066d12e2" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr nullopt_t</definition>
+        <argsstring>(do_not_use, do_not_use) noexcept</argsstring>
+        <name>nullopt_t</name>
+        <param>
+          <type><ref refid="structrolly_1_1nullopt__t_1_1do__not__use" kindref="compound">do_not_use</ref></type>
+        </param>
+        <param>
+          <type><ref refid="structrolly_1_1nullopt__t_1_1do__not__use" kindref="compound">do_not_use</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/types/optional.h" line="661" column="24" bodyfile="rolly/types/optional.h" bodystart="661" bodyend="661"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A tag type to represent an empty optional. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/types/optional.h" line="658" column="18" bodyfile="rolly/types/optional.h" bodystart="658" bodyend="662"/>
+    <listofallmembers>
+      <member refid="structrolly_1_1nullopt__t_1a816afdd27a30f9b02f87d058066d12e2" prot="public" virt="non-virtual"><scope>rolly::nullopt_t</scope><name>nullopt_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structobserver__base" kind="struct" language="C++" prot="public">
+    <compoundname>observer_base</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">observer_type</basecompoundref>
+    <includes refid="signals_8h" local="no">rolly/functional/signals.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Lockable</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="structobserver__base_1adbb76e465a87aaefbf548116710130bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename</type>
+          </param>
+          <param>
+            <type>typename...</type>
+          </param>
+        </templateparamlist>
+        <type>friend class</type>
+        <definition>friend class signal_base</definition>
+        <argsstring></argsstring>
+        <name>signal_base</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="736" column="5" bodyfile="rolly/functional/signals.h" bodystart="736" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structobserver__base_1a1b4dcadd74e4b032b90a244bf0e670b5" prot="private" static="no" mutable="no">
+        <type>Lockable</type>
+        <definition>Lockable m_mutex</definition>
+        <argsstring></argsstring>
+        <name>m_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="743" column="14" bodyfile="rolly/functional/signals.h" bodystart="743" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structobserver__base_1a78ff765e693eb0d4b2ab91999d92e2a5" prot="private" static="no" mutable="no">
+        <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="classscoped__connection" kindref="compound">scoped_connection</ref> &gt;</type>
+        <definition>std::vector&lt;scoped_connection&gt; m_connections</definition>
+        <argsstring></argsstring>
+        <name>m_connections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="744" column="17" bodyfile="rolly/functional/signals.h" bodystart="744" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structobserver__base_1a43293f37a2694f95b11fc44e262de540" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ~observer_base</definition>
+        <argsstring>()=default</argsstring>
+        <name>~observer_base</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="719" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="structobserver__base_1a02922e7231c3a315b2bfd1049b675365" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void disconnect_all</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect_all</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Disconnect all signals connected to this object.</para>
+<para>To avoid invocation of slots on a semi-destructed instance, which may happen in multi-threaded contexts, derived classes should call this method in their destructor. This will ensure proper disconnection prior to the destruction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="729" column="10" bodyfile="rolly/functional/signals.h" bodystart="729" bodyend="732"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="structobserver__base_1a7689f9078669014a659e3c42d478d5dd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void add_connection</definition>
+        <argsstring>(connection conn)</argsstring>
+        <name>add_connection</name>
+        <param>
+          <type><ref refid="classconnection" kindref="compound">connection</ref></type>
+          <declname>conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="738" column="10" bodyfile="rolly/functional/signals.h" bodystart="738" bodyend="741"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Observer is a base class for intrusive lifetime tracking of objects.</para>
+<para>This is an alternative to trackable pointers, such as <ref refid="cpp/memory/shared_ptr" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::shared_ptr</ref>, and manual connection management by keeping connection objects in scope. Deriving from this class allows automatic disconnection of all the slots connected to any signal when an instance is destroyed. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>observer_type</label>
+      </node>
+      <node id="1">
+        <label>observer_base&lt; Lockable &gt;</label>
+        <link refid="structobserver__base"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>observer_type</label>
+      </node>
+      <node id="1">
+        <label>observer_base&lt; Lockable &gt;</label>
+        <link refid="structobserver__base"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="rolly/functional/signals.h" line="718" column="52" bodyfile="rolly/functional/signals.h" bodystart="718" bodyend="745"/>
+    <listofallmembers>
+      <member refid="structobserver__base_1a7689f9078669014a659e3c42d478d5dd" prot="private" virt="non-virtual"><scope>observer_base</scope><name>add_connection</name></member>
+      <member refid="structobserver__base_1a02922e7231c3a315b2bfd1049b675365" prot="protected" virt="non-virtual"><scope>observer_base</scope><name>disconnect_all</name></member>
+      <member refid="structobserver__base_1a78ff765e693eb0d4b2ab91999d92e2a5" prot="private" virt="non-virtual"><scope>observer_base</scope><name>m_connections</name></member>
+      <member refid="structobserver__base_1a1b4dcadd74e4b032b90a244bf0e670b5" prot="private" virt="non-virtual"><scope>observer_base</scope><name>m_mutex</name></member>
+      <member refid="structobserver__base_1adbb76e465a87aaefbf548116710130bf" prot="private" virt="non-virtual"><scope>observer_base</scope><name>signal_base</name></member>
+      <member refid="structobserver__base_1a43293f37a2694f95b11fc44e262de540" prot="public" virt="virtual"><scope>observer_base</scope><name>~observer_base</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

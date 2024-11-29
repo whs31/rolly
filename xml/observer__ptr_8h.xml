@@ -32,12 +32,34 @@
       <node id="20">
         <label>cstdint</label>
       </node>
+      <node id="27">
+        <label>variant</label>
+      </node>
       <node id="8">
         <label>string</label>
       </node>
       <node id="12">
         <label>export.h</label>
         <link refid="export_8h_source"/>
+      </node>
+      <node id="25">
+        <label>exception</label>
+      </node>
+      <node id="24">
+        <label>../types/optional.h</label>
+        <link refid="optional_8h_source"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
       </node>
       <node id="13">
         <label>platform_definitions.h</label>
@@ -54,22 +76,22 @@
         <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="22">
-        <label>optional</label>
-      </node>
       <node id="21">
         <label>box.h</label>
         <link refid="box_8h_source"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
+      </node>
+      <node id="26">
+        <label>new</label>
       </node>
       <node id="4">
         <label>utility</label>
@@ -83,7 +105,7 @@
       <node id="19">
         <label>cstddef</label>
       </node>
-      <node id="24">
+      <node id="23">
         <label>../concepts/ptr.h</label>
         <link refid="ptr_8h_source"/>
         <childnode refid="2" relation="include">
@@ -101,7 +123,7 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="22">
         <label>../traits/noncopyable.h</label>
         <link refid="noncopyable_8h_source"/>
       </node>

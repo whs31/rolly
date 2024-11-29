@@ -326,29 +326,6 @@
         <location file="rolly/types/stdint.h" line="32" column="5" bodyfile="rolly/types/stdint.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       </sectiondef>
-      <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacerolly_1_1types_1a9365b793fe547271e48fa719a7f4854d" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr auto</type>
-        <definition>constexpr auto none</definition>
-        <argsstring></argsstring>
-        <name>none</name>
-        <initializer>= std::nullopt</initializer>
-        <briefdescription>
-<para>Wrap an empty value in an std::optional. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This function is a helper for creating an std::optional from a value. It is mostly useful when working with generic code that needs to work with both expected and optional types.</para>
-<para><simplesect kind="see"><para><ref refid="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" kindref="member">ok</ref> </para>
-</simplesect>
-<simplesect kind="see"><para><ref refid="namespacerolly_1_1types_1a023b1eb8a485614d2ea9c48632d275c3" kindref="member">some</ref> </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="rolly/types/result.h" line="2708" column="27" bodyfile="rolly/types/result.h" bodystart="2708" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="namespacerolly_1_1types_1a2c2d7fe1f4fcd1432bb6ee51c059306f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -441,35 +418,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="rolly/types/result.h" line="2679" column="14" bodyfile="rolly/types/result.h" bodystart="2679" bodyend="2679"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacerolly_1_1types_1a023b1eb8a485614d2ea9c48632d275c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>std::optional&lt; std::decay_t&lt; T &gt; &gt;</type>
-        <definition>std::optional&lt;std::decay_t&lt;T&gt; &gt; rolly::types::some</definition>
-        <argsstring>(T &amp;&amp;t)</argsstring>
-        <name>some</name>
-        <param>
-          <type>T &amp;&amp;</type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-<para>Wrap a value in an std::optional. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This function is a helper for creating an std::optional from a value. It is mostly useful when working with generic code that needs to work with both expected and optional types.</para>
-<para><simplesect kind="see"><para><ref refid="namespacerolly_1_1types_1a80f2e5353f29a764733f510a9a2481c9" kindref="member">ok</ref> </para>
-</simplesect>
-<simplesect kind="see"><para><ref refid="namespacerolly_1_1types_1a9365b793fe547271e48fa719a7f4854d" kindref="member">none</ref> </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="rolly/types/result.h" line="2693" column="20" bodyfile="rolly/types/result.h" bodystart="2693" bodyend="2695"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

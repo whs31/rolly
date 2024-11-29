@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01_9_01trait_1_1is__pointer__v9d17afaa4d8ddd746027d98f7cb68c51" kind="struct" language="C++" prot="public">
+    <compoundname>detail::object_pointer&lt; T, std::enable_if_t&lt; ! trait::is_pointer_v&lt; T &gt; &amp;&amp;! trait::is_weak_ptr_v&lt; T &gt; &amp;&amp;trait::is_weak_ptr_compatible_v&lt; T &gt; &gt; &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01_9_01trait_1_1is__pointer__v9d17afaa4d8ddd746027d98f7cb68c51_1a714aa80bfb7cf2a7b66690feb6b9fe4c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>obj_ptr</type>
+        <definition>static obj_ptr get</definition>
+        <argsstring>(T const &amp;t)</argsstring>
+        <name>get</name>
+        <param>
+          <type>T const &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/signals.h" line="347" column="22" bodyfile="rolly/functional/signals.h" bodystart="347" bodyend="347"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/functional/signals.h" line="346" column="4" bodyfile="rolly/functional/signals.h" bodystart="342" bodyend="348"/>
+    <listofallmembers>
+      <member refid="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01_9_01trait_1_1is__pointer__v9d17afaa4d8ddd746027d98f7cb68c51_1a714aa80bfb7cf2a7b66690feb6b9fe4c" prot="public" virt="non-virtual"><scope>detail::object_pointer&lt; T, std::enable_if_t&lt; ! trait::is_pointer_v&lt; T &gt; &amp;&amp;! trait::is_weak_ptr_v&lt; T &gt; &amp;&amp;trait::is_weak_ptr_compatible_v&lt; T &gt; &gt; &gt;</scope><name>get</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -133,6 +133,7 @@
     <innerclass refid="structstd_1_1hash_3_01rolly_1_1box_3_01T_01_4_01_4" prot="public">std::hash&lt; rolly::box&lt; T &gt; &gt;</innerclass>
     <innerclass refid="structstd_1_1hash_3_01rolly_1_1guid_01_4" prot="public">std::hash&lt; rolly::guid &gt;</innerclass>
     <innerclass refid="structstd_1_1hash_3_01rolly_1_1observer__ptr_3_01T_01_4_01_4" prot="public">std::hash&lt; rolly::observer_ptr&lt; T &gt; &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01rolly_1_1optional_3_01T_01_4_01_4" prot="public">std::hash&lt; rolly::optional&lt; T &gt; &gt;</innerclass>
     <innerclass refid="structstd_1_1hash_3_01rolly_1_1types_1_1point2d_3_01T_01_4_01_4" prot="public">std::hash&lt; rolly::types::point2d&lt; T &gt; &gt;</innerclass>
     <innerclass refid="structstd_1_1hash_3_01rolly_1_1types_1_1size2d_3_01T_01_4_01_4" prot="public">std::hash&lt; rolly::types::size2d&lt; T &gt; &gt;</innerclass>
     <innerclass refid="structstd_1_1hash_3_01rolly_1_1types_1_1vector2d_3_01T_01_4_01_4" prot="public">std::hash&lt; rolly::types::vector2d&lt; T &gt; &gt;</innerclass>

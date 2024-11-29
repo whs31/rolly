@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dl_8h" kind="file" language="C++">
+    <compoundname>dl.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">string_view</includes>
+    <includes refid="export_8h" local="yes">../global/export.h</includes>
+    <includes refid="platform__definitions_8h" local="yes">../global/platform_definitions.h</includes>
+    <includes local="no">filesystem</includes>
+    <includedby refid="dll_8h" local="yes">dll.h</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>filesystem</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>../global/export.h</label>
+        <link refid="export_8h_source"/>
+      </node>
+      <node id="5">
+        <label>../global/platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="1">
+        <label>dl.h</label>
+        <link refid="dl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string_view</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>dll.h</label>
+        <link refid="dll_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>dl.h</label>
+        <link refid="dl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>rolly.h</label>
+        <link refid="rolly_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerolly">rolly</innernamespace>
+    <innernamespace refid="namespacerolly_1_1dll">rolly::dll</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerolly_1_1dll_1a0900dd1a82f6eb7bff05e50fe712119e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string rolly::dll::library_name</definition>
+        <argsstring>(std::string_view name)</argsstring>
+        <name>library_name</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/dll/dl.h" line="16" column="5" declfile="rolly/dll/dl.h" declline="16" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1dll_1a7fd63e0663da1d7ea919140f660c973c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* rolly::dll::load_library</definition>
+        <argsstring>(std::string_view name)</argsstring>
+        <name>load_library</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/dll/dl.h" line="22" column="5" declfile="rolly/dll/dl.h" declline="22" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1dll_1a1cd16d3b4094b42e0857b9a4e9704ab0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* rolly::dll::load_library</definition>
+        <argsstring>(std::string_view name, std::filesystem::path const &amp;path)</argsstring>
+        <name>load_library</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::filesystem::path const &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/dll/dl.h" line="28" column="5" declfile="rolly/dll/dl.h" declline="28" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1dll_1a79d0fb6d3b9fe80bf61cfe015ebb8fbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rolly::dll::unload_library</definition>
+        <argsstring>(void *handle)</argsstring>
+        <name>unload_library</name>
+        <param>
+          <type>void *</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/dll/dl.h" line="34" column="5" declfile="rolly/dll/dl.h" declline="34" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1_1dll_1a12104c7255b010904d5f975b0208fcb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* rolly::dll::proc_address</definition>
+        <argsstring>(void *handle, std::string_view name)</argsstring>
+        <name>proc_address</name>
+        <param>
+          <type>void *</type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/dll/dl.h" line="40" column="5" declfile="rolly/dll/dl.h" declline="40" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="rolly/dll/dl.h"/>
+  </compounddef>
+</doxygen>

@@ -4,6 +4,7 @@
     <compoundname>types</compoundname>
     <innerfile refid="angle_8h">angle.h</innerfile>
     <innerfile refid="guid_8h">guid.h</innerfile>
+    <innerfile refid="optional_8h">optional.h</innerfile>
     <innerfile refid="point2d_8h">point2d.h</innerfile>
     <innerfile refid="result_8h">result.h</innerfile>
     <innerfile refid="size2d_8h">size2d.h</innerfile>

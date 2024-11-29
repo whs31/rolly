@@ -68,7 +68,7 @@
         </inbodydescription>
         <location file="rolly/qt/qml.h" line="57" column="14" bodyfile="rolly/qt/qml.h" bodystart="57" bodyend="69"/>
       </memberdef>
-      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1ac7202b57d7facc087c7ba3c54ef31c18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1a1f8d4c59f9a1640890482e844b0a8e0e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>___concept___(std::derived_from&lt;::QObject &gt;) T ___sfinae_requirement___((std::is_base_of_v&lt;::QObject, T &gt;))</type>
@@ -76,10 +76,10 @@
         </templateparamlist>
         <type><ref refid="classrolly_1_1qt_1_1qml_1_1module" kindref="compound">module</ref> &amp;</type>
         <definition>module&amp; component</definition>
-        <argsstring>(std::optional&lt; std::string_view &gt; name=std::nullopt)</argsstring>
+        <argsstring>(optional&lt; std::string_view &gt; name=std::nullopt)</argsstring>
         <name>component</name>
         <param>
-          <type>std::optional&lt; std::string_view &gt;</type>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; std::string_view &gt;</type>
           <declname>name</declname>
           <defval>std::nullopt</defval>
         </param>
@@ -91,7 +91,7 @@
         </inbodydescription>
         <location file="rolly/qt/qml.h" line="73" column="12" bodyfile="rolly/qt/qml.h" bodystart="73" bodyend="87"/>
       </memberdef>
-      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1a4e6a45ec79c518ed49853e8995bb9553" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1a425691f72bda43ecd3e4a9f38e89b49e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v&lt; T &gt;)</type>
@@ -99,14 +99,14 @@
         </templateparamlist>
         <type><ref refid="classrolly_1_1qt_1_1qml_1_1module" kindref="compound">module</ref> &amp;</type>
         <definition>module&amp; singleton</definition>
-        <argsstring>(T *instance, std::optional&lt; std::string_view &gt; name=std::nullopt)</argsstring>
+        <argsstring>(T *instance, optional&lt; std::string_view &gt; name=std::nullopt)</argsstring>
         <name>singleton</name>
         <param>
           <type>T *</type>
           <declname>instance</declname>
         </param>
         <param>
-          <type>std::optional&lt; std::string_view &gt;</type>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; std::string_view &gt;</type>
           <declname>name</declname>
           <defval>std::nullopt</defval>
         </param>
@@ -118,7 +118,7 @@
         </inbodydescription>
         <location file="rolly/qt/qml.h" line="90" column="12" bodyfile="rolly/qt/qml.h" bodystart="90" bodyend="105"/>
       </memberdef>
-      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1a76c79bedc2db496b0d4b599bcee32cc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1a9df71904b9d6009dedaf888ccd5908b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v&lt; T &gt;)</type>
@@ -126,10 +126,10 @@
         </templateparamlist>
         <type><ref refid="classrolly_1_1qt_1_1qml_1_1module" kindref="compound">module</ref> &amp;</type>
         <definition>module&amp; singleton</definition>
-        <argsstring>(std::optional&lt; std::string_view &gt; name=std::nullopt)</argsstring>
+        <argsstring>(optional&lt; std::string_view &gt; name=std::nullopt)</argsstring>
         <name>singleton</name>
         <param>
-          <type>std::optional&lt; std::string_view &gt;</type>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; std::string_view &gt;</type>
           <declname>name</declname>
           <defval>std::nullopt</defval>
         </param>
@@ -141,17 +141,17 @@
         </inbodydescription>
         <location file="rolly/qt/qml.h" line="108" column="12" bodyfile="rolly/qt/qml.h" bodystart="108" bodyend="126"/>
       </memberdef>
-      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1ad788a07f7e141b6cf1137317ea5fcd9f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1ac9065f0e0de2669e96cb78c15be92354" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classrolly_1_1qt_1_1qml_1_1module" kindref="compound">module</ref> &amp;</type>
         <definition>module&amp; file</definition>
-        <argsstring>(std::string_view url, std::optional&lt; std::string_view &gt; name=std::nullopt)</argsstring>
+        <argsstring>(std::string_view url, optional&lt; std::string_view &gt; name=std::nullopt)</argsstring>
         <name>file</name>
         <param>
           <type>std::string_view</type>
           <declname>url</declname>
         </param>
         <param>
-          <type>std::optional&lt; std::string_view &gt;</type>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; std::string_view &gt;</type>
           <declname>name</declname>
           <defval>std::nullopt</defval>
         </param>
@@ -163,7 +163,7 @@
         </inbodydescription>
         <location file="rolly/qt/qml.h" line="128" column="12" bodyfile="rolly/qt/qml.h" bodystart="128" bodyend="144"/>
       </memberdef>
-      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1a10e0b90aaea8b67fa3e091cb47380314" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1ae94c90f5c50d5eb38c541f5fbcdd5e5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>___concept___(concepts::qgadget) T ___sfinae_requirement___(is_qgadget_v&lt; T &gt;)</type>
@@ -171,15 +171,15 @@
         </templateparamlist>
         <type><ref refid="classrolly_1_1qt_1_1qml_1_1module" kindref="compound">module</ref> &amp;</type>
         <definition>module&amp; uncreatable</definition>
-        <argsstring>(std::optional&lt; std::string_view &gt; name=std::nullopt, std::optional&lt; std::string_view &gt; reason=std::nullopt)</argsstring>
+        <argsstring>(optional&lt; std::string_view &gt; name=std::nullopt, optional&lt; std::string_view &gt; reason=std::nullopt)</argsstring>
         <name>uncreatable</name>
         <param>
-          <type>std::optional&lt; std::string_view &gt;</type>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; std::string_view &gt;</type>
           <declname>name</declname>
           <defval>std::nullopt</defval>
         </param>
         <param>
-          <type>std::optional&lt; std::string_view &gt;</type>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; std::string_view &gt;</type>
           <declname>reason</declname>
           <defval>std::nullopt</defval>
         </param>
@@ -227,7 +227,7 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
-      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1ad2f54fd0205c52348ec7733322b761a8" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1aef32f3f36b7526d37cb0bbc7f864d157" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>___concept___(concepts::qgadget) T ___sfinae_requirement___(is_qgadget_v&lt; T &gt;)</type>
@@ -235,10 +235,10 @@
         </templateparamlist>
         <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
         <definition>static std::string demangle_class_name</definition>
-        <argsstring>(std::optional&lt; std::string_view &gt; name)</argsstring>
+        <argsstring>(optional&lt; std::string_view &gt; name)</argsstring>
         <name>demangle_class_name</name>
         <param>
-          <type>std::optional&lt; std::string_view &gt;</type>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; std::string_view &gt;</type>
           <declname>name</declname>
         </param>
         <briefdescription>
@@ -249,17 +249,17 @@
         </inbodydescription>
         <location file="rolly/qt/qml.h" line="190" column="25" bodyfile="rolly/qt/qml.h" bodystart="190" bodyend="196"/>
       </memberdef>
-      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1acf7de62cb4cacdeb8d7a4ded4442a3bd" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classrolly_1_1qt_1_1qml_1_1module_1a7241abd8586c920b753d1e0e6ece5c98" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
         <definition>static std::string demangle_file_url</definition>
-        <argsstring>(std::string_view url, std::optional&lt; std::string_view &gt; name)</argsstring>
+        <argsstring>(std::string_view url, optional&lt; std::string_view &gt; name)</argsstring>
         <name>demangle_file_url</name>
         <param>
           <type>std::string_view</type>
           <declname>url</declname>
         </param>
         <param>
-          <type>std::optional&lt; std::string_view &gt;</type>
+          <type><ref refid="classrolly_1_1optional" kindref="compound">optional</ref>&lt; std::string_view &gt;</type>
           <declname>name</declname>
         </param>
         <briefdescription>
@@ -277,17 +277,17 @@
     </detaileddescription>
     <location file="rolly/qt/qml.h" line="53" column="15" bodyfile="rolly/qt/qml.h" bodystart="53" bodyend="218"/>
     <listofallmembers>
-      <member refid="classrolly_1_1qt_1_1qml_1_1module_1ac7202b57d7facc087c7ba3c54ef31c18" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>component</name></member>
-      <member refid="classrolly_1_1qt_1_1qml_1_1module_1ad2f54fd0205c52348ec7733322b761a8" prot="private" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>demangle_class_name</name></member>
-      <member refid="classrolly_1_1qt_1_1qml_1_1module_1acf7de62cb4cacdeb8d7a4ded4442a3bd" prot="private" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>demangle_file_url</name></member>
-      <member refid="classrolly_1_1qt_1_1qml_1_1module_1ad788a07f7e141b6cf1137317ea5fcd9f" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>file</name></member>
+      <member refid="classrolly_1_1qt_1_1qml_1_1module_1a1f8d4c59f9a1640890482e844b0a8e0e" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>component</name></member>
+      <member refid="classrolly_1_1qt_1_1qml_1_1module_1aef32f3f36b7526d37cb0bbc7f864d157" prot="private" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>demangle_class_name</name></member>
+      <member refid="classrolly_1_1qt_1_1qml_1_1module_1a7241abd8586c920b753d1e0e6ece5c98" prot="private" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>demangle_file_url</name></member>
+      <member refid="classrolly_1_1qt_1_1qml_1_1module_1ac9065f0e0de2669e96cb78c15be92354" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>file</name></member>
       <member refid="classrolly_1_1qt_1_1qml_1_1module_1a6e561fea65626a84736a8933096d18ef" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>module</name></member>
       <member refid="classrolly_1_1qt_1_1qml_1_1module_1a4d739cc5d335052eb9f5b2ca559b81d1" prot="private" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>name_</name></member>
       <member refid="classrolly_1_1qt_1_1qml_1_1module_1ad6cd0b9a9751c5608a2182299d9da58a" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>push</name></member>
       <member refid="classrolly_1_1qt_1_1qml_1_1module_1ae6070434ac37e030975ed0188390e71b" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>push_all</name></member>
-      <member refid="classrolly_1_1qt_1_1qml_1_1module_1a4e6a45ec79c518ed49853e8995bb9553" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>singleton</name></member>
-      <member refid="classrolly_1_1qt_1_1qml_1_1module_1a76c79bedc2db496b0d4b599bcee32cc8" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>singleton</name></member>
-      <member refid="classrolly_1_1qt_1_1qml_1_1module_1a10e0b90aaea8b67fa3e091cb47380314" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>uncreatable</name></member>
+      <member refid="classrolly_1_1qt_1_1qml_1_1module_1a425691f72bda43ecd3e4a9f38e89b49e" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>singleton</name></member>
+      <member refid="classrolly_1_1qt_1_1qml_1_1module_1a9df71904b9d6009dedaf888ccd5908b9" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>singleton</name></member>
+      <member refid="classrolly_1_1qt_1_1qml_1_1module_1ae94c90f5c50d5eb38c541f5fbcdd5e5b" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>uncreatable</name></member>
       <member refid="classrolly_1_1qt_1_1qml_1_1module_1a29b70db64168b74a789f3990e273c3d0" prot="private" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>version_</name></member>
       <member refid="classrolly_1_1qt_1_1qml_1_1module_1a2089a696649546278eaf1b543ca54ded" prot="public" virt="non-virtual"><scope>rolly::qt::qml::module</scope><name>version_type</name></member>
     </listofallmembers>
