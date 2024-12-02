@@ -3,6 +3,18 @@
 
 using namespace rolly;
 
+struct A {
+  virtual ~A() {}
+
+  virtual std::string_view name() const { return "A"; }
+};
+
+struct B : public A {
+  virtual ~B() {}
+
+  virtual std::string_view name() const override { return "B"; }
+};
+
 TEST_CASE("Memory", "[memory]") {
   SECTION("ObserverPtr") {
     SECTION("Constructor") {
@@ -75,7 +87,7 @@ TEST_CASE("Memory", "[memory]") {
       REQUIRE(ptr1 != ptr2);
     }
 
-    SECTION("UniquePtr") {
+    SECTION("FromUniquePtr") {
       auto const ptr = std::make_unique<int>(42);
       REQUIRE(*ptr == 42);
 
@@ -83,12 +95,23 @@ TEST_CASE("Memory", "[memory]") {
       REQUIRE(obs.ref() == 42);
     }
 
-    SECTION("Box") {
+    SECTION("FromBox") {
       box<int> const ptr = make_box<int>(42);
       REQUIRE(ptr.ref() == 42);
 
       auto obs = observer_ptr<int>(ptr);
       REQUIRE(obs.ref() == 42);
+    }
+  }
+
+  SECTION("Box") {
+    SECTION("Downcast") {
+      auto b = make_box<B>();
+      REQUIRE(b.ref().name() == "B");
+
+      auto a = b.downcast<A>();
+      REQUIRE(a.has_value());
+      REQUIRE(a.value().name() == "B");
     }
   }
 }

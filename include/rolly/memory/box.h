@@ -52,7 +52,8 @@ namespace rolly {
      * @param other Other box to move data from.
      */
     template <typename U>
-    box(box<U>&& other
+    box(
+      box<U>&& other
     ) noexcept  // NOLINT(*-explicit-constructor, *-rvalue-reference-param-not-moved)
       : ptr_(std::forward<std::unique_ptr<U>>(other.as_unique_ptr())) {}
 
@@ -199,15 +200,15 @@ namespace rolly {
      * @invariant <code>box::leak</code> was not called before.
      */
     template <typename U>
-    [[nodiscard]] optional<std::reference_wrapper<U>> downcast() {
+    [[nodiscard]] optional<U&> downcast() {
       contracts::invariant(this->ptr_ != nullptr, "use after consume");
       try {
         auto& r = dynamic_cast<U&>(this->ref_mut());
-        return rolly::make_optional(std::ref(r));
+        return rolly::make_optional<U&>(r);
       } catch(std::bad_cast const&) {  // NOLINT(*-empty-catch)
-        return nullopt;
+        return none;
       } catch(...) {                   // NOLINT(*-empty-catch)
-        return nullopt;
+        return none;
       }
     }
 

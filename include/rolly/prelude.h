@@ -5,6 +5,7 @@
 #include "global.h"
 #include "log.h"
 #include "types/stdint.h"
+#include "types/optional.h"
 #include "types/result.h"
 #include "utility.h"
 
@@ -15,6 +16,7 @@ namespace rolly::prelude {
   using rolly::result;
   using rolly::error;
   using rolly::ok;
+  using rolly::optional;
   using rolly::none;
   using rolly::some;
   using rolly::unreachable;
