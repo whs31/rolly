@@ -3,15 +3,38 @@
 #include <string>
 #include <string_view>
 #include <vector>
+#include "global/export.h"
 
 namespace rolly {
-  [[nodiscard]] std::vector<std::string> split(std::string const& input);
-  [[nodiscard]] std::vector<std::string> split(std::string_view input);
+  [[nodiscard]]
+  #ifndef DOXYGEN_GENERATING_OUTPUT
+  ___rolly_api___
+  #endif
+  std::vector<std::string> split(std::string const& input);
 
-  [[nodiscard]] std::vector<std::string> split_by(std::string const& input, char delimiter);
-  [[nodiscard]] std::vector<std::string> split_by(std::string_view input, char delimiter);
+  [[nodiscard]]
+  #ifndef DOXYGEN_GENERATING_OUTPUT
+  ___rolly_api___
+  #endif
+  std::vector<std::string> split(std::string_view input);
 
-  [[nodiscard]] std::string to_lower(std::string_view input);
+  [[nodiscard]]
+  #ifndef DOXYGEN_GENERATING_OUTPUT
+  ___rolly_api___
+  #endif
+  std::vector<std::string> split_by(std::string const& input, char delimiter);
+
+  [[nodiscard]]
+  #ifndef DOXYGEN_GENERATING_OUTPUT
+  ___rolly_api___
+  #endif
+  std::vector<std::string> split_by(std::string_view input, char delimiter);
+
+  [[nodiscard]]
+  #ifndef DOXYGEN_GENERATING_OUTPUT
+  ___rolly_api___
+  #endif
+  std::string to_lower(std::string_view input);
 
   template <typename C>
   bool starts_with(std::basic_string<C> const& input, std::basic_string_view<C> sv) noexcept {
