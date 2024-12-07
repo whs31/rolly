@@ -303,12 +303,6 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3">
-        <label>dll.h</label>
-        <link refid="dll_8h_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
       <node id="1">
         <label>shared_library.h</label>
         <link refid="shared__library_8h"/>
@@ -318,12 +312,6 @@
       <node id="2">
         <label>plugin_loader.h</label>
         <link refid="plugin__loader_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>rolly.h</label>
-        <link refid="rolly_8h_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classrolly_1_1dll_1_1shared__library" prot="public">rolly::dll::shared_library</innerclass>

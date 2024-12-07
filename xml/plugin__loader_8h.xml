@@ -10,7 +10,6 @@
     <includes refid="pin_8h" local="yes">../traits/pin.h</includes>
     <includes refid="plugin_8h" local="yes">plugin.h</includes>
     <includes refid="shared__library_8h" local="yes">shared_library.h</includes>
-    <includedby refid="dll_8h" local="yes">dll.h</includedby>
     <incdepgraph>
       <node id="44">
         <label>format/ostream_formatter.h</label>
@@ -348,24 +347,6 @@
         </childnode>
       </node>
     </incdepgraph>
-    <invincdepgraph>
-      <node id="2">
-        <label>dll.h</label>
-        <link refid="dll_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>plugin_loader.h</label>
-        <link refid="plugin__loader_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>rolly.h</label>
-        <link refid="rolly_8h_source"/>
-      </node>
-    </invincdepgraph>
     <innerclass refid="classrolly_1_1dll_1_1plugin__loader" prot="public">rolly::dll::plugin_loader</innerclass>
     <innernamespace refid="namespacerolly">rolly</innernamespace>
     <innernamespace refid="namespacerolly_1_1dll">rolly::dll</innernamespace>

@@ -208,7 +208,7 @@
     <member refid="classrolly_1_1box_1a6b85f584a4a8c1b98b84e1ab81a670ae" kind="function"><name>as_unique_ptr</name></member>
     <member refid="classrolly_1_1box_1a292afa7d9b939b261835165270ccb828" kind="function"><name>as_unique_ptr</name></member>
     <member refid="classrolly_1_1box_1a9e0803457f22fb3201520a7e00be7fca" kind="function"><name>leak</name></member>
-    <member refid="classrolly_1_1box_1abd452a397c01521fa9b941a2ff58fd01" kind="function"><name>downcast</name></member>
+    <member refid="classrolly_1_1box_1ace53986139445f14adcb478bfa49ddcf" kind="function"><name>downcast</name></member>
     <member refid="classrolly_1_1box_1a821c701c77d3231e978182beedefb8a4" kind="function"><name>as</name></member>
     <member refid="classrolly_1_1box_1a246ff03289ee9a88e936eafb6bd7b026" kind="function"><name>as</name></member>
     <member refid="classrolly_1_1box_1a420e60e9788bfa3b52aa3aab72ea3a5e" kind="function"><name>operator bool</name></member>

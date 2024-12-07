@@ -9,7 +9,6 @@
     <includes refid="macro_8h" local="yes">detail/macro.h</includes>
     <includedby refid="plugin__loader_8h" local="yes">plugin_loader.h</includedby>
     <includedby refid="shared__library_8h" local="yes">shared_library.h</includedby>
-    <includedby refid="dll_8h" local="yes">dll.h</includedby>
     <incdepgraph>
       <node id="24">
         <label>functional</label>
@@ -217,12 +216,6 @@
     </incdepgraph>
     <invincdepgraph>
       <node id="3">
-        <label>dll.h</label>
-        <link refid="dll_8h_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
         <label>shared_library.h</label>
         <link refid="shared__library_8h_source"/>
         <childnode refid="2" relation="include">
@@ -231,22 +224,14 @@
       <node id="2">
         <label>plugin_loader.h</label>
         <link refid="plugin__loader_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
       </node>
       <node id="1">
         <label>plugin.h</label>
         <link refid="plugin_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>rolly.h</label>
-        <link refid="rolly_8h_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classrolly_1_1dll_1_1plugin" prot="public">rolly::dll::plugin</innerclass>
