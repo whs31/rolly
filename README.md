@@ -9,6 +9,7 @@
     <img src="./doxygen/images/badge_cxx.svg" alt=""/><img src="./doxygen/images/badge_cmake.svg" alt=""/>
 </h3>
 
+[![Build (Ubuntu, GCC-13)](https://github.com/whs31/rolly/actions/workflows/build.yml/badge.svg)](https://github.com/whs31/rolly/actions/workflows/build.yml)[![Test (Ubuntu, GCC-13)](https://github.com/whs31/rolly/actions/workflows/test.yml/badge.svg)](https://github.com/whs31/rolly/actions/workflows/test.yml)[![Documentation](https://github.com/whs31/rolly/actions/workflows/doc.yml/badge.svg)](https://github.com/whs31/rolly/actions/workflows/doc.yml)
 #### Documentation
 
 - ![gitlab_logo](./doxygen/images/logo_gitlab.png) **[GitLab Pages](http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly)**

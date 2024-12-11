@@ -18,11 +18,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Check GCC version
-      run: |
-            gcc --version
-            g++ --version
-
     - name: Create package
       run:  |
             rm -rf build
