@@ -17,6 +17,10 @@
 <image type="html" name="badge_cmake.svg" inline="yes"></image>
  </heading>
 </para>
+<para><ulink url="https://github.com/whs31/rolly/actions/workflows/build.yml"><image type="html" name="badge.svg" inline="yes"></image>
+</ulink><ulink url="https://github.com/whs31/rolly/actions/workflows/test.yml"><image type="html" name="badge.svg" inline="yes"></image>
+</ulink><ulink url="https://github.com/whs31/rolly/actions/workflows/doc.yml"><image type="html" name="badge.svg" inline="yes"></image>
+</ulink> </para>
 <sect3 id="md__home_runner_work_rolly_rolly_README_1autotoc_md1">
 <title>Documentation</title>
 <para><itemizedlist>
