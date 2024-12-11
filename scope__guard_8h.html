@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>rolly/functional/ directory | Rolly Radar core library</title>
+  <title>rolly/functional/scope_guard.h file | Rolly Radar core library</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
@@ -47,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_64cbb815bba61e8aacd351630e0bf2ef.html">rolly</a>/</span>functional<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          <span class="m-breadcrumb"><a href="dir_64cbb815bba61e8aacd351630e0bf2ef.html">rolly</a>/</span><span class="m-breadcrumb"><a href="dir_91def4deb79ef7e7214a01588171731f.html">functional</a>/</span>scope_guard.h <span class="m-thin">file</span>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -56,21 +56,44 @@
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>file <a href="lazy_8h.html" class="m-doc">lazy.h</a></dt>
+            <dt>namespace <a href="namespacerolly.html" class="m-doc">rolly</a></dt>
+            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
+            <dt>namespace <a href="namespacerolly_1_1detail.html" class="m-doc">rolly::detail</a></dt>
             <dd><span></span></dd>
-            <dt>file <a href="overload_8h.html" class="m-doc">overload.h</a></dt>
+          </dl>
+        </section>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename Callback&gt;</div>
+              class <a href="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4.html" class="m-doc">rolly::detail::scope_guard&lt;Callback&gt;</a>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="scope__guard_8h.html" class="m-doc">scope_guard.h</a></dt>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename Callback&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#aa35f813801eb7ac52aa1c8587977ad17" class="m-dox">make_scope_guard</a>(</span><span class="m-dox-wrap">Callback&amp;&amp; callback) -&gt; detail::scope_guard&lt;Callback&gt; <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="signals_8h.html" class="m-doc">signals.h</a></dt>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Callback&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#aa8f1940f8f3a0e0651214247e7379a76" class="m-dox">finally</a>(</span><span class="m-dox-wrap">Callback&amp;&amp; callback) -&gt; detail::scope_guard&lt;Callback&gt; <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>

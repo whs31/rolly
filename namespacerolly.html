@@ -497,6 +497,16 @@
             </dt>
             <dd>Constructs a lazy object from a given function object.</dd>
             <dt>
+              <div class="m-doc-template">template&lt;typename Callback&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aa35f813801eb7ac52aa1c8587977ad17" class="m-dox">make_scope_guard</a>(</span><span class="m-dox-wrap">Callback&amp;&amp; callback) -&gt; detail::scope_guard&lt;Callback&gt; <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Callback&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#aa8f1940f8f3a0e0651214247e7379a76" class="m-dox">finally</a>(</span><span class="m-dox-wrap">Callback&amp;&amp; callback) -&gt; detail::scope_guard&lt;Callback&gt; <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#a373760a3c5836375681456b6c51f1e93" class="m-dox">to_lower</a>(</span><span class="m-dox-wrap">char c) -&gt; char <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd><span></span></dd>
@@ -905,6 +915,13 @@
               <div class="m-doc-template">template&lt;typename C&gt;</div>
               <span class="m-dox-wrap-bumper">auto <a href="#a1c635fda25cb408b341062ad44576c45" class="m-dox">ends_with</a>(</span><span class="m-dox-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
               C const* chp) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename F&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#a291b9522a9622bbdd81d59769ef184b7" class="m-dox">from_c_str</a>(</span><span class="m-dox-wrap">char const* owned_str,
+              int const size = -1,
+              F&amp;&amp; dealloc_function = [](char const*ptr) { <a href="http://en.cppreference.com/w/cpp/memory/c/free.html" class="m-doc-external">std::<wbr />free</a>(const_cast&lt;char*&gt;(ptr));}) -&gt; <a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1668,6 +1685,26 @@
               </tbody>
             </table>
           </div></section>
+          <section class="m-doc-details" id="aa35f813801eb7ac52aa1c8587977ad17"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="scope__guard_8h.html">&lt;rolly/functional/scope_guard.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename Callback&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">detail::scope_guard&lt;Callback&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa35f813801eb7ac52aa1c8587977ad17" class="m-doc-self">make_scope_guard</a>(</span><span class="m-doc-wrap">Callback&amp;&amp; callback) <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa8f1940f8f3a0e0651214247e7379a76"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="scope__guard_8h.html">&lt;rolly/functional/scope_guard.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename Callback&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">detail::scope_guard&lt;Callback&gt; rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa8f1940f8f3a0e0651214247e7379a76" class="m-doc-self">finally</a>(</span><span class="m-doc-wrap">Callback&amp;&amp; callback) <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a373760a3c5836375681456b6c51f1e93"><div>
             <h3>
               <span class="m-doc-wrap-bumper">char rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a373760a3c5836375681456b6c51f1e93" class="m-doc-self">to_lower</a>(</span><span class="m-doc-wrap">char c) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
@@ -2293,6 +2330,18 @@
               </div>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c635fda25cb408b341062ad44576c45" class="m-doc-self">ends_with</a>(</span><span class="m-doc-wrap">std::basic_string_view&lt;C&gt; const&amp; input,
               C const* chp) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a291b9522a9622bbdd81d59769ef184b7"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="string__util_8h.html">&lt;rolly/string_util.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a291b9522a9622bbdd81d59769ef184b7" class="m-doc-self">from_c_str</a>(</span><span class="m-doc-wrap">char const* owned_str,
+              int const size = -1,
+              F&amp;&amp; dealloc_function = [](char const*ptr) { <a href="http://en.cppreference.com/w/cpp/memory/c/free.html" class="m-doc-external">std::<wbr />free</a>(const_cast&lt;char*&gt;(ptr));})</span></span>
             </h3>
             <p><span></span></p>
           </div></section>

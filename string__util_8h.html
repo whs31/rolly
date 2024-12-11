@@ -166,6 +166,13 @@
               C const* chp) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename F&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#a291b9522a9622bbdd81d59769ef184b7" class="m-dox">from_c_str</a>(</span><span class="m-dox-wrap">char const* owned_str,
+              int const size = -1,
+              F&amp;&amp; dealloc_function = [](char const*ptr) { <a href="http://en.cppreference.com/w/cpp/memory/c/free.html" class="m-doc-external">std::<wbr />free</a>(const_cast&lt;char*&gt;(ptr));}) -&gt; <a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a></span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
       </div>

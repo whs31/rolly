@@ -1505,6 +1505,50 @@
         </inbodydescription>
         <location file="rolly/functional/lazy.h" line="78" column="9" bodyfile="rolly/functional/lazy.h" bodystart="78" bodyend="80"/>
       </memberdef>
+      <memberdef kind="function" id="namespacerolly_1aa35f813801eb7ac52aa1c8587977ad17" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Callback</type>
+          </param>
+        </templateparamlist>
+        <type>detail::scope_guard&lt; Callback &gt;</type>
+        <definition>detail::scope_guard&lt;Callback&gt; rolly::make_scope_guard</definition>
+        <argsstring>(Callback &amp;&amp;callback) noexcept(std::is_nothrow_constructible_v&lt; Callback, Callback &amp;&amp; &gt;)</argsstring>
+        <name>make_scope_guard</name>
+        <param>
+          <type>Callback &amp;&amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/scope_guard.h" line="95" column="32" bodyfile="rolly/functional/scope_guard.h" bodystart="95" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1aa8f1940f8f3a0e0651214247e7379a76" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Callback</type>
+          </param>
+        </templateparamlist>
+        <type>detail::scope_guard&lt; Callback &gt;</type>
+        <definition>detail::scope_guard&lt;Callback&gt; rolly::finally</definition>
+        <argsstring>(Callback &amp;&amp;callback) noexcept(std::is_nothrow_constructible_v&lt; Callback, Callback &amp;&amp; &gt;)</argsstring>
+        <name>finally</name>
+        <param>
+          <type>Callback &amp;&amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/functional/scope_guard.h" line="102" column="32" bodyfile="rolly/functional/scope_guard.h" bodystart="102" bodyend="106"/>
+      </memberdef>
       <memberdef kind="function" id="namespacerolly_1a373760a3c5836375681456b6c51f1e93" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr char</type>
         <definition>constexpr char rolly::to_lower</definition>
@@ -3406,7 +3450,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="13" column="15" declfile="rolly/string_util.h" declline="13" declcolumn="15"/>
+        <location file="rolly/string_util.h" line="14" column="17" declfile="rolly/string_util.h" declline="14" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a4fffede0e041c8ac069640149b823f35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
@@ -3423,7 +3467,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="19" column="15" declfile="rolly/string_util.h" declline="19" declcolumn="15"/>
+        <location file="rolly/string_util.h" line="20" column="17" declfile="rolly/string_util.h" declline="20" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a3550c846d77c5b1c9a9c85b5b588d890" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
@@ -3444,7 +3488,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="25" column="15" declfile="rolly/string_util.h" declline="25" declcolumn="15"/>
+        <location file="rolly/string_util.h" line="26" column="17" declfile="rolly/string_util.h" declline="26" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1ab2f4183b11c82cc7bad02825b8e74717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="cpp/container/vector" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::vector</ref>&lt; <ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref> &gt;</type>
@@ -3465,7 +3509,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="31" column="15" declfile="rolly/string_util.h" declline="31" declcolumn="15"/>
+        <location file="rolly/string_util.h" line="32" column="17" declfile="rolly/string_util.h" declline="32" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a4cee505f1280fd2a0f8354e2efd7fd01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
@@ -3482,7 +3526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="37" column="15" declfile="rolly/string_util.h" declline="37" declcolumn="15"/>
+        <location file="rolly/string_util.h" line="38" column="17" declfile="rolly/string_util.h" declline="38" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a92f9cae32654fc69e69e56418a20c551" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3508,7 +3552,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="40" column="8" bodyfile="rolly/string_util.h" bodystart="40" bodyend="42"/>
+        <location file="rolly/string_util.h" line="41" column="8" bodyfile="rolly/string_util.h" bodystart="41" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a7f7b41082b35952624e4871f8ae855ed" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3534,7 +3578,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="45" column="8" bodyfile="rolly/string_util.h" bodystart="45" bodyend="47"/>
+        <location file="rolly/string_util.h" line="46" column="8" bodyfile="rolly/string_util.h" bodystart="46" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a9adf9e794ef1d06475cdfd66dd6a6b57" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3560,7 +3604,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="50" column="8" bodyfile="rolly/string_util.h" bodystart="50" bodyend="52"/>
+        <location file="rolly/string_util.h" line="51" column="8" bodyfile="rolly/string_util.h" bodystart="51" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a52f0f95f66a33f7d0b9198eaa16d5443" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3586,7 +3630,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="55" column="8" bodyfile="rolly/string_util.h" bodystart="55" bodyend="57"/>
+        <location file="rolly/string_util.h" line="56" column="8" bodyfile="rolly/string_util.h" bodystart="56" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a14d506298003ef35c958fe68476f4066" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3612,7 +3656,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="60" column="8" bodyfile="rolly/string_util.h" bodystart="60" bodyend="62"/>
+        <location file="rolly/string_util.h" line="61" column="8" bodyfile="rolly/string_util.h" bodystart="61" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a1ca483b4bf62bac4fa78ebf1c7795c04" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3638,7 +3682,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="65" column="8" bodyfile="rolly/string_util.h" bodystart="65" bodyend="67"/>
+        <location file="rolly/string_util.h" line="66" column="8" bodyfile="rolly/string_util.h" bodystart="66" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1aea74ed9754268ce0924b9578ff6cd02c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3664,7 +3708,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="70" column="8" bodyfile="rolly/string_util.h" bodystart="70" bodyend="72"/>
+        <location file="rolly/string_util.h" line="71" column="8" bodyfile="rolly/string_util.h" bodystart="71" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a0d34216c96023f88cd65d547a38b1616" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3690,7 +3734,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="75" column="8" bodyfile="rolly/string_util.h" bodystart="75" bodyend="77"/>
+        <location file="rolly/string_util.h" line="76" column="8" bodyfile="rolly/string_util.h" bodystart="76" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1acddd0f67ccfd58a04d5321b3dc5647ee" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3716,7 +3760,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="80" column="8" bodyfile="rolly/string_util.h" bodystart="80" bodyend="82"/>
+        <location file="rolly/string_util.h" line="81" column="8" bodyfile="rolly/string_util.h" bodystart="81" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a933cca7a9de88df2acc76cc8a2f3d488" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3742,7 +3786,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="85" column="8" bodyfile="rolly/string_util.h" bodystart="85" bodyend="87"/>
+        <location file="rolly/string_util.h" line="86" column="8" bodyfile="rolly/string_util.h" bodystart="86" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a03f2f18b9050b2aa9a69a73fed3806c4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3768,7 +3812,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="90" column="8" bodyfile="rolly/string_util.h" bodystart="90" bodyend="92"/>
+        <location file="rolly/string_util.h" line="91" column="8" bodyfile="rolly/string_util.h" bodystart="91" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a1c635fda25cb408b341062ad44576c45" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -3794,7 +3838,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/string_util.h" line="95" column="8" bodyfile="rolly/string_util.h" bodystart="95" bodyend="97"/>
+        <location file="rolly/string_util.h" line="96" column="8" bodyfile="rolly/string_util.h" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerolly_1a291b9522a9622bbdd81d59769ef184b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::string</ref></type>
+        <definition>std::string rolly::from_c_str</definition>
+        <argsstring>(char const *owned_str, int const size=-1, F &amp;&amp;dealloc_function=[](char const *ptr) { std::free(const_cast&lt; char * &gt;(ptr));})</argsstring>
+        <name>from_c_str</name>
+        <param>
+          <type>char const *</type>
+          <declname>owned_str</declname>
+        </param>
+        <param>
+          <type>int const</type>
+          <declname>size</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>dealloc_function</declname>
+          <defval>[](char const *ptr) { <ref refid="cpp/memory/c/free" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::free</ref>(const_cast&lt; char * &gt;(ptr));}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/string_util.h" line="102" column="16" bodyfile="rolly/string_util.h" bodystart="102" bodyend="117"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1literals_1adcd4361bfe366803ba692d748c203b47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">types::guid</ref></type>

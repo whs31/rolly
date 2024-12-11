@@ -4,9 +4,9 @@
     <compoundname>memory.h</compoundname>
     <includes refid="box_8h" local="yes">memory/box.h</includes>
     <includes refid="deleter_8h" local="yes">memory/deleter.h</includes>
+    <includes refid="observer__ptr_8h" local="yes">memory/observer_ptr.h</includes>
     <includes refid="owner_8h" local="yes">memory/owner.h</includes>
     <includes refid="propagate__const_8h" local="yes">memory/propagate_const.h</includes>
-    <includes refid="observer__ptr_8h" local="yes">memory/observer_ptr.h</includes>
     <includedby refid="rolly_8h" local="yes">rolly.h</includedby>
     <incdepgraph>
       <node id="13">
@@ -21,7 +21,7 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="28">
+      <node id="30">
         <label>memory/owner.h</label>
         <link refid="owner_8h_source"/>
         <childnode refid="21" relation="include">
@@ -73,7 +73,7 @@
         <label>platform_definitions.h</label>
         <link refid="platform__definitions_8h_source"/>
       </node>
-      <node id="29">
+      <node id="31">
         <label>memory/propagate_const.h</label>
         <link refid="propagate__const_8h_source"/>
         <childnode refid="25" relation="include">
@@ -90,9 +90,9 @@
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
         <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -178,7 +178,7 @@
       <node id="19">
         <label>type_traits</label>
       </node>
-      <node id="30">
+      <node id="28">
         <label>memory/observer_ptr.h</label>
         <link refid="observer__ptr_8h_source"/>
         <childnode refid="19" relation="include">
@@ -187,7 +187,7 @@
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
@@ -196,7 +196,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="31">
+      <node id="29">
         <label>algorithm</label>
       </node>
       <node id="3">

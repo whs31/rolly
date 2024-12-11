@@ -4,6 +4,7 @@
     <compoundname>functional</compoundname>
     <innerfile refid="lazy_8h">lazy.h</innerfile>
     <innerfile refid="overload_8h">overload.h</innerfile>
+    <innerfile refid="scope__guard_8h">scope_guard.h</innerfile>
     <innerfile refid="signals_8h">signals.h</innerfile>
     <briefdescription>
     </briefdescription>

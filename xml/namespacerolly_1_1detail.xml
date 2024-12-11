@@ -3,10 +3,11 @@
   <compounddef id="namespacerolly_1_1detail" kind="namespace" language="C++">
     <compoundname>rolly::detail</compoundname>
     <innerclass refid="structrolly_1_1detail_1_1observer__type" prot="public">rolly::detail::observer_type</innerclass>
+    <innerclass refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4" prot="public">rolly::detail::scope_guard&lt; Callback &gt;</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="rolly/functional/signals.h" line="21" column="18"/>
+    <location file="rolly/functional/scope_guard.h" line="49" column="20"/>
   </compounddef>
 </doxygen>

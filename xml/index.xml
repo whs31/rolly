@@ -1129,6 +1129,21 @@
     <member refid="classrolly_1_1io_1_1filedevice_1a0216cd840232d838604b8f3f859eedde" kind="function"><name>write_to</name></member>
     <member refid="classrolly_1_1io_1_1filedevice_1a56105d753006a32aa832a7ad76390f01" kind="function"><name>try_write_to</name></member>
   </compound>
+  <compound refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4" kind="class"><name>rolly::detail::scope_guard&lt; Callback &gt;</name>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a9f27bef80f163eca081ce6565cf3a0fb" kind="typedef"><name>callback_type</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a485684d0af16d85d518d9d5464eec866" kind="variable"><name>callback_</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a121aee969503dcc0f2d4ff4879d9c4d9" kind="variable"><name>active_</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a69ca18c6c28c0e33e3679505ef4d771f" kind="function"><name>scope_guard</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1aea8fbe701e6ef7142864639b359f0e77" kind="function"><name>~scope_guard</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1adc1e78586f22a3374408147008cf62f5" kind="function"><name>dismiss</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a264cb267383c2a19f50c2f47cbfd6988" kind="function"><name>scope_guard</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1acd379cdb92afc7c67a19af4f1a7648d0" kind="function"><name>scope_guard</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a608cb1b592a7e427797c986a2439d2f1" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1aea5f932580dcd7a1ba0e2a258a1c4543" kind="function"><name>operator=</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1ae0587b5bfbb0218c4a06d54e82928e71" kind="function"><name>scope_guard</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a9156a1678c43bf919427ed54c14c3fab" kind="friend"><name>make_scope_guard</name></member>
+    <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a2bf6838b82911776d518fff89d1e9bc1" kind="friend"><name>finally</name></member>
+  </compound>
   <compound refid="classscoped__connection" kind="class"><name>scoped_connection</name>
     <member refid="classscoped__connection_1adbb76e465a87aaefbf548116710130bf" kind="friend"><name>signal_base</name></member>
     <member refid="classscoped__connection_1a84c1dfb65c3cad698d425a9cf0f9a7dd" kind="function"><name>scoped_connection</name></member>
@@ -1184,8 +1199,6 @@
     <member refid="classrolly_1_1dll_1_1shared__library_1aad536e71012b5d60d29287b7f644f236" kind="function"><name>try_load</name></member>
     <member refid="classrolly_1_1dll_1_1shared__library_1a17e0e86fbb2456154de9f88bc60bb2f0" kind="function"><name>locate_entry</name></member>
   </compound>
-  <compound refid="classrolly_1_1signal__base" kind="class"><name>rolly::signal_base</name>
-  </compound>
   <compound refid="classsignal__base" kind="class"><name>signal_base</name>
     <member refid="classsignal__base_1a3c85546c070f774e5b17b5ca08ef358f" kind="typedef"><name>is_thread_safe</name></member>
     <member refid="classsignal__base_1a21aaaef7b9d12121c5af4d27bf3f69e4" kind="typedef"><name>cow_type</name></member>
@@ -1230,6 +1243,8 @@
     <member refid="classsignal__base_1a0252893d2737887db21bcf4aa72565e8" kind="function"><name>add_slot</name></member>
     <member refid="classsignal__base_1a4a32613c3e2a34e14b3b2e32cb2793c4" kind="function"><name>disconnect_if</name></member>
     <member refid="classsignal__base_1ac8bb3912a3ce86b15842e79d0b421204" kind="function"><name>clear</name></member>
+  </compound>
+  <compound refid="classrolly_1_1signal__base" kind="class"><name>rolly::signal_base</name>
   </compound>
   <compound refid="structdetail_1_1signal__wrapper" kind="struct"><name>detail::signal_wrapper</name>
     <member refid="structdetail_1_1signal__wrapper_1aa67c6d97c8157251cb1e553ca1a4045b" kind="variable"><name>m_sig</name></member>
@@ -1955,6 +1970,8 @@
     <member refid="namespacerolly_1a5764cccca8658c6880ab03364b4fcda5" kind="function"><name>to_big_endian</name></member>
     <member refid="namespacerolly_1a571786331157b178e73d2ac05d14751b" kind="function"><name>to_little_endian</name></member>
     <member refid="namespacerolly_1a702fe0cca3278589eeca41da81cd2e5b" kind="function"><name>lazy</name></member>
+    <member refid="namespacerolly_1aa35f813801eb7ac52aa1c8587977ad17" kind="function"><name>make_scope_guard</name></member>
+    <member refid="namespacerolly_1aa8f1940f8f3a0e0651214247e7379a76" kind="function"><name>finally</name></member>
     <member refid="namespacerolly_1a373760a3c5836375681456b6c51f1e93" kind="function"><name>to_lower</name></member>
     <member refid="namespacerolly_1a6f31057710263260dde372ac14417b07" kind="function"><name>is_digit</name></member>
     <member refid="namespacerolly_1a68be1add7d0d715e53b0689ac056f0d2" kind="function"><name>is_space</name></member>
@@ -2033,6 +2050,7 @@
     <member refid="namespacerolly_1a933cca7a9de88df2acc76cc8a2f3d488" kind="function"><name>ends_with</name></member>
     <member refid="namespacerolly_1a03f2f18b9050b2aa9a69a73fed3806c4" kind="function"><name>ends_with</name></member>
     <member refid="namespacerolly_1a1c635fda25cb408b341062ad44576c45" kind="function"><name>ends_with</name></member>
+    <member refid="namespacerolly_1a291b9522a9622bbdd81d59769ef184b7" kind="function"><name>from_c_str</name></member>
     <member refid="namespacerolly_1_1literals_1adcd4361bfe366803ba692d748c203b47" kind="function"><name>operator&quot;&quot;_guid</name></member>
     <member refid="namespacerolly_1ae42bed75bde5f4d4e4c715b00c5cdec5" kind="function"><name>operator==</name></member>
     <member refid="namespacerolly_1aaeabd0a43849c96e6a189456e64a9e80" kind="function"><name>operator!=</name></member>
@@ -3143,6 +3161,10 @@
   </compound>
   <compound refid="savefile_8h" kind="file"><name>savefile.h</name>
   </compound>
+  <compound refid="scope__guard_8h" kind="file"><name>scope_guard.h</name>
+    <member refid="namespacerolly_1aa35f813801eb7ac52aa1c8587977ad17" kind="function"><name>make_scope_guard</name></member>
+    <member refid="namespacerolly_1aa8f1940f8f3a0e0651214247e7379a76" kind="function"><name>finally</name></member>
+  </compound>
   <compound refid="semver_8h" kind="file"><name>semver.h</name>
     <member refid="semver_8h_1a5f68fcfa657eb6fe30663458b8ed0634" kind="define"><name>ROLLY_SEMVER_CONSTEXPR</name></member>
     <member refid="namespacerolly_1afd32bbfaaac78f0211ed4bcc528b15de" kind="enum"><name>prerelease</name></member>
@@ -3281,6 +3303,7 @@
     <member refid="namespacerolly_1a933cca7a9de88df2acc76cc8a2f3d488" kind="function"><name>ends_with</name></member>
     <member refid="namespacerolly_1a03f2f18b9050b2aa9a69a73fed3806c4" kind="function"><name>ends_with</name></member>
     <member refid="namespacerolly_1a1c635fda25cb408b341062ad44576c45" kind="function"><name>ends_with</name></member>
+    <member refid="namespacerolly_1a291b9522a9622bbdd81d59769ef184b7" kind="function"><name>from_c_str</name></member>
   </compound>
   <compound refid="tags_8h" kind="file"><name>tags.h</name>
   </compound>
