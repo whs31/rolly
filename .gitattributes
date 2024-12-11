@@ -2,7 +2,6 @@
 
 *.yml linguist-detectable=true
 *.json linguist-detectable=true
-*.xml linguist-detectable=true
 *.sh linguist-detectable=true
 *.toml linguist-detectable=true
 *.csv linguist-detectable=true
