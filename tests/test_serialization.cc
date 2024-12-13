@@ -19,7 +19,7 @@ struct DummyConfiguration {
       bool tcp = true;
       bool udp = false;
     } sock_mode {};
-  } ip_address = {.ip = "127.0.0.1", .port = 25'565};
+  } ip_address = {"127.0.0.1", 25'565};
 };
 
 struct TestStruct {
@@ -31,7 +31,7 @@ DECLARE_SERIALIZABLE(TestStruct, rolly::serialization::format::json) {
   return fmt::format(R"({{"a": {}, "b": {}}})", value.a, value.b);
 }
 
-DECLARE_DESERIALIZABLE(TestStruct, rolly::serialization::format::json) { return {.a = 1, .b = 2}; }
+DECLARE_DESERIALIZABLE(TestStruct, rolly::serialization::format::json) { return {1,  2}; }
 
 DECLARE_SERIALIZABLE(DummyConfiguration, rolly::serialization::format::toml) {
   auto const out = toml::table {

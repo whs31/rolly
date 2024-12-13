@@ -4,6 +4,10 @@
 #include "global/definitions.h"
 #include "types/stdint.h"
 
+#if defined(ROLLY_COMPAT) && defined(_MSC_VER)
+# include <ciso646>
+#endif
+
 namespace rolly {
   /**
    * @brief Provides information about the location of the current source file.

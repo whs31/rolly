@@ -1,5 +1,5 @@
 /**
- * @file fl/global/export.h
+ * @file rolly/global/export.h
  * @brief Export macros for the <b>rolly</b> library.
  */
 
@@ -19,11 +19,11 @@
 #endif    // defined(_WIN32)
 // NOLINTEND(*-reserved-identifier, *-identifier-naming, *-macro-usage)
 
-#if not defined(ROLLY_COMPAT) or defined(DOXYGEN_GENERATING_OUTPUT)
+#if !defined(ROLLY_COMPAT) || defined(DOXYGEN_GENERATING_OUTPUT)
 #  define ___rolly_cxx20___
 #endif  // __cplusplus >= 202002L
 
 /**
- * @brief Main namespace for the <b>rolly</b> library.
+ * @brief Main namespace for the **rolly** library.
  */
 namespace rolly {}  // namespace rolly

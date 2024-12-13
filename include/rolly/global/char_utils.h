@@ -4,6 +4,10 @@
 #include <string_view>
 #include <fmt/format.h>
 
+#if defined(ROLLY_COMPAT) && defined(_MSC_VER)
+# include <ciso646>
+#endif
+
 namespace rolly {
   [[nodiscard]] constexpr char to_lower(char c) noexcept {
     return (c >= 'A' and c <= 'Z') ? static_cast<char>(c + ('a' - 'A')) : c;
