@@ -4,12 +4,13 @@
     <compoundname>standard_copyable_and_movable.h</compoundname>
     <includes local="no">type_traits</includes>
     <includes refid="definitions_8h" local="yes">../global/definitions.h</includes>
+    <includes local="no">concepts</includes>
     <includedby refid="concepts_8h" local="yes">concepts.h</includedby>
     <includedby refid="lazy_8h" local="yes">lazy.h</includedby>
     <incdepgraph>
       <node id="4">
         <label>export.h</label>
-        <link refid="export_8h_source"/>
+        <link refid="export_8h"/>
       </node>
       <node id="5">
         <label>platform_definitions.h</label>
@@ -30,6 +31,11 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>concepts</label>
       </node>
       <node id="2">
         <label>type_traits</label>

@@ -176,7 +176,7 @@
             </dt>
             <dd>Applies the function <strong>fn</strong> to each component of the <a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename F&gt;</div>
+              <div class="m-doc-template">template&lt;std::invocable&lt;<a href="classrolly_1_1types_1_1vector2d.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a>, <a href="classrolly_1_1types_1_1vector2d.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a>&gt; F&gt;</div>
               <span class="m-dox-wrap-bumper">auto <a href="#a9287d4cce8079a793e2afe63a8ec60d0" class="m-dox">zip</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a> const&amp; other,
               F&amp;&amp; fn) const <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
@@ -361,7 +361,7 @@
             </dt>
             <dd>Returns <code>true</code> if the vector is not equal to the other vector.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Q&gt;</div>
+              <div class="m-doc-template">template&lt;concepts::any_of&lt;<a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>, <a href="classrolly_1_1types_1_1vector2d.html#aca415dad69e458881b26ebb293dadd03" class="m-doc">size2d_<wbr />type</a>&gt; Q&gt;</div>
               <span class="m-dox-wrap-bumper">auto <a href="#a50628fcf9d858a6a4c7c13076479b2dd" class="m-dox">operator+</a>(</span><span class="m-dox-wrap">Q const&amp; other) const -&gt; <a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Adds vector and either <a href="structrolly_1_1types_1_1point2d.html" class="m-doc">point2d</a>, <a href="structrolly_1_1types_1_1size2d.html" class="m-doc">size2d</a> or <a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>.</dd>
@@ -370,7 +370,7 @@
             </dt>
             <dd>Returns <code>true</code> if the vector is equal to the other vector.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Q&gt;</div>
+              <div class="m-doc-template">template&lt;concepts::any_of&lt;<a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>, <a href="classrolly_1_1types_1_1vector2d.html#aca415dad69e458881b26ebb293dadd03" class="m-doc">size2d_<wbr />type</a>&gt; Q&gt;</div>
               <span class="m-dox-wrap-bumper">auto <a href="#ad1de12dc49fa4dcea5ed19214ea7cfd5" class="m-dox">operator-</a>(</span><span class="m-dox-wrap">Q const&amp; other) const -&gt; <a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Subtracts vector and either <a href="structrolly_1_1types_1_1point2d.html" class="m-doc">point2d</a>, <a href="structrolly_1_1types_1_1size2d.html" class="m-doc">size2d</a> or <a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>.</dd>
@@ -383,12 +383,12 @@
             </dt>
             <dd>Divides vector by a scalar.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Q&gt;</div>
+              <div class="m-doc-template">template&lt;concepts::any_of&lt;<a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>, <a href="classrolly_1_1types_1_1vector2d.html#aca415dad69e458881b26ebb293dadd03" class="m-doc">size2d_<wbr />type</a>&gt; Q&gt;</div>
               <span class="m-dox-wrap-bumper">auto <a href="#aa6529687089035a3f4a5cd8814749e01" class="m-dox">operator+=</a>(</span><span class="m-dox-wrap">Q const&amp; other) -&gt; <a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Adds vector and either <a href="structrolly_1_1types_1_1point2d.html" class="m-doc">point2d</a>, <a href="structrolly_1_1types_1_1size2d.html" class="m-doc">size2d</a> or <a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Q&gt;</div>
+              <div class="m-doc-template">template&lt;concepts::any_of&lt;<a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>, <a href="classrolly_1_1types_1_1vector2d.html#aca415dad69e458881b26ebb293dadd03" class="m-doc">size2d_<wbr />type</a>&gt; Q&gt;</div>
               <span class="m-dox-wrap-bumper">auto <a href="#a07632ba1cb25331e137a0ad94a936845" class="m-dox">operator-=</a>(</span><span class="m-dox-wrap">Q const&amp; other) -&gt; <a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Subtracts vector and either <a href="structrolly_1_1types_1_1point2d.html" class="m-doc">point2d</a>, <a href="structrolly_1_1types_1_1size2d.html" class="m-doc">size2d</a> or <a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>.</dd>
@@ -747,7 +747,7 @@
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vector2d_8h.html">&lt;rolly/types/vector2d.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
-                template&lt;typename F&gt;
+                template&lt;std::invocable&lt;<a href="classrolly_1_1types_1_1vector2d.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a>, <a href="classrolly_1_1types_1_1vector2d.html#a107b40f8f53dbbb17f9224074426b8e6" class="m-doc">number_<wbr />type</a>&gt; F&gt;
               </div>
               <span class="m-doc-wrap-bumper">auto rolly::<wbr />types::<wbr />vector2d&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9287d4cce8079a793e2afe63a8ec60d0" class="m-doc-self">zip</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a> const&amp; other,
               F&amp;&amp; fn) const <span class="m-label m-primary">constexpr</span></span></span>
@@ -1578,7 +1578,7 @@
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vector2d_8h.html">&lt;rolly/types/vector2d.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
-                template&lt;typename Q&gt;
+                template&lt;concepts::any_of&lt;<a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>, <a href="classrolly_1_1types_1_1vector2d.html#aca415dad69e458881b26ebb293dadd03" class="m-doc">size2d_<wbr />type</a>&gt; Q&gt;
               </div>
               <span class="m-doc-wrap-bumper"><a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a> rolly::<wbr />types::<wbr />vector2d&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a50628fcf9d858a6a4c7c13076479b2dd" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">Q const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
@@ -1642,7 +1642,7 @@
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vector2d_8h.html">&lt;rolly/types/vector2d.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
-                template&lt;typename Q&gt;
+                template&lt;concepts::any_of&lt;<a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>, <a href="classrolly_1_1types_1_1vector2d.html#aca415dad69e458881b26ebb293dadd03" class="m-doc">size2d_<wbr />type</a>&gt; Q&gt;
               </div>
               <span class="m-doc-wrap-bumper"><a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a> rolly::<wbr />types::<wbr />vector2d&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1de12dc49fa4dcea5ed19214ea7cfd5" class="m-doc-self">operator-</a>(</span><span class="m-doc-wrap">Q const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
@@ -1733,7 +1733,7 @@
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vector2d_8h.html">&lt;rolly/types/vector2d.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
-                template&lt;typename Q&gt;
+                template&lt;concepts::any_of&lt;<a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>, <a href="classrolly_1_1types_1_1vector2d.html#aca415dad69e458881b26ebb293dadd03" class="m-doc">size2d_<wbr />type</a>&gt; Q&gt;
               </div>
               <span class="m-doc-wrap-bumper"><a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>&amp; rolly::<wbr />types::<wbr />vector2d&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa6529687089035a3f4a5cd8814749e01" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">Q const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
@@ -1770,7 +1770,7 @@
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vector2d_8h.html">&lt;rolly/types/vector2d.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;<a href="namespacerolly_1_1concepts.html#aea9bb2c4075cdbbe6ae4d3b6eef46cda" class="m-doc">concepts::<wbr />num</a> T&gt;
-                template&lt;typename Q&gt;
+                template&lt;concepts::any_of&lt;<a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>, <a href="classrolly_1_1types_1_1vector2d.html#aca415dad69e458881b26ebb293dadd03" class="m-doc">size2d_<wbr />type</a>&gt; Q&gt;
               </div>
               <span class="m-doc-wrap-bumper"><a href="classrolly_1_1types_1_1vector2d.html" class="m-doc">vector2d</a>&amp; rolly::<wbr />types::<wbr />vector2d&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a07632ba1cb25331e137a0ad94a936845" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap">Q const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
             </h3>

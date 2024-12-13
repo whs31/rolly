@@ -93,7 +93,7 @@
       </node>
       <node id="9">
         <label>global/export.h</label>
-        <link refid="export_8h_source"/>
+        <link refid="export_8h"/>
       </node>
       <node id="31">
         <label>exception/serialization_error.h</label>

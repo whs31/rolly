@@ -99,7 +99,7 @@
       </node>
       <node id="6">
         <label>export.h</label>
-        <link refid="export_8h_source"/>
+        <link refid="export_8h"/>
       </node>
       <node id="8">
         <label>exception</label>

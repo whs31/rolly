@@ -694,6 +694,75 @@
         </inbodydescription>
         <location file="rolly/memory/box.h" line="283" column="8" bodyfile="rolly/memory/box.h" bodystart="283" bodyend="285"/>
       </memberdef>
+      <memberdef kind="function" id="classrolly_1_1box_1ab5c7852b2e49020a194a3a07be285b9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto operator&lt;=&gt;</definition>
+        <argsstring>(box&lt; T1 &gt; const &amp;a, box&lt; T2 &gt; const &amp;b)</argsstring>
+        <name>operator</name>
+        <param>
+          <type><ref refid="classrolly_1_1box" kindref="compound">box</ref>&lt; T1 &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classrolly_1_1box" kindref="compound">box</ref>&lt; T2 &gt; const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Compares two boxes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying type of the first box. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>T2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying type of the second box. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First box. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second box. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Comparison result.</para>
+</simplesect>
+<simplesect kind="note"><para>Available only in C++20 mode. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/memory/box.h" line="299" column="3" bodyfile="rolly/memory/box.h" bodystart="299" bodyend="301"/>
+      </memberdef>
       <memberdef kind="function" id="classrolly_1_1box_1ab9d725bfb8d8ec7fb6fbcb81747dfec6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -814,6 +883,7 @@
       <member refid="classrolly_1_1box_1a3a38fffc60700f0adc5c350b7760b89f" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>make</name></member>
       <member refid="classrolly_1_1box_1a07aa0f8c95fa45034be5f9d7f123c940" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>make</name></member>
       <member refid="classrolly_1_1box_1a3760e8162b1f9666221102a3c86866e9" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>make_box</name></member>
+      <member refid="classrolly_1_1box_1ab5c7852b2e49020a194a3a07be285b9e" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>operator</name></member>
       <member refid="classrolly_1_1box_1a420e60e9788bfa3b52aa3aab72ea3a5e" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>operator bool</name></member>
       <member refid="classrolly_1_1box_1af7f8c6b921dca2b94f6e7ee14e762770" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>operator*</name></member>
       <member refid="classrolly_1_1box_1a8ec41dd70ff70ec41c5f17918604b3ad" prot="public" virt="non-virtual"><scope>rolly::box</scope><name>operator*</name></member>

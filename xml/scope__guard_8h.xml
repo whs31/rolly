@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="95" column="32" bodyfile="rolly/functional/scope_guard.h" bodystart="95" bodyend="99"/>
+        <location file="rolly/functional/scope_guard.h" line="98" column="32" bodyfile="rolly/functional/scope_guard.h" bodystart="98" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1aa8f1940f8f3a0e0651214247e7379a76" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="102" column="32" bodyfile="rolly/functional/scope_guard.h" bodystart="102" bodyend="106"/>
+        <location file="rolly/functional/scope_guard.h" line="105" column="32" bodyfile="rolly/functional/scope_guard.h" bodystart="105" bodyend="109"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

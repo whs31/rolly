@@ -410,7 +410,7 @@ Example values of app: <itemizedlist>
 </parameterlist>
 <simplesect kind="note"><para>Use explicit functions such as <ref refid="classrolly_1_1application__dirs_1a59c6f1acf971116e29638f2603ddab24" kindref="member">application_dirs::config_dir</ref> to avoid this exception. </para>
 </simplesect>
-<simplesect kind="see"><para>operator[] </para>
+<simplesect kind="see"><para><ref refid="classrolly_1_1box_1ab5c7852b2e49020a194a3a07be285b9e" kindref="member">operator</ref>[] </para>
 </simplesect>
 </para>
         </detaileddescription>

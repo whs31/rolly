@@ -28,7 +28,7 @@
       </node>
       <node id="6">
         <label>global/export.h</label>
-        <link refid="export_8h_source"/>
+        <link refid="export_8h"/>
       </node>
       <node id="4">
         <label>string_view</label>

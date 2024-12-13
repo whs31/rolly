@@ -21,7 +21,7 @@
         <definition>concept serializable</definition>
         <argsstring></argsstring>
         <name>serializable</name>
-        <initializer>= requires(T const&amp; t) {
+        <initializer>= <ref refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kindref="member">requires</ref>(T const&amp; t) {
     { serialize&lt;F, T, C&gt;(t) } -&gt; std::convertible_to&lt;<ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt;C&gt;&gt;;
   }</initializer>
         <briefdescription>
@@ -49,7 +49,7 @@
         <definition>concept deserializable</definition>
         <argsstring></argsstring>
         <name>deserializable</name>
-        <initializer>= requires(<ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt;C&gt; const&amp; str) {
+        <initializer>= <ref refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kindref="member">requires</ref>(<ref refid="cpp/string/basic_string" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::basic_string</ref>&lt;C&gt; const&amp; str) {
     { deserialize&lt;F, T, C&gt;(str) } -&gt; std::convertible_to&lt;T&gt;;
   }</initializer>
         <briefdescription>

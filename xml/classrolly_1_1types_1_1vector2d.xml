@@ -283,7 +283,9 @@
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a9287d4cce8079a793e2afe63a8ec60d0" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename F</type>
+            <type>std::invocable&lt; <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
+            <declname>F</declname>
+            <defname>F</defname>
           </param>
         </templateparamlist>
         <type>constexpr auto</type>
@@ -1299,7 +1301,9 @@
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a50628fcf9d858a6a4c7c13076479b2dd" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1373,7 +1377,9 @@
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1ad1de12dc49fa4dcea5ed19214ea7cfd5" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref></type>
@@ -1477,7 +1483,9 @@
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1aa6529687089035a3f4a5cd8814749e01" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> &amp;</type>
@@ -1521,7 +1529,9 @@
       <memberdef kind="function" id="classrolly_1_1types_1_1vector2d_1a07632ba1cb25331e137a0ad94a936845" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref>, <ref refid="classrolly_1_1types_1_1vector2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="classrolly_1_1types_1_1vector2d" kindref="compound">vector2d</ref> &amp;</type>

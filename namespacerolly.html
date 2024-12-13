@@ -1202,25 +1202,22 @@
             <dd>Converts an enumeration value to its underlying type.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#abf3ef4a99974a2fcedfe0ac54b5ce08b" class="m-dox">operator|</a>(</span><span class="m-dox-wrap">T const lhs,
-              T const rhs) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper"><a href="#a6d52381572c2e07d26fe0f098e415fe5" class="m-dox">requires</a>(</span><span class="m-dox-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_or(e);} or requires(T e) { enum_flag(e);}) const expr T operator|(T const lhs</span>
             </dt>
             <dd>Generic bitwise <strong>or</strong> operator for enum types.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a465d8eeb6dc8eb48d3dbcc894577fc01" class="m-dox">operator&amp;</a>(</span><span class="m-dox-wrap">T const lhs,
-              T const rhs) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper"><a href="#a20e28b3aab12b53a988da11bc35d96d9" class="m-dox">requires</a>(</span><span class="m-dox-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_and(e);} or requires(T e) { enum_flag(e);}) const expr T operator&amp;(T const lhs</span>
             </dt>
             <dd>Generic bitwise <strong>and</strong> operator for enum types.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a93cbb2ec6fa2e2831cc8f031e5e2643b" class="m-dox">operator^</a>(</span><span class="m-dox-wrap">T const lhs,
-              T const rhs) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper"><a href="#a3e3a83dfbd448a580a08b4857294dee3" class="m-dox">requires</a>(</span><span class="m-dox-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_xor(e);} or requires(T e) { enum_flag(e);}) const expr T operator^(T const lhs</span>
             </dt>
             <dd>Generic bitwise <strong>xor</strong> operator for enum types.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a73fb6abc29e2a6fc0e6a4f71f4500a79" class="m-dox">operator~</a>(</span><span class="m-dox-wrap">T const value) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper"><a href="#ab240fea9981964f1f2100d4a7787ca13" class="m-dox">requires</a>(</span><span class="m-dox-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_not(e);} or requires(T e) { enum_flag(e);}) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Generic bitwise <strong>not</strong> operator for enum types.</dd>
           </dl>
@@ -1315,6 +1312,10 @@
               auto <a href="#a9365b793fe547271e48fa719a7f4854d" class="m-doc">none</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
             <dd>Wrap an empty value in an optional.</dd>
+            <dt>
+              const T rhs <a href="#ab57bc985e0598a50255c0a376299d7b4" class="m-doc">noexcept</a>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section>
@@ -2773,14 +2774,13 @@
             </table>
 <p>This is a convenience function for converting an enumeration value to its underlying type. It is a generic version of the C++23 std::to_underlying function.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="https://en.cppreference.com/w/cpp/utility/to_underlying">https://en.cppreference.com/w/cpp/utility/to_<wbr />underlying</a></p></aside>
           </div></section>
-          <section class="m-doc-details" id="abf3ef4a99974a2fcedfe0ac54b5ce08b"><div>
+          <section class="m-doc-details" id="a6d52381572c2e07d26fe0f098e415fe5"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">T rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abf3ef4a99974a2fcedfe0ac54b5ce08b" class="m-doc-self">operator|</a>(</span><span class="m-doc-wrap">T const lhs,
-              T const rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d52381572c2e07d26fe0f098e415fe5" class="m-doc-self">requires</a>(</span><span class="m-doc-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_or(e);} or requires(T e) { enum_flag(e);}) const expr T operator|(T const lhs</span></span>
             </h3>
             <p>Generic bitwise <strong>or</strong> operator for enum types.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -2791,19 +2791,6 @@
                 <tr>
                   <td style="width: 1%">T</td>
                   <td>Enum type</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>lhs</td>
-                  <td>Left operand</td>
-                </tr>
-                <tr>
-                  <td>rhs</td>
-                  <td>Right operand</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -2827,14 +2814,13 @@
 
 <span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Example</span><span class="o">::</span><span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Example</span><span class="o">::</span><span class="n">B</span><span class="p">;</span></pre>
           </div></section>
-          <section class="m-doc-details" id="a465d8eeb6dc8eb48d3dbcc894577fc01"><div>
+          <section class="m-doc-details" id="a20e28b3aab12b53a988da11bc35d96d9"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">T rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a465d8eeb6dc8eb48d3dbcc894577fc01" class="m-doc-self">operator&amp;</a>(</span><span class="m-doc-wrap">T const lhs,
-              T const rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20e28b3aab12b53a988da11bc35d96d9" class="m-doc-self">requires</a>(</span><span class="m-doc-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_and(e);} or requires(T e) { enum_flag(e);}) const expr T operator&amp;(T const lhs</span></span>
             </h3>
             <p>Generic bitwise <strong>and</strong> operator for enum types.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -2845,19 +2831,6 @@
                 <tr>
                   <td style="width: 1%">T</td>
                   <td>Enum type</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>lhs</td>
-                  <td>Left operand</td>
-                </tr>
-                <tr>
-                  <td>rhs</td>
-                  <td>Right operand</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -2881,14 +2854,13 @@
 
 <span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Example</span><span class="o">::</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Example</span><span class="o">::</span><span class="n">B</span><span class="p">;</span></pre>
           </div></section>
-          <section class="m-doc-details" id="a93cbb2ec6fa2e2831cc8f031e5e2643b"><div>
+          <section class="m-doc-details" id="a3e3a83dfbd448a580a08b4857294dee3"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">T rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a93cbb2ec6fa2e2831cc8f031e5e2643b" class="m-doc-self">operator^</a>(</span><span class="m-doc-wrap">T const lhs,
-              T const rhs) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3e3a83dfbd448a580a08b4857294dee3" class="m-doc-self">requires</a>(</span><span class="m-doc-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_xor(e);} or requires(T e) { enum_flag(e);}) const expr T operator^(T const lhs</span></span>
             </h3>
             <p>Generic bitwise <strong>xor</strong> operator for enum types.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -2899,19 +2871,6 @@
                 <tr>
                   <td style="width: 1%">T</td>
                   <td>Enum type</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>lhs</td>
-                  <td>Left operand</td>
-                </tr>
-                <tr>
-                  <td>rhs</td>
-                  <td>Right operand</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -2935,13 +2894,13 @@
 
 <span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Example</span><span class="o">::</span><span class="n">A</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">Example</span><span class="o">::</span><span class="n">B</span><span class="p">;</span></pre>
           </div></section>
-          <section class="m-doc-details" id="a73fb6abc29e2a6fc0e6a4f71f4500a79"><div>
+          <section class="m-doc-details" id="ab240fea9981964f1f2100d4a7787ca13"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">T rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a73fb6abc29e2a6fc0e6a4f71f4500a79" class="m-doc-self">operator~</a>(</span><span class="m-doc-wrap">T const value) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab240fea9981964f1f2100d4a7787ca13" class="m-doc-self">requires</a>(</span><span class="m-doc-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_not(e);} or requires(T e) { enum_flag(e);}) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Generic bitwise <strong>not</strong> operator for enum types.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -3129,6 +3088,13 @@
             </h3>
             <p>Wrap an empty value in an optional.</p>
 <p>This function is a helper for creating an optional from a value. It is mostly useful when working with generic code that needs to work with both expected and optional types.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="namespacerolly_1_1types.html#a80f2e5353f29a764733f510a9a2481c9" class="m-doc">ok</a></p><p><a href="namespacerolly.html#a4d27def5f33f561207ecbc421b842d55" class="m-doc">some</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="ab57bc985e0598a50255c0a376299d7b4"><div>
+            <h3>
+              const T rhs rolly::<wbr /><a href="#ab57bc985e0598a50255c0a376299d7b4" class="m-doc-self">noexcept</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
           </div></section>
         </section>
       </div>

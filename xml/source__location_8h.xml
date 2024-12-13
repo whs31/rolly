@@ -28,7 +28,7 @@
       </node>
       <node id="8">
         <label>export.h</label>
-        <link refid="export_8h_source"/>
+        <link refid="export_8h"/>
       </node>
       <node id="9">
         <label>platform_definitions.h</label>
@@ -274,7 +274,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="1" column="0" bodyfile="rolly/source_location.h" bodystart="123" bodyend="134"/>
+        <location file="rolly/source_location.h" line="1" column="0" bodyfile="rolly/source_location.h" bodystart="127" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1ac8e7afed7eafff55cdb28549abe23c74" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -295,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="136" column="15" bodyfile="rolly/source_location.h" bodystart="136" bodyend="139"/>
+        <location file="rolly/source_location.h" line="140" column="15" bodyfile="rolly/source_location.h" bodystart="140" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1ae7474ad0df463e7fc1cb98605706c3bb" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -316,7 +316,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="141" column="15" bodyfile="rolly/source_location.h" bodystart="141" bodyend="143"/>
+        <location file="rolly/source_location.h" line="145" column="15" bodyfile="rolly/source_location.h" bodystart="145" bodyend="147"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

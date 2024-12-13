@@ -24,7 +24,7 @@
       </node>
       <node id="7">
         <label>global/export.h</label>
-        <link refid="export_8h_source"/>
+        <link refid="export_8h"/>
       </node>
       <node id="1">
         <label>serialization_error.h</label>

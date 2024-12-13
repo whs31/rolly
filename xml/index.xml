@@ -216,6 +216,7 @@
     <member refid="classrolly_1_1box_1a07aa0f8c95fa45034be5f9d7f123c940" kind="function"><name>make</name></member>
     <member refid="classrolly_1_1box_1a0c1fd9156b859a52a4928f84cefd6777" kind="function"><name>box</name></member>
     <member refid="classrolly_1_1box_1a3760e8162b1f9666221102a3c86866e9" kind="function"><name>make_box</name></member>
+    <member refid="classrolly_1_1box_1ab5c7852b2e49020a194a3a07be285b9e" kind="function"><name>operator</name></member>
     <member refid="classrolly_1_1box_1ab9d725bfb8d8ec7fb6fbcb81747dfec6" kind="function"><name>swap</name></member>
   </compound>
   <compound refid="structrolly_1_1serialization_1_1format_1_1bson" kind="struct"><name>rolly::serialization::format::bson</name>
@@ -1961,6 +1962,7 @@
     <member refid="namespacerolly_1a4a2bc3187d7a879894ffd775ab861ac7" kind="variable"><name>is_qgadget_v</name></member>
     <member refid="namespacerolly_1a3052f5fbb6fc7bc98ecb11360c416a8f" kind="variable"><name>nullopt</name></member>
     <member refid="namespacerolly_1a9365b793fe547271e48fa719a7f4854d" kind="variable"><name>none</name></member>
+    <member refid="namespacerolly_1ab57bc985e0598a50255c0a376299d7b4" kind="variable"><name>noexcept</name></member>
     <member refid="namespacerolly_1_1math_1a2264e542a12579ea469c63ecdee1883d" kind="function"><name>popcount</name></member>
     <member refid="namespacerolly_1_1math_1ac856a1cb702219f1d1035f0ce0945492" kind="function"><name>has_single_bit</name></member>
     <member refid="namespacerolly_1_1math_1a9f9d00ff5e0c49434b60e113d83be45e" kind="function"><name>is_pow2</name></member>
@@ -2102,10 +2104,10 @@
     <member refid="namespacerolly_1_1literals_1aa48d1bac5b89868b7197a9c87a1c3ce2" kind="function"><name>operator&quot;&quot;_pvoid</name></member>
     <member refid="namespacerolly_1a50d147e6e631344b3cde7c0675356297" kind="function"><name>unreachable</name></member>
     <member refid="namespacerolly_1affa14ea3afee7f187363d2bb66d8c619" kind="function"><name>to_underlying</name></member>
-    <member refid="namespacerolly_1abf3ef4a99974a2fcedfe0ac54b5ce08b" kind="function"><name>operator|</name></member>
-    <member refid="namespacerolly_1a465d8eeb6dc8eb48d3dbcc894577fc01" kind="function"><name>operator&amp;</name></member>
-    <member refid="namespacerolly_1a93cbb2ec6fa2e2831cc8f031e5e2643b" kind="function"><name>operator^</name></member>
-    <member refid="namespacerolly_1a73fb6abc29e2a6fc0e6a4f71f4500a79" kind="function"><name>operator~</name></member>
+    <member refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kind="function"><name>requires</name></member>
+    <member refid="namespacerolly_1a20e28b3aab12b53a988da11bc35d96d9" kind="function"><name>requires</name></member>
+    <member refid="namespacerolly_1a3e3a83dfbd448a580a08b4857294dee3" kind="function"><name>requires</name></member>
+    <member refid="namespacerolly_1ab240fea9981964f1f2100d4a7787ca13" kind="function"><name>requires</name></member>
   </compound>
   <compound refid="namespacerolly_1_1comparators" kind="namespace"><name>rolly::comparators</name>
   </compound>
@@ -2934,6 +2936,7 @@
   </compound>
   <compound refid="export_8h" kind="file"><name>export.h</name>
     <member refid="export_8h_1a767e446a8f903f15497515cad20c9b96" kind="define"><name>___rolly_api___</name></member>
+    <member refid="export_8h_1a56fd1dd3c32c74f39ba7442addc78246" kind="define"><name>___rolly_cxx20___</name></member>
   </compound>
   <compound refid="filedevice_8h" kind="file"><name>filedevice.h</name>
   </compound>
@@ -3327,12 +3330,13 @@
   <compound refid="types_8h" kind="file"><name>types.h</name>
   </compound>
   <compound refid="utility_8h" kind="file"><name>utility.h</name>
+    <member refid="namespacerolly_1ab57bc985e0598a50255c0a376299d7b4" kind="variable"><name>noexcept</name></member>
     <member refid="namespacerolly_1a50d147e6e631344b3cde7c0675356297" kind="function"><name>unreachable</name></member>
     <member refid="namespacerolly_1affa14ea3afee7f187363d2bb66d8c619" kind="function"><name>to_underlying</name></member>
-    <member refid="namespacerolly_1abf3ef4a99974a2fcedfe0ac54b5ce08b" kind="function"><name>operator|</name></member>
-    <member refid="namespacerolly_1a465d8eeb6dc8eb48d3dbcc894577fc01" kind="function"><name>operator&amp;</name></member>
-    <member refid="namespacerolly_1a93cbb2ec6fa2e2831cc8f031e5e2643b" kind="function"><name>operator^</name></member>
-    <member refid="namespacerolly_1a73fb6abc29e2a6fc0e6a4f71f4500a79" kind="function"><name>operator~</name></member>
+    <member refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kind="function"><name>requires</name></member>
+    <member refid="namespacerolly_1a20e28b3aab12b53a988da11bc35d96d9" kind="function"><name>requires</name></member>
+    <member refid="namespacerolly_1a3e3a83dfbd448a580a08b4857294dee3" kind="function"><name>requires</name></member>
+    <member refid="namespacerolly_1ab240fea9981964f1f2100d4a7787ca13" kind="function"><name>requires</name></member>
   </compound>
   <compound refid="vector2d_8h" kind="file"><name>vector2d.h</name>
   </compound>

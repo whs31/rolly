@@ -183,7 +183,7 @@
         <definition>concept smart_ptr</definition>
         <argsstring></argsstring>
         <name>smart_ptr</name>
-        <initializer>= requires(T t) {
+        <initializer>= <ref refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kindref="member">requires</ref>(T t) {
     { *t };
     { static_cast&lt;bool&gt;(t) };
     { t.operator-&gt;() } -&gt; std::convertible_to&lt;decltype(&amp;*t)&gt;;
@@ -308,7 +308,7 @@
         <definition>concept basic_lockable</definition>
         <argsstring></argsstring>
         <name>basic_lockable</name>
-        <initializer>= requires(T t) {
+        <initializer>= <ref refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kindref="member">requires</ref>(T t) {
     { t.lock() };
     { t.unlock() };
   }</initializer>
@@ -357,7 +357,7 @@
         <definition>concept lockable</definition>
         <argsstring></argsstring>
         <name>lockable</name>
-        <initializer>= <ref refid="namespacerolly_1_1concepts_1a256eaf11e6fe6f4b4cb5c15f4c2bb67c" kindref="member">basic_lockable</ref>&lt;T&gt; and requires(T t) {
+        <initializer>= <ref refid="namespacerolly_1_1concepts_1a256eaf11e6fe6f4b4cb5c15f4c2bb67c" kindref="member">basic_lockable</ref>&lt;T&gt; and <ref refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kindref="member">requires</ref>(T t) {
     { t.try_lock() } -&gt; std::convertible_to&lt;bool&gt;;
   }</initializer>
         <briefdescription>
@@ -411,7 +411,7 @@
         <argsstring></argsstring>
         <name>timed_lockable</name>
         <initializer>= <ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref>&lt;T&gt;
-                       and requires(
+                       and <ref refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kindref="member">requires</ref>(
                              T t,
                              <ref refid="cpp/chrono/duration" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::duration</ref>&lt;Duration&gt; rel_time,
                              <ref refid="cpp/chrono/time_point" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::time_point</ref>&lt;TimePoint&gt; abs_time
@@ -484,7 +484,7 @@
         <definition>concept shared_lockable</definition>
         <argsstring></argsstring>
         <name>shared_lockable</name>
-        <initializer>= <ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref>&lt;T&gt; and requires(T t) {
+        <initializer>= <ref refid="namespacerolly_1_1concepts_1a7a511e60ad4941089b08e074792f3225" kindref="member">lockable</ref>&lt;T&gt; and <ref refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kindref="member">requires</ref>(T t) {
     { t.lock_shared() };
     { t.try_lock_shared() } -&gt; std::convertible_to&lt;bool&gt;;
     { t.unlock_shared() };
@@ -547,7 +547,7 @@
         <argsstring></argsstring>
         <name>shared_timed_lockable</name>
         <initializer>= <ref refid="namespacerolly_1_1concepts_1a52c57da298d52036a7b419d018d30d37" kindref="member">timed_lockable</ref>&lt;T, Duration, TimePoint&gt;
-                              and requires(
+                              and <ref refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kindref="member">requires</ref>(
                                     T t,
                                     <ref refid="cpp/chrono/duration" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::duration</ref>&lt;Duration&gt; rel_time,
                                     <ref refid="cpp/chrono/time_point" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::chrono::time_point</ref>&lt;TimePoint&gt; abs_time
@@ -897,7 +897,7 @@
         <definition>concept qgadget</definition>
         <argsstring></argsstring>
         <name>qgadget</name>
-        <initializer>= requires(T t) {
+        <initializer>= <ref refid="namespacerolly_1a6d52381572c2e07d26fe0f098e415fe5" kindref="member">requires</ref>(T t) {
     { T::staticMetaObject } -&gt; std::convertible_to&lt;::QMetaObject&gt;;
   }</initializer>
         <briefdescription>

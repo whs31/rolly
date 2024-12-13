@@ -218,6 +218,12 @@
             </dt>
             <dd>Creates a new box with the given arguments.</dd>
             <dt>
+              <div class="m-doc-template">template&lt;typename T1, typename T2&gt;</div>
+              <span class="m-dox-wrap-bumper">auto <a href="#ab5c7852b2e49020a194a3a07be285b9e" class="m-dox">operator</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1box.html" class="m-doc">box</a>&lt;T1&gt; const&amp; a,
+              <a href="classrolly_1_1box.html" class="m-doc">box</a>&lt;T2&gt; const&amp; b)</span>
+            </dt>
+            <dd>Compares two boxes.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               <span class="m-dox-wrap-bumper">void <a href="#ab9d725bfb8d8ec7fb6fbcb81747dfec6" class="m-dox">swap</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1box.html" class="m-doc">rolly::<wbr />box</a>&lt;T&gt;&amp; a,
               <a href="classrolly_1_1box.html" class="m-doc">rolly::<wbr />box</a>&lt;T&gt;&amp; b) <span class="m-label m-flat m-success">noexcept</span></span>
@@ -680,6 +686,52 @@
               </tfoot>
             </table>
 <aside class="m-note m-default"><h4>See also</h4><p><a href="http://en.cppreference.com/w/cpp/memory/make_unique">http://en.cppreference.com/w/cpp/memory/make_<wbr />unique</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="ab5c7852b2e49020a194a3a07be285b9e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+                template&lt;typename T1, typename T2&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab5c7852b2e49020a194a3a07be285b9e" class="m-doc-self">operator</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1box.html" class="m-doc">box</a>&lt;T1&gt; const&amp; a,
+              <a href="classrolly_1_1box.html" class="m-doc">box</a>&lt;T2&gt; const&amp; b)</span></span>
+            </h3>
+            <p>Compares two boxes.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T1</td>
+                  <td>Underlying type of the first box.</td>
+                </tr>
+                <tr>
+                  <td>T2</td>
+                  <td>Underlying type of the second box.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a</td>
+                  <td>First box.</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>Second box.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Comparison result.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>Available only in C++20 mode.</p></aside>
           </div></section>
           <section class="m-doc-details" id="ab9d725bfb8d8ec7fb6fbcb81747dfec6"><div>
             <h3>

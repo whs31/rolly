@@ -111,7 +111,7 @@
       </node>
       <node id="20">
         <label>../global/export.h</label>
-        <link refid="export_8h_source"/>
+        <link refid="export_8h"/>
       </node>
       <node id="32">
         <label>exception</label>

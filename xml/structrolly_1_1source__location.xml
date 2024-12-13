@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="36" column="27" bodyfile="rolly/source_location.h" bodystart="36" bodyend="-1"/>
+        <location file="rolly/source_location.h" line="40" column="27" bodyfile="rolly/source_location.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="61" column="16" bodyfile="rolly/source_location.h" bodystart="61" bodyend="-1"/>
+        <location file="rolly/source_location.h" line="65" column="16" bodyfile="rolly/source_location.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrolly_1_1source__location_1a57a22caab183437e453d55026153f7c2" prot="private" static="no" mutable="no">
         <type>char const  *</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="62" column="16" bodyfile="rolly/source_location.h" bodystart="62" bodyend="-1"/>
+        <location file="rolly/source_location.h" line="66" column="16" bodyfile="rolly/source_location.h" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrolly_1_1source__location_1af6f614842c030044ed92a1d8bd82fa58" prot="private" static="no" mutable="no">
         <type><ref refid="namespacerolly_1_1types_1a65cf28726f89e62ccf2f1354bc2716df" kindref="member">u32</ref></type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="63" column="9" bodyfile="rolly/source_location.h" bodystart="63" bodyend="-1"/>
+        <location file="rolly/source_location.h" line="67" column="9" bodyfile="rolly/source_location.h" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrolly_1_1source__location_1ac0035b029d5003be7d5a97974a783a3d" prot="private" static="no" mutable="no">
         <type><ref refid="namespacerolly_1_1types_1a65cf28726f89e62ccf2f1354bc2716df" kindref="member">u32</ref></type>
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="64" column="9" bodyfile="rolly/source_location.h" bodystart="64" bodyend="-1"/>
+        <location file="rolly/source_location.h" line="68" column="9" bodyfile="rolly/source_location.h" bodystart="68" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="42" column="44" bodyfile="rolly/source_location.h" bodystart="42" bodyend="58"/>
+        <location file="rolly/source_location.h" line="46" column="44" bodyfile="rolly/source_location.h" bodystart="46" bodyend="62"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="70" column="15" bodyfile="rolly/source_location.h" bodystart="70" bodyend="74"/>
+        <location file="rolly/source_location.h" line="74" column="15" bodyfile="rolly/source_location.h" bodystart="74" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1source__location_1ab4db290a610d39b573e19741af9ae785" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="83" column="15" bodyfile="rolly/source_location.h" bodystart="83" bodyend="92"/>
+        <location file="rolly/source_location.h" line="87" column="15" bodyfile="rolly/source_location.h" bodystart="87" bodyend="96"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1source__location_1acf97c454688cc66f152f6e33dee13330" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -180,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="94" column="5"/>
+        <location file="rolly/source_location.h" line="98" column="5"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1source__location_1ae717d00b3711fb812ccfb98628d8f5e1" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr std::string_view</type>
@@ -194,7 +194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="99" column="33" bodyfile="rolly/source_location.h" bodystart="99" bodyend="99"/>
+        <location file="rolly/source_location.h" line="103" column="33" bodyfile="rolly/source_location.h" bodystart="103" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1source__location_1a8af370924a943275a5e5a433fd1c583d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr std::string_view</type>
@@ -208,7 +208,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="104" column="33" bodyfile="rolly/source_location.h" bodystart="104" bodyend="106"/>
+        <location file="rolly/source_location.h" line="108" column="33" bodyfile="rolly/source_location.h" bodystart="108" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1source__location_1ae80537f8deeb62f3a096942c712e3514" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="namespacerolly_1_1types_1a65cf28726f89e62ccf2f1354bc2716df" kindref="member">u32</ref></type>
@@ -222,7 +222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="111" column="20" bodyfile="rolly/source_location.h" bodystart="111" bodyend="111"/>
+        <location file="rolly/source_location.h" line="115" column="20" bodyfile="rolly/source_location.h" bodystart="115" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1source__location_1ad13c9f520c7bf10be0046ae4c80de266" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="namespacerolly_1_1types_1a65cf28726f89e62ccf2f1354bc2716df" kindref="member">u32</ref></type>
@@ -236,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/source_location.h" line="116" column="20" bodyfile="rolly/source_location.h" bodystart="116" bodyend="116"/>
+        <location file="rolly/source_location.h" line="120" column="20" bodyfile="rolly/source_location.h" bodystart="120" bodyend="120"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -261,7 +261,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="rolly/source_location.h" line="34" column="24" bodyfile="rolly/source_location.h" bodystart="34" bodyend="117"/>
+    <location file="rolly/source_location.h" line="38" column="24" bodyfile="rolly/source_location.h" bodystart="38" bodyend="121"/>
     <listofallmembers>
       <member refid="structrolly_1_1source__location_1ad13c9f520c7bf10be0046ae4c80de266" prot="public" virt="non-virtual"><scope>rolly::source_location</scope><name>column</name></member>
       <member refid="structrolly_1_1source__location_1ac0035b029d5003be7d5a97974a783a3d" prot="private" virt="non-virtual"><scope>rolly::source_location</scope><name>column_</name></member>

@@ -520,8 +520,19 @@
         </inbodydescription>
         <location file="rolly/global/export.h" line="18" column="11" bodyfile="rolly/global/export.h" bodystart="18" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="define" id="export_8h_1a56fd1dd3c32c74f39ba7442addc78246" prot="public" static="no">
+        <name>___rolly_cxx20___</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="rolly/global/export.h" line="23" column="11" bodyfile="rolly/global/export.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Export macros for the <bold>rolly</bold> library. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

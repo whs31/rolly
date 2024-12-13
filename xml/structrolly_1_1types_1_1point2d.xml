@@ -269,7 +269,9 @@
       <memberdef kind="function" id="structrolly_1_1types_1_1point2d_1afe7ce514915669e40cfa8357d337dd02" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename F</type>
+            <type>std::invocable&lt; <ref refid="structrolly_1_1types_1_1point2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref>, <ref refid="structrolly_1_1types_1_1point2d_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref> &gt;</type>
+            <declname>F</declname>
+            <defname>F</defname>
           </param>
         </templateparamlist>
         <type>constexpr auto</type>
@@ -469,7 +471,9 @@
       <memberdef kind="function" id="structrolly_1_1types_1_1point2d_1a99ce985c9b7b330173ec9102618a734d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref></type>
@@ -517,7 +521,9 @@
       <memberdef kind="function" id="structrolly_1_1types_1_1point2d_1ad7a5b8680b9debb85b5f5303b9308efc" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref></type>
@@ -649,7 +655,9 @@
       <memberdef kind="function" id="structrolly_1_1types_1_1point2d_1a564ee3611258da0d1490fccf698b7a49" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aefb331b2e63a2318c2322e2f6dd68e02" kindref="member">vector2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref></type>
@@ -693,7 +701,9 @@
       <memberdef kind="function" id="structrolly_1_1types_1_1point2d_1aeb82eef9d0fa589582978bef726e7c22" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aefb331b2e63a2318c2322e2f6dd68e02" kindref="member">vector2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref></type>
@@ -882,7 +892,9 @@
       <memberdef kind="function" id="structrolly_1_1types_1_1point2d_1acdee2fae21eb84437089f84df0234b00" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aefb331b2e63a2318c2322e2f6dd68e02" kindref="member">vector2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref> &amp;</type>
@@ -926,7 +938,9 @@
       <memberdef kind="function" id="structrolly_1_1types_1_1point2d_1a6418e811b603149d344cc6c92845d676" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename Q</type>
+            <type>concepts::any_of&lt; <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aca415dad69e458881b26ebb293dadd03" kindref="member">size2d_type</ref>, <ref refid="structrolly_1_1types_1_1point2d_1aefb331b2e63a2318c2322e2f6dd68e02" kindref="member">vector2d_type</ref> &gt;</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="structrolly_1_1types_1_1point2d" kindref="compound">point2d</ref> &amp;</type>

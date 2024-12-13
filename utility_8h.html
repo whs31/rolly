@@ -58,6 +58,7 @@
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#func-members">Functions</a></li>
+                <li><a href="#var-members">Variables</a></li>
               </ul>
             </li>
           </ul>
@@ -83,27 +84,33 @@
             <dd>Converts an enumeration value to its underlying type.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#abf3ef4a99974a2fcedfe0ac54b5ce08b" class="m-dox">operator|</a>(</span><span class="m-dox-wrap">T const lhs,
-              T const rhs) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper"><a href="namespacerolly.html#a6d52381572c2e07d26fe0f098e415fe5" class="m-dox">requires</a>(</span><span class="m-dox-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_or(e);} or requires(T e) { enum_flag(e);}) const expr T operator|(T const lhs</span>
             </dt>
             <dd>Generic bitwise <strong>or</strong> operator for enum types.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#a465d8eeb6dc8eb48d3dbcc894577fc01" class="m-dox">operator&amp;</a>(</span><span class="m-dox-wrap">T const lhs,
-              T const rhs) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper"><a href="namespacerolly.html#a20e28b3aab12b53a988da11bc35d96d9" class="m-dox">requires</a>(</span><span class="m-dox-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_and(e);} or requires(T e) { enum_flag(e);}) const expr T operator&amp;(T const lhs</span>
             </dt>
             <dd>Generic bitwise <strong>and</strong> operator for enum types.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#a93cbb2ec6fa2e2831cc8f031e5e2643b" class="m-dox">operator^</a>(</span><span class="m-dox-wrap">T const lhs,
-              T const rhs) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper"><a href="namespacerolly.html#a3e3a83dfbd448a580a08b4857294dee3" class="m-dox">requires</a>(</span><span class="m-dox-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_xor(e);} or requires(T e) { enum_flag(e);}) const expr T operator^(T const lhs</span>
             </dt>
             <dd>Generic bitwise <strong>xor</strong> operator for enum types.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="namespacerolly.html#a73fb6abc29e2a6fc0e6a4f71f4500a79" class="m-dox">operator~</a>(</span><span class="m-dox-wrap">T const value) -&gt; T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper"><a href="namespacerolly.html#ab240fea9981964f1f2100d4a7787ca13" class="m-dox">requires</a>(</span><span class="m-dox-wrap">std::is_enum_v&lt;T&gt; and requires(T e) { enable_bitwise_not(e);} or requires(T e) { enum_flag(e);}) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Generic bitwise <strong>not</strong> operator for enum types.</dd>
+          </dl>
+        </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              const T rhs <a href="namespacerolly.html#ab57bc985e0598a50255c0a376299d7b4" class="m-doc">noexcept</a>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
       </div>

@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="54" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="54" bodyend="-1"/>
+        <location file="rolly/functional/scope_guard.h" line="57" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="89" column="18" bodyfile="rolly/functional/scope_guard.h" bodystart="89" bodyend="-1"/>
+        <location file="rolly/functional/scope_guard.h" line="92" column="18" bodyfile="rolly/functional/scope_guard.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a121aee969503dcc0f2d4ff4879d9c4d9" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="90" column="14" bodyfile="rolly/functional/scope_guard.h" bodystart="90" bodyend="-1"/>
+        <location file="rolly/functional/scope_guard.h" line="93" column="14" bodyfile="rolly/functional/scope_guard.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="56" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="56" bodyend="62"/>
+        <location file="rolly/functional/scope_guard.h" line="59" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="59" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1aea8fbe701e6ef7142864639b359f0e77" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="64" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="64" bodyend="67"/>
+        <location file="rolly/functional/scope_guard.h" line="67" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="67" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1adc1e78586f22a3374408147008cf62f5" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="69" column="14" bodyfile="rolly/functional/scope_guard.h" bodystart="69" bodyend="69"/>
+        <location file="rolly/functional/scope_guard.h" line="72" column="14" bodyfile="rolly/functional/scope_guard.h" bodystart="72" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a264cb267383c2a19f50c2f47cbfd6988" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="71" column="9"/>
+        <location file="rolly/functional/scope_guard.h" line="74" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1acd379cdb92afc7c67a19af4f1a7648d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -121,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="72" column="9"/>
+        <location file="rolly/functional/scope_guard.h" line="75" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a608cb1b592a7e427797c986a2439d2f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>scope_guard &amp;</type>
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="73" column="21"/>
+        <location file="rolly/functional/scope_guard.h" line="76" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1aea5f932580dcd7a1ba0e2a258a1c4543" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>scope_guard &amp;</type>
@@ -153,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="74" column="21"/>
+        <location file="rolly/functional/scope_guard.h" line="77" column="21"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -172,7 +172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="77" column="18" bodyfile="rolly/functional/scope_guard.h" bodystart="77" bodyend="81"/>
+        <location file="rolly/functional/scope_guard.h" line="80" column="18" bodyfile="rolly/functional/scope_guard.h" bodystart="80" bodyend="84"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -191,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="83" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="95" bodyend="99"/>
+        <location file="rolly/functional/scope_guard.h" line="86" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="98" bodyend="102"/>
       </memberdef>
       <memberdef kind="friend" id="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a2bf6838b82911776d518fff89d1e9bc1" prot="private" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>friend scope_guard&lt; Callback &gt;</type>
@@ -208,14 +208,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/functional/scope_guard.h" line="86" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="102" bodyend="106"/>
+        <location file="rolly/functional/scope_guard.h" line="89" column="9" bodyfile="rolly/functional/scope_guard.h" bodystart="105" bodyend="109"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="rolly/functional/scope_guard.h" line="52" column="25" bodyfile="rolly/functional/scope_guard.h" bodystart="52" bodyend="91"/>
+    <location file="rolly/functional/scope_guard.h" line="55" column="25" bodyfile="rolly/functional/scope_guard.h" bodystart="55" bodyend="94"/>
     <listofallmembers>
       <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a121aee969503dcc0f2d4ff4879d9c4d9" prot="private" virt="non-virtual"><scope>rolly::detail::scope_guard&lt; Callback &gt;</scope><name>active_</name></member>
       <member refid="classrolly_1_1detail_1_1scope__guard_3_01Callback_01_4_1a485684d0af16d85d518d9d5464eec866" prot="private" virt="non-virtual"><scope>rolly::detail::scope_guard&lt; Callback &gt;</scope><name>callback_</name></member>
