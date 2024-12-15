@@ -17,13 +17,13 @@ default:
 [doc('Patch version')]
 @tag VERSION:
   echo "Patching version..."
-  python3 scripts/tag.py -v {{VERSION}}
+  python scripts/tag.py -v {{VERSION}}
 
 [group('misc')]
 [doc('Show versions')]
 @version:
   echo "Current versions is:"
-  python3 scripts/tag.py --show
+  python scripts/tag.py --show
 
 [group('misc')]
 [doc('Format code')]
