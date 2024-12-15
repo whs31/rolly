@@ -2,6 +2,9 @@
 
 #include <type_traits>
 #include <utility>
+#if defined(ROLLY_COMPAT) && defined(_MSC_VER)
+# include <ciso646>
+#endif
 
 namespace rolly {
 #ifndef DOXYGEN_GENERATING_OUTPUT

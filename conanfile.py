@@ -7,7 +7,7 @@ from conan.tools.files import rmdir, copy
 
 class RollyRecipe(ConanFile):
     name = "rolly"
-    version = "2.1.45"
+    version = "2.1.47"
     description = "Radar open-source library"
     author = "whs31 <whs31@github.io>"
     topics = ("coreutils", "utility")
@@ -36,7 +36,7 @@ class RollyRecipe(ConanFile):
 
     def requirements(self):
         self.requires("fmt/10.2.1", transitive_headers=True, transitive_libs=True)
-        self.requires("spdlog/1.14.0", transitive_headers=True, transitive_libs=True)
+        self.requires("spdlog/1.13.0", transitive_headers=True, transitive_libs=True)
         if self.settings.os != "Windows":
             self.requires("libuuid/1.0.3")
         if self.options.test:
