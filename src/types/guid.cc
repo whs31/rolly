@@ -3,7 +3,6 @@
 #include <cstring>
 #include <iomanip>
 #include <iostream>
-#include <rolly/global/char_utils.h>
 #include <rolly/global/platform_definitions.h>
 
 #if defined(ROLLY_OS_LINUX)
@@ -16,84 +15,32 @@
 
 namespace rolly {
   inline namespace types {
-    guid::guid()
-      : bytes_ {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
-
-    guid::guid(std::array<u8, 16> const& bytes)
-      : bytes_ {bytes} {}
-
     guid::guid(std::array<std::byte, 16> const& bytes) {
       std::memcpy(this->bytes_.data(), bytes.data(), 16);
     }
-
-    guid::guid(std::string_view const str) {
-      auto zeroify = [](guid& x) { std::fill(x.bytes_.begin(), x.bytes_.end(), 0_u8); };
-      auto hex_pair_to_char = [](char a, char b) -> unsigned char {
-        return hex_to_char(a) * 16 + hex_to_char(b);
-      };
-
-      auto one = char('\0');
-      auto two = char('\0');
-      auto lookup_for_first = true;
-      auto next_byte = static_cast<unsigned>(0);
-      for(char const& ch : str) {
-        if(ch == '-')
-          continue;
-        if(next_byte >= 16 or not is_hex(ch)) {
-          zeroify(*this);
-          return;
-        }
-        if(lookup_for_first) {
-          one = ch;
-          lookup_for_first = false;
-        } else {
-          two = ch;
-          this->bytes_mut()[next_byte++] = hex_pair_to_char(one, two);
-          lookup_for_first = true;
-        }
-      }
-      if(next_byte < 16) {
-        zeroify(*this);
-        return;
-      }
-    }
-
-    bool guid::valid() const noexcept { return *this != guid::empty(); }
 
     std::string guid::to_string() const {
       return fmt::format(
         "{:02x}{:02x}{:02x}{:02x}-{:02x}{:02x}-{:02x}{:02x}-{:02x}{:02x}-{:02x}{:02x}{:02x}{:02x}{:"
         "02x}{:02x}",
-        bytes()[0],
-        bytes()[1],
-        bytes()[2],
-        bytes()[3],
-        bytes()[4],
-        bytes()[5],
-        bytes()[6],
-        bytes()[7],
-        bytes()[8],
-        bytes()[9],
-        bytes()[10],
-        bytes()[11],
-        bytes()[12],
-        bytes()[13],
-        bytes()[14],
-        bytes()[15]
+        this->bytes_[0],
+        this->bytes_[1],
+        this->bytes_[2],
+        this->bytes_[3],
+        this->bytes_[4],
+        this->bytes_[5],
+        this->bytes_[6],
+        this->bytes_[7],
+        this->bytes_[8],
+        this->bytes_[9],
+        this->bytes_[10],
+        this->bytes_[11],
+        this->bytes_[12],
+        this->bytes_[13],
+        this->bytes_[14],
+        this->bytes_[15]
       );
     }
-
-    std::array<u8, 16> const& guid::bytes() const noexcept { return this->bytes_; }
-
-    std::array<u8, 16>& guid::bytes_mut() noexcept { return this->bytes_; }
-
-    bool guid::operator==(guid const& other) const noexcept {
-      return this->bytes() == other.bytes();
-    }
-
-    bool guid::operator!=(guid const& other) const noexcept { return not (*this == other); }
-
-    bool operator<(guid const& lhs, guid const& rhs) noexcept { return lhs.bytes() < rhs.bytes(); }
 
     std::ostream& operator<<(std::ostream& os, guid const& guid) {
       auto flags = os.flags();
@@ -112,8 +59,6 @@ namespace rolly {
       os.flags(flags);
       return os;
     }
-
-    guid guid::empty() noexcept { return {}; }
 
     guid guid::random() noexcept {
 #if defined(ROLLY_OS_LINUX)
