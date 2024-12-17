@@ -3,7 +3,6 @@
 #include <cstring>
 #include <iomanip>
 #include <iostream>
-#include <rolly/global/platform_definitions.h>
 
 #if defined(ROLLY_OS_LINUX)
 #  include <uuid/uuid.h>

@@ -65,8 +65,10 @@ TEST_CASE("Types", "[types]") {
     SECTION("Constexpr") {
       auto constexpr u = "{7bcd757f-5b10-4f9b-af69-1a1f226f3b3e}"_guid;
 
+#ifdef ___rolly_cxx20___
       STATIC_REQUIRE(u.valid());
       STATIC_REQUIRE(u == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"_guid);
+#endif
     }
   }  // GUID
 

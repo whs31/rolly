@@ -7,9 +7,9 @@
 #include <string>
 #include <string_view>
 #include <fmt/format.h>
-#include "../global/export.h"
-#include "../global/char_utils.h"
+#include "../global.h"
 #include "./stdint.h"
+#include "rolly/global/definitions.h"
 
 namespace rolly  // NOLINT(*-concat-nested-namespaces)
 {
@@ -27,7 +27,6 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * @details Based on std::array container.
      * @sa https://en.wikipedia.org/wiki/Globally_unique_identifier
      */
-
     class ___rolly_api___ guid {
      public:
       /**
@@ -74,7 +73,8 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
        * - Bytes must be separated by hyphens.
        * @param str String representation of the guid.
        */
-      constexpr explicit guid(std::string_view const str) {
+      constexpr explicit guid(std::string_view const str)
+        : bytes_ {} {
         if(str.size() != guid::short_guid_string_length
            and str.size() != guid::long_guid_string_length)
           throw std::invalid_argument(
@@ -110,8 +110,9 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
       /**
        * @brief Checks whether the guid is valid or not.
        * @return `true` if the guid is valid, `false` otherwise.
+       * @note This function is `constexpr` in C++20 and above.
        */
-      [[nodiscard]] constexpr bool valid() const noexcept { return *this != guid::empty(); }
+      [[nodiscard]] ___constexpr___ bool valid() const noexcept { return *this != guid::empty(); }
 
       /**
        * @brief Converts the guid to a string.
@@ -146,8 +147,10 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
        * @brief Checks whether the guid is valid or not.
        * @return `true` if the guid is valid, `false` otherwise.
        * @see valid
+       * @note This function is `constexpr` in C++20 and above.
        */
-      [[nodiscard]] constexpr operator bool() const noexcept {  // NOLINT(*-explicit-constructor)
+      [[nodiscard]] ___constexpr___ operator bool(
+      ) const noexcept {  // NOLINT(*-explicit-constructor)
         return this->valid();
       }
 
@@ -155,8 +158,9 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
        * @brief Checks whether two guids are equal or not.
        * @param other Other guid.
        * @return `true` if the guids are equal, `false` otherwise.
+       * @note This function is `constexpr` in C++20 and above.
        */
-      [[nodiscard]] constexpr bool operator==(guid const& other) const noexcept {
+      [[nodiscard]] ___constexpr___ bool operator==(guid const& other) const noexcept {
         return this->bytes() == other.bytes();
       }
 
@@ -164,8 +168,9 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
        * @brief Checks whether two guids are not equal.
        * @param other Other guid.
        * @return `true` if the guids are __not__ equal, `false` otherwise.
+       * @note This function is `constexpr` in C++20 and above.
        */
-      [[nodiscard]] constexpr bool operator!=(guid const& other) const noexcept {
+      [[nodiscard]] ___constexpr___ bool operator!=(guid const& other) const noexcept {
         return not (*this == other);
       }
 
@@ -174,8 +179,9 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
        * @param lhs First guid.
        * @param rhs Second guid.
        * @return `true` if lhs is less than rhs, `false` otherwise.
+       * @note This function is `constexpr` in C++20 and above.
        */
-      friend constexpr bool operator<(guid const& lhs, guid const& rhs) noexcept {
+      friend ___constexpr___ bool operator<(guid const& lhs, guid const& rhs) noexcept {
         return lhs.bytes() < rhs.bytes();
       }
 
@@ -186,11 +192,7 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
        * @return Output stream
        * @see to_string
        */
-#ifndef DOXYGEN_GENERATING_OUTPUT
-      ___rolly_api___
-#endif
-        friend std::ostream&
-        operator<<(std::ostream& os, guid const& guid);
+      ___rolly_api___ friend std::ostream& operator<<(std::ostream& os, guid const& guid);
 
       /**
        * @brief Creates an empty guid.
