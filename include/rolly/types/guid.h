@@ -7,37 +7,55 @@
 #include <string>
 #include <string_view>
 #include <fmt/format.h>
-#include "../global/export.h"
+#include "../global.h"
 #include "./stdint.h"
+#include "rolly/global/definitions.h"
 
 namespace rolly  // NOLINT(*-concat-nested-namespaces)
 {
+#ifndef DOXYGEN_GENERATING_OUTPUT
+  namespace detail {
+    [[nodiscard]] constexpr inline std::uint8_t _d(char const* str, int const index) {
+      return ((hex_to_char(str[index]) << 4) + hex_to_char(str[index + 1]));  // NOLINT
+    }
+  }  // namespace detail
+#endif
+
   inline namespace types {
     /**
      * @brief 128-bit globally unique identifier (GUID).
-     * @details Based on <tt>std::array</tt> container.
+     * @details Based on std::array container.
      * @sa https://en.wikipedia.org/wiki/Globally_unique_identifier
      */
-#ifdef DOXYGEN_GENERATING_OUTPUT
-    class guid {
-#else
     class ___rolly_api___ guid {
-#endif
-
      public:
       /**
-       * @brief Creates an empty <tt>guid</tt>.
+       * @brief Length of the guid string representation in the form of
+       * `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
+       */
+      constexpr static inline auto short_guid_string_length = static_cast<usize>(36);
+
+      /**
+       * @brief Length of the guid string representation in the form of
+       * `{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}`.
+       */
+      constexpr static inline auto long_guid_string_length = static_cast<usize>(38);
+
+      /**
+       * @brief Creates an empty guid.
        * @see empty
        */
-      guid();
+      constexpr guid()
+        : bytes_ {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
 
       ~guid() = default;
 
       /**
-       * @brief Creates a <tt>guid</tt> from an array of bytes.
+       * @brief Creates a guid from an array of bytes.
        * @param bytes Array of bytes.
        */
-      explicit guid(std::array<u8, 16> const& bytes);
+      constexpr explicit guid(std::array<u8, 16> const& bytes)
+        : bytes_ {bytes} {}
 
       /**
        * @brief Creates a <tt>guid</tt> from an array of <tt>std::byte</tt>.
@@ -46,10 +64,43 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
       explicit guid(std::array<std::byte, 16> const& bytes);
 
       /**
-       * @brief Creates a <tt>guid</tt> from a string.
-       * @param str String representation of the <tt>guid</tt>.
+       * @brief Creates a guid from a string.
+       * @details String must satisfy the following requirements:
+       * - Length of string must be exactly 36 or 38 characters (see @ref short_guid_string_length
+       * and @ref long_guid_string_length).
+       * - String must be in the form of `{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}` or
+       * `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` (with or without braces).
+       * - Bytes must be separated by hyphens.
+       * @param str String representation of the guid.
        */
-      explicit guid(std::string_view str);
+      constexpr explicit guid(std::string_view const str)
+        : bytes_ {} {
+        if(str.size() != guid::short_guid_string_length
+           and str.size() != guid::long_guid_string_length)
+          throw std::invalid_argument(
+            "guid string initializer must have exactly 36 or 38 characters (see "
+            "guid::short_guid_string_length and guid::long_guid_string_length)"
+          );
+        auto const* data = (str.size() == guid::short_guid_string_length) ? str.data()
+                                                                          : str.data() + 1;
+        this->bytes_ =
+          {detail::_d(data, 0),
+           detail::_d(data, 2),
+           detail::_d(data, 4),
+           detail::_d(data, 6),
+           detail::_d(data, 9),
+           detail::_d(data, 11),
+           detail::_d(data, 14),
+           detail::_d(data, 16),
+           detail::_d(data, 19),
+           detail::_d(data, 21),
+           detail::_d(data, 24),
+           detail::_d(data, 26),
+           detail::_d(data, 28),
+           detail::_d(data, 30),
+           detail::_d(data, 32),
+           detail::_d(data, 34)};
+      }
 
       guid(guid const&) = default;
       guid(guid&&) = default;
@@ -57,91 +108,101 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
       guid& operator=(guid&&) = default;
 
       /**
-       * @brief Checks whether the <tt>guid</tt> is valid or not.
-       * @return <tt>true</tt> if the <tt>guid</tt> is valid, <tt>false</tt> otherwise.
+       * @brief Checks whether the guid is valid or not.
+       * @return `true` if the guid is valid, `false` otherwise.
+       * @note This function is `constexpr` in C++20 and above.
        */
-      [[nodiscard]] bool valid() const noexcept;
+      [[nodiscard]] ___constexpr___ bool valid() const noexcept { return *this != guid::empty(); }
 
       /**
-       * @brief Converts the <tt>guid</tt> to a string.
+       * @brief Converts the guid to a string.
        * @details String representation is in the form of
-       * <tt>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</tt>. All hex digits are lowercase. Bytes are
+       * `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`. All hex digits are lowercase. Bytes are
        * separated by hyphens.
        * @return String representation of the <tt>guid</tt>.
        */
       [[nodiscard]] std::string to_string() const;
 
       /**
-       * @brief Gets the bytes of the <tt>guid</tt>.
+       * @brief Gets the bytes of the guid.
        * @return Constant reference to the array of bytes.
        */
-      [[nodiscard]] std::array<u8, 16> const& bytes() const noexcept;
+      [[nodiscard]] constexpr std::array<u8, 16> const& bytes() const noexcept {
+        return this->bytes_;
+      }
 
       /**
-       * @brief Gets the mutable bytes of the <tt>guid</tt>.
+       * @brief Gets the mutable bytes of the guid.
        * @return Mutable reference to the array of bytes.
        */
-      [[nodiscard]] std::array<u8, 16>& bytes_mut() noexcept;
+      [[nodiscard]] constexpr std::array<u8, 16>& bytes_mut() noexcept { return this->bytes_; }
 
       /**
-       * @brief Hashes the <tt>guid</tt> to an unsigned 64-bit integer.
+       * @brief Hashes the guid to an unsigned 64-bit integer.
        * @return Hash value.
        */
       [[nodiscard]] u64 to_u64() const noexcept;
 
       /**
-       * @brief Checks whether the <tt>guid</tt> is valid or not.
-       * @return <tt>true</tt> if the <tt>guid</tt> is valid, <tt>false</tt> otherwise.
+       * @brief Checks whether the guid is valid or not.
+       * @return `true` if the guid is valid, `false` otherwise.
        * @see valid
+       * @note This function is `constexpr` in C++20 and above.
        */
-      [[nodiscard]] operator bool() const noexcept {  // NOLINT(*-explicit-constructor)
+      [[nodiscard]] ___constexpr___ operator bool(
+      ) const noexcept {  // NOLINT(*-explicit-constructor)
         return this->valid();
       }
 
       /**
-       * @brief Checks whether two <tt>guid</tt>s are equal or not.
-       * @param other Other <tt>guid</tt>.
-       * @return <tt>true</tt> if the <tt>guid</tt>s are equal, <tt>false</tt> otherwise.
+       * @brief Checks whether two guids are equal or not.
+       * @param other Other guid.
+       * @return `true` if the guids are equal, `false` otherwise.
+       * @note This function is `constexpr` in C++20 and above.
        */
-      [[nodiscard]] bool operator==(guid const& other) const noexcept;
+      [[nodiscard]] ___constexpr___ bool operator==(guid const& other) const noexcept {
+        return this->bytes() == other.bytes();
+      }
 
       /**
-       * @brief Checks whether two <tt>guid</tt>s are not equal.
-       * @param other Other <tt>guid</tt>.
-       * @return <tt>true</tt> if the <tt>guid</tt>s are not equal, <tt>false</tt> otherwise.
+       * @brief Checks whether two guids are not equal.
+       * @param other Other guid.
+       * @return `true` if the guids are __not__ equal, `false` otherwise.
+       * @note This function is `constexpr` in C++20 and above.
        */
-      [[nodiscard]] bool operator!=(guid const& other) const noexcept;
+      [[nodiscard]] ___constexpr___ bool operator!=(guid const& other) const noexcept {
+        return not (*this == other);
+      }
 
       /**
-       * @brief Array-like less comparator for <tt>guid</tt>.
+       * @brief Array-like less comparator for guid.
        * @param lhs First guid.
        * @param rhs Second guid.
-       * @return <tt>true</tt> if lhs is less than rhs, <tt>false</tt> otherwise.
+       * @return `true` if lhs is less than rhs, `false` otherwise.
+       * @note This function is `constexpr` in C++20 and above.
        */
-      friend bool operator<(guid const& lhs, guid const& rhs) noexcept;
+      friend ___constexpr___ bool operator<(guid const& lhs, guid const& rhs) noexcept {
+        return lhs.bytes() < rhs.bytes();
+      }
 
       /**
-       * @brief Prints the <tt>guid</tt> to an output stream.
+       * @brief Prints the guid to an output stream.
        * @param os Output stream
-       * @param guid <tt>guid</tt>
+       * @param guid GUID
        * @return Output stream
        * @see to_string
        */
-#ifndef DOXYGEN_GENERATING_OUTPUT
-      ___rolly_api___
-#endif
-        friend std::ostream&
-        operator<<(std::ostream& os, guid const& guid);
+      ___rolly_api___ friend std::ostream& operator<<(std::ostream& os, guid const& guid);
 
       /**
-       * @brief Creates an empty <tt>guid</tt>.
-       * @return New empty <tt>guid</tt>.
+       * @brief Creates an empty guid.
+       * @return New empty guid.
        */
-      [[nodiscard]] static guid empty() noexcept;
+      [[nodiscard]] constexpr static guid empty() noexcept { return {}; }
 
       /**
-       * @brief Creates a random <tt>guid</tt>.
-       * @return New random <tt>guid</tt>.
+       * @brief Creates a random guid
+       * @return New random guid.
        */
       [[nodiscard]] static guid random() noexcept;
 
@@ -152,12 +213,13 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
 
   inline namespace literals {
     /**
-     * @brief Literal operator for <tt>guid</tt>.
-     * @param str String representation of the <tt>guid</tt>.
-     * @return <tt>guid</tt> object.
+     * @brief Literal operator for guid.
+     * @param str String representation of the guid.
+     * @return guid object.
      */
-    inline types::guid operator""_guid(char const* str, [[maybe_unused]] std::size_t unused) {
-      return types::guid(str);
+    constexpr inline types::guid
+      operator""_guid(char const* str, [[maybe_unused]] std::size_t size) {
+      return types::guid(std::string_view(str, size));
     }
   }  // namespace literals
 
@@ -173,9 +235,8 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
 
     template <typename T, typename... Rest>
     struct hash<T, Rest...> {
-      inline std::size_t
-        operator()(T const& v, Rest const&... rest) {  // NOLINT(*-redundant-inline-specifier)
-        auto seed = std::size_t(hash<Rest...> {}(rest...));
+      constexpr std::size_t operator()(T const& v, Rest const&... rest) {
+        auto seed = static_cast<std::size_t>(hash<Rest...> {}(rest...));
         seed ^= hash<T> {}(v) + 0x9E3779B9 + (seed << 6) + (seed >> 2);
         return seed;
       }
@@ -206,7 +267,7 @@ namespace std {
    */
   template <>
   struct [[maybe_unused]] hash<rolly::guid> {
-    [[nodiscard]] std::size_t operator()(rolly::guid const& b) const {
+    [[nodiscard]] std::size_t operator()(rolly::guid const& b) const noexcept {
       return rolly::detail::hash<rolly::u64, rolly::u64> {}(b.bytes()[0], b.bytes()[1]);
     }
   };

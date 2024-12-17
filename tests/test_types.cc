@@ -1,5 +1,6 @@
 #include <rolly/types.h>
 
+#include <catch2/catch_test_macros.hpp>
 #include <sstream>
 #include <type_traits>
 #include <vector>
@@ -57,14 +58,18 @@ TEST_CASE("Types", "[types]") {
 
     SECTION("Format") { REQUIRE(fmt::format("{}", s1) == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"); }
 
-    SECTION("ParseFail") {
-      auto const invalid = guid("7bcd757f-5b10-4f9b-af69-1a1f226f3baskdfmsadf3e");
-
-      REQUIRE_FALSE(invalid.valid());
-      REQUIRE_FALSE(invalid);
-    }
+    SECTION("ParseFail") { REQUIRE_THROWS(guid("7bcd757f-5b10-4f9b-af69-1a1f226f3baskdfmsadf3e")); }
 
     SECTION("Literal") { REQUIRE(s1 == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"_guid); }
+
+    SECTION("Constexpr") {
+      auto constexpr u = "{7bcd757f-5b10-4f9b-af69-1a1f226f3b3e}"_guid;
+
+#ifdef ___rolly_cxx20___
+      STATIC_REQUIRE(u.valid());
+      STATIC_REQUIRE(u == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"_guid);
+#endif
+    }
   }  // GUID
 
   SECTION("Result", "[types.result]") {
@@ -1130,7 +1135,7 @@ TEST_CASE("Types", "[types]") {
       REQUIRE(o6);
       REQUIRE(*o6 == 42);
     }
-  }
+  }  // Optional
 
   SECTION("Angle", "[types.angle]") {
     SECTION("Wrap") {
@@ -1198,7 +1203,7 @@ TEST_CASE("Types", "[types]") {
       REQUIRE(ss.str() == "1.00°");
       REQUIRE(fmt::format("{}", a) == "1.00°");
     }
-  }
+  }  // Angle
 
   SECTION("Point 2D", "[types.point2d]") {
     SECTION("Negation") {
@@ -1373,7 +1378,8 @@ TEST_CASE("Types", "[types]") {
       constexpr auto expected = point2d(-2.0, -2.0);
       REQUIRE(got == expected);
     }
-  }
+  }  // Point2D
+
   SECTION("Size 2D", "[types.size2d]") {
     SECTION("Area") {
       auto const p = size2d(1.5, 2.0);
@@ -1485,7 +1491,8 @@ TEST_CASE("Types", "[types]") {
       REQUIRE(size2d(0.0, 0.0).to_point2d() == point2d(0.0, 0.0));
       REQUIRE(size2d(-1.0, -2.0).to_point2d() == point2d(-1.0, -2.0));
     }
-  }
+  }  // Size2D
+
   SECTION("Vector 2D", "[types.vector2d]") {
     SECTION("ScalarMul") {
       constexpr auto p1 = vector2d(3.0, 5.0);
@@ -1661,5 +1668,5 @@ TEST_CASE("Types", "[types]") {
       constexpr auto expected = vector2d(4.0, 6.0);
       REQUIRE(got.to_point2d() == expected.to_point2d());
     }
-  }
+  }  // Vector2D
 }

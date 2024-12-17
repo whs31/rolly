@@ -2,10 +2,11 @@
 
 #include <string>
 #include <string_view>
+#include <stdexcept>
 #include <fmt/format.h>
 
 #if defined(ROLLY_COMPAT) && defined(_MSC_VER)
-# include <ciso646>
+#  include <ciso646>
 #endif
 
 namespace rolly {
@@ -39,13 +40,13 @@ namespace rolly {
     return static_cast<std::uint16_t>(c - '0');
   }
 
-  [[nodiscard]] constexpr unsigned char hex_to_char(char c) noexcept {
+  [[nodiscard]] constexpr unsigned char hex_to_char(char c) {
     if(c >= '0' and c <= '9')
       return static_cast<unsigned char>(c - '0');
     if(c >= 'a' and c <= 'f')
       return static_cast<unsigned char>(c - 'a' + 10);
     if(c >= 'A' and c <= 'F')
       return static_cast<unsigned char>(c - 'A' + 10);
-    return 0;
+    throw std::domain_error("invalid hex character");
   }
 }  // namespace rolly

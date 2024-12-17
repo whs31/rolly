@@ -1,6 +1,6 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = Rolly
-PROJECT_NUMBER         = 2.1.46
+PROJECT_NUMBER         = 2.1.49
 PROJECT_BRIEF          = "Radar core library"
 PROJECT_LOGO           = ./doxygen/images/logo.png
 PROJECT_ICON           = ./doxygen/images/logo.png
@@ -319,10 +319,10 @@ SEARCH_INCLUDES        = YES
 INCLUDE_PATH           = include
 INCLUDE_FILE_PATTERNS  =
 PREDEFINED             = DOXYGEN_GENERATING_OUTPUT
-EXPAND_AS_DEFINED      = ___concept___ ___rolly_api___ ___sfinae_requirement___
+EXPAND_AS_DEFINED      = ___concept___ ___rolly_api___ ___sfinae_requirement___ ___constexpr___ ___consteval___ 
 SKIP_FUNCTION_MACROS   = NO
 TAGFILES               = doxygen/cppreference-doxygen-web.tag.xml=http://en.cppreference.com/w/
-GENERATE_TAGFILE       =
+GENERATE_TAGFILE       = docs/rolly.tag.xml
 ALLEXTERNALS           = NO
 EXTERNAL_GROUPS        = YES
 EXTERNAL_PAGES         = YES
