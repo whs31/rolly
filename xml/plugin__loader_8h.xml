@@ -38,11 +38,11 @@
       <node id="6">
         <label>iterator</label>
       </node>
-      <node id="22">
+      <node id="27">
         <label>cstdint</label>
       </node>
       <node id="24">
-        <label>../global/version.h</label>
+        <label>global/version.h</label>
         <link refid="version_8h_source"/>
         <childnode refid="19" relation="include">
         </childnode>
@@ -51,7 +51,7 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="27">
+      <node id="22">
         <label>charconv</label>
       </node>
       <node id="7">
@@ -62,7 +62,7 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="34">
+      <node id="35">
         <label>variant</label>
       </node>
       <node id="13">
@@ -84,7 +84,9 @@
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
       <node id="29">
@@ -109,8 +111,8 @@
         <childnode refid="46" relation="include">
         </childnode>
       </node>
-      <node id="20">
-        <label>../global/export.h</label>
+      <node id="23">
+        <label>global/export.h</label>
         <link refid="export_8h"/>
       </node>
       <node id="32">
@@ -125,14 +127,14 @@
         </childnode>
         <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
-      <node id="39">
+      <node id="37">
         <label>platform_definitions.h</label>
         <link refid="platform__definitions_8h_source"/>
       </node>
@@ -140,10 +142,10 @@
         <label>version_definitions.h</label>
         <link refid="version__definitions_8h_source"/>
       </node>
-      <node id="35">
+      <node id="39">
         <label>detail/macro.h</label>
         <link refid="macro_8h_source"/>
-        <childnode refid="36" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="30">
@@ -152,6 +154,8 @@
         <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
@@ -164,9 +168,9 @@
         <link refid="semver_8h_source"/>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
         <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
@@ -184,12 +188,12 @@
       <node id="18">
         <label>string_view</label>
       </node>
-      <node id="38">
+      <node id="36">
         <label>global/definitions.h</label>
         <link refid="definitions_8h_source"/>
-        <childnode refid="20" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -230,17 +234,17 @@
       <node id="41">
         <label>../types/result.h</label>
         <link refid="result_8h_source"/>
-        <childnode refid="38" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
@@ -260,22 +264,22 @@
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
       </node>
       <node id="16">
         <label>iosfwd</label>
       </node>
-      <node id="36">
-        <label>../../global.h</label>
+      <node id="20">
+        <label>../global.h</label>
         <link refid="global_8h"/>
-        <childnode refid="37" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
       <node id="14">
@@ -289,9 +293,9 @@
         <link refid="source__location_8h_source"/>
         <childnode refid="44" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
       </node>
       <node id="9">
@@ -313,37 +317,37 @@
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="43" relation="include">
         </childnode>
       </node>
-      <node id="37">
+      <node id="21">
         <label>global/charconv.h</label>
         <link refid="charconv_8h_source"/>
-        <childnode refid="27" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="34">
         <label>type_traits</label>
       </node>
       <node id="2">
         <label>memory</label>
       </node>
-      <node id="21">
+      <node id="38">
         <label>./stdint.h</label>
         <link refid="stdint_8h_source"/>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
       </node>
     </incdepgraph>

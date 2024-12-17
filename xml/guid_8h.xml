@@ -9,16 +9,39 @@
     <includes local="no">string</includes>
     <includes local="no">string_view</includes>
     <includes local="no">fmt/format.h</includes>
-    <includes refid="export_8h" local="yes">../global/export.h</includes>
+    <includes refid="global_8h" local="yes">../global.h</includes>
     <includes refid="stdint_8h" local="yes">./stdint.h</includes>
+    <includes refid="definitions_8h" local="yes">rolly/global/definitions.h</includes>
     <includedby refid="plugin_8h" local="yes">plugin.h</includedby>
     <includedby refid="types_8h" local="yes">types.h</includedby>
     <incdepgraph>
+      <node id="22">
+        <label>functional</label>
+      </node>
       <node id="8">
         <label>fmt/format.h</label>
       </node>
-      <node id="11">
+      <node id="17">
+        <label>limits</label>
+      </node>
+      <node id="16">
         <label>cstdint</label>
+      </node>
+      <node id="13">
+        <label>global/version.h</label>
+        <link refid="version_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>charconv</label>
+      </node>
+      <node id="25">
+        <label>variant</label>
       </node>
       <node id="1">
         <label>guid.h</label>
@@ -39,18 +62,95 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>stdexcept</label>
       </node>
       <node id="6">
         <label>string</label>
       </node>
-      <node id="9">
-        <label>../global/export.h</label>
+      <node id="12">
+        <label>global/export.h</label>
         <link refid="export_8h"/>
+      </node>
+      <node id="21">
+        <label>exception</label>
+      </node>
+      <node id="20">
+        <label>../types/optional.h</label>
+        <link refid="optional_8h_source"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>platform_definitions.h</label>
+        <link refid="platform__definitions_8h_source"/>
+      </node>
+      <node id="14">
+        <label>version_definitions.h</label>
+        <link refid="version__definitions_8h_source"/>
+      </node>
+      <node id="19">
+        <label>char_utils.h</label>
+        <link refid="char__utils_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>semver.h</label>
+        <link refid="semver_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
       </node>
       <node id="7">
         <label>string_view</label>
+      </node>
+      <node id="26">
+        <label>global/definitions.h</label>
+        <link refid="definitions_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>new</label>
       </node>
       <node id="5">
         <label>utility</label>
@@ -61,20 +161,42 @@
       <node id="4">
         <label>iosfwd</label>
       </node>
+      <node id="9">
+        <label>../global.h</label>
+        <link refid="global_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>cstddef</label>
       </node>
-      <node id="12">
+      <node id="10">
+        <label>global/charconv.h</label>
+        <link refid="charconv_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
         <label>type_traits</label>
       </node>
-      <node id="10">
+      <node id="28">
         <label>./stdint.h</label>
         <link refid="stdint_8h_source"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -124,10 +246,10 @@
     <innernamespace refid="namespacerolly_1_1literals">rolly::literals</innernamespace>
     <innernamespace refid="namespacestd">std</innernamespace>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacerolly_1_1literals_1adcd4361bfe366803ba692d748c203b47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>types::guid</type>
-        <definition>types::guid rolly::literals::operator&quot;&quot;_guid</definition>
-        <argsstring>(char const *str, [[maybe_unused]] std::size_t unused)</argsstring>
+      <memberdef kind="function" id="namespacerolly_1_1literals_1abea83e51940b3acc66bd8653aeaa5b3d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr types::guid</type>
+        <definition>constexpr types::guid rolly::literals::operator&quot;&quot;_guid</definition>
+        <argsstring>(char const *str, [[maybe_unused]] std::size_t size)</argsstring>
         <name>operator&quot;&quot;_guid</name>
         <param>
           <type>char const *</type>
@@ -136,10 +258,10 @@
         <param>
           <attributes>[[maybe_unused]</attributes>
           <type>] <ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::size_t</ref></type>
-          <declname>unused</declname>
+          <declname>size</declname>
         </param>
         <briefdescription>
-<para>Literal operator for <computeroutput>guid</computeroutput>. </para>
+<para>Literal operator for guid. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -147,17 +269,17 @@
 <parametername>str</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>String representation of the <computeroutput>guid</computeroutput>. </para>
+<para>String representation of the guid. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para><computeroutput>guid</computeroutput> object. </para>
+<simplesect kind="return"><para>guid object. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/guid.h" line="159" column="24" bodyfile="rolly/types/guid.h" bodystart="159" bodyend="161"/>
+        <location file="rolly/types/guid.h" line="221" column="7" bodyfile="rolly/types/guid.h" bodystart="221" bodyend="223"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

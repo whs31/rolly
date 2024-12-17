@@ -4,11 +4,15 @@
     <compoundname>char_utils.h</compoundname>
     <includes local="no">string</includes>
     <includes local="no">string_view</includes>
+    <includes local="no">stdexcept</includes>
     <includes local="no">fmt/format.h</includes>
     <includedby refid="semver_8h" local="yes">semver.h</includedby>
     <incdepgraph>
-      <node id="4">
+      <node id="5">
         <label>fmt/format.h</label>
+      </node>
+      <node id="4">
+        <label>stdexcept</label>
       </node>
       <node id="2">
         <label>string</label>
@@ -22,18 +26,20 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>string_view</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="16">
+      <node id="18">
         <label>angle.h</label>
         <link refid="angle_8h_source"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -41,29 +47,37 @@
         <link refid="version_8h_source"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="20">
         <label>point2d.h</label>
         <link refid="point2d_8h_source"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="14">
+        <label>guid.h</label>
+        <link refid="guid_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
         <label>math.h</label>
         <link refid="math_8h_source"/>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -88,7 +102,7 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="23">
         <label>directories.h</label>
         <link refid="directories_8h_source"/>
         <childnode refid="6" relation="include">
@@ -100,7 +114,7 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="25">
+      <node id="26">
         <label>qt.h</label>
         <link refid="qt_8h_source"/>
       </node>
@@ -116,28 +130,28 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="15">
         <label>types.h</label>
         <link refid="types_8h_source"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="24">
         <label>registrable.h</label>
         <link refid="registrable_8h_source"/>
-        <childnode refid="24" relation="include">
-        </childnode>
         <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
       <node id="12">
         <label>plugin_loader.h</label>
         <link refid="plugin__loader_8h_source"/>
       </node>
-      <node id="24">
+      <node id="25">
         <label>qml.h</label>
         <link refid="qml_8h_source"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
       <node id="11">
@@ -148,10 +162,10 @@
         <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="16">
         <label>numbers.h</label>
         <link refid="numbers_8h_source"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -167,7 +181,9 @@
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -182,21 +198,21 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="19">
         <label>vector2d.h</label>
         <link refid="vector2d_8h_source"/>
-        <childnode refid="19" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>velocity.h</label>
-        <link refid="velocity_8h_source"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
       <node id="21">
+        <label>velocity.h</label>
+        <link refid="velocity_8h_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
         <label>prelude.h</label>
         <link refid="prelude_8h_source"/>
       </node>
@@ -222,7 +238,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="12" column="19" bodyfile="rolly/global/char_utils.h" bodystart="12" bodyend="14"/>
+        <location file="rolly/global/char_utils.h" line="13" column="19" bodyfile="rolly/global/char_utils.h" bodystart="13" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a6f31057710263260dde372ac14417b07" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -239,7 +255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="16" column="19" bodyfile="rolly/global/char_utils.h" bodystart="16" bodyend="16"/>
+        <location file="rolly/global/char_utils.h" line="17" column="19" bodyfile="rolly/global/char_utils.h" bodystart="17" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a68be1add7d0d715e53b0689ac056f0d2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -256,7 +272,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="18" column="19" bodyfile="rolly/global/char_utils.h" bodystart="18" bodyend="18"/>
+        <location file="rolly/global/char_utils.h" line="19" column="19" bodyfile="rolly/global/char_utils.h" bodystart="19" bodyend="19"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1aa86605562968255acbd911ed427a2e26" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -273,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="20" column="19" bodyfile="rolly/global/char_utils.h" bodystart="20" bodyend="22"/>
+        <location file="rolly/global/char_utils.h" line="21" column="19" bodyfile="rolly/global/char_utils.h" bodystart="21" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a3a9735d38642d18354f18e961f06c9f2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -290,7 +306,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="24" column="19" bodyfile="rolly/global/char_utils.h" bodystart="24" bodyend="24"/>
+        <location file="rolly/global/char_utils.h" line="25" column="19" bodyfile="rolly/global/char_utils.h" bodystart="25" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a011123e17c8b3dcf68f082eb03f376df" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -307,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="26" column="19" bodyfile="rolly/global/char_utils.h" bodystart="26" bodyend="26"/>
+        <location file="rolly/global/char_utils.h" line="27" column="19" bodyfile="rolly/global/char_utils.h" bodystart="27" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a7694a2c16fb00e6162dec784e4ab5681" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -324,7 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="28" column="19" bodyfile="rolly/global/char_utils.h" bodystart="28" bodyend="28"/>
+        <location file="rolly/global/char_utils.h" line="29" column="19" bodyfile="rolly/global/char_utils.h" bodystart="29" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a95a56ea6e001b20d4537755511f94436" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -341,7 +357,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="30" column="19" bodyfile="rolly/global/char_utils.h" bodystart="30" bodyend="32"/>
+        <location file="rolly/global/char_utils.h" line="31" column="19" bodyfile="rolly/global/char_utils.h" bodystart="31" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1adaa0a5242a018519c3cba5f3374e6c15" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -358,7 +374,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="34" column="19" bodyfile="rolly/global/char_utils.h" bodystart="34" bodyend="36"/>
+        <location file="rolly/global/char_utils.h" line="35" column="19" bodyfile="rolly/global/char_utils.h" bodystart="35" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a29d324f3499898f4676605869b55449c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
@@ -375,12 +391,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="38" column="28" bodyfile="rolly/global/char_utils.h" bodystart="38" bodyend="40"/>
+        <location file="rolly/global/char_utils.h" line="39" column="28" bodyfile="rolly/global/char_utils.h" bodystart="39" bodyend="41"/>
       </memberdef>
-      <memberdef kind="function" id="namespacerolly_1a9cd77251f15016f95592878e29c5a6e7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespacerolly_1a825984fe64a698af0ae6ad819fdf1e88" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr unsigned char</type>
         <definition>constexpr unsigned char rolly::hex_to_char</definition>
-        <argsstring>(char c) noexcept</argsstring>
+        <argsstring>(char c)</argsstring>
         <name>hex_to_char</name>
         <param>
           <type>char</type>
@@ -392,7 +408,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="42" column="28" bodyfile="rolly/global/char_utils.h" bodystart="42" bodyend="50"/>
+        <location file="rolly/global/char_utils.h" line="43" column="28" bodyfile="rolly/global/char_utils.h" bodystart="43" bodyend="51"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

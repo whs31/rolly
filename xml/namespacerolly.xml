@@ -1579,7 +1579,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="12" column="19" bodyfile="rolly/global/char_utils.h" bodystart="12" bodyend="14"/>
+        <location file="rolly/global/char_utils.h" line="13" column="19" bodyfile="rolly/global/char_utils.h" bodystart="13" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a6f31057710263260dde372ac14417b07" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1596,7 +1596,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="16" column="19" bodyfile="rolly/global/char_utils.h" bodystart="16" bodyend="16"/>
+        <location file="rolly/global/char_utils.h" line="17" column="19" bodyfile="rolly/global/char_utils.h" bodystart="17" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a68be1add7d0d715e53b0689ac056f0d2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1613,7 +1613,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="18" column="19" bodyfile="rolly/global/char_utils.h" bodystart="18" bodyend="18"/>
+        <location file="rolly/global/char_utils.h" line="19" column="19" bodyfile="rolly/global/char_utils.h" bodystart="19" bodyend="19"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1aa86605562968255acbd911ed427a2e26" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1630,7 +1630,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="20" column="19" bodyfile="rolly/global/char_utils.h" bodystart="20" bodyend="22"/>
+        <location file="rolly/global/char_utils.h" line="21" column="19" bodyfile="rolly/global/char_utils.h" bodystart="21" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a3a9735d38642d18354f18e961f06c9f2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1647,7 +1647,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="24" column="19" bodyfile="rolly/global/char_utils.h" bodystart="24" bodyend="24"/>
+        <location file="rolly/global/char_utils.h" line="25" column="19" bodyfile="rolly/global/char_utils.h" bodystart="25" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a011123e17c8b3dcf68f082eb03f376df" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1664,7 +1664,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="26" column="19" bodyfile="rolly/global/char_utils.h" bodystart="26" bodyend="26"/>
+        <location file="rolly/global/char_utils.h" line="27" column="19" bodyfile="rolly/global/char_utils.h" bodystart="27" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a7694a2c16fb00e6162dec784e4ab5681" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1681,7 +1681,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="28" column="19" bodyfile="rolly/global/char_utils.h" bodystart="28" bodyend="28"/>
+        <location file="rolly/global/char_utils.h" line="29" column="19" bodyfile="rolly/global/char_utils.h" bodystart="29" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a95a56ea6e001b20d4537755511f94436" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1698,7 +1698,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="30" column="19" bodyfile="rolly/global/char_utils.h" bodystart="30" bodyend="32"/>
+        <location file="rolly/global/char_utils.h" line="31" column="19" bodyfile="rolly/global/char_utils.h" bodystart="31" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1adaa0a5242a018519c3cba5f3374e6c15" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -1715,7 +1715,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="34" column="19" bodyfile="rolly/global/char_utils.h" bodystart="34" bodyend="36"/>
+        <location file="rolly/global/char_utils.h" line="35" column="19" bodyfile="rolly/global/char_utils.h" bodystart="35" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1a29d324f3499898f4676605869b55449c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/types/integer" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::uint16_t</ref></type>
@@ -1732,12 +1732,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="38" column="28" bodyfile="rolly/global/char_utils.h" bodystart="38" bodyend="40"/>
+        <location file="rolly/global/char_utils.h" line="39" column="28" bodyfile="rolly/global/char_utils.h" bodystart="39" bodyend="41"/>
       </memberdef>
-      <memberdef kind="function" id="namespacerolly_1a9cd77251f15016f95592878e29c5a6e7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespacerolly_1a825984fe64a698af0ae6ad819fdf1e88" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr unsigned char</type>
         <definition>constexpr unsigned char rolly::hex_to_char</definition>
-        <argsstring>(char c) noexcept</argsstring>
+        <argsstring>(char c)</argsstring>
         <name>hex_to_char</name>
         <param>
           <type>char</type>
@@ -1749,7 +1749,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/global/char_utils.h" line="42" column="28" bodyfile="rolly/global/char_utils.h" bodystart="42" bodyend="50"/>
+        <location file="rolly/global/char_utils.h" line="43" column="28" bodyfile="rolly/global/char_utils.h" bodystart="43" bodyend="51"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1abed9db28b478cd89e3f00adba8f6632a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -3887,10 +3887,10 @@
         </inbodydescription>
         <location file="rolly/string_util.h" line="102" column="16" bodyfile="rolly/string_util.h" bodystart="102" bodyend="117"/>
       </memberdef>
-      <memberdef kind="function" id="namespacerolly_1_1literals_1adcd4361bfe366803ba692d748c203b47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">types::guid</ref></type>
-        <definition>types::guid rolly::literals::operator&quot;&quot;_guid</definition>
-        <argsstring>(char const *str, [[maybe_unused]] std::size_t unused)</argsstring>
+      <memberdef kind="function" id="namespacerolly_1_1literals_1abea83e51940b3acc66bd8653aeaa5b3d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1guid" kindref="compound">types::guid</ref></type>
+        <definition>constexpr types::guid rolly::literals::operator&quot;&quot;_guid</definition>
+        <argsstring>(char const *str, [[maybe_unused]] std::size_t size)</argsstring>
         <name>operator&quot;&quot;_guid</name>
         <param>
           <type>char const *</type>
@@ -3899,10 +3899,10 @@
         <param>
           <attributes>[[maybe_unused]</attributes>
           <type>] <ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::size_t</ref></type>
-          <declname>unused</declname>
+          <declname>size</declname>
         </param>
         <briefdescription>
-<para>Literal operator for <computeroutput>guid</computeroutput>. </para>
+<para>Literal operator for guid. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -3910,17 +3910,17 @@
 <parametername>str</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>String representation of the <computeroutput>guid</computeroutput>. </para>
+<para>String representation of the guid. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para><computeroutput>guid</computeroutput> object. </para>
+<simplesect kind="return"><para>guid object. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/guid.h" line="159" column="24" bodyfile="rolly/types/guid.h" bodystart="159" bodyend="161"/>
+        <location file="rolly/types/guid.h" line="221" column="7" bodyfile="rolly/types/guid.h" bodystart="221" bodyend="223"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1ae42bed75bde5f4d4e4c715b00c5cdec5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>

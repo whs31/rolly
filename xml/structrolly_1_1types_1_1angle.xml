@@ -312,9 +312,9 @@
         </inbodydescription>
         <location file="rolly/types/angle.h" line="149" column="24" bodyfile="rolly/types/angle.h" bodystart="149" bodyend="153"/>
       </memberdef>
-      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ab50fe362d80e4a70a8c67fc749d1a0fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
-        <definition>___constexpr___ angle lerp</definition>
+      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1afe46d65410aea34b6433396372e2bdea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrolly_1_1types_1_1angle" kindref="compound">angle</ref></type>
+        <definition>angle lerp</definition>
         <argsstring>(angle const &amp;other, T t) const</argsstring>
         <name>lerp</name>
         <param>
@@ -352,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/angle.h" line="161" column="30" bodyfile="rolly/types/angle.h" bodystart="161" bodyend="167"/>
+        <location file="rolly/types/angle.h" line="161" column="15" bodyfile="rolly/types/angle.h" bodystart="161" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ac3ca04e925cf9e490eadfa612dcb2810" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="cpp/utility/pair" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::pair</ref>&lt; T, T &gt;</type>
@@ -494,9 +494,9 @@
         </inbodydescription>
         <location file="rolly/types/angle.h" line="285" column="13" bodyfile="rolly/types/angle.h" bodystart="285" bodyend="285"/>
       </memberdef>
-      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a6affa04d1ef290bb34a5b569ca8798a5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
-        <definition>___constexpr___ number_type sin</definition>
+      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a180dab43c22e942a120ab7f99bbf8a74" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>number_type sin</definition>
         <argsstring>() const</argsstring>
         <name>sin</name>
         <briefdescription>
@@ -506,11 +506,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/angle.h" line="290" column="36" bodyfile="rolly/types/angle.h" bodystart="290" bodyend="290"/>
+        <location file="rolly/types/angle.h" line="290" column="21" bodyfile="rolly/types/angle.h" bodystart="290" bodyend="290"/>
       </memberdef>
-      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ab81f96b5cb802f028c83868875fa42c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
-        <definition>___constexpr___ number_type cos</definition>
+      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1aeb2224d0b1ef88347231240cbf0fd0af" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>number_type cos</definition>
         <argsstring>() const</argsstring>
         <name>cos</name>
         <briefdescription>
@@ -520,11 +520,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/angle.h" line="295" column="36" bodyfile="rolly/types/angle.h" bodystart="295" bodyend="295"/>
+        <location file="rolly/types/angle.h" line="295" column="21" bodyfile="rolly/types/angle.h" bodystart="295" bodyend="295"/>
       </memberdef>
-      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a0c7665e88eb32274796d8cefb28b1c30" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
-        <definition>___constexpr___ number_type tan</definition>
+      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1ad3bfb6f6e497d64476f91d5b4523f9ba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>number_type tan</definition>
         <argsstring>() const</argsstring>
         <name>tan</name>
         <briefdescription>
@@ -534,11 +534,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/angle.h" line="300" column="36" bodyfile="rolly/types/angle.h" bodystart="300" bodyend="300"/>
+        <location file="rolly/types/angle.h" line="300" column="21" bodyfile="rolly/types/angle.h" bodystart="300" bodyend="300"/>
       </memberdef>
-      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1aa75b20c064709be7f48b79fbe1135fc2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
-        <definition>___constexpr___ number_type asin</definition>
+      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a2da673a99c3050b72924056f39cb2baf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>number_type asin</definition>
         <argsstring>() const</argsstring>
         <name>asin</name>
         <briefdescription>
@@ -548,11 +548,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/angle.h" line="305" column="36" bodyfile="rolly/types/angle.h" bodystart="305" bodyend="305"/>
+        <location file="rolly/types/angle.h" line="305" column="21" bodyfile="rolly/types/angle.h" bodystart="305" bodyend="305"/>
       </memberdef>
-      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a13388a97dd44dac80896feb90613d45d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
-        <definition>___constexpr___ number_type acos</definition>
+      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a583ee6f45649a46f5df2fa082d456de8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>number_type acos</definition>
         <argsstring>() const</argsstring>
         <name>acos</name>
         <briefdescription>
@@ -562,11 +562,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/angle.h" line="310" column="36" bodyfile="rolly/types/angle.h" bodystart="310" bodyend="310"/>
+        <location file="rolly/types/angle.h" line="310" column="21" bodyfile="rolly/types/angle.h" bodystart="310" bodyend="310"/>
       </memberdef>
-      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a214638797f0f6df8d0c82c2a4d1a1266" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="group__macros_1ga0c9fde80eb6d7ab75a391dc178ef18b7" kindref="member">___constexpr___</ref> <ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
-        <definition>___constexpr___ number_type atan</definition>
+      <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a38eb7e4e9c49cb556997cf27b30d5725" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" kindref="member">number_type</ref></type>
+        <definition>number_type atan</definition>
         <argsstring>() const</argsstring>
         <name>atan</name>
         <briefdescription>
@@ -576,7 +576,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/angle.h" line="315" column="36" bodyfile="rolly/types/angle.h" bodystart="315" bodyend="315"/>
+        <location file="rolly/types/angle.h" line="315" column="21" bodyfile="rolly/types/angle.h" bodystart="315" bodyend="315"/>
       </memberdef>
       <memberdef kind="function" id="structrolly_1_1types_1_1angle_1a566265d7ea4ab6649c2bfdf2e96145af" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr T &amp;</type>
@@ -1702,7 +1702,7 @@
     </detaileddescription>
     <location file="rolly/types/angle.h" line="33" column="16" bodyfile="rolly/types/angle.h" bodystart="33" bodyend="595"/>
     <listofallmembers>
-      <member refid="structrolly_1_1types_1_1angle_1a13388a97dd44dac80896feb90613d45d" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>acos</name></member>
+      <member refid="structrolly_1_1types_1_1angle_1a583ee6f45649a46f5df2fa082d456de8" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>acos</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a0b3265454614c3cb2c563ec74dfeb851" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>angle</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a33f20a9549cf6a2b79817fde3034aa33" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>angle</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a2ddf4eb45f66fc53a35a92fec3fd22b9" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>angle</name></member>
@@ -1711,10 +1711,10 @@
       <member refid="structrolly_1_1types_1_1angle_1a7b1e681365ca2379776ba38496c8d9e1" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>as</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a4eadd631845fcfea8cf526a58403cf9b" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>as_f32</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a4f3d1e4786e042fac8b82314a89439ce" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>as_f64</name></member>
-      <member refid="structrolly_1_1types_1_1angle_1aa75b20c064709be7f48b79fbe1135fc2" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>asin</name></member>
-      <member refid="structrolly_1_1types_1_1angle_1a214638797f0f6df8d0c82c2a4d1a1266" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>atan</name></member>
+      <member refid="structrolly_1_1types_1_1angle_1a2da673a99c3050b72924056f39cb2baf" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>asin</name></member>
+      <member refid="structrolly_1_1types_1_1angle_1a38eb7e4e9c49cb556997cf27b30d5725" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>atan</name></member>
       <member refid="structrolly_1_1types_1_1angle_1ab4296efb618a5d97bd8779ec48fa7f56" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>cast</name></member>
-      <member refid="structrolly_1_1types_1_1angle_1ab81f96b5cb802f028c83868875fa42c3" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>cos</name></member>
+      <member refid="structrolly_1_1types_1_1angle_1aeb2224d0b1ef88347231240cbf0fd0af" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>cos</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a6133257e807ce7986b58d501bc09d734" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>degrees</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a5c55f8db6f6cb4c73858af1e28f768e8" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>from</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a485ca2070340a13e5e78cb687dbc1465" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>from_degrees</name></member>
@@ -1722,7 +1722,7 @@
       <member refid="structrolly_1_1types_1_1angle_1ab67f404883d5c94e4f2cd95ab3566e5a" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>half_pi</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a88fdf66be062767e4090d10a7d1de681" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>in</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a287bb4c3be885ca0f758ecfa8ad27682" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>is_finite</name></member>
-      <member refid="structrolly_1_1types_1_1angle_1ab50fe362d80e4a70a8c67fc749d1a0fe" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>lerp</name></member>
+      <member refid="structrolly_1_1types_1_1angle_1afe46d65410aea34b6433396372e2bdea" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>lerp</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a2c7a3a8ecd971a7784f8c3cfcbaae7ac" prot="private" virt="non-virtual"><scope>rolly::types::angle</scope><name>m_</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a107b40f8f53dbbb17f9224074426b8e6" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>number_type</name></member>
       <member refid="structrolly_1_1types_1_1angle_1ad0ed9dded3dc4405713f0b9270930a92" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>operator bool</name></member>
@@ -1764,9 +1764,9 @@
       <member refid="structrolly_1_1types_1_1angle_1a4eabbb298d080362e01c8ba722984785" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>quarter_pi</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a4d596e0bb6f37199a669740aab6256ac" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>radians</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a65712cf7f7c8341f6ffb6f3604573e6d" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>signed_</name></member>
-      <member refid="structrolly_1_1types_1_1angle_1a6affa04d1ef290bb34a5b569ca8798a5" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>sin</name></member>
+      <member refid="structrolly_1_1types_1_1angle_1a180dab43c22e942a120ab7f99bbf8a74" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>sin</name></member>
       <member refid="structrolly_1_1types_1_1angle_1ac3ca04e925cf9e490eadfa612dcb2810" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>sin_cos</name></member>
-      <member refid="structrolly_1_1types_1_1angle_1a0c7665e88eb32274796d8cefb28b1c30" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>tan</name></member>
+      <member refid="structrolly_1_1types_1_1angle_1ad3bfb6f6e497d64476f91d5b4523f9ba" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>tan</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a4ae3c43c7e9c16d33bf52172f1f898db" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>third_pi</name></member>
       <member refid="structrolly_1_1types_1_1angle_1aac993ecccd3d88aafefb6b8e3caa1dee" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>to_string</name></member>
       <member refid="structrolly_1_1types_1_1angle_1a99148853695ae53641609f542e18e4aa" prot="public" virt="non-virtual"><scope>rolly::types::angle</scope><name>two_pi</name></member>

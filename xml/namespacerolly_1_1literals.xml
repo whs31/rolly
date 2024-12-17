@@ -74,10 +74,10 @@
         </inbodydescription>
         <location file="rolly/qt/literals.h" line="23" column="20" bodyfile="rolly/qt/literals.h" bodystart="23" bodyend="25"/>
       </memberdef>
-      <memberdef kind="function" id="namespacerolly_1_1literals_1adcd4361bfe366803ba692d748c203b47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classrolly_1_1types_1_1guid" kindref="compound">types::guid</ref></type>
-        <definition>types::guid rolly::literals::operator&quot;&quot;_guid</definition>
-        <argsstring>(char const *str, [[maybe_unused]] std::size_t unused)</argsstring>
+      <memberdef kind="function" id="namespacerolly_1_1literals_1abea83e51940b3acc66bd8653aeaa5b3d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="classrolly_1_1types_1_1guid" kindref="compound">types::guid</ref></type>
+        <definition>constexpr types::guid rolly::literals::operator&quot;&quot;_guid</definition>
+        <argsstring>(char const *str, [[maybe_unused]] std::size_t size)</argsstring>
         <name>operator&quot;&quot;_guid</name>
         <param>
           <type>char const *</type>
@@ -86,10 +86,10 @@
         <param>
           <attributes>[[maybe_unused]</attributes>
           <type>] <ref refid="cpp/types/size_t" kindref="compound" external="/home/runner/work/rolly/rolly/doxygen/cppreference-doxygen-web.tag.xml">std::size_t</ref></type>
-          <declname>unused</declname>
+          <declname>size</declname>
         </param>
         <briefdescription>
-<para>Literal operator for <computeroutput>guid</computeroutput>. </para>
+<para>Literal operator for guid. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -97,17 +97,17 @@
 <parametername>str</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>String representation of the <computeroutput>guid</computeroutput>. </para>
+<para>String representation of the guid. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para><computeroutput>guid</computeroutput> object. </para>
+<simplesect kind="return"><para>guid object. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="rolly/types/guid.h" line="159" column="24" bodyfile="rolly/types/guid.h" bodystart="159" bodyend="161"/>
+        <location file="rolly/types/guid.h" line="221" column="7" bodyfile="rolly/types/guid.h" bodystart="221" bodyend="223"/>
       </memberdef>
       <memberdef kind="function" id="namespacerolly_1_1literals_1acf433e8d6e87da7af978d013539d49a1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr <ref refid="namespacerolly_1_1types_1a254d32383658e016368673396e7afc1b" kindref="member">u8</ref></type>

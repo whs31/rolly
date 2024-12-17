@@ -57,6 +57,7 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
@@ -66,43 +67,56 @@
             </li>
           </ul>
         </nav>
-<p>Based on <code><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a></code> container.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="https://en.wikipedia.org/wiki/Globally_unique_identifier">https://en.wikipedia.org/wiki/Globally_<wbr />unique_<wbr />identifier</a></p></aside>
+<p>Based on <a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a> container.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="https://en.wikipedia.org/wiki/Globally_unique_identifier">https://en.wikipedia.org/wiki/Globally_<wbr />unique_<wbr />identifier</a></p></aside>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="aef3d857d328958e252ad0db75606c091">
+              static auto <a href="#aef3d857d328958e252ad0db75606c091" class="m-doc-self">short_guid_string_length</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Length of the guid string representation in the form of <code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>.</dd>
+            <dt id="a459c05884327afabd173d12175e165e1">
+              static auto <a href="#a459c05884327afabd173d12175e165e1" class="m-doc-self">long_guid_string_length</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Length of the guid string representation in the form of <code>{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}</code>.</dd>
+          </dl>
+        </section>
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-dox-wrap-bumper">static auto <a href="#a52b280237cad4217386e8bc1abcc2229" class="m-dox">empty</a>(</span><span class="m-dox-wrap">) -&gt; <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper">static auto <a href="#ac96c0f11b011f5f031aa5b96f373d6d4" class="m-dox">empty</a>(</span><span class="m-dox-wrap">) -&gt; <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Creates an empty <code>guid</code>.</dd>
+            <dd>Creates an empty guid.</dd>
             <dt>
               <span class="m-dox-wrap-bumper">static auto <a href="#adf9915d8b34d4ef59625f281ba18c90d" class="m-dox">random</a>(</span><span class="m-dox-wrap">) -&gt; <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Creates a random <code>guid</code>.</dd>
+            <dd>Creates a random guid.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-dox-wrap-bumper"><a href="#a71c6f1c9e5f7965bdcd5142a6f633b96" class="m-dox">guid</a>(</span><span class="m-dox-wrap">)</span>
+              <span class="m-dox-wrap-bumper"><a href="#ae81204021847132120fe57d6fef39ea6" class="m-dox">guid</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>Creates an empty <code>guid</code>.</dd>
+            <dd>Creates an empty guid.</dd>
             <dt id="abe9997ddaf63a9309892c45b82185132">
               <span class="m-dox-wrap-bumper"><a href="#abe9997ddaf63a9309892c45b82185132" class="m-dox-self" name="abe9997ddaf63a9309892c45b82185132">~guid</a>(</span><span class="m-dox-wrap">) <span class="m-label m-flat m-info">defaulted</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-dox-wrap-bumper"><a href="#a4c3dc0740c44eca5f83d88b9b8b8e184" class="m-dox">guid</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt; const&amp; bytes) <span class="m-label m-flat m-info">explicit</span> </span>
+              <span class="m-dox-wrap-bumper"><a href="#a124206d9424ec4c771ff0b6be82cccb3" class="m-dox">guid</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt; const&amp; bytes) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>Creates a <code>guid</code> from an array of bytes.</dd>
+            <dd>Creates a guid from an array of bytes.</dd>
             <dt>
               <span class="m-dox-wrap-bumper"><a href="#aaec18b3d519f5d8651d3736e45b49645" class="m-dox">guid</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;std::byte, 16&gt; const&amp; bytes) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
             <dd>Creates a <code>guid</code> from an array of <code>std::byte</code>.</dd>
             <dt>
-              <span class="m-dox-wrap-bumper"><a href="#a411fd77fafa3952b4bdb3738c5ceaa81" class="m-dox">guid</a>(</span><span class="m-dox-wrap">std::string_view str) <span class="m-label m-flat m-info">explicit</span> </span>
+              <span class="m-dox-wrap-bumper"><a href="#afbc3ad504c8ca03eb7d6f2d6b48b2ace" class="m-dox">guid</a>(</span><span class="m-dox-wrap">std::string_view const str) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>Creates a <code>guid</code> from a string.</dd>
+            <dd>Creates a guid from a string.</dd>
             <dt id="abff2c6e274edc4e7e8e032d7e640fd5f">
               <span class="m-dox-wrap-bumper"><a href="#abff2c6e274edc4e7e8e032d7e640fd5f" class="m-dox-self" name="abff2c6e274edc4e7e8e032d7e640fd5f">guid</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp;) <span class="m-label m-flat m-info">defaulted</span></span>
             </dt>
@@ -114,7 +128,7 @@
             <dt>
               <span class="m-dox-wrap-bumper"><a href="#a420e60e9788bfa3b52aa3aab72ea3a5e" class="m-dox">operator bool</a>(</span><span class="m-dox-wrap">) const <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Checks whether the <code>guid</code> is valid or not.</dd>
+            <dd>Checks whether the guid is valid or not.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -131,31 +145,31 @@
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#a99f77f09f364b20c3a30ab6bffa4c24b" class="m-dox">valid</a>(</span><span class="m-dox-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Checks whether the <code>guid</code> is valid or not.</dd>
+            <dd>Checks whether the guid is valid or not.</dd>
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#aac993ecccd3d88aafefb6b8e3caa1dee" class="m-dox">to_string</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a></span>
             </dt>
-            <dd>Converts the <code>guid</code> to a string.</dd>
+            <dd>Converts the guid to a string.</dd>
             <dt>
-              <span class="m-dox-wrap-bumper">auto <a href="#a524e6e4494a17e99baef3044ea221ae7" class="m-dox">bytes</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt; const &amp; <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper">auto <a href="#a0fec4f43a26c378e20c01bbfc7d75fd8" class="m-dox">bytes</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt; const &amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Gets the bytes of the <code>guid</code>.</dd>
+            <dd>Gets the bytes of the guid.</dd>
             <dt>
-              <span class="m-dox-wrap-bumper">auto <a href="#a97546fb989ab2746f1c269e2569babbf" class="m-dox">bytes_mut</a>(</span><span class="m-dox-wrap">) -&gt; <a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt;&amp; <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-dox-wrap-bumper">auto <a href="#acc33090d8ecf964436c434fc52f6c5da" class="m-dox">bytes_mut</a>(</span><span class="m-dox-wrap">) -&gt; <a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt;&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Gets the mutable bytes of the <code>guid</code>.</dd>
+            <dd>Gets the mutable bytes of the guid.</dd>
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#af687d7ba21b4110f46c09401156f8c90" class="m-dox">to_u64</a>(</span><span class="m-dox-wrap">) const -&gt; <a href="namespacerolly_1_1types.html#a66e1d499241ccae9a18a20a1f4f0590d" class="m-doc">u64</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Hashes the <code>guid</code> to an unsigned 64-bit integer.</dd>
+            <dd>Hashes the guid to an unsigned 64-bit integer.</dd>
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#a6c033d63da52b8181d4d8c2732298838" class="m-dox">operator==</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; other) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Checks whether two <code>guid</code>s are equal or not.</dd>
+            <dd>Checks whether two guids are equal or not.</dd>
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#aa6ee004e31ca7c2ac05666230519348b" class="m-dox">operator!=</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; other) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Checks whether two <code>guid</code>s are not equal.</dd>
+            <dd>Checks whether two guids are not equal.</dd>
           </dl>
         </section>
         <section id="friends">
@@ -165,12 +179,12 @@
               <span class="m-dox-wrap-bumper">auto <a href="#ae74c4f98fab3ca71a3ac198dc50ef59d" class="m-dox">operator&lt;</a>(</span><span class="m-dox-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; lhs,
               <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Array-like less comparator for <code>guid</code>.</dd>
+            <dd>Array-like less comparator for guid.</dd>
             <dt>
               <span class="m-dox-wrap-bumper">auto <a href="#a499ec739efb1085811f95c07cc4c4065" class="m-dox">operator&lt;&lt;</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html" class="m-doc-external">std::<wbr />ostream</a>&amp; os,
               <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; guid) -&gt; <a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html" class="m-doc-external">std::<wbr />ostream</a>&amp;</span>
             </dt>
-            <dd>Prints the <code>guid</code> to an output stream.</dd>
+            <dd>Prints the guid to an output stream.</dd>
           </dl>
         </section>
         <section id="related">
@@ -185,16 +199,16 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a52b280237cad4217386e8bc1abcc2229"><div>
+          <section class="m-doc-details" id="ac96c0f11b011f5f031aa5b96f373d6d4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52b280237cad4217386e8bc1abcc2229" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">static <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac96c0f11b011f5f031aa5b96f373d6d4" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Creates an empty <code>guid</code>.</p>
+            <p>Creates an empty guid.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>New empty <code>guid</code>.</td>
+                  <td>New empty guid.</td>
                 </tr>
               </tfoot>
             </table>
@@ -203,28 +217,28 @@
             <h3>
               <span class="m-doc-wrap-bumper">static <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf9915d8b34d4ef59625f281ba18c90d" class="m-doc-self">random</a>(</span><span class="m-doc-wrap">) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Creates a random <code>guid</code>.</p>
+            <p>Creates a random guid.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>New random <code>guid</code>.</td>
+                  <td>New random guid.</td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a71c6f1c9e5f7965bdcd5142a6f633b96"><div>
+          <section class="m-doc-details" id="ae81204021847132120fe57d6fef39ea6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71c6f1c9e5f7965bdcd5142a6f633b96" class="m-doc-self">guid</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae81204021847132120fe57d6fef39ea6" class="m-doc-self">guid</a>(</span><span class="m-doc-wrap">) <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
-            <p>Creates an empty <code>guid</code>.</p>
-<aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1types_1_1guid.html#a52b280237cad4217386e8bc1abcc2229" class="m-doc">empty</a></p></aside>
+            <p>Creates an empty guid.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1types_1_1guid.html#ac96c0f11b011f5f031aa5b96f373d6d4" class="m-doc">empty</a></p></aside>
           </div></section>
-          <section class="m-doc-details" id="a4c3dc0740c44eca5f83d88b9b8b8e184"><div>
+          <section class="m-doc-details" id="a124206d9424ec4c771ff0b6be82cccb3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4c3dc0740c44eca5f83d88b9b8b8e184" class="m-doc-self">guid</a>(</span><span class="m-doc-wrap"><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt; const&amp; bytes) <span class="m-label m-info">explicit</span> </span></span>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a124206d9424ec4c771ff0b6be82cccb3" class="m-doc-self">guid</a>(</span><span class="m-doc-wrap"><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt; const&amp; bytes) <span class="m-label m-info">explicit</span>  <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
-            <p>Creates a <code>guid</code> from an array of bytes.</p>
+            <p>Creates a guid from an array of bytes.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -254,11 +268,11 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a411fd77fafa3952b4bdb3738c5ceaa81"><div>
+          <section class="m-doc-details" id="afbc3ad504c8ca03eb7d6f2d6b48b2ace"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a411fd77fafa3952b4bdb3738c5ceaa81" class="m-doc-self">guid</a>(</span><span class="m-doc-wrap">std::string_view str) <span class="m-label m-info">explicit</span> </span></span>
+              <span class="m-doc-wrap-bumper"> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbc3ad504c8ca03eb7d6f2d6b48b2ace" class="m-doc-self">guid</a>(</span><span class="m-doc-wrap">std::string_view const str) <span class="m-label m-info">explicit</span>  <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
-            <p>Creates a <code>guid</code> from a string.</p>
+            <p>Creates a guid from a string.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -266,45 +280,47 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">str</td>
-                  <td>String representation of the <code>guid</code>.</td>
+                  <td>String representation of the guid.</td>
                 </tr>
               </tbody>
             </table>
+<p>String must satisfy the following requirements:</p><ul><li>Length of string must be exactly 36 or 38 characters (see <a href="classrolly_1_1types_1_1guid.html#aef3d857d328958e252ad0db75606c091" class="m-doc">short_<wbr />guid_<wbr />string_<wbr />length</a> and <a href="classrolly_1_1types_1_1guid.html#a459c05884327afabd173d12175e165e1" class="m-doc">long_<wbr />guid_<wbr />string_<wbr />length</a>).</li><li>String must be in the form of <code>{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}</code> or <code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code> (with or without braces).</li><li>Bytes must be separated by hyphens.</li></ul>
           </div></section>
           <section class="m-doc-details" id="a420e60e9788bfa3b52aa3aab72ea3a5e"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a420e60e9788bfa3b52aa3aab72ea3a5e" class="m-doc-self">operator bool</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Checks whether the <code>guid</code> is valid or not.</p>
+            <p>Checks whether the guid is valid or not.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td><code>true</code> if the <code>guid</code> is valid, <code>false</code> otherwise.</td>
+                  <td><code>true</code> if the guid is valid, <code>false</code> otherwise.</td>
                 </tr>
               </tfoot>
             </table>
-<aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1types_1_1guid.html#a99f77f09f364b20c3a30ab6bffa4c24b" class="m-doc">valid</a></p></aside>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="classrolly_1_1types_1_1guid.html#a99f77f09f364b20c3a30ab6bffa4c24b" class="m-doc">valid</a></p></aside><aside class="m-note m-info"><h4>Note</h4><p>This function is <code>constexpr</code> in C++20 and above.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a99f77f09f364b20c3a30ab6bffa4c24b"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a99f77f09f364b20c3a30ab6bffa4c24b" class="m-doc-self">valid</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Checks whether the <code>guid</code> is valid or not.</p>
+            <p>Checks whether the guid is valid or not.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td><code>true</code> if the <code>guid</code> is valid, <code>false</code> otherwise.</td>
+                  <td><code>true</code> if the guid is valid, <code>false</code> otherwise.</td>
                 </tr>
               </tfoot>
             </table>
+<aside class="m-note m-info"><h4>Note</h4><p>This function is <code>constexpr</code> in C++20 and above.</p></aside>
           </div></section>
           <section class="m-doc-details" id="aac993ecccd3d88aafefb6b8e3caa1dee"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html" class="m-doc-external">std::<wbr />string</a> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aac993ecccd3d88aafefb6b8e3caa1dee" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Converts the <code>guid</code> to a string.</p>
+            <p>Converts the guid to a string.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -315,11 +331,11 @@
             </table>
 <p>String representation is in the form of <code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>. All hex digits are lowercase. Bytes are separated by hyphens.</p>
           </div></section>
-          <section class="m-doc-details" id="a524e6e4494a17e99baef3044ea221ae7"><div>
+          <section class="m-doc-details" id="a0fec4f43a26c378e20c01bbfc7d75fd8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt; const &amp; rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a524e6e4494a17e99baef3044ea221ae7" class="m-doc-self">bytes</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt; const &amp; rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0fec4f43a26c378e20c01bbfc7d75fd8" class="m-doc-self">bytes</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Gets the bytes of the <code>guid</code>.</p>
+            <p>Gets the bytes of the guid.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -329,11 +345,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a97546fb989ab2746f1c269e2569babbf"><div>
+          <section class="m-doc-details" id="acc33090d8ecf964436c434fc52f6c5da"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt;&amp; rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a97546fb989ab2746f1c269e2569babbf" class="m-doc-self">bytes_mut</a>(</span><span class="m-doc-wrap">) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/container/array.html" class="m-doc-external">std::<wbr />array</a>&lt;<a href="namespacerolly_1_1types.html#a254d32383658e016368673396e7afc1b" class="m-doc">u8</a>, 16&gt;&amp; rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acc33090d8ecf964436c434fc52f6c5da" class="m-doc-self">bytes_mut</a>(</span><span class="m-doc-wrap">) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Gets the mutable bytes of the <code>guid</code>.</p>
+            <p>Gets the mutable bytes of the guid.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -347,7 +363,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="namespacerolly_1_1types.html#a66e1d499241ccae9a18a20a1f4f0590d" class="m-doc">u64</a> rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af687d7ba21b4110f46c09401156f8c90" class="m-doc-self">to_u64</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Hashes the <code>guid</code> to an unsigned 64-bit integer.</p>
+            <p>Hashes the guid to an unsigned 64-bit integer.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -361,7 +377,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c033d63da52b8181d4d8c2732298838" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; other) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Checks whether two <code>guid</code>s are equal or not.</p>
+            <p>Checks whether two guids are equal or not.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -369,22 +385,23 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">other</td>
-                  <td>Other <code>guid</code>.</td>
+                  <td>Other guid.</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><code>true</code> if the <code>guid</code>s are equal, <code>false</code> otherwise.</td>
+                  <td><code>true</code> if the guids are equal, <code>false</code> otherwise.</td>
                 </tr>
               </tfoot>
             </table>
+<aside class="m-note m-info"><h4>Note</h4><p>This function is <code>constexpr</code> in C++20 and above.</p></aside>
           </div></section>
           <section class="m-doc-details" id="aa6ee004e31ca7c2ac05666230519348b"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool rolly::<wbr />types::<wbr />guid::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa6ee004e31ca7c2ac05666230519348b" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; other) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Checks whether two <code>guid</code>s are not equal.</p>
+            <p>Checks whether two guids are not equal.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -392,23 +409,24 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">other</td>
-                  <td>Other <code>guid</code>.</td>
+                  <td>Other guid.</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><code>true</code> if the <code>guid</code>s are not equal, <code>false</code> otherwise.</td>
+                  <td><code>true</code> if the guids are <strong>not</strong> equal, <code>false</code> otherwise.</td>
                 </tr>
               </tfoot>
             </table>
+<aside class="m-note m-info"><h4>Note</h4><p>This function is <code>constexpr</code> in C++20 and above.</p></aside>
           </div></section>
           <section class="m-doc-details" id="ae74c4f98fab3ca71a3ac198dc50ef59d"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae74c4f98fab3ca71a3ac198dc50ef59d" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap"><a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; lhs,
               <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Array-like less comparator for <code>guid</code>.</p>
+            <p>Array-like less comparator for guid.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -430,13 +448,14 @@
                 </tr>
               </tfoot>
             </table>
+<aside class="m-note m-info"><h4>Note</h4><p>This function is <code>constexpr</code> in C++20 and above.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a499ec739efb1085811f95c07cc4c4065"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html" class="m-doc-external">std::<wbr />ostream</a>&amp; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a499ec739efb1085811f95c07cc4c4065" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap"><a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html" class="m-doc-external">std::<wbr />ostream</a>&amp; os,
               <a href="classrolly_1_1types_1_1guid.html" class="m-doc">guid</a> const&amp; guid)</span></span>
             </h3>
-            <p>Prints the <code>guid</code> to an output stream.</p>
+            <p>Prints the guid to an output stream.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -448,7 +467,7 @@
                 </tr>
                 <tr>
                   <td>guid</td>
-                  <td><code>guid</code></td>
+                  <td>GUID</td>
                 </tr>
               </tbody>
               <tfoot>
