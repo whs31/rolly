@@ -54,7 +54,7 @@ namespace rolly::qt::qml {
    public:
     using version_type = version;
 
-    explicit module(std::string name, version_type version = {0, 0, 0}) noexcept
+    explicit module(std::string name, version_type version = {1, 0, 0}) noexcept
       : name_(std::move(name))
       , version_(version) {
       if constexpr(implicit_verbosity == verbosity::verbose) {

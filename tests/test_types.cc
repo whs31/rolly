@@ -117,6 +117,7 @@ TEST_CASE("Types", "[types]") {
       e4 = std::move(e6);
       REQUIRE(! e4);
       REQUIRE(e4.error() == 21);
+      REQUIRE_THROWS(e4.unwrap<std::runtime_error>());
 
       e4 = e1;
       REQUIRE(e4);

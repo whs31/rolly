@@ -2193,13 +2193,22 @@ namespace rolly {
       return std::move(err().value());
     }
 
+    template <class Exception>
+    T unwrap() const& {
+      if constexpr(std::is_same_v<E, std::string> or std::is_same_v<E, std::string_view>) {
+        return this->has_value() ? **this : throw Exception(this->error());
+      } else {
+        return this->has_value() ? **this : throw Exception("unwrap called on error value");
+      }
+    }
+
     template <class U>
     constexpr T value_or(U&& v) const& {
       static_assert(
         std::is_copy_constructible<T>::value && std::is_convertible<U&&, T>::value,
         "T must be copy-constructible and convertible to from U&&"
       );
-      return bool(*this) ? **this : static_cast<T>(std::forward<U>(v));
+      return this->has_value() ? **this : static_cast<T>(std::forward<U>(v));
     }
 
     template <class U>
