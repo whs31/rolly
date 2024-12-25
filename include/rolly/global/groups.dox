@@ -20,11 +20,3 @@
  * @details Contains information about the operating system, architecture, language version and etc.
  * @todo Add reference to global constant and suggest to use it.
  */
-
-/**
- * @dir include
- * @brief Top-level include directory.
- *
- * @dir include/rolly
- * @brief <b>Rolly</b> include directory.
- */

@@ -6,7 +6,7 @@
 
 namespace rolly {
   template <typename F, typename T>
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   ___requires___((serialization::serializable_and_deserializable<F, T, char>))
 #endif
     class savefile : public io::filedevice {

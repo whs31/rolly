@@ -6,6 +6,7 @@ cmake-visual-studio-*
 # Misc
 logs*/
 doc/html
+.doc/html
 doc/doxy.log
 
 # Qt artifacts

@@ -12,31 +12,31 @@
 
 // NOLINTBEGIN(*-avoid-c-arrays, *-pro-type-union-access)
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
 #  if defined(__EXCEPTIONS) || defined(_CPPUNWIND)
 #    define TL_EXPECTED_EXCEPTIONS_ENABLED
 #  endif
 
-#  if(defined(_MSC_VER) && _MSC_VER == 1'900)
+#  if (defined(_MSC_VER) && _MSC_VER == 1'900)
 #    define TL_EXPECTED_MSVC2015
 #    define TL_EXPECTED_MSVC2015_CONSTEXPR
 #  else
 #    define TL_EXPECTED_MSVC2015_CONSTEXPR constexpr
 #  endif
 
-#  if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#  if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC49
 #  endif
 
-#  if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
+#  if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC54
 #  endif
 
-#  if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
+#  if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
 #    define TL_EXPECTED_GCC55
 #  endif
 
-#  if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#  if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 // GCC < 5 doesn't support overloading on const&& for member functions
 
 #    define TL_EXPECTED_NO_CONSTRR
@@ -52,7 +52,7 @@
 
 // GCC 5 < v < 8 has a bug in is_trivially_copy_constructible which breaks
 // std::vector for non-copyable types
-#  elif(defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
+#  elif (defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
 #    ifndef TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 #      define TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 
@@ -93,7 +93,7 @@ namespace tl {
 #    define TL_EXPECTED_GCC49_CONSTEXPR constexpr
 #  endif
 
-#  if(__cplusplus == 201'103L || defined(TL_EXPECTED_MSVC2015) || defined(TL_EXPECTED_GCC49))
+#  if (__cplusplus == 201'103L || defined(TL_EXPECTED_MSVC2015) || defined(TL_EXPECTED_GCC49))
 #    define TL_EXPECTED_11_CONSTEXPR
 #  else
 #    define TL_EXPECTED_11_CONSTEXPR constexpr
@@ -1088,8 +1088,9 @@ namespace rolly {
       expected_move_base() = default;
       expected_move_base(expected_move_base const& rhs) = default;
 
-      expected_move_base(expected_move_base&& rhs
-      ) noexcept(std::is_nothrow_move_constructible<T>::value)
+      expected_move_base(expected_move_base&& rhs) noexcept(
+        std::is_nothrow_move_constructible<T>::value
+      )
         : expected_copy_base<T, E>(no_init) {
         if(rhs.has_value()) {
           this->construct_with(std::move(rhs));
@@ -1411,26 +1412,30 @@ namespace rolly {
 
 #  else
     template <class F>
-    TL_EXPECTED_11_CONSTEXPR auto and_then(F&& f
+    TL_EXPECTED_11_CONSTEXPR auto and_then(
+      F&& f
     ) & -> decltype(and_then_impl(std::declval<expected&>(), std::forward<F>(f))) {
       return and_then_impl(*this, std::forward<F>(f));
     }
 
     template <class F>
-    TL_EXPECTED_11_CONSTEXPR auto and_then(F&& f
+    TL_EXPECTED_11_CONSTEXPR auto and_then(
+      F&& f
     ) && -> decltype(and_then_impl(std::declval<expected&&>(), std::forward<F>(f))) {
       return and_then_impl(std::move(*this), std::forward<F>(f));
     }
 
     template <class F>
-    constexpr auto and_then(F&& f
+    constexpr auto and_then(
+      F&& f
     ) const& -> decltype(and_then_impl(std::declval<expected const&>(), std::forward<F>(f))) {
       return and_then_impl(*this, std::forward<F>(f));
     }
 
 #    ifndef TL_EXPECTED_NO_CONSTRR
     template <class F>
-    constexpr auto and_then(F&& f
+    constexpr auto and_then(
+      F&& f
     ) const&& -> decltype(and_then_impl(std::declval<expected const&&>(), std::forward<F>(f))) {
       return and_then_impl(std::move(*this), std::forward<F>(f));
     }
@@ -1706,8 +1711,9 @@ namespace rolly {
       class G = E,
       detail::enable_if_t<std::is_constructible<E, G&&>::value>* = nullptr,
       detail::enable_if_t<! std::is_convertible<G&&, E>::value>* = nullptr>
-    explicit constexpr expected(unexpected<G>&& e
-    ) noexcept(std::is_nothrow_constructible<E, G&&>::value)
+    explicit constexpr expected(unexpected<G>&& e) noexcept(
+      std::is_nothrow_constructible<E, G&&>::value
+    )
       : impl_base(unexpect, std::move(e.value()))
       , ctor_base(detail::default_constructor_tag {}) {}
 
@@ -2187,13 +2193,22 @@ namespace rolly {
       return std::move(err().value());
     }
 
+    template <class Exception>
+    T unwrap() const& {
+      if constexpr(std::is_same_v<E, std::string> or std::is_same_v<E, std::string_view>) {
+        return this->has_value() ? **this : throw Exception(this->error());
+      } else {
+        return this->has_value() ? **this : throw Exception("unwrap called on error value");
+      }
+    }
+
     template <class U>
     constexpr T value_or(U&& v) const& {
       static_assert(
         std::is_copy_constructible<T>::value && std::is_convertible<U&&, T>::value,
         "T must be copy-constructible and convertible to from U&&"
       );
-      return bool(*this) ? **this : static_cast<T>(std::forward<U>(v));
+      return this->has_value() ? **this : static_cast<T>(std::forward<U>(v));
     }
 
     template <class U>
@@ -2635,49 +2650,47 @@ namespace rolly {
 #endif
 
 namespace rolly {
-  inline namespace types {
-    template <typename T = void>
-    using result = expected<T, std::string>;
+  template <typename T = void>
+  using result = expected<T, std::string>;
 
-    static_assert(std::is_same_v<result<>, expected<void, std::string>>);
+  static_assert(std::is_same_v<result<>, expected<void, std::string>>);
 
-    /**
-     * @brief Generates an unexpected error object with a formatted error message.
-     *
-     * @details This function formats an error message using the provided format
-     * string and arguments, and returns it wrapped in an `unexpected` object.
-     *
-     * @param format The format string used to construct the error message.
-     * @param args Additional arguments to format the error message.
-     *
-     * @return An `unexpected` object containing the formatted error message.
-     */
-    template <typename... Args>
-    [[nodiscard]] unexpected<std::decay_t<std::string>>
-      error(std::string_view format, Args&&... args) {
-      return unexpected<std::decay_t<std::string>>(
-        fmt::format(fmt::runtime(format), std::forward<Args>(args)...)
-      );
-    }
+  /**
+   * @brief Generates an unexpected error object with a formatted error message.
+   *
+   * @details This function formats an error message using the provided format
+   * string and arguments, and returns it wrapped in an `unexpected` object.
+   *
+   * @param format The format string used to construct the error message.
+   * @param args Additional arguments to format the error message.
+   *
+   * @return An `unexpected` object containing the formatted error message.
+   */
+  template <typename... Args>
+  [[nodiscard]] unexpected<std::decay_t<std::string>>
+    error(std::string_view format, Args&&... args) {
+    return unexpected<std::decay_t<std::string>>(
+      fmt::format(fmt::runtime(format), std::forward<Args>(args)...)
+    );
+  }
 
-    /**
-     * @brief Wrap a value in an expected.
-     *
-     * @details
-     * This function is a helper for creating an expected from a value.
-     * It is mostly useful when working with generic code that needs to work with
-     * both expected and optional types.
-     *
-     * @see result
-     * @see error
-     */
-    template <typename T>
-    [[nodiscard]] expected<std::decay_t<T>, std::string> ok(T&& t) {
-      return expected<std::decay_t<T>, std::string>(std::forward<T>(t));
-    }
+  /**
+   * @brief Wrap a value in an expected.
+   *
+   * @details
+   * This function is a helper for creating an expected from a value.
+   * It is mostly useful when working with generic code that needs to work with
+   * both expected and optional types.
+   *
+   * @see result
+   * @see error
+   */
+  template <typename T>
+  [[nodiscard]] expected<std::decay_t<T>, std::string> ok(T&& t) {
+    return expected<std::decay_t<T>, std::string>(std::forward<T>(t));
+  }
 
-    [[nodiscard]] inline result<> ok() { return {}; }
-  }  // namespace types
+  [[nodiscard]] inline result<> ok() { return {}; }
 }  // namespace rolly
 
 // NOLINTEND(*-avoid-c-arrays, *-pro-type-union-access)

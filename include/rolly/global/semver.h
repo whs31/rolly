@@ -37,7 +37,7 @@ namespace rolly {
     none = 3
   };
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   struct from_chars_result : std::from_chars_result {
     [[nodiscard]] constexpr operator bool() const noexcept { return ec == std::errc {}; }
   };
@@ -49,7 +49,7 @@ namespace rolly {
   inline constexpr auto max_version_string_length = static_cast<std::size_t>(29);
 #endif
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   namespace detail {
     inline constexpr auto alpha = std::string_view {"alpha", 5};
     inline constexpr auto beta = std::string_view {"beta", 4};
@@ -481,7 +481,7 @@ namespace rolly {
     }
   }  // namespace comparators
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   namespace detail {
     using namespace rolly::detail;
 

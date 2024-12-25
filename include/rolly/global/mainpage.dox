@@ -1,17 +1,17 @@
-/** 
+/**
  * @mainpage Rolly documentation
  * @section intro_sec Introduction
- * 
+ *
  * @todo Add introduction
- * 
+ *
  * This is the Rolly documentation.
- * 
+ *
  * @section install_sec Installation
  * @todo Add installation instructions
- * 
+ *
  * @section usage_sec Usage
  * @todo Add usage instructions
- * 
+ *
  * @section license_sec License
  * **Rolly** library is distributed under the MIT license. See *LICENSE* file for details.
  *

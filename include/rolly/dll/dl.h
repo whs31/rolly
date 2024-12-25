@@ -9,31 +9,31 @@
 #endif
 
 namespace rolly::dll {
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   ___rolly_api___
 #endif
     [[nodiscard]] std::string
     library_name(std::string_view name);
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   ___rolly_api___
 #endif
     [[nodiscard]] void*
     load_library(std::string_view name);
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   ___rolly_api___
 #endif
     [[nodiscard]] void*
     load_library(std::string_view name, std::filesystem::path const& path);
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   ___rolly_api___
 #endif
     void
     unload_library(void* handle);
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   ___rolly_api___
 #endif
     [[nodiscard]] void*

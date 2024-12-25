@@ -11,7 +11,7 @@
 
 namespace rolly::dll {
   class
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
     ___rolly_api___
 #endif
     [[deprecated("Plugin related functions and classes are deprecated. Write your own plugin system"

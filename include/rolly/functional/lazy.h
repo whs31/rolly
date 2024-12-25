@@ -9,7 +9,7 @@
 #include "../type_traits.h"
 
 namespace rolly {
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   namespace detail {
     template <___concept___(std::invocable) F>
 #  ifdef ___rolly_cxx20___

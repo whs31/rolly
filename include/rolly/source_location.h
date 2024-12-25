@@ -1,11 +1,12 @@
 #pragma once
 
-#include "format/ostream_formatter.h"
+#include <fmt/format.h>
+#include <fmt/ostream.h>
 #include "global/definitions.h"
 #include "types/stdint.h"
 
 #if defined(ROLLY_COMPAT) && defined(_MSC_VER)
-# include <ciso646>
+#  include <ciso646>
 #endif
 
 namespace rolly {
@@ -153,4 +154,4 @@ namespace rolly {
  * @relates rolly::source_location
  */
 template <>
-struct [[maybe_unused]] fmt::formatter<rolly::source_location> : rolly::ostream_formatter<char> {};
+struct [[maybe_unused]] fmt::formatter<rolly::source_location> : ostream_formatter {};

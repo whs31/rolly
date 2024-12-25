@@ -1,8 +1,3 @@
-/**
- * @file fl/global/version_definitions.h
- * @brief Version number macro definitions, used by <i>meta::library_metadata</i> global constant.
- */
-
 #pragma once
 
 // NOLINTBEGIN(*-macro-to-enum, *-macro-usage)
@@ -21,7 +16,7 @@
  * @note Consider using <i>meta::library_metadata</i> variable to access this value.
  * @version 2.1.32
  */
-#define ROLLY_VERSION_MINOR 1
+#define ROLLY_VERSION_MINOR 2
 
 /**
  * @ingroup meta
@@ -29,7 +24,7 @@
  * @note Consider using <i>meta::library_metadata</i> variable to access this value.
  * @version 2.1.32
  */
-#define ROLLY_VERSION_PATCH 49
+#define ROLLY_VERSION_PATCH 0
 
 /**
  * @internal

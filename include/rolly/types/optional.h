@@ -42,7 +42,7 @@
 #    define TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 
 namespace rolly {
-#    ifndef DOXYGEN_GENERATING_OUTPUT
+#    ifndef DOXYGEN
   namespace detail {
     template <class T>
     struct is_trivially_copy_constructible : std::is_trivially_copy_constructible<T> {};
@@ -84,7 +84,7 @@ namespace rolly {
   template <class T>
   class optional;
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   namespace detail {
 #  ifndef TL_TRAITS_MUTEX
 #    define TL_TRAITS_MUTEX
@@ -1502,7 +1502,7 @@ namespace rolly {
     return lhs.swap(rhs);
   }
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   namespace detail {
     struct i_am_secret {};
   }  // namespace detail
@@ -1532,7 +1532,7 @@ namespace rolly {
   optional(T) -> optional<T>;
 #endif
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   /// \exclude
   namespace detail {
 #  ifdef TL_OPTIONAL_CXX14

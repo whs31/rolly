@@ -24,77 +24,74 @@
 // NOLINTEND(*-reserved-identifier)
 
 namespace rolly {
-  inline namespace math {
-    /**
-     * @brief Returns the number of 1 bits in the value.
-     * @tparam T Type of the value. Must be an unsigned integral type.
-     * @param x Value to count the number of 1 bits in.
-     * @return The number of 1 bits in the value.
-     */
-#ifdef DOXYGEN_GENERATING_OUTPUT
-    template <std::integral T>
+  /**
+   * @brief Returns the number of 1 bits in the value.
+   * @tparam T Type of the value. Must be an unsigned integral type.
+   * @param x Value to count the number of 1 bits in.
+   * @return The number of 1 bits in the value.
+   */
+#ifdef DOXYGEN
+  template <std::integral T>
 #else
-    template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
+  template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
 #endif
-    [[nodiscard]] constexpr int popcount(T x) noexcept {
-      return __builtin_popcount(x);
-    }
+  [[nodiscard]] constexpr int popcount(T x) noexcept {
+    return __builtin_popcount(x);
+  }
 
-    /**
-     * @brief Checks if the value is an integral power of two.
-     * @tparam T Type of the value. Must be an integral type.
-     * @param x Value to check.
-     * @return True if the value is an integral power of two, false otherwise.
-     * @see is_pow2
-     */
-#ifdef DOXYGEN_GENERATING_OUTPUT
-    template <std::integral T>
+  /**
+   * @brief Checks if the value is an integral power of two.
+   * @tparam T Type of the value. Must be an integral type.
+   * @param x Value to check.
+   * @return True if the value is an integral power of two, false otherwise.
+   * @see is_pow2
+   */
+#ifdef DOXYGEN
+  template <std::integral T>
 #else
-    template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
+  template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
 #endif
-    [[nodiscard]] constexpr bool has_single_bit(T x) noexcept {
-      return popcount(static_cast<unsigned>(x)) == 1;
-    }
+  [[nodiscard]] constexpr bool has_single_bit(T x) noexcept {
+    return popcount(static_cast<unsigned>(x)) == 1;
+  }
 
-    /**
-     * @brief Checks if the value is an integral power of two.
-     * @details This is an alias for @ref has_single_bit function.
-     * @tparam T Type of the value. Must be an integral type.
-     * @param x Value to check.
-     * @return True if the value is an integral power of two, false otherwise.
-     * @see has_single_bit
-     */
-#ifdef DOXYGEN_GENERATING_OUTPUT
-    template <std::integral T>
+  /**
+   * @brief Checks if the value is an integral power of two.
+   * @details This is an alias for @ref has_single_bit function.
+   * @tparam T Type of the value. Must be an integral type.
+   * @param x Value to check.
+   * @return True if the value is an integral power of two, false otherwise.
+   * @see has_single_bit
+   */
+#ifdef DOXYGEN
+  template <std::integral T>
 #else
-    template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
+  template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
 #endif
-    [[nodiscard]] constexpr bool is_pow2(T x) noexcept {
-      return x and not (x bitand (x - 1));
-    }
+  [[nodiscard]] constexpr bool is_pow2(T x) noexcept {
+    return x and not (x bitand (x - 1));
+  }
 
-    /**
-     * @brief Returns the next power of two of the value.
-     * @tparam T Type of the value. Must be an unsigned integral type.
-     * @param x Value.
-     * @return The next power of two of the value.
-     */
-#ifdef DOXYGEN_GENERATING_OUTPUT
-    template <std::unsigned_integral T>
+  /**
+   * @brief Returns the next power of two of the value.
+   * @tparam T Type of the value. Must be an unsigned integral type.
+   * @param x Value.
+   * @return The next power of two of the value.
+   */
+#ifdef DOXYGEN
+  template <std::unsigned_integral T>
 #else
-    template <___concept___(std::unsigned_integral)
-                T ___sfinae_requirement___(std::is_unsigned_v<T>)>
+  template <___concept___(std::unsigned_integral) T ___sfinae_requirement___(std::is_unsigned_v<T>)>
 #endif
-    [[nodiscard]] constexpr T bit_ceil(T x) noexcept {
-      x--;
-      x |= x >> 1;
-      x |= x >> 2;
-      x |= x >> 4;
-      x |= x >> 8;
-      x |= x >> 16;
-      return x + 1;
-    }
-  }  // namespace math
+  [[nodiscard]] constexpr T bit_ceil(T x) noexcept {
+    x--;
+    x |= x >> 1;
+    x |= x >> 2;
+    x |= x >> 4;
+    x |= x >> 8;
+    x |= x >> 16;
+    return x + 1;
+  }
 
   /**
    * @brief Endianness.
@@ -103,7 +100,7 @@ namespace rolly {
    * @sa https://en.cppreference.com/w/cpp/types/endian
    */
   enum class endian : signed int {
-#if defined(ROLLY_OS_WINDOWS) or defined(DOXYGEN_GENERATING_OUTPUT)
+#if defined(ROLLY_OS_WINDOWS) or defined(DOXYGEN)
     little = 0,      ///< Little endian
     big = 1,         ///< Big endian
     native = little  ///< Native endian. Either little or big.
@@ -152,7 +149,7 @@ namespace rolly {
    * @version 2.1.32
    */
   template <class To, class From>
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   std::enable_if_t<
     sizeof(To) == sizeof(From)
       and std::is_trivially_copyable_v<From> and std::is_trivially_copyable_v<To>,
@@ -177,7 +174,7 @@ namespace rolly {
    * @return Reversed value.
    * @version 2.1.32
    */
-#ifdef DOXYGEN_GENERATING_OUTPUT
+#ifdef DOXYGEN
   template <concepts::num T>
 #else
   template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
@@ -200,7 +197,7 @@ namespace rolly {
    * @return Reversed value.
    * @version 2.1.32
    */
-#ifdef DOXYGEN_GENERATING_OUTPUT
+#ifdef DOXYGEN
   template <concepts::num T>
 #else
   template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
@@ -220,7 +217,7 @@ namespace rolly {
    * @return Reversed value.
    * @version 2.1.32
    */
-#ifdef DOXYGEN_GENERATING_OUTPUT
+#ifdef DOXYGEN
   template <concepts::num T>
 #else
   template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>

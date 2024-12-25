@@ -7,7 +7,7 @@
 #endif
 
 namespace rolly {
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
   namespace detail {
     template <typename T, typename = void>
     struct is_noarg_callable_t : std::false_type {};
@@ -48,7 +48,7 @@ namespace rolly {
 
 #endif
 
-#ifdef DOXYGEN_GENERATING_OUTPUT
+#ifdef DOXYGEN
     namespace detail {
 #endif
       template <typename Callback>
