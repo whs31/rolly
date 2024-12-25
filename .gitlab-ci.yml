@@ -59,14 +59,16 @@ deploy:alse:
   extends: .deploy_library_extend
 
 documentation:
-  tags: [ doxygen-mcss ]
+  tags: [ dev-utils ]
   stage: deploy
   allow_failure: true
   needs:
     - job: build:alse
   script:
+    - echo $CI_COMMIT_BRANCH
+    - git fetch origin $CI_COMMIT_BRANCH:refs/remotes/origin/$CI_COMMIT_BRANCH --tags --force
     - cd .doc
-    - poxy --verbose --git-tags
+    - poxy # --verbose --git-tags --min-version 2.2.0
     - mkdir -p ../public
     - cp -r html/* ../public
   artifacts:
