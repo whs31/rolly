@@ -1,9 +1,9 @@
 import os
 import sys
 import subprocess
-import shutil
 import argparse
 import re
+import utl
 
 try:
     from termcolor import colored
@@ -11,13 +11,8 @@ except ModuleNotFoundError:
     def colored(text, color=None):
         return text
 
-
-def getroot(foldername: str) -> str:
-    __root = os.path.abspath(os.path.dirname(__file__))
-    if os.path.basename(__root) == foldername:
-        __root = os.path.abspath(os.path.join(__root, ".."))
-    print(colored(f'- project root directory: {__root}', "magenta"))
-    return __root
+VERSION_INCLUDE_PATH = os.path.join("include", "rolly", "global", "version_definitions.h")
+VERSION_MACRO_PREFIX = "ROLLY"
 
 
 def find_executable(name: str):
@@ -38,11 +33,8 @@ def strip_version(version: str) -> str:
     :param version: specified version
     :return: stripped version
     """
-    last_char = version[-1]
-    if last_char.isdigit():
-        return version
-    else:
-        return strip_version(version[:-1])
+    sp = version.split(".")[0:3]
+    return f"{sp[0]}.{sp[1]}.{sp[2]}"
 
 
 def patch_cmake(version: str, directory: str) -> None:
@@ -138,28 +130,6 @@ def patch_include_version(version: str, filepath: str, prefix: str) -> None:
         raise FileNotFoundError(f"{filepath} not found")
 
 
-def tag_git(tag: str) -> None:
-    """
-    Tags git repository with specified tag
-    :param tag: specified tag
-    :return: None
-    """
-    find_executable("git")
-    print(colored(f'- tagging git repository with {tag}', "green"))
-    subprocess.run(["git", "tag", tag]
-                   , stdout=subprocess.DEVNULL
-                   , stderr=subprocess.DEVNULL
-                   , check=True
-                   , cwd=getroot("scripts"))
-
-    print(colored(f'- pushing git repository with {tag}', "green"))
-    subprocess.run(["git", "push", "origin", tag]
-                   , stdout=subprocess.DEVNULL
-                   , stderr=subprocess.DEVNULL
-                   , check=True
-                   , cwd=getroot("scripts"))
-
-
 def extract_semver(string: str) -> str:
     return re.search(r"(\d+\.)?(\d+\.)?(\*|\d+)", string).group(0)
 
@@ -199,16 +169,15 @@ def show_versions(root):
     print_semver(root, "CMakeLists.txt", r"VERSION (\d+\.)?(\d+\.)?(\*|\d+)")
     print_semver(root, "conanfile.py", r"version\s*=\s*\"(.*)\"")
     print_semver(root, "Doxyfile", r"PROJECT_NUMBER\s*=\s*(\S*)")
-    print_include_version(os.path.join(root, "include", "rolly", "global", "version_definitions.h"), "ROLLY")
+    print_include_version(os.path.join(root, VERSION_INCLUDE_PATH), VERSION_MACRO_PREFIX)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--version", type=str, help="New project version")
-    parser.add_argument("-g", "--git", action="store_true", help="Tag git repository")
     parser.add_argument("-s", "--show", action="store_true", help="Show current versions")
     args = parser.parse_args()
-    root = getroot("scripts")
+    root = utl.getroot("scripts")
     if args.show:
         show_versions(root)
         sys.exit(0)
@@ -217,16 +186,14 @@ def main():
     patch_doxyfile(args.version, root)
     patch_include_version(
         args.version,
-        os.path.join(root, "include", "rolly", "global", "version_definitions.h"),
-        "ROLLY"
+        os.path.join(root, VERSION_INCLUDE_PATH),
+        VERSION_MACRO_PREFIX
     )
-    if args.git:
-        tag_git(args.version)
 
 
 if __name__ == "__main__":
     try:
         main()
     except FileNotFoundError as e:
-        print(colored(f'⚠️ failed to tag project due to: {e}', "red"))
+        print(colored(f'failed to tag project due to: {e}', "red"))
         sys.exit(1)

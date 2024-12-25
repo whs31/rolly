@@ -1,12 +1,7 @@
-/**
- * @file rolly/global/export.h
- * @brief Export macros for the <b>rolly</b> library.
- */
-
 #pragma once
 
 // NOLINTBEGIN(*-reserved-identifier, *-identifier-naming, *-macro-usage)
-#if defined(DOXYGEN_GENERATING_OUTPUT)
+#if defined(DOXYGEN)
 #  define ___rolly_api___
 #else
 #  if defined(_WIN32)
@@ -23,7 +18,7 @@
 #endif
 // NOLINTEND(*-reserved-identifier, *-identifier-naming, *-macro-usage)
 
-#if ! defined(ROLLY_COMPAT) || defined(DOXYGEN_GENERATING_OUTPUT)
+#if ! defined(ROLLY_COMPAT) || defined(DOXYGEN)
 #  define ___rolly_cxx20___
 #endif  // __cplusplus >= 202002L
 

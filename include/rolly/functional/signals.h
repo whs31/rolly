@@ -41,7 +41,7 @@ namespace rolly {
       return s;
     }
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
     namespace detail {
       template <typename...>
       struct voider {
@@ -164,7 +164,7 @@ namespace rolly {
      * compilers, multiple inheritance has an impact too. Hence, we form an union
      * big enough to store any kind of function pointer.
      */
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
     namespace mock {
 
       struct a {

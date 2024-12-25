@@ -4,7 +4,7 @@
 #include "platform_definitions.h"
 
 // NOLINTBEGIN(*-macro-usage)
-#if defined(DOXYGEN_GENERATING_OUTPUT)
+#if defined(DOXYGEN)
 /**
  * @ingroup macros
  * @brief Flag defined if <b>Doxygen</b> documentation is being generated.
@@ -16,7 +16,7 @@
  * @brief Expands to <code>constexpr</code> in C++20 mode, to nothing in C++17 mode.
  */
 #  define ___constexpr___
-#endif  // DOXYGEN_GENERATING_OUTPUT
+#endif  // DOXYGEN
 
 #if defined(ROLLY_DOC)
 /**
@@ -84,13 +84,13 @@
  * @see ___noinline___
  */
 #  define ___inline___
-#else  // DOXYGEN_GENERATING_OUTPUT
+#else  // DOXYGEN
 #  if defined(QT_CORE_LIB) \
-    || __has_include("qtglobal.h") || __has_include("qcoreapplication.h") || defined(DOXYGEN_GENERATING_OUTPUT)
+    || __has_include("qtglobal.h") || __has_include("qcoreapplication.h") || defined(DOXYGEN)
 #    define ROLLY_QT_CORE
 #  endif
 #  if defined(QT_GUI_LIB) \
-    || __has_include("qpainter.h") || __has_include("qguiapplication.h") || defined(DOXYGEN_GENERATING_OUTPUT)
+    || __has_include("qpainter.h") || __has_include("qguiapplication.h") || defined(DOXYGEN)
 #    define ROLLY_QT_GUI
 #  endif
 #  if defined(NDEBUG) || defined(QT_NO_DEBUG)

@@ -65,9 +65,10 @@ documentation:
   needs:
     - job: build:alse
   script:
-    - python3 /mcss/documentation/doxygen.py ./conf.py
-    - mkdir -p public
-    - cp -r docs/* public
+    - cd .doc
+    - poxy --verbose --git-tags
+    - mkdir -p ../public
+    - cp -r html/* ../public
   artifacts:
     paths:
       - public

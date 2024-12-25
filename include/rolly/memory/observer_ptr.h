@@ -87,7 +87,7 @@ namespace rolly {
      * @tparam U Type of the other observer. Must be convertible to <tt>T*</tt>.
      * @param other Observer to construct from.
      */
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
 #  ifdef ___rolly_cxx20___
     template <typename U>
       requires std::is_convertible_v<U*, T*>
@@ -106,7 +106,7 @@ namespace rolly {
      * @tparam U Underlying type of the unique pointer. Must be convertible to <tt>T*</tt>.
      * @param other Unique pointer to construct from.
      */
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
 #  ifdef ___rolly_cxx20___
     template <typename U>
       requires std::is_convertible_v<U*, T*>
@@ -125,7 +125,7 @@ namespace rolly {
      * @tparam U Type of the box. Must be convertible to <tt>T*</tt>.
      * @param other Box to construct from.
      */
-#ifndef DOXYGEN_GENERATING_OUTPUT
+#ifndef DOXYGEN
 #  ifdef ___rolly_cxx20___
     template <typename U>
       requires std::is_convertible_v<U*, T*>

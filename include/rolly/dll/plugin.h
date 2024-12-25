@@ -294,7 +294,7 @@ namespace rolly::dll {
      * @note You can generate UUIDs using <a href="https://www.uuidgenerator.net/">UUID
      * generator</a>.
      * @return Reference to the plugin UUID.
-     * @see rolly::types::guid
+     * @see rolly::guid
      */
     [[nodiscard]] virtual guid const& uuid() const = 0;
 
