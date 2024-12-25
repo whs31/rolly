@@ -26,8 +26,10 @@ strip_paths = ['../include']
 paths = ['images']
 
 
-# [macros]
-# 'TOML_ASYMMETRICAL_EQUALITY_OPS(...)' = 'static_assert(true)'
+[macros]
+'___concept___(...)' = 'typename'
+'___sfinae_requirement___(...)' = ''
+'___rolly_api___' = ''
 # 'TOML_ABI_NAMESPACE_START(...)'       = 'static_assert(true)'
 # 'TOML_ABI_NAMESPACE_BOOL(...)'        = 'static_assert(true)'
 

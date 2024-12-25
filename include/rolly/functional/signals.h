@@ -18,9 +18,11 @@ namespace rolly {
   template <typename, typename...>
   class signal_base;
 
+#ifndef DOXYGEN
   namespace detail {
     struct observer_type {};
   }  // namespace detail
+#endif
 
   namespace trait {
     template <typename...>
@@ -149,6 +151,7 @@ namespace rolly {
    */
   using group_id = std::int32_t;
 
+#ifndef DOXYGEN
   namespace detail {
 
     /**
@@ -164,7 +167,6 @@ namespace rolly {
      * compilers, multiple inheritance has an impact too. Hence, we form an union
      * big enough to store any kind of function pointer.
      */
-#ifndef DOXYGEN
     namespace mock {
 
       struct a {
@@ -202,7 +204,6 @@ namespace rolly {
       };
 
     }  // namespace mock
-#endif
 
     /*
      * This struct is used to store function pointers.
@@ -569,6 +570,7 @@ namespace rolly {
     };
 
   }  // namespace detail
+#endif
 
   /**
    * connection_blocker is a RAII object that blocks a connection until destruction
@@ -754,6 +756,7 @@ namespace rolly {
    */
   using observer = observer_base<std::mutex>;
 
+#ifndef DOXYGEN
   namespace detail {
 
     // interface for cleanable objects, used to cleanup disconnected slots
@@ -802,13 +805,15 @@ namespace rolly {
       }
 
       template <typename C>
-      std::enable_if_t<function_traits<C>::must_check_object, bool> has_full_callable(C const& c
+      std::enable_if_t<function_traits<C>::must_check_object, bool> has_full_callable(
+        C const& c
       ) const {
         return has_callable(c) && check_class_type<std::decay_t<C>>();
       }
 
       template <typename C>
-      std::enable_if_t<! function_traits<C>::must_check_object, bool> has_full_callable(C const& c
+      std::enable_if_t<! function_traits<C>::must_check_object, bool> has_full_callable(
+        C const& c
       ) const {
         return has_callable(c);
       }
@@ -828,7 +833,7 @@ namespace rolly {
       // retieve a pointer to the callable embedded in the slot
       virtual func_ptr get_callable() const noexcept { return get_function_ptr(nullptr); }
 
-#ifdef ROLLY_RTTI
+#  ifdef ROLLY_RTTI
       // retieve a pointer to the callable embedded in the slot
       virtual std::type_info const& get_callable_type() const noexcept { return typeid(nullptr); }
 
@@ -838,12 +843,12 @@ namespace rolly {
         return typeid(U) == get_callable_type();
       }
 
-#else
-    template <typename U>
-    bool check_class_type() const {
-      return false;
-    }
-#endif
+#  else
+      template <typename U>
+      bool check_class_type() const {
+        return false;
+      }
+#  endif
 
      private:
       cleanable& cleaner;
@@ -866,9 +871,9 @@ namespace rolly {
 
       func_ptr get_callable() const noexcept override { return get_function_ptr(func); }
 
-#ifdef ROLLY_RTTI
+#  ifdef ROLLY_RTTI
       const std::type_info& get_callable_type() const noexcept override { return typeid(func); }
-#endif
+#  endif
 
      private:
       std::decay_t<Func> func;
@@ -892,9 +897,9 @@ namespace rolly {
 
       func_ptr get_callable() const noexcept override { return get_function_ptr(func); }
 
-#ifdef ROLLY_RTTI
+#  ifdef ROLLY_RTTI
       const std::type_info& get_callable_type() const noexcept override { return typeid(func); }
-#endif
+#  endif
 
      private:
       std::decay_t<Func> func;
@@ -921,9 +926,9 @@ namespace rolly {
 
       obj_ptr get_object() const noexcept override { return get_object_ptr(ptr); }
 
-#ifdef ROLLY_RTTI
+#  ifdef ROLLY_RTTI
       const std::type_info& get_callable_type() const noexcept override { return typeid(pmf); }
-#endif
+#  endif
 
      private:
       std::decay_t<Pmf> pmf;
@@ -951,9 +956,9 @@ namespace rolly {
 
       obj_ptr get_object() const noexcept override { return get_object_ptr(ptr); }
 
-#ifdef ROLLY_RTTI
+#  ifdef ROLLY_RTTI
       const std::type_info& get_callable_type() const noexcept override { return typeid(pmf); }
-#endif
+#  endif
 
      private:
       std::decay_t<Pmf> pmf;
@@ -994,9 +999,9 @@ namespace rolly {
 
       obj_ptr get_object() const noexcept override { return get_object_ptr(ptr); }
 
-#ifdef ROLLY_RTTI
+#  ifdef ROLLY_RTTI
       const std::type_info& get_callable_type() const noexcept override { return typeid(func); }
-#endif
+#  endif
 
      private:
       std::decay_t<Func> func;
@@ -1037,9 +1042,9 @@ namespace rolly {
 
       obj_ptr get_object() const noexcept override { return get_object_ptr(ptr); }
 
-#ifdef ROLLY_RTTI
+#  ifdef ROLLY_RTTI
       const std::type_info& get_callable_type() const noexcept override { return typeid(pmf); }
-#endif
+#  endif
 
      private:
       std::decay_t<Pmf> pmf;
@@ -1047,6 +1052,7 @@ namespace rolly {
     };
 
   }  // namespace detail
+#endif
 
   /**
    * signal_base is an implementation of the observer pattern, through the use

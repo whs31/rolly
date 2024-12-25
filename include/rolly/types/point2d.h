@@ -1,19 +1,16 @@
-//
-// Created by xqula on 06.11.2024.
-//
-
 #pragma once
 
+#include <string>
+#include <array>
+#include <tuple>
+#include <algorithm>
+#include <fmt/format.h>
 #include "../math.h"
 #include "../concepts/num.h"
 #include "../concepts/any_of.h"
 #include "./size2d.h"
 #include "./vector2d.h"
 #include "./stdint.h"
-#include <string>
-#include <array>
-#include <tuple>
-#include <algorithm>
 
 #if defined(ROLLY_QT_GUI)
 #  include <qpoint.h>

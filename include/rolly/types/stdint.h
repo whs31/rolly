@@ -21,11 +21,16 @@ namespace rolly {
   using uptr = std::uintptr_t;                    ///< Unsigned integer with pointer size
 
   // NOLINTNEXTLINE(*-runtime-int)
-  using ulonglong
-    [[maybe_unused]] = unsigned long long;  ///< Alias for <tt>unsigned long long</tt>.
+  /**
+   * @brief Alias for `unsigned long long`
+   */
+  using ulonglong [[maybe_unused]] = unsigned long long;
 
   // NOLINTNEXTLINE(*-runtime-int)
-  using uint [[maybe_unused]] = unsigned int;  ///< Alias for <tt>unsigned int</tt>.
+  /**
+   * @brief Alias for `unsigned int`
+   */
+  using uint [[maybe_unused]] = unsigned int;
 
   /**
    * @brief Inline namespace for literal operators.

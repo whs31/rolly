@@ -1,11 +1,12 @@
 #pragma once
 
-#include "../concepts/num.h"
-#include "./stdint.h"
 #include <string>
 #include <array>
 #include <tuple>
 #include <algorithm>
+#include <fmt/format.h>
+#include "../concepts/num.h"
+#include "./stdint.h"
 
 #if defined(ROLLY_QT_GUI)
 #  include <qsize.h>

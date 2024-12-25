@@ -1,14 +1,15 @@
 #pragma once
 
+#include <string>
+#include <array>
+#include <tuple>
+#include <algorithm>
+#include <fmt/format.h>
 #include "../concepts/num.h"
 #include "../concepts/any_of.h"
 #include "./size2d.h"
 #include "./stdint.h"
 #include "./angle.h"
-#include <string>
-#include <array>
-#include <tuple>
-#include <algorithm>
 
 #if defined(ROLLY_QT_GUI)
 #  include <qvector2d.h>

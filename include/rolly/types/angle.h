@@ -1,10 +1,10 @@
 #pragma once
 
 #include <iostream>
+#include <fmt/format.h>
 #include "../math.h"
 #include "../contracts.h"
 #include "../concepts/num.h"
-#include "../format/ostream_formatter.h"
 
 namespace rolly {
   /**
