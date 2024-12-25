@@ -71,7 +71,6 @@ namespace rolly {
         typelist<T...>,
         void_t<decltype(((*std::declval<P>()).*std::declval<F>())(std::declval<T>()...))>>
         : std::true_type {};
-#endif
 
       template <typename F, typename... T>
       struct is_callable<
@@ -102,14 +101,14 @@ namespace rolly {
 
       template <typename L, typename... T>
       struct is_signal<signal_base<L, T...>> : std::true_type {};
-
     }  // namespace detail
+#endif
 
     static constexpr bool with_rtti =
 #ifdef ROLLY_RTTI
       true;
 #else
-    false;
+      false;
 #endif
 
     /// determine if a pointer is convertible into a "weak" pointer
