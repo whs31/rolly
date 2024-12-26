@@ -33,12 +33,12 @@ jobs:
 
       - name: Generate docs
         run: |
-          git fetch origin plugin:refs/remotes/origin/plugin --tags --force
+          git fetch origin main:refs/remotes/origin/main --tags --force
           git remote set-head origin -a
-          git checkout plugin
+          git checkout main
           git pull --force
           cd .doc
-          poxy --verbose --git-tags
+          poxy 
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
