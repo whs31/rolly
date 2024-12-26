@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
+<html lang="en"><head>
+  <meta charset="utf-8"/>
   <title>rolly/functional/signals.h file | Rolly Radar core library</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
-  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
-  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#22272e" />
+  <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#22272e" name="theme-color"/>
+  <link href="poxy/poxy.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+  <script src="poxy/poxy.js"></script>
+  <script>initialize_theme("dark");</script>
+  <meta content="Rolly" name="twitter:title"/>
+  <meta content="Rolly" property="og:title"/>
+  <meta content="Rolly" itemprop="name"/>
+  <meta content="Dmitry Riazantsev &lt;riazantsev.dl@edu.spbstu.ru&gt;" name="author"/>
+  <meta content="Dmitry Riazantsev &lt;riazantsev.dl@edu.spbstu.ru&gt;" property="article:author"/>
+  <meta content="Radar core library" name="description"/>
+  <meta content="Radar core library" name="twitter:description"/>
+  <meta content="Radar core library" property="og:description"/>
+  <meta content="Radar core library" itemprop="description"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="Poxy v0.19.4" name="generator"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
 </head>
-<body>
+<body class="poxy-has-toc">
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
-        <a href="http://developers.pages.uav.radar-mms.com/v2/libs/essentials/rolly/"><img src="logo.png" alt="" />Rolly</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Radar core library</a>
-      </span>
+      <a class="m-col-t-8 m-col-m-none m-left-m" href="index.html" id="m-navbar-brand"><svg class="poxy-injected-svg" fill="none" height="140" id="poxy-injected-svg-0" version="1.1" viewBox="0 0 140 140" width="140" xmlns="http://www.w3.org/2000/svg"><path d="M0 66C0 29.5492 29.5492 0 66 0H73.9111C110.362 0 139.911 29.5492 139.911 66V140H66C29.5492 140 0 110.451 0 74V66Z" fill="#416275"></path><path d="M103.153 112.504L107.377 111.48C108.742 111.48 109.425 112.163 109.425 113.528C109.34 115.747 108.188 117.709 105.969 119.416C103.836 121.208 101.404 122.104 98.673 122.104C95.9423 122.104 93.7663 120.781 92.145 118.136C89.841 114.296 87.665 107.427 85.617 97.528C84.6783 92.7493 83.569 88.824 82.289 85.752C79.985 86.52 77.553 86.904 74.993 86.904C72.433 86.904 70.1717 86.392 68.209 85.368C66.3317 84.2587 65.393 82.936 65.393 81.4C65.5637 77.4747 68.721 75.512 74.865 75.512C77.8517 75.512 81.0517 76.8347 84.465 79.48C89.7557 75.4693 92.401 69.88 92.401 62.712C92.401 58.4453 91.5903 54.6907 89.969 51.448C88.3477 48.12 86.2143 45.5173 83.569 43.64C78.3637 39.9707 72.561 38.136 66.161 38.136C65.9903 40.0133 65.6917 43 65.265 47.096C64.4117 55.6293 63.8997 62.2427 63.729 66.936L63.345 87.16C63.345 102.691 60.273 110.456 54.129 110.456C50.2037 110.456 48.241 108.792 48.241 105.464C48.241 104.611 48.7957 103.16 49.905 101.112C51.0997 99.064 51.953 96.7173 52.465 94.072C52.977 91.3413 53.5317 83.448 54.129 70.392C54.7263 57.2507 55.537 46.9253 56.561 39.416C52.0383 40.696 48.3263 42.6587 45.425 45.304C42.609 47.9493 41.201 51.064 41.201 54.648C41.201 56.696 40.7317 58.36 39.793 59.64C38.8543 60.8347 37.7023 61.432 36.337 61.432C33.8623 61.432 32.625 60.1093 32.625 57.464C32.625 51.4907 35.0143 46.584 39.793 42.744C44.657 38.8187 50.6303 36.0027 57.713 34.296C59.4197 28.5787 61.809 25.72 64.881 25.72C66.0757 25.72 66.673 27.0853 66.673 29.816C66.673 30.4133 66.5877 31.48 66.417 33.016C67.3557 32.8453 69.1477 32.76 71.793 32.76C74.4383 32.76 77.425 33.144 80.753 33.912C84.081 34.68 87.409 36.0027 90.737 37.88C94.1503 39.672 96.881 42.4453 98.929 46.2C100.977 49.8693 102.001 54.1787 102.001 59.128C102.001 64.0773 100.721 68.6853 98.161 72.952C95.601 77.2187 92.273 80.632 88.177 83.192C91.0783 86.776 93.3397 91.1707 94.961 96.376C96.6677 101.581 98.2463 105.549 99.697 108.28C101.148 111.096 102.3 112.504 103.153 112.504ZM70.641 79.864C70.641 80.5467 71.2383 81.144 72.433 81.656C73.6277 82.168 74.865 82.424 76.145 82.424C77.5103 82.424 78.7477 82.2107 79.857 81.784C78.1503 79.8213 76.1877 78.84 73.969 78.84C71.7503 78.84 70.641 79.1813 70.641 79.864Z" fill="#F6C67C"></path></svg>Rolly <span class="m-thin">Radar core library</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
-        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
-          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        <a class="m-doc-search-icon" href="#search" onclick="return showSearch()" title="Search"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z" id="m-doc-search-icon-path"></path>
         </svg></a>
-        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
-        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+        <a href="#navigation" id="m-navbar-show" title="Show navigation"></a>
+        <a href="#" id="m-navbar-hide" title="Hide navigation"></a>
       </div>
-      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+      <div class="m-col-t-12 m-show-m m-col-m-none m-right-m" id="m-navbar-collapse">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Handbook</a></li>
-            <li><a href="modules.html">Modules</a></li>
             <li><a href="namespaces.html">Namespaces</a></li>
-          </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="4">
             <li><a href="annotated.html">Classes</a></li>
-            <li><a href="files.html">Files</a></li>
-            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
-              <use href="#m-doc-search-icon-path" />
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a class="poxy-icon repo github poxy-external" href="https://github.com/whs31/rolly" target="_blank" title="View on GitHub"><svg id="poxy-icon-repo" version="1.1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M25,1.23a24.37,24.37,0,0,0-7.7,47.5C18.51,49,19,48.2,19,47.56s0-2.12,0-4.15c-6.78,1.47-8.21-3.27-8.21-3.27C9.61,37.33,8,36.58,8,36.58c-2.21-1.51.17-1.48.17-1.48a5.12,5.12,0,0,1,3.73,2.51c2.17,3.72,5.7,2.65,7.09,2a5.25,5.25,0,0,1,1.55-3.26c-5.41-.61-11.1-2.7-11.1-12A9.41,9.41,0,0,1,12,17.79a8.75,8.75,0,0,1,.24-6.45s2-.66,6.7,2.49a23.1,23.1,0,0,1,12.2,0c4.66-3.15,6.7-2.49,6.7-2.49A8.75,8.75,0,0,1,38,17.79a9.41,9.41,0,0,1,2.51,6.54c0,9.36-5.7,11.42-11.13,12a5.83,5.83,0,0,1,1.65,4.51c0,3.26,0,5.89,0,6.69,0,.65.44,1.41,1.68,1.17A24.38,24.38,0,0,0,25,1.23Z" fill="currentColor"></path></svg></a></li>
+            <li><a class="poxy-icon theme" href="javascript:void(null);" id="poxy-theme-switch" onclick="toggle_theme(); return false;" role="button" title="Toggle dark and light themes"><svg id="poxy-theme-switch-img" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="185.6708" cy="183.8122" fill="currentColor" r="65.625"></circle><path d="M185.6708,87.5622a13.1256,13.1256,0,0,0,13.125-13.125V52.5622a13.125,13.125,0,1,0-26.25,0v21.875A13.1257,13.1257,0,0,0,185.6708,87.5622Z" fill="currentColor"></path><path d="M99.051,115.7519a13.1236,13.1236,0,1,0,18.56-18.56L102.1442,81.726a13.1236,13.1236,0,0,0-18.5595,18.56Z" fill="currentColor"></path><path d="M89.4208,183.8122a13.1257,13.1257,0,0,0-13.125-13.125H54.4208a13.125,13.125,0,0,0,0,26.25h21.875A13.1256,13.1256,0,0,0,89.4208,183.8122Z" fill="currentColor"></path><path d="M99.051,251.8725,83.5847,267.3431a13.1236,13.1236,0,1,0,18.56,18.56l15.4663-15.4706a13.1236,13.1236,0,1,0-18.5595-18.56Z" fill="currentColor"></path><path d="M185.6708,280.0622a13.1258,13.1258,0,0,0-13.125,13.125v21.875a13.125,13.125,0,0,0,26.25,0v-21.875A13.1257,13.1257,0,0,0,185.6708,280.0622Z" fill="currentColor"></path><path d="M272.2907,251.8725a13.1236,13.1236,0,1,0-18.56,18.56l15.4663,15.4706a13.1236,13.1236,0,1,0,18.56-18.56Z" fill="currentColor"></path><path d="M330.0458,183.8122a13.1257,13.1257,0,0,0-13.125-13.125h-21.875a13.125,13.125,0,0,0,0,26.25h21.875A13.1256,13.1256,0,0,0,330.0458,183.8122Z" fill="currentColor"></path><path d="M263.0109,119.5971a13.0824,13.0824,0,0,0,9.28-3.8452l15.4663-15.4663a13.1236,13.1236,0,1,0-18.56-18.56L253.7312,97.1923a13.125,13.125,0,0,0,9.28,22.4048Z" fill="currentColor"></path><path d="M456.9379,401.6714a63.97,63.97,0,0,1-14.9963,7.2055c-19.6448,6.5283-41.8787,2.9566-58.1439-9.8523a68.9311,68.9311,0,0,1-10.835-10.8339c-12.8088-16.2663-16.3806-38.5-9.8523-58.1471a63.8444,63.8444,0,0,1,7.2077-14.9931,8.8036,8.8036,0,0,0-10.1172-13.3034,87.5188,87.5188,0,1,0,110.0372,110.04A8.8,8.8,0,0,0,456.9379,401.6714Z" fill="currentColor"></path></svg></a></li>
+            <li class="m-show-m"><a class="m-doc-search-icon" href="#search" onclick="return showSearch()" title="Search"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path"></use>
             </svg></a></li>
           </ol>
         </div>
@@ -49,8 +58,8 @@
         <h1>
           <span class="m-breadcrumb"><a href="dir_64cbb815bba61e8aacd351630e0bf2ef.html">rolly</a>/</span><span class="m-breadcrumb"><a href="dir_91def4deb79ef7e7214a01588171731f.html">functional</a>/</span>signals.h <span class="m-thin">file</span>
         </h1>
-        <p><span></span></p>
-        <nav class="m-block m-default">
+        <p></p>
+        <nav class="m-block m-default poxy-toc" id="poxy-toc">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -58,7 +67,6 @@
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#typedef-members">Typedefs</a></li>
                 <li><a href="#func-members">Functions</a></li>
                 <li><a href="#var-members">Variables</a></li>
               </ul>
@@ -68,239 +76,40 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespacerolly.html" class="m-doc">rolly</a></dt>
+            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
             <dd>Main namespace for the <strong>rolly</strong> library.</dd>
-            <dt>namespace <a href="namespacerolly_1_1detail.html" class="m-doc">rolly::detail</a></dt>
-            <dd><span></span></dd>
-            <dt>namespace <a href="namespacerolly_1_1trait.html" class="m-doc">rolly::trait</a></dt>
-            <dd><span></span></dd>
-            <dt>namespace <a href="namespacedetail.html" class="m-doc">detail</a></dt>
-            <dd><span></span></dd>
+            <dt>namespace <a class="m-doc" href="namespacerolly_1_1trait.html">rolly::trait</a></dt>
+            <dd></dd>
           </dl>
         </section>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              <div class="m-doc-template">template&lt;typename, typename...&gt;</div>
-              class <a href="classrolly_1_1signal__base.html" class="m-doc">rolly::signal_base</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              struct <a href="structrolly_1_1detail_1_1observer__type.html" class="m-doc">rolly::detail::observer_type</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename...&gt;</div>
-              struct <a href="structrolly_1_1trait_1_1typelist.html" class="m-doc">rolly::trait::typelist</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename F, typename... T&gt;</div>
-              struct <a href="structrolly_1_1trait_1_1is__callable_3_01F_00_01typelist_3_01T_8_8_8_01_4_00_01void__t_3_01declt66028bba37b643a5c2d0222823d22cb8.html" class="m-doc">rolly::trait::is_callable&lt;F, typelist&lt;T...&gt;, void_t&lt;decltype(std::declval&lt;F&gt;()(std::declval&lt;T&gt;()...))&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T, typename = void&gt;</div>
-              struct <a href="structrolly_1_1trait_1_1is__weak__ptr.html" class="m-doc">rolly::trait::is_weak_ptr</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structrolly_1_1trait_1_1is__weak__ptr_3_01T_00_01void__t_3_01decltype_07std_1_1declval_3_01T_01_13fd328036332a30c13445a07df30ceb.html" class="m-doc">rolly::trait::is_weak_ptr&lt;T, void_t&lt;decltype(std::declval&lt;T&gt;().expired()), decltype(std::declval&lt;T&gt;().lock()), decltype(std::declval&lt;T&gt;().reset())&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T, typename = void&gt;</div>
-              struct <a href="structrolly_1_1trait_1_1is__weak__ptr__compatible.html" class="m-doc">rolly::trait::is_weak_ptr_compatible</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structrolly_1_1trait_1_1is__weak__ptr__compatible_3_01T_00_01void__t_3_01decltype_07to__weak_07s21218c6e5bd4c76e56da307adfbeb012.html" class="m-doc">rolly::trait::is_weak_ptr_compatible&lt;T, void_t&lt;decltype(to_weak(std::declval&lt;T&gt;()))&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename...&gt;</div>
-              struct <a href="structrolly_1_1trait_1_1is__signal.html" class="m-doc">rolly::trait::is_signal</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename L, typename... T&gt;</div>
-              struct <a href="structrolly_1_1trait_1_1is__signal_3_01signal__base_3_01L_00_01T_8_8_8_01_4_01_4.html" class="m-doc">rolly::trait::is_signal&lt;signal_base&lt;L, T...&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              struct <a href="structdetail_1_1func__ptr.html" class="m-doc">detail::func_ptr</a>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename...</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrolly_1_1trait_1_1typelist.html">rolly::trait::typelist</a>
             </dt>
             <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T, typename = void&gt;</div>
-              struct <a href="structdetail_1_1function__traits.html" class="m-doc">detail::function_traits</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4.html" class="m-doc">detail::function_traits&lt;T, std::enable_if_t&lt;trait::is_func_v&lt;T&gt;&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structdetail_1_1function__traits_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__func__v_3_01T_01_4_01_4_01_4.html" class="m-doc">detail::function_traits&lt;T*, std::enable_if_t&lt;trait::is_func_v&lt;T&gt;&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__pmf__v_3_01T_01_4_01_4_01_4.html" class="m-doc">detail::function_traits&lt;T, std::enable_if_t&lt;trait::is_pmf_v&lt;T&gt;&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structdetail_1_1function__traits_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1has__call__operator__v_3_01T_01_4_01_4_01_4.html" class="m-doc">detail::function_traits&lt;T, std::enable_if_t&lt;trait::has_call_operator_v&lt;T&gt;&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T, typename = void&gt;</div>
-              struct <a href="structdetail_1_1object__pointer.html" class="m-doc">detail::object_pointer</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structdetail_1_1object__pointer_3_01T_01_5_00_01std_1_1enable__if__t_3_01trait_1_1is__pointer__v_3_01T_01_5_01_4_01_4_01_4.html" class="m-doc">detail::object_pointer&lt;T*, std::enable_if_t&lt;trait::is_pointer_v&lt;T*&gt;&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01trait_1_1is__weak__ptr__v_3_01T_01_4_01_4_01_4.html" class="m-doc">detail::object_pointer&lt;T, std::enable_if_t&lt;trait::is_weak_ptr_v&lt;T&gt;&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structdetail_1_1object__pointer_3_01T_00_01std_1_1enable__if__t_3_01_9_01trait_1_1is__pointer__v9d17afaa4d8ddd746027d98f7cb68c51.html" class="m-doc">detail::object_pointer&lt;T, std::enable_if_t&lt;! trait::is_pointer_v&lt;T&gt; &amp;&amp; ! trait::is_weak_ptr_v&lt;T&gt; &amp;&amp; trait::is_weak_ptr_compatible_v&lt;T&gt;&gt;&gt;</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              struct <a href="structdetail_1_1null__mutex.html" class="m-doc">detail::null_mutex</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              struct <a href="structdetail_1_1spin__mutex.html" class="m-doc">detail::spin_mutex</a>
+              class <a class="m-doc" href="classrolly_1_1connection__blocker.html">rolly::connection_blocker</a>
             </dt>
             <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              class <a href="classdetail_1_1copy__on__write.html" class="m-doc">detail::copy_on_write</a>
+              class <a class="m-doc" href="classrolly_1_1connection.html">rolly::connection</a>
             </dt>
             <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename SigT&gt;</div>
-              struct <a href="structdetail_1_1signal__wrapper.html" class="m-doc">detail::signal_wrapper</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="classdetail_1_1slot__state.html" class="m-doc">detail::slot_state</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="classconnection__blocker.html" class="m-doc">connection_blocker</a>
+              class <a class="m-doc" href="classrolly_1_1scoped__connection.html">rolly::scoped_connection</a>
             </dt>
             <dd></dd>
             <dt>
-              class <a href="classconnection.html" class="m-doc">connection</a>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a></span></span>&gt;</div>
+              struct <a class="m-doc" href="structrolly_1_1observer__base.html">rolly::observer_base</a>
             </dt>
             <dd></dd>
             <dt>
-              class <a href="classscoped__connection.html" class="m-doc">scoped_connection</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Lockable&gt;</div>
-              struct <a href="structobserver__base.html" class="m-doc">observer_base</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              struct <a href="structdetail_1_1cleanable.html" class="m-doc">detail::cleanable</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
-              class <a href="classdetail_1_1slot__base.html" class="m-doc">detail::slot_base</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
-              class <a href="classdetail_1_1slot__base.html" class="m-doc">detail::slot_base</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Func, typename... Args&gt;</div>
-              class <a href="classdetail_1_1slot.html" class="m-doc">detail::slot</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Func, typename... Args&gt;</div>
-              class <a href="classdetail_1_1slot__extended.html" class="m-doc">detail::slot_extended</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Pmf, typename Ptr, typename... Args&gt;</div>
-              class <a href="classdetail_1_1slot__pmf.html" class="m-doc">detail::slot_pmf</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Pmf, typename Ptr, typename... Args&gt;</div>
-              class <a href="classdetail_1_1slot__pmf__extended.html" class="m-doc">detail::slot_pmf_extended</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Func, typename WeakPtr, typename... Args&gt;</div>
-              class <a href="classdetail_1_1slot__tracked.html" class="m-doc">detail::slot_tracked</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Pmf, typename WeakPtr, typename... Args&gt;</div>
-              class <a href="classdetail_1_1slot__pmf__tracked.html" class="m-doc">detail::slot_pmf_tracked</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Lockable, typename... T&gt;</div>
-              class <a href="classsignal__base.html" class="m-doc">signal_base</a>
-            </dt>
-            <dd></dd>
-          </dl>
-        </section>
-        <section id="typedef-members">
-          <h2><a href="#typedef-members">Typedefs</a></h2>
-          <dl class="m-doc">
-            <dt>
-              using <a href="#a7a2842dcf41230a75b5a413092d072a0" class="m-doc">group_id</a> = <a href="http://en.cppreference.com/w/cpp/types/integer.html" class="m-doc-external">std::<wbr />int32_t</a>
-            </dt>
-            <dd></dd>
-            <dt id="ae42c0e8811996ab532903d47deea5d7d">
-              using <a href="#ae42c0e8811996ab532903d47deea5d7d" class="m-doc-self">obj_ptr</a> = void const *
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              using <a href="#abcafe0a6d0b19652cdaaff7972a8913f" class="m-doc">observer_st</a> = <a href="structobserver__base.html" class="m-doc">observer_<wbr />base</a>&lt;<a href="structdetail_1_1null__mutex.html" class="m-doc">detail::<wbr />null_mutex</a>&gt;
-            </dt>
-            <dd></dd>
-            <dt>
-              using <a href="#ae0ab6731432a68886ecdf0eaab68dfd3" class="m-doc">observer</a> = <a href="structobserver__base.html" class="m-doc">observer_<wbr />base</a>&lt;<a href="http://en.cppreference.com/w/cpp/thread/mutex.html" class="m-doc-external">std::<wbr />mutex</a>&gt;
-            </dt>
-            <dd></dd>
-            <dt id="ac576ce92b5bf16a54f83d46e023897d7">
-              <div class="m-doc-template">template&lt;typename... T&gt;</div>
-              using <a href="#ac576ce92b5bf16a54f83d46e023897d7" class="m-doc-self">slot_ptr</a> = <a href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html" class="m-doc-external">std::<wbr />shared_ptr</a>&lt;slot_base&lt;T...&gt;&gt;
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename... T&gt;</div>
-              using <a href="#af36a1262b557206b85e8089c51ec6e52" class="m-doc">signal_st</a> = <a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;<a href="structdetail_1_1null__mutex.html" class="m-doc">detail::<wbr />null_mutex</a>, T...&gt;
-            </dt>
-            <dd></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename... T&gt;</div>
-              using <a href="#a702f70cb6e382f634a0ab7e3c8021cc1" class="m-doc">signal</a> = <a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;<a href="http://en.cppreference.com/w/cpp/thread/mutex.html" class="m-doc-external">std::<wbr />mutex</a>, T...&gt;
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a></span>, <span class="m-doc-template-param">typename... T</span></span>&gt;</div>
+              class <a class="m-doc" href="classrolly_1_1signal__base.html">rolly::signal_base</a>
             </dt>
             <dd></dd>
           </dl>
@@ -309,68 +118,27 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#adeb27d2b612c4dc5278075ac28de887f" class="m-dox">to_weak</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html" class="m-doc-external">std::<wbr />weak_ptr</a>&lt;T&gt; w) -&gt; <a href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html" class="m-doc-external">std::<wbr />weak_ptr</a>&lt;T&gt;</span>
-            </dt>
-            <dd></dd>
-            <dt id="ae2cd9e10c3e6cc9120e19c324ba099bd">
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#ae2cd9e10c3e6cc9120e19c324ba099bd" class="m-dox-self" name="ae2cd9e10c3e6cc9120e19c324ba099bd">to_weak</a>(</span><span class="m-dox-wrap"><a href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html" class="m-doc-external">std::<wbr />shared_ptr</a>&lt;T&gt; s) -&gt; <a href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html" class="m-doc-external">std::<wbr />weak_ptr</a>&lt;T&gt;</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a73e115fc79b33407c9eef0068d911895">
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a73e115fc79b33407c9eef0068d911895" class="m-dox-self" name="a73e115fc79b33407c9eef0068d911895">get_function_ptr</a>(</span><span class="m-dox-wrap">T const&amp; t) -&gt; func_ptr</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a09bd2025da2246a3e57d8ca73804b1a4">
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a09bd2025da2246a3e57d8ca73804b1a4" class="m-dox-self" name="a09bd2025da2246a3e57d8ca73804b1a4">eq_function_ptr</a>(</span><span class="m-dox-wrap">T const&amp; t,
-              func_ptr const&amp; d) -&gt; bool</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aac03fdb1eac801324961de1429865071">
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#aac03fdb1eac801324961de1429865071" class="m-dox-self" name="aac03fdb1eac801324961de1429865071">get_object_ptr</a>(</span><span class="m-dox-wrap">T const&amp; t) -&gt; obj_ptr</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a295045e13c2fdaa99bf88534b05bddaf" class="m-dox">cow_read</a>(</span><span class="m-dox-wrap">T const&amp; v) -&gt; T const &amp;</span>
-            </dt>
-            <dd></dd>
-            <dt id="a86340467e86f20672c9f295024b21476">
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a86340467e86f20672c9f295024b21476" class="m-dox-self" name="a86340467e86f20672c9f295024b21476">cow_read</a>(</span><span class="m-dox-wrap">copy_on_write&lt;T&gt;&amp; v) -&gt; T const &amp;</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a91f8bfa713f665b8ff5b297726914fb7">
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a91f8bfa713f665b8ff5b297726914fb7" class="m-dox-self" name="a91f8bfa713f665b8ff5b297726914fb7">cow_write</a>(</span><span class="m-dox-wrap">T&amp; v) -&gt; T&amp;</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a32fc39fc81cbdbc015eb1e7d6b0b0dac">
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a32fc39fc81cbdbc015eb1e7d6b0b0dac" class="m-dox-self" name="a32fc39fc81cbdbc015eb1e7d6b0b0dac">cow_write</a>(</span><span class="m-dox-wrap">copy_on_write&lt;T&gt;&amp; v) -&gt; T&amp;</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ad2038027f0da5ce4a6c7cc1d8bbc5c2d">
-              <div class="m-doc-template">template&lt;typename B, typename D, typename... Arg&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#ad2038027f0da5ce4a6c7cc1d8bbc5c2d" class="m-dox-self" name="ad2038027f0da5ce4a6c7cc1d8bbc5c2d">make_shared</a>(</span><span class="m-dox-wrap">Arg &amp;&amp; ... arg) -&gt; <a href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html" class="m-doc-external">std::<wbr />shared_ptr</a>&lt;B&gt;</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Lockable, typename Arg, typename... T, typename... Args&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a0f80269fcd1de453f2d6219cf29c475c" class="m-dox">connect</a>(</span><span class="m-dox-wrap"><a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;Lockable, T...&gt;&amp; sig,
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a></span>, <span class="m-doc-template-param">typename Arg</span>, <span class="m-doc-template-param">typename... T</span>, <span class="m-doc-template-param">typename... Args</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a4fcddfd69e955ff7ba38576d89ea888f">connect</a>(</span><span class="m-doc-wrap">signal_base&lt;<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>, T...&gt;&amp; sig,
               Arg&amp;&amp; arg,
-              Args &amp;&amp; ... args) -&gt; std::enable_if_t&lt;! trait::is_signal_v&lt;std::decay_t&lt;Arg&gt;&gt;, <a href="classconnection.html" class="m-doc">connection</a>&gt;</span>
+              Args &amp;&amp; ... args) →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;! trait::is_signal_v&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/decay.html" target="_blank">std::<wbr/>decay_t</a>&lt;Arg&gt;&gt;, connection&gt;</span>
             </dt>
             <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Lockable1, typename Lockable2, typename... T1, typename... T2, typename... Args&gt;</div>
-              <span class="m-dox-wrap-bumper">auto <a href="#a7ed5753445baad800ce7f8c62fe2dfc9" class="m-dox">connect</a>(</span><span class="m-dox-wrap"><a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;Lockable1, T1...&gt;&amp; sig1,
-              <a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;Lockable2, T2...&gt;&amp; sig2,
-              Args &amp;&amp; ... args) -&gt; <a href="classconnection.html" class="m-doc">connection</a></span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>1</span>, <span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>2</span>, <span class="m-doc-template-param">typename... T1</span>, <span class="m-doc-template-param">typename... T2</span>, <span class="m-doc-template-param">typename... Args</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#af871d7fa79920cade703ca2081734d09">connect</a>(</span><span class="m-doc-wrap">signal_base&lt;<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>1, T1...&gt;&amp; sig1,
+              signal_base&lt;<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>2, T2...&gt;&amp; sig2,
+              Args &amp;&amp; ... args) →  connection</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly_1_1trait.html#ae5b735dc0c6f8d1b0e12fd547f45d956">to_weak</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html" target="_blank">std::<wbr/>weak_ptr</a>&lt;T&gt; w) →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html" target="_blank">std::<wbr/>weak_ptr</a>&lt;T&gt;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly_1_1trait.html#ae0bbed54a8ef3fcf79790c990a84b0cb">to_weak</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html" target="_blank">std::<wbr/>shared_ptr</a>&lt;T&gt; s) →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html" target="_blank">std::<wbr/>weak_ptr</a>&lt;T&gt;</span>
             </dt>
             <dd></dd>
           </dl>
@@ -379,137 +147,55 @@
           <h2><a href="#var-members">Variables</a></h2>
           <dl class="m-doc">
             <dt>
-              static bool <a href="namespacerolly.html#aaa49597f11fa34841f1e7c48b7fe1fb8" class="m-doc">with_rtti</a> <span class="m-label m-flat m-primary">constexpr</span>
+              static bool <a class="m-doc" href="namespacerolly_1_1trait.html#a6780e3656beeec5b99d269fdbbd9599c">with_rtti</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename P&gt;</div>
-              bool <a href="namespacerolly.html#a666a4e9726827588e42f0857d8a87c68" class="m-doc">is_weak_ptr_compatible_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              bool <a class="m-doc" href="namespacerolly_1_1trait.html#aa8dbd2bfaeef344521ea63187cdffe9f">has_call_operator_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd>determine if a pointer is convertible into a &quot;weak&quot; pointer</dd>
+            <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename L, typename... T&gt;</div>
-              bool <a href="namespacerolly.html#a0ce1d8dcc7700b383ed4cab2a35ef160" class="m-doc">is_callable_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename L</span>, <span class="m-doc-template-param">typename... T</span></span>&gt;</div>
+              bool <a class="m-doc" href="namespacerolly_1_1trait.html#a7f67ef08e41c7266f5d9710af85fb6da">is_callable_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd>determine if a type T (Callable or Pmf) is callable with supplied arguments</dd>
+            <dd>determine if a type T (<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Callable" target="_blank">Callable</a> or Pmf) is callable with supplied arguments</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              bool <a href="namespacerolly.html#ad73fb921872b6292fd6244b46ea4ebeb" class="m-doc">is_weak_ptr_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              bool <a class="m-doc" href="namespacerolly_1_1trait.html#aab589c840ad7f0abec39fd22e3152aca">is_func_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              bool <a href="namespacerolly.html#a26520841c8b04240e098d1360c774d08" class="m-doc">has_call_operator_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              bool <a class="m-doc" href="namespacerolly_1_1trait.html#afb9e28dfdd6b5d2308bbb6870814f9f8">is_observer_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              bool <a href="namespacerolly.html#a60d8a43ca3d5d473f1651ef5114c2628" class="m-doc">is_pointer_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              bool <a class="m-doc" href="namespacerolly_1_1trait.html#a6ce61afe2cf0bd8b8c5e29fbba64b2fe">is_pmf_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              bool <a href="namespacerolly.html#a803db4963a7d275f1f2dc56ab3a33e0b" class="m-doc">is_func_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              bool <a class="m-doc" href="namespacerolly_1_1trait.html#a8c05ad01f00fb19be6e2d50fbfb8f847">is_pointer_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              bool <a href="namespacerolly.html#a2bc53fe616698994943b2b23620e7749" class="m-doc">is_pmf_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename S</span></span>&gt;</div>
+              bool <a class="m-doc" href="namespacerolly_1_1trait.html#a47ed658b30fd9549fae2785b74aa9a04">is_signal_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              bool <a href="namespacerolly.html#aa06dc940ac021f05e56d97c2dac9adeb" class="m-doc">is_observer_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename P</span></span>&gt;</div>
+              bool <a class="m-doc" href="namespacerolly_1_1trait.html#a3848b89db0f289cfb1db1cfb6e122612">is_weak_ptr_compatible_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>determine if a pointer is convertible into a "weak" pointer</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename S&gt;</div>
-              bool <a href="namespacerolly.html#a908ba454a2355d53f9831b0570f348e7" class="m-doc">is_signal_v</a> <span class="m-label m-flat m-primary">constexpr</span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              bool <a class="m-doc" href="namespacerolly_1_1trait.html#a93097b677cdae0eae18e2262947edc2f">is_weak_ptr_v</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
           </dl>
-        </section>
-        <section>
-          <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="a7a2842dcf41230a75b5a413092d072a0"><div>
-            <h3>
-              using <a href="#a7a2842dcf41230a75b5a413092d072a0" class="m-doc-self">group_id</a> = <a href="http://en.cppreference.com/w/cpp/types/integer.html" class="m-doc-external">std::<wbr />int32_t</a>
-            </h3>
-<p>A group_id is used to identify a group of slots</p>
-          </div></section>
-          <section class="m-doc-details" id="abcafe0a6d0b19652cdaaff7972a8913f"><div>
-            <h3>
-              using <a href="#abcafe0a6d0b19652cdaaff7972a8913f" class="m-doc-self">observer_st</a> = <a href="structobserver__base.html" class="m-doc">observer_<wbr />base</a>&lt;<a href="structdetail_1_1null__mutex.html" class="m-doc">detail::<wbr />null_mutex</a>&gt;
-            </h3>
-<p>Specialization of <a href="structobserver__base.html" class="m-doc">observer_<wbr />base</a> to be used in single threaded contexts.</p>
-          </div></section>
-          <section class="m-doc-details" id="ae0ab6731432a68886ecdf0eaab68dfd3"><div>
-            <h3>
-              using <a href="#ae0ab6731432a68886ecdf0eaab68dfd3" class="m-doc-self">observer</a> = <a href="structobserver__base.html" class="m-doc">observer_<wbr />base</a>&lt;<a href="http://en.cppreference.com/w/cpp/thread/mutex.html" class="m-doc-external">std::<wbr />mutex</a>&gt;
-            </h3>
-<p>Specialization of <a href="structobserver__base.html" class="m-doc">observer_<wbr />base</a> to be used in multi-threaded contexts.</p>
-          </div></section>
-          <section class="m-doc-details" id="af36a1262b557206b85e8089c51ec6e52"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename... T&gt;
-              </div>
-              using <a href="#af36a1262b557206b85e8089c51ec6e52" class="m-doc-self">signal_st</a> = <a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;<a href="structdetail_1_1null__mutex.html" class="m-doc">detail::<wbr />null_mutex</a>, T...&gt;
-            </h3>
-<p>Specialization of <a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a> to be used in single threaded contexts. Slot connection, disconnection and signal emission are not thread-safe. The performance improvement over the thread-safe variant is not impressive, so this is not very useful.</p>
-          </div></section>
-          <section class="m-doc-details" id="a702f70cb6e382f634a0ab7e3c8021cc1"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename... T&gt;
-              </div>
-              using <a href="#a702f70cb6e382f634a0ab7e3c8021cc1" class="m-doc-self">signal</a> = <a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;<a href="http://en.cppreference.com/w/cpp/thread/mutex.html" class="m-doc-external">std::<wbr />mutex</a>, T...&gt;
-            </h3>
-<p>Specialization of <a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a> to be used in multi-threaded contexts. Slot connection, disconnection and signal emission are thread-safe.</p><p>Recursive signal emission and emission cycles are supported too.</p>
-          </div></section>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="adeb27d2b612c4dc5278075ac28de887f"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html" class="m-doc-external">std::<wbr />weak_ptr</a>&lt;T&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adeb27d2b612c4dc5278075ac28de887f" class="m-doc-self">to_weak</a>(</span><span class="m-doc-wrap"><a href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html" class="m-doc-external">std::<wbr />weak_ptr</a>&lt;T&gt; w)</span></span>
-            </h3>
-<p>Pointers that can be converted to a weak pointer concept for tracking purpose must implement the to_weak() function in order to make use of ADL to convert that type and make it usable</p>
-          </div></section>
-          <section class="m-doc-details" id="a295045e13c2fdaa99bf88534b05bddaf"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">T const &amp; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a295045e13c2fdaa99bf88534b05bddaf" class="m-doc-self">cow_read</a>(</span><span class="m-doc-wrap">T const&amp; v)</span></span>
-            </h3>
-<p>Specializations for thread-safe code path</p>
-          </div></section>
-          <section class="m-doc-details" id="a0f80269fcd1de453f2d6219cf29c475c"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename Lockable, typename Arg, typename... T, typename... Args&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">std::enable_if_t&lt;! trait::is_signal_v&lt;std::decay_t&lt;Arg&gt;&gt;, <a href="classconnection.html" class="m-doc">connection</a>&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f80269fcd1de453f2d6219cf29c475c" class="m-doc-self">connect</a>(</span><span class="m-doc-wrap"><a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;Lockable, T...&gt;&amp; sig,
-              Arg&amp;&amp; arg,
-              Args &amp;&amp; ... args)</span></span>
-            </h3>
-<p>Freestanding connect function that defers to the <code><a href="classsignal__base.html#a416fd3f71ad61dfa22a70b274496f576" class="m-doc">signal_base::<wbr />connect</a></code> member.</p>
-          </div></section>
-          <section class="m-doc-details" id="a7ed5753445baad800ce7f8c62fe2dfc9"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename Lockable1, typename Lockable2, typename... T1, typename... T2, typename... Args&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a href="classconnection.html" class="m-doc">connection</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7ed5753445baad800ce7f8c62fe2dfc9" class="m-doc-self">connect</a>(</span><span class="m-doc-wrap"><a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;Lockable1, T1...&gt;&amp; sig1,
-              <a href="classsignal__base.html" class="m-doc">signal_<wbr />base</a>&lt;Lockable2, T2...&gt;&amp; sig2,
-              Args &amp;&amp; ... args)</span></span>
-            </h3>
-<p>Freestanding connect function that chains one signal to another.</p>
-          </div></section>
         </section>
       </div>
     </div>
@@ -522,43 +208,51 @@
       <div class="m-col-m-8 m-push-m-2">
         <div class="m-doc-search-header m-text m-small">
           <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
-          <div id="search-symbolcount">&hellip;</div>
+          <div id="search-symbolcount">…</div>
         </div>
         <div class="m-doc-search-content">
           <form>
-            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+            <input autocomplete="off" autofocus="autofocus" disabled="disabled" id="search-input" name="q" placeholder="Loading …" spellcheck="false" type="search"/>
           </form>
           <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
-          <div id="search-help" class="m-text m-dim m-text-center">
+          <div class="m-text m-dim m-text-center" id="search-help">
             <p class="m-noindent">Search for symbols, directories, files, pages or
             modules. You can omit any prefix from the symbol or file path; adding a
             <code>:</code> or <code>/</code> suffix lists all members of given symbol or
             directory.</p>
-            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
-            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <p class="m-noindent">Use <span class="m-label m-dim">↓</span>
+            / <span class="m-label m-dim">↑</span> to navigate through the list,
             <span class="m-label m-dim">Enter</span> to go.
             <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
             copy a link to the result using <span class="m-label m-dim">⌘</span>
             <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
             <span class="m-label m-dim">M</span> produces a Markdown link.</p>
           </div>
-          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <div class="m-text m-warning m-text-center" id="search-notfound">Sorry, nothing was found.</div>
           <ul id="search-results"></ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v2.js"></script><script>install_mcss_search_shim();</script>
+<script async="async" src="searchdata-v2.js"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Rolly handbook is part of the <a href="http://gitlab.uav.radar-mms.com/developers/v2/libs/essentials/rolly/">Rolly project</a>, copyright © <a href="https://github.com/whs31">Dmitriy Riazantsev</a>, 2023&ndash;2024.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        
+<a class="poxy-external" href="https://github.com/whs31/rolly" target="_blank">GitHub</a>
+• <a class="poxy-external" href="https://github.com/whs31/rolly/issues" target="_blank">Report an issue</a>
+• <a class="poxy-external" href="https://github.com/whs31/rolly/blob/main/LICENSE" target="_blank">License</a>
+• <a download="" href="Rolly.tagfile.xml" target="_blank" type="text/xml">Doxygen tagfile</a>
+<br/><br/>
+Site generated using <a class="poxy-external" href="https://github.com/marzer/poxy/" target="_blank">Poxy</a>
+
       </div>
     </div>
   </div>
 </nav></footer>
-</body>
-</html>
+
+
+</body></html>
