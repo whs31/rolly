@@ -1,6 +1,6 @@
 #include <rolly/library.h>
 
-#include <array>
+#include <set>
 #include <atomic>
 #include <algorithm>
 #include <mutex>
@@ -127,19 +127,17 @@ namespace rolly {
     if(complete_ext.empty())
       return false;
     auto const suffixes = split_by(complete_ext, '.');
-    auto constexpr valid_suffix_list = std::array {
+    auto valid_suffix_set = std::set<std::string> {};
 #  if defined(ROLLY_OS_DARWIN) || defined(ROLLY_OS_IOS)
-      "dylib"sv,
-      "so"sv,
-      "bundle"sv
+    valid_suffix_set.insert("dylib"s);
+    valid_suffix_set.insert("bundle"s);
+    valid_suffix_set.insert("so"s);
 #  elif defined(ROLLY_OS_LINUX) || defined(ROLLY_OS_FREEBSD) || defined(ROLLY_OS_ANDROID)
-      "so"sv
-#  else
-#    error "Unsupported OS"
+    valid_suffix_set.insert("so"s);
 #  endif
-    };
-    auto const suffix = std::find(suffixes.cbegin(), suffixes.cend(), valid_suffix_list);
-    return suffix != suffixes.cend();
+    for(auto const& suffix : suffixes)
+      if(valid_suffix_set.find(suffix) != valid_suffix_set.end())
+        return true;
 #endif
   }
 }  // namespace rolly
