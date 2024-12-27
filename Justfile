@@ -1,4 +1,5 @@
-alias v := version
+alias v   := version
+alias fmp := fix_msvc_preset
 
 profile := "default"
 compat := "True"
@@ -48,3 +49,8 @@ default:
 @configure BUILD_TYPE:
   echo "Configuring in {{BUILD_TYPE}} mode"
   conan install . --build=missing --settings=build_type={{BUILD_TYPE}} -pr={{profile}} -o "rolly/*:test=True" -o "rolly/*:compat={{compat}}"
+
+[group('misc')]
+[doc('Fix MSVC preset')]
+@fix_msvc_preset:
+    sed -i 's/v143/v144/g' build/generators/CMakePresets.json

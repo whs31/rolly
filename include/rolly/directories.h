@@ -15,7 +15,7 @@ namespace rolly {
   class dirs {
    public:
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       dirs();
     ~dirs() = default;
@@ -26,7 +26,7 @@ namespace rolly {
 
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       std::filesystem::path const& user_home() const;
 
@@ -109,7 +109,7 @@ namespace rolly {
                       * system.
                       */
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       application_dirs(std::string_view qualifier, std::string_view vendor, std::string_view app);
 
@@ -124,7 +124,7 @@ namespace rolly {
          * @see meta::project_meta
          */
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       explicit application_dirs(meta::project_meta const& meta);
 
@@ -132,7 +132,7 @@ namespace rolly {
          * @brief Creates the directories if they do not exist.
          */
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       void
       create() const;
@@ -141,7 +141,7 @@ namespace rolly {
          * @brief Removes the directories and their contents from the filesystem.
          */
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       void
       remove() const;
@@ -157,7 +157,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       std::filesystem::path const& get(dir d) const;
 
@@ -181,7 +181,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       std::filesystem::path const& project_path() const;
 
@@ -201,7 +201,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       std::filesystem::path const& cache_dir() const;
 
@@ -221,7 +221,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       std::filesystem::path const& config_dir() const;
 
@@ -241,7 +241,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       std::filesystem::path const& config_local_dir() const;
 
@@ -261,7 +261,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       std::filesystem::path const& data_dir() const;
 
@@ -281,7 +281,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       std::filesystem::path const& data_local_dir() const;
 
@@ -301,7 +301,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       std::filesystem::path const& preference_dir() const;
 
@@ -319,7 +319,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       optional<std::filesystem::path> const& runtime_dir() const;
 
@@ -339,7 +339,7 @@ namespace rolly {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       optional<std::filesystem::path> const& state_dir() const;
 

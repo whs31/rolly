@@ -8,7 +8,7 @@
  * @note Consider using <i>meta::library_metadata</i> variable to access this value.
  * @version 2.1.32
  */
-#define ROLLY_VERSION_MAJOR 2
+#  define ROLLY_VERSION_MAJOR 2
 
 /**
  * @ingroup meta
@@ -16,7 +16,7 @@
  * @note Consider using <i>meta::library_metadata</i> variable to access this value.
  * @version 2.1.32
  */
-#define ROLLY_VERSION_MINOR 2
+#  define ROLLY_VERSION_MINOR 2
 
 /**
  * @ingroup meta
@@ -24,7 +24,7 @@
  * @note Consider using <i>meta::library_metadata</i> variable to access this value.
  * @version 2.1.32
  */
-#define ROLLY_VERSION_PATCH 0
+#  define ROLLY_VERSION_PATCH 1
 
 /**
  * @internal

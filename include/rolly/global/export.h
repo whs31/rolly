@@ -2,18 +2,18 @@
 
 // NOLINTBEGIN(*-reserved-identifier, *-identifier-naming, *-macro-usage)
 #if defined(DOXYGEN)
-#  define ___rolly_api___
+#  define ROLLY_API
 #else
 #  if defined(_WIN32)
 #    if defined(ROLLY_LIBRARY)
-#      define ___rolly_api___ __declspec(dllexport)
+#      define ROLLY_API __declspec(dllexport)
 #    elif defined(ROLLY_STATIC_LIBRARY)
-#      define ___rolly_api___
+#      define ROLLY_API
 #    else   // defined(ROLLY_LIBRARY)
-#      define ___rolly_api___ __declspec(dllimport)
+#      define ROLLY_API __declspec(dllimport)
 #    endif  // defined(ROLLY_LIBRARY)
 #  else     // defined(_WIN32)
-#    define ___rolly_api___
+#    define ROLLY_API
 #  endif    // defined(_WIN32)
 #endif
 // NOLINTEND(*-reserved-identifier, *-identifier-naming, *-macro-usage)

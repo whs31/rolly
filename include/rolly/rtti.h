@@ -28,7 +28,7 @@ namespace rolly::rtti {
    */
   [[nodiscard]]
 #ifndef ROLLY_DOC
-  ___rolly_api___
+  ROLLY_API
 #endif  // ROLLY_DOC
     std::string demangle(char const* name);
 
