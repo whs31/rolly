@@ -138,6 +138,7 @@ namespace rolly {
     for(auto const& suffix : suffixes)
       if(valid_suffix_set.find(suffix) != valid_suffix_set.end())
         return true;
+    return false;
 #endif
   }
 }  // namespace rolly
