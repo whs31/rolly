@@ -9043,15 +9043,15 @@
       <type>detail::scope_guard&lt; Callback &gt;</type>
       <name>make_scope_guard</name>
       <anchorfile>namespacerolly.html</anchorfile>
-      <anchor>ab024e5cdd08d54d97d27c17c22d5dc40</anchor>
-      <arglist>(Callback &amp;&amp;callback) noexcept(std::is_nothrow_constructible_v&lt; Callback, Callback &amp;&amp; &gt;)</arglist>
+      <anchor>a5aa946820f9503bcdc29dba00a44bb01</anchor>
+      <arglist>(Callback &amp;&amp;callback) noexcept(noexcept(detail::make_scope_guard&lt; Callback &gt;(std::forward&lt; Callback &gt;(callback))))</arglist>
     </member>
     <member kind="function">
       <type>detail::scope_guard&lt; Callback &gt;</type>
       <name>finally</name>
       <anchorfile>namespacerolly.html</anchorfile>
-      <anchor>ac7112b4387bf6d7a81fc10ecca6af17a</anchor>
-      <arglist>(Callback &amp;&amp;callback) noexcept(std::is_nothrow_constructible_v&lt; Callback, Callback &amp;&amp; &gt;)</arglist>
+      <anchor>a4396c486e59b58735a5de35db1c95b77</anchor>
+      <arglist>(Callback &amp;&amp;callback) noexcept(noexcept(detail::finally&lt; Callback &gt;(std::forward&lt; Callback &gt;(callback))))</arglist>
     </member>
     <member kind="function">
       <type>std::enable_if_t&lt;! trait::is_signal_v&lt; std::decay_t&lt; Arg &gt; &gt;, connection &gt;</type>
@@ -9902,6 +9902,20 @@
     <name>rolly::detail</name>
     <filename>namespacerolly_1_1detail.html</filename>
     <class kind="class">rolly::detail::scope_guard&lt; Callback &gt;</class>
+    <member kind="function">
+      <type>scope_guard&lt; Callback &gt;</type>
+      <name>make_scope_guard</name>
+      <anchorfile>namespacerolly_1_1detail.html</anchorfile>
+      <anchor>afeedd7c785d4b2d49c66f4d52fb30850</anchor>
+      <arglist>(Callback &amp;&amp;callback) noexcept(std::is_nothrow_constructible_v&lt; Callback, Callback &amp;&amp; &gt;)</arglist>
+    </member>
+    <member kind="function">
+      <type>scope_guard&lt; Callback &gt;</type>
+      <name>finally</name>
+      <anchorfile>namespacerolly_1_1detail.html</anchorfile>
+      <anchor>aa5f8fde71726c1ad930bd6e4b0b22195</anchor>
+      <arglist>(Callback &amp;&amp;callback) noexcept(std::is_nothrow_constructible_v&lt; Callback, Callback &amp;&amp; &gt;)</arglist>
+    </member>
   </compound>
   <compound kind="namespace">
     <name>rolly::dll</name>
