@@ -121,7 +121,7 @@ namespace rolly::contracts {
    */
   [[noreturn]]
 #ifndef ROLLY_DOC
-  ___rolly_api___
+  ROLLY_API
 #endif  // ROLLY_DOC
     void default_contract_violation_handler(contract_violation const& violation);
 
@@ -133,7 +133,7 @@ namespace rolly::contracts {
    */
   [[nodiscard]]
 #ifndef ROLLY_DOC
-  ___rolly_api___
+  ROLLY_API
 #endif  // ROLLY_DOC
     contract_violation_handler& violation_handler();
 
@@ -147,7 +147,7 @@ namespace rolly::contracts {
  * @see default_contract_violation_handler
  */
 #ifndef ROLLY_DOC
-  ___rolly_api___
+  ROLLY_API
 #endif  // ROLLY_DOC
     contract_violation_handler
     set_violation_handler(contract_violation_handler handler);
@@ -166,7 +166,7 @@ namespace rolly::contracts {
      */
     [[nodiscard]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       contract_violation make_contract_violation(
         contract_type type,
@@ -184,7 +184,7 @@ namespace rolly::contracts {
      */
     [[noreturn]]
 #ifndef ROLLY_DOC
-    ___rolly_api___
+    ROLLY_API
 #endif  // ROLLY_DOC
       void violate(
         contract_type type,

@@ -26,7 +26,7 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
    * @details Based on std::array container.
    * @sa https://en.wikipedia.org/wiki/Globally_unique_identifier
    */
-  class ___rolly_api___ guid {
+  class ROLLY_API guid {
    public:
     /**
      * @brief Length of the guid string representation in the form of
@@ -191,7 +191,7 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * @return Output stream
      * @see to_string
      */
-    ___rolly_api___ friend std::ostream& operator<<(std::ostream& os, guid const& guid);
+    ROLLY_API friend std::ostream& operator<<(std::ostream& os, guid const& guid);
 
     /**
      * @brief Creates an empty guid.

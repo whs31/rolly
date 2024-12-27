@@ -2,7 +2,7 @@
 
 #include <rolly/global/platform_definitions.h>
 
-#ifdef ROLLY_OS_ANDROID
+#if defined(ROLLY_OS_ANDROID) || defined(DOXYGEN)
 #  include <thread>
 #  include <jni.h>
 

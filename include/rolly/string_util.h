@@ -9,31 +9,31 @@
 namespace rolly {
   [[nodiscard]]
 #ifndef DOXYGEN
-  ___rolly_api___
+  ROLLY_API
 #endif
     std::vector<std::string> split(std::string const& input);
 
   [[nodiscard]]
 #ifndef DOXYGEN
-  ___rolly_api___
+  ROLLY_API
 #endif
     std::vector<std::string> split(std::string_view input);
 
   [[nodiscard]]
 #ifndef DOXYGEN
-  ___rolly_api___
+  ROLLY_API
 #endif
     std::vector<std::string> split_by(std::string const& input, char delimiter);
 
   [[nodiscard]]
 #ifndef DOXYGEN
-  ___rolly_api___
+  ROLLY_API
 #endif
     std::vector<std::string> split_by(std::string_view input, char delimiter);
 
   [[nodiscard]]
 #ifndef DOXYGEN
-  ___rolly_api___
+  ROLLY_API
 #endif
     std::string to_lower(std::string_view input);
 

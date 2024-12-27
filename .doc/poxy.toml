@@ -18,7 +18,7 @@ undocumented = true
 
 [sources]
 extract_all = true
-recursive_paths = ['../include']
+recursive_paths = ['../include', '../src']
 patterns = ['*.h', '*.hpp', '*.dox', '*.md']
 strip_paths = ['../include']
 
@@ -29,7 +29,8 @@ paths = ['images']
 [macros]
 '___concept___(...)' = 'typename'
 '___sfinae_requirement___(...)' = ''
-'___rolly_api___' = ''
+'ROLLY_API' = ''
+'___requires___(...)' = ''
 # 'TOML_ABI_NAMESPACE_START(...)'       = 'static_assert(true)'
 # 'TOML_ABI_NAMESPACE_BOOL(...)'        = 'static_assert(true)'
 

@@ -1,13 +1,15 @@
 #pragma once
 
+#include <rolly/global/definitions.h>
 #include <rolly/global/platform_definitions.h>
 #ifndef Q_MOC_RUN
 #  include <filesystem>
 #endif
 
-namespace rolly::oslayer {
-  namespace fs = std::filesystem;
-}  // namespace rolly::oslayer
+/**
+ * @brief Internal namespace for OS-agnostic wrapper functions and classes.
+ */
+namespace rolly::oslayer {}  // namespace rolly::oslayer
 
 #ifdef ROLLY_OS_WINDOWS
 // NOLINTNEXTLINE
