@@ -92,19 +92,37 @@ namespace rolly {
         Callback callback_;
         bool active_;
       };
+
+      template <typename Callback>
+      inline scope_guard<Callback> make_scope_guard(
+        Callback&& callback
+      ) noexcept(std::is_nothrow_constructible_v<Callback, Callback&&>)
+      {
+        return detail::scope_guard<Callback> {std::forward<Callback>(callback)};
+      }
+
+      template <typename Callback>
+      inline scope_guard<Callback> finally(
+        Callback&& callback
+      ) noexcept(std::is_nothrow_constructible_v<Callback, Callback&&>)
+      {
+        return detail::scope_guard<Callback> {std::forward<Callback>(callback)};
+      }
     }  // namespace detail
 
     template <typename Callback>
-    inline detail::scope_guard<Callback> make_scope_guard(
-      Callback&& callback
-    ) noexcept(std::is_nothrow_constructible_v<Callback, Callback&&>) {
-      return detail::scope_guard<Callback> {std::forward<Callback>(callback)};
+    inline detail::scope_guard<Callback> make_scope_guard(Callback&& callback) noexcept(
+      noexcept(detail::make_scope_guard<Callback>(std::forward<Callback>(callback)))
+    )
+    {
+      return detail::make_scope_guard<Callback> (std::forward<Callback>(callback));
     }
 
     template <typename Callback>
-    inline detail::scope_guard<Callback> finally(
-      Callback&& callback
-    ) noexcept(std::is_nothrow_constructible_v<Callback, Callback&&>) {
-      return detail::scope_guard<Callback> {std::forward<Callback>(callback)};
+    inline detail::scope_guard<Callback> finally(Callback&& callback) noexcept(
+      noexcept(detail::finally<Callback>(std::forward<Callback>(callback)))
+    )
+    {
+      return detail::finally<Callback> (std::forward<Callback>(callback));
     }
   }  // namespace rolly
