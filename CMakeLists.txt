@@ -69,7 +69,9 @@ target_sources(${PROJECT_NAME}
 
   ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dll.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/dll.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
 )
 
