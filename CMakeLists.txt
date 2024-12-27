@@ -65,15 +65,13 @@ target_sources(${PROJECT_NAME}
   ${CMAKE_CURRENT_SOURCE_DIR}/src/directories.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/rtti.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/library.cc
 
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/shared_library.cc
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/plugin_loader.cc
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/dll/dl.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dll.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/library.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/dll.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/library.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
 )
 

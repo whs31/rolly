@@ -1,5 +1,6 @@
 #pragma once
 
+#include <rolly/global/definitions.h>
 #include <rolly/global/platform_definitions.h>
 #ifndef Q_MOC_RUN
 #  include <filesystem>

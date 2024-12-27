@@ -201,3 +201,29 @@ namespace rolly {
     return static_cast<T>(~to_underlying(value));
   }
 }  // namespace rolly
+
+#define DECLARE_ENUM_FLAG(E)                                                              \
+  [[nodiscard]] constexpr E operator|(E const lhs, E const rhs) noexcept {                \
+    return static_cast<E>(rolly::to_underlying(lhs) | rolly::to_underlying(rhs));         \
+  }                                                                                       \
+  [[nodiscard]] constexpr E operator&(E const lhs, E const rhs) noexcept {                \
+    return static_cast<E>(rolly::to_underlying(lhs) & rolly::to_underlying(rhs));         \
+  }                                                                                       \
+  [[nodiscard]] constexpr E operator^(E const lhs, E const rhs) noexcept {                \
+    return static_cast<E>(rolly::to_underlying(lhs) ^ rolly::to_underlying(rhs));         \
+  }                                                                                       \
+  [[nodiscard]] constexpr E operator~(E const value) noexcept {                           \
+    return static_cast<E>(~rolly::to_underlying(value));                                  \
+  }                                                                                       \
+  [[nodiscard]] constexpr E& operator|=(E& lhs, E const rhs) noexcept {                   \
+    lhs = lhs | rhs;                                                                      \
+    return lhs;                                                                           \
+  }                                                                                       \
+  [[nodiscard]] constexpr E& operator&=(E& lhs, E const rhs) noexcept {                   \
+    lhs = lhs & rhs;                                                                      \
+    return lhs;                                                                           \
+  }                                                                                       \
+  [[nodiscard]] constexpr E& operator^=(E& lhs, E const rhs) noexcept {                   \
+    lhs = lhs ^ rhs;                                                                      \
+    return lhs;                                                                           \
+  }

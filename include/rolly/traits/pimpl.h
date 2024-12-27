@@ -37,13 +37,26 @@ namespace rolly {
   using pimpl = propagate_const<box<T>>;
 }  // namespace rolly
 
-#define DECLARE_PRIVATE(classname)                                                          \
-  struct classname##Private;                                                                \
-  rolly::pimpl<classname##Private> m_d;                                                     \
-  [[nodiscard]] inline classname##Private const& d() const noexcept { return *this->m_d; }  \
-  [[nodiscard]] inline classname##Private& d() noexcept { return *this->m_d; }
+#define DECLARE_PRIVATE(classname)                                                            \
+  struct classname## Private;                                                                 \
+  rolly::pimpl<classname## Private> m_d;                                                      \
+  [[nodiscard]] inline classname## Private const& d() const noexcept { return *this->m_d; }   \
+  [[nodiscard]] inline classname## Private& d() noexcept { return *this->m_d; }
 
-#define DECLARE_PRIVATE_AS(classname)                                                       \
-  rolly::pimpl<classname> m_d;                                                              \
-  [[nodiscard]] inline classname const& d() const noexcept { return *this->m_d; }           \
-  [[nodiscard]] inline classname& d() noexcept { return *this->m_d; }
+#define DECLARE_PRIVATE_AS(alias)                                                             \
+  struct alias;                                                                               \
+  rolly::pimpl<alias> m_d;                                                                    \
+  [[nodiscard]] inline alias const& d() const noexcept { return *this->m_d; }                 \
+  [[nodiscard]] inline alias& d() noexcept { return *this->m_d; }
+
+#define DECLARE_PRIVATE_UNIQUE_PTR(classname)                                                 \
+  struct classname## Private;                                                                 \
+  std::unique_ptr<classname## Private> m_d;                                                   \
+  [[nodiscard]] inline classname## Private const& d() const noexcept { return *this->m_d; }   \
+  [[nodiscard]] inline classname## Private& d() noexcept { return *this->m_d; }
+
+#define DECLARE_PRIVATE_UNIQUE_PTR_AS(alias)                                                  \
+  struct alias;                                                                               \
+  std::unique_ptr<alias> m_d;                                                                 \
+  [[nodiscard]] inline alias const& d() const noexcept { return *this->m_d; }                 \
+  [[nodiscard]] inline alias& d() noexcept { return *this->m_d; }
