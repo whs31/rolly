@@ -59,12 +59,8 @@ namespace rolly {
       else
         dl_flags |= RTLD_LOCAL;
 #if defined(RTLD_DEEPBIND)
-      if(static_cast<bool>(this->hints & library::load_hint::deepbind))
+      if(static_cast<bool>(this->hints & library::load_hint::deep_bind))
         dl_flags |= RTLD_DEEPBIND;
-#endif
-#if defined(RTLD_NODELETE) && ! defined(ROLLY_OS_ANDROID)
-      if(static_cast<bool>(this->hints & library::load_hint::nodelete))
-        dl_flags |= RTLD_NODELETE;
 #endif
       auto* h = dlopen(this->path.string().c_str(), dl_flags);
       if(not h)

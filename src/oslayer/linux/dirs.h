@@ -6,7 +6,7 @@
 
 namespace rolly::oslayer::linux {
   [[nodiscard]] std::filesystem::path home_dir();
-  [[nodiscard]] std::filesystempath xdg_runtime_dir();
+  [[nodiscard]] std::filesystem::path xdg_runtime_dir();
 }  // namespace rolly::oslayer::linux
 
 #endif
