@@ -237,7 +237,7 @@ namespace rolly {
     }
 
     /**
-     * @brief Returns <code>true</code> if the box is not consumed.
+     * @brief Returns `true` if the box is not consumed.
      */
     [[nodiscard]] explicit operator bool() const noexcept { return this->ptr_ != nullptr; }
 

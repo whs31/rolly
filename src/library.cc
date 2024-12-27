@@ -6,92 +6,120 @@
 #include <mutex>
 #include <rolly/global/platform_definitions.h>
 #include <rolly/string_util.h>
-#include <oslayer/library.h>
+#include <oslayer/dlfcn.h>
 
 using namespace std::literals;
 
 namespace rolly {
   namespace detail {
     [[nodiscard]] std::string complete_suffix(std::filesystem::path const& name) {
-      return {std::find(name.begin(), name.end(), '.'), name.end()};
+      auto const str = name.generic_string();
+      return {std::find(str.cbegin(), str.cend(), '.'), str.cend()};
     }
   }  // namespace detail
 
   struct library::library_private {
-    [[nodiscard]] function_pointer_type resolve(std::string_view const symbol) {
+    library_private(std::filesystem::path path, library::load_hint const hints)
+      : path(std::move(path))
+      , hints(hints) {}
+
+    library_private(library_private const&) = delete;
+    library_private(library_private&&) = delete;
+    library_private& operator=(library_private const&) = delete;
+    library_private& operator=(library_private&&) = delete;
+
+    ~library_private() { std::ignore = this->unload(); }
+
+    [[nodiscard]] result<function_pointer_type> resolve(std::string_view const symbol) const {
       if(not this->handle.load(std::memory_order_relaxed))
-        return nullptr;
-      return reinterpret_cast<function_pointer_type>(
-        oslayer::lib_resolve(this->handle, symbol)  // NOLINT(*-pro-type-reinterpret-cast)
+        return error("library is not loaded");
+      auto* symbol_addr =
+        dlsym(this->handle.load(std::memory_order_relaxed), std::string(symbol).c_str());
+      if(not symbol_addr)
+        return error("symbol {:?} not found", symbol);
+      return ok(
+        reinterpret_cast<function_pointer_type>(symbol_addr)  // NOLINT(*-pro-type-reinterpret-cast)
       );
     }
 
     [[nodiscard]] result<> load() noexcept {
-      if(this->handle.load(std::memory_order_relaxed)) {
-        ++this->unload_count;
-        return ok();
-      }
+      if(this->handle.load(std::memory_order_relaxed))
+        return error("library is already loaded");
       if(this->path.empty())
         return error("library path is empty");
-      bool ret = oslayer::lib_load(
-      );  // https://codebrowser.dev/qt5/qtbase/src/corelib/plugin/qlibrary_unix.cpp.html#_ZN15QLibraryPrivate8load_sysEv
-      if(not ret)
-        return error(oslayer::lib_last_error());
-      ++this->ref_count;
-      ++this->unload_count;
+      auto dl_flags = 0;
+      if(static_cast<bool>(
+           this->hints & library::load_hint::resolve_all_symbols
+         ))  // NOLINT(*-branch-clone)
+        dl_flags |= RTLD_NOW;
+      else
+        dl_flags |= RTLD_LAZY;
+      if(static_cast<bool>(this->hints & library::load_hint::export_external_symbols))
+        dl_flags |= RTLD_GLOBAL;
+      else
+        dl_flags |= RTLD_LOCAL;
+#if defined(RTLD_DEEPBIND)
+      if(static_cast<bool>(this->hints & library::load_hint::deepbind))
+        dl_flags |= RTLD_DEEPBIND;
+#endif
+#if defined(RTLD_NODELETE) && ! defined(ROLLY_OS_ANDROID)
+      if(static_cast<bool>(this->hints & library::load_hint::nodelete))
+        dl_flags |= RTLD_NODELETE;
+#endif
+      auto* h = dlopen(this->path.string().c_str(), dl_flags);
+      if(not h)
+        return error("failed to load library: {}", dlerror());
+      this->handle.store(h, std::memory_order_relaxed);
+      return ok();
+    }
+
+    [[nodiscard]] result<> unload() noexcept {
+      auto* h = this->handle.load(std::memory_order_relaxed);
+      if(h == nullptr)
+        return error("library was already unloaded");
+      auto const ret_code = dlclose(h);
+      this->handle.store(nullptr, std::memory_order_relaxed);
+      if(ret_code != 0)
+        return error("failed to unload library with code {}: {}", ret_code, dlerror());
       return ok();
     }
 
     std::filesystem::path path;
-    bool did_load {false};
+    library::load_hint hints;
     std::atomic<void*> handle {nullptr};
-    std::mutex mutex;
-    std::atomic<isize> ref_count {0};
-    std::atomic<isize> unload_count {0};
   };
 
-  library::library()
-    : m_d(std::make_unique<library_private>()) {}
+  library::library(std::filesystem::path path, library::load_hint hints)
+    : m_d(std::make_unique<library_private>(std::move(path), hints)) {}
 
-  library::library(std::filesystem::path const& path)
-    : m_d(std::make_unique<library_private>()) {
-    this->set_path(path);
-  }
+  library::library(library&&) = default;
+  library& library::operator=(library&&) = default;
+  library::~library() = default;
 
-  library::~library() {}
+  std::filesystem::path const& library::path() const { return d().path; }
 
-  std::filesystem::path const& library::path() const {}
+  std::string library::filename() const { return d().path.filename().string(); }
 
-  std::string library::filename() const {}
+  library::load_hint library::load_hints() const { return d().hints; }
 
-  void library::set_path(std::filesystem::path const& path) {}
-
-  library::load_hint library::load_hints() const {}
-
-  void library::set_load_hints(load_hint hint) {}
-
-  bool library::loaded() const { return this->m_d and d().handle.load(std::memory_order_relaxed); }
+  bool library::loaded() const { return d().handle.load(std::memory_order_relaxed); }
 
   result<> library::load() noexcept {
     if(not this->m_d)
-      return error("library already unloaded");
-    if(d().did_load) {
-      auto const* h = d().handle.load(std::memory_order_relaxed);
-      return h != nullptr ? ok() : error("failed to load library");
-    }
-    d().did_load = true;
+      return error("library d_ptr is null");
     return d().load();
   }
 
-  result<> library::unload() noexcept {}
+  result<> library::unload() noexcept {
+    if(not this->m_d)
+      return error("library d_ptr is null");
+    return d().unload();
+  }
 
   result<library::function_pointer_type> library::resolve(std::string_view const symbol) noexcept {
-    if(not this->loaded())
-      if(auto const res = this->load(); not res)
-        return error(res.error());
-    if(auto* p = d().resolve(symbol))
-      return ok(p);
-    return error("symbol {:?} not found", symbol);
+    if(not this->m_d)
+      return error("library d_ptr is null");
+    return d().resolve(symbol);
   }
 
   bool library::is_library(std::filesystem::path const& path) {
@@ -117,10 +145,5 @@ namespace rolly {
     auto const suffix = std::find(suffixes.cbegin(), suffixes.cend(), valid_suffix_list);
     return suffix != suffixes.cend();
 #endif
-  }
-
-  result<library::function_pointer_type>
-    library::resolve(std::filesystem::path const& path, std::string_view const symbol) noexcept {
-    return library(path)[symbol];
   }
 }  // namespace rolly

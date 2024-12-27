@@ -18,7 +18,7 @@ undocumented = true
 
 [sources]
 extract_all = true
-recursive_paths = ['../include']
+recursive_paths = ['../include', '../src']
 patterns = ['*.h', '*.hpp', '*.dox', '*.md']
 strip_paths = ['../include']
 

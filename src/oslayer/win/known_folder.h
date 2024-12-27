@@ -2,7 +2,7 @@
 
 #include "../base.h"
 
-#ifdef ROLLY_OS_WINDOWS
+#if defined(ROLLY_OS_WINDOWS) || defined(DOXYGEN)
 #  include <windows.h>
 #  if defined(_MSC_VER)
 #    if defined(__amd64__) || defined(__amd64) || defined(__x86_64__) || defined(__x86_64) \
@@ -18,10 +18,10 @@
 #  include <Shlobj.h>
 
 namespace rolly::oslayer::win {
-  [[nodiscard]] fs::path known_folder_path(::KNOWNFOLDERID id);
-  [[nodiscard]] fs::path home_dir();
-  [[nodiscard]] fs::path appdata_dir();
-  [[nodiscard]] fs::path local_appdata_dir();
+  [[nodiscard]] std::filesystem::path known_folder_path(::KNOWNFOLDERID id);
+  [[nodiscard]] std::filesystem::path home_dir();
+  [[nodiscard]] std::filesystem::path appdata_dir();
+  [[nodiscard]] std::filesystem::path local_appdata_dir();
 }  // namespace rolly::oslayer::win
 
 #endif  // ROLLY_OS_WINDOWS

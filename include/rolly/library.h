@@ -27,6 +27,11 @@ namespace rolly {
      */
     enum class load_hint {
       /**
+       * @brief No hints are set.
+       */
+      none = 0x00,
+
+      /**
        * @brief Causes all symbols in a library to be resolved when it is loaded, not simply when
        * @ref resolve is called.
        */
@@ -62,34 +67,29 @@ namespace rolly {
     };
 
     /**
-     * @brief Constructs an uninitialized library.
-     */
-    library();
-
-    /**
      * @brief Constructs a library object that will load the library specified
      * by path.
      * @remark I recommend omitting the file's suffix in fileName, since library will automatically
      * look for the file with the appropriate suffix in accordance with the platform, e.g. __".so"__
-     * on Unix, __".dylib"__ on macOS and iOS, and __".dll"__ on Windows. (See @ref path and
-     * @ref filename for more information.)
+     * on Unix, __".dylib"__ on macOS and iOS, and __".dll"__ on Windows. (See path() and
+     * filename() for more information.)
      * @param path Filename or absolute path to the library to load.
+     * @param hints Load hints
      */
-    explicit library(std::filesystem::path const& path);
+    explicit library(
+      std::filesystem::path path,
+      library::load_hint hints = library::load_hint::none
+    );
 
     library(library const&) = delete;
     library& operator=(library const&) = delete;
-    library(library&&) = default;
-    library& operator=(library&&) = default;
+    library(library&&);
+    library& operator=(library&&);
 
     /**
-     * @brief Destroys the library object.
-     * @note Unless @ref unload was called explicitly, the library stays in memory until the
-     * application terminates.
+     * @brief Destroys the library object and unloads the library.
      */
     ~library();
-
-    // todo: enum for unloading behavior
 
     /**
      * @brief Returns the file name or an absolute path to the library.
@@ -114,11 +114,6 @@ namespace rolly {
      * @return The file name part of the library's path.
      */
     [[nodiscard]] std::string filename() const;
-
-    /**
-     * @copydoc path
-     */
-    void set_path(std::filesystem::path const& path);
 
     /**
      * @brief Give the @ref load function some hints on how it should behave.
@@ -154,11 +149,6 @@ namespace rolly {
      * @return The load hints
      */
     [[nodiscard]] load_hint load_hints() const;
-
-    /**
-     * @copydoc load_hints
-     */
-    void set_load_hints(load_hint hint);
 
     /**
      * @brief Returns `true` if the library is loaded; otherwise returns `false`.
@@ -262,18 +252,6 @@ namespace rolly {
      * @return `true` if __path__ has a valid suffix for a loadable library; otherwise `false`
      */
     [[nodiscard]] static bool is_library(std::filesystem::path const& path);
-
-    /**
-     * @brief Loads the library from path and returns the address of the exported symbol.
-     * @remark Note that path should not include the platform-specific file suffix; (see filename()
-     * or path()).
-     * @note The library remains loaded until the application exits.
-     * @param path Filename or absolute path to the library
-     * @param symbol Name of the exported symbol
-     * @return The address of the exported symbol or an error string
-     */
-    [[nodiscard]] static result<function_pointer_type>
-      resolve(std::filesystem::path const& path, std::string_view symbol) noexcept;
 
    private:
     DECLARE_PRIVATE_UNIQUE_PTR_AS(library_private);

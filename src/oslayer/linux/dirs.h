@@ -2,11 +2,11 @@
 
 #include "../base.h"
 
-#ifndef ROLLY_OS_WINDOWS
+#if defined(ROLLY_OS_LINUX) || defined(DOXYGEN)
 
 namespace rolly::oslayer::linux {
-  [[nodiscard]] fs::path home_dir();
-  [[nodiscard]] fs::path xdg_runtime_dir();
+  [[nodiscard]] std::filesystem::path home_dir();
+  [[nodiscard]] std::filesystempath xdg_runtime_dir();
 }  // namespace rolly::oslayer::linux
 
 #endif
