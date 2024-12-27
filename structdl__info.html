@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/global/ directory | Rolly Radar core library</title>
+  <title>dl_info struct | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,39 +56,40 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_64cbb815bba61e8aacd351630e0bf2ef.html">rolly</a>/</span>global<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          dl_info <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="dlfcn__win32_8h.html">&lt;/home/runner/work/rolly/rolly/src/oslayer/win/dlfcn_win32.h&gt;</a></div>
         </h1>
-        <p></p>
+        <p>Structure filled in by <a class="m-doc" href="dlfcn__win32_8h.html#a5a8079fe575d5a5bc52fa631b26faeca">dladdr()</a></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt>file <a class="m-doc" href="char__utils_8h.html">char_utils.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="charconv_8h.html">charconv.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="definitions_8h.html">definitions.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="export_8h.html">export.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="platform__definitions_8h.html">platform_definitions.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="semver_8h.html">semver.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="version_8h.html">version.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="version__definitions_8h.html">version_definitions.h</a></dt>
-            <dd></dd>
+            <dt id="a6aa5214c9408aa874e86148a1483eb3c">
+              char const * <a class="m-doc-self" href="#a6aa5214c9408aa874e86148a1483eb3c">dli_fname</a>
+            </dt>
+            <dd>Filename of defining object (thread unsafe and reused on every call to dladdr)</dd>
+            <dt id="aaa4f56a92441a0e19e051d2d19c59c6a">
+              void* <a class="m-doc-self" href="#aaa4f56a92441a0e19e051d2d19c59c6a">dli_fbase</a>
+            </dt>
+            <dd>Load address of that object.</dd>
+            <dt id="a5a72088007a155d3e8061d7830f6baae">
+              char const * <a class="m-doc-self" href="#a5a72088007a155d3e8061d7830f6baae">dli_sname</a>
+            </dt>
+            <dd>Name of nearest lower symbol.</dd>
+            <dt id="a3f8467e8bb3dadfbfe220de88769f07f">
+              void* <a class="m-doc-self" href="#a3f8467e8bb3dadfbfe220de88769f07f">dli_saddr</a>
+            </dt>
+            <dd>Exact value of nearest symbol.</dd>
           </dl>
         </section>
       </div>

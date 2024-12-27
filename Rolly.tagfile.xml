@@ -155,101 +155,19 @@
     <namespace>rolly</namespace>
   </compound>
   <compound kind="file">
-    <name>dll.h</name>
-    <filename>dll_8h.html</filename>
-    <includes id="dl_8h" name="dl.h" local="yes" import="no" module="no" objc="no">dll/dl.h</includes>
-  </compound>
-  <compound kind="file">
-    <name>macro.h</name>
-    <filename>macro_8h.html</filename>
-    <includes id="global_8h" name="global.h" local="yes" import="no" module="no" objc="no">../../global.h</includes>
-    <member kind="define">
-      <type>#define</type>
-      <name>___rolly_dll_proc_name___</name>
-      <anchorfile>macro_8h.html</anchorfile>
-      <anchor>a6ea63807656da0c8f848406f047a4cec</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>___rolly_dll_proc_name_string___</name>
-      <anchorfile>macro_8h.html</anchorfile>
-      <anchor>a82afd6a29e58cbbcfe0e876b8ed43cf6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>___rolly_dll_api___</name>
-      <anchorfile>macro_8h.html</anchorfile>
-      <anchor>ae6f7b2d1500706f724b98b9420ce919b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>DECLARE_PLUGIN</name>
-      <anchorfile>macro_8h.html</anchorfile>
-      <anchor>a315558e8b1d56dba9f5dafecb8bc2c3e</anchor>
-      <arglist>(ID)</arglist>
-    </member>
-  </compound>
-  <compound kind="file">
-    <name>dl.h</name>
-    <filename>dl_8h.html</filename>
-    <includes id="export_8h" name="export.h" local="yes" import="no" module="no" objc="no">../global/export.h</includes>
-    <includes id="platform__definitions_8h" name="platform_definitions.h" local="yes" import="no" module="no" objc="no">../global/platform_definitions.h</includes>
-    <namespace>rolly</namespace>
-    <namespace>rolly::dll</namespace>
-  </compound>
-  <compound kind="file">
-    <name>plugin.h</name>
-    <filename>plugin_8h.html</filename>
-    <includes id="guid_8h" name="guid.h" local="yes" import="no" module="no" objc="no">../types/guid.h</includes>
-    <includes id="version_8h" name="version.h" local="yes" import="no" module="no" objc="no">../global/version.h</includes>
-    <includes id="macro_8h" name="macro.h" local="yes" import="no" module="no" objc="no">detail/macro.h</includes>
-    <class kind="class">rolly::dll::plugin</class>
-    <namespace>rolly</namespace>
-    <namespace>rolly::dll</namespace>
-  </compound>
-  <compound kind="file">
-    <name>plugin_loader.h</name>
-    <path>rolly/dll/</path>
-    <filename>plugin__loader_8h.html</filename>
-    <includes id="pin_8h" name="pin.h" local="yes" import="no" module="no" objc="no">../traits/pin.h</includes>
-    <includes id="plugin_8h" name="plugin.h" local="yes" import="no" module="no" objc="no">plugin.h</includes>
-    <includes id="shared__library_8h" name="shared_library.h" local="yes" import="no" module="no" objc="no">shared_library.h</includes>
-    <class kind="class">rolly::dll::plugin_loader</class>
-    <namespace>rolly</namespace>
-    <namespace>rolly::dll</namespace>
-  </compound>
-  <compound kind="file">
-    <name>shared_library.h</name>
-    <path>rolly/dll/</path>
-    <filename>shared__library_8h.html</filename>
-    <includes id="noncopyable_8h" name="noncopyable.h" local="yes" import="no" module="no" objc="no">../traits/noncopyable.h</includes>
-    <includes id="result_8h" name="result.h" local="yes" import="no" module="no" objc="no">../types/result.h</includes>
-    <includes id="optional_8h" name="optional.h" local="yes" import="no" module="no" objc="no">../types/optional.h</includes>
-    <includes id="plugin_8h" name="plugin.h" local="yes" import="no" module="no" objc="no">plugin.h</includes>
-    <class kind="class">rolly::dll::shared_library</class>
-    <namespace>rolly</namespace>
-    <namespace>rolly::dll</namespace>
-  </compound>
-  <compound kind="file">
     <name>exception.h</name>
-    <path>rolly/</path>
     <filename>exception_8h.html</filename>
     <includes id="compile__time__error_8h" name="compile_time_error.h" local="yes" import="no" module="no" objc="no">exception/compile_time_error.h</includes>
     <includes id="serialization__error_8h" name="serialization_error.h" local="yes" import="no" module="no" objc="no">exception/serialization_error.h</includes>
   </compound>
   <compound kind="file">
     <name>compile_time_error.h</name>
-    <path>rolly/exception/</path>
     <filename>compile__time__error_8h.html</filename>
     <class kind="class">rolly::compile_time_error</class>
     <namespace>rolly</namespace>
   </compound>
   <compound kind="file">
     <name>serialization_error.h</name>
-    <path>rolly/exception/</path>
     <filename>serialization__error_8h.html</filename>
     <includes id="rtti_8h" name="rtti.h" local="yes" import="no" module="no" objc="no">../rtti.h</includes>
     <includes id="tags_8h" name="tags.h" local="yes" import="no" module="no" objc="no">../serialization/tags.h</includes>
@@ -259,7 +177,6 @@
   </compound>
   <compound kind="file">
     <name>functional.h</name>
-    <path>rolly/</path>
     <filename>functional_8h.html</filename>
     <includes id="lazy_8h" name="lazy.h" local="yes" import="no" module="no" objc="no">functional/lazy.h</includes>
     <includes id="overload_8h" name="overload.h" local="yes" import="no" module="no" objc="no">functional/overload.h</includes>
@@ -433,9 +350,9 @@
     <namespace>rolly</namespace>
     <member kind="define">
       <type>#define</type>
-      <name>___rolly_api___</name>
+      <name>ROLLY_API</name>
       <anchorfile>export_8h.html</anchorfile>
-      <anchor>a767e446a8f903f15497515cad20c9b96</anchor>
+      <anchor>a3e079ee49421b0f6deb4ae6e3dbb4cb4</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -828,6 +745,35 @@
     <namespace>rolly::io</namespace>
   </compound>
   <compound kind="file">
+    <name>library.h</name>
+    <path>rolly/</path>
+    <filename>include_2rolly_2library_8h.html</filename>
+    <includes id="export_8h" name="export.h" local="yes" import="no" module="no" objc="no">global/export.h</includes>
+    <includes id="pimpl_8h" name="pimpl.h" local="yes" import="no" module="no" objc="no">traits/pimpl.h</includes>
+    <includes id="result_8h" name="result.h" local="yes" import="no" module="no" objc="no">types/result.h</includes>
+    <includes id="utility_8h" name="utility.h" local="yes" import="no" module="no" objc="no">utility.h</includes>
+    <class kind="class">rolly::library</class>
+    <namespace>rolly</namespace>
+  </compound>
+  <compound kind="file">
+    <name>library.h</name>
+    <path>/home/runner/work/rolly/rolly/src/oslayer/</path>
+    <filename>src_2oslayer_2library_8h.html</filename>
+    <includes id="base_8h" name="base.h" local="yes" import="no" module="no" objc="no">base.h</includes>
+    <includes id="src_2oslayer_2linux_2library_8h" name="library.h" local="no" import="no" module="no" objc="no">oslayer/linux/library.h</includes>
+    <namespace>rolly</namespace>
+    <namespace>rolly::oslayer</namespace>
+  </compound>
+  <compound kind="file">
+    <name>library.h</name>
+    <path>/home/runner/work/rolly/rolly/src/oslayer/linux/</path>
+    <filename>src_2oslayer_2linux_2library_8h.html</filename>
+    <includes id="src_2oslayer_2library_8h" name="library.h" local="yes" import="no" module="no" objc="no">../library.h</includes>
+    <namespace>rolly</namespace>
+    <namespace>rolly::oslayer</namespace>
+    <namespace>rolly::oslayer::linux</namespace>
+  </compound>
+  <compound kind="file">
     <name>log.h</name>
     <path>rolly/</path>
     <filename>log_8h.html</filename>
@@ -975,25 +921,25 @@
     <name>rolly.h</name>
     <path>rolly/</path>
     <filename>rolly_8h.html</filename>
-    <includes id="bit_8h" name="bit.h" local="yes" import="no" module="no" objc="no">bit.h</includes>
-    <includes id="concepts_8h" name="concepts.h" local="yes" import="no" module="no" objc="no">concepts.h</includes>
-    <includes id="contracts_8h" name="contracts.h" local="yes" import="no" module="no" objc="no">contracts.h</includes>
-    <includes id="directories_8h" name="directories.h" local="yes" import="no" module="no" objc="no">directories.h</includes>
-    <includes id="dll_8h" name="dll.h" local="yes" import="no" module="no" objc="no">dll.h</includes>
-    <includes id="exception_8h" name="exception.h" local="yes" import="no" module="no" objc="no">exception.h</includes>
-    <includes id="functional_8h" name="functional.h" local="yes" import="no" module="no" objc="no">functional.h</includes>
-    <includes id="global_8h" name="global.h" local="yes" import="no" module="no" objc="no">global.h</includes>
-    <includes id="math_8h" name="math.h" local="yes" import="no" module="no" objc="no">math.h</includes>
-    <includes id="memory_8h" name="memory.h" local="yes" import="no" module="no" objc="no">memory.h</includes>
-    <includes id="numbers_8h" name="numbers.h" local="yes" import="no" module="no" objc="no">numbers.h</includes>
-    <includes id="rtti_8h" name="rtti.h" local="yes" import="no" module="no" objc="no">rtti.h</includes>
-    <includes id="savefile_8h" name="savefile.h" local="yes" import="no" module="no" objc="no">savefile.h</includes>
-    <includes id="serialization_8h" name="serialization.h" local="yes" import="no" module="no" objc="no">serialization.h</includes>
-    <includes id="source__location_8h" name="source_location.h" local="yes" import="no" module="no" objc="no">source_location.h</includes>
-    <includes id="string__util_8h" name="string_util.h" local="yes" import="no" module="no" objc="no">string_util.h</includes>
-    <includes id="traits_8h" name="traits.h" local="yes" import="no" module="no" objc="no">traits.h</includes>
-    <includes id="type__traits_8h" name="type_traits.h" local="yes" import="no" module="no" objc="no">type_traits.h</includes>
-    <includes id="types_8h" name="types.h" local="yes" import="no" module="no" objc="no">types.h</includes>
+    <includes id="bit_8h" name="bit.h" local="yes" import="no" module="no" objc="no">./bit.h</includes>
+    <includes id="concepts_8h" name="concepts.h" local="yes" import="no" module="no" objc="no">./concepts.h</includes>
+    <includes id="contracts_8h" name="contracts.h" local="yes" import="no" module="no" objc="no">./contracts.h</includes>
+    <includes id="directories_8h" name="directories.h" local="yes" import="no" module="no" objc="no">./directories.h</includes>
+    <includes id="exception_8h" name="exception.h" local="yes" import="no" module="no" objc="no">./exception.h</includes>
+    <includes id="functional_8h" name="functional.h" local="yes" import="no" module="no" objc="no">./functional.h</includes>
+    <includes id="global_8h" name="global.h" local="yes" import="no" module="no" objc="no">./global.h</includes>
+    <includes id="include_2rolly_2library_8h" name="library.h" local="yes" import="no" module="no" objc="no">./library.h</includes>
+    <includes id="math_8h" name="math.h" local="yes" import="no" module="no" objc="no">./math.h</includes>
+    <includes id="memory_8h" name="memory.h" local="yes" import="no" module="no" objc="no">./memory.h</includes>
+    <includes id="numbers_8h" name="numbers.h" local="yes" import="no" module="no" objc="no">./numbers.h</includes>
+    <includes id="rtti_8h" name="rtti.h" local="yes" import="no" module="no" objc="no">./rtti.h</includes>
+    <includes id="savefile_8h" name="savefile.h" local="yes" import="no" module="no" objc="no">./savefile.h</includes>
+    <includes id="serialization_8h" name="serialization.h" local="yes" import="no" module="no" objc="no">./serialization.h</includes>
+    <includes id="source__location_8h" name="source_location.h" local="yes" import="no" module="no" objc="no">./source_location.h</includes>
+    <includes id="string__util_8h" name="string_util.h" local="yes" import="no" module="no" objc="no">./string_util.h</includes>
+    <includes id="traits_8h" name="traits.h" local="yes" import="no" module="no" objc="no">./traits.h</includes>
+    <includes id="type__traits_8h" name="type_traits.h" local="yes" import="no" module="no" objc="no">./type_traits.h</includes>
+    <includes id="types_8h" name="types.h" local="yes" import="no" module="no" objc="no">./types.h</includes>
   </compound>
   <compound kind="file">
     <name>rtti.h</name>
@@ -1133,8 +1079,22 @@
       <type>#define</type>
       <name>DECLARE_PRIVATE_AS</name>
       <anchorfile>pimpl_8h.html</anchorfile>
-      <anchor>a6263117fc8365a3b88cdd34c9a2659fb</anchor>
+      <anchor>a296a83a502b0aa9b389cdd3f0c3974c9</anchor>
+      <arglist>(alias)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DECLARE_PRIVATE_UNIQUE_PTR</name>
+      <anchorfile>pimpl_8h.html</anchorfile>
+      <anchor>a8b02a4582159e4f88159f7071a5a80e1</anchor>
       <arglist>(classname)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DECLARE_PRIVATE_UNIQUE_PTR_AS</name>
+      <anchorfile>pimpl_8h.html</anchorfile>
+      <anchor>a989674862ba11b1d2a878fc77e87e071</anchor>
+      <arglist>(alias)</arglist>
     </member>
   </compound>
   <compound kind="file">
@@ -1183,7 +1143,7 @@
   <compound kind="file">
     <name>guid.h</name>
     <path>rolly/types/</path>
-    <filename>guid_8h.html</filename>
+    <filename>include_2rolly_2types_2guid_8h.html</filename>
     <includes id="global_8h" name="global.h" local="yes" import="no" module="no" objc="no">../global.h</includes>
     <includes id="stdint_8h" name="stdint.h" local="yes" import="no" module="no" objc="no">./stdint.h</includes>
     <includes id="definitions_8h" name="definitions.h" local="yes" import="no" module="no" objc="no">rolly/global/definitions.h</includes>
@@ -1191,6 +1151,16 @@
     <class kind="struct">fmt::formatter&lt; rolly::guid &gt;</class>
     <namespace>rolly</namespace>
     <namespace>rolly::literals</namespace>
+  </compound>
+  <compound kind="file">
+    <name>guid.h</name>
+    <path>/home/runner/work/rolly/rolly/src/oslayer/android/</path>
+    <filename>src_2oslayer_2android_2guid_8h.html</filename>
+    <includes id="platform__definitions_8h" name="platform_definitions.h" local="no" import="no" module="no" objc="no">rolly/global/platform_definitions.h</includes>
+    <class kind="struct">rolly::oslayer::android::guid_info</class>
+    <namespace>rolly</namespace>
+    <namespace>rolly::oslayer</namespace>
+    <namespace>rolly::oslayer::android</namespace>
   </compound>
   <compound kind="file">
     <name>optional.h</name>
@@ -1312,6 +1282,144 @@
     <filename>utility_8h.html</filename>
     <includes id="enum_8h" name="enum.h" local="yes" import="no" module="no" objc="no">concepts/enum.h</includes>
     <namespace>rolly</namespace>
+    <member kind="define">
+      <type>#define</type>
+      <name>DECLARE_ENUM_FLAG</name>
+      <anchorfile>utility_8h.html</anchorfile>
+      <anchor>af4570514ccc442468408666c070ab793</anchor>
+      <arglist>(E)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>base.h</name>
+    <path>/home/runner/work/rolly/rolly/src/oslayer/</path>
+    <filename>base_8h.html</filename>
+    <includes id="definitions_8h" name="definitions.h" local="no" import="no" module="no" objc="no">rolly/global/definitions.h</includes>
+    <includes id="platform__definitions_8h" name="platform_definitions.h" local="no" import="no" module="no" objc="no">rolly/global/platform_definitions.h</includes>
+    <namespace>rolly</namespace>
+    <namespace>rolly::oslayer</namespace>
+    <member kind="define">
+      <type>#define</type>
+      <name>___os___</name>
+      <anchorfile>base_8h.html</anchorfile>
+      <anchor>a092e42f33c0bac70710d0faae1e2af8e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>dlfcn.h</name>
+    <path>/home/runner/work/rolly/rolly/src/oslayer/</path>
+    <filename>dlfcn_8h.html</filename>
+    <includes id="platform__definitions_8h" name="platform_definitions.h" local="no" import="no" module="no" objc="no">rolly/global/platform_definitions.h</includes>
+    <includes id="dlfcn_8h" name="dlfcn.h" local="no" import="no" module="no" objc="no">dlfcn.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>dirs.h</name>
+    <path>/home/runner/work/rolly/rolly/src/oslayer/linux/</path>
+    <filename>dirs_8h.html</filename>
+    <includes id="base_8h" name="base.h" local="yes" import="no" module="no" objc="no">../base.h</includes>
+    <namespace>rolly</namespace>
+    <namespace>rolly::oslayer</namespace>
+    <namespace>rolly::oslayer::linux</namespace>
+  </compound>
+  <compound kind="file">
+    <name>dlfcn_win32.h</name>
+    <path>/home/runner/work/rolly/rolly/src/oslayer/win/</path>
+    <filename>dlfcn__win32_8h.html</filename>
+    <class kind="struct">dl_info</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>RTLD_NOW</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a98a6517467cf7d1dd27d6c6dce78a6cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>RTLD_LAZY</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a5c83709ee3bd7d316f8f47e122f3be20</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>RTLD_GLOBAL</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>ace65454279c135fe5e6168d456c31263</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>RTLD_LOCAL</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a233010260f7e61c5dab09e2bca10a590</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>RTLD_DEFAULT</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a58d13c5dcabbb85848fa97b446086247</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>RTLD_NEXT</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a51d4212b17b1edeb2fc5a48c7c497267</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct dl_info</type>
+      <name>Dl_info</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a4c034644624b5d5d171e7cf51ec256cc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void *</type>
+      <name>dlopen</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a005293776e928f3fc39d132d28f97c74</anchor>
+      <arglist>(char const *file, int mode)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>dlclose</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>af483b6c4400965aa885f9f1a144138a5</anchor>
+      <arglist>(void *handle)</arglist>
+    </member>
+    <member kind="function">
+      <type>void *</type>
+      <name>dlsym</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a4d5ab576e4cc592e636fb5416eeda016</anchor>
+      <arglist>(void *handle, char const *name)</arglist>
+    </member>
+    <member kind="function">
+      <type>char *</type>
+      <name>dlerror</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a2bbbe680edd6e3918311f5dbf33b3996</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>dladdr</name>
+      <anchorfile>dlfcn__win32_8h.html</anchorfile>
+      <anchor>a5a8079fe575d5a5bc52fa631b26faeca</anchor>
+      <arglist>(void const *addr, Dl_info *info)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>known_folder.h</name>
+    <path>/home/runner/work/rolly/rolly/src/oslayer/win/</path>
+    <filename>known__folder_8h.html</filename>
+    <includes id="base_8h" name="base.h" local="yes" import="no" module="no" objc="no">../base.h</includes>
+    <namespace>rolly</namespace>
+    <namespace>rolly::oslayer</namespace>
+    <namespace>rolly::oslayer::win</namespace>
   </compound>
   <compound kind="struct">
     <name>rolly::angle</name>
@@ -2761,6 +2869,38 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>dl_info</name>
+    <filename>structdl__info.html</filename>
+    <member kind="variable">
+      <type>char const  *</type>
+      <name>dli_fname</name>
+      <anchorfile>structdl__info.html</anchorfile>
+      <anchor>a6aa5214c9408aa874e86148a1483eb3c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>void *</type>
+      <name>dli_fbase</name>
+      <anchorfile>structdl__info.html</anchorfile>
+      <anchor>aaa4f56a92441a0e19e051d2d19c59c6a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>char const  *</type>
+      <name>dli_sname</name>
+      <anchorfile>structdl__info.html</anchorfile>
+      <anchor>a5a72088007a155d3e8061d7830f6baae</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>void *</type>
+      <name>dli_saddr</name>
+      <anchorfile>structdl__info.html</anchorfile>
+      <anchor>a3f8467e8bb3dadfbfe220de88769f07f</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>rolly::nullopt_t::do_not_use</name>
     <filename>structrolly_1_1nullopt__t_1_1do__not__use.html</filename>
   </compound>
@@ -3287,6 +3427,59 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>rolly::oslayer::android::guid_info</name>
+    <filename>structrolly_1_1oslayer_1_1android_1_1guid__info.html</filename>
+    <member kind="function">
+      <type>guid_info</type>
+      <name>from_env</name>
+      <anchorfile>structrolly_1_1oslayer_1_1android_1_1guid__info.html</anchorfile>
+      <anchor>affdc8cb36c3997bad5e2b5d40e82103b</anchor>
+      <arglist>(JNIEnv *env) const</arglist>
+    </member>
+    <member kind="variable">
+      <type>JNIEnv *</type>
+      <name>env</name>
+      <anchorfile>structrolly_1_1oslayer_1_1android_1_1guid__info.html</anchorfile>
+      <anchor>a21bc09c0d79b4b50a37c26c86d6ab200</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>jclass</type>
+      <name>uuid_class</name>
+      <anchorfile>structrolly_1_1oslayer_1_1android_1_1guid__info.html</anchorfile>
+      <anchor>a81d7202f744042bd935886fa58837121</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>jmethodID</type>
+      <name>new_guid_method</name>
+      <anchorfile>structrolly_1_1oslayer_1_1android_1_1guid__info.html</anchorfile>
+      <anchor>ae1e71e8cda42cf94ac166e3389904fc6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>jmethodID</type>
+      <name>most_significant_bits_method</name>
+      <anchorfile>structrolly_1_1oslayer_1_1android_1_1guid__info.html</anchorfile>
+      <anchor>aa7db34dccefdf1db3aae4b878db69800</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>jmethodID</type>
+      <name>least_significant_bits_method</name>
+      <anchorfile>structrolly_1_1oslayer_1_1android_1_1guid__info.html</anchorfile>
+      <anchor>a691827642f9c23269f7e1a9fea096841</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::thread::id</type>
+      <name>init_thread_id</name>
+      <anchorfile>structrolly_1_1oslayer_1_1android_1_1guid__info.html</anchorfile>
+      <anchor>ab4074d0fbeb9924582b3accc40b94e87</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>std::hash&lt; rolly::point2d&lt; T &gt; &gt;</name>
     <filename>structstd_1_1hash_3_01rolly_1_1point2d_3_01_t_01_4_01_4.html</filename>
     <templarg>typename T</templarg>
@@ -3364,6 +3557,198 @@
   <compound kind="struct">
     <name>rolly::serialization::format::json</name>
     <filename>structrolly_1_1serialization_1_1format_1_1json.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>rolly::library</name>
+    <filename>classrolly_1_1library.html</filename>
+    <member kind="enumeration">
+      <type></type>
+      <name>load_hint</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>adb02799e19715c2c75f2323ee178d672</anchor>
+      <arglist></arglist>
+      <enumvalue file="classrolly_1_1library.html" anchor="adb02799e19715c2c75f2323ee178d672a334c4a4c42fdb79d7ebc3e73b517e6f8">none</enumvalue>
+      <enumvalue file="classrolly_1_1library.html" anchor="adb02799e19715c2c75f2323ee178d672a876bbde99776dafa22e5dd531aeeb3ca">resolve_all_symbols</enumvalue>
+      <enumvalue file="classrolly_1_1library.html" anchor="adb02799e19715c2c75f2323ee178d672a32b835e2209e19d28680b9e4042c69ce">export_external_symbols</enumvalue>
+      <enumvalue file="classrolly_1_1library.html" anchor="adb02799e19715c2c75f2323ee178d672a39e4a9c1579d162561eb7ece8a3c04b5">load_archive_member</enumvalue>
+      <enumvalue file="classrolly_1_1library.html" anchor="adb02799e19715c2c75f2323ee178d672a1d0f630f209180de7902a58f075f00c2">prevent_unload</enumvalue>
+      <enumvalue file="classrolly_1_1library.html" anchor="adb02799e19715c2c75f2323ee178d672ad8fd587ca0ea9894c84dc614e0e2aa0e">deep_bind</enumvalue>
+    </member>
+    <member kind="typedef">
+      <type>void(*)()</type>
+      <name>function_pointer_type</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a6d1a53e290deef8b13a75c129b1f5a01</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>library</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>af3039a27a8e1b7e938fac724cf25d38b</anchor>
+      <arglist>(std::filesystem::path path, library::load_hint hints=library::load_hint::none)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>library</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a36f3486b712a936ab9e49b6ce916101f</anchor>
+      <arglist>(library const &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type>library &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a52760e06eb1a149d3d6e37cb69dc52d0</anchor>
+      <arglist>(library const &amp;)=delete</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>library</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>ae7991f5cf97815e839921967bef6b9f3</anchor>
+      <arglist>(library &amp;&amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>library &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a1958ec245ee38884d70e76b9e24f087a</anchor>
+      <arglist>(library &amp;&amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~library</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a8925344bfe4bf18492ab80c3f4c80434</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::filesystem::path const &amp;</type>
+      <name>path</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a2c5643828980181372b5b89130ce8b81</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>filename</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a86235718271d1a3558ac87dda9f24eef</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>load_hint</type>
+      <name>load_hints</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a8a1ca04c45b29267f158b1e4ed1a2876</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>loaded</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a66b814ef9deaa18abcf790e002fa2eaa</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>operator bool</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a47165f9a09a0d4b5f43363d372a3914c</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>result</type>
+      <name>load</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a354170b7bbf8861c22f3a6ba87b42edb</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>result</type>
+      <name>unload</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>ac55b68bf0ff39e4bce176254de85d479</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>result&lt; library::function_pointer_type &gt;</type>
+      <name>resolve</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>ade0f3003f81be6be11f901b0c1d0608a</anchor>
+      <arglist>(std::string_view symbol) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>result&lt; library::function_pointer_type &gt;</type>
+      <name>operator[]</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a02bb0bae9930c76def48c34b7aa03c3b</anchor>
+      <arglist>(std::string_view const symbol) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>result&lt; F &gt;</type>
+      <name>resolve_cast</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a4d6180c2f32a82e7febb45b9cd803f8a</anchor>
+      <arglist>(std::string_view const symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>is_library</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>ace2a3111ff95fa665a36e240610abdcd</anchor>
+      <arglist>(std::filesystem::path const &amp;path)</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr rolly::library::load_hint</type>
+      <name>operator|</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a5bc7d7e8ea7654f6540a4cc9f033cca0</anchor>
+      <arglist>(rolly::library::load_hint const lhs, rolly::library::load_hint const rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr rolly::library::load_hint</type>
+      <name>operator&amp;</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a43e9a5be2eafb9c8411cb74bfa24d1af</anchor>
+      <arglist>(rolly::library::load_hint const lhs, rolly::library::load_hint const rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr rolly::library::load_hint</type>
+      <name>operator^</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a3c9e5cd501afd0a4a80872616dbab981</anchor>
+      <arglist>(rolly::library::load_hint const lhs, rolly::library::load_hint const rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr rolly::library::load_hint</type>
+      <name>operator~</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a29df4ec41e869c422d0c6c74364228b7</anchor>
+      <arglist>(rolly::library::load_hint const value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr rolly::library::load_hint &amp;</type>
+      <name>operator|=</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>af06162cbed5853027e8fd7ad427a6d66</anchor>
+      <arglist>(rolly::library::load_hint &amp;lhs, rolly::library::load_hint const rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr rolly::library::load_hint &amp;</type>
+      <name>operator&amp;=</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>ad74b86e33410aebc36984501ef002c38</anchor>
+      <arglist>(rolly::library::load_hint &amp;lhs, rolly::library::load_hint const rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr rolly::library::load_hint &amp;</type>
+      <name>operator^=</name>
+      <anchorfile>classrolly_1_1library.html</anchorfile>
+      <anchor>a17a86462999a2526980d2968d84072ba</anchor>
+      <arglist>(rolly::library::load_hint &amp;lhs, rolly::library::load_hint const rhs) noexcept</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>rolly::qt::qml::module</name>
@@ -4774,384 +5159,6 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>rolly::dll::plugin</name>
-    <filename>classrolly_1_1dll_1_1plugin.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>plugin</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>ad881e6e52812c8252eb064f0b1fa11a2</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>plugin</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>ace628049e3f8e12469324b9e329ac51d</anchor>
-      <arglist>(plugin const &amp;)=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>plugin</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>a95874846793d725a83d6d25626e5e8f5</anchor>
-      <arglist>(plugin &amp;&amp;)=default</arglist>
-    </member>
-    <member kind="function">
-      <type>plugin &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>accfa7f4f98d14d21f5c7bb4f09996541</anchor>
-      <arglist>(plugin const &amp;)=default</arglist>
-    </member>
-    <member kind="function">
-      <type>plugin &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>a4e104b3b8ea5036db45af6ab687a36e1</anchor>
-      <arglist>(plugin &amp;&amp;)=default</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~plugin</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>a29ff6a79f1a357074549f0e0e5a19fd3</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::string_view</type>
-      <name>name</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>a1100d2d13203e95f824f092b510922c2</anchor>
-      <arglist>() const =0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual std::string_view</type>
-      <name>soname</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>afcd733d7be367a1d6717fccbc130bfc6</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual std::string_view</type>
-      <name>description</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>ad9eb8e74c5773bf6c744e4695c124ed3</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual meta::project_meta const &amp;</type>
-      <name>meta</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>a10d370dde9a44e2e8eb0b256123b2e9e</anchor>
-      <arglist>() const =0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual guid const &amp;</type>
-      <name>uuid</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>a05ff2a1dd68137b489a76ba58a9ee08c</anchor>
-      <arglist>() const =0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>init</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>aa4304aac6c3dcf80f0c1f26b34b627f4</anchor>
-      <arglist>(std::any &amp;init_interface)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>quit</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>ae9291e6ad163957b66c9cd24ddb6e6f8</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static std::string</type>
-      <name>native_soname</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>a5ea652b325f5e981e5080928a015111c</anchor>
-      <arglist>(std::string_view soname) noexcept</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::string</type>
-      <name>soname_</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>af9a6a1e4e7b3ea5f2496966e683c2d89</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="friend">
-      <type>friend class</type>
-      <name>plugin_loader</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin.html</anchorfile>
-      <anchor>a413fc61d01d6d908440c634eb9132f53</anchor>
-      <arglist></arglist>
-    </member>
-    <docanchor file="classrolly_1_1dll_1_1plugin.html" title="Usage basics">plugin_usage</docanchor>
-    <docanchor file="classrolly_1_1dll_1_1plugin.html" title="Example plugin interface">plugin_example_plugin_interface</docanchor>
-    <docanchor file="classrolly_1_1dll_1_1plugin.html" title="Example plugin implementation">plugin_example_plugin_impl</docanchor>
-    <docanchor file="classrolly_1_1dll_1_1plugin.html" title="Example application">plugin_example_plugin_app</docanchor>
-    <docanchor file="classrolly_1_1dll_1_1plugin.html" title="Output">plugin_example_plugin_output</docanchor>
-  </compound>
-  <compound kind="class">
-    <name>rolly::dll::plugin_loader</name>
-    <filename>classrolly_1_1dll_1_1plugin__loader.html</filename>
-    <base protection="private">rolly::pin</base>
-    <member kind="typedef">
-      <type>std::vector&lt; std::unique_ptr&lt; plugin &gt; &gt;::iterator</type>
-      <name>iterator</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>ad5a9cddbafed615821b71bd4b322211a</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; std::unique_ptr&lt; plugin &gt; &gt;::const_iterator</type>
-      <name>const_iterator</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a1478e243b39889e1b8fde1ddda89c75f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; std::unique_ptr&lt; plugin &gt; &gt;::reverse_iterator</type>
-      <name>reverse_iterator</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a5adc07e887dbfdcdad0de100e52f293f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; std::unique_ptr&lt; plugin &gt; &gt;::const_reverse_iterator</type>
-      <name>const_reverse_iterator</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>aa9ddf926fe5afa08f7d33450213ecd45</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>plugin_loader</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>aef78771a323873f97d3c0c66588cd2da</anchor>
-      <arglist>(std::any init_data)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>plugin_loader</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>ac8fd393754f10ccfbc8229f5ee237efc</anchor>
-      <arglist>(plugin_loader const &amp;)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>plugin_loader</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>abcdadf2a8c93a744a7c00fb5a67e11e0</anchor>
-      <arglist>(plugin_loader &amp;&amp;)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type>plugin_loader &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a1e5977205472519cd6290e34e817e38c</anchor>
-      <arglist>(plugin_loader const &amp;)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type>plugin_loader &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>ade3da30e269ff5097d8203ed1fd586a1</anchor>
-      <arglist>(plugin_loader &amp;&amp;)=delete</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~plugin_loader</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a88bdf489002ec8a2e826d6c6e994390b</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>begin</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a67b288d36ba0f35ce431640511c2041a</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>const_iterator</type>
-      <name>begin</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>aef0110df3bc0f8748a297c71def53510</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>const_iterator</type>
-      <name>cbegin</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a33ec32fb991257fe9c2ad3a3586709a6</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>const_iterator</type>
-      <name>cend</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a20dd702bebfac6d261c460b2a45b7e80</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>end</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a0c563186554cc012da3785dca3dc8ecf</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>reverse_iterator</type>
-      <name>rbegin</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>ac646911739b88797614e53f1d787a55f</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>const_reverse_iterator</type>
-      <name>rbegin</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a92800619f04d04019fd22641a764766c</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>result&lt; plugin * &gt;</type>
-      <name>load</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>ae897467b97fcb7cc16e0689714cca510</anchor>
-      <arglist>(std::string_view name)</arglist>
-    </member>
-    <member kind="function">
-      <type>result&lt; plugin * &gt;</type>
-      <name>load</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a280e0d01588b0255686e35e5e1b1fee1</anchor>
-      <arglist>(std::filesystem::path const &amp;path, std::string_view name)</arglist>
-    </member>
-    <member kind="function">
-      <type>result</type>
-      <name>unload</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a9b8df5f8252dfcfef4f20f3355bc511a</anchor>
-      <arglist>(std::string_view name)</arglist>
-    </member>
-    <member kind="function">
-      <type>result</type>
-      <name>load_all</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a8730d2cac161607c973d3bc0f726962b</anchor>
-      <arglist>(std::filesystem::path const &amp;path, std::string_view extension=plugin_loader::native_extension())</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; std::unique_ptr&lt; plugin &gt; &gt; const &amp;</type>
-      <name>plugins</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>af6eb4300b8bbbcd7dc082ade3220a314</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; std::unique_ptr&lt; plugin &gt; &gt; &amp;</type>
-      <name>plugins</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a231801d63450fce12a9a7cee3352e00f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>is_loaded</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a9f561190c7b6aaf2409d8a5ceb521f6b</anchor>
-      <arglist>(std::string_view name) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>is_loaded</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>ae8235f0de05124f44c77451cbc480cc3</anchor>
-      <arglist>(guid const &amp;uuid) const</arglist>
-    </member>
-    <member kind="function">
-      <type>usize</type>
-      <name>loaded_count</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a2dd61b1f69645aab9b36330702861e37</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>plugin *</type>
-      <name>operator[]</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a63ca7b66672788d54fcf093034c73748</anchor>
-      <arglist>(std::string_view name) const</arglist>
-    </member>
-    <member kind="function">
-      <type>plugin *</type>
-      <name>operator[]</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>aeac725a225cd596b6914221cb22fc142</anchor>
-      <arglist>(guid const &amp;uuid) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::unordered_map&lt; std::string, shared_library &gt; const &amp;</type>
-      <name>libraries</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>acd889676a638ddacdf2a53dcd8d07439</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::unordered_map&lt; std::string, shared_library &gt; &amp;</type>
-      <name>libraries</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>ae0da8e0551837fbdda4fdab8741fcfa5</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>optional&lt; std::reference_wrapper&lt; T &gt; &gt;</type>
-      <name>query_interface_by_type</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a2976b5852bade13e9f1b4f73a0d326b8</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>optional&lt; std::reference_wrapper&lt; T &gt; &gt;</type>
-      <name>query_interface</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a15ba5cfa53b36a80738b2ddfb0415b74</anchor>
-      <arglist>(std::string_view interface_name) const</arglist>
-    </member>
-    <member kind="function">
-      <type>optional&lt; std::reference_wrapper&lt; T &gt; &gt;</type>
-      <name>query_interface</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a87971cf588333f728572e29d2699ad9f</anchor>
-      <arglist>(guid const &amp;uuid) const</arglist>
-    </member>
-    <member kind="function">
-      <type>optional&lt; std::reference_wrapper&lt; T &gt; &gt;</type>
-      <name>query_by</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>ade17b36254f5b1bd75c1d70780c70398</anchor>
-      <arglist>(std::function&lt; bool(plugin const &amp;)&gt; const &amp;predicate) const</arglist>
-    </member>
-    <member kind="function">
-      <type>plugin *</type>
-      <name>query_raw</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>ad0e56e1cf1c2cc94b417c035eb3edf87</anchor>
-      <arglist>(std::function&lt; bool(plugin const &amp;)&gt; const &amp;predicate) const</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static std::string_view</type>
-      <name>native_extension</name>
-      <anchorfile>classrolly_1_1dll_1_1plugin__loader.html</anchorfile>
-      <anchor>a067a4b00c83dffc8694b8d65cf845fa6</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>rolly::point2d</name>
     <filename>structrolly_1_1point2d.html</filename>
     <templarg>concepts::num T</templarg>
@@ -6266,123 +6273,6 @@
       <anchorfile>classrolly_1_1serialization__error.html</anchorfile>
       <anchor>a9aef72edef6f7b6ea9f6d8018ecfc964</anchor>
       <arglist>(std::string_view message)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>rolly::dll::shared_library</name>
-    <filename>classrolly_1_1dll_1_1shared__library.html</filename>
-    <base protection="private">rolly::noncopyable</base>
-    <member kind="function">
-      <type></type>
-      <name>shared_library</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>af331eef604fb3686b99027890fa37e26</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>shared_library</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>ad35586d1a66c775a652334fabd31a769</anchor>
-      <arglist>(std::string name)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>shared_library</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>ac62d7792c77b925c56a7c1d68bbd2f7f</anchor>
-      <arglist>(std::filesystem::path const &amp;path, std::string name)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>shared_library</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>a59653d6a5b2a7b556a187c4a7f6a85e3</anchor>
-      <arglist>(shared_library &amp;&amp;) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>shared_library &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>a950294651dd82520dcb46b34399c2cec</anchor>
-      <arglist>(shared_library &amp;&amp;) noexcept</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~shared_library</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>af0972f923cb2dbf48a6460234618c4e5</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void *</type>
-      <name>handle</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>a435c903e6c9cb2e260c3da3d734c6b10</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::filesystem::path const &amp;</type>
-      <name>path</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>acf6788d1133d21273859ae6fefe741c0</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::string_view</type>
-      <name>name</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>ae4807e0c536028f5a19ae879ac4bd4f7</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::string_view</type>
-      <name>soname</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>a63a058c7ebf4bb5bf7c076d4817d8023</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>valid</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>af618feba82e7f2469f51e72bbcfd10ee</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>operator bool</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>abeaf6680ddf5866b589a5c1bfd8144ff</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>is_loaded</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>aa5d4de0f1fea6d41fdcc3e4f67c24026</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>plugin *</type>
-      <name>load</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>a6ad5d769ecc4b6811649239e3c9a1e1f</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>result&lt; plugin * &gt;</type>
-      <name>try_load</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>ab811ccf88f9d189fc299c55b40b0e14a</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="friend">
-      <type>friend class</type>
-      <name>plugin_loader</name>
-      <anchorfile>classrolly_1_1dll_1_1shared__library.html</anchorfile>
-      <anchor>a413fc61d01d6d908440c634eb9132f53</anchor>
-      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -8378,11 +8268,11 @@
     <namespace>rolly::concepts</namespace>
     <namespace>rolly::contracts</namespace>
     <namespace>rolly::detail</namespace>
-    <namespace>rolly::dll</namespace>
     <namespace>rolly::io</namespace>
     <namespace>rolly::literals</namespace>
     <namespace>rolly::meta</namespace>
     <namespace>rolly::numbers</namespace>
+    <namespace>rolly::oslayer</namespace>
     <namespace>rolly::qt</namespace>
     <namespace>rolly::rtti</namespace>
     <namespace>rolly::serialization</namespace>
@@ -8405,6 +8295,7 @@
     <class kind="struct">rolly::is_qgadget</class>
     <class kind="struct">rolly::is_qgadget&lt; T, std::void_t&lt; decltype(T::staticMetaObject)&gt; &gt;</class>
     <class kind="struct">rolly::is_qobject</class>
+    <class kind="class">rolly::library</class>
     <class kind="struct">rolly::non_const_overload_t</class>
     <class kind="struct">rolly::noncopyable</class>
     <class kind="struct">rolly::nonmovable</class>
@@ -9918,48 +9809,6 @@
     </member>
   </compound>
   <compound kind="namespace">
-    <name>rolly::dll</name>
-    <filename>namespacerolly_1_1dll.html</filename>
-    <class kind="class">rolly::dll::plugin</class>
-    <class kind="class">rolly::dll::plugin_loader</class>
-    <class kind="class">rolly::dll::shared_library</class>
-    <member kind="function">
-      <type>std::string</type>
-      <name>library_name</name>
-      <anchorfile>namespacerolly_1_1dll.html</anchorfile>
-      <anchor>a0900dd1a82f6eb7bff05e50fe712119e</anchor>
-      <arglist>(std::string_view name)</arglist>
-    </member>
-    <member kind="function">
-      <type>void *</type>
-      <name>load_library</name>
-      <anchorfile>namespacerolly_1_1dll.html</anchorfile>
-      <anchor>ae4556c57c24eaca9615b0b9cade4efe8</anchor>
-      <arglist>(std::string_view name)</arglist>
-    </member>
-    <member kind="function">
-      <type>void *</type>
-      <name>load_library</name>
-      <anchorfile>namespacerolly_1_1dll.html</anchorfile>
-      <anchor>a8dec723783d1912197ed2fc8eadbead8</anchor>
-      <arglist>(std::string_view name, std::filesystem::path const &amp;path)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>unload_library</name>
-      <anchorfile>namespacerolly_1_1dll.html</anchorfile>
-      <anchor>a79d0fb6d3b9fe80bf61cfe015ebb8fbf</anchor>
-      <arglist>(void *handle)</arglist>
-    </member>
-    <member kind="function">
-      <type>void *</type>
-      <name>proc_address</name>
-      <anchorfile>namespacerolly_1_1dll.html</anchorfile>
-      <anchor>a6654b56d4447bce761f110d6bc355e06</anchor>
-      <arglist>(void *handle, std::string_view name)</arglist>
-    </member>
-  </compound>
-  <compound kind="namespace">
     <name>rolly::io</name>
     <filename>namespacerolly_1_1io.html</filename>
     <class kind="class">rolly::io::filedevice</class>
@@ -10094,6 +9943,96 @@
       <anchorfile>namespacerolly_1_1numbers.html</anchorfile>
       <anchor>a8d27b3b31202fe6f61edd1e510ab838f</anchor>
       <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>rolly::oslayer</name>
+    <filename>namespacerolly_1_1oslayer.html</filename>
+    <namespace>rolly::oslayer::android</namespace>
+    <namespace>rolly::oslayer::linux</namespace>
+    <namespace>rolly::oslayer::win</namespace>
+    <member kind="function">
+      <type>___inline___ void *</type>
+      <name>lib_resolve</name>
+      <anchorfile>namespacerolly_1_1oslayer.html</anchorfile>
+      <anchor>a88923c3185bd121ede6d25ed5685a9e3</anchor>
+      <arglist>(std::atomic&lt; void * &gt; &amp;handle, std::string_view const symbol)</arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>rolly::oslayer::android</name>
+    <filename>namespacerolly_1_1oslayer_1_1android.html</filename>
+    <class kind="struct">rolly::oslayer::android::guid_info</class>
+    <member kind="function">
+      <type>void</type>
+      <name>init_jni</name>
+      <anchorfile>namespacerolly_1_1oslayer_1_1android.html</anchorfile>
+      <anchor>a93e2dcb81b658090f955ceb8f5b131cf</anchor>
+      <arglist>(JNIEnv *env)</arglist>
+    </member>
+    <member kind="variable">
+      <type>guid_info</type>
+      <name>info</name>
+      <anchorfile>namespacerolly_1_1oslayer_1_1android.html</anchorfile>
+      <anchor>a5565259ccfbbd55a3ff4547595d078ce</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>rolly::oslayer::linux</name>
+    <filename>namespacerolly_1_1oslayer_1_1linux.html</filename>
+    <member kind="function">
+      <type>std::filesystem::path</type>
+      <name>home_dir</name>
+      <anchorfile>namespacerolly_1_1oslayer_1_1linux.html</anchorfile>
+      <anchor>a40f748bd0a317c4be5c4d72185833eed</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::filesystem::path</type>
+      <name>xdg_runtime_dir</name>
+      <anchorfile>namespacerolly_1_1oslayer_1_1linux.html</anchorfile>
+      <anchor>a2211541c4faed5aaf7994cf2d8577fa6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void *</type>
+      <name>lib_resolve</name>
+      <anchorfile>namespacerolly_1_1oslayer_1_1linux.html</anchorfile>
+      <anchor>ad53697313d13f5ce4bb814377dbd9e90</anchor>
+      <arglist>(std::atomic&lt; void * &gt; &amp;handle, std::string_view symbol)</arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>rolly::oslayer::win</name>
+    <filename>namespacerolly_1_1oslayer_1_1win.html</filename>
+    <member kind="function">
+      <type>std::filesystem::path</type>
+      <name>known_folder_path</name>
+      <anchorfile>namespacerolly_1_1oslayer_1_1win.html</anchorfile>
+      <anchor>a2abcdd70f35c9efdc1167f3e20c46d62</anchor>
+      <arglist>(::KNOWNFOLDERID id)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::filesystem::path</type>
+      <name>home_dir</name>
+      <anchorfile>namespacerolly_1_1oslayer_1_1win.html</anchorfile>
+      <anchor>a30ee6df4a448e320a7f1df84c2837b89</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::filesystem::path</type>
+      <name>appdata_dir</name>
+      <anchorfile>namespacerolly_1_1oslayer_1_1win.html</anchorfile>
+      <anchor>aae99c79420b4951c3911e2ff138d54e9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::filesystem::path</type>
+      <name>local_appdata_dir</name>
+      <anchorfile>namespacerolly_1_1oslayer_1_1win.html</anchorfile>
+      <anchor>a4b238fce69f46fdc6ae5b76432afc27c</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="namespace">

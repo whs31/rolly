@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/global/char_utils.h file | Rolly Radar core library</title>
+  <title>rolly::oslayer::android::guid_info struct | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span><span class="m-breadcrumb"><a href="dir_7f69a10a3e7c7ad8d9568a92e9b61914.html">global</a>/</span>char_utils.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacerolly_1_1oslayer.html">oslayer</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacerolly_1_1oslayer_1_1android.html">android</a>::<wbr/></span>guid_info <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="src_2oslayer_2android_2guid_8h.html">&lt;/home/runner/work/rolly/rolly/src/oslayer/android/guid.h&gt;</a></div>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -65,64 +66,46 @@
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
-            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
+            <dt id="affdc8cb36c3997bad5e2b5d40e82103b">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#affdc8cb36c3997bad5e2b5d40e82103b">from_env</a>(</span><span class="m-doc-wrap">JNIEnv* env) const →  <a class="m-doc" href="structrolly_1_1oslayer_1_1android_1_1guid__info.html">guid_<wbr/>info</a></span>
+            </dt>
+            <dd></dd>
           </dl>
         </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a825984fe64a698af0ae6ad819fdf1e88">hex_to_char</a>(</span><span class="m-doc-wrap">char c) →  unsigned char <span class="m-label m-flat m-primary">constexpr</span></span>
+            <dt id="a21bc09c0d79b4b50a37c26c86d6ab200">
+              JNIEnv* <a class="m-doc-self" href="#a21bc09c0d79b4b50a37c26c86d6ab200">env</a>
             </dt>
             <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a6f31057710263260dde372ac14417b07">is_digit</a>(</span><span class="m-doc-wrap">char c) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            <dt id="a81d7202f744042bd935886fa58837121">
+              jclass <a class="m-doc-self" href="#a81d7202f744042bd935886fa58837121">uuid_class</a>
             </dt>
             <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a3a9735d38642d18354f18e961f06c9f2">is_dot</a>(</span><span class="m-doc-wrap">char c) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            <dt id="ae1e71e8cda42cf94ac166e3389904fc6">
+              jmethodID <a class="m-doc-self" href="#ae1e71e8cda42cf94ac166e3389904fc6">new_guid_method</a>
             </dt>
             <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#adaa0a5242a018519c3cba5f3374e6c15">is_hex</a>(</span><span class="m-doc-wrap">char c) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            <dt id="aa7db34dccefdf1db3aae4b878db69800">
+              jmethodID <a class="m-doc-self" href="#aa7db34dccefdf1db3aae4b878db69800">most_significant_bits_method</a>
             </dt>
             <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a7694a2c16fb00e6162dec784e4ab5681">is_hyphen</a>(</span><span class="m-doc-wrap">char c) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            <dt id="a691827642f9c23269f7e1a9fea096841">
+              jmethodID <a class="m-doc-self" href="#a691827642f9c23269f7e1a9fea096841">least_significant_bits_method</a>
             </dt>
             <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a95a56ea6e001b20d4537755511f94436">is_letter</a>(</span><span class="m-doc-wrap">char c) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a011123e17c8b3dcf68f082eb03f376df">is_logical_or</a>(</span><span class="m-doc-wrap">char c) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#aa86605562968255acbd911ed427a2e26">is_operator</a>(</span><span class="m-doc-wrap">char c) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a68be1add7d0d715e53b0689ac056f0d2">is_space</a>(</span><span class="m-doc-wrap">char c) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a29d324f3499898f4676605869b55449c">to_digit</a>(</span><span class="m-doc-wrap">char c) →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/integer.html" target="_blank">std::<wbr/>uint16_t</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a373760a3c5836375681456b6c51f1e93">to_lower</a>(</span><span class="m-doc-wrap">char c) →  char <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            <dt id="ab4074d0fbeb9924582b3accc40b94e87">
+              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/thread/thread/id.html" target="_blank">std::<wbr/>thread::<wbr/>id</a> <a class="m-doc-self" href="#ab4074d0fbeb9924582b3accc40b94e87">init_thread_id</a>
             </dt>
             <dd></dd>
           </dl>

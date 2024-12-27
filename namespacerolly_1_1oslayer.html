@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly::dll namespace | Rolly Radar core library</title>
+  <title>rolly::oslayer namespace | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,35 +56,29 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>dll <span class="m-thin">namespace</span>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>oslayer <span class="m-thin">namespace</span>
         </h1>
-        <p>Dynamic libraries and plugins.</p>
+        <p>Internal namespace for OS-agnostic wrapper functions and classes.</p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a class="m-doc" href="classrolly_1_1dll_1_1plugin.html">plugin</a>
-            </dt>
-            <dd>Plugin interface.</dd>
-            <dt>
-              class <a class="m-doc" href="classrolly_1_1dll_1_1plugin__loader.html">plugin_loader</a>
-            </dt>
+            <dt>namespace <a class="m-doc" href="namespacerolly_1_1oslayer_1_1android.html">android</a></dt>
             <dd></dd>
-            <dt>
-              class <a class="m-doc" href="classrolly_1_1dll_1_1shared__library.html">shared_library</a>
-            </dt>
+            <dt>namespace <a class="m-doc" href="namespacerolly_1_1oslayer_1_1linux.html">linux</a></dt>
+            <dd></dd>
+            <dt>namespace <a class="m-doc" href="namespacerolly_1_1oslayer_1_1win.html">win</a></dt>
             <dd></dd>
           </dl>
         </section>
@@ -92,65 +86,19 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a0900dd1a82f6eb7bff05e50fe712119e">library_name</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> name) →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ae4556c57c24eaca9615b0b9cade4efe8">load_library</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> name) →  void*</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a8dec723783d1912197ed2fc8eadbead8">load_library</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> name,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/filesystem/path.html" target="_blank">std::<wbr/>filesystem::<wbr/>path</a> const&amp; path) →  void*</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a6654b56d4447bce761f110d6bc355e06">proc_address</a>(</span><span class="m-doc-wrap">void* handle,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> name) →  void*</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="#a79d0fb6d3b9fe80bf61cfe015ebb8fbf">unload_library</a>(</span><span class="m-doc-wrap">void* handle)</span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a88923c3185bd121ede6d25ed5685a9e3">lib_resolve</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/atomic/atomic.html" target="_blank">std::<wbr/>atomic</a>&lt;void*&gt;&amp; handle,
+              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> const symbol) →  <a class="m-doc" href="group__macros.html#ga791216d5be3d4ee7f5b5b04f597a7fcb">_<wbr/>_<wbr/>_<wbr/>inline_<wbr/>_<wbr/>_<wbr/></a> void*</span>
             </dt>
             <dd></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a0900dd1a82f6eb7bff05e50fe712119e"><div>
+          <section class="m-doc-details" id="a88923c3185bd121ede6d25ed5685a9e3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a> <span class="m-doc-details-prefix">rolly::<wbr/>dll::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a0900dd1a82f6eb7bff05e50fe712119e">library_name</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> name)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="dl_8h.html">&lt;rolly/dll/dl.h&gt;</a></div>
-            </h3>
-            <p></p>
-          </div></section>
-          <section class="m-doc-details" id="ae4556c57c24eaca9615b0b9cade4efe8"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void* <span class="m-doc-details-prefix">rolly::<wbr/>dll::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ae4556c57c24eaca9615b0b9cade4efe8">load_library</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> name)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="dl_8h.html">&lt;rolly/dll/dl.h&gt;</a></div>
-            </h3>
-            <p></p>
-          </div></section>
-          <section class="m-doc-details" id="a8dec723783d1912197ed2fc8eadbead8"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void* <span class="m-doc-details-prefix">rolly::<wbr/>dll::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a8dec723783d1912197ed2fc8eadbead8">load_library</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> name,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/filesystem/path.html" target="_blank">std::<wbr/>filesystem::<wbr/>path</a> const&amp; path)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="dl_8h.html">&lt;rolly/dll/dl.h&gt;</a></div>
-            </h3>
-            <p></p>
-          </div></section>
-          <section class="m-doc-details" id="a6654b56d4447bce761f110d6bc355e06"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void* <span class="m-doc-details-prefix">rolly::<wbr/>dll::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a6654b56d4447bce761f110d6bc355e06">proc_address</a>(</span><span class="m-doc-wrap">void* handle,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> name)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="dl_8h.html">&lt;rolly/dll/dl.h&gt;</a></div>
-            </h3>
-            <p></p>
-          </div></section>
-          <section class="m-doc-details" id="a79d0fb6d3b9fe80bf61cfe015ebb8fbf"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void <span class="m-doc-details-prefix">rolly::<wbr/>dll::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a79d0fb6d3b9fe80bf61cfe015ebb8fbf">unload_library</a>(</span><span class="m-doc-wrap">void* handle)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="dl_8h.html">&lt;rolly/dll/dl.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="group__macros.html#ga791216d5be3d4ee7f5b5b04f597a7fcb">_<wbr/>_<wbr/>_<wbr/>inline_<wbr/>_<wbr/>_<wbr/></a> void* <span class="m-doc-details-prefix">rolly::<wbr/>oslayer::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a88923c3185bd121ede6d25ed5685a9e3">lib_resolve</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/atomic/atomic.html" target="_blank">std::<wbr/>atomic</a>&lt;void*&gt;&amp; handle,
+              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> const symbol)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="src_2oslayer_2library_8h.html">&lt;/home/runner/work/rolly/rolly/src/oslayer/library.h&gt;</a></div>
             </h3>
             <p></p>
           </div></section>

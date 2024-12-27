@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/serialization/ directory | Rolly Radar core library</title>
+  <title>/home/runner/work/rolly/rolly/src/oslayer/win/dlfcn_win32.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_64cbb815bba61e8aacd351630e0bf2ef.html">rolly</a>/</span>serialization<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          <span class="m-breadcrumb"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">/home/runner/work/rolly/rolly/src</a>/</span><span class="m-breadcrumb"><a href="dir_5ffc5a4cd362e84df20230039af87a5e.html">oslayer</a>/</span><span class="m-breadcrumb"><a href="dir_374557740e8083335c19c93935438872.html">win</a>/</span>dlfcn_win32.h <span class="m-thin">file</span>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -65,17 +65,98 @@
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#define-members">Defines</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
-            <dt>file <a class="m-doc" href="tags_8h.html">tags.h</a></dt>
-            <dd></dd>
+            <dt>
+              struct <a class="m-doc" href="structdl__info.html">dl_info</a>
+            </dt>
+            <dd>Structure filled in by <a class="m-doc" href="#a5a8079fe575d5a5bc52fa631b26faeca">dladdr()</a></dd>
           </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt id="a4c034644624b5d5d171e7cf51ec256cc">
+              using <a class="m-doc-self" href="#a4c034644624b5d5d171e7cf51ec256cc">Dl_info</a> = struct <a class="m-doc" href="structdl__info.html">dl_<wbr/>info</a>
+            </dt>
+            <dd>Structure filled in by <a class="m-doc" href="#a5a8079fe575d5a5bc52fa631b26faeca">dladdr()</a></dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a5a8079fe575d5a5bc52fa631b26faeca">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a5a8079fe575d5a5bc52fa631b26faeca">dladdr</a>(</span><span class="m-doc-wrap">void const* addr,
+              <a class="m-doc" href="#a4c034644624b5d5d171e7cf51ec256cc">Dl_<wbr/>info</a>* info) →  int</span>
+            </dt>
+            <dd>Translate address to symbolic information (no POSIX standard)</dd>
+            <dt id="af483b6c4400965aa885f9f1a144138a5">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#af483b6c4400965aa885f9f1a144138a5">dlclose</a>(</span><span class="m-doc-wrap">void* handle) →  int</span>
+            </dt>
+            <dd>Close a symbol table handle.</dd>
+            <dt id="a2bbbe680edd6e3918311f5dbf33b3996">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a2bbbe680edd6e3918311f5dbf33b3996">dlerror</a>(</span><span class="m-doc-wrap">void) →  char*</span>
+            </dt>
+            <dd>Get diagnostic information.</dd>
+            <dt id="a005293776e928f3fc39d132d28f97c74">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a005293776e928f3fc39d132d28f97c74">dlopen</a>(</span><span class="m-doc-wrap">char const* file,
+              int mode) →  void*</span>
+            </dt>
+            <dd>Open a symbol table handle.</dd>
+            <dt id="a4d5ab576e4cc592e636fb5416eeda016">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a4d5ab576e4cc592e636fb5416eeda016">dlsym</a>(</span><span class="m-doc-wrap">void* handle,
+              char const* name) →  void*</span>
+            </dt>
+            <dd>Get the address of a symbol from a symbol table handle.</dd>
+          </dl>
+        </section>
+        <section id="define-members">
+          <h2><a href="#define-members">Defines</a></h2>
+          <dl class="m-doc">
+            <dt id="a58d13c5dcabbb85848fa97b446086247">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a58d13c5dcabbb85848fa97b446086247">RTLD_DEFAULT</a></span>
+            </dt>
+            <dd>The symbol lookup happens in the normal global scope.</dd>
+            <dt id="ace65454279c135fe5e6168d456c31263">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#ace65454279c135fe5e6168d456c31263">RTLD_GLOBAL</a></span>
+            </dt>
+            <dd>All symbols are available for relocation processing of other modules.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc" href="#a5c83709ee3bd7d316f8f47e122f3be20">RTLD_LAZY</a></span>
+            </dt>
+            <dd>Relocations are performed at an implementation-defined time.</dd>
+            <dt id="a233010260f7e61c5dab09e2bca10a590">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a233010260f7e61c5dab09e2bca10a590">RTLD_LOCAL</a></span>
+            </dt>
+            <dd>All symbols are not made available for relocation processing by other modules.</dd>
+            <dt id="a51d4212b17b1edeb2fc5a48c7c497267">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a51d4212b17b1edeb2fc5a48c7c497267">RTLD_NEXT</a></span>
+            </dt>
+            <dd>Specifies the next object after this one that defines name.</dd>
+            <dt id="a98a6517467cf7d1dd27d6c6dce78a6cf">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a98a6517467cf7d1dd27d6c6dce78a6cf">RTLD_NOW</a></span>
+            </dt>
+            <dd>Relocations are performed when the object is loaded.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Define documentation</h2>
+          <section class="m-doc-details" id="a5c83709ee3bd7d316f8f47e122f3be20"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a5c83709ee3bd7d316f8f47e122f3be20">RTLD_LAZY</a></span>
+            </h3>
+            <p>Relocations are performed at an implementation-defined time.</p>
+<aside class="m-note m-default"><h4>Remark</h4><p>Windows API does not support lazy symbol resolving (when first reference to a given symbol occurs). So RTLD_LAZY implementation is same as RTLD_NOW.</p></aside>
+          </div></section>
         </section>
       </div>
     </div>
