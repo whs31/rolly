@@ -15,6 +15,7 @@
 #include "./savefile.h"
 #include "./serialization.h"
 #include "./source_location.h"
+#include "./span.h"
 #include "./string_util.h"
 #include "./traits.h"
 #include "./type_traits.h"

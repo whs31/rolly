@@ -60,6 +60,9 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 
 target_sources(${PROJECT_NAME}
+  PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/rolly/all.h> $<INSTALL_INTERFACE:include/rolly/all.h>
+
   PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/src/contracts.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/directories.cc
