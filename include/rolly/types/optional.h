@@ -7,23 +7,23 @@
 #include <utility>
 #include <variant>
 
-#if(defined(_MSC_VER) && _MSC_VER == 1'900)
+#if (defined(_MSC_VER) && _MSC_VER == 1'900)
 #  define TL_OPTIONAL_MSVC2015
 #endif
 
-#if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 #  define TL_OPTIONAL_GCC49
 #endif
 
-#if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
+#if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 4 && ! defined(__clang__))
 #  define TL_OPTIONAL_GCC54
 #endif
 
-#if(defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
+#if (defined(__GNUC__) && __GNUC__ == 5 && __GNUC_MINOR__ <= 5 && ! defined(__clang__))
 #  define TL_OPTIONAL_GCC55
 #endif
 
-#if(defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
+#if (defined(__GNUC__) && __GNUC__ == 4 && __GNUC_MINOR__ <= 9 && ! defined(__clang__))
 // GCC < 5 doesn't support overloading on const&& for member functions
 #  define TL_OPTIONAL_NO_CONSTRR
 
@@ -37,7 +37,7 @@
 
 // GCC 5 < v < 8 has a bug in is_trivially_copy_constructible which breaks std::vector
 // for non-copyable types
-#elif(defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
+#elif (defined(__GNUC__) && __GNUC__ < 8 && ! defined(__clang__))
 #  ifndef TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 #    define TL_GCC_LESS_8_TRIVIALLY_COPY_CONSTRUCTIBLE_MUTEX
 
@@ -74,7 +74,7 @@ namespace rolly {
 #endif
 
 // constexpr implies const in C++11, not C++14
-#if(__cplusplus == 201'103L || defined(TL_OPTIONAL_MSVC2015) || defined(TL_OPTIONAL_GCC49))
+#if (__cplusplus == 201'103L || defined(TL_OPTIONAL_MSVC2015) || defined(TL_OPTIONAL_GCC49))
 #  define TL_OPTIONAL_11_CONSTEXPR
 #else
 #  define TL_OPTIONAL_11_CONSTEXPR constexpr
@@ -264,14 +264,6 @@ namespace rolly {
 #    endif
 #  endif
 
-    // std::void_t from C++17
-    template <class...>
-    struct voider {
-      using type = void;
-    };
-    template <class... Ts>
-    using void_t = typename voider<Ts...>::type;
-
     // Trait for checking if a type is a tl::optional
     template <class T>
     struct is_optional_impl : std::false_type {};
@@ -292,7 +284,7 @@ namespace rolly {
     struct returns_void_impl;
 
     template <class F, class... U>
-    struct returns_void_impl<F, void_t<invoke_result_t<F, U...>>, U...>
+    struct returns_void_impl<F, std::void_t<invoke_result_t<F, U...>>, U...>
       : std::is_void<invoke_result_t<F, U...>> {};
     template <class F, class... U>
     using returns_void = returns_void_impl<F, void, U...>;
@@ -491,8 +483,9 @@ namespace rolly {
       optional_move_base() = default;
       optional_move_base(optional_move_base const& rhs) = default;
 
-      optional_move_base(optional_move_base&& rhs
-      ) noexcept(std::is_nothrow_move_constructible<T>::value) {
+      optional_move_base(optional_move_base&& rhs) noexcept(
+        std::is_nothrow_move_constructible<T>::value
+      ) {
         if(rhs.has_value()) {
           this->construct(std::move(rhs.get()));
         } else {
@@ -2088,34 +2081,34 @@ namespace rolly {
     T* m_value;
   };
 
-    /**
-     * @brief Wrap a value in an optional.
-     *
-     * @details
-     * This function is a helper for creating an optional from a value.
-     * It is mostly useful when working with generic code that needs to work with
-     * both expected and optional types.
-     *
-     * @see ok
-     * @see none
-     */
-    template <typename T>
-    [[nodiscard]] optional<std::decay_t<T>> some(T&& t) {
-      return rolly::optional<std::decay_t<T>>(std::forward<T>(t));
-    }
+  /**
+   * @brief Wrap a value in an optional.
+   *
+   * @details
+   * This function is a helper for creating an optional from a value.
+   * It is mostly useful when working with generic code that needs to work with
+   * both expected and optional types.
+   *
+   * @see ok
+   * @see none
+   */
+  template <typename T>
+  [[nodiscard]] optional<std::decay_t<T>> some(T&& t) {
+    return rolly::optional<std::decay_t<T>>(std::forward<T>(t));
+  }
 
-    /**
-     * @brief Wrap an empty value in an optional.
-     *
-     * @details
-     * This function is a helper for creating an optional from a value.
-     * It is mostly useful when working with generic code that needs to work with
-     * both expected and optional types.
-     *
-     * @see ok
-     * @see some
-     */
-    inline constexpr auto none = rolly::nullopt;
+  /**
+   * @brief Wrap an empty value in an optional.
+   *
+   * @details
+   * This function is a helper for creating an optional from a value.
+   * It is mostly useful when working with generic code that needs to work with
+   * both expected and optional types.
+   *
+   * @see ok
+   * @see some
+   */
+  inline constexpr auto none = rolly::nullopt;
 }  // namespace rolly
 
 namespace std {
@@ -2123,7 +2116,7 @@ namespace std {
   template <class T>
   struct hash<rolly::optional<T>> {
     ::std::size_t operator()(rolly::optional<T> const& o) const {
-      if(not o.has_value())
+      if(! o.has_value())
         return 0;
       return std::hash<rolly::detail::remove_const_t<T>>()(*o);
     }

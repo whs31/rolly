@@ -10,6 +10,7 @@
 #include "./library.h"
 #include "./math.h"
 #include "./memory.h"
+#include "./net.h"
 #include "./numbers.h"
 #include "./rtti.h"
 #include "./savefile.h"

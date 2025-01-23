@@ -37,6 +37,7 @@ class RollyRecipe(ConanFile):
     def requirements(self):
         self.requires("fmt/10.2.1", transitive_headers=True, transitive_libs=True)
         self.requires("spdlog/1.13.0", transitive_headers=True, transitive_libs=True)
+        self.requires("ctre/3.9.0", transitive_headers=True, transitive_libs=True)
         if self.settings.os != "Windows":
             self.requires("libuuid/1.0.3")
         if self.options.test:
@@ -101,9 +102,11 @@ class RollyRecipe(ConanFile):
         self.cpp_info.set_property("cmake_file_name", "rolly")
         self.cpp_info.set_property("cmake_target_name", "rolly::rolly")
         self.cpp_info.libs = ["rolly"]
-        self.cpp_info.requires = ["fmt::fmt", "spdlog::spdlog"]
+        self.cpp_info.requires = ["fmt::fmt", "spdlog::spdlog", "ctre::ctre"]
         if self.settings.os != "Windows":
             self.cpp_info.requires.append("libuuid::libuuid")
+        else:
+            self.cpp_info.system_libs.extend(["wsock32", "ws2_32", "shlwapi"])
         if self.options.test:
             self.cpp_info.requires.append("catch2::catch2")
             self.cpp_info.requires.append("tomlplusplus::tomlplusplus")

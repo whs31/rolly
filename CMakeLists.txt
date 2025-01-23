@@ -35,6 +35,7 @@ message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 # <-- dependencies -->
 find_package(fmt REQUIRED)
 find_package(spdlog REQUIRED)
+find_package(ctre REQUIRED)
 if (ROLLY_QT)
   message(WARNING "-- [${PROJECT_FULL_NAME}] linking with qt enabled! remember to disable it before push")
   find_package(Qt5
@@ -70,10 +71,14 @@ target_sources(${PROJECT_NAME}
   ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/library.cc
 
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/net/ipaddress_v4.cc
+
+
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
+
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
 )
 
 if (WIN32)
@@ -92,9 +97,12 @@ target_link_libraries(${PROJECT_NAME}
   PUBLIC
   fmt::fmt
   spdlog::spdlog
+  ctre::ctre
   PRIVATE
   $<$<NOT:$<PLATFORM_ID:Windows>>:libuuid::libuuid>
   ${CMAKE_DL_LIBS}
+  wsock32
+  ws2_32
 )
 if (ROLLY_QT)
   target_link_libraries(${PROJECT_NAME}

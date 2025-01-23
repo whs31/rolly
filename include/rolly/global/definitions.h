@@ -33,6 +33,12 @@
 
 /**
  * @ingroup macros
+ * @brief Flag defined if <b>Qt::Network</b> library is available and linked.
+ */
+#  define ROLLY_QT_NETWORK
+
+/**
+ * @ingroup macros
  * @brief Flag defined if debug mode is <b>enabled</b>.
  * @details Enables some additional checks, majority of contract functionality and some assertions.
  * @see ROLLY_NO_DEBUG
@@ -92,6 +98,9 @@
 #  if defined(QT_GUI_LIB) \
     || __has_include("qpainter.h") || __has_include("qguiapplication.h") || defined(DOXYGEN)
 #    define ROLLY_QT_GUI
+#  endif
+#  if defined(QT_NETWORK_LIB) || __has_include("qnetworkaccessmanager.h") || defined(DOXYGEN)
+#    define ROLLY_QT_NETWORK
 #  endif
 #  if defined(NDEBUG) || defined(QT_NO_DEBUG)
 #    define ROLLY_NO_DEBUG

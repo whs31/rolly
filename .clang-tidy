@@ -26,7 +26,8 @@ Checks:
   -misc-include-cleaner,
   -modernize-use-trailing-return-type,
   -*-missing-std-forward,
-  -*-math-missing-parentheses
+  -*-math-missing-parentheses,
+  -*-uppercase-literal-suffix
 
 CheckOptions:
   - { key: readability-identifier-naming.NamespaceCase,          value: lower_case }

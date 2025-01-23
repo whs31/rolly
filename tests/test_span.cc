@@ -1,11 +1,10 @@
 #include <rolly/span.h>
 
-#include <catch2/catch_all.hpp>
-
 #include <cassert>
 #include <deque>
 #include <initializer_list>
 #include <vector>
+#include <catch2/catch_all.hpp>
 
 using namespace rolly;
 
