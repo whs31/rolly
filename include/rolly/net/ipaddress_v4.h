@@ -46,7 +46,7 @@ namespace rolly::net {
 #if defined(ROLLY_QT_NETWORK)
     explicit ip_address_v4(QHostAddress const& address) {
       auto ok = false;
-      auto bytes = address.toIpv4Address(&ok);
+      auto bytes = address.toIPv4Address(&ok);
       if(not ok)
         throw std::invalid_argument("invalid ip address");
       *this = ip_address_v4(bytes);
@@ -177,10 +177,10 @@ namespace rolly::net {
 #if defined(ROLLY_QT_NETWORK)
     [[nodiscard]] static result<ip_address_v4> try_from_qhostaddress(QHostAddress const& address) {
       auto ok = false;
-      auto bytes = address.toIpv4Address(&ok);
+      auto bytes = address.toIPv4Address(&ok);
       if(not ok)
         return error("invalid ip address");
-      return ok(ip_address_v4(bytes));
+      return rolly::ok(ip_address_v4(bytes));
     }
 #endif
 
