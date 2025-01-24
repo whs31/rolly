@@ -23,6 +23,59 @@
 #endif
 // NOLINTEND(*-reserved-identifier)
 
+#if (__cplusplus >= 202'002L) && defined(__has_include)
+#  if __has_include(<bit>)
+#    define ROLLY_HAS_STD_ENDIAN
+#    include <bit>
+#  endif
+#endif
+
+#define ROLLY_LITTLE_ENDIAN 0
+#define ROLLY_BIG_ENDIAN 1
+
+#ifndef ROLLY_ENDIAN
+//  GCC 4.6
+#  ifdef __BYTE_ORDER__
+#    if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+#      define ROLLY_ENDIAN ROLLY_LITTLE_ENDIAN
+#    elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
+#      define ROLLY_ENDIAN ROLLY_BIG_ENDIAN
+#    else
+#      error Unknown endianness detected. Needs to define ROLLY_ENDIAN
+#    endif
+// GLIBC
+#  elif defined(__GLIBC__)
+#    include <endian.h>
+#    if (__BYTE_ORDER == __LITTLE_ENDIAN)
+#      define ROLLY_ENDIAN ROLLY_LITTLE_ENDIAN
+#    elif (__BYTE_ORDER == __BIG_ENDIAN)
+#      define ROLLY_ENDIAN ROLLY_BIG_ENDIAN
+#    else
+#      error Unknown endianness detected. Needs to define ROLLY_ENDIAN
+#    endif
+// _LITTLE_ENDIAN and _BIG_ENDIAN
+#  elif defined(_LITTLE_ENDIAN) && ! defined(_BIG_ENDIAN)
+#    define ROLLY_ENDIAN ROLLY_LITTLE_ENDIAN
+#  elif defined(_BIG_ENDIAN) && ! defined(_LITTLE_ENDIAN)
+#    define ROLLY_ENDIAN ROLLY_BIG_ENDIAN
+// For architecture
+#  elif defined(__hppa) || defined(__hpux) || defined(__powerpc__) || defined(__ppc__) \
+    || defined(__s390__)
+defined(__sparc__) || defined(__sparc) || defined(_MIPSEB)
+  || defined(_POWER)
+#    define ROLLY_ENDIAN ROLLY_BIG_ENDIAN
+#  elif defined(__alpha__) || defined(__amd64__) || defined(__amd64) || defined(__bfin__) \
+    || defined(__i386__) || defined(__ia64__) || defined(__ia64) || defined(__x86_64__)   \
+    || defined(__x86_64) || defined(_M_ALPHA) || defined(_M_AMD64) || defined(_M_IA64)    \
+    || defined(_M_IX86) || defined(_M_X64)
+#    define ROLLY_ENDIAN ROLLY_LITTLE_ENDIAN
+#  elif defined(_MSC_VER) && (defined(_M_ARM) || defined(_M_ARM64))
+#    define ROLLY_ENDIAN ROLLY_LITTLE_ENDIAN
+#  elif ! defined(IPADDRESS_HAS_STD_ENDIAN)
+#    error Unknown endianness detected. Needs to define ROLLY_ENDIAN
+#  endif
+#endif
+
 namespace rolly {
   /**
    * @brief Returns the number of 1 bits in the value.

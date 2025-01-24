@@ -1,12 +1,13 @@
 #include <rolly/types.h>
 
-#include <catch2/catch_test_macros.hpp>
 #include <sstream>
 #include <type_traits>
 #include <vector>
 #include <string>
 #include <numeric>
+#include <iomanip>
 #include <catch2/catch_all.hpp>
+#include <catch2/catch_test_macros.hpp>
 
 using namespace rolly;
 using Catch::Matchers::WithinRel;
@@ -23,6 +24,544 @@ struct takes_init_and_variadic {
 };
 
 TEST_CASE("Types", "[types]") {
+  SECTION("U128") {
+    SECTION("Constexpr") {
+      constexpr u128 value1 = {1, 0};
+      constexpr u128 value2 = value1 << 2;
+      constexpr u128 value3 = value2 >> 1;
+      constexpr u128 value4 = value3 * 4;
+      constexpr u128 value5 = value4 / 3;
+
+      REQUIRE(value5.upper() == 2);
+      REQUIRE(value5.lower() == 0xAAAAAAAAAAAAAAAA);
+    }
+
+    SECTION("Constructors") {
+      constexpr u128 value1;
+      constexpr u128 value2 {};
+      constexpr u128 value3 = 1;
+      constexpr u128 value4(1, 2);
+      constexpr u128 value5 {1, 2};
+      constexpr u128 value6 = {1, 2};
+      constexpr u128 value7 {1};
+      constexpr u128 value8 = {1};
+      auto value9 = (u128)457.3f;
+      auto value10 = (u128)4.32e+20;
+
+      REQUIRE(value1.upper() == 0);
+      REQUIRE(value1.lower() == 0);
+      REQUIRE(value2.upper() == 0);
+      REQUIRE(value2.lower() == 0);
+      REQUIRE(value3.upper() == 0);
+      REQUIRE(value3.lower() == 1);
+      REQUIRE(value4.upper() == 1);
+      REQUIRE(value4.lower() == 2);
+      REQUIRE(value5.upper() == 1);
+      REQUIRE(value5.lower() == 2);
+      REQUIRE(value6.upper() == 1);
+      REQUIRE(value6.lower() == 2);
+      REQUIRE(value7.upper() == 0);
+      REQUIRE(value7.lower() == 1);
+      REQUIRE(value8.upper() == 0);
+      REQUIRE(value8.lower() == 1);
+      REQUIRE(value9.upper() == 0);
+      REQUIRE(value9.lower() == 457);
+      REQUIRE(value10.upper() == 23);
+      REQUIRE(value10.lower() == 0x6B344F2A78C00000);
+    }
+
+    SECTION("Copy") {
+      constexpr u128 value = 5;
+
+      constexpr u128 copy_ctor = value;
+      u128 copy_operator;
+      copy_operator = value;
+
+      REQUIRE(copy_ctor.upper() == 0);
+      REQUIRE(copy_ctor.lower() == 5);
+      REQUIRE(copy_operator.upper() == 0);
+      REQUIRE(copy_operator.lower() == 5);
+    }
+
+    SECTION("Move") {
+      u128 value = 5;
+
+      u128 move_ctor = std::move(value);     // NOLINT(performance-move-const-arg)
+      u128 move_operator;
+      move_operator = std::move(move_ctor);  // NOLINT(performance-move-const-arg)
+
+      REQUIRE(move_operator.upper() == 0);
+      REQUIRE(move_operator.lower() == 5);
+    }
+
+    SECTION("Operator bool") {
+      constexpr u128 value1 = 0;
+      constexpr u128 value2 = 5;
+
+      constexpr auto actual1 = (bool)value1;
+      constexpr auto actual2 = (bool)value2;
+
+      REQUIRE_FALSE(actual1);
+      REQUIRE(actual2);
+    }
+
+    SECTION("Operator T") {
+      constexpr u128 value {4, 140'185'576'636'287};
+
+      constexpr auto actual1 = (char)value;
+      constexpr auto actual2 = (signed char)value;
+      constexpr auto actual3 = (unsigned char)value;
+      constexpr auto actual4 = (short)value;
+      constexpr auto actual5 = (unsigned short)value;
+      constexpr auto actual6 = (int)value;
+      constexpr auto actual7 = (unsigned int)value;
+      constexpr auto actual8 = (long)value;
+      constexpr auto actual9 = (unsigned long)value;
+      constexpr auto actual10 = (long long)value;
+      constexpr auto actual11 = (unsigned long long)value;
+      auto actual12 = (float)value;
+      auto actual13 = (double)value;
+      auto actual14 = (long double)value;
+
+      REQUIRE(actual1 == (char)(0x7F7F7F7F7F7F));
+      REQUIRE(actual2 == (signed char)(0x7F7F7F7F7F7F));
+      REQUIRE(actual3 == (unsigned char)(0x7F7F7F7F7F7F));
+      REQUIRE(actual4 == (short)(0x7F7F7F7F7F7F));
+      REQUIRE(actual5 == (unsigned short)(0x7F7F7F7F7F7F));
+      REQUIRE(actual6 == (int)(0x7F7F7F7F7F7F));
+      REQUIRE(actual7 == (unsigned int)(0x7F7F7F7F7F7F));
+      REQUIRE(actual8 == (long)(0x7F7F7F7F7F7F));
+      REQUIRE(actual9 == (unsigned long)(0x7F7F7F7F7F7F));
+      REQUIRE(actual10 == (long long)(0x7F7F7F7F7F7F));
+      REQUIRE(actual11 == (unsigned long long)(0x7F7F7F7F7F7F));
+
+      std::ostringstream str12;
+      str12 << std::setprecision(4) << (actual12 * 1.0e-19);
+      std::ostringstream str13;
+      str13 << std::setprecision(4) << (actual13 * 1.0e-19);
+      std::ostringstream str14;
+      str14 << std::setprecision(4) << (actual14 * 1.0e-19);
+      REQUIRE(str12.str() == "7.379");
+      REQUIRE(str13.str() == "7.379");
+      REQUIRE(str14.str() == "7.379");
+    }
+
+    SECTION("Arithmetic") {
+      constexpr u128 value1 {4, 5};
+      constexpr u128 value2 {4, 0xFFFFFFFFFFFFFFFFULL - 1};
+      constexpr u128 value3 {4, 0xFFFFFFFFFFFFFFFFULL};
+
+      constexpr auto plus1 = +value1;
+      constexpr auto plus2 = +value2;
+      constexpr auto plus3 = +value3;
+      REQUIRE(plus1.upper() == 4);
+      REQUIRE(plus1.lower() == 5);
+      REQUIRE(plus2.upper() == 4);
+      REQUIRE(plus2.lower() == 0xFFFFFFFFFFFFFFFFULL - 1);
+      REQUIRE(plus3.upper() == 4);
+      REQUIRE(plus3.lower() == 0xFFFFFFFFFFFFFFFFULL);
+
+      constexpr auto minus1 = -value1;
+      constexpr auto minus2 = -value2;
+      constexpr auto minus3 = -value3;
+      REQUIRE(minus1.upper() == 0xFFFFFFFFFFFFFFFFULL - 4);
+      REQUIRE(minus1.lower() == 0xFFFFFFFFFFFFFFFFULL - 4);
+      REQUIRE(minus2.upper() == 0xFFFFFFFFFFFFFFFFULL - 4);
+      REQUIRE(minus2.lower() == 2);
+      REQUIRE(minus3.upper() == 0xFFFFFFFFFFFFFFFFULL - 4);
+      REQUIRE(minus3.lower() == 1);
+
+      constexpr auto inv1 = ~value1;
+      constexpr auto inv2 = ~value2;
+      constexpr auto inv3 = ~value3;
+      REQUIRE(inv1.upper() == 0xFFFFFFFFFFFFFFFFULL - 4);
+      REQUIRE(inv1.lower() == 0xFFFFFFFFFFFFFFFFULL - 5);
+      REQUIRE(inv2.upper() == 0xFFFFFFFFFFFFFFFFULL - 4);
+      REQUIRE(inv2.lower() == 1);
+      REQUIRE(inv3.upper() == 0xFFFFFFFFFFFFFFFFULL - 4);
+      REQUIRE(inv3.lower() == 0);
+
+      constexpr auto sum1 = value1 + 1;
+      constexpr auto sum2 = value2 + 1;
+      constexpr auto sum3 = value3 + 1;
+      constexpr auto sum4 = value1 + u128(10, 0xFFFFFFFFFFFFFFFFULL - 2);
+      constexpr auto sum5 = 1 + value1;
+      REQUIRE(sum1.upper() == 4);
+      REQUIRE(sum1.lower() == 6);
+      REQUIRE(sum2.upper() == 4);
+      REQUIRE(sum2.lower() == 0xFFFFFFFFFFFFFFFFULL);
+      REQUIRE(sum3.upper() == 5);
+      REQUIRE(sum3.lower() == 0);
+      REQUIRE(sum4.upper() == 15);
+      REQUIRE(sum4.lower() == 2);
+      REQUIRE(sum5.upper() == 4);
+      REQUIRE(sum5.lower() == 6);
+
+      constexpr auto sub1 = value1 - 6;
+      constexpr auto sub2 = value2 - 7;
+      constexpr auto sub3 = value3 - 1;
+      constexpr auto sub4 = value1 - u128(2, 0xFFFFFFFFFFFFFFFFULL - 2);
+      constexpr auto sub5 = 10 - u128(7);
+      REQUIRE(sub1.upper() == 3);
+      REQUIRE(sub1.lower() == 0xFFFFFFFFFFFFFFFFULL);
+      REQUIRE(sub2.upper() == 4);
+      REQUIRE(sub2.lower() == 0xFFFFFFFFFFFFFFFFULL - 8);
+      REQUIRE(sub3.upper() == 4);
+      REQUIRE(sub3.lower() == 0xFFFFFFFFFFFFFFFFULL - 1);
+      REQUIRE(sub4.upper() == 1);
+      REQUIRE(sub4.lower() == 8);
+      REQUIRE(sub5.upper() == 0);
+      REQUIRE(sub5.lower() == 3);
+
+      constexpr auto mul1 = value1 * 6;
+      constexpr auto mul2 = value2 * 7;
+      constexpr auto mul3 = value3 * 1;
+      constexpr auto mul4 = 1'000 * u128(2, 0xFFFFFFFFFFFFFFFFULL - 2);
+      REQUIRE(mul1.upper() == 24);
+      REQUIRE(mul1.lower() == 30);
+      REQUIRE(mul2.upper() == 34);
+      REQUIRE(mul2.lower() == 0XFFFFFFFFFFFFFFF2ULL);
+      REQUIRE(mul3.upper() == 4);
+      REQUIRE(mul3.lower() == 0xFFFFFFFFFFFFFFFFULL);
+      REQUIRE(mul4.upper() == 0xBB7);
+      REQUIRE(mul4.lower() == 0xFFFFFFFFFFFFF448);
+
+      auto div1 = value1 / 25;
+      auto div2 = value2 / 2;
+      auto div3 = value3 / 1;
+      auto div4 = 1'000 / u128(0, 2);
+      auto div5 = 0 / u128(0, 2);
+      auto div6 = 0 / u128(0, 0);
+      auto div7 = 1'000 / u128(0, 1'000);
+      auto div8 = 1'000 / u128(0, 2'000);
+      auto div9 = u128(2, 1'000) / u128(2, 1'000);
+      auto div10 = u128(2, 1'000) / u128(2, 2'000);
+      REQUIRE(div1.upper() == 0);
+      REQUIRE(div1.lower() == 0x28F5C28F5C28F5C2);
+      REQUIRE(div2.upper() == 2);
+      REQUIRE(div2.lower() == 0x7fffffffffffffffULL);
+      REQUIRE(div3.upper() == 4);
+      REQUIRE(div3.lower() == 0xFFFFFFFFFFFFFFFFULL);
+      REQUIRE(div4.upper() == 0);
+      REQUIRE(div4.lower() == 0x1F4);
+      REQUIRE(div5.upper() == 0);
+      REQUIRE(div5.lower() == 0);
+      REQUIRE(div6.upper() == 0);
+      REQUIRE(div6.lower() == 0);
+      REQUIRE(div7.upper() == 0);
+      REQUIRE(div7.lower() == 1);
+      REQUIRE(div8.upper() == 0);
+      REQUIRE(div8.lower() == 0);
+      REQUIRE(div9.upper() == 0);
+      REQUIRE(div9.lower() == 1);
+      REQUIRE(div10.upper() == 0);
+      REQUIRE(div10.lower() == 0);
+
+      auto rem1 = value1 % 25;
+      auto rem2 = value2 % 2;
+      auto rem3 = value3 % 1;
+      auto rem4 = 15 % value1;
+      REQUIRE(rem1.upper() == 0);
+      REQUIRE(rem1.lower() == 19);
+      REQUIRE(rem2.upper() == 0);
+      REQUIRE(rem2.lower() == 0);
+      REQUIRE(rem3.upper() == 0);
+      REQUIRE(rem3.lower() == 0);
+      REQUIRE(rem4.upper() == 0);
+      REQUIRE(rem4.lower() == 15);
+
+      auto and1 = u128(1, 1) & u128(3, 3);
+      auto and2 = u128(1, 1) & 1;
+      auto and3 = 1 & u128(1, 1);
+      REQUIRE(and1.upper() == 1);
+      REQUIRE(and1.lower() == 1);
+      REQUIRE(and2.upper() == 0);
+      REQUIRE(and2.lower() == 1);
+      REQUIRE(and3.upper() == 0);
+      REQUIRE(and3.lower() == 1);
+
+      auto or1 = u128(1, 1) | u128(2, 2);
+      auto or2 = u128(1, 1) | 2;
+      auto or3 = 2 | u128(1, 1);
+      REQUIRE(or1.upper() == 3);
+      REQUIRE(or1.lower() == 3);
+      REQUIRE(or2.upper() == 1);
+      REQUIRE(or2.lower() == 3);
+      REQUIRE(or3.upper() == 1);
+      REQUIRE(or3.lower() == 3);
+
+      auto xor1 = u128(1, 1) ^ u128(3, 3);
+      auto xor2 = u128(1, 1) ^ 3;
+      auto xor3 = 3 ^ u128(1, 1);
+      REQUIRE(xor1.upper() == 2);
+      REQUIRE(xor1.lower() == 2);
+      REQUIRE(xor2.upper() == 1);
+      REQUIRE(xor2.lower() == 2);
+      REQUIRE(xor3.upper() == 1);
+      REQUIRE(xor3.lower() == 2);
+
+      auto lshift1 = u128(0, 0xFFFFFFFFFFFFFFFFULL) << 1;
+      REQUIRE(lshift1.upper() == 1);
+      REQUIRE(lshift1.lower() == 0xFFFFFFFFFFFFFFFEULL);
+    }
+
+    SECTION("Assignment") {
+      u128 value {4, 5};
+
+      value += 3;
+      REQUIRE(value.upper() == 4);
+      REQUIRE(value.lower() == 8);
+
+      value -= 2;
+      REQUIRE(value.upper() == 4);
+      REQUIRE(value.lower() == 6);
+
+      value *= 2;
+      REQUIRE(value.upper() == 8);
+      REQUIRE(value.lower() == 12);
+
+      value /= 2;
+      REQUIRE(value.upper() == 4);
+      REQUIRE(value.lower() == 6);
+
+      value %= 3;
+      REQUIRE(value.upper() == 0);
+      REQUIRE(value.lower() == 1);
+
+      value &= 0;
+      REQUIRE(value.upper() == 0);
+      REQUIRE(value.lower() == 0);
+
+      value |= 1;
+      REQUIRE(value.upper() == 0);
+      REQUIRE(value.lower() == 1);
+
+      value ^= 3;
+      REQUIRE(value.upper() == 0);
+      REQUIRE(value.lower() == 2);
+
+      value <<= 1;
+      REQUIRE(value.upper() == 0);
+      REQUIRE(value.lower() == 4);
+
+      value >>= 1;
+      REQUIRE(value.upper() == 0);
+      REQUIRE(value.lower() == 2);
+    }
+
+    SECTION("IncDec") {
+      u128 value1 {4, 5};
+      u128 value2 {4, 0xFFFFFFFFFFFFFFFFULL - 1};
+      u128 value3 {4, 0xFFFFFFFFFFFFFFFFULL};
+
+      REQUIRE(++value1 == u128(4, 6));
+      REQUIRE(++value2 == u128(4, 0xFFFFFFFFFFFFFFFFULL));
+      REQUIRE(++value3 == u128(5, 0));
+      REQUIRE(value1++ == u128(4, 6));
+      REQUIRE(value2++ == u128(4, 0xFFFFFFFFFFFFFFFFULL));
+      REQUIRE(value3++ == u128(5, 0));
+      REQUIRE(value1 == u128(4, 7));
+      REQUIRE(value2 == u128(5, 0));
+      REQUIRE(value3 == u128(5, 1));
+
+      REQUIRE(value1-- == u128(4, 7));
+      REQUIRE(value2-- == u128(5, 0));
+      REQUIRE(value3-- == u128(5, 1));
+      REQUIRE(value1 == u128(4, 6));
+      REQUIRE(value2 == u128(4, 0xFFFFFFFFFFFFFFFFULL));
+      REQUIRE(value3 == u128(5, 0));
+      REQUIRE(--value1 == u128(4, 5));
+      REQUIRE(--value2 == u128(4, 0xFFFFFFFFFFFFFFFFULL - 1));
+      REQUIRE(--value3 == u128(4, 0xFFFFFFFFFFFFFFFFULL));
+    }
+
+    SECTION("Logical") {
+      u128 const value1 {0, 0};
+      u128 const value2 {0, 1};
+      u128 const value3 {1, 0};
+      u128 const value4 {1, 1};
+
+      REQUIRE_FALSE((bool)value1);
+      REQUIRE((bool)value2);
+      REQUIRE((bool)value3);
+      REQUIRE((bool)value4);
+
+      REQUIRE(! value1);
+      REQUIRE_FALSE(! value2);
+      REQUIRE_FALSE(! value3);
+      REQUIRE_FALSE(! value4);
+
+      REQUIRE_FALSE((value1 && value1));
+      REQUIRE_FALSE((value1 && value2));
+      REQUIRE((value2 && value3));
+      REQUIRE((value3 && value4));
+      REQUIRE_FALSE((value4 && value1));
+      REQUIRE((value4 && value4));
+
+      REQUIRE_FALSE((value1 || value1));
+      REQUIRE((value1 || value2));
+      REQUIRE((value2 || value3));
+      REQUIRE((value3 || value4));
+      REQUIRE((value4 || value1));
+      REQUIRE((value4 || value4));
+    }
+
+    SECTION("Comparison") {
+      u128 const value1 {0, 0};
+      u128 const value2 {0, 1};
+      u128 const value3 {1, 0};
+      u128 const value4 {1, 1};
+
+      REQUIRE_FALSE((value1 == value2));
+      REQUIRE((value1 != value2));
+      REQUIRE((value1 < value2));
+      REQUIRE_FALSE((value1 > value2));
+      REQUIRE((value1 <= value2));
+      REQUIRE_FALSE((value1 >= value2));
+
+      REQUIRE_FALSE((value1 == value3));
+      REQUIRE((value1 != value3));
+      REQUIRE((value1 < value3));
+      REQUIRE_FALSE((value1 > value3));
+      REQUIRE((value1 <= value3));
+      REQUIRE_FALSE((value1 >= value3));
+
+      REQUIRE((value2 == 1));
+      REQUIRE_FALSE((value2 != 1));
+      REQUIRE_FALSE((value2 < 1));
+      REQUIRE_FALSE((value2 > 1));
+      REQUIRE((value2 <= 1));
+      REQUIRE((value2 >= 1));
+
+      REQUIRE((1 == value2));
+      REQUIRE_FALSE((1 != value2));
+      REQUIRE_FALSE((1 < value2));
+      REQUIRE_FALSE((1 > value2));
+      REQUIRE((1 <= value2));
+      REQUIRE((1 >= value2));
+
+      REQUIRE((value3 == value3));
+      REQUIRE_FALSE((value3 != value3));
+      REQUIRE_FALSE((value3 < value3));
+      REQUIRE_FALSE((value3 > value3));
+      REQUIRE((value3 <= value3));
+      REQUIRE((value3 >= value3));
+
+      REQUIRE_FALSE((value4 == value2));
+      REQUIRE((value4 != value2));
+      REQUIRE_FALSE((value4 < value2));
+      REQUIRE((value4 > value2));
+      REQUIRE_FALSE((value4 <= value2));
+      REQUIRE((value4 >= value2));
+    }
+
+    SECTION("Swap") {
+      u128 value1 = 0;
+      u128 value2 = {4, 5};
+
+      std::swap(value1, value2);
+
+      REQUIRE(value1.upper() == 4);
+      REQUIRE(value1.lower() == 5);
+      REQUIRE(value2.upper() == 0);
+      REQUIRE(value2.lower() == 0);
+    }
+
+    SECTION("ToString") {
+      u128 value1 = 17'852;
+      u128 value2 = {4, 17'852};
+
+      std::ostringstream ss1;
+      ss1 << value1;
+      std::ostringstream ss2;
+      ss2 << std::dec << value1;
+      std::ostringstream ss3;
+      ss3 << std::oct << value1;
+      std::ostringstream ss4;
+      ss4 << std::hex << value1;
+      std::ostringstream ss5;
+      ss5 << std::hex << std::uppercase << value1;
+      std::ostringstream ss6;
+      ss6 << value2;
+      std::ostringstream ss7;
+      ss7 << std::dec << value2;
+      std::ostringstream ss8;
+      ss8 << std::oct << value2;
+      std::ostringstream ss9;
+      ss9 << std::hex << value2;
+      std::ostringstream ss10;
+      ss10 << std::hex << std::uppercase << value2;
+
+      REQUIRE(ss1.str() == std::string("17852"));
+      REQUIRE(ss2.str() == std::string("17852"));
+      REQUIRE(ss3.str() == std::string("42674"));
+      REQUIRE(ss4.str() == std::string("45bc"));
+      REQUIRE(ss5.str() == std::string("45BC"));
+      REQUIRE(ss6.str() == std::string("73786976294838224316"));
+      REQUIRE(ss7.str() == std::string("73786976294838224316"));
+      REQUIRE(ss8.str() == std::string("10000000000000000042674"));
+      REQUIRE(ss9.str() == std::string("400000000000045bc"));
+      REQUIRE(ss10.str() == std::string("400000000000045BC"));
+    }
+
+    SECTION("FromString") {
+      u128 const expected1 = 17'852;
+      u128 const expected2 = {4, 17'852};
+
+      // NOLINTNEXTLINE(readability-isolate-declaration)
+      u128 read1, read2, read3, read4, read5, read6, read7, read8, read9, read10, read11;
+      std::istringstream ss1("17852 test");
+      ss1 >> read1;
+      std::istringstream ss2("17852 test");
+      ss2 >> std::dec >> read2;
+      std::istringstream ss3("42674 test");
+      ss3 >> std::oct >> read3;
+      std::istringstream ss4("45bc test");
+      ss4 >> std::hex >> read4;
+      std::istringstream ss5("45BC test");
+      ss5 >> std::hex >> read5;
+      std::istringstream ss6("73786976294838224316 test");
+      ss6 >> read6;
+      std::istringstream ss7("73786976294838224316 test");
+      ss7 >> std::dec >> read7;
+      std::istringstream ss8("10000000000000000042674 test");
+      ss8 >> std::oct >> read8;
+      std::istringstream ss9("400000000000045bc test");
+      ss9 >> std::hex >> read9;
+      std::istringstream ss10("400000000000045BC test");
+      ss10 >> std::hex >> read10;
+      std::istringstream ss11("bad");
+      ss11 >> read11;
+
+      REQUIRE(read1 == expected1);
+      REQUIRE(read2 == expected1);
+      REQUIRE(read3 == expected1);
+      REQUIRE(read4 == expected1);
+      REQUIRE(read5 == expected1);
+      REQUIRE(read6 == expected2);
+      REQUIRE(read7 == expected2);
+      REQUIRE(read8 == expected2);
+      REQUIRE(read9 == expected2);
+      REQUIRE(read10 == expected2);
+      REQUIRE(ss11.fail());
+      REQUIRE(read11 == u128(0));
+    }
+
+    SECTION("NumericLimits") {
+      REQUIRE(std::numeric_limits<u128>::is_integer);
+      REQUIRE(std::numeric_limits<u128>::digits == 128);
+      REQUIRE(std::numeric_limits<u128>::lowest() == u128());
+      REQUIRE(std::numeric_limits<u128>::min() == u128());
+      REQUIRE(std::numeric_limits<u128>::max() == u128(0xFFFFFFFFFFFFFFFF, 0xFFFFFFFFFFFFFFFF));
+    }
+
+    SECTION("Abs") {
+      constexpr auto actual1 = std::abs(u128(5));
+
+      REQUIRE(actual1 == u128(5));
+    }
+  }  // U128
+
   SECTION("GUID", "[types.guid]") {
     SECTION("Random") {
       auto const r1 = guid::random();
