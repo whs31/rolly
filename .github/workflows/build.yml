@@ -2,9 +2,9 @@ name: Build (Ubuntu, GCC-13)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ none ]
   pull_request:
-    branches: [ main ]
+    branches: [ none ]
 
 env:
   BUILD_TYPE: Release
