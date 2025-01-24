@@ -272,8 +272,8 @@ namespace rolly {
       : upper_(static_cast<u64>(static_cast<i64>(lower) >> 63))
       , lower_(static_cast<u64>(lower))
 #else
-      : upper_(static_cast<u64>(lower))
-      , lower_(static_cast<u64>(static_cast<i64>(lower) >> 63))
+      : lower_(static_cast<u64>(lower))
+      , upper_(static_cast<u64>(static_cast<i64>(lower) >> 63))
 #endif
     {
     }
@@ -1548,22 +1548,38 @@ namespace std {
   }
 
   template <typename T>
+  ___inline___ std::basic_ostream<char, std::char_traits<T>>&
+    operator<<(std::basic_ostream<char, std::char_traits<T>>& stream, rolly::u128 const& value) {
+    auto fmt = rolly::u128::format::decimal;
+    if(stream.flags() & ios_base::hex)
+      fmt = rolly::u128::format::hexadecimal;
+    else if(stream.flags() & ios_base::oct)
+      fmt = rolly::u128::format::octal;
+
+    auto str = value.to_string(fmt);
+    if(stream.flags() & ios_base::uppercase) {
+      std::transform(str.cbegin(), str.cend(), str.begin(), [](char c) { return std::toupper(c); });
+    }
+    return stream << str;
+  }
+
+  template <typename T>
   ___inline___ std::basic_istream<T, std::char_traits<T>>&
     operator>>(std::basic_istream<T, std::char_traits<T>>& stream, rolly::u128& value) {
     auto fmt = rolly::u128::format::decimal;
-    if(stream.flags() & ios_base::hex) {
+    if(stream.flags() & ios_base::hex)
       fmt = rolly::u128::format::hexadecimal;
-    } else if(stream.flags() & ios_base::oct) {
+    else if(stream.flags() & ios_base::oct)
       fmt = rolly::u128::format::octal;
-    }
+
     std::basic_string<T, std::char_traits<T>, std::allocator<T>> str;
     stream >> str;
     auto const result = rolly::u128::from_string(str, fmt);
-    if(result) {
+    if(result)
       value = result.value();
-    } else {
+    else
       stream.setstate(std::ios_base::failbit);
-    }
+
     return stream;
   }
 }  // namespace std
