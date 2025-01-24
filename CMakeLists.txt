@@ -35,6 +35,7 @@ message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 # <-- dependencies -->
 find_package(fmt REQUIRED)
 find_package(spdlog REQUIRED)
+find_package(ipaddress REQUIRED)
 if (ROLLY_QT)
   message(WARNING "-- [${PROJECT_FULL_NAME}] linking with qt enabled! remember to disable it before push")
   find_package(Qt5
@@ -89,6 +90,7 @@ target_link_libraries(${PROJECT_NAME}
   PUBLIC
   fmt::fmt
   spdlog::spdlog
+  ipaddress::ipaddress
   PRIVATE
   $<$<NOT:$<PLATFORM_ID:Windows>>:libuuid::libuuid>
   ${CMAKE_DL_LIBS}

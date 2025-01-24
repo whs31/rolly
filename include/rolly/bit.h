@@ -239,7 +239,7 @@ namespace rolly {
     );
     auto value_repr = bit_cast<std::array<std::byte, sizeof(T)>>(x);
     std::reverse(std::begin(value_repr), std::end(value_repr));
-    return bit_cast<T>(value_repr);
+    return rolly::bit_cast<T>(value_repr);
   }
 
   /**

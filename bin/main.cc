@@ -4,7 +4,8 @@ int main(int /*argc*/, char** /*argv*/) {
   // rolly::contracts::broken_postcondition();
   using namespace rolly;
 
-  contracts::not_implemented();
-  rolly::contracts::invariant(false, "Hello, world!");
+  auto ip = "127.0.0.1"_ipv4;
+  contracts::precondition(ip == net::ipv4_address::parse("127.0.0.1"));
+  contracts::precondition(ip.is_loopback());
   return 0;
 }
