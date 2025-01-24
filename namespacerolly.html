@@ -272,6 +272,10 @@
             </dt>
             <dd>Provides information about the location of the current source file.</dd>
             <dt>
+              class <a class="m-doc" href="classrolly_1_1u128.html">u128</a>
+            </dt>
+            <dd>128-bit unsigned integer.</dd>
+            <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">concepts::num T = <a class="m-doc" href="#a152324f2b6dcec1fadbd8031305f32ae">f32</a></span></span>&gt;</div>
               struct <a class="m-doc" href="classrolly_1_1vector2d.html">vector2d</a>
             </dt>
@@ -770,6 +774,12 @@
             </dt>
             <dd></dd>
             <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ac2b69c1b56b4e27b75a4b3a4cf7217dc">operator!=</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly_1_1literals.html#a7c6065845fa3a3cc2f124b415f50ec5f">operator""_guid</a>(</span><span class="m-doc-wrap">char const* str,
               <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a> size) →  <a class="m-doc" href="classrolly_1_1guid.html">guid</a> <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
@@ -830,11 +840,47 @@
             </dt>
             <dd>Version literal operator.</dd>
             <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ac549f130715ee7564eb221cc533a6f9b">operator%</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) →  <a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a1917d3392b37450a26edb38ecd5e0134">operator&amp;</a>(</span><span class="m-doc-wrap">T const lhs,
               T const rhs) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Generic bitwise <strong>and</strong> operator for enum types.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ace7884c4ea23f874bbe9e3991d19e89a">operator&amp;</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) →  <a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a7f72790850ea3fd7bbd675c92a5238eb">operator*</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) →  <a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a1d83a03ba77278325fd12b53d85a5f0f">operator+</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) →  <a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aff04adfb2960ec099786cd99d458f18d">operator-</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) →  <a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a2dab1a67991ee42436cd18d653f3e289">operator/</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) →  <a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a909ee63bac59a1e69a6d558596311f43">operator&lt;</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; lhs,
               <a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
@@ -874,6 +920,12 @@
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a640100316b3156a07377038175c5e9e2">operator&lt;</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
               <a class="m-doc" href="classrolly_1_1optional.html">optional</a>&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ae477ea92482ff209194038953c99b843">operator&lt;</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
@@ -930,6 +982,12 @@
             </dt>
             <dd></dd>
             <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#adb577b96ad681860a20d6e7725886f35">operator&lt;=</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aa2ad4f2f8a33d07fb18a9aa19a3fde67">operator&lt;=&gt;</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; lhs,
               <a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; rhs) →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/compare/strong_ordering.html" target="_blank">std::<wbr/>strong_ordering</a> <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
@@ -981,6 +1039,12 @@
             </dt>
             <dd></dd>
             <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a931750a94f9c3742afb6055416f1715d">operator==</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ad1af20d5b7b707c993d1930a863f7760">operator&gt;</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; lhs,
               <a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -1019,6 +1083,12 @@
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a436961c16e6e95f486b0ed58d9a221bf">operator&gt;</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
               <a class="m-doc" href="classrolly_1_1optional.html">optional</a>&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a27c4670fd7bd7412e482cddd40867024">operator&gt;</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
@@ -1063,17 +1133,35 @@
             </dt>
             <dd></dd>
             <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#afdbad094e33e205c7625ba7602f41ae1">operator&gt;=</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a22e0e009d7a549f2cd8b41833acef692">operator^</a>(</span><span class="m-doc-wrap">T const lhs,
               T const rhs) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Generic bitwise <strong>xor</strong> operator for enum types.</dd>
             <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ae22ca4611c3f0254a7bfc338700c5ce8">operator^</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) →  <a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ac1f30f214b3038aa0ededae9c295ac0f">operator|</a>(</span><span class="m-doc-wrap">T const lhs,
               T const rhs) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Generic bitwise <strong>or</strong> operator for enum types.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a57ec8a297c192cdfb32baaa85d696014">operator|</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) →  <a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a856dacdd4757c9c22fdf4948f1c6c957">operator~</a>(</span><span class="m-doc-wrap">T const value) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
@@ -1630,7 +1718,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>This function simply negates the input if it is negative, and returns the input unchanged if it is non-negative. It is a <code>constexpr</code> version of <code><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/numeric/math/abs" target="_blank">std::abs</a></code>.</p>
+<p>This function simply negates the input if it is negative, and returns the input unchanged if it is non-negative. It is a <code>constexpr</code> version of <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/namespacestd.html#a2cf7e364a2a372a50ef17571a05836a8" target="_blank">std::<wbr/>abs</a></code>.</p>
           </div></section>
           <section class="m-doc-details" id="a67b25e22f418563e062c7b135dafb712"><div>
             <h3>
@@ -2622,6 +2710,88 @@
             </h3>
             <p></p>
           </div></section>
+          <section class="m-doc-details" id="ac2b69c1b56b4e27b75a4b3a4cf7217dc"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ac2b69c1b56b4e27b75a4b3a4cf7217dc">operator!=</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integral type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value to compare.</td>
+                </tr>
+                <tr>
+                  <td>other <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value to compare.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if the integer value is not equal to the <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Checks if an integer value is not equal to a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac549f130715ee7564eb221cc533a6f9b"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ac549f130715ee7564eb221cc533a6f9b">operator%</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value to be divided.</td>
+                </tr>
+                <tr>
+                  <td>value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value that divides the integer.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrolly_1_1u128.html">u128</a> the remainder of the division.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Calculates the remainder of division of an integer by a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
+          </div></section>
           <section class="m-doc-details" id="a1917d3392b37450a26edb38ecd5e0134"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
@@ -2675,6 +2845,211 @@
 <span class="k">void</span> <span class="k">consteval</span> <span class="nf">enum_flag</span><span class="p">(</span><span class="n">Example</span><span class="p">);</span>
 
 <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Example</span><span class="o">::</span><span class="n">A</span> <span class="o">&amp;</span> <span class="n">Example</span><span class="o">::</span><span class="n">B</span><span class="p">;</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="ace7884c4ea23f874bbe9e3991d19e89a"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ace7884c4ea23f874bbe9e3991d19e89a">operator&amp;</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value.</td>
+                </tr>
+                <tr>
+                  <td>value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrolly_1_1u128.html">u128</a> the result of the bitwise AND operation.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Performs bitwise AND operation between an integer and a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7f72790850ea3fd7bbd675c92a5238eb"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a7f72790850ea3fd7bbd675c92a5238eb">operator*</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value to be multiplied.</td>
+                </tr>
+                <tr>
+                  <td>value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value to be multiplied.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrolly_1_1u128.html">u128</a> the result of the multiplication.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Performs multiplication between an integer and a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1d83a03ba77278325fd12b53d85a5f0f"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a1d83a03ba77278325fd12b53d85a5f0f">operator+</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value to be added.</td>
+                </tr>
+                <tr>
+                  <td>value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value to be added.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrolly_1_1u128.html">u128</a> the result of the addition.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Performs addition between an integer and a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="aff04adfb2960ec099786cd99d458f18d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aff04adfb2960ec099786cd99d458f18d">operator-</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value from which the <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value is subtracted.</td>
+                </tr>
+                <tr>
+                  <td>value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value to be subtracted.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrolly_1_1u128.html">u128</a> the result of the subtraction.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Performs subtraction of a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value from an integer.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2dab1a67991ee42436cd18d653f3e289"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a2dab1a67991ee42436cd18d653f3e289">operator/</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value to be divided.</td>
+                </tr>
+                <tr>
+                  <td>value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value that divides the integer.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrolly_1_1u128.html">u128</a> the result of the division.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Performs division of an integer by a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
           </div></section>
           <section class="m-doc-details" id="a909ee63bac59a1e69a6d558596311f43"><div>
             <h3>
@@ -2749,6 +3124,47 @@
               <a class="m-doc" href="classrolly_1_1optional.html">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
             <p></p>
+          </div></section>
+          <section class="m-doc-details" id="ae477ea92482ff209194038953c99b843"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ae477ea92482ff209194038953c99b843">operator&lt;</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type parameter that is checked at compile-time to ensure it is an integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value of type T to be compared.</td>
+                </tr>
+                <tr>
+                  <td>other <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value to compare against.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if <em>lower</em> is less than <em>other</em>, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Compare" target="_blank">Compares</a> if an integer value is less than a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p><p>This function template overloads the less than operator (&lt;) to compare an integer of type T with a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value. It checks if the integer value is lexicographically less than the <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
           </div></section>
           <section class="m-doc-details" id="a2e9262bca9196d89c7f018f8e5419816"><div>
             <h3>
@@ -2846,6 +3262,47 @@
             </h3>
             <p></p>
           </div></section>
+          <section class="m-doc-details" id="adb577b96ad681860a20d6e7725886f35"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#adb577b96ad681860a20d6e7725886f35">operator&lt;=</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type parameter that is checked at compile-time to ensure it is an integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value of type T to be compared.</td>
+                </tr>
+                <tr>
+                  <td>other <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value to compare against.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if <em>lower</em> is less than or equal to <em>other</em>, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Compare" target="_blank">Compares</a> if an integer value is less than or equal to a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p><p>This function template overloads the less than or equal to operator (&lt;=) to compare an integer of type T with a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value. It checks if the integer value is lexicographically less than or equal to the <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
+          </div></section>
           <section class="m-doc-details" id="aa2ad4f2f8a33d07fb18a9aa19a3fde67"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/compare/strong_ordering.html" target="_blank">std::<wbr/>strong_ordering</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aa2ad4f2f8a33d07fb18a9aa19a3fde67">operator&lt;=&gt;</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; lhs,
@@ -2936,6 +3393,47 @@
             </h3>
             <p></p>
           </div></section>
+          <section class="m-doc-details" id="a931750a94f9c3742afb6055416f1715d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a931750a94f9c3742afb6055416f1715d">operator==</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integral type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value to compare.</td>
+                </tr>
+                <tr>
+                  <td>other <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value to compare.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if the integer value is equal to the <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Checks if an integer value is equal to a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
+          </div></section>
           <section class="m-doc-details" id="ad1af20d5b7b707c993d1930a863f7760"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad1af20d5b7b707c993d1930a863f7760">operator&gt;</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; lhs,
@@ -3009,6 +3507,47 @@
               <a class="m-doc" href="classrolly_1_1optional.html">optional</a>&lt;T&gt; const&amp; rhs) <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
             <p></p>
+          </div></section>
+          <section class="m-doc-details" id="a27c4670fd7bd7412e482cddd40867024"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a27c4670fd7bd7412e482cddd40867024">operator&gt;</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type parameter that is checked at compile-time to ensure it is an integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value of type T to be compared.</td>
+                </tr>
+                <tr>
+                  <td>other <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value to compare against.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if <em>lower</em> is greater than <em>other</em>, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Compare" target="_blank">Compares</a> if an integer value is greater than a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p><p>This function template overloads the greater than operator (&gt;) to compare an integer of type T with a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value. It checks if the integer value is lexicographically greater than the <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
           </div></section>
           <section class="m-doc-details" id="a8330ddf4c9dcf3b881130a2f07010c66"><div>
             <h3>
@@ -3084,6 +3623,47 @@
             </h3>
             <p></p>
           </div></section>
+          <section class="m-doc-details" id="afdbad094e33e205c7625ba7602f41ae1"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#afdbad094e33e205c7625ba7602f41ae1">operator&gt;=</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type parameter that is checked at compile-time to ensure it is an integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value of type T to be compared.</td>
+                </tr>
+                <tr>
+                  <td>other <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value to compare against.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if <em>lower</em> is greater than or equal to <em>other</em>, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Compare" target="_blank">Compares</a> if an integer value is greater than or equal to a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p><p>This function template overloads the greater than or equal to operator (&gt;=) to compare an integer of type T with a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value. It checks if the integer value is lexicographically greater than or equal to the <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
+          </div></section>
           <section class="m-doc-details" id="a22e0e009d7a549f2cd8b41833acef692"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
@@ -3138,6 +3718,47 @@
 
 <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Example</span><span class="o">::</span><span class="n">A</span> <span class="o">^</span> <span class="n">Example</span><span class="o">::</span><span class="n">B</span><span class="p">;</span></pre>
           </div></section>
+          <section class="m-doc-details" id="ae22ca4611c3f0254a7bfc338700c5ce8"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ae22ca4611c3f0254a7bfc338700c5ce8">operator^</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value.</td>
+                </tr>
+                <tr>
+                  <td>value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrolly_1_1u128.html">u128</a> the result of the bitwise XOR operation.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Performs bitwise XOR operation between an integer and a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
+          </div></section>
           <section class="m-doc-details" id="ac1f30f214b3038aa0ededae9c295ac0f"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="utility_8h.html">&lt;rolly/utility.h&gt;</a></div>
@@ -3191,6 +3812,47 @@
 <span class="k">void</span> <span class="k">consteval</span> <span class="nf">enum_flag</span><span class="p">(</span><span class="n">Example</span><span class="p">);</span>
 
 <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Example</span><span class="o">::</span><span class="n">A</span> <span class="o">|</span> <span class="n">Example</span><span class="o">::</span><span class="n">B</span><span class="p">;</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a57ec8a297c192cdfb32baaa85d696014"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_arithmetic.html" target="_blank">std::<wbr/>is_arithmetic</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a57ec8a297c192cdfb32baaa85d696014">operator|</a>(</span><span class="m-doc-wrap">T lower,
+              <a class="m-doc" href="classrolly_1_1u128.html">u128</a> const&amp; value) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Integer type.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integer value.</td>
+                </tr>
+                <tr>
+                  <td>value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrolly_1_1u128.html">u128</a> the result of the bitwise OR operation.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Performs bitwise OR operation between an integer and a <a class="m-doc" href="classrolly_1_1u128.html">u128</a> value.</p>
           </div></section>
           <section class="m-doc-details" id="a856dacdd4757c9c22fdf4948f1c6c957"><div>
             <h3>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/bit.h file | Rolly Radar core library</title>
+  <title>rolly::detail::utf8_reader struct | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,9 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span>bit.h <span class="m-thin">file</span>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+          <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacerolly_1_1detail.html">detail</a>::<wbr/></span>utf8_reader <span class="m-thin">struct</span>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -65,102 +67,30 @@
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#enum-members">Enums</a></li>
-                <li><a href="#func-members">Functions</a></li>
-                <li><a href="#define-members">Defines</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
-            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
-          </dl>
-        </section>
-        <section id="enum-members">
-          <h2><a href="#enum-members">Enums</a></h2>
-          <dl class="m-doc">
-            <dt id="d152ae215fe30c27b96dfa0256a07fa6acca9b535a0b25fcd0c4da2c6b748ede">
-              <span class="m-doc-wrap-bumper">enum class <a class="m-doc" href="namespacerolly.html#ac7cdc6b5c251d10552f5045575a0580c">endian</a>: signed int { </span><span class="m-doc-wrap"><a class="m-doc-self" href="#d152ae215fe30c27b96dfa0256a07fa6acca9b535a0b25fcd0c4da2c6b748ede">little</a> = 0,
-              <a class="m-doc-self" href="#d152ae215fe30c27b96dfa0256a07fa6acca9b535a0b25fcd0c4da2c6b748ede">big</a> = 1,
-              <a class="m-doc-self" href="#d152ae215fe30c27b96dfa0256a07fa6acca9b535a0b25fcd0c4da2c6b748ede">native</a> = little }</span>
-            </dt>
-            <dd>Endianness.</dd>
-          </dl>
-        </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class To</span>, <span class="m-doc-template-param">class From</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper"><a class="m-doc" href="namespacerolly.html#a99bfcde93b3d479813abecbbc877a5c0">bit_cast</a>(</span><span class="m-doc-wrap">From const&amp; src) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Casts value from one type to another by bit copy.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">std::unsigned_integral T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ae56c0de6a4febc6756771ad0c19619d3">bit_ceil</a>(</span><span class="m-doc-wrap">T x) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Returns the next power of two of the value.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">concepts::num T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a50b397be3a6964a1f150ceb189afabb5">byteswap</a>(</span><span class="m-doc-wrap">T x) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Reverses the byte order of the value.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">std::integral T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a69c37f401a2c55888c204cd7b1d34d8d">has_single_bit</a>(</span><span class="m-doc-wrap">T x) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Checks if the value is an integral power of two.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">std::integral T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a7a6bbd45c5bf9fd61f5f1193dec3d1b7">is_pow2</a>(</span><span class="m-doc-wrap">T x) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Checks if the value is an integral power of two.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">std::integral T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#acff9d9efd89a63de839148c38a70b18e">popcount</a>(</span><span class="m-doc-wrap">T x) →  int <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Returns the number of 1 bits in the value.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">concepts::num T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a5764cccca8658c6880ab03364b4fcda5">to_big_endian</a>(</span><span class="m-doc-wrap">T x) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Reverses the byte order of the value if the native endianness is little.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">concepts::num T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a571786331157b178e73d2ac05d14751b">to_little_endian</a>(</span><span class="m-doc-wrap">T x) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Reverses the byte order of the value if the native endianness is big.</dd>
-          </dl>
-        </section>
-        <section id="define-members">
-          <h2><a href="#define-members">Defines</a></h2>
-          <dl class="m-doc">
-            <dt id="a0489458174381713533c322ef1892a29">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a0489458174381713533c322ef1892a29">ROLLY_BIG_ENDIAN</a></span>
+            <dt id="aa12171b672ea0528fedf33e4fdfc4906">
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc-self" href="#aa12171b672ea0528fedf33e4fdfc4906">trailing_utf8_code_point</a>(</span><span class="m-doc-wrap">T const*&amp; it,
+              T const* end,
+              bool&amp; correct) →  <a class="m-doc" href="namespacerolly.html#ae58032b87dd7559b4ed3ebaeb5103f1c">u32</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
-            <dt id="a2fe1eddfeb179dff886a950589f79e65">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a2fe1eddfeb179dff886a950589f79e65">ROLLY_LITTLE_ENDIAN</a></span>
+            <dt id="ae71c3c03ac99df70ccf5342d670e65ab">
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc-self" href="#ae71c3c03ac99df70ccf5342d670e65ab">utf8_code_point</a>(</span><span class="m-doc-wrap"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/types/integer" target="_blank">uint8_t</a> byte,
+              bool&amp; correct) →  <a class="m-doc" href="structrolly_1_1detail_1_1symbol.html">symbol</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
-            <dt id="a73644f3cbdf00887a94b718f6ef0054a">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a73644f3cbdf00887a94b718f6ef0054a">___rolly_byteswap16</a></span>
-            </dt>
-            <dd></dd>
-            <dt id="a9b6038988dad05d084ae36c96fcf0f88">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a9b6038988dad05d084ae36c96fcf0f88">___rolly_byteswap32</a></span>
-            </dt>
-            <dd></dd>
-            <dt id="aa23cf7e17f975f07efb2fd4bf3c20092">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#aa23cf7e17f975f07efb2fd4bf3c20092">___rolly_byteswap64</a></span>
-            </dt>
-            <dd></dd>
-            <dt id="ae52f9ab121b791b441455c2de191034e">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#ae52f9ab121b791b441455c2de191034e">__builtin_popcount</a></span>
+            <dt id="a4eb15b20269e7952f374397fc59776ab">
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc-self" href="#a4eb15b20269e7952f374397fc59776ab">utf8_next_or_error</a>(</span><span class="m-doc-wrap">T const*&amp; it,
+              T const* end,
+              bool&amp; error,
+              <a class="m-doc" href="namespacerolly.html#ae58032b87dd7559b4ed3ebaeb5103f1c">u32</a>&amp; error_symbol) →  char <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
           </dl>

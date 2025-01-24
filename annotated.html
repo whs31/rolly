@@ -72,6 +72,7 @@
               <li>struct <a class="m-doc" href="structfmt_1_1formatter_3_01rolly_1_1point2d_3_01_t_01_4_01_4.html">formatter&lt;rolly::point2d&lt;T&gt;&gt;</a> <span class="m-doc">Specialization of the <code><a class="m-doc poxy-injected poxy-external" href="https://fmt.dev/latest/api.html" target="_blank">fmt::formatter</a></code> for the <a class="m-doc" href="structrolly_1_1point2d.html">rolly::<wbr/>point2d</a> class.</span></li>
               <li>struct <a class="m-doc" href="structfmt_1_1formatter_3_01rolly_1_1size2d_3_01_t_01_4_01_4.html">formatter&lt;rolly::size2d&lt;T&gt;&gt;</a> <span class="m-doc">Specialization of the <code><a class="m-doc poxy-injected poxy-external" href="https://fmt.dev/latest/api.html" target="_blank">fmt::formatter</a></code> for the <a class="m-doc" href="structrolly_1_1size2d.html">rolly::<wbr/>size2d</a> class.</span></li>
               <li>struct <a class="m-doc" href="structfmt_1_1formatter_3_01rolly_1_1source__location_01_4.html">formatter&lt;rolly::source_location&gt;</a> <span class="m-doc">Specialization of the <code><a class="m-doc poxy-injected poxy-external" href="https://fmt.dev/latest/api.html" target="_blank">fmt::formatter</a></code> for the <a class="m-doc" href="structrolly_1_1source__location.html">rolly::<wbr/>source_location</a> class.</span></li>
+              <li>struct <a class="m-doc" href="structfmt_1_1formatter_3_01rolly_1_1u128_01_4.html">formatter&lt;rolly::u128&gt;</a> <span class="m-doc"></span></li>
               <li>struct <a class="m-doc" href="structfmt_1_1formatter_3_01rolly_1_1vector2d_3_01_t_01_4_01_4.html">formatter&lt;rolly::vector2d&lt;T&gt;&gt;</a> <span class="m-doc">Specialization of the <code><a class="m-doc poxy-injected poxy-external" href="https://fmt.dev/latest/api.html" target="_blank">fmt::formatter</a></code> for the <a class="m-doc" href="classrolly_1_1vector2d.html">rolly::<wbr/>vector2d</a> class.</span></li>
               <li>struct <a class="m-doc" href="structfmt_1_1formatter_3_01rolly_1_1velocity_3_01_t_01_4_01_4.html">formatter&lt;rolly::velocity&lt;T&gt;&gt;</a> <span class="m-doc">Specialization of the <code><a class="m-doc poxy-injected poxy-external" href="https://fmt.dev/latest/api.html" target="_blank">fmt::formatter</a></code> for the <a class="m-doc" href="structrolly_1_1velocity.html">rolly::<wbr/>velocity</a> class.</span></li>
               <li>struct <a class="m-doc" href="structfmt_1_1formatter_3_01rolly_1_1version_01_4.html">formatter&lt;rolly::version&gt;</a> <span class="m-doc">Specialization of the <code><a class="m-doc poxy-injected poxy-external" href="https://fmt.dev/latest/api.html" target="_blank">fmt::formatter</a></code> for the <a class="m-doc" href="structrolly_1_1version.html">rolly::<wbr/>version</a> class.</span></li>
@@ -89,7 +90,12 @@
               <li class="m-doc-collapsible">
                 <a href="#" onclick="return toggle(this)">namespace</a> <a class="m-doc" href="namespacerolly_1_1detail.html">detail</a> <span class="m-doc"></span>
                 <ul class="m-doc">
+                  <li>struct <a class="m-doc" href="structrolly_1_1detail_1_1char__or__throw.html">char_or_throw</a> <span class="m-doc"></span></li>
+                  <li>struct <a class="m-doc" href="structrolly_1_1detail_1_1char__reader.html">char_reader</a> <span class="m-doc"></span></li>
+                  <li>struct <a class="m-doc" href="structrolly_1_1detail_1_1char__reader_3_01char_01_4.html">char_reader&lt;char&gt;</a> <span class="m-doc"></span></li>
                   <li>class <a class="m-doc" href="classrolly_1_1detail_1_1scope__guard_3_01_callback_01_4.html">scope_guard&lt;Callback&gt;</a> <span class="m-label m-flat m-warning">final</span> <span class="m-doc"></span></li>
+                  <li>struct <a class="m-doc" href="structrolly_1_1detail_1_1symbol.html">symbol</a> <span class="m-doc"></span></li>
+                  <li>struct <a class="m-doc" href="structrolly_1_1detail_1_1utf8__reader.html">utf8_reader</a> <span class="m-doc"></span></li>
                 </ul>
               </li>
               <li class="m-doc-collapsible">
@@ -186,11 +192,13 @@
               <li>struct <a class="m-doc" href="structrolly_1_1singleton.html">singleton</a> <span class="m-doc">Singleton pattern trait.</span></li>
               <li>struct <a class="m-doc" href="structrolly_1_1size2d.html">size2d</a> <span class="m-doc">A two-dimensional <a class="m-doc" href="structrolly_1_1size2d.html">size2d</a> tagged with a unit.</span></li>
               <li>struct <a class="m-doc" href="structrolly_1_1source__location.html">source_location</a> <span class="m-doc">Provides information about the location of the current source file.</span></li>
+              <li>class <a class="m-doc" href="classrolly_1_1u128.html">u128</a> <span class="m-label m-flat m-warning">final</span> <span class="m-doc">128-bit unsigned integer.</span></li>
               <li>struct <a class="m-doc" href="classrolly_1_1vector2d.html">vector2d</a> <span class="m-doc">A two-dimensional vector tagged with a unit.</span></li>
               <li>struct <a class="m-doc" href="structrolly_1_1velocity.html">velocity</a> <span class="m-doc">Newtype describing a velocity.</span></li>
               <li>struct <a class="m-doc" href="structrolly_1_1version.html">version</a> <span class="m-doc"></span></li>
             </ul>
           </li>
+          <li>struct <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html">std::_numeric_limits_uint128</a> <span class="m-doc"></span></li>
           <li>struct <a class="m-doc" href="structdl__info.html">dl_info</a> <span class="m-doc">Structure filled in by <a class="m-doc" href="dlfcn__win32_8h.html#a5a8079fe575d5a5bc52fa631b26faeca">dladdr()</a></span></li>
           <li>struct <a class="m-doc-self" href="#">std::hash&lt;rolly::box&lt;T&gt;&gt;</a> <span class="m-doc">Hashes a <code>box</code>.</span></li>
           <li>struct <a class="m-doc-self" href="#">std::hash&lt;rolly::guid&gt;</a> <span class="m-doc">Hashes a <code>guid</code>.</span></li>
@@ -198,7 +206,9 @@
           <li>struct <a class="m-doc-self" href="#">std::hash&lt;rolly::optional&lt;T&gt;&gt;</a> <span class="m-doc"></span></li>
           <li>struct <a class="m-doc" href="structstd_1_1hash_3_01rolly_1_1point2d_3_01_t_01_4_01_4.html">std::hash&lt;rolly::point2d&lt;T&gt;&gt;</a> <span class="m-doc">Hashes a <code>point2d</code>.</span></li>
           <li>struct <a class="m-doc" href="structstd_1_1hash_3_01rolly_1_1size2d_3_01_t_01_4_01_4.html">std::hash&lt;rolly::size2d&lt;T&gt;&gt;</a> <span class="m-doc">Hashes a <code>size2d</code>.</span></li>
+          <li>struct <a class="m-doc" href="structstd_1_1hash_3_01rolly_1_1u128_01_4.html">std::hash&lt;rolly::u128&gt;</a> <span class="m-doc"></span></li>
           <li>struct <a class="m-doc" href="structstd_1_1hash_3_01rolly_1_1vector2d_3_01_t_01_4_01_4.html">std::hash&lt;rolly::vector2d&lt;T&gt;&gt;</a> <span class="m-doc">Hashes a <code>vector2d</code>.</span></li>
+          <li>struct <a class="m-doc" href="structstd_1_1numeric__limits_3_01rolly_1_1u128_01_4.html">std::numeric_limits&lt;rolly::u128&gt;</a> <span class="m-doc"></span></li>
         </ul>
         <script>
         function toggle(e) {

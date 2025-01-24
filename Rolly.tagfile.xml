@@ -34,6 +34,20 @@
       <anchor>aa23cf7e17f975f07efb2fd4bf3c20092</anchor>
       <arglist></arglist>
     </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ROLLY_LITTLE_ENDIAN</name>
+      <anchorfile>bit_8h.html</anchorfile>
+      <anchor>a2fe1eddfeb179dff886a950589f79e65</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ROLLY_BIG_ENDIAN</name>
+      <anchorfile>bit_8h.html</anchorfile>
+      <anchor>a0489458174381713533c322ef1892a29</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="file">
     <name>concepts.h</name>
@@ -1226,6 +1240,26 @@
     <namespace>rolly::literals</namespace>
   </compound>
   <compound kind="file">
+    <name>u128.h</name>
+    <path>rolly/types/</path>
+    <filename>u128_8h.html</filename>
+    <includes id="bit_8h" name="bit.h" local="yes" import="no" module="no" objc="no">../bit.h</includes>
+    <includes id="definitions_8h" name="definitions.h" local="yes" import="no" module="no" objc="no">../global/definitions.h</includes>
+    <includes id="stdint_8h" name="stdint.h" local="yes" import="no" module="no" objc="no">./stdint.h</includes>
+    <includes id="optional_8h" name="optional.h" local="yes" import="no" module="no" objc="no">./optional.h</includes>
+    <class kind="struct">rolly::detail::char_or_throw</class>
+    <class kind="struct">rolly::detail::symbol</class>
+    <class kind="struct">rolly::detail::utf8_reader</class>
+    <class kind="struct">rolly::detail::char_reader&lt; char &gt;</class>
+    <class kind="class">rolly::u128</class>
+    <class kind="struct">std::_numeric_limits_uint128</class>
+    <class kind="struct">std::numeric_limits&lt; rolly::u128 &gt;</class>
+    <class kind="struct">std::hash&lt; rolly::u128 &gt;</class>
+    <class kind="struct">fmt::formatter&lt; rolly::u128 &gt;</class>
+    <namespace>rolly</namespace>
+    <namespace>rolly::detail</namespace>
+  </compound>
+  <compound kind="file">
     <name>vector2d.h</name>
     <path>rolly/types/</path>
     <filename>vector2d_8h.html</filename>
@@ -1395,6 +1429,235 @@
     <namespace>rolly</namespace>
     <namespace>rolly::oslayer</namespace>
     <namespace>rolly::oslayer::win</namespace>
+  </compound>
+  <compound kind="struct">
+    <name>std::_numeric_limits_uint128</name>
+    <filename>structstd_1_1__numeric__limits__uint128.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="function" static="yes">
+      <type>static constexpr T()</type>
+      <name>min</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a4520550b579f23be452d1ed4022a5098</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr T()</type>
+      <name>max</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>addfc342d21e6a03584a507f85f1be006</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr T</type>
+      <name>lowest</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>aee265d85e7143ccf18a4b676c811f6d8</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr T</type>
+      <name>epsilon</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a0f388fe0194595fea70ac82f00a77b43</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr T</type>
+      <name>round_error</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a8a976e1775a4cfdf69685596c956309b</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr T</type>
+      <name>denorm_min</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a9f675bc8ab01d50474c57f3e08f3a832</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr T</type>
+      <name>infinity</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>af3e15097f5e309f8df2cfe481b4c8481</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr T</type>
+      <name>quiet_NaN</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a7c56dc843deccc9aaf044cd7e3d7b196</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr T</type>
+      <name>signaling_NaN</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a0d434cbe7e567ff96a2add4376a35369</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_bounded</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a6afae77c90327a1b77559909b409a845</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_exact</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>abc361c4c474746556d2c035f32b6cc2c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_integer</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a1bbefd8c0b732325ea958995fb0b7d6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_modulo</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a7f5a75278d1053276666b5a4a987ce25</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_specialized</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>aa2ba97616cdd7dfd6cd858174a05c1c7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_iec559</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a84e7c7bcd05dc5b60d129540aee28c80</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_signed</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>abc057edfb361ef4304a804e5e8b70c19</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>has_denorm_loss</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a5740b769533462cd481d4268df633dc8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>has_infinity</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a68266884bb493d5ff17bb56675f3a5c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>has_quiet_NaN</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a9b6b07e221b0d3b96661c91464c44187</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>has_signaling_NaN</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a227f6abbee94ed0284917a3a8edbeccd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>tinyness_before</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a65abece0145055a6ca6975fb765c4ae5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>traps</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a4726ab2d9648c80e500aa2d7deb0e5fc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>max_digits10</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a466ca3faa8abf85402edd8a01eb50d17</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>max_exponent</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a842c8c91d8a456bbdc35189721597e47</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>max_exponent10</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a1149a2084f199d55ee917b360bea66f5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>min_exponent</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>acf523a3c0da4d7dd5abf3f2c6b1b7b5d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>min_exponent10</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>aee5538aa4e10988668de42b5c74b8733</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>digits</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a44867e4ab8763314b04981b29669b571</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>digits10</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a2adc55df2ec43ecd9bd5b7a609f0046c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>radix</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a559a1b51d4061cb2587fdfc040fe1b67</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr std::float_denorm_style</type>
+      <name>has_denorm</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a961aa234d662724fd25c11b1034cc1b1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr std::float_round_style</type>
+      <name>round_style</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>ab9f39fd9c3923670e193cc1e69a86b72</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>rolly::angle</name>
@@ -2244,6 +2507,78 @@
     <name>rolly::serialization::format::cbor</name>
     <filename>structrolly_1_1serialization_1_1format_1_1cbor.html</filename>
   </compound>
+  <compound kind="struct">
+    <name>rolly::detail::char_or_throw</name>
+    <filename>structrolly_1_1detail_1_1char__or__throw.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>a70581737edbde6ee51912a74d803ac77</anchor>
+      <arglist>(T const *&amp;it, T const *begin, T const *end) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr void</type>
+      <name>has_throw</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>a50745bf121113a0d452a7d2ca8b7d53c</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::detail::char_reader</name>
+    <filename>structrolly_1_1detail_1_1char__reader.html</filename>
+    <templarg>typename T</templarg>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::detail::char_reader&lt; char &gt;</name>
+    <filename>structrolly_1_1detail_1_1char__reader_3_01char_01_4.html</filename>
+    <base>utf8_reader&lt; char &gt;</base>
+    <base>char_or_throw&lt; char &gt;</base>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1char__reader_3_01char_01_4.html</anchorfile>
+      <anchor>a8fd232c1974e1c9fd1bb23943b5c530a</anchor>
+      <arglist>(char const *&amp;it, char const *end, bool &amp;error, u32 &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>utf8_next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1utf8__reader.html</anchorfile>
+      <anchor>a4eb15b20269e7952f374397fc59776ab</anchor>
+      <arglist>(char const *&amp;it, char const *end, bool &amp;error, u32 &amp;error_symbol)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr symbol</type>
+      <name>utf8_code_point</name>
+      <anchorfile>structrolly_1_1detail_1_1utf8__reader.html</anchorfile>
+      <anchor>ae71c3c03ac99df70ccf5342d670e65ab</anchor>
+      <arglist>(uint8_t byte, bool &amp;correct) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr u32</type>
+      <name>trailing_utf8_code_point</name>
+      <anchorfile>structrolly_1_1detail_1_1utf8__reader.html</anchorfile>
+      <anchor>aa12171b672ea0528fedf33e4fdfc4906</anchor>
+      <arglist>(char const *&amp;it, char const *end, bool &amp;correct) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>a70581737edbde6ee51912a74d803ac77</anchor>
+      <arglist>(char const *&amp;it, char const *begin, char const *end) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr void</type>
+      <name>has_throw</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>a50745bf121113a0d452a7d2ca8b7d53c</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+  </compound>
   <compound kind="class">
     <name>rolly::compile_time_error</name>
     <filename>classrolly_1_1compile__time__error.html</filename>
@@ -3015,6 +3350,10 @@
     <filename>structfmt_1_1formatter_3_01rolly_1_1source__location_01_4.html</filename>
   </compound>
   <compound kind="struct">
+    <name>fmt::formatter&lt; rolly::u128 &gt;</name>
+    <filename>structfmt_1_1formatter_3_01rolly_1_1u128_01_4.html</filename>
+  </compound>
+  <compound kind="struct">
     <name>fmt::formatter&lt; rolly::vector2d&lt; T &gt; &gt;</name>
     <filename>structfmt_1_1formatter_3_01rolly_1_1vector2d_3_01_t_01_4_01_4.html</filename>
     <templarg>typename T</templarg>
@@ -3307,6 +3646,17 @@
       <anchorfile>structstd_1_1hash_3_01rolly_1_1size2d_3_01_t_01_4_01_4.html</anchorfile>
       <anchor>aa68c8d21c09a783d2ee5d076dac8b8a7</anchor>
       <arglist>(rolly::size2d&lt; T &gt; const &amp;b) const</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>std::hash&lt; rolly::u128 &gt;</name>
+    <filename>structstd_1_1hash_3_01rolly_1_1u128_01_4.html</filename>
+    <member kind="function">
+      <type>size_t</type>
+      <name>operator()</name>
+      <anchorfile>structstd_1_1hash_3_01rolly_1_1u128_01_4.html</anchorfile>
+      <anchor>a9f007f9bee51c0a6b842aeeb2e47bc0a</anchor>
+      <arglist>(rolly::u128 const &amp;value) const noexcept</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -3720,6 +4070,235 @@
       <anchorfile>structrolly_1_1nullopt__t.html</anchorfile>
       <anchor>aa59f6caeb935135dbd2557e6e02723ea</anchor>
       <arglist>(do_not_use, do_not_use) noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>std::numeric_limits&lt; rolly::u128 &gt;</name>
+    <filename>structstd_1_1numeric__limits_3_01rolly_1_1u128_01_4.html</filename>
+    <base>_numeric_limits_uint128&lt; rolly::u128 &gt;</base>
+    <member kind="function" static="yes">
+      <type>static constexpr rolly::u128()</type>
+      <name>min</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a4520550b579f23be452d1ed4022a5098</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr rolly::u128()</type>
+      <name>max</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>addfc342d21e6a03584a507f85f1be006</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr rolly::u128</type>
+      <name>lowest</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>aee265d85e7143ccf18a4b676c811f6d8</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr rolly::u128</type>
+      <name>epsilon</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a0f388fe0194595fea70ac82f00a77b43</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr rolly::u128</type>
+      <name>round_error</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a8a976e1775a4cfdf69685596c956309b</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr rolly::u128</type>
+      <name>denorm_min</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a9f675bc8ab01d50474c57f3e08f3a832</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr rolly::u128</type>
+      <name>infinity</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>af3e15097f5e309f8df2cfe481b4c8481</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr rolly::u128</type>
+      <name>quiet_NaN</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a7c56dc843deccc9aaf044cd7e3d7b196</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr rolly::u128</type>
+      <name>signaling_NaN</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a0d434cbe7e567ff96a2add4376a35369</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_bounded</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a6afae77c90327a1b77559909b409a845</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_exact</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>abc361c4c474746556d2c035f32b6cc2c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_integer</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a1bbefd8c0b732325ea958995fb0b7d6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_modulo</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a7f5a75278d1053276666b5a4a987ce25</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_specialized</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>aa2ba97616cdd7dfd6cd858174a05c1c7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_iec559</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a84e7c7bcd05dc5b60d129540aee28c80</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>is_signed</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>abc057edfb361ef4304a804e5e8b70c19</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>has_denorm_loss</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a5740b769533462cd481d4268df633dc8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>has_infinity</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a68266884bb493d5ff17bb56675f3a5c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>has_quiet_NaN</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a9b6b07e221b0d3b96661c91464c44187</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>has_signaling_NaN</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a227f6abbee94ed0284917a3a8edbeccd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>tinyness_before</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a65abece0145055a6ca6975fb765c4ae5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>traps</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a4726ab2d9648c80e500aa2d7deb0e5fc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>max_digits10</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a466ca3faa8abf85402edd8a01eb50d17</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>max_exponent</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a842c8c91d8a456bbdc35189721597e47</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>max_exponent10</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a1149a2084f199d55ee917b360bea66f5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>min_exponent</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>acf523a3c0da4d7dd5abf3f2c6b1b7b5d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>min_exponent10</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>aee5538aa4e10988668de42b5c74b8733</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>digits</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a44867e4ab8763314b04981b29669b571</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>digits10</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a2adc55df2ec43ecd9bd5b7a609f0046c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>radix</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a559a1b51d4061cb2587fdfc040fe1b67</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr std::float_denorm_style</type>
+      <name>has_denorm</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>a961aa234d662724fd25c11b1034cc1b1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr std::float_round_style</type>
+      <name>round_style</name>
+      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
+      <anchor>ab9f39fd9c3923670e193cc1e69a86b72</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -6542,8 +7121,633 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>rolly::detail::symbol</name>
+    <filename>structrolly_1_1detail_1_1symbol.html</filename>
+    <member kind="variable">
+      <type>u32</type>
+      <name>value</name>
+      <anchorfile>structrolly_1_1detail_1_1symbol.html</anchorfile>
+      <anchor>a819cf12c3cff4e74202c74a817f041d0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>u32</type>
+      <name>length</name>
+      <anchorfile>structrolly_1_1detail_1_1symbol.html</anchorfile>
+      <anchor>a2a8b139bbe401d5b756048918edb7265</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>rolly::serialization::format::toml</name>
     <filename>structrolly_1_1serialization_1_1format_1_1toml.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>rolly::u128</name>
+    <filename>classrolly_1_1u128.html</filename>
+    <member kind="enumeration">
+      <type></type>
+      <name>format</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a57515f8494c9aadd9b10c2273e4eb49b</anchor>
+      <arglist></arglist>
+      <enumvalue file="classrolly_1_1u128.html" anchor="a57515f8494c9aadd9b10c2273e4eb49babdaa3c20a3e3851599514f7c6be5f62f">decimal</enumvalue>
+      <enumvalue file="classrolly_1_1u128.html" anchor="a57515f8494c9aadd9b10c2273e4eb49ba34d0e21ea08f041727cd3c62f02535e3">octal</enumvalue>
+      <enumvalue file="classrolly_1_1u128.html" anchor="a57515f8494c9aadd9b10c2273e4eb49ba2c34788af99f9ca074434e362d584d54">hexadecimal</enumvalue>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a56f3eedc54ec61aea5c7748804574f20</anchor>
+      <arglist>() noexcept=default</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a983e071191c75316861d77d4b6a4de18</anchor>
+      <arglist>(u128 const &amp;other) noexcept=default</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a1c125b9f24cf64cd7b4e30bda8405189</anchor>
+      <arglist>(u128 &amp;&amp;other) noexcept=default</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>acfa0ba7f311c388c6666ee307eba03a2</anchor>
+      <arglist>(u128 const &amp;other) noexcept=default</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a37c156ed282a4a98d02cdd6ae41839c5</anchor>
+      <arglist>(u128 &amp;&amp;other) noexcept=default</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a0950d8e25ba931599a2660fa88dde59e</anchor>
+      <arglist>(u64 upper, u64 lower) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>af84ac7b8b9417f88a90a34e644f204bb</anchor>
+      <arglist>(ulonglong lower) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a5a6d2775eff9b591f653d52859d6b10f</anchor>
+      <arglist>(unsigned long lower) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a70ff364bb4d7aab5730d6b47bf851286</anchor>
+      <arglist>(unsigned int lower) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ae3f6f6015c0a6d6a75a3da470e8f480a</anchor>
+      <arglist>(unsigned short lower) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>aa07fe2b8f7246f0d40c889790065cae0</anchor>
+      <arglist>(long long lower) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a8b5b820e3f355f3fca1cd7b997bfa2cf</anchor>
+      <arglist>(long lower) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a7ef3803883ad6e82f5ac1533fec3c231</anchor>
+      <arglist>(int lower) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a912ea23ac3aa9f75f00b317524b20527</anchor>
+      <arglist>(short lower) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a5de0df8d6e71e6c3b570d70b7f956f55</anchor>
+      <arglist>(double value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ade1da51b3ffea5071c509e1f0872c389</anchor>
+      <arglist>(long double value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>u128</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ab229d88076749b04d2df3de321916fd5</anchor>
+      <arglist>(float value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u64</type>
+      <name>lower</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>acf1d94f56239db19d560593d91eca720</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u64</type>
+      <name>upper</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ab8bf533976ca0c7820b43b78bcf9ece5</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>std::size_t</type>
+      <name>hash</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a2a71158f71b82a9fa7c1adcb99b6125c</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr void</type>
+      <name>swap</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a2424c94665f59a9636ee0c2d5335f99b</anchor>
+      <arglist>(u128 &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>to_string</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a4eb21be5feb24c9fe1801b98ea6db136</anchor>
+      <arglist>(format fmt=format::decimal) const</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator bool</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ac7c369a2d5703d0bd95421401390d0c9</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator ulonglong</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ab8d00fdf24e4749a5bbe13982ad209e5</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator long long</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>aa498dc2ca54314007a0e25dd1644ed20</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator unsigned long</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>adb8d72a55bea860bdecff7829f7d33a3</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator long</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a942926d823ded16119015f347d27c1ca</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator unsigned int</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a0d71f5b05f389e057472e76077096595</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator int</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a677951fa1e84455e0de2820f56d4c3a1</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator unsigned short</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ac1592238e31d76a03164b20832b48bd5</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator short</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ae4d128163e2dd8f5af4e2050d177c4a6</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator unsigned char</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ad37d0eab25557f95b0cac317992287c6</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator char</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a285f85b3acb2a8ee6c2c397977f66f0e</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator signed char</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a62f02b31c08fccaa9115d8c21533e81f</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>operator long double</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a02ac8fc2fb320d0d15829839d7bb4d19</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>operator double</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>acf8b2883c82aedf58b7bb838eef14aa2</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>operator float</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>af16395fdcc0d0675d0dc9d71a44ade18</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator+=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a94d142b41b258c692ac85da4f05b6677</anchor>
+      <arglist>(u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator-=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>abd4dd717dde2b6948155c52415816b4b</anchor>
+      <arglist>(u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator*=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a684efe2c68a1b0fd19b9f9284fdc210a</anchor>
+      <arglist>(u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator/=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a0b620e867c29409a5935e0992b54c8f3</anchor>
+      <arglist>(u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator%=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a0e180ec09b7dbd58d6257e3567713f39</anchor>
+      <arglist>(u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator&amp;=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a933eb1f940ac3b1ddff9c95aeb987516</anchor>
+      <arglist>(u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator|=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a350d642bffefbe7d946a872c16fc1149</anchor>
+      <arglist>(u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator^=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a203c2198f685d6cfcc8b71b5aa89e2cf</anchor>
+      <arglist>(u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator&lt;&lt;=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a76b5678d692d1e80b353fd4050d434de</anchor>
+      <arglist>(T shift) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator&gt;&gt;=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>af5786f767c2d1fbd4eb1b46a8169a60a</anchor>
+      <arglist>(T shift) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator+</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a516043db292c4396c3621ddca11161d0</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator-</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a36bc202da4e07d6625c73df2fb77e61a</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator~</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>af4e676bd6e6095cac6e3491cefcce12e</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator+</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>aca0a30e6b449cbb4ec18a0ac021a5ebc</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator-</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a205673e3f7687a9237460c115cb8253c</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator*</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ace53b110809a1fddc61386e5a31ebb0e</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator/</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a5364a151e8b04a903afda4969bd27a96</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator%</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>acd26200d8c6901e3d8a44bbf0026cd97</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator&amp;</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a626ec3fbe554fe62759ab4e843abe967</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator|</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>afdd2d0f82bdb5156943518d8ca079fae</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator^</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>abaaa9e51cf42be6c4dc153994ac9ea87</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a7c298bd8900bbaa28c0ac4503ceec96f</anchor>
+      <arglist>(T shift) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator&gt;&gt;</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a53b3b95b2b87a121fbd26d3cfe3a186b</anchor>
+      <arglist>(T shift) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator++</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a23b9b4309d540b649864b0f9ad01c6c8</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128 &amp;</type>
+      <name>operator--</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>acc1720341352aaed28d25ae1479f369c</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator++</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a9669d33b615350d37436380de90e607c</anchor>
+      <arglist>(int) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator--</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a938cb7cd22fa1eafb5c7d8b295d3c4f8</anchor>
+      <arglist>(int) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator!</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a80da0ff54f477fefe2beea03d3794159</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&amp;&amp;</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a180be1391d2f118db7441e5ec864fc2d</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator||</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a23aa4c631167dfd83c9bc511ab2a515c</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator==</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ae0ced0130cea2f4fd550dcc7645f3448</anchor>
+      <arglist>(T lower) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator==</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ae75fe87d2c3fe49301fc680e2ae487bc</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator!=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ac6e42e1e424ca17dc61058fb80ef1eab</anchor>
+      <arglist>(T lower) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator!=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a2639a94e5c65e2926e0dcc2f4da7116c</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&lt;</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a01515e70e719d8208e8a9f10f78285b7</anchor>
+      <arglist>(T lower) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&lt;</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a33d2bfa03758f5530a1c2f0701382421</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&gt;</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ac59e4b022028003260068c62bf410512</anchor>
+      <arglist>(T lower) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&gt;</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a7a128b70b83db90a8bc055700f513b1b</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&lt;=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a73783dac59945740c39c2f5971e0f791</anchor>
+      <arglist>(T lower) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&lt;=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a427e68238a541d697eb4477b1ac960eb</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&gt;=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>ae2f330c83c74c6f0682865d6c7d2eb7d</anchor>
+      <arglist>(T lower) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&gt;=</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>afb3b85b208ac2ec528e4872b55c131bd</anchor>
+      <arglist>(u128 const &amp;other) const noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static optional&lt; u128 &gt;</type>
+      <name>from_string</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>a4d6bf3cbf95d742a28c8aa34cc17806c</anchor>
+      <arglist>(std::string const &amp;str, format fmt=format::decimal) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr optional&lt; u128 &gt;</type>
+      <name>from_string</name>
+      <anchorfile>classrolly_1_1u128.html</anchorfile>
+      <anchor>aa0993aa6ad5543ba76b50e46136c3673</anchor>
+      <arglist>(T const (&amp;str)[N], format fmt=format::decimal) noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::detail::utf8_reader</name>
+    <filename>structrolly_1_1detail_1_1utf8__reader.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>utf8_next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1utf8__reader.html</anchorfile>
+      <anchor>a4eb15b20269e7952f374397fc59776ab</anchor>
+      <arglist>(T const *&amp;it, T const *end, bool &amp;error, u32 &amp;error_symbol)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr symbol</type>
+      <name>utf8_code_point</name>
+      <anchorfile>structrolly_1_1detail_1_1utf8__reader.html</anchorfile>
+      <anchor>ae71c3c03ac99df70ccf5342d670e65ab</anchor>
+      <arglist>(uint8_t byte, bool &amp;correct) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr u32</type>
+      <name>trailing_utf8_code_point</name>
+      <anchorfile>structrolly_1_1detail_1_1utf8__reader.html</anchorfile>
+      <anchor>aa12171b672ea0528fedf33e4fdfc4906</anchor>
+      <arglist>(T const *&amp;it, T const *end, bool &amp;correct) noexcept</arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>rolly::vector2d</name>
@@ -7713,6 +8917,7 @@
     <class kind="struct">fmt::formatter&lt; rolly::point2d&lt; T &gt; &gt;</class>
     <class kind="struct">fmt::formatter&lt; rolly::size2d&lt; T &gt; &gt;</class>
     <class kind="struct">fmt::formatter&lt; rolly::source_location &gt;</class>
+    <class kind="struct">fmt::formatter&lt; rolly::u128 &gt;</class>
     <class kind="struct">fmt::formatter&lt; rolly::vector2d&lt; T &gt; &gt;</class>
     <class kind="struct">fmt::formatter&lt; rolly::velocity&lt; T &gt; &gt;</class>
     <class kind="struct">fmt::formatter&lt; rolly::version &gt;</class>
@@ -7767,6 +8972,7 @@
     <class kind="struct">rolly::singleton</class>
     <class kind="struct">rolly::size2d</class>
     <class kind="struct">rolly::source_location</class>
+    <class kind="class">rolly::u128</class>
     <class kind="struct">rolly::vector2d</class>
     <class kind="struct">rolly::velocity</class>
     <class kind="struct">rolly::version</class>
@@ -8884,6 +10090,104 @@
       <anchor>aae0ceaba6f444e0342ed34963f4a4f73</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator+</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a1d83a03ba77278325fd12b53d85a5f0f</anchor>
+      <arglist>(T lower, u128 const &amp;value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator-</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>aff04adfb2960ec099786cd99d458f18d</anchor>
+      <arglist>(T lower, u128 const &amp;value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator*</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a7f72790850ea3fd7bbd675c92a5238eb</anchor>
+      <arglist>(T lower, u128 const &amp;value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator/</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a2dab1a67991ee42436cd18d653f3e289</anchor>
+      <arglist>(T lower, u128 const &amp;value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator%</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>ac549f130715ee7564eb221cc533a6f9b</anchor>
+      <arglist>(T lower, u128 const &amp;value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator&amp;</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>ace7884c4ea23f874bbe9e3991d19e89a</anchor>
+      <arglist>(T lower, u128 const &amp;value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator|</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a57ec8a297c192cdfb32baaa85d696014</anchor>
+      <arglist>(T lower, u128 const &amp;value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr u128</type>
+      <name>operator^</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>ae22ca4611c3f0254a7bfc338700c5ce8</anchor>
+      <arglist>(T lower, u128 const &amp;value) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator==</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a931750a94f9c3742afb6055416f1715d</anchor>
+      <arglist>(T lower, u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator!=</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>ac2b69c1b56b4e27b75a4b3a4cf7217dc</anchor>
+      <arglist>(T lower, u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&lt;</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>ae477ea92482ff209194038953c99b843</anchor>
+      <arglist>(T lower, u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&gt;</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a27c4670fd7bd7412e482cddd40867024</anchor>
+      <arglist>(T lower, u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&lt;=</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>adb577b96ad681860a20d6e7725886f35</anchor>
+      <arglist>(T lower, u128 const &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&gt;=</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>afdbad094e33e205c7625ba7602f41ae1</anchor>
+      <arglist>(T lower, u128 const &amp;other) noexcept</arglist>
+    </member>
     <member kind="variable">
       <type>constexpr bool</type>
       <name>is_any_of_v</name>
@@ -9193,7 +10497,12 @@
   <compound kind="namespace">
     <name>rolly::detail</name>
     <filename>namespacerolly_1_1detail.html</filename>
+    <class kind="struct">rolly::detail::char_or_throw</class>
+    <class kind="struct">rolly::detail::char_reader</class>
+    <class kind="struct">rolly::detail::char_reader&lt; char &gt;</class>
     <class kind="class">rolly::detail::scope_guard&lt; Callback &gt;</class>
+    <class kind="struct">rolly::detail::symbol</class>
+    <class kind="struct">rolly::detail::utf8_reader</class>
     <member kind="function">
       <type>scope_guard&lt; Callback &gt;</type>
       <name>make_scope_guard</name>
@@ -9207,6 +10516,20 @@
       <anchorfile>namespacerolly_1_1detail.html</anchorfile>
       <anchor>aa5f8fde71726c1ad930bd6e4b0b22195</anchor>
       <arglist>(Callback &amp;&amp;callback) noexcept(std::is_nothrow_constructible_v&lt; Callback, Callback &amp;&amp; &gt;)</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr char</type>
+      <name>next_char</name>
+      <anchorfile>namespacerolly_1_1detail.html</anchorfile>
+      <anchor>a1b04f56750ab18aa373ef974edef1610</anchor>
+      <arglist>(T const *&amp;it, T const *begin, T const *end) noexcept(noexcept(detail::char_reader&lt; T &gt;::next(it, begin, end)))</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr char</type>
+      <name>next_char_or_error</name>
+      <anchorfile>namespacerolly_1_1detail.html</anchorfile>
+      <anchor>a95e4154d6f05bd68f67696a2bfecdd59</anchor>
+      <arglist>(T const *&amp;it, T const *end, bool &amp;error, u32 &amp;error_symbol) noexcept</arglist>
     </member>
   </compound>
   <compound kind="namespace">

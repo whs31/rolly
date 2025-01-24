@@ -75,8 +75,32 @@
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrolly_1_1detail_1_1char__or__throw.html">char_or_throw</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrolly_1_1detail_1_1char__reader.html">char_reader</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;&gt;</div>
+              struct <a class="m-doc" href="structrolly_1_1detail_1_1char__reader_3_01char_01_4.html">char_reader&lt;char&gt;</a>
+            </dt>
+            <dd></dd>
+            <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Callback</span></span>&gt;</div>
               class <a class="m-doc" href="classrolly_1_1detail_1_1scope__guard_3_01_callback_01_4.html">scope_guard&lt;Callback&gt;</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              struct <a class="m-doc" href="structrolly_1_1detail_1_1symbol.html">symbol</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrolly_1_1detail_1_1utf8__reader.html">utf8_reader</a>
             </dt>
             <dd></dd>
           </dl>
@@ -92,6 +116,21 @@
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Callback</span></span>&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#afeedd7c785d4b2d49c66f4d52fb30850">make_scope_guard</a>(</span><span class="m-doc-wrap">Callback&amp;&amp; callback) →  scope_guard&lt;Callback&gt; <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a1b04f56750ab18aa373ef974edef1610">next_char</a>(</span><span class="m-doc-wrap">T const*&amp; it,
+              T const* begin,
+              T const* end) →  char <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept(…)</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a95e4154d6f05bd68f67696a2bfecdd59">next_char_or_error</a>(</span><span class="m-doc-wrap">T const*&amp; it,
+              T const* end,
+              bool&amp; error,
+              <a class="m-doc" href="namespacerolly.html#ae58032b87dd7559b4ed3ebaeb5103f1c">u32</a>&amp; error_symbol) →  char <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
           </dl>
@@ -115,6 +154,31 @@
                 template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Callback</span></span>&gt;
               </div>
               <span class="m-doc-wrap-bumper">scope_guard&lt;Callback&gt; <span class="m-doc-details-prefix">rolly::<wbr/>detail::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#afeedd7c785d4b2d49c66f4d52fb30850">make_scope_guard</a>(</span><span class="m-doc-wrap">Callback&amp;&amp; callback) <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p></p>
+          </div></section>
+          <section class="m-doc-details" id="a1b04f56750ab18aa373ef974edef1610"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">char <span class="m-doc-details-prefix">rolly::<wbr/>detail::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a1b04f56750ab18aa373ef974edef1610">next_char</a>(</span><span class="m-doc-wrap">T const*&amp; it,
+              T const* begin,
+              T const* end) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept(…)</span></span></span>
+            </h3>
+            <p></p>
+          </div></section>
+          <section class="m-doc-details" id="a95e4154d6f05bd68f67696a2bfecdd59"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">char <span class="m-doc-details-prefix">rolly::<wbr/>detail::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a95e4154d6f05bd68f67696a2bfecdd59">next_char_or_error</a>(</span><span class="m-doc-wrap">T const*&amp; it,
+              T const* end,
+              bool&amp; error,
+              <a class="m-doc" href="namespacerolly.html#ae58032b87dd7559b4ed3ebaeb5103f1c">u32</a>&amp; error_symbol) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p></p>
           </div></section>
