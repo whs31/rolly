@@ -1116,6 +1116,7 @@
     <path>rolly/</path>
     <filename>types_8h.html</filename>
     <includes id="angle_8h" name="angle.h" local="yes" import="no" module="no" objc="no">types/angle.h</includes>
+    <includes id="fixed__string_8h" name="fixed_string.h" local="yes" import="no" module="no" objc="no">types/fixed_string.h</includes>
     <includes id="point2d_8h" name="point2d.h" local="yes" import="no" module="no" objc="no">types/point2d.h</includes>
   </compound>
   <compound kind="file">
@@ -1127,6 +1128,36 @@
     <includes id="num_8h" name="num.h" local="yes" import="no" module="no" objc="no">../concepts/num.h</includes>
     <class kind="struct">rolly::angle</class>
     <class kind="struct">fmt::formatter&lt; rolly::angle&lt; T &gt; &gt;</class>
+    <namespace>rolly</namespace>
+  </compound>
+  <compound kind="file">
+    <name>char_reader.h</name>
+    <path>rolly/types/detail/</path>
+    <filename>char__reader_8h.html</filename>
+    <includes id="definitions_8h" name="definitions.h" local="yes" import="no" module="no" objc="no">../../global/definitions.h</includes>
+    <includes id="stdint_8h" name="stdint.h" local="yes" import="no" module="no" objc="no">../stdint.h</includes>
+    <class kind="struct">rolly::detail::char_or_throw</class>
+    <class kind="struct">rolly::detail::symbol</class>
+    <class kind="struct">rolly::detail::utf8_reader</class>
+    <class kind="struct">rolly::detail::utf16_reader</class>
+    <class kind="struct">rolly::detail::utf32_reader</class>
+    <class kind="struct">rolly::detail::char_reader&lt; char &gt;</class>
+    <class kind="struct">rolly::detail::char_reader&lt; wchar_t &gt;</class>
+    <class kind="struct">rolly::detail::char_reader&lt; char8_t &gt;</class>
+    <class kind="struct">rolly::detail::char_reader&lt; char16_t &gt;</class>
+    <class kind="struct">rolly::detail::char_reader&lt; char32_t &gt;</class>
+    <namespace>rolly</namespace>
+    <namespace>rolly::detail</namespace>
+  </compound>
+  <compound kind="file">
+    <name>fixed_string.h</name>
+    <path>rolly/types/</path>
+    <filename>fixed__string_8h.html</filename>
+    <includes id="definitions_8h" name="definitions.h" local="yes" import="no" module="no" objc="no">../global/definitions.h</includes>
+    <includes id="stdint_8h" name="stdint.h" local="yes" import="no" module="no" objc="no">./stdint.h</includes>
+    <includes id="char__reader_8h" name="char_reader.h" local="yes" import="no" module="no" objc="no">detail/char_reader.h</includes>
+    <class kind="struct">rolly::fixed_string</class>
+    <class kind="struct">rolly::fixed_string&lt; 0 &gt;</class>
     <namespace>rolly</namespace>
   </compound>
   <compound kind="file">
@@ -1247,17 +1278,13 @@
     <includes id="definitions_8h" name="definitions.h" local="yes" import="no" module="no" objc="no">../global/definitions.h</includes>
     <includes id="stdint_8h" name="stdint.h" local="yes" import="no" module="no" objc="no">./stdint.h</includes>
     <includes id="optional_8h" name="optional.h" local="yes" import="no" module="no" objc="no">./optional.h</includes>
-    <class kind="struct">rolly::detail::char_or_throw</class>
-    <class kind="struct">rolly::detail::symbol</class>
-    <class kind="struct">rolly::detail::utf8_reader</class>
-    <class kind="struct">rolly::detail::char_reader&lt; char &gt;</class>
+    <includes id="char__reader_8h" name="char_reader.h" local="yes" import="no" module="no" objc="no">detail/char_reader.h</includes>
     <class kind="class">rolly::u128</class>
     <class kind="struct">std::_numeric_limits_uint128</class>
     <class kind="struct">std::numeric_limits&lt; rolly::u128 &gt;</class>
     <class kind="struct">std::hash&lt; rolly::u128 &gt;</class>
     <class kind="struct">fmt::formatter&lt; rolly::u128 &gt;</class>
     <namespace>rolly</namespace>
-    <namespace>rolly::detail</namespace>
   </compound>
   <compound kind="file">
     <name>vector2d.h</name>
@@ -2515,8 +2542,8 @@
       <type>static constexpr char</type>
       <name>next</name>
       <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
-      <anchor>a70581737edbde6ee51912a74d803ac77</anchor>
-      <arglist>(T const *&amp;it, T const *begin, T const *end) noexcept</arglist>
+      <anchor>af996afa7a9cf86e704b522e3c0e07f36</anchor>
+      <arglist>(T const *&amp;it, T const *begin, T const *end)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static constexpr void</type>
@@ -2568,8 +2595,180 @@
       <type>static constexpr char</type>
       <name>next</name>
       <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
-      <anchor>a70581737edbde6ee51912a74d803ac77</anchor>
-      <arglist>(char const *&amp;it, char const *begin, char const *end) noexcept</arglist>
+      <anchor>af996afa7a9cf86e704b522e3c0e07f36</anchor>
+      <arglist>(char const *&amp;it, char const *begin, char const *end)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr void</type>
+      <name>has_throw</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>a50745bf121113a0d452a7d2ca8b7d53c</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::detail::char_reader&lt; char16_t &gt;</name>
+    <filename>structrolly_1_1detail_1_1char__reader_3_01char16__t_01_4.html</filename>
+    <base>utf16_reader&lt; char16_t &gt;</base>
+    <base>char_or_throw&lt; char16_t &gt;</base>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1char__reader_3_01char16__t_01_4.html</anchorfile>
+      <anchor>ae126033e44c837fe3fdcac0c1a0aeb48</anchor>
+      <arglist>(char16_t const *&amp;it, char16_t const *end, bool &amp;error, u32 &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>utf16_next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1utf16__reader.html</anchorfile>
+      <anchor>a49339e1e3b8bf16f147ef26be03127c4</anchor>
+      <arglist>(char16_t const *&amp;it, char16_t const *end, bool &amp;error, uint32_t &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr symbol</type>
+      <name>utf16_code_point</name>
+      <anchorfile>structrolly_1_1detail_1_1utf16__reader.html</anchorfile>
+      <anchor>aba6ac2e9ef09ac43ef510ae45955d105</anchor>
+      <arglist>(uint16_t value) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>af996afa7a9cf86e704b522e3c0e07f36</anchor>
+      <arglist>(char16_t const *&amp;it, char16_t const *begin, char16_t const *end)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr void</type>
+      <name>has_throw</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>a50745bf121113a0d452a7d2ca8b7d53c</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::detail::char_reader&lt; char32_t &gt;</name>
+    <filename>structrolly_1_1detail_1_1char__reader_3_01char32__t_01_4.html</filename>
+    <base>utf32_reader&lt; char32_t &gt;</base>
+    <base>char_or_throw&lt; char32_t &gt;</base>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1char__reader_3_01char32__t_01_4.html</anchorfile>
+      <anchor>a3fd85fc406982f8183e3efcf1ff2737d</anchor>
+      <arglist>(char32_t const *&amp;it, char32_t const *end, bool &amp;error, u32 &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>utf32_next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1utf32__reader.html</anchorfile>
+      <anchor>a1ddec526755b94f39e3025df4a87520c</anchor>
+      <arglist>(char32_t const *&amp;it, char32_t const *, bool &amp;error, uint32_t &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>af996afa7a9cf86e704b522e3c0e07f36</anchor>
+      <arglist>(char32_t const *&amp;it, char32_t const *begin, char32_t const *end)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr void</type>
+      <name>has_throw</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>a50745bf121113a0d452a7d2ca8b7d53c</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::detail::char_reader&lt; char8_t &gt;</name>
+    <filename>structrolly_1_1detail_1_1char__reader_3_01char8__t_01_4.html</filename>
+    <base>utf8_reader&lt; char8_t &gt;</base>
+    <base>char_or_throw&lt; char8_t &gt;</base>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1char__reader_3_01char8__t_01_4.html</anchorfile>
+      <anchor>a912f595be2d85cf8bb9c0e05539a986e</anchor>
+      <arglist>(char8_t const *&amp;it, char8_t const *end, bool &amp;error, uint32_t &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>utf8_next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1utf8__reader.html</anchorfile>
+      <anchor>a4eb15b20269e7952f374397fc59776ab</anchor>
+      <arglist>(char8_t const *&amp;it, char8_t const *end, bool &amp;error, u32 &amp;error_symbol)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr symbol</type>
+      <name>utf8_code_point</name>
+      <anchorfile>structrolly_1_1detail_1_1utf8__reader.html</anchorfile>
+      <anchor>ae71c3c03ac99df70ccf5342d670e65ab</anchor>
+      <arglist>(uint8_t byte, bool &amp;correct) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr u32</type>
+      <name>trailing_utf8_code_point</name>
+      <anchorfile>structrolly_1_1detail_1_1utf8__reader.html</anchorfile>
+      <anchor>aa12171b672ea0528fedf33e4fdfc4906</anchor>
+      <arglist>(char8_t const *&amp;it, char8_t const *end, bool &amp;correct) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>af996afa7a9cf86e704b522e3c0e07f36</anchor>
+      <arglist>(char8_t const *&amp;it, char8_t const *begin, char8_t const *end)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr void</type>
+      <name>has_throw</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>a50745bf121113a0d452a7d2ca8b7d53c</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::detail::char_reader&lt; wchar_t &gt;</name>
+    <filename>structrolly_1_1detail_1_1char__reader_3_01wchar__t_01_4.html</filename>
+    <base>utf16_reader&lt; wchar_t &gt;</base>
+    <base>utf32_reader&lt; wchar_t &gt;</base>
+    <base>char_or_throw&lt; wchar_t &gt;</base>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1char__reader_3_01wchar__t_01_4.html</anchorfile>
+      <anchor>a28388656b1777cc89dde95045f903c03</anchor>
+      <arglist>(wchar_t const *&amp;it, wchar_t const *end, bool &amp;error, uint32_t &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>utf16_next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1utf16__reader.html</anchorfile>
+      <anchor>a49339e1e3b8bf16f147ef26be03127c4</anchor>
+      <arglist>(wchar_t const *&amp;it, wchar_t const *end, bool &amp;error, uint32_t &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr symbol</type>
+      <name>utf16_code_point</name>
+      <anchorfile>structrolly_1_1detail_1_1utf16__reader.html</anchorfile>
+      <anchor>aba6ac2e9ef09ac43ef510ae45955d105</anchor>
+      <arglist>(uint16_t value) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>utf32_next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1utf32__reader.html</anchorfile>
+      <anchor>a1ddec526755b94f39e3025df4a87520c</anchor>
+      <arglist>(wchar_t const *&amp;it, wchar_t const *, bool &amp;error, uint32_t &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>next</name>
+      <anchorfile>structrolly_1_1detail_1_1char__or__throw.html</anchorfile>
+      <anchor>af996afa7a9cf86e704b522e3c0e07f36</anchor>
+      <arglist>(wchar_t const *&amp;it, wchar_t const *begin, wchar_t const *end)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static constexpr void</type>
@@ -3144,6 +3343,540 @@
       <name>write_permissions</name>
       <anchorfile>classrolly_1_1io_1_1filedevice.html</anchorfile>
       <anchor>ac5e6555c28008ac586b0d28b5a6a55a7</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::fixed_string</name>
+    <filename>structrolly_1_1fixed__string.html</filename>
+    <templarg>std::size_t N</templarg>
+    <member kind="typedef">
+      <type>char</type>
+      <name>value_type</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a5d74b6b636de410a9f2c8eb2962ea47c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>char const  *</type>
+      <name>const_pointer</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a7495ef6a01e1313e5f60303a6aa8fc8b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>char const  &amp;</type>
+      <name>const_reference</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>acc97dea46cb7edde73ddf19b11744b16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>const_pointer</type>
+      <name>const_iterator</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>aba16a01ee8c90b3db50c320460d450f3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::reverse_iterator&lt; const_iterator &gt;</type>
+      <name>const_reverse_iterator</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>abdaa2c1e4717bb7a5d25c2aa24587992</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a3afc31b99bf0474020eba4afcad1b217</anchor>
+      <arglist>() noexcept=default</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a68028cfae547d46c68c69a6543982a96</anchor>
+      <arglist>(T const (&amp;data)[N+1]) noexcept(noexcept(detail::char_reader&lt; T &gt;::has_throw()))</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>ad69559994fa3cbbd3c7bb23668d749cf</anchor>
+      <arglist>(T const (&amp;data)[N+1], bool &amp;error) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_iterator</type>
+      <name>begin</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a52e709a92656b7f93db18a4b8cdb6704</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_iterator</type>
+      <name>end</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a5a92a4dfca4172fc0e16a91fe3738347</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reverse_iterator</type>
+      <name>rbegin</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>aa4973f22a068bddc6f43f6d6a797e8cb</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reverse_iterator</type>
+      <name>rend</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a98b70b8e2af0d0ea2fbc83d77ffe7ec0</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_iterator</type>
+      <name>cbegin</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a9d687b7ff258ea42e067480555ba228d</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_iterator</type>
+      <name>cend</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a3116b191e2c9261a59deadd68e74abb3</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reverse_iterator</type>
+      <name>crbegin</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>ac2c7062be4ecaca0c9537e9c3dbad741</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reverse_iterator</type>
+      <name>crend</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>ae053ce1db7e91d1c5f672c8ead2480ef</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>empty</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>af688c11b6d7ce08b8e245cfaf4205de5</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr size_t</type>
+      <name>size</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a5716df9ed853a59834034875bb7217eb</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr size_t</type>
+      <name>capacity</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>ac7237d91a08f60f7b4dafff32244b618</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reference</type>
+      <name>operator[]</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>ad041f660b38479a223f64a95c731d013</anchor>
+      <arglist>(std::size_t const n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reference</type>
+      <name>at</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a6bd0795cc4e61299bd5ee428cdc7d551</anchor>
+      <arglist>(std::size_t n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reference</type>
+      <name>front</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>aa9e250b8bec12607bbe38c87afed7583</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reference</type>
+      <name>back</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a96cd8a7cba985a1d57605a3475c2d723</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_pointer</type>
+      <name>data</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>aee328160885e6f382c978a324926deed</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr int</type>
+      <name>compare</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a612844d8679eb9e9e1fcba41a3cec59f</anchor>
+      <arglist>(fixed_string&lt; N2 &gt; const &amp;rhs) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr std::size_t</type>
+      <name>hash</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>aeda05ec5988db75c91983f117f76df47</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr void</type>
+      <name>swap</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a45152da45315b4263d7be82a91816c74</anchor>
+      <arglist>(fixed_string &amp;other) noexcept</arglist>
+    </member>
+    <member kind="variable">
+      <type>size_t</type>
+      <name>length</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>abb2052b7d20b7af8b08e80584d376c0b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>char</type>
+      <name>_data</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a10549baac749dd504a6862b35b8eed57</anchor>
+      <arglist>[N]</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr auto</type>
+      <name>max_length</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>aafc56aa722b8a9c92a10400471316a6c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator==</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>ae28feab2b8b12f399fde8628fc2ab9ee</anchor>
+      <arglist>(fixed_string&lt; N1 &gt; const &amp;lhs, fixed_string&lt; N2 &gt; const &amp;rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator!=</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a0a9bb85d084159cacc0d21731ec91368</anchor>
+      <arglist>(fixed_string&lt; N1 &gt; const &amp;lhs, fixed_string&lt; N2 &gt; const &amp;rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&lt;</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>aa7dd93bcdcaf4e5a0c5e8c4b26587002</anchor>
+      <arglist>(fixed_string&lt; N1 &gt; const &amp;lhs, fixed_string&lt; N2 &gt; const &amp;rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&gt;</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a724539a6b81f3604e7444672bc4c6958</anchor>
+      <arglist>(fixed_string&lt; N1 &gt; const &amp;lhs, fixed_string&lt; N2 &gt; const &amp;rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&lt;=</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a1f87e55119aabe4d4d98130e06871bf3</anchor>
+      <arglist>(fixed_string&lt; N1 &gt; const &amp;lhs, fixed_string&lt; N2 &gt; const &amp;rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>operator&gt;=</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a43a4d621e2b8ef18c1fb1c8a6672276f</anchor>
+      <arglist>(fixed_string&lt; N1 &gt; const &amp;lhs, fixed_string&lt; N2 &gt; const &amp;rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr fixed_string&lt; N - 1 &gt;</type>
+      <name>make_fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a0c2415eac14858f828fed325da7a75ac</anchor>
+      <arglist>(T const(&amp;data)[N]) noexcept(noexcept(fixed_string&lt; N - 1 &gt;(data)))</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr fixed_string&lt; N - 1 &gt;</type>
+      <name>make_fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string.html</anchorfile>
+      <anchor>a4e68bfdf194edf83a741545e433f76e3</anchor>
+      <arglist>(T const(&amp;data)[N], bool &amp;code) noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::fixed_string&lt; 0 &gt;</name>
+    <filename>structrolly_1_1fixed__string_3_010_01_4.html</filename>
+    <member kind="typedef">
+      <type>char</type>
+      <name>value_type</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a4e603df3916e0ae2c0cd04f947729768</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>char const  *</type>
+      <name>const_pointer</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>acee63c753fc6e8b6a8831a8a7b2ac600</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>char const  &amp;</type>
+      <name>const_reference</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a0c7f550c297b2b6262e65b73ac63ccda</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>const_pointer</type>
+      <name>const_iterator</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a3f3f9a9119be84f8ba69c4711c2d21a3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::reverse_iterator&lt; const_iterator &gt;</type>
+      <name>const_reverse_iterator</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a906f70be590a952b6f299fdfcd6c56de</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>ad3dc24b7d9b0e8c58d23fb2becb6f048</anchor>
+      <arglist>() noexcept=default</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a712625ca362bb64e03f68f5ddda4c865</anchor>
+      <arglist>(char const *) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a57f4b111f2f00f7624700473f6c44700</anchor>
+      <arglist>(wchar_t const *) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>aa0a1642a8fc9ca4008da39b1465f3d37</anchor>
+      <arglist>(char16_t const *) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>ac6e49ae613f55b05d6124a6353cb2066</anchor>
+      <arglist>(char32_t const *) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>ac99e4dc38ba76ba0937aaeebd7863433</anchor>
+      <arglist>(char const *, bool &amp;code) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a507c9fca26ebdfae2ec1c3ff2bcbc1ce</anchor>
+      <arglist>(wchar_t const *, bool &amp;code) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>aefce3103e3a2190fb56516f6e42370a7</anchor>
+      <arglist>(char16_t const *, bool &amp;code) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a9a6029d3bb90acc1421ffabb843fcb4e</anchor>
+      <arglist>(char32_t const *, bool &amp;code) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>aab1981fbcc2d2f6de54cdef6b4348619</anchor>
+      <arglist>(const char8_t *) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>fixed_string</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>adc0cfa4a0563a0cdd03a784ac6f7ffa6</anchor>
+      <arglist>(char8_t const *, bool &amp;code) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_iterator</type>
+      <name>begin</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a61a5dddc083551d9f7516326ab1c7dbe</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_iterator</type>
+      <name>end</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>ae794c5a9a63a84803c9320558ce1a512</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reverse_iterator</type>
+      <name>rbegin</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a247ae33385e662b62d8a88dce066365f</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reverse_iterator</type>
+      <name>rend</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a282759e184f7442993f1fecee9beeaba</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_iterator</type>
+      <name>cbegin</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a54ce0e8dc4008fa5b376e1328a30c3cb</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_iterator</type>
+      <name>cend</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a2741f0545e5830e10fc22755b66ae4e1</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reverse_iterator</type>
+      <name>crbegin</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a396bb9186f37fde6807f65eab55f91ad</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reverse_iterator</type>
+      <name>crend</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>ac1e01ac7c5fa08b5080660d45278d4b6</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>empty</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>ae70942ebc1d06f0782c0d0f37f6de9db</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr std::size_t</type>
+      <name>size</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a29a6940fa7a8f7392b004676fcc78e12</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr std::size_t</type>
+      <name>capacity</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>ab2ffe1625a7372972c05e2f745cacd31</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reference</type>
+      <name>operator[]</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>ac41fede54e15a2dcec1c4a10660b73a5</anchor>
+      <arglist>(std::size_t n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reference</type>
+      <name>at</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a948bff561c7406a2a5d7fae1bcdc07bc</anchor>
+      <arglist>(std::size_t) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reference</type>
+      <name>front</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>af72663698e39aae6a1e537f4a716e2e2</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_reference</type>
+      <name>back</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a13b88655bb92b2b67cb0406ecd8f7f5e</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const_pointer</type>
+      <name>data</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a56d9dd051c8d1027d1a3975e9d13641b</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr int</type>
+      <name>compare</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>ac4804d807efaa8a5eec55b2eb15fba95</anchor>
+      <arglist>(fixed_string&lt; N2 &gt; const &amp;rhs) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr size_t</type>
+      <name>hash</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a968292e04b6a0f20318909e9720295c5</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr void</type>
+      <name>swap</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>a2ce6127308f4ac5aa54315f57c5652a7</anchor>
+      <arglist>(fixed_string &amp;other) noexcept</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr std::size_t</type>
+      <name>max_length</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>acb639fdcc45c3b152bc586db85f0d933</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr std::size_t</type>
+      <name>length</name>
+      <anchorfile>structrolly_1_1fixed__string_3_010_01_4.html</anchorfile>
+      <anchor>affeb2725e0b48a295b8e7390edb146fb</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -7724,6 +8457,37 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>rolly::detail::utf16_reader</name>
+    <filename>structrolly_1_1detail_1_1utf16__reader.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>utf16_next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1utf16__reader.html</anchorfile>
+      <anchor>a49339e1e3b8bf16f147ef26be03127c4</anchor>
+      <arglist>(T const *&amp;it, T const *end, bool &amp;error, uint32_t &amp;error_symbol) noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr symbol</type>
+      <name>utf16_code_point</name>
+      <anchorfile>structrolly_1_1detail_1_1utf16__reader.html</anchorfile>
+      <anchor>aba6ac2e9ef09ac43ef510ae45955d105</anchor>
+      <arglist>(uint16_t value) noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>rolly::detail::utf32_reader</name>
+    <filename>structrolly_1_1detail_1_1utf32__reader.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="function" static="yes">
+      <type>static constexpr char</type>
+      <name>utf32_next_or_error</name>
+      <anchorfile>structrolly_1_1detail_1_1utf32__reader.html</anchorfile>
+      <anchor>a1ddec526755b94f39e3025df4a87520c</anchor>
+      <arglist>(T const *&amp;it, T const *, bool &amp;error, uint32_t &amp;error_symbol) noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>rolly::detail::utf8_reader</name>
     <filename>structrolly_1_1detail_1_1utf8__reader.html</filename>
     <templarg>typename T</templarg>
@@ -8947,6 +9711,8 @@
     <class kind="struct">rolly::deleter</class>
     <class kind="class">rolly::deserialization_error</class>
     <class kind="class">rolly::dirs</class>
+    <class kind="struct">rolly::fixed_string</class>
+    <class kind="struct">rolly::fixed_string&lt; 0 &gt;</class>
     <class kind="class">rolly::guid</class>
     <class kind="struct">rolly::is_any_of</class>
     <class kind="struct">rolly::is_num</class>
@@ -9818,6 +10584,55 @@
       <arglist>(fmt::format_string&lt; Args... &gt; format, Args &amp;&amp;... args)</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>fixed_string</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>aab460bb14a8e5f2a827733b37099eedf</anchor>
+      <arglist>(const char8_t(&amp;)[N]) -&gt; fixed_string&lt; N - 1 &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>fixed_string</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a05fb7167ba46982e56da16ef44eaa74f</anchor>
+      <arglist>(fixed_string&lt; N &gt;) -&gt; fixed_string&lt; N &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>fixed_string</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a9718a9b68b1ca74429173dc093e538f6</anchor>
+      <arglist>(char const (&amp;)[N]) -&gt; fixed_string&lt; N - 1 &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>fixed_string</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a92ff8558ce104b268d47fcd242f7905d</anchor>
+      <arglist>(wchar_t const (&amp;)[N]) -&gt; fixed_string&lt; N - 1 &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>fixed_string</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>acb6c182255904ac17e7a2459624d1063</anchor>
+      <arglist>(char16_t const (&amp;)[N]) -&gt; fixed_string&lt; N - 1 &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>fixed_string</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a89f411db9b22fff5fb5c691bc57b4168</anchor>
+      <arglist>(char32_t const (&amp;)[N]) -&gt; fixed_string&lt; N - 1 &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>fixed_string</name>
+      <anchorfile>namespacerolly.html</anchorfile>
+      <anchor>a964d49de4ffdfcd6058bde16e99ee885</anchor>
+      <arglist>() -&gt; fixed_string&lt; 0 &gt;</arglist>
+    </member>
+    <member kind="function">
       <type>constexpr bool</type>
       <name>operator==</name>
       <anchorfile>namespacerolly.html</anchorfile>
@@ -10500,8 +11315,14 @@
     <class kind="struct">rolly::detail::char_or_throw</class>
     <class kind="struct">rolly::detail::char_reader</class>
     <class kind="struct">rolly::detail::char_reader&lt; char &gt;</class>
+    <class kind="struct">rolly::detail::char_reader&lt; char16_t &gt;</class>
+    <class kind="struct">rolly::detail::char_reader&lt; char32_t &gt;</class>
+    <class kind="struct">rolly::detail::char_reader&lt; char8_t &gt;</class>
+    <class kind="struct">rolly::detail::char_reader&lt; wchar_t &gt;</class>
     <class kind="class">rolly::detail::scope_guard&lt; Callback &gt;</class>
     <class kind="struct">rolly::detail::symbol</class>
+    <class kind="struct">rolly::detail::utf16_reader</class>
+    <class kind="struct">rolly::detail::utf32_reader</class>
     <class kind="struct">rolly::detail::utf8_reader</class>
     <member kind="function">
       <type>scope_guard&lt; Callback &gt;</type>

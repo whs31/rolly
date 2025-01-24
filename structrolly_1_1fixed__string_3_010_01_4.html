@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <title>rolly::fixed_string&lt;0&gt; struct | Rolly Radar core library</title>
+  <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#22272e" name="theme-color"/>
+  <link href="poxy/poxy.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+  <script src="poxy/poxy.js"></script>
+  <script>initialize_theme("dark");</script>
+  <meta content="Rolly" name="twitter:title"/>
+  <meta content="Rolly" property="og:title"/>
+  <meta content="Rolly" itemprop="name"/>
+  <meta content="Dmitry Riazantsev &lt;riazantsev.dl@edu.spbstu.ru&gt;" name="author"/>
+  <meta content="Dmitry Riazantsev &lt;riazantsev.dl@edu.spbstu.ru&gt;" property="article:author"/>
+  <meta content="Radar core library" name="description"/>
+  <meta content="Radar core library" name="twitter:description"/>
+  <meta content="Radar core library" property="og:description"/>
+  <meta content="Radar core library" itemprop="description"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="Poxy v0.19.4" name="generator"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
+</head>
+<body class="poxy-has-toc">
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a class="m-col-t-8 m-col-m-none m-left-m" href="index.html" id="m-navbar-brand"><svg class="poxy-injected-svg" fill="none" height="140" id="poxy-injected-svg-0" version="1.1" viewBox="0 0 140 140" width="140" xmlns="http://www.w3.org/2000/svg"><path d="M0 66C0 29.5492 29.5492 0 66 0H73.9111C110.362 0 139.911 29.5492 139.911 66V140H66C29.5492 140 0 110.451 0 74V66Z" fill="#416275"></path><path d="M103.153 112.504L107.377 111.48C108.742 111.48 109.425 112.163 109.425 113.528C109.34 115.747 108.188 117.709 105.969 119.416C103.836 121.208 101.404 122.104 98.673 122.104C95.9423 122.104 93.7663 120.781 92.145 118.136C89.841 114.296 87.665 107.427 85.617 97.528C84.6783 92.7493 83.569 88.824 82.289 85.752C79.985 86.52 77.553 86.904 74.993 86.904C72.433 86.904 70.1717 86.392 68.209 85.368C66.3317 84.2587 65.393 82.936 65.393 81.4C65.5637 77.4747 68.721 75.512 74.865 75.512C77.8517 75.512 81.0517 76.8347 84.465 79.48C89.7557 75.4693 92.401 69.88 92.401 62.712C92.401 58.4453 91.5903 54.6907 89.969 51.448C88.3477 48.12 86.2143 45.5173 83.569 43.64C78.3637 39.9707 72.561 38.136 66.161 38.136C65.9903 40.0133 65.6917 43 65.265 47.096C64.4117 55.6293 63.8997 62.2427 63.729 66.936L63.345 87.16C63.345 102.691 60.273 110.456 54.129 110.456C50.2037 110.456 48.241 108.792 48.241 105.464C48.241 104.611 48.7957 103.16 49.905 101.112C51.0997 99.064 51.953 96.7173 52.465 94.072C52.977 91.3413 53.5317 83.448 54.129 70.392C54.7263 57.2507 55.537 46.9253 56.561 39.416C52.0383 40.696 48.3263 42.6587 45.425 45.304C42.609 47.9493 41.201 51.064 41.201 54.648C41.201 56.696 40.7317 58.36 39.793 59.64C38.8543 60.8347 37.7023 61.432 36.337 61.432C33.8623 61.432 32.625 60.1093 32.625 57.464C32.625 51.4907 35.0143 46.584 39.793 42.744C44.657 38.8187 50.6303 36.0027 57.713 34.296C59.4197 28.5787 61.809 25.72 64.881 25.72C66.0757 25.72 66.673 27.0853 66.673 29.816C66.673 30.4133 66.5877 31.48 66.417 33.016C67.3557 32.8453 69.1477 32.76 71.793 32.76C74.4383 32.76 77.425 33.144 80.753 33.912C84.081 34.68 87.409 36.0027 90.737 37.88C94.1503 39.672 96.881 42.4453 98.929 46.2C100.977 49.8693 102.001 54.1787 102.001 59.128C102.001 64.0773 100.721 68.6853 98.161 72.952C95.601 77.2187 92.273 80.632 88.177 83.192C91.0783 86.776 93.3397 91.1707 94.961 96.376C96.6677 101.581 98.2463 105.549 99.697 108.28C101.148 111.096 102.3 112.504 103.153 112.504ZM70.641 79.864C70.641 80.5467 71.2383 81.144 72.433 81.656C73.6277 82.168 74.865 82.424 76.145 82.424C77.5103 82.424 78.7477 82.2107 79.857 81.784C78.1503 79.8213 76.1877 78.84 73.969 78.84C71.7503 78.84 70.641 79.1813 70.641 79.864Z" fill="#F6C67C"></path></svg>Rolly <span class="m-thin">Radar core library</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a class="m-doc-search-icon" href="#search" onclick="return showSearch()" title="Search"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z" id="m-doc-search-icon-path"></path>
+        </svg></a>
+        <a href="#navigation" id="m-navbar-show" title="Show navigation"></a>
+        <a href="#" id="m-navbar-hide" title="Hide navigation"></a>
+      </div>
+      <div class="m-col-t-12 m-show-m m-col-m-none m-right-m" id="m-navbar-collapse">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a class="poxy-icon repo github poxy-external" href="https://github.com/whs31/rolly" target="_blank" title="View on GitHub"><svg id="poxy-icon-repo" version="1.1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M25,1.23a24.37,24.37,0,0,0-7.7,47.5C18.51,49,19,48.2,19,47.56s0-2.12,0-4.15c-6.78,1.47-8.21-3.27-8.21-3.27C9.61,37.33,8,36.58,8,36.58c-2.21-1.51.17-1.48.17-1.48a5.12,5.12,0,0,1,3.73,2.51c2.17,3.72,5.7,2.65,7.09,2a5.25,5.25,0,0,1,1.55-3.26c-5.41-.61-11.1-2.7-11.1-12A9.41,9.41,0,0,1,12,17.79a8.75,8.75,0,0,1,.24-6.45s2-.66,6.7,2.49a23.1,23.1,0,0,1,12.2,0c4.66-3.15,6.7-2.49,6.7-2.49A8.75,8.75,0,0,1,38,17.79a9.41,9.41,0,0,1,2.51,6.54c0,9.36-5.7,11.42-11.13,12a5.83,5.83,0,0,1,1.65,4.51c0,3.26,0,5.89,0,6.69,0,.65.44,1.41,1.68,1.17A24.38,24.38,0,0,0,25,1.23Z" fill="currentColor"></path></svg></a></li>
+            <li><a class="poxy-icon theme" href="javascript:void(null);" id="poxy-theme-switch" onclick="toggle_theme(); return false;" role="button" title="Toggle dark and light themes"><svg id="poxy-theme-switch-img" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="185.6708" cy="183.8122" fill="currentColor" r="65.625"></circle><path d="M185.6708,87.5622a13.1256,13.1256,0,0,0,13.125-13.125V52.5622a13.125,13.125,0,1,0-26.25,0v21.875A13.1257,13.1257,0,0,0,185.6708,87.5622Z" fill="currentColor"></path><path d="M99.051,115.7519a13.1236,13.1236,0,1,0,18.56-18.56L102.1442,81.726a13.1236,13.1236,0,0,0-18.5595,18.56Z" fill="currentColor"></path><path d="M89.4208,183.8122a13.1257,13.1257,0,0,0-13.125-13.125H54.4208a13.125,13.125,0,0,0,0,26.25h21.875A13.1256,13.1256,0,0,0,89.4208,183.8122Z" fill="currentColor"></path><path d="M99.051,251.8725,83.5847,267.3431a13.1236,13.1236,0,1,0,18.56,18.56l15.4663-15.4706a13.1236,13.1236,0,1,0-18.5595-18.56Z" fill="currentColor"></path><path d="M185.6708,280.0622a13.1258,13.1258,0,0,0-13.125,13.125v21.875a13.125,13.125,0,0,0,26.25,0v-21.875A13.1257,13.1257,0,0,0,185.6708,280.0622Z" fill="currentColor"></path><path d="M272.2907,251.8725a13.1236,13.1236,0,1,0-18.56,18.56l15.4663,15.4706a13.1236,13.1236,0,1,0,18.56-18.56Z" fill="currentColor"></path><path d="M330.0458,183.8122a13.1257,13.1257,0,0,0-13.125-13.125h-21.875a13.125,13.125,0,0,0,0,26.25h21.875A13.1256,13.1256,0,0,0,330.0458,183.8122Z" fill="currentColor"></path><path d="M263.0109,119.5971a13.0824,13.0824,0,0,0,9.28-3.8452l15.4663-15.4663a13.1236,13.1236,0,1,0-18.56-18.56L253.7312,97.1923a13.125,13.125,0,0,0,9.28,22.4048Z" fill="currentColor"></path><path d="M456.9379,401.6714a63.97,63.97,0,0,1-14.9963,7.2055c-19.6448,6.5283-41.8787,2.9566-58.1439-9.8523a68.9311,68.9311,0,0,1-10.835-10.8339c-12.8088-16.2663-16.3806-38.5-9.8523-58.1471a63.8444,63.8444,0,0,1,7.2077-14.9931,8.8036,8.8036,0,0,0-10.1172-13.3034,87.5188,87.5188,0,1,0,110.0372,110.04A8.8,8.8,0,0,0,456.9379,401.6714Z" fill="currentColor"></path></svg></a></li>
+            <li class="m-show-m"><a class="m-doc-search-icon" href="#search" onclick="return showSearch()" title="Search"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path"></use>
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="fixed__string_8h.html">&lt;rolly/types/fixed_string.h&gt;</a></div>
+          <div class="m-doc-template">template &lt;&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacerolly.html">rolly</a>::<wbr/></span>fixed_string&lt;0&gt; <span class="m-thin">struct</span>
+        </h1>
+        <p></p>
+        <nav class="m-block m-default poxy-toc" id="poxy-toc">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a3f3f9a9119be84f8ba69c4711c2d21a3">
+              using <a class="m-doc-self" href="#a3f3f9a9119be84f8ba69c4711c2d21a3">const_iterator</a> = <a class="m-doc" href="#acee63c753fc6e8b6a8831a8a7b2ac600">const_<wbr/>pointer</a>
+            </dt>
+            <dd></dd>
+            <dt id="acee63c753fc6e8b6a8831a8a7b2ac600">
+              using <a class="m-doc-self" href="#acee63c753fc6e8b6a8831a8a7b2ac600">const_pointer</a> = char const *
+            </dt>
+            <dd></dd>
+            <dt id="a0c7f550c297b2b6262e65b73ac63ccda">
+              using <a class="m-doc-self" href="#a0c7f550c297b2b6262e65b73ac63ccda">const_reference</a> = char const &amp;
+            </dt>
+            <dd></dd>
+            <dt id="a906f70be590a952b6f299fdfcd6c56de">
+              using <a class="m-doc-self" href="#a906f70be590a952b6f299fdfcd6c56de">const_reverse_iterator</a> = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/iterator/reverse_iterator.html" target="_blank">std::<wbr/>reverse_iterator</a>&lt;<a class="m-doc" href="#a3f3f9a9119be84f8ba69c4711c2d21a3">const_<wbr/>iterator</a>&gt;
+            </dt>
+            <dd></dd>
+            <dt id="a4e603df3916e0ae2c0cd04f947729768">
+              using <a class="m-doc-self" href="#a4e603df3916e0ae2c0cd04f947729768">value_type</a> = char
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="affeb2725e0b48a295b8e7390edb146fb">
+              static <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a> <a class="m-doc-self" href="#affeb2725e0b48a295b8e7390edb146fb">length</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd></dd>
+            <dt id="acb639fdcc45c3b152bc586db85f0d933">
+              static <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a> <a class="m-doc-self" href="#acb639fdcc45c3b152bc586db85f0d933">max_length</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="ad3dc24b7d9b0e8c58d23fb2becb6f048">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad3dc24b7d9b0e8c58d23fb2becb6f048">fixed_string</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a712625ca362bb64e03f68f5ddda4c865">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a712625ca362bb64e03f68f5ddda4c865">fixed_string</a>(</span><span class="m-doc-wrap">char const*) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a57f4b111f2f00f7624700473f6c44700">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a57f4b111f2f00f7624700473f6c44700">fixed_string</a>(</span><span class="m-doc-wrap"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/language/types#Character_types" target="_blank">wchar_t</a> const*) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="aa0a1642a8fc9ca4008da39b1465f3d37">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aa0a1642a8fc9ca4008da39b1465f3d37">fixed_string</a>(</span><span class="m-doc-wrap"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/language/types#Character_types" target="_blank">char16_t</a> const*) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ac6e49ae613f55b05d6124a6353cb2066">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ac6e49ae613f55b05d6124a6353cb2066">fixed_string</a>(</span><span class="m-doc-wrap"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/language/types#Character_types" target="_blank">char32_t</a> const*) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ac99e4dc38ba76ba0937aaeebd7863433">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ac99e4dc38ba76ba0937aaeebd7863433">fixed_string</a>(</span><span class="m-doc-wrap">char const*,
+              bool&amp; code) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a507c9fca26ebdfae2ec1c3ff2bcbc1ce">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a507c9fca26ebdfae2ec1c3ff2bcbc1ce">fixed_string</a>(</span><span class="m-doc-wrap"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/language/types#Character_types" target="_blank">wchar_t</a> const*,
+              bool&amp; code) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="aefce3103e3a2190fb56516f6e42370a7">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aefce3103e3a2190fb56516f6e42370a7">fixed_string</a>(</span><span class="m-doc-wrap"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/language/types#Character_types" target="_blank">char16_t</a> const*,
+              bool&amp; code) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a9a6029d3bb90acc1421ffabb843fcb4e">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a9a6029d3bb90acc1421ffabb843fcb4e">fixed_string</a>(</span><span class="m-doc-wrap"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/language/types#Character_types" target="_blank">char32_t</a> const*,
+              bool&amp; code) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="aab1981fbcc2d2f6de54cdef6b4348619">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aab1981fbcc2d2f6de54cdef6b4348619">fixed_string</a>(</span><span class="m-doc-wrap">const <a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/language/types#Character_types" target="_blank">char8_t</a>*) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="adc0cfa4a0563a0cdd03a784ac6f7ffa6">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#adc0cfa4a0563a0cdd03a784ac6f7ffa6">fixed_string</a>(</span><span class="m-doc-wrap"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/language/types#Character_types" target="_blank">char8_t</a> const*,
+              bool&amp; code) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a948bff561c7406a2a5d7fae1bcdc07bc">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a948bff561c7406a2a5d7fae1bcdc07bc">at</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a>) const →  <a class="m-doc" href="#a0c7f550c297b2b6262e65b73ac63ccda">const_<wbr/>reference</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a13b88655bb92b2b67cb0406ecd8f7f5e">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a13b88655bb92b2b67cb0406ecd8f7f5e">back</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a0c7f550c297b2b6262e65b73ac63ccda">const_<wbr/>reference</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a61a5dddc083551d9f7516326ab1c7dbe">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a61a5dddc083551d9f7516326ab1c7dbe">begin</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a3f3f9a9119be84f8ba69c4711c2d21a3">const_<wbr/>iterator</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ab2ffe1625a7372972c05e2f745cacd31">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ab2ffe1625a7372972c05e2f745cacd31">capacity</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a54ce0e8dc4008fa5b376e1328a30c3cb">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a54ce0e8dc4008fa5b376e1328a30c3cb">cbegin</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a3f3f9a9119be84f8ba69c4711c2d21a3">const_<wbr/>iterator</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a2741f0545e5830e10fc22755b66ae4e1">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a2741f0545e5830e10fc22755b66ae4e1">cend</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a3f3f9a9119be84f8ba69c4711c2d21a3">const_<wbr/>iterator</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ac4804d807efaa8a5eec55b2eb15fba95">
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/types/size_t" target="_blank">size_t</a> N2</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ac4804d807efaa8a5eec55b2eb15fba95">compare</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrolly_1_1fixed__string.html">fixed_<wbr/>string</a>&lt;N2&gt; const&amp; rhs) const →  int <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a396bb9186f37fde6807f65eab55f91ad">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a396bb9186f37fde6807f65eab55f91ad">crbegin</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a906f70be590a952b6f299fdfcd6c56de">const_<wbr/>reverse_<wbr/>iterator</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ac1e01ac7c5fa08b5080660d45278d4b6">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ac1e01ac7c5fa08b5080660d45278d4b6">crend</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a906f70be590a952b6f299fdfcd6c56de">const_<wbr/>reverse_<wbr/>iterator</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a56d9dd051c8d1027d1a3975e9d13641b">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a56d9dd051c8d1027d1a3975e9d13641b">data</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#acee63c753fc6e8b6a8831a8a7b2ac600">const_<wbr/>pointer</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ae70942ebc1d06f0782c0d0f37f6de9db">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ae70942ebc1d06f0782c0d0f37f6de9db">empty</a>(</span><span class="m-doc-wrap">) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ae794c5a9a63a84803c9320558ce1a512">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ae794c5a9a63a84803c9320558ce1a512">end</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a3f3f9a9119be84f8ba69c4711c2d21a3">const_<wbr/>iterator</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="af72663698e39aae6a1e537f4a716e2e2">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#af72663698e39aae6a1e537f4a716e2e2">front</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a0c7f550c297b2b6262e65b73ac63ccda">const_<wbr/>reference</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a968292e04b6a0f20318909e9720295c5">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a968292e04b6a0f20318909e9720295c5">hash</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/types/size_t" target="_blank">size_t</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ac41fede54e15a2dcec1c4a10660b73a5">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ac41fede54e15a2dcec1c4a10660b73a5">operator[]</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a> n) const →  <a class="m-doc" href="#a0c7f550c297b2b6262e65b73ac63ccda">const_<wbr/>reference</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a247ae33385e662b62d8a88dce066365f">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a247ae33385e662b62d8a88dce066365f">rbegin</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a906f70be590a952b6f299fdfcd6c56de">const_<wbr/>reverse_<wbr/>iterator</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a282759e184f7442993f1fecee9beeaba">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a282759e184f7442993f1fecee9beeaba">rend</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a906f70be590a952b6f299fdfcd6c56de">const_<wbr/>reverse_<wbr/>iterator</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a29a6940fa7a8f7392b004676fcc78e12">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a29a6940fa7a8f7392b004676fcc78e12">size</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a2ce6127308f4ac5aa54315f57c5652a7">
+              <span class="m-doc-wrap-bumper">void <a class="m-doc-self" href="#a2ce6127308f4ac5aa54315f57c5652a7">swap</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrolly_1_1fixed__string.html">fixed_<wbr/>string</a>&amp; other) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">…</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input autocomplete="off" autofocus="autofocus" disabled="disabled" id="search-input" name="q" placeholder="Loading …" spellcheck="false" type="search"/>
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div class="m-text m-dim m-text-center" id="search-help">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">↓</span>
+            / <span class="m-label m-dim">↑</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div class="m-text m-warning m-text-center" id="search-notfound">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script><script>install_mcss_search_shim();</script>
+<script async="async" src="searchdata-v2.js"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        
+<a class="poxy-external" href="https://github.com/whs31/rolly" target="_blank">GitHub</a>
+• <a class="poxy-external" href="https://github.com/whs31/rolly/issues" target="_blank">Report an issue</a>
+• <a class="poxy-external" href="https://github.com/whs31/rolly/blob/main/LICENSE" target="_blank">License</a>
+• <a download="" href="Rolly.tagfile.xml" target="_blank" type="text/xml">Doxygen tagfile</a>
+<br/><br/>
+Site generated using <a class="poxy-external" href="https://github.com/marzer/poxy/" target="_blank">Poxy</a>
+
+      </div>
+    </div>
+  </div>
+</nav></footer>
+
+
+</body></html>
