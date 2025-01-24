@@ -23,7 +23,371 @@ struct takes_init_and_variadic {
     , t(std::forward<Args>(args)...) {}
 };
 
+template <typename Iter>
+constexpr bool test_iterator(Iter begin, Iter end) {
+  if(begin == end || *begin++ != 't')
+    return false;
+  if(begin == end || *begin++ != 'e')
+    return false;
+  if(begin == end || *begin++ != 's')
+    return false;
+  if(begin == end || *begin++ != 't')
+    return false;
+  if(begin == end || *begin++ != ' ')
+    return false;
+  if(begin == end || *begin++ != 'i')
+    return false;
+  if(begin == end || *begin++ != 't')
+    return false;
+  if(begin == end || *begin++ != 'e')
+    return false;
+  if(begin == end || *begin++ != 'r')
+    return false;
+  if(begin == end || *begin++ != 'a')
+    return false;
+  if(begin == end || *begin++ != 't')
+    return false;
+  if(begin == end || *begin++ != 'o')
+    return false;
+  if(begin == end || *begin++ != 'r')
+    return false;
+  if(begin != end)
+    return false;
+  return true;
+}
+
+template <typename Iter>
+constexpr bool test_reverse_iterator(Iter begin, Iter end) {
+  if(begin == end || *begin++ != 'r')
+    return false;
+  if(begin == end || *begin++ != 'o')
+    return false;
+  if(begin == end || *begin++ != 't')
+    return false;
+  if(begin == end || *begin++ != 'a')
+    return false;
+  if(begin == end || *begin++ != 'r')
+    return false;
+  if(begin == end || *begin++ != 'e')
+    return false;
+  if(begin == end || *begin++ != 't')
+    return false;
+  if(begin == end || *begin++ != 'i')
+    return false;
+  if(begin == end || *begin++ != ' ')
+    return false;
+  if(begin == end || *begin++ != 't')
+    return false;
+  if(begin == end || *begin++ != 's')
+    return false;
+  if(begin == end || *begin++ != 'e')
+    return false;
+  if(begin == end || *begin++ != 't')
+    return false;
+  if(begin != end)
+    return false;
+  return true;
+}
+
 TEST_CASE("Types", "[types]") {
+  SECTION("Fixed string") {
+    SECTION("Constexpr") {
+      constexpr auto str_11 = make_fixed_string("test string\0\0\0");
+      constexpr auto str_11_max_length = str_11.capacity();
+      constexpr auto str_11_length = str_11.length;
+      constexpr auto str_11_size = str_11.size();
+      constexpr auto str_11_empty = str_11.empty();
+      REQUIRE(str_11_max_length == 14);
+      REQUIRE(str_11_length == 11);
+      REQUIRE(str_11_size == 11);
+      REQUIRE(not str_11_empty);
+
+      constexpr auto str_1 = make_fixed_string("a");
+      constexpr auto str_1_length = str_1.length;
+      constexpr auto str_1_size = str_1.size();
+      constexpr auto str_1_empty = str_1.empty();
+      REQUIRE(str_1_length == 1);
+      REQUIRE(str_1_size == 1);
+      REQUIRE(not str_1_empty);
+
+      constexpr auto str_2 = make_fixed_string(L"wide string");
+      constexpr auto str_2_max_length = str_2.capacity();
+      constexpr auto str_2_length = str_2.length;
+      constexpr auto str_2_size = str_2.size();
+      constexpr auto str_2_empty = str_2.empty();
+      REQUIRE(str_2_max_length == 11);
+      REQUIRE(str_2_length == 11);
+      REQUIRE(str_2_size == 11);
+      REQUIRE(not str_2_empty);
+      REQUIRE(str_2[0] == 'w');
+      REQUIRE(str_2[10] == 'g');
+
+      constexpr auto str_3 = make_fixed_string(u"utf16 string");
+      constexpr auto str_3_max_length = str_3.capacity();
+      constexpr auto str_3_length = str_3.length;
+      constexpr auto str_3_size = str_3.size();
+      constexpr auto str_3_empty = str_3.empty();
+      REQUIRE(str_3_max_length == 12);
+      REQUIRE(str_3_length == 12);
+      REQUIRE(str_3_size == 12);
+      REQUIRE(not str_3_empty);
+      REQUIRE(str_3[0] == 'u');
+      REQUIRE(str_3[11] == 'g');
+
+      constexpr auto str_4 = make_fixed_string(U"utf32 string");
+      constexpr auto str_4_max_length = str_4.capacity();
+      constexpr auto str_4_length = str_4.length;
+      constexpr auto str_4_size = str_4.size();
+      constexpr auto str_4_empty = str_4.empty();
+      REQUIRE(str_4_max_length == 12);
+      REQUIRE(str_4_length == 12);
+      REQUIRE(str_4_size == 12);
+      REQUIRE(not str_4_empty);
+      REQUIRE(str_4[0] == 'u');
+      REQUIRE(str_4[11] == 'g');
+
+      constexpr auto str_5 = make_fixed_string(u8"utf8 string");
+      constexpr auto str_5_max_length = str_5.capacity();
+      constexpr auto str_5_length = str_5.length;
+      constexpr auto str_5_size = str_5.size();
+      constexpr auto str_5_empty = str_5.empty();
+      REQUIRE(str_5_max_length == 11);
+      REQUIRE(str_5_length == 11);
+      REQUIRE(str_5_size == 11);
+      REQUIRE(not str_5_empty);
+      REQUIRE(str_5[0] == 'u');
+      REQUIRE(str_5[10] == 'g');
+    }
+
+    SECTION("Constexpr Ctor Empty") {
+      constexpr auto str_0 = make_fixed_string("");
+      constexpr auto str_0_length = str_0.length;
+      constexpr auto str_0_size = str_0.size();
+      constexpr auto str_0_empty = str_0.empty();
+      REQUIRE(str_0_length == 0);
+      REQUIRE(str_0_size == 0);
+      REQUIRE(str_0_empty);
+    }
+
+    SECTION("Constexpr Ctor Default") {
+      constexpr fixed_string str_default;
+      constexpr auto str_default_length = str_default.length;
+      constexpr auto str_default_size = str_default.size();
+      constexpr auto str_default_empty = str_default.empty();
+      REQUIRE(str_default_length == 0);
+      REQUIRE(str_default_size == 0);
+      REQUIRE(str_default_empty);
+    }
+
+    SECTION("Constexpr Copy Ctor") {
+      constexpr auto str = make_fixed_string("test string");
+      constexpr auto copy_str = str;
+
+      REQUIRE(copy_str.length == 11);
+      REQUIRE(copy_str.size() == 11);
+    }
+
+    SECTION("Constexpr Iterators") {
+      constexpr auto str = make_fixed_string("test iterator");
+
+      constexpr auto actual = test_iterator(str.begin(), str.end());
+      REQUIRE(actual);
+
+      constexpr auto actual_const = test_iterator(str.cbegin(), str.cend());
+      REQUIRE(actual_const);
+
+      constexpr auto actual_reverse = test_reverse_iterator(str.rbegin(), str.rend());
+      REQUIRE(actual_reverse);
+
+      constexpr auto actual_const_reverse = test_reverse_iterator(str.crbegin(), str.crend());
+      REQUIRE(actual_const_reverse);
+
+      constexpr auto actual_ptr = test_iterator(str.data(), str.data() + str.size());
+      REQUIRE(actual_ptr);
+    }
+
+    SECTION("Constexpr Empty Iterators") {
+      constexpr auto str = make_fixed_string("");
+
+      constexpr auto actual = str.begin() == str.end();
+      REQUIRE(actual);
+
+      constexpr auto actual_const = str.cbegin() == str.cend();
+      REQUIRE(actual_const);
+
+      constexpr auto actual_reverse = str.rbegin() == str.rend();
+      REQUIRE(actual_reverse);
+
+      constexpr auto actual_const_reverse = str.crbegin() == str.crend();
+      REQUIRE(actual_const_reverse);
+
+      constexpr auto actual_ptr = str.data() == str.data() + str.size();
+      REQUIRE(actual_ptr);
+    }
+
+    SECTION("Constexpr At") {
+      constexpr auto str = make_fixed_string("test");
+      constexpr auto at0 = str.at(0);
+      constexpr auto at1 = str.at(1);
+      constexpr auto at2 = str.at(2);
+      constexpr auto at3 = str.at(3);
+
+      REQUIRE(at0 == 't');
+      REQUIRE(at1 == 'e');
+      REQUIRE(at2 == 's');
+      REQUIRE(at3 == 't');
+
+      constexpr auto c0 = str[0];
+      constexpr auto c1 = str[1];
+      constexpr auto c2 = str[2];
+      constexpr auto c3 = str[3];
+
+      REQUIRE(c0 == 't');
+      REQUIRE(c1 == 'e');
+      REQUIRE(c2 == 's');
+      REQUIRE(c3 == 't');
+    }
+
+    SECTION("Constexpr Front Back") {
+      constexpr auto str_3 = make_fixed_string("str");
+      constexpr auto front_3 = str_3.front();
+      constexpr auto back_3 = str_3.back();
+      REQUIRE(front_3 == 's');
+      REQUIRE(back_3 == 'r');
+
+      constexpr auto str_1 = make_fixed_string("s");
+      constexpr auto front_1 = str_1.front();
+      constexpr auto back_1 = str_1.back();
+
+      REQUIRE(front_1 == 's');
+      REQUIRE(back_1 == 's');
+    }
+
+    SECTION("Constexpr Compare") {
+      constexpr auto str_1 = make_fixed_string("12345\0\0\0");
+      constexpr auto str_2 = make_fixed_string("12346");
+      constexpr auto str_3 = make_fixed_string("");
+      constexpr auto str_4 = make_fixed_string("\0\0\0");
+
+      constexpr auto b_1 = str_1 == str_2;
+      constexpr auto b_2 = str_1 != str_2;
+      constexpr auto b_3 = str_1 < str_2;
+      constexpr auto b_4 = str_1 > str_2;
+      constexpr auto b_5 = str_1 <= str_2;
+      constexpr auto b_6 = str_1 >= str_2;
+      REQUIRE_FALSE(b_1);
+      REQUIRE(b_2);
+      REQUIRE(b_3);
+      REQUIRE_FALSE(b_4);
+      REQUIRE(b_5);
+      REQUIRE_FALSE(b_6);
+
+      constexpr auto b_7 = str_2 == str_1;
+      constexpr auto b_8 = str_2 != str_1;
+      constexpr auto b_9 = str_2 < str_1;
+      constexpr auto b_10 = str_2 > str_1;
+      constexpr auto b_11 = str_2 <= str_1;
+      constexpr auto b_12 = str_2 >= str_1;
+      REQUIRE_FALSE(b_7);
+      REQUIRE(b_8);
+      REQUIRE_FALSE(b_9);
+      REQUIRE(b_10);
+      REQUIRE_FALSE(b_11);
+      REQUIRE(b_12);
+
+      constexpr auto b_13 = str_2 == str_3;
+      constexpr auto b_14 = str_2 != str_3;
+      constexpr auto b_15 = str_2 < str_3;
+      constexpr auto b_16 = str_2 > str_3;
+      constexpr auto b_17 = str_2 <= str_3;
+      constexpr auto b_18 = str_2 >= str_3;
+      REQUIRE_FALSE(b_13);
+      REQUIRE(b_14);
+      REQUIRE_FALSE(b_15);
+      REQUIRE(b_16);
+      REQUIRE_FALSE(b_17);
+      REQUIRE(b_18);
+
+      constexpr auto b_19 = str_3 == str_2;
+      constexpr auto b_20 = str_3 != str_2;
+      constexpr auto b_21 = str_3 < str_2;
+      constexpr auto b_22 = str_3 > str_2;
+      constexpr auto b_23 = str_3 <= str_2;
+      constexpr auto b_24 = str_3 >= str_2;
+      REQUIRE_FALSE(b_19);
+      REQUIRE(b_20);
+      REQUIRE(b_21);
+      REQUIRE_FALSE(b_22);
+      REQUIRE(b_23);
+      REQUIRE_FALSE(b_24);
+
+      constexpr auto b_25 = str_3 == str_3;  // NOLINT(misc-redundant-expression)
+      constexpr auto b_26 = str_3 != str_3;  // NOLINT(misc-redundant-expression)
+      constexpr auto b_27 = str_3 < str_3;   // NOLINT(misc-redundant-expression)
+      constexpr auto b_28 = str_3 > str_3;   // NOLINT(misc-redundant-expression)
+      constexpr auto b_29 = str_3 <= str_3;  // NOLINT(misc-redundant-expression)
+      constexpr auto b_30 = str_3 >= str_3;  // NOLINT(misc-redundant-expression)
+      REQUIRE(b_25);
+      REQUIRE_FALSE(b_26);
+      REQUIRE_FALSE(b_27);
+      REQUIRE_FALSE(b_28);
+      REQUIRE(b_29);
+      REQUIRE(b_30);
+
+      constexpr auto b_31 = str_2 == str_2;  // NOLINT(misc-redundant-expression)
+      constexpr auto b_32 = str_2 != str_2;  // NOLINT(misc-redundant-expression)
+      constexpr auto b_33 = str_2 < str_2;   // NOLINT(misc-redundant-expression)
+      constexpr auto b_34 = str_2 > str_2;   // NOLINT(misc-redundant-expression)
+      constexpr auto b_35 = str_2 <= str_2;  // NOLINT(misc-redundant-expression)
+      constexpr auto b_36 = str_2 >= str_2;  // NOLINT(misc-redundant-expression)
+      REQUIRE(b_31);
+      REQUIRE_FALSE(b_32);
+      REQUIRE_FALSE(b_33);
+      REQUIRE_FALSE(b_34);
+      REQUIRE(b_35);
+      REQUIRE(b_36);
+
+      constexpr auto b_37 = str_3 == str_4;
+      constexpr auto b_38 = str_3 != str_4;
+      constexpr auto b_39 = str_3 < str_4;
+      constexpr auto b_40 = str_3 > str_4;
+      constexpr auto b_41 = str_3 <= str_4;
+      constexpr auto b_42 = str_3 >= str_4;
+      REQUIRE(b_37);
+      REQUIRE_FALSE(b_38);
+      REQUIRE_FALSE(b_39);
+      REQUIRE_FALSE(b_40);
+      REQUIRE(b_41);
+      REQUIRE(b_42);
+
+      constexpr auto b_43 = str_4 == str_3;
+      constexpr auto b_44 = str_4 != str_3;
+      constexpr auto b_45 = str_4 < str_3;
+      constexpr auto b_46 = str_4 > str_3;
+      constexpr auto b_47 = str_4 <= str_3;
+      constexpr auto b_48 = str_4 >= str_3;
+      REQUIRE(b_43);
+      REQUIRE_FALSE(b_44);
+      REQUIRE_FALSE(b_45);
+      REQUIRE_FALSE(b_46);
+      REQUIRE(b_47);
+      REQUIRE(b_48);
+
+      constexpr auto b_49 = str_4 == str_4;  // NOLINT(misc-redundant-expression)
+      constexpr auto b_50 = str_4 != str_4;  // NOLINT(misc-redundant-expression)
+      constexpr auto b_51 = str_4 < str_4;   // NOLINT(misc-redundant-expression)
+      constexpr auto b_52 = str_4 > str_4;   // NOLINT(misc-redundant-expression)
+      constexpr auto b_53 = str_4 <= str_4;  // NOLINT(misc-redundant-expression)
+      constexpr auto b_54 = str_4 >= str_4;  // NOLINT(misc-redundant-expression)
+      REQUIRE(b_49);
+      REQUIRE_FALSE(b_50);
+      REQUIRE_FALSE(b_51);
+      REQUIRE_FALSE(b_52);
+      REQUIRE(b_53);
+      REQUIRE(b_54);
+    }
+  }  // Fixed string
+
   SECTION("U128") {
     SECTION("Constexpr") {
       constexpr u128 value1 = {1, 0};
