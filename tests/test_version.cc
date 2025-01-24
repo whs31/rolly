@@ -1,6 +1,5 @@
-#include <rolly/global/version.h>
+#include <rolly/rolly.h>
 
-#include <array>
 #include <catch2/catch_all.hpp>
 
 using namespace rolly;
