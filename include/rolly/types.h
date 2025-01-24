@@ -7,5 +7,6 @@
 #include "types/guid.h"
 #include "types/optional.h"
 #include "types/stdint.h"
+#include "types/u128.h"
 #include "types/result.h"
 #include "types/velocity.h"
