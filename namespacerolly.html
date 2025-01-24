@@ -102,8 +102,6 @@
             <dd>Runtime type information-related functions and classes.</dd>
             <dt>namespace <a class="m-doc" href="namespacerolly_1_1serialization.html">serialization</a></dt>
             <dd>Functions and types related to serialization and deserialization.</dd>
-            <dt>namespace <a class="m-doc" href="namespacerolly_1_1trait.html">trait</a></dt>
-            <dd></dd>
           </dl>
         </section>
         <section id="nested-classes">
@@ -136,14 +134,6 @@
               class <a class="m-doc" href="classrolly_1_1configuration__file.html">configuration_file</a>
             </dt>
             <dd>Configuration file that can be loaded and saved.</dd>
-            <dt>
-              class <a class="m-doc" href="classrolly_1_1connection.html">connection</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              class <a class="m-doc" href="classrolly_1_1connection__blocker.html">connection_blocker</a>
-            </dt>
-            <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename... Args</span></span>&gt;</div>
               struct <a class="m-doc" href="structrolly_1_1const__overload__t.html">const_overload_t</a>
@@ -214,11 +204,6 @@
             </dt>
             <dd>A tag type to represent an empty optional.</dd>
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a></span></span>&gt;</div>
-              struct <a class="m-doc" href="structrolly_1_1observer__base.html">observer_base</a>
-            </dt>
-            <dd></dd>
-            <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
               class <a class="m-doc" href="classrolly_1_1observer__ptr.html">observer_ptr</a>
             </dt>
@@ -268,19 +253,10 @@
             </dt>
             <dd></dd>
             <dt>
-              class <a class="m-doc" href="classrolly_1_1scoped__connection.html">scoped_connection</a>
-            </dt>
-            <dd></dd>
-            <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T = <a class="m-doc" href="structrolly_1_1serialization_1_1format_1_1generic.html">serialization::<wbr/>format::<wbr/>generic</a></span></span>&gt;</div>
               class <a class="m-doc" href="classrolly_1_1serialization__error.html">serialization_error</a>
             </dt>
             <dd>Serialization error exception class.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a></span>, <span class="m-doc-template-param">typename... T</span></span>&gt;</div>
-              class <a class="m-doc" href="classrolly_1_1signal__base.html">signal_base</a>
-            </dt>
-            <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
               struct <a class="m-doc" href="structrolly_1_1singleton.html">singleton</a>
@@ -371,10 +347,6 @@
             </dt>
             <dd>Float with 64-bit precision.</dd>
             <dt>
-              using <a class="m-doc" href="#a3338e392e2aa93d5bcd0ae19b5499924">group_id</a> = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/integer.html" target="_blank">std::<wbr/>int32_t</a>
-            </dt>
-            <dd></dd>
-            <dt>
               using <a class="m-doc" href="#a282a33dcfe4296a56870438932f67de7">i16</a> = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/integer.html" target="_blank">std::<wbr/>int16_t</a>
             </dt>
             <dd>16-bit signed integer</dd>
@@ -403,14 +375,6 @@
             </dt>
             <dd></dd>
             <dt>
-              using <a class="m-doc" href="#aef8b740f7fad5d5135817a2f620faca1">observer</a> = <a class="m-doc" href="structrolly_1_1observer__base.html">observer_<wbr/>base</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/thread/mutex.html" target="_blank">std::<wbr/>mutex</a>&gt;
-            </dt>
-            <dd></dd>
-            <dt>
-              using <a class="m-doc" href="#a04e2f75d181174c558d85e5d3675b1f2">observer_st</a> = <a class="m-doc" href="structrolly_1_1observer__base.html">observer_<wbr/>base</a>&lt;detail::null_mutex&gt;
-            </dt>
-            <dd></dd>
-            <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
               using <a class="m-doc" href="#a9528c33169bb2f137c39a920f54b96ee">owner</a> = T
             </dt>
@@ -433,16 +397,6 @@
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T = void</span></span>&gt;</div>
               using <a class="m-doc" href="#a0255dc22318d076cc83f8bf30c2e80e5">result</a> = expected&lt;T, <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a>&gt;
-            </dt>
-            <dd></dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename... T</span></span>&gt;</div>
-              using <a class="m-doc" href="#aab0f25ddd545cd1fa7ea4b51631f40ee">signal</a> = <a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/thread/mutex.html" target="_blank">std::<wbr/>mutex</a>, T...&gt;
-            </dt>
-            <dd></dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename... T</span></span>&gt;</div>
-              using <a class="m-doc" href="#a24e803916439bb38debb80d5a2cfd6ff">signal_st</a> = <a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;detail::null_mutex, T...&gt;
             </dt>
             <dd></dd>
             <dt>
@@ -526,20 +480,6 @@
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly_1_1comparators.html#a073e020abb8d49be9a4ed3f6e05d31f0">compare</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; lhs,
               <a class="m-doc" href="structrolly_1_1version.html">version</a> const&amp; rhs,
               <a class="m-doc" href="namespacerolly_1_1comparators.html#a7a097404f84c7e386a1d37316c3c4f93">comparators_<wbr/>option</a> option = comparators_option::include_prerelease) →  int <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a></span>, <span class="m-doc-template-param">typename Arg</span>, <span class="m-doc-template-param">typename... T</span>, <span class="m-doc-template-param">typename... Args</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a4fcddfd69e955ff7ba38576d89ea888f">connect</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>, T...&gt;&amp; sig,
-              Arg&amp;&amp; arg,
-              Args &amp;&amp; ... args) →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;! <a class="m-doc" href="namespacerolly_1_1trait.html#a47ed658b30fd9549fae2785b74aa9a04">trait::<wbr/>is_signal_v</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/decay.html" target="_blank">std::<wbr/>decay_t</a>&lt;Arg&gt;&gt;, <a class="m-doc" href="classrolly_1_1connection.html">connection</a>&gt;</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>1</span>, <span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>2</span>, <span class="m-doc-template-param">typename... T1</span>, <span class="m-doc-template-param">typename... T2</span>, <span class="m-doc-template-param">typename... Args</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#af871d7fa79920cade703ca2081734d09">connect</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>1, T1...&gt;&amp; sig1,
-              <a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>2, T2...&gt;&amp; sig2,
-              Args &amp;&amp; ... args) →  <a class="m-doc" href="classrolly_1_1connection.html">connection</a></span>
             </dt>
             <dd></dd>
             <dt>
@@ -1440,13 +1380,6 @@
             </h3>
             <p>Float with 64-bit precision.</p>
           </div></section>
-          <section class="m-doc-details" id="a3338e392e2aa93d5bcd0ae19b5499924"><div>
-            <h3>
-              using <span class="m-doc-details-prefix">rolly::<wbr/></span><a class="m-doc-self" href="#a3338e392e2aa93d5bcd0ae19b5499924">group_id</a> = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/integer.html" target="_blank">std::<wbr/>int32_t</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
-            </h3>
-<p>A group_id is used to identify a group of slots</p>
-          </div></section>
           <section class="m-doc-details" id="a282a33dcfe4296a56870438932f67de7"><div>
             <h3>
               using <span class="m-doc-details-prefix">rolly::<wbr/></span><a class="m-doc-self" href="#a282a33dcfe4296a56870438932f67de7">i16</a> = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/integer.html" target="_blank">std::<wbr/>int16_t</a>
@@ -1495,20 +1428,6 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rolly/bit.h&gt;</a></div>
             </h3>
 <aside class="m-note m-default"><h4>Version</h4><p>2.1.32</p></aside>
-          </div></section>
-          <section class="m-doc-details" id="aef8b740f7fad5d5135817a2f620faca1"><div>
-            <h3>
-              using <span class="m-doc-details-prefix">rolly::<wbr/></span><a class="m-doc-self" href="#aef8b740f7fad5d5135817a2f620faca1">observer</a> = <a class="m-doc" href="structrolly_1_1observer__base.html">observer_<wbr/>base</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/thread/mutex.html" target="_blank">std::<wbr/>mutex</a>&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
-            </h3>
-<p>Specialization of <a class="m-doc" href="structrolly_1_1observer__base.html">observer_<wbr/>base</a> to be used in multi-threaded contexts.</p>
-          </div></section>
-          <section class="m-doc-details" id="a04e2f75d181174c558d85e5d3675b1f2"><div>
-            <h3>
-              using <span class="m-doc-details-prefix">rolly::<wbr/></span><a class="m-doc-self" href="#a04e2f75d181174c558d85e5d3675b1f2">observer_st</a> = <a class="m-doc" href="structrolly_1_1observer__base.html">observer_<wbr/>base</a>&lt;detail::null_mutex&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
-            </h3>
-<p>Specialization of <a class="m-doc" href="structrolly_1_1observer__base.html">observer_<wbr/>base</a> to be used in single threaded contexts.</p>
           </div></section>
           <section class="m-doc-details" id="a9528c33169bb2f137c39a920f54b96ee"><div>
             <h3>
@@ -1602,26 +1521,6 @@
               using <span class="m-doc-details-prefix">rolly::<wbr/></span><a class="m-doc-self" href="#a0255dc22318d076cc83f8bf30c2e80e5">result</a> = expected&lt;T, <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a>&gt;
             </h3>
             <p></p>
-          </div></section>
-          <section class="m-doc-details" id="aab0f25ddd545cd1fa7ea4b51631f40ee"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
-              <div class="m-doc-template">
-                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename... T</span></span>&gt;
-              </div>
-              using <span class="m-doc-details-prefix">rolly::<wbr/></span><a class="m-doc-self" href="#aab0f25ddd545cd1fa7ea4b51631f40ee">signal</a> = <a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/thread/mutex.html" target="_blank">std::<wbr/>mutex</a>, T...&gt;
-            </h3>
-<p>Specialization of <a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a> to be used in multi-threaded contexts. Slot connection, disconnection and signal emission are thread-safe.</p><p>Recursive signal emission and emission cycles are supported too.</p>
-          </div></section>
-          <section class="m-doc-details" id="a24e803916439bb38debb80d5a2cfd6ff"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
-              <div class="m-doc-template">
-                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename... T</span></span>&gt;
-              </div>
-              using <span class="m-doc-details-prefix">rolly::<wbr/></span><a class="m-doc-self" href="#a24e803916439bb38debb80d5a2cfd6ff">signal_st</a> = <a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;detail::null_mutex, T...&gt;
-            </h3>
-<p>Specialization of <a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a> to be used in single threaded contexts. Slot connection, disconnection and signal emission are not thread-safe. The performance improvement over the thread-safe variant is not impressive, so this is not very useful.</p>
           </div></section>
           <section class="m-doc-details" id="a6fdd2b8f43caf1f38cc00441668c8731"><div>
             <h3>
@@ -1924,30 +1823,6 @@
               </tfoot>
             </table>
 <p>This is the backport of <code>std::byteswap</code>.</p><aside class="m-note m-default"><h4>Version</h4><p>2.1.32</p></aside>
-          </div></section>
-          <section class="m-doc-details" id="a4fcddfd69e955ff7ba38576d89ea888f"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
-              <div class="m-doc-template">
-                template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a></span>, <span class="m-doc-template-param">typename Arg</span>, <span class="m-doc-template-param">typename... T</span>, <span class="m-doc-template-param">typename... Args</span></span>&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;! <a class="m-doc" href="namespacerolly_1_1trait.html#a47ed658b30fd9549fae2785b74aa9a04">trait::<wbr/>is_signal_v</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/decay.html" target="_blank">std::<wbr/>decay_t</a>&lt;Arg&gt;&gt;, <a class="m-doc" href="classrolly_1_1connection.html">connection</a>&gt; <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a4fcddfd69e955ff7ba38576d89ea888f">connect</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>, T...&gt;&amp; sig,
-              Arg&amp;&amp; arg,
-              Args &amp;&amp; ... args)</span></span>
-            </h3>
-<p>Freestanding connect function that defers to the <code><a class="m-doc" href="classrolly_1_1signal__base.html#ab451da10341e83e0d851500d768779cf">signal_base::<wbr/>connect</a></code> member.</p>
-          </div></section>
-          <section class="m-doc-details" id="af871d7fa79920cade703ca2081734d09"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="signals_8h.html">&lt;rolly/functional/signals.h&gt;</a></div>
-              <div class="m-doc-template">
-                template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>1</span>, <span class="m-doc-template-param">typename <a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>2</span>, <span class="m-doc-template-param">typename... T1</span>, <span class="m-doc-template-param">typename... T2</span>, <span class="m-doc-template-param">typename... Args</span></span>&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrolly_1_1connection.html">connection</a> <span class="m-doc-details-prefix">rolly::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#af871d7fa79920cade703ca2081734d09">connect</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>1, T1...&gt;&amp; sig1,
-              <a class="m-doc" href="classrolly_1_1signal__base.html">signal_<wbr/>base</a>&lt;<a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a>2, T2...&gt;&amp; sig2,
-              Args &amp;&amp; ... args)</span></span>
-            </h3>
-<p>Freestanding connect function that chains one signal to another.</p>
           </div></section>
           <section class="m-doc-details" id="a36212a27eae72633e6e688b36c625cac"><div>
             <h3>

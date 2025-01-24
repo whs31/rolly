@@ -181,7 +181,6 @@
     <includes id="lazy_8h" name="lazy.h" local="yes" import="no" module="no" objc="no">functional/lazy.h</includes>
     <includes id="overload_8h" name="overload.h" local="yes" import="no" module="no" objc="no">functional/overload.h</includes>
     <includes id="scope__guard_8h" name="scope_guard.h" local="yes" import="no" module="no" objc="no">functional/scope_guard.h</includes>
-    <includes id="signals_8h" name="signals.h" local="yes" import="no" module="no" objc="no">functional/signals.h</includes>
   </compound>
   <compound kind="file">
     <name>lazy.h</name>
@@ -209,20 +208,6 @@
     <class kind="class">rolly::detail::scope_guard&lt; Callback &gt;</class>
     <namespace>rolly</namespace>
     <namespace>rolly::detail</namespace>
-  </compound>
-  <compound kind="file">
-    <name>signals.h</name>
-    <path>rolly/functional/</path>
-    <filename>signals_8h.html</filename>
-    <includes id="definitions_8h" name="definitions.h" local="yes" import="no" module="no" objc="no">../global/definitions.h</includes>
-    <class kind="struct">rolly::trait::typelist</class>
-    <class kind="class">rolly::connection_blocker</class>
-    <class kind="class">rolly::connection</class>
-    <class kind="class">rolly::scoped_connection</class>
-    <class kind="struct">rolly::observer_base</class>
-    <class kind="class">rolly::signal_base</class>
-    <namespace>rolly</namespace>
-    <namespace>rolly::trait</namespace>
   </compound>
   <compound kind="file">
     <name>global.h</name>
@@ -2558,175 +2543,6 @@
       <arglist></arglist>
     </member>
   </compound>
-  <compound kind="class">
-    <name>rolly::connection</name>
-    <filename>classrolly_1_1connection.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>connection</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a7a7b17d45f461e2f4872ef7a94365d09</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~connection</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a2d16f9329d48641b6482013a4ffe95e2</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>connection</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a380613d56a7f687d5babda0ab40d74c7</anchor>
-      <arglist>(connection const &amp;) noexcept=default</arglist>
-    </member>
-    <member kind="function">
-      <type>connection &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>ad91152f0fcb75da581bb37f5bd6e1d48</anchor>
-      <arglist>(connection const &amp;) noexcept=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>connection</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a063b7c9a4fa4abd7b2180fe0336dfc62</anchor>
-      <arglist>(connection &amp;&amp;) noexcept=default</arglist>
-    </member>
-    <member kind="function">
-      <type>connection &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>af50ab55d30aa7e20aea4a282b8094d67</anchor>
-      <arglist>(connection &amp;&amp;) noexcept=default</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>valid</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a88d7e2c149b999d7bf0dbafc1c20bbde</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>connected</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>ae020ed5787aec2a461271b588e4aebf7</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>disconnect</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>aacb1457597426fac21386103b8674f0a</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>blocked</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a685735a9fadd1db1b522d0029f6d058a</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>block</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a9e5485b5eaa26a8d0fcb735bed97cced</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>unblock</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a2f249c35b33d8104cbea471495682fe2</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>connection_blocker</type>
-      <name>blocker</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a0ddb19e3092de7365b1e7cadf96bffc0</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type></type>
-      <name>connection</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a7834fab88471267a15007d744e6d1559</anchor>
-      <arglist>(std::weak_ptr&lt; detail::slot_state &gt; s) noexcept</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::weak_ptr&lt; detail::slot_state &gt;</type>
-      <name>m_state</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a54f540b52588fe88874423a1e3c21a24</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="friend" protection="protected">
-      <type>friend class</type>
-      <name>signal_base</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>adbb76e465a87aaefbf548116710130bf</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>rolly::connection_blocker</name>
-    <filename>classrolly_1_1connection__blocker.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>connection_blocker</name>
-      <anchorfile>classrolly_1_1connection__blocker.html</anchorfile>
-      <anchor>aec234482d3d28916bdcee15d01431f6a</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~connection_blocker</name>
-      <anchorfile>classrolly_1_1connection__blocker.html</anchorfile>
-      <anchor>a83c1fd81e8b165264269424042a35add</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>connection_blocker</name>
-      <anchorfile>classrolly_1_1connection__blocker.html</anchorfile>
-      <anchor>a7f597406783eeb608c88a8833dbb5227</anchor>
-      <arglist>(connection_blocker const &amp;)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type>connection_blocker &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1connection__blocker.html</anchorfile>
-      <anchor>a267b29e845d5b32b0e9108f4c22dbf76</anchor>
-      <arglist>(connection_blocker const &amp;)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>connection_blocker</name>
-      <anchorfile>classrolly_1_1connection__blocker.html</anchorfile>
-      <anchor>ad9ddd0cb6da6eab41cd7e41eb0e9a956</anchor>
-      <arglist>(connection_blocker &amp;&amp;o) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>connection_blocker &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1connection__blocker.html</anchorfile>
-      <anchor>a397c4b08a6d45cd0ce2a712c0731273a</anchor>
-      <arglist>(connection_blocker &amp;&amp;o) noexcept</arglist>
-    </member>
-    <member kind="friend" protection="private">
-      <type>friend class</type>
-      <name>connection</name>
-      <anchorfile>classrolly_1_1connection__blocker.html</anchorfile>
-      <anchor>adb115488bb4890f7fc705ee527ad71e0</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
   <compound kind="struct">
     <name>rolly::const_overload_t</name>
     <filename>structrolly_1_1const__overload__t.html</filename>
@@ -3904,32 +3720,6 @@
       <anchorfile>structrolly_1_1nullopt__t.html</anchorfile>
       <anchor>aa59f6caeb935135dbd2557e6e02723ea</anchor>
       <arglist>(do_not_use, do_not_use) noexcept</arglist>
-    </member>
-  </compound>
-  <compound kind="struct">
-    <name>rolly::observer_base</name>
-    <filename>structrolly_1_1observer__base.html</filename>
-    <templarg>typename Lockable</templarg>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~observer_base</name>
-      <anchorfile>structrolly_1_1observer__base.html</anchorfile>
-      <anchor>a045da4d2e0df92d8b4de84356fb32c28</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>disconnect_all</name>
-      <anchorfile>structrolly_1_1observer__base.html</anchorfile>
-      <anchor>abf8d20e17fdb26f6d6241e64c3360140</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="friend" protection="private">
-      <type>friend class</type>
-      <name>signal_base</name>
-      <anchorfile>structrolly_1_1observer__base.html</anchorfile>
-      <anchor>adbb76e465a87aaefbf548116710130bf</anchor>
-      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -6122,130 +5912,6 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>rolly::scoped_connection</name>
-    <filename>classrolly_1_1scoped__connection.html</filename>
-    <base>rolly::connection</base>
-    <member kind="function">
-      <type></type>
-      <name>scoped_connection</name>
-      <anchorfile>classrolly_1_1scoped__connection.html</anchorfile>
-      <anchor>a4ec297858537b0ce3d8a483a16659935</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~scoped_connection</name>
-      <anchorfile>classrolly_1_1scoped__connection.html</anchorfile>
-      <anchor>afc51ab537c98f989c93648363b652eec</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>scoped_connection</name>
-      <anchorfile>classrolly_1_1scoped__connection.html</anchorfile>
-      <anchor>a13e04f455453af4c476e77b64581eb0c</anchor>
-      <arglist>(connection const &amp;c) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>scoped_connection</name>
-      <anchorfile>classrolly_1_1scoped__connection.html</anchorfile>
-      <anchor>aaf8e826fa8cb2bb570e9dd168c480f61</anchor>
-      <arglist>(connection &amp;&amp;c) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>scoped_connection</name>
-      <anchorfile>classrolly_1_1scoped__connection.html</anchorfile>
-      <anchor>acc8c3772cbbd14a8244da63852cd4185</anchor>
-      <arglist>(scoped_connection const &amp;) noexcept=delete</arglist>
-    </member>
-    <member kind="function">
-      <type>scoped_connection &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1scoped__connection.html</anchorfile>
-      <anchor>afc938f9ec3cfc21ffd4c1f1582b3cec0</anchor>
-      <arglist>(scoped_connection const &amp;) noexcept=delete</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>scoped_connection</name>
-      <anchorfile>classrolly_1_1scoped__connection.html</anchorfile>
-      <anchor>a504d9b87e8b109b40826da9ae8a2f045</anchor>
-      <arglist>(scoped_connection &amp;&amp;o) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>scoped_connection &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1scoped__connection.html</anchorfile>
-      <anchor>ad7de8fadf1e7e5d1bc9acbf678507904</anchor>
-      <arglist>(scoped_connection &amp;&amp;o) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>valid</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a88d7e2c149b999d7bf0dbafc1c20bbde</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>connected</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>ae020ed5787aec2a461271b588e4aebf7</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>disconnect</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>aacb1457597426fac21386103b8674f0a</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>blocked</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a685735a9fadd1db1b522d0029f6d058a</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>block</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a9e5485b5eaa26a8d0fcb735bed97cced</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>unblock</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a2f249c35b33d8104cbea471495682fe2</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>connection_blocker</type>
-      <name>blocker</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a0ddb19e3092de7365b1e7cadf96bffc0</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::weak_ptr&lt; detail::slot_state &gt;</type>
-      <name>m_state</name>
-      <anchorfile>classrolly_1_1connection.html</anchorfile>
-      <anchor>a54f540b52588fe88874423a1e3c21a24</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="friend" protection="private">
-      <type>friend class</type>
-      <name>signal_base</name>
-      <anchorfile>classrolly_1_1scoped__connection.html</anchorfile>
-      <anchor>adbb76e465a87aaefbf548116710130bf</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>rolly::serialization_error</name>
     <filename>classrolly_1_1serialization__error.html</filename>
     <templarg>typename T</templarg>
@@ -6263,201 +5929,6 @@
       <anchorfile>classrolly_1_1serialization__error.html</anchorfile>
       <anchor>a9aef72edef6f7b6ea9f6d8018ecfc964</anchor>
       <arglist>(std::string_view message)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>rolly::signal_base</name>
-    <filename>classrolly_1_1signal__base.html</filename>
-    <templarg>typename Lockable</templarg>
-    <templarg>typename... T</templarg>
-    <member kind="typedef">
-      <type>trait::typelist&lt; T... &gt;</type>
-      <name>arg_list</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>ad4f2e53ec161b99d23f150e823af00e5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>trait::typelist&lt; connection &amp;, T... &gt;</type>
-      <name>ext_arg_list</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a0bd2dfb0245f6dbf747eb537cc9f9c8e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>signal_base</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>adcb8428eddd884cad81a66b43082d018</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~signal_base</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>ab62d8a6e24873e62c99a34f333795c29</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>signal_base</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>abe1459875753a5221777896c1a2a770b</anchor>
-      <arglist>(signal_base const &amp;)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type>signal_base &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a90a32938ef89a8ec9a068a91e630548f</anchor>
-      <arglist>(signal_base const &amp;)=delete</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>signal_base</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a8a4c74e27a98e29ef1ce07823d4ea36c</anchor>
-      <arglist>(signal_base &amp;&amp;o)</arglist>
-    </member>
-    <member kind="function">
-      <type>signal_base &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a42cec132305dbf513fc930fd66a08609</anchor>
-      <arglist>(signal_base &amp;&amp;o)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>operator()</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a32ff7e5d19106767eade265c204ae82d</anchor>
-      <arglist>(U &amp;&amp;... a) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt; trait::is_callable_v&lt; arg_list, Callable &gt;, connection &gt;</type>
-      <name>connect</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>ab451da10341e83e0d851500d768779cf</anchor>
-      <arglist>(Callable &amp;&amp;c, group_id gid=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt; trait::is_callable_v&lt; ext_arg_list, Callable &gt;, connection &gt;</type>
-      <name>connect_extended</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a01ba461c8f258baf02d70ec87b641126</anchor>
-      <arglist>(Callable &amp;&amp;c, group_id gid=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt; trait::is_callable_v&lt; arg_list, Pmf, Ptr &gt; &amp;&amp;trait::is_observer_v&lt; Ptr &gt;, connection &gt;</type>
-      <name>connect</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>aa2ba5c645fc203818eda4e0221cfb55a</anchor>
-      <arglist>(Pmf &amp;&amp;pmf, Ptr &amp;&amp;ptr, group_id gid=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt; trait::is_callable_v&lt; arg_list, Pmf, Ptr &gt; &amp;&amp;! trait::is_observer_v&lt; Ptr &gt; &amp;&amp;! trait::is_weak_ptr_compatible_v&lt; Ptr &gt;, connection &gt;</type>
-      <name>connect</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>ae098c7e3ae39385cb492b092600cea46</anchor>
-      <arglist>(Pmf &amp;&amp;pmf, Ptr &amp;&amp;ptr, group_id gid=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt; trait::is_callable_v&lt; ext_arg_list, Pmf, Ptr &gt; &amp;&amp;! trait::is_weak_ptr_compatible_v&lt; Ptr &gt;, connection &gt;</type>
-      <name>connect_extended</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>abf77a63aec91065293a7ff787ca94033</anchor>
-      <arglist>(Pmf &amp;&amp;pmf, Ptr &amp;&amp;ptr, group_id gid=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt; ! trait::is_callable_v&lt; arg_list, Pmf &gt; &amp;&amp;trait::is_weak_ptr_compatible_v&lt; Ptr &gt;, connection &gt;</type>
-      <name>connect</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a56131082628c24b3460164a457fefcfe</anchor>
-      <arglist>(Pmf &amp;&amp;pmf, Ptr &amp;&amp;ptr, group_id gid=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt; trait::is_callable_v&lt; arg_list, Callable &gt; &amp;&amp;trait::is_weak_ptr_compatible_v&lt; Trackable &gt;, connection &gt;</type>
-      <name>connect</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a797b04c9317e9c062cc0037b11b82c16</anchor>
-      <arglist>(Callable &amp;&amp;c, Trackable &amp;&amp;ptr, group_id gid=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>scoped_connection</type>
-      <name>connect_scoped</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>ab9423888437b1c2114b6606db1223d56</anchor>
-      <arglist>(CallArgs &amp;&amp;... args)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt;(trait::is_callable_v&lt; arg_list, Callable &gt;||trait::is_callable_v&lt; ext_arg_list, Callable &gt;||trait::is_pmf_v&lt; Callable &gt;) &amp;&amp;detail::function_traits&lt; Callable &gt;::is_disconnectable, size_t &gt;</type>
-      <name>disconnect</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a457f8d5d42e874565a55175666b70631</anchor>
-      <arglist>(Callable const &amp;c)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt; ! trait::is_callable_v&lt; arg_list, Obj &gt; &amp;&amp;! trait::is_callable_v&lt; ext_arg_list, Obj &gt; &amp;&amp;! trait::is_pmf_v&lt; Obj &gt;, size_t &gt;</type>
-      <name>disconnect</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a5a561fe78ebd1364f917425a7667be90</anchor>
-      <arglist>(Obj const &amp;obj)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>disconnect</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>abf2a33a89a71b6bbe3f6bad25a6938ce</anchor>
-      <arglist>(Callable const &amp;c, Obj const &amp;obj)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>disconnect</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a11642c0472f9b0afaff3999f4779bd3c</anchor>
-      <arglist>(group_id gid)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>disconnect_all</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a316d8de9204d0fc0ef97bbfe2e9033f8</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>block</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>ad2d83db26b77e7f789af3fefb76a5982</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>unblock</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a1c26c380e2d54f4f1a1c8189c29bdd96</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>blocked</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a762cff2b3c9bc29b334ead150259dd8c</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>slot_count</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a0632808c2af9cad69fe41481835522ab</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>clean</name>
-      <anchorfile>classrolly_1_1signal__base.html</anchorfile>
-      <anchor>a3400e5aa2f0cd9ab5232ed400d068368</anchor>
-      <arglist>(detail::slot_state *state) override</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -7073,11 +6544,6 @@
   <compound kind="struct">
     <name>rolly::serialization::format::toml</name>
     <filename>structrolly_1_1serialization_1_1format_1_1toml.html</filename>
-  </compound>
-  <compound kind="struct">
-    <name>rolly::trait::typelist</name>
-    <filename>structrolly_1_1trait_1_1typelist.html</filename>
-    <templarg>typename...</templarg>
   </compound>
   <compound kind="struct">
     <name>rolly::vector2d</name>
@@ -8266,15 +7732,12 @@
     <namespace>rolly::qt</namespace>
     <namespace>rolly::rtti</namespace>
     <namespace>rolly::serialization</namespace>
-    <namespace>rolly::trait</namespace>
     <class kind="struct">rolly::angle</class>
     <class kind="class">rolly::application_dirs</class>
     <class kind="class">rolly::bad_optional_access</class>
     <class kind="class">rolly::box</class>
     <class kind="class">rolly::compile_time_error</class>
     <class kind="class">rolly::configuration_file</class>
-    <class kind="class">rolly::connection</class>
-    <class kind="class">rolly::connection_blocker</class>
     <class kind="struct">rolly::const_overload_t</class>
     <class kind="struct">rolly::deleter</class>
     <class kind="class">rolly::deserialization_error</class>
@@ -8290,7 +7753,6 @@
     <class kind="struct">rolly::noncopyable</class>
     <class kind="struct">rolly::nonmovable</class>
     <class kind="struct">rolly::nullopt_t</class>
-    <class kind="struct">rolly::observer_base</class>
     <class kind="class">rolly::observer_ptr</class>
     <class kind="class">rolly::optional</class>
     <class kind="class">rolly::optional&lt; T &amp; &gt;</class>
@@ -8301,9 +7763,7 @@
     <class kind="class">rolly::propagate_const</class>
     <class kind="struct">rolly::remove_cvref</class>
     <class kind="class">rolly::savefile</class>
-    <class kind="class">rolly::scoped_connection</class>
     <class kind="class">rolly::serialization_error</class>
-    <class kind="class">rolly::signal_base</class>
     <class kind="struct">rolly::singleton</class>
     <class kind="struct">rolly::size2d</class>
     <class kind="struct">rolly::source_location</class>
@@ -8343,41 +7803,6 @@
       <name>plain_type_t</name>
       <anchorfile>namespacerolly.html</anchorfile>
       <anchor>ac4eceae28c6465627e4f65c23cfd469d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::int32_t</type>
-      <name>group_id</name>
-      <anchorfile>namespacerolly.html</anchorfile>
-      <anchor>a3338e392e2aa93d5bcd0ae19b5499924</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>observer_base&lt; detail::null_mutex &gt;</type>
-      <name>observer_st</name>
-      <anchorfile>namespacerolly.html</anchorfile>
-      <anchor>a04e2f75d181174c558d85e5d3675b1f2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>observer_base&lt; std::mutex &gt;</type>
-      <name>observer</name>
-      <anchorfile>namespacerolly.html</anchorfile>
-      <anchor>aef8b740f7fad5d5135817a2f620faca1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>signal_base&lt; detail::null_mutex, T... &gt;</type>
-      <name>signal_st</name>
-      <anchorfile>namespacerolly.html</anchorfile>
-      <anchor>a24e803916439bb38debb80d5a2cfd6ff</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>signal_base&lt; std::mutex, T... &gt;</type>
-      <name>signal</name>
-      <anchorfile>namespacerolly.html</anchorfile>
-      <anchor>aab0f25ddd545cd1fa7ea4b51631f40ee</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -8933,20 +8358,6 @@
       <anchorfile>namespacerolly.html</anchorfile>
       <anchor>a4396c486e59b58735a5de35db1c95b77</anchor>
       <arglist>(Callback &amp;&amp;callback) noexcept(noexcept(detail::finally&lt; Callback &gt;(std::forward&lt; Callback &gt;(callback))))</arglist>
-    </member>
-    <member kind="function">
-      <type>std::enable_if_t&lt;! trait::is_signal_v&lt; std::decay_t&lt; Arg &gt; &gt;, connection &gt;</type>
-      <name>connect</name>
-      <anchorfile>namespacerolly.html</anchorfile>
-      <anchor>a4fcddfd69e955ff7ba38576d89ea888f</anchor>
-      <arglist>(signal_base&lt; Lockable, T... &gt; &amp;sig, Arg &amp;&amp;arg, Args &amp;&amp;... args)</arglist>
-    </member>
-    <member kind="function">
-      <type>connection</type>
-      <name>connect</name>
-      <anchorfile>namespacerolly.html</anchorfile>
-      <anchor>af871d7fa79920cade703ca2081734d09</anchor>
-      <arglist>(signal_base&lt; Lockable1, T1... &gt; &amp;sig1, signal_base&lt; Lockable2, T2... &gt; &amp;sig2, Args &amp;&amp;... args)</arglist>
     </member>
     <member kind="function">
       <type>constexpr char</type>
@@ -10140,88 +9551,6 @@
     <class kind="struct">rolly::serialization::format::toml</class>
     <class kind="struct">rolly::serialization::format::xml</class>
     <class kind="struct">rolly::serialization::format::yaml</class>
-  </compound>
-  <compound kind="namespace">
-    <name>rolly::trait</name>
-    <filename>namespacerolly_1_1trait.html</filename>
-    <class kind="struct">rolly::trait::typelist</class>
-    <member kind="function">
-      <type>std::weak_ptr&lt; T &gt;</type>
-      <name>to_weak</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>ae5b735dc0c6f8d1b0e12fd547f45d956</anchor>
-      <arglist>(std::weak_ptr&lt; T &gt; w)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::weak_ptr&lt; T &gt;</type>
-      <name>to_weak</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>ae0bbed54a8ef3fcf79790c990a84b0cb</anchor>
-      <arglist>(std::shared_ptr&lt; T &gt; s)</arglist>
-    </member>
-    <member kind="variable">
-      <type>constexpr bool</type>
-      <name>is_weak_ptr_compatible_v</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>a3848b89db0f289cfb1db1cfb6e122612</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>constexpr bool</type>
-      <name>is_callable_v</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>a7f67ef08e41c7266f5d9710af85fb6da</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>constexpr bool</type>
-      <name>is_weak_ptr_v</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>a93097b677cdae0eae18e2262947edc2f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>constexpr bool</type>
-      <name>has_call_operator_v</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>aa8dbd2bfaeef344521ea63187cdffe9f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>constexpr bool</type>
-      <name>is_pointer_v</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>a8c05ad01f00fb19be6e2d50fbfb8f847</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>constexpr bool</type>
-      <name>is_func_v</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>aab589c840ad7f0abec39fd22e3152aca</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>constexpr bool</type>
-      <name>is_pmf_v</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>a6ce61afe2cf0bd8b8c5e29fbba64b2fe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>constexpr bool</type>
-      <name>is_observer_v</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>afb9e28dfdd6b5d2308bbb6870814f9f8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>constexpr bool</type>
-      <name>is_signal_v</name>
-      <anchorfile>namespacerolly_1_1trait.html</anchorfile>
-      <anchor>a47ed658b30fd9549fae2785b74aa9a04</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="group">
     <name>core</name>
