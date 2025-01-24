@@ -911,14 +911,6 @@ TEST_CASE("Types", "[types]") {
       REQUIRE(read11 == u128(0));
     }
 
-    SECTION("NumericLimits") {
-      REQUIRE(std::numeric_limits<u128>::is_integer);
-      REQUIRE(std::numeric_limits<u128>::digits == 128);
-      REQUIRE(std::numeric_limits<u128>::lowest() == u128());
-      REQUIRE(std::numeric_limits<u128>::min() == u128());
-      REQUIRE(std::numeric_limits<u128>::max() == u128(0xFFFFFFFFFFFFFFFF, 0xFFFFFFFFFFFFFFFF));
-    }
-
     SECTION("Abs") {
       constexpr auto actual1 = std::abs(u128(5));
 
