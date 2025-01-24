@@ -829,6 +829,20 @@
     <namespace>rolly</namespace>
   </compound>
   <compound kind="file">
+    <name>net.h</name>
+    <path>rolly/</path>
+    <filename>net_8h.html</filename>
+    <includes id="ip__address_8h" name="ip_address.h" local="yes" import="no" module="no" objc="no">net/ip_address.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>ip_address.h</name>
+    <path>rolly/net/</path>
+    <filename>ip__address_8h.html</filename>
+    <namespace>rolly</namespace>
+    <namespace>rolly::net</namespace>
+    <namespace>rolly::literals</namespace>
+  </compound>
+  <compound kind="file">
     <name>numbers.h</name>
     <path>rolly/</path>
     <filename>numbers_8h.html</filename>
@@ -920,6 +934,7 @@
     <includes id="include_2rolly_2library_8h" name="library.h" local="yes" import="no" module="no" objc="no">./library.h</includes>
     <includes id="math_8h" name="math.h" local="yes" import="no" module="no" objc="no">./math.h</includes>
     <includes id="memory_8h" name="memory.h" local="yes" import="no" module="no" objc="no">./memory.h</includes>
+    <includes id="net_8h" name="net.h" local="yes" import="no" module="no" objc="no">./net.h</includes>
     <includes id="numbers_8h" name="numbers.h" local="yes" import="no" module="no" objc="no">./numbers.h</includes>
     <includes id="rtti_8h" name="rtti.h" local="yes" import="no" module="no" objc="no">./rtti.h</includes>
     <includes id="savefile_8h" name="savefile.h" local="yes" import="no" module="no" objc="no">./savefile.h</includes>
@@ -1280,8 +1295,6 @@
     <includes id="optional_8h" name="optional.h" local="yes" import="no" module="no" objc="no">./optional.h</includes>
     <includes id="char__reader_8h" name="char_reader.h" local="yes" import="no" module="no" objc="no">detail/char_reader.h</includes>
     <class kind="class">rolly::u128</class>
-    <class kind="struct">std::_numeric_limits_uint128</class>
-    <class kind="struct">std::numeric_limits&lt; rolly::u128 &gt;</class>
     <class kind="struct">std::hash&lt; rolly::u128 &gt;</class>
     <class kind="struct">fmt::formatter&lt; rolly::u128 &gt;</class>
     <namespace>rolly</namespace>
@@ -1456,235 +1469,6 @@
     <namespace>rolly</namespace>
     <namespace>rolly::oslayer</namespace>
     <namespace>rolly::oslayer::win</namespace>
-  </compound>
-  <compound kind="struct">
-    <name>std::_numeric_limits_uint128</name>
-    <filename>structstd_1_1__numeric__limits__uint128.html</filename>
-    <templarg>typename T</templarg>
-    <member kind="function" static="yes">
-      <type>static constexpr T()</type>
-      <name>min</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a4520550b579f23be452d1ed4022a5098</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr T()</type>
-      <name>max</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>addfc342d21e6a03584a507f85f1be006</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr T</type>
-      <name>lowest</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>aee265d85e7143ccf18a4b676c811f6d8</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr T</type>
-      <name>epsilon</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a0f388fe0194595fea70ac82f00a77b43</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr T</type>
-      <name>round_error</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a8a976e1775a4cfdf69685596c956309b</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr T</type>
-      <name>denorm_min</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a9f675bc8ab01d50474c57f3e08f3a832</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr T</type>
-      <name>infinity</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>af3e15097f5e309f8df2cfe481b4c8481</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr T</type>
-      <name>quiet_NaN</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a7c56dc843deccc9aaf044cd7e3d7b196</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr T</type>
-      <name>signaling_NaN</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a0d434cbe7e567ff96a2add4376a35369</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_bounded</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a6afae77c90327a1b77559909b409a845</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_exact</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>abc361c4c474746556d2c035f32b6cc2c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_integer</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a1bbefd8c0b732325ea958995fb0b7d6d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_modulo</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a7f5a75278d1053276666b5a4a987ce25</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_specialized</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>aa2ba97616cdd7dfd6cd858174a05c1c7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_iec559</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a84e7c7bcd05dc5b60d129540aee28c80</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_signed</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>abc057edfb361ef4304a804e5e8b70c19</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>has_denorm_loss</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a5740b769533462cd481d4268df633dc8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>has_infinity</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a68266884bb493d5ff17bb56675f3a5c9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>has_quiet_NaN</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a9b6b07e221b0d3b96661c91464c44187</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>has_signaling_NaN</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a227f6abbee94ed0284917a3a8edbeccd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>tinyness_before</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a65abece0145055a6ca6975fb765c4ae5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>traps</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a4726ab2d9648c80e500aa2d7deb0e5fc</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>max_digits10</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a466ca3faa8abf85402edd8a01eb50d17</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>max_exponent</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a842c8c91d8a456bbdc35189721597e47</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>max_exponent10</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a1149a2084f199d55ee917b360bea66f5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>min_exponent</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>acf523a3c0da4d7dd5abf3f2c6b1b7b5d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>min_exponent10</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>aee5538aa4e10988668de42b5c74b8733</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>digits</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a44867e4ab8763314b04981b29669b571</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>digits10</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a2adc55df2ec43ecd9bd5b7a609f0046c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>radix</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a559a1b51d4061cb2587fdfc040fe1b67</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr std::float_denorm_style</type>
-      <name>has_denorm</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a961aa234d662724fd25c11b1034cc1b1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr std::float_round_style</type>
-      <name>round_style</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>ab9f39fd9c3923670e193cc1e69a86b72</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="struct">
     <name>rolly::angle</name>
@@ -4803,235 +4587,6 @@
       <anchorfile>structrolly_1_1nullopt__t.html</anchorfile>
       <anchor>aa59f6caeb935135dbd2557e6e02723ea</anchor>
       <arglist>(do_not_use, do_not_use) noexcept</arglist>
-    </member>
-  </compound>
-  <compound kind="struct">
-    <name>std::numeric_limits&lt; rolly::u128 &gt;</name>
-    <filename>structstd_1_1numeric__limits_3_01rolly_1_1u128_01_4.html</filename>
-    <base>_numeric_limits_uint128&lt; rolly::u128 &gt;</base>
-    <member kind="function" static="yes">
-      <type>static constexpr rolly::u128()</type>
-      <name>min</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a4520550b579f23be452d1ed4022a5098</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr rolly::u128()</type>
-      <name>max</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>addfc342d21e6a03584a507f85f1be006</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr rolly::u128</type>
-      <name>lowest</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>aee265d85e7143ccf18a4b676c811f6d8</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr rolly::u128</type>
-      <name>epsilon</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a0f388fe0194595fea70ac82f00a77b43</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr rolly::u128</type>
-      <name>round_error</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a8a976e1775a4cfdf69685596c956309b</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr rolly::u128</type>
-      <name>denorm_min</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a9f675bc8ab01d50474c57f3e08f3a832</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr rolly::u128</type>
-      <name>infinity</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>af3e15097f5e309f8df2cfe481b4c8481</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr rolly::u128</type>
-      <name>quiet_NaN</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a7c56dc843deccc9aaf044cd7e3d7b196</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static constexpr rolly::u128</type>
-      <name>signaling_NaN</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a0d434cbe7e567ff96a2add4376a35369</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_bounded</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a6afae77c90327a1b77559909b409a845</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_exact</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>abc361c4c474746556d2c035f32b6cc2c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_integer</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a1bbefd8c0b732325ea958995fb0b7d6d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_modulo</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a7f5a75278d1053276666b5a4a987ce25</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_specialized</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>aa2ba97616cdd7dfd6cd858174a05c1c7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_iec559</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a84e7c7bcd05dc5b60d129540aee28c80</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>is_signed</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>abc057edfb361ef4304a804e5e8b70c19</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>has_denorm_loss</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a5740b769533462cd481d4268df633dc8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>has_infinity</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a68266884bb493d5ff17bb56675f3a5c9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>has_quiet_NaN</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a9b6b07e221b0d3b96661c91464c44187</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>has_signaling_NaN</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a227f6abbee94ed0284917a3a8edbeccd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>tinyness_before</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a65abece0145055a6ca6975fb765c4ae5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr bool</type>
-      <name>traps</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a4726ab2d9648c80e500aa2d7deb0e5fc</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>max_digits10</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a466ca3faa8abf85402edd8a01eb50d17</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>max_exponent</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a842c8c91d8a456bbdc35189721597e47</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>max_exponent10</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a1149a2084f199d55ee917b360bea66f5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>min_exponent</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>acf523a3c0da4d7dd5abf3f2c6b1b7b5d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>min_exponent10</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>aee5538aa4e10988668de42b5c74b8733</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>digits</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a44867e4ab8763314b04981b29669b571</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>digits10</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a2adc55df2ec43ecd9bd5b7a609f0046c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr int</type>
-      <name>radix</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a559a1b51d4061cb2587fdfc040fe1b67</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr std::float_denorm_style</type>
-      <name>has_denorm</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>a961aa234d662724fd25c11b1034cc1b1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" static="yes">
-      <type>static constexpr std::float_round_style</type>
-      <name>round_style</name>
-      <anchorfile>structstd_1_1__numeric__limits__uint128.html</anchorfile>
-      <anchor>ab9f39fd9c3923670e193cc1e69a86b72</anchor>
-      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -9696,6 +9251,7 @@
     <namespace>rolly::io</namespace>
     <namespace>rolly::literals</namespace>
     <namespace>rolly::meta</namespace>
+    <namespace>rolly::net</namespace>
     <namespace>rolly::numbers</namespace>
     <namespace>rolly::oslayer</namespace>
     <namespace>rolly::qt</namespace>
@@ -11457,6 +11013,10 @@
     <name>rolly::meta</name>
     <filename>namespacerolly_1_1meta.html</filename>
     <class kind="class">rolly::meta::project_meta</class>
+  </compound>
+  <compound kind="namespace">
+    <name>rolly::net</name>
+    <filename>namespacerolly_1_1net.html</filename>
   </compound>
   <compound kind="namespace">
     <name>rolly::numbers</name>

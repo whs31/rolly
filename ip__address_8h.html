@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>std::numeric_limits&lt;rolly::u128&gt; struct | Rolly Radar core library</title>
+  <title>rolly/net/ip_address.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,169 +56,30 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rolly/types/u128.h&gt;</a></div>
-          <div class="m-doc-template">template &lt;&gt;</div> <a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/types/numeric_limits" target="_blank">std::numeric_limits</a>&lt;rolly::u128&gt; <span class="m-thin">struct</span>
+          <span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span><span class="m-breadcrumb"><a href="dir_82f602ed8124948fdae73f205adb5549.html">net</a>/</span>ip_address.h <span class="m-thin">file</span>
         </h1>
-        <p></p>
+        <p>The main include file for the IP-address related functions and types.</p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
-                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#namespaces">Namespaces</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
+<aside class="m-note m-default"><h4>Author</h4><p>Vladimir Shaleev</p></aside><aside class="m-note m-default"><h4>Copyright</h4><p>MIT License</p></aside><p>This file includes all the necessary components for working with IP addresses and networks, as well as providing functionality for their manipulation.</p>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              struct <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html">std::_numeric_limits_uint128&lt;rolly::u128&gt;</a>
-            </dt>
+            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
+            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
+            <dt>namespace <a class="m-doc" href="namespacerolly_1_1net.html">rolly::net</a></dt>
             <dd></dd>
-          </dl>
-        </section>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt>
-              static int <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a44867e4ab8763314b04981b29669b571">digits</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static int <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a2adc55df2ec43ecd9bd5b7a609f0046c">digits10</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static std::float_denorm_style <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a961aa234d662724fd25c11b1034cc1b1">has_denorm</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a5740b769533462cd481d4268df633dc8">has_denorm_loss</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a68266884bb493d5ff17bb56675f3a5c9">has_infinity</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a9b6b07e221b0d3b96661c91464c44187">has_quiet_NaN</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a227f6abbee94ed0284917a3a8edbeccd">has_signaling_NaN</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a6afae77c90327a1b77559909b409a845">is_bounded</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#abc361c4c474746556d2c035f32b6cc2c">is_exact</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a84e7c7bcd05dc5b60d129540aee28c80">is_iec559</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a1bbefd8c0b732325ea958995fb0b7d6d">is_integer</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a7f5a75278d1053276666b5a4a987ce25">is_modulo</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#abc057edfb361ef4304a804e5e8b70c19">is_signed</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#aa2ba97616cdd7dfd6cd858174a05c1c7">is_specialized</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static int <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a466ca3faa8abf85402edd8a01eb50d17">max_digits10</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static int <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a842c8c91d8a456bbdc35189721597e47">max_exponent</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static int <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a1149a2084f199d55ee917b360bea66f5">max_exponent10</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static int <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#acf523a3c0da4d7dd5abf3f2c6b1b7b5d">min_exponent</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static int <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#aee5538aa4e10988668de42b5c74b8733">min_exponent10</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static int <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a559a1b51d4061cb2587fdfc040fe1b67">radix</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static std::float_round_style <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#ab9f39fd9c3923670e193cc1e69a86b72">round_style</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a65abece0145055a6ca6975fb765c4ae5">tinyness_before</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              static bool <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a4726ab2d9648c80e500aa2d7deb0e5fc">traps</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd></dd>
-          </dl>
-        </section>
-        <section id="pub-static-methods">
-          <h2><a href="#pub-static-methods">Public static functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a9f675bc8ab01d50474c57f3e08f3a832">denorm_min</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrolly_1_1u128.html">rolly::<wbr/>u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a0f388fe0194595fea70ac82f00a77b43">epsilon</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrolly_1_1u128.html">rolly::<wbr/>u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#af3e15097f5e309f8df2cfe481b4c8481">infinity</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrolly_1_1u128.html">rolly::<wbr/>u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#aee265d85e7143ccf18a4b676c811f6d8">lowest</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrolly_1_1u128.html">rolly::<wbr/>u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#addfc342d21e6a03584a507f85f1be006">max</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrolly_1_1u128.html">rolly::<wbr/>u128</a>() <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a4520550b579f23be452d1ed4022a5098">min</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrolly_1_1u128.html">rolly::<wbr/>u128</a>() <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a7c56dc843deccc9aaf044cd7e3d7b196">quiet_NaN</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrolly_1_1u128.html">rolly::<wbr/>u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a8a976e1775a4cfdf69685596c956309b">round_error</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrolly_1_1u128.html">rolly::<wbr/>u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="structstd_1_1__numeric__limits__uint128.html#a0d434cbe7e567ff96a2add4376a35369">signaling_NaN</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrolly_1_1u128.html">rolly::<wbr/>u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd></dd>
+            <dt>namespace <a class="m-doc" href="namespacerolly_1_1literals.html">rolly::literals</a> <span class="m-label m-flat m-info">inline</span></dt>
+            <dd>Inline namespace for literal operators.</dd>
           </dl>
         </section>
       </div>
