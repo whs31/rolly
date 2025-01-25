@@ -1,4 +1,4 @@
-#include <rolly/rolly.h>
+#include <rolly/all.h>
 
 #include <catch2/catch_all.hpp>
 
