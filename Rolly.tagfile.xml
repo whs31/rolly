@@ -1,6 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <tagfile doxygen_version="1.9.8">
   <compound kind="file">
+    <name>all.h</name>
+    <filename>all_8h.html</filename>
+    <includes id="bit_8h" name="bit.h" local="yes" import="no" module="no" objc="no">./bit.h</includes>
+    <includes id="concepts_8h" name="concepts.h" local="yes" import="no" module="no" objc="no">./concepts.h</includes>
+    <includes id="contracts_8h" name="contracts.h" local="yes" import="no" module="no" objc="no">./contracts.h</includes>
+    <includes id="directories_8h" name="directories.h" local="yes" import="no" module="no" objc="no">./directories.h</includes>
+    <includes id="exception_8h" name="exception.h" local="yes" import="no" module="no" objc="no">./exception.h</includes>
+    <includes id="functional_8h" name="functional.h" local="yes" import="no" module="no" objc="no">./functional.h</includes>
+    <includes id="global_8h" name="global.h" local="yes" import="no" module="no" objc="no">./global.h</includes>
+    <includes id="include_2rolly_2library_8h" name="library.h" local="yes" import="no" module="no" objc="no">./library.h</includes>
+    <includes id="math_8h" name="math.h" local="yes" import="no" module="no" objc="no">./math.h</includes>
+    <includes id="memory_8h" name="memory.h" local="yes" import="no" module="no" objc="no">./memory.h</includes>
+    <includes id="net_8h" name="net.h" local="yes" import="no" module="no" objc="no">./net.h</includes>
+    <includes id="numbers_8h" name="numbers.h" local="yes" import="no" module="no" objc="no">./numbers.h</includes>
+    <includes id="rtti_8h" name="rtti.h" local="yes" import="no" module="no" objc="no">./rtti.h</includes>
+    <includes id="savefile_8h" name="savefile.h" local="yes" import="no" module="no" objc="no">./savefile.h</includes>
+    <includes id="serialization_8h" name="serialization.h" local="yes" import="no" module="no" objc="no">./serialization.h</includes>
+    <includes id="source__location_8h" name="source_location.h" local="yes" import="no" module="no" objc="no">./source_location.h</includes>
+    <includes id="string__util_8h" name="string_util.h" local="yes" import="no" module="no" objc="no">./string_util.h</includes>
+    <includes id="traits_8h" name="traits.h" local="yes" import="no" module="no" objc="no">./traits.h</includes>
+    <includes id="type__traits_8h" name="type_traits.h" local="yes" import="no" module="no" objc="no">./type_traits.h</includes>
+    <includes id="types_8h" name="types.h" local="yes" import="no" module="no" objc="no">./types.h</includes>
+  </compound>
+  <compound kind="file">
     <name>bit.h</name>
     <filename>bit_8h.html</filename>
     <includes id="global_8h" name="global.h" local="yes" import="no" module="no" objc="no">global.h</includes>
@@ -191,6 +215,7 @@
   </compound>
   <compound kind="file">
     <name>functional.h</name>
+    <path>rolly/</path>
     <filename>functional_8h.html</filename>
     <includes id="lazy_8h" name="lazy.h" local="yes" import="no" module="no" objc="no">functional/lazy.h</includes>
     <includes id="overload_8h" name="overload.h" local="yes" import="no" module="no" objc="no">functional/overload.h</includes>
@@ -919,31 +944,6 @@
     <namespace>rolly</namespace>
     <namespace>rolly::qt</namespace>
     <namespace>rolly::qt::qml</namespace>
-  </compound>
-  <compound kind="file">
-    <name>rolly.h</name>
-    <path>rolly/</path>
-    <filename>rolly_8h.html</filename>
-    <includes id="bit_8h" name="bit.h" local="yes" import="no" module="no" objc="no">./bit.h</includes>
-    <includes id="concepts_8h" name="concepts.h" local="yes" import="no" module="no" objc="no">./concepts.h</includes>
-    <includes id="contracts_8h" name="contracts.h" local="yes" import="no" module="no" objc="no">./contracts.h</includes>
-    <includes id="directories_8h" name="directories.h" local="yes" import="no" module="no" objc="no">./directories.h</includes>
-    <includes id="exception_8h" name="exception.h" local="yes" import="no" module="no" objc="no">./exception.h</includes>
-    <includes id="functional_8h" name="functional.h" local="yes" import="no" module="no" objc="no">./functional.h</includes>
-    <includes id="global_8h" name="global.h" local="yes" import="no" module="no" objc="no">./global.h</includes>
-    <includes id="include_2rolly_2library_8h" name="library.h" local="yes" import="no" module="no" objc="no">./library.h</includes>
-    <includes id="math_8h" name="math.h" local="yes" import="no" module="no" objc="no">./math.h</includes>
-    <includes id="memory_8h" name="memory.h" local="yes" import="no" module="no" objc="no">./memory.h</includes>
-    <includes id="net_8h" name="net.h" local="yes" import="no" module="no" objc="no">./net.h</includes>
-    <includes id="numbers_8h" name="numbers.h" local="yes" import="no" module="no" objc="no">./numbers.h</includes>
-    <includes id="rtti_8h" name="rtti.h" local="yes" import="no" module="no" objc="no">./rtti.h</includes>
-    <includes id="savefile_8h" name="savefile.h" local="yes" import="no" module="no" objc="no">./savefile.h</includes>
-    <includes id="serialization_8h" name="serialization.h" local="yes" import="no" module="no" objc="no">./serialization.h</includes>
-    <includes id="source__location_8h" name="source_location.h" local="yes" import="no" module="no" objc="no">./source_location.h</includes>
-    <includes id="string__util_8h" name="string_util.h" local="yes" import="no" module="no" objc="no">./string_util.h</includes>
-    <includes id="traits_8h" name="traits.h" local="yes" import="no" module="no" objc="no">./traits.h</includes>
-    <includes id="type__traits_8h" name="type_traits.h" local="yes" import="no" module="no" objc="no">./type_traits.h</includes>
-    <includes id="types_8h" name="types.h" local="yes" import="no" module="no" objc="no">./types.h</includes>
   </compound>
   <compound kind="file">
     <name>rtti.h</name>
