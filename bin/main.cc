@@ -1,4 +1,4 @@
-#include <rolly/rolly.h>
+#include <rolly/all.h>
 
 int main(int /*argc*/, char** /*argv*/) {
   // rolly::contracts::broken_postcondition();
