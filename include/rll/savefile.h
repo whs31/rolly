@@ -1,26 +1,19 @@
 #pragma once
 
-#include "serialization.h"
-#include "types/stdint.h"
-#include "io/filedevice.h"
+#include <sstream>
+#include <rll/serialization.h>
+#include <rll/stdint.h>
+#include <rll/io/filedevice.h>
 
-namespace rolly {
-  template <typename F, typename T>
-#ifndef DOXYGEN
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-#endif
-    class savefile : public io::filedevice {
-
+namespace rll {
+  template <typename F, typename T, typename = std::enable_if_t<is_serializable<T, F>::value>>
+  class savefile : public io::filedevice {
    public:
     explicit savefile(std::filesystem::path path)
       : io::filedevice(std::move(path))
       , backing_path_(this->suffixed_path(".bak")) {
-      try {
-        this->load();
-        this->valid_ = true;
-      } catch(std::exception const& ex) {
-        this->valid_ = false;
-      }
+      auto const res = this->load();
+      this->valid_ = res.has_value();
     }
 
     explicit savefile(std::string_view filename, std::filesystem::path const& folder)
@@ -34,7 +27,7 @@ namespace rolly {
      * @details File will be saved automatically on closing.
      */
     virtual ~savefile() noexcept {
-      this->try_save().map_error([&](auto const& err) {
+      this->save().map_error([&](auto const& err) {
         fmt::println(stderr, "savefile::~savefile: {}", err);
       });
     }
@@ -63,49 +56,27 @@ namespace rolly {
      */
     [[nodiscard]] T& values_mut() { return this->values_; }
 
-    void load() {
-      namespace fs = std::filesystem;
-      if(not fs::exists(this->path())) {
+    result<> load() noexcept {
+      if(not std::filesystem::exists(this->path())) {
         this->values_ = T();
-        this->save();
-        return;
+        return this->save();
       }
-      try {
-        auto str = this->read();
-        this->values_ = serialization::deserialize<F, T>(str);
-      } catch(std::exception const& ex) {
-        this->invalidate();
-        try {
-          auto str = this->read();
-          this->values_ = serialization::deserialize<F, T>(str);
-        } catch(std::exception const& ex2) {
-          throw ex2;
-        }
-      }
+      auto str = this->read();
+      auto ss = std::stringstream(str);
+      auto const res = serializer<T, F, char>::deserialize(ss);
+      if(not res)
+        return error(res.error());
+      this->values_ = *res;
+      return ok();
     }
 
-    [[nodiscard]] result<> try_load() const noexcept {
-      try {
-        this->load();
-        return {};
-      } catch(std::exception const& ex) {
-        return error("savefile::try_load: {}", ex.what());
-      }
-    }
-
-    void save() const {
-      auto str = serialization::serialize<F, T>(this->values_);
-      this->write(str);
-      this->commit();
-    }
-
-    [[nodiscard]] result<> try_save() const noexcept {
+    result<> save() const {
       auto try_serialize = [this]() -> result<std::string> {
-        try {
-          return serialization::serialize<F, T>(this->values_);
-        } catch(std::exception const& ex) {
-          return error("savefile::try_save: {}", ex.what());
-        }
+        auto ss = std::stringstream();
+        auto const res = serializer<T, F, char>::serialize(this->values_, ss);
+        if(not res)
+          return error(res.error());
+        return ok(ss.str());
       };
       try_serialize().and_then([this](auto const& str) { return this->try_write(str); }
       ).and_then([this]() { return this->try_commit(); });
@@ -114,39 +85,29 @@ namespace rolly {
 
     /**
      * @brief Swaps the current savefile with its backup.
-     * @details Consider using exception-safe @ref try_invalidate instead.
      */
-    void invalidate() const {
-      if(this->exists())
-        std::filesystem::remove_all(this->path());
-      std::filesystem::copy(this->backing_path(), this->path());
-    }
-
-    [[nodiscard]] result<> try_invalidate() const noexcept {
+    [[nodiscard]] result<> invalidate() const noexcept {
       try {
-        this->invalidate();
-        return {};
+        if(this->exists())
+          std::filesystem::remove_all(this->path());
+        std::filesystem::copy(this->backing_path(), this->path());
+        return ok();
       } catch(std::exception const& ex) {
-        return error("savefile::try_invalidate: {}", ex.what());
+        return error("{}", ex.what());
       }
     }
 
     /**
      * @brief Removes previous backup and replaces it with the current one.
-     * @details Consider using exception-safe @ref try_commit instead.
      */
-    void commit() const {
-      if(std::filesystem::exists(this->backing_path()))
-        std::filesystem::remove_all(this->backing_path());
-      std::filesystem::copy(this->path(), this->backing_path());
-    }
-
     [[nodiscard]] result<> try_commit() const noexcept {
       try {
-        this->commit();
-        return {};
+        if(std::filesystem::exists(this->backing_path()))
+          std::filesystem::remove_all(this->backing_path());
+        std::filesystem::copy(this->path(), this->backing_path());
+        return ok();
       } catch(std::exception const& ex) {
-        return error("savefile::try_commit: {}", ex.what());
+        return error("{}", ex.what());
       }
     }
 
@@ -183,4 +144,4 @@ namespace rolly {
     std::filesystem::path backing_path_;
     bool valid_;
   };
-}  // namespace rolly
+}  // namespace rll

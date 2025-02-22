@@ -1,10 +1,11 @@
 #pragma once
 
-#include "serialization.h"
-#include "types/stdint.h"
-#include "io/filedevice.h"
+#include <sstream>
+#include <rll/serialization.h>
+#include <rll/stdint.h>
+#include <rll/io/filedevice.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Determines the policy used for autosaving configuration files.
    */
@@ -16,8 +17,7 @@ namespace rolly {
   /**
    * @brief Configuration file that can be loaded and saved.
    * @details This class is used to store configuration values in a configuration file in given
-   * format. Accepts any type that implements @ref
-   * rolly::serialization::serializable_and_deserializable with character type <code>char</code> and
+   * format. Accepts any type that implements serializer with character type `char` and
    * given format.
    *
    * Example usage:
@@ -74,12 +74,8 @@ namespace rolly {
    * @see rolly::serialization::serializable_and_deserializable
    * @see rolly::saving_policy
    */
-  template <typename F, typename T>
-#ifndef DOXYGEN
-  ___requires___((serialization::serializable_and_deserializable<F, T, char>))
-#endif
-    class configuration_file : public io::filedevice {
-
+  template <typename F, typename T, typename = std::enable_if_t<is_serializable<T, F>::value>>
+  class configuration_file : public io::filedevice {
    public:
     /**
      * @brief Creates or loads configuration file from given path with saving policy.
@@ -94,12 +90,8 @@ namespace rolly {
       : io::filedevice(std::move(path))
       , default_values_(T())
       , saving_policy_(policy) {
-      try {
-        this->load();
-        this->valid_ = true;
-      } catch(std::exception const& ex) {
-        this->valid_ = false;
-      }
+      auto const res = this->load();
+      this->valid_ = res.has_value();
     }
 
     /**
@@ -113,7 +105,7 @@ namespace rolly {
      * @see valid
      */
     explicit configuration_file(
-      std::string_view filename,
+      std::string_view const filename,
       std::filesystem::path const& folder,
       saving_policy policy
     )
@@ -128,12 +120,8 @@ namespace rolly {
      * automatically on closing.
      */
     virtual ~configuration_file() noexcept {
-      if(this->saving_policy() == saving_policy::autosave) {
-        try {
-          this->save();
-        } catch(std::exception const& ex) {
-        }  // NOLINT(*-empty-catch)
-      }
+      if(this->saving_policy() == saving_policy::autosave)
+        std::ignore = this->save();
     }
 
     /**
@@ -168,38 +156,41 @@ namespace rolly {
 
     /**
      * @brief Loads configuration file from file.
-     * @throws std::exception if loading fails.
      */
-    void load() noexcept(false) {
+    result<> load() {
       namespace fs = std::filesystem;
       if(not fs::exists(this->path())) {
         this->revert_to_default();
-        return;
+        return ok();
       }
-      try {
-        auto str = this->read();
-        this->values_ = serialization::deserialize<F, T>(str);
-      } catch(std::exception const& ex) {
-        throw;
-      }
+      auto str = this->read();
+      auto ss = std::stringstream(str);
+      auto const res = serializer<T, F, char>::deserialize(ss);
+      if(not res)
+        return error(res.error());
+      this->values_ = *res;
+      return ok();
     }
 
     /**
      * @brief Saves configuration file to file.
      * @throws std::exception if saving fails.
      */
-    void save() const noexcept(false) {
-      auto str = serialization::serialize<F, T>(this->values_);
-      this->write(str);
+    result<> save() const {
+      auto ss = std::stringstream();
+      auto const res = serializer<T, F, char>::serialize(this->values_, ss);
+      if(not res)
+        return error(res.error());
+      this->write(ss.str());
+      return ok();
     }
 
     /**
      * @brief Reverts configuration file to default values.
-     * @throws std::exception if reverting fails.
      */
-    void revert_to_default() noexcept(false) {
+    result<> revert_to_default() {
       this->values_ = this->default_values_;
-      this->save();
+      return this->save();
     }
 
     /**
@@ -229,4 +220,4 @@ namespace rolly {
     enum saving_policy saving_policy_;
     bool valid_;
   };
-}  // namespace rolly
+}  // namespace rll

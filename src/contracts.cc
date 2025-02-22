@@ -67,7 +67,7 @@ namespace rll {
   void detail::violate(
     contract_type const type,
     std::string_view const message,
-    source_location const location
+    source_location const& location
   ) {
     ::violation_handler()(make_contract_violation(type, message, location));
     std::abort();

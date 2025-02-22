@@ -3,7 +3,7 @@
 #include <utility>
 #include <type_traits>
 #include <functional>
-#include <rll/types/optional.h>
+#include <rll/optional.h>
 #include <rll/type_traits.h>
 
 namespace rll {

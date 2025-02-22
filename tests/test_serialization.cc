@@ -27,52 +27,62 @@ struct TestStruct {
   int b = 2;
 };
 
-DECLARE_SERIALIZABLE(TestStruct, rll::serialization::format::json) {
-  return fmt::format(R"({{"a": {}, "b": {}}})", value.a, value.b);
-}
-
-DECLARE_DESERIALIZABLE(TestStruct, rll::serialization::format::json) { return {1, 2}; }
-
-DECLARE_SERIALIZABLE(DummyConfiguration, rll::serialization::format::toml) {
-  auto const out = toml::table {
-    {"test",       value.test},
-    {"ip_address",
-     toml::table {
-       {"ip", value.ip_address.ip},
-       {"port", value.ip_address.port},
-       {"sock_mode",
-        toml::table {
-          {"tcp", value.ip_address.sock_mode.tcp},
-          {"udp", value.ip_address.sock_mode.udp}
-        }}
-     }                       }
-  };
-  auto ss = std::stringstream();
-  ss << out;
-  return ss.str();
-}
-
-DECLARE_DESERIALIZABLE(DummyConfiguration, rll::serialization::format::toml) {
-  auto self = DummyConfiguration();
-  toml::table in;
-  try {
-    in = toml::parse(str);
-  } catch(toml::parse_error const& err) {
-    throw serialization_error<serialization::format::toml>(err.what());
+template <>
+struct rll::serializer<TestStruct, serialization::format::json> {
+  static result<> serialize(TestStruct const& value, std::ostream& stream) {
+    fmt::print(stream, R"({{"a": {}, "b": {}}})", value.a, value.b);
+    return {};
   }
-  try {
-    self.test = in["test"].value<u32>().value();
-    self.ip_address = {
-      in["ip_address"]["ip"].value<string>().value(),
-      in["ip_address"]["port"].value<u16>().value(),
-      {in["ip_address"]["sock_mode"]["tcp"].value<bool>().value(),
-                                                   in["ip_address"]["sock_mode"]["udp"].value<bool>().value()}
+
+  static result<TestStruct> deserialize(std::istream& stream) {
+    return {
+      TestStruct {1, 2}
     };
-  } catch(std::bad_optional_access const& err) {
-    throw serialization_error<serialization::format::toml>(err.what());
   }
-  return self;
-}
+};
+
+template <>
+struct rll::serializer<DummyConfiguration, serialization::format::toml> {
+  static result<> serialize(DummyConfiguration const& value, std::ostream& stream) {
+    auto const out = toml::table {
+      {"test",       value.test},
+      {"ip_address",
+       toml::table {
+         {"ip", value.ip_address.ip},
+         {"port", value.ip_address.port},
+         {"sock_mode",
+          toml::table {
+            {"tcp", value.ip_address.sock_mode.tcp},
+            {"udp", value.ip_address.sock_mode.udp}
+          }}
+       }                       }
+    };
+    stream << out;
+    return ok();
+  }
+
+  static result<DummyConfiguration> deserialize(std::istream& stream) {
+    auto self = DummyConfiguration();
+    toml::table in;
+    try {
+      in = toml::parse(stream);
+    } catch(toml::parse_error const& err) {
+      return error(err.what());
+    }
+    try {
+      self.test = in["test"].value<u32>().value();
+      self.ip_address = {
+        in["ip_address"]["ip"].value<string>().value(),
+        in["ip_address"]["port"].value<u16>().value(),
+        {in["ip_address"]["sock_mode"]["tcp"].value<bool>().value(),
+                                                     in["ip_address"]["sock_mode"]["udp"].value<bool>().value()}
+      };
+    } catch(std::bad_optional_access const& err) {
+      return error(err.what());
+    }
+    return self;
+  }
+};
 
 TEST_CASE("Serialization & filesystem") {
   namespace format = serialization::format;
@@ -117,7 +127,9 @@ TEST_CASE("Serialization & filesystem") {
     SECTION("Basic") {
       auto const test = TestStruct {1, 2};
       auto const expected = test;
-      auto json = serialization::serialize<format::json>(test);
+
+      auto ss = std::stringstream();
+      auto json = serializer<TestStruct, format::json>::serialize(test);
       auto test2 = serialization::deserialize<format::json, TestStruct>(json);
 
       REQUIRE(expected.a == test2.a);

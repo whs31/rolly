@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include <rll/global/char_utils.h>
 #include <rll/global/version_definitions.h>
-#include <rll/types/optional.h>
+#include <rll/optional.h>
 
 #if defined(__clang__)
 #  pragma clang diagnostic push

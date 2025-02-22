@@ -2108,36 +2108,36 @@ namespace rll {
     }
 
     constexpr T const* operator->() const {
-      contracts::invariant(has_value());
+      assert_invariant(has_value());
       return valptr();
     }
 
     TL_EXPECTED_11_CONSTEXPR T* operator->() {
-      contracts::invariant(has_value());
+      assert_invariant(has_value());
       return valptr();
     }
 
     template <class U = T, detail::enable_if_t<! std::is_void<U>::value>* = nullptr>
     constexpr U const& operator*() const& {
-      contracts::invariant(has_value());
+      assert_invariant(has_value());
       return val();
     }
 
     template <class U = T, detail::enable_if_t<! std::is_void<U>::value>* = nullptr>
     TL_EXPECTED_11_CONSTEXPR U& operator*() & {
-      contracts::invariant(has_value());
+      assert_invariant(has_value());
       return val();
     }
 
     template <class U = T, detail::enable_if_t<! std::is_void<U>::value>* = nullptr>
     constexpr U const&& operator*() const&& {
-      contracts::invariant(has_value());
+      assert_invariant(has_value());
       return std::move(val());
     }
 
     template <class U = T, detail::enable_if_t<! std::is_void<U>::value>* = nullptr>
     TL_EXPECTED_11_CONSTEXPR U&& operator*() && {
-      contracts::invariant(has_value());
+      assert_invariant(has_value());
       return std::move(val());
     }
 
@@ -2174,22 +2174,22 @@ namespace rll {
     }
 
     constexpr E const& error() const& {
-      contracts::invariant(! has_value());
+      assert_invariant(! has_value());
       return err().value();
     }
 
     TL_EXPECTED_11_CONSTEXPR E& error() & {
-      contracts::invariant(! has_value());
+      assert_invariant(! has_value());
       return err().value();
     }
 
     constexpr E const&& error() const&& {
-      contracts::invariant(! has_value());
+      assert_invariant(! has_value());
       return std::move(err().value());
     }
 
     TL_EXPECTED_11_CONSTEXPR E&& error() && {
-      contracts::invariant(! has_value());
+      assert_invariant(! has_value());
       return std::move(err().value());
     }
 

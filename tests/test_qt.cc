@@ -23,8 +23,8 @@ TEST_CASE("Qt", "[qt]") {
   }
 
   SECTION("Format") {
-    REQUIRE(qformat("a={}, b={}", 1, 2) == u"a=1, b=2"_qs);
-    REQUIRE(qt::to_std(u"a=1, b=2"_qs) == std::string("a=1, b=2"));
+    REQUIRE(qformat("a={}, b={}", 1, 2) == u"a=1, b=2"_qstr);
+    REQUIRE(qt::to_std(u"a=1, b=2"_qstr) == std::string("a=1, b=2"));
   }
 }
 #endif

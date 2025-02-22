@@ -166,7 +166,7 @@ namespace rll {
     [[noreturn]] RLL_API void violate(
       contract_type type,
       std::string_view message,
-      source_location location = source_location::current()
+      source_location const& location = source_location::current()
     );
   }  // namespace detail
 

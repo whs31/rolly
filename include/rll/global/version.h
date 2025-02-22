@@ -93,7 +93,7 @@ namespace rll  // NOLINT(*-concat-nested-namespaces)
         "Radar MMS"
       );
   }  // namespace meta
-}  // namespace rolly
+}  // namespace rll
 
-static_assert(alignof(rolly::prerelease) == 1);
-static_assert(sizeof(rolly::prerelease) == 1);
+static_assert(alignof(rll::prerelease) == 1);
+static_assert(sizeof(rll::prerelease) == 1);

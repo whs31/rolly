@@ -3,7 +3,7 @@
 #include <fmt/format.h>
 #include <fmt/ostream.h>
 #include <rll/global/definitions.h>
-#include <rll/types/stdint.h>
+#include <rll/stdint.h>
 
 #if defined(_MSC_VER)
 #  include <ciso646>

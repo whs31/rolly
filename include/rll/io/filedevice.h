@@ -2,7 +2,7 @@
 
 #include <utility>
 #include <fstream>
-#include <rll/types/result.h>
+#include <rll/result.h>
 #ifndef Q_MOC_RUN
 #  include <filesystem>
 #endif
