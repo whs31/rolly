@@ -1,8 +1,8 @@
-#include <rolly/all.h>
+#include <rll/all.h>
 
 #include <catch2/catch_all.hpp>
 
-using namespace rolly;
+using namespace rll;
 using namespace std::string_view_literals;
 
 TEST_CASE("Version", "[version]") {

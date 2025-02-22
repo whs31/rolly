@@ -1,4 +1,4 @@
-#include <rolly/types.h>
+#include <rll/types.h>
 
 #include <sstream>
 #include <type_traits>
@@ -9,8 +9,7 @@
 #include <catch2/catch_all.hpp>
 #include <catch2/catch_test_macros.hpp>
 
-using namespace rolly;
-using Catch::Matchers::WithinRel;
+using namespace rll using Catch::Matchers::WithinRel;
 using Catch::Matchers::WithinAbs;
 
 struct takes_init_and_variadic {
@@ -960,7 +959,7 @@ TEST_CASE("Types", "[types]") {
     SECTION("Constexpr") {
       auto constexpr u = "{7bcd757f-5b10-4f9b-af69-1a1f226f3b3e}"_guid;
 
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       STATIC_REQUIRE(u.valid());
       STATIC_REQUIRE(u == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"_guid);
 #endif
@@ -2035,7 +2034,7 @@ TEST_CASE("Types", "[types]") {
 
   SECTION("Angle", "[types.angle]") {
     SECTION("Wrap") {
-      auto constexpr PI = rolly::numbers::pi_v<f32>;
+      auto constexpr PI = rll::numbers::pi_v<f32>;
       auto constexpr FRAC_PI_2 = PI / 2.0F;
 
       REQUIRE(angle<f32>::from_radians(0.0).positive() == angle<f32>::zero());
@@ -2224,7 +2223,7 @@ TEST_CASE("Types", "[types]") {
       REQUIRE(p.div_euclid(-s) == point2d(-1.0, -2.0));
     }
 
-#if defined(ROLLY_QT_CORE)
+#if defined(RLL_QT_CORE)
     SECTION("ToQPoint") {
       constexpr auto p = point2d(1.0, 2.0);
 
@@ -2368,7 +2367,7 @@ TEST_CASE("Types", "[types]") {
       REQUIRE_FALSE(c);
     }
 
-#if defined(ROLLY_QT_CORE)
+#if defined(RLL_QT_CORE)
     SECTION("ToQSize") {
       REQUIRE(size2d(1.0, 2.0).to_qsize() == QSize(1, 2));
       REQUIRE(size2d(0.0, 0.0).to_qsize() == QSize(0, 0));

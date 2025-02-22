@@ -29,7 +29,7 @@ paths = ['images']
 [macros]
 '___concept___(...)' = 'typename'
 '___sfinae_requirement___(...)' = ''
-'ROLLY_API' = ''
+'RLL_API' = ''
 '___requires___(...)' = ''
 # 'TOML_ABI_NAMESPACE_START(...)'       = 'static_assert(true)'
 # 'TOML_ABI_NAMESPACE_BOOL(...)'        = 'static_assert(true)'
@@ -41,7 +41,7 @@ paths = ['images']
 # 'tagfiles/qt5-qml.tag.xml' = 'https://doc.qt.io/qt-5'
 
 [code_blocks]
-macros = ['ROLLY_[A-Z0-9_]+?']
+macros = ['RLL_[A-Z0-9_]+?']
 
 # [badges]
 # '1. TOML v1.0.0'  = [

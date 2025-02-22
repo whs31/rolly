@@ -1,18 +1,18 @@
-#include <rolly/types/guid.h>
+#include <rll/types/guid.h>
 
 #include <cstring>
 #include <iomanip>
 #include <iostream>
 
-#if defined(ROLLY_OS_LINUX)
+#if defined(RLL_OS_LINUX)
 #  include <uuid/uuid.h>
-#elif defined(ROLLY_OS_ANDROID)
+#elif defined(RLL_OS_ANDROID)
 #  include "oslayer/android/guid.h"
-#elif defined(ROLLY_OS_WINDOWS)
+#elif defined(RLL_OS_WINDOWS)
 #  include <objbase.h>
 #endif
 
-namespace rolly {
+namespace rll {
   guid::guid(std::array<std::byte, 16> const& bytes) {
     std::memcpy(this->bytes_.data(), bytes.data(), 16);
   }
@@ -59,19 +59,19 @@ namespace rolly {
   }
 
   guid guid::random() noexcept {
-#if defined(ROLLY_OS_LINUX)
+#if defined(RLL_OS_LINUX)
     static_assert(
       std::is_same_v<unsigned char[16], uuid_t>,
-      "rolly::guid: uuid_t is not unsigned char[16]"
+      "rll::guid: uuid_t is not unsigned char[16]"
     );  // NOLINT(*-avoid-c-arrays)
 
     auto data = std::array<u8, 16>();
     ::uuid_generate(data.data());
     return guid(data);
-#elif defined(ROLLY_OS_ANDROID)
-#  warning "rolly::guid::random() is currently not implemented for Android"
+#elif defined(RLL_OS_ANDROID)
+#  warning "rll::guid::random() is currently not implemented for Android"
     return guid({0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
-#elif defined(ROLLY_OS_WINDOWS)
+#elif defined(RLL_OS_WINDOWS)
     auto new_id = GUID();
     ::CoCreateGuid(&new_id);
     auto data = std::array<u8, 16> {
@@ -93,10 +93,10 @@ namespace rolly {
       static_cast<u8>(new_id.Data4[7])
     };
     return guid(data);
-#endif  // ROLLY_OS_LINUX
+#endif  // RLL_OS_LINUX
   }
 
   u64 guid::to_u64() const noexcept {
-    return detail::hash<rolly::u64, rolly::u64> {}(bytes()[0], bytes()[1]);
+    return detail::hash<rll::u64, rll::u64> {}(bytes()[0], bytes()[1]);
   }
-}  // namespace rolly
+}  // namespace rll

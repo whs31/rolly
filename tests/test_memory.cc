@@ -1,7 +1,7 @@
-#include <rolly/memory.h>
+#include <rllemory.h>
 #include <catch2/catch_all.hpp>
 
-using namespace rolly;
+using namespace rll;
 
 struct A {
   virtual ~A() {}

@@ -1,11 +1,11 @@
 #include <catch2/catch_all.hpp>
 #include <toml++/toml.h>
-#include <rolly/config.h>
-#include <rolly/savefile.h>
+#include <rll/config.h>
+#include <rll/savefile.h>
 
 using std::string;
 using std::string_view;
-using namespace rolly;
+using namespace rll;
 namespace fs = std::filesystem;
 
 struct DummyConfiguration {
@@ -27,13 +27,13 @@ struct TestStruct {
   int b = 2;
 };
 
-DECLARE_SERIALIZABLE(TestStruct, rolly::serialization::format::json) {
+DECLARE_SERIALIZABLE(TestStruct, rll::serialization::format::json) {
   return fmt::format(R"({{"a": {}, "b": {}}})", value.a, value.b);
 }
 
-DECLARE_DESERIALIZABLE(TestStruct, rolly::serialization::format::json) { return {1,  2}; }
+DECLARE_DESERIALIZABLE(TestStruct, rll::serialization::format::json) { return {1, 2}; }
 
-DECLARE_SERIALIZABLE(DummyConfiguration, rolly::serialization::format::toml) {
+DECLARE_SERIALIZABLE(DummyConfiguration, rll::serialization::format::toml) {
   auto const out = toml::table {
     {"test",       value.test},
     {"ip_address",
@@ -52,7 +52,7 @@ DECLARE_SERIALIZABLE(DummyConfiguration, rolly::serialization::format::toml) {
   return ss.str();
 }
 
-DECLARE_DESERIALIZABLE(DummyConfiguration, rolly::serialization::format::toml) {
+DECLARE_DESERIALIZABLE(DummyConfiguration, rll::serialization::format::toml) {
   auto self = DummyConfiguration();
   toml::table in;
   try {

@@ -1,18 +1,18 @@
 #include <cstdio>
 #include <cstdlib>
 #include <ostream>
-#include <rolly/contracts.h>
+#include <rll/contracts.h>
 
 #include <fmt/color.h>
 #include <fmt/format.h>
 
 namespace {
-  using namespace rolly::contracts;
+  using namespace rll::contracts;
   contract_violation_handler global_violation_handler =
     default_contract_violation_handler;  // NOLINT(*-avoid-non-const-global-variables)
 }  // namespace
 
-namespace rolly::contracts {
+namespace rll::contracts {
   void default_contract_violation_handler(contract_violation const& violation) {
     auto type = [&violation]() -> std::string_view {
       switch(violation.type) {
@@ -68,4 +68,4 @@ namespace rolly::contracts {
     ::violation_handler()(make_contract_violation(type, message, location));
     std::abort();
   }
-}  // namespace rolly::contracts
+}  // namespace rll::contracts

@@ -2,9 +2,9 @@
 
 #include <cstdlib>
 
-#ifndef ROLLY_OS_WINDOWS
+#ifndef RLL_OS_WINDOWS
 
-namespace rolly::oslayer::linux {
+namespace rll::oslayer::linux {
   std::filesystem::path home_dir() {
     auto* const home_c = std::getenv("HOME");
     if(not home_c)
@@ -18,6 +18,6 @@ namespace rolly::oslayer::linux {
       throw std::runtime_error("failed to get XDG_RUNTIME_DIR: $XDG_RUNTIME_DIR is not set");
     return {xdg_runtime_dir_c};
   }
-}  // namespace rolly::oslayer::linux
+}  // namespace rll::oslayer::linux
 
 #endif

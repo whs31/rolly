@@ -1,16 +1,16 @@
-#include <rolly/library.h>
+#include <rll/library.h>
 
 #include <set>
 #include <atomic>
 #include <algorithm>
 #include <mutex>
-#include <rolly/global/platform_definitions.h>
-#include <rolly/string_util.h>
+#include <rll/global/platform_definitions.h>
+#include <rll/string_util.h>
 #include <oslayer/dlfcn.h>
 
 using namespace std::literals;
 
-namespace rolly {
+namespace rll {
   namespace detail {
     [[nodiscard]] std::string complete_suffix(std::filesystem::path const& name) {
       auto const str = name.generic_string();
@@ -120,7 +120,7 @@ namespace rolly {
 
   bool library::is_library(std::filesystem::path const& path) {
     auto const name = path.filename();
-#if defined(ROLLY_OS_WINDOWS)
+#if defined(RLL_OS_WINDOWS)
     return name.extension() == ".dll" or name.extension() == ".DLL";
 #else
     auto const complete_ext = detail::complete_suffix(name);
@@ -128,11 +128,11 @@ namespace rolly {
       return false;
     auto const suffixes = split_by(complete_ext, '.');
     auto valid_suffix_set = std::set<std::string> {};
-#  if defined(ROLLY_OS_DARWIN) || defined(ROLLY_OS_IOS)
+#  if defined(RLL_OS_DARWIN) || defined(RLL_OS_IOS)
     valid_suffix_set.insert("dylib"s);
     valid_suffix_set.insert("bundle"s);
     valid_suffix_set.insert("so"s);
-#  elif defined(ROLLY_OS_LINUX) || defined(ROLLY_OS_FREEBSD) || defined(ROLLY_OS_ANDROID)
+#  elif defined(RLL_OS_LINUX) || defined(RLL_OS_FREEBSD) || defined(RLL_OS_ANDROID)
     valid_suffix_set.insert("so"s);
 #  endif
     for(auto const& suffix : suffixes)
@@ -141,4 +141,4 @@ namespace rolly {
     return false;
 #endif
   }
-}  // namespace rolly
+}  // namespace rll

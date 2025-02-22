@@ -1,7 +1,7 @@
-#include <rolly/rtti.h>
+#include <rll/rtti.h>
 #include <catch2/catch_all.hpp>
 
-using namespace rolly;
+using namespace rll;
 
 TEST_CASE("Rtti", "[rtti]") {
   SECTION("Demangle") {

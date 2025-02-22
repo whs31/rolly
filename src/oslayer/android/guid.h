@@ -1,12 +1,12 @@
 #pragma once
 
-#include <rolly/global/platform_definitions.h>
+#include <rll/global/platform_definitions.h>
 
-#if defined(ROLLY_OS_ANDROID) || defined(DOXYGEN)
+#if defined(RLL_OS_ANDROID) || defined(DOXYGEN)
 #  include <thread>
 #  include <jni.h>
 
-namespace rolly::oslayer::android {
+namespace rll::oslayer::android {
   struct guid_info {
     [[nodiscard]] guid_info from_env(JNIEnv* env) const;
     JNIEnv* env = nullptr;
@@ -19,5 +19,5 @@ namespace rolly::oslayer::android {
 
   extern guid_info info;
   void init_jni(JNIEnv* env);
-}  // namespace rolly::oslayer::android
-#endif  // ROLLY_OS_ANDROID
+}  // namespace rll::oslayer::android
+#endif  // RLL_OS_ANDROID

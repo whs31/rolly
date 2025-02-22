@@ -1,30 +1,30 @@
-#include <rolly/directories.h>
+#include <rll/directories.h>
 
 #include <stdexcept>
 #include <system_error>
-#include <rolly/string_util.h>
+#include <rll/string_util.h>
 #include "oslayer/base.h"
 
-#ifdef ROLLY_OS_WINDOWS
+#ifdef RLL_OS_WINDOWS
 #  include "oslayer/win/known_folder.h"
 #else
 #  include "oslayer/linux/dirs.h"
-#endif  // ROLLY_OS_WINDOWS
+#endif  // RLL_OS_WINDOWS
 
 using std::string;
 using std::string_view;
 using std::filesystem::path;
 
-#if defined(ROLLY_OS_LINUX)
+#if defined(RLL_OS_LINUX)
 namespace {
   string trim(string_view const name, string_view const repl) {
     auto str = string();
     str.reserve(name.length());
-    auto parts = rolly::split(name);
+    auto parts = rll::split(name);
     auto current_part = parts.begin();
     auto const replace = not repl.empty();
     while(current_part != parts.end()) {
-      auto const value = rolly::to_lower(*current_part);
+      auto const value = rll::to_lower(*current_part);
       str.append(value);
       ++current_part;
       if(replace && current_part != parts.end())
@@ -33,9 +33,9 @@ namespace {
     return str;
   }
 }  // namespace
-#endif  // ROLLY_OS_LINUX
+#endif  // RLL_OS_LINUX
 
-namespace rolly {
+namespace rll {
   dirs::dirs()
     : user_home_(oslayer::___os___::home_dir()) {}
 
@@ -46,7 +46,7 @@ namespace rolly {
     [[maybe_unused]] string_view const vendor,
     [[maybe_unused]] string_view const app
   ) {
-#if defined(ROLLY_OS_WINDOWS)
+#if defined(RLL_OS_WINDOWS)
     auto const p = path(vendor) / app;
     auto const appdata = oslayer::___os___::appdata_dir();
     auto const local_appdata = oslayer::___os___::local_appdata_dir();
@@ -60,7 +60,7 @@ namespace rolly {
     this->preference_dir_ = this->config_dir_;  // NOLINT
     this->runtime_dir_ = nullopt;               // NOLINT
     this->state_dir_ = nullopt;                 // NOLINT
-#elif defined(ROLLY_OS_LINUX)
+#elif defined(RLL_OS_LINUX)
     auto const p = path(::trim(app, ""));
     auto const home = oslayer::___os___::home_dir();
 
@@ -77,7 +77,7 @@ namespace rolly {
       this->runtime_dir_ = nullopt;
     }
     this->state_dir_ = home / ".local" / "state" / p;
-#elif defined(ROLLY_OS_DARWIN)
+#elif defined(RLL_OS_DARWIN)
     auto replaced = [](string_view const str, char const what, char const with) {
       auto owned_str = string(str);
       std::replace(owned_str.begin(), owned_str.end(), what, with);
@@ -165,4 +165,4 @@ namespace rolly {
   optional<path> const& application_dirs::runtime_dir() const { return this->runtime_dir_; }
 
   optional<path> const& application_dirs::state_dir() const { return this->state_dir_; }
-}  // namespace rolly
+}  // namespace rll
