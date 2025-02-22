@@ -3,8 +3,8 @@
 #include <list>
 #include <rll/qt/formatters.h>
 #include <rll/qt/literals.h>
-#include <rll/types/optional.h>
-#include <rll/types/stdint.h>
+#include <rll/optional.h>
+#include <rll/stdint.h>
 
 #ifdef _MSC_VER
 #  include <ciso646>

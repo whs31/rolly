@@ -205,10 +205,11 @@ namespace rll  // NOLINT(*-concat-nested-namespaces)
     /**
      * @brief Literal operator for the uuid.
      * @param str String representation of the uuid.
+     * @param size Size of the string.
      * @return uuid object.
      */
     constexpr inline uuid
-      operator""_guid(char const* str, [[maybe_unused]] std::size_t const size) {
+      operator""_uuid(char const* str, [[maybe_unused]] std::size_t const size) {
       return uuid(std::string_view(str, size));
     }
   }  // namespace literals

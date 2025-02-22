@@ -89,7 +89,7 @@ namespace rll {
      * @tparam F The type of function to apply.
      * @param fn The function to apply.
      */
-    template <typename F, typename = std::enable_if_t<std::is_invocable_v<F>>>
+    template <typename F, typename = std::enable_if_t<std::is_invocable_v<F, number_type>>>
     constexpr auto map(F&& fn) const                            // NOLINT(*-trailing-return)
       -> std::enable_if_t<
         std::is_invocable_v<F, number_type>,

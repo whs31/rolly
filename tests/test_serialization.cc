@@ -129,12 +129,10 @@ TEST_CASE("Serialization & filesystem") {
       auto const expected = test;
 
       auto ss = std::stringstream();
-      auto json = serializer<TestStruct, format::json>::serialize(test);
-      auto test2 = serialization::deserialize<format::json, TestStruct>(json);
+      auto res = serializer<TestStruct, format::json>::serialize(test, ss);
 
-      REQUIRE(expected.a == test2.a);
-      REQUIRE(expected.b == test2.b);
-      REQUIRE(json == R"({"a": 1, "b": 2})");
+      REQUIRE(res.has_value());
+      REQUIRE(ss.str() == R"({"a": 1, "b": 2})");
     }
   }
 
