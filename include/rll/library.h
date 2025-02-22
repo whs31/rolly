@@ -2,15 +2,15 @@
 
 #include <string>
 #include <string_view>
-#include "global/export.h"
-#include "traits/pimpl.h"
-#include "types/result.h"
-#include "utility.h"
+#include <rll/global/export.h>
+#include <rll/traits/pimpl.h>
+#include <rll/result.h>
+#include <rll/utility.h>
 #ifndef Q_MOC_RUN
 #  include <filesystem>
 #endif
 
-namespace rolly {
+namespace rll {
   class RLL_API library final {
    public:
     /**
@@ -254,98 +254,92 @@ namespace rolly {
     [[nodiscard]] static bool is_library(std::filesystem::path const& path);
 
    private:
-    DECLARE_PRIVATE_UNIQUE_PTR_AS(library_private);
+    DECLARE_PRIVATE_AS(library_private);
   };
 
   /**
-   * @brief Flag bitwise or operator for rolly::library::load_hint
+   * @brief Flag bitwise or operator for rll::library::load_hint
    * @param lhs Left operand
    * @param rhs Right operand
    * @return Result of bitwise or
-   * @relates rolly::library
+   * @relates rll::library
    */
-  [[nodiscard]] constexpr rolly::library::load_hint
-    operator|(rolly::library::load_hint const lhs, rolly::library::load_hint const rhs) noexcept {
-    return static_cast<rolly::library::load_hint>(
-      rolly::to_underlying(lhs) | rolly::to_underlying(rhs)
-    );
+  [[nodiscard]] constexpr rll::library::load_hint
+    operator|(rll::library::load_hint const lhs, rll::library::load_hint const rhs) noexcept {
+    return static_cast<rll::library::load_hint>(rll::to_underlying(lhs) | rll::to_underlying(rhs));
   }
 
   /**
-   * @brief Flag bitwise and operator for rolly::library::load_hint
+   * @brief Flag bitwise and operator for rll::library::load_hint
    * @param lhs Left operand
    * @param rhs Right operand
    * @return Result of bitwise and
-   * @relates rolly::library
+   * @relates rll::library
    */
-  [[nodiscard]] constexpr rolly::library::load_hint
-    operator&(rolly::library::load_hint const lhs, rolly::library::load_hint const rhs) noexcept {
-    return static_cast<rolly::library::load_hint>(
-      rolly::to_underlying(lhs) & rolly::to_underlying(rhs)
-    );
+  [[nodiscard]] constexpr rll::library::load_hint
+    operator&(rll::library::load_hint const lhs, rll::library::load_hint const rhs) noexcept {
+    return static_cast<rll::library::load_hint>(rll::to_underlying(lhs) & rll::to_underlying(rhs));
   }
 
   /**
-   * @brief Flag bitwise xor operator for rolly::library::load_hint
+   * @brief Flag bitwise xor operator for rll::library::load_hint
    * @param lhs Left operand
    * @param rhs Right operand
    * @return Result of bitwise xor
-   * @relates rolly::library
+   * @relates rll::library
    */
-  [[nodiscard]] constexpr rolly::library::load_hint
-    operator^(rolly::library::load_hint const lhs, rolly::library::load_hint const rhs) noexcept {
-    return static_cast<rolly::library::load_hint>(
-      rolly::to_underlying(lhs) ^ rolly::to_underlying(rhs)
-    );
+  [[nodiscard]] constexpr rll::library::load_hint
+    operator^(rll::library::load_hint const lhs, rll::library::load_hint const rhs) noexcept {
+    return static_cast<rll::library::load_hint>(rll::to_underlying(lhs) ^ rll::to_underlying(rhs));
   }
 
   /**
-   * @brief Flag bitwise not operator for rolly::library::load_hint
+   * @brief Flag bitwise not operator for rll::library::load_hint
    * @param value Operand
    * @return Result of bitwise not
-   * @relates rolly::library
+   * @relates rll::library
    */
-  [[nodiscard]] constexpr rolly::library::load_hint operator~(rolly::library::load_hint const value
+  [[nodiscard]] constexpr rll::library::load_hint operator~(rll::library::load_hint const value
   ) noexcept {
-    return static_cast<rolly::library::load_hint>(~rolly::to_underlying(value));
+    return static_cast<rll::library::load_hint>(~rll::to_underlying(value));
   }
 
   /**
-   * @brief Assign bitwise or operator for rolly::library::load_hint
+   * @brief Assign bitwise or operator for rll::library::load_hint
    * @param lhs Left operand
    * @param rhs Right operand
    * @return Result of bitwise or
-   * @relates rolly::library
+   * @relates rll::library
    */
-  [[nodiscard]] constexpr rolly::library::load_hint&
-    operator|=(rolly::library::load_hint& lhs, rolly::library::load_hint const rhs) noexcept {
+  [[nodiscard]] constexpr rll::library::load_hint&
+    operator|=(rll::library::load_hint& lhs, rll::library::load_hint const rhs) noexcept {
     lhs = lhs | rhs;
     return lhs;
   }
 
   /**
-   * @brief Assign bitwise and operator for rolly::library::load_hint
+   * @brief Assign bitwise and operator for rll::library::load_hint
    * @param lhs Left operand
    * @param rhs Right operand
    * @return Result of bitwise and
-   * @relates rolly::library
+   * @relates rll::library
    */
-  [[nodiscard]] constexpr rolly::library::load_hint&
-    operator&=(rolly::library::load_hint& lhs, rolly::library::load_hint const rhs) noexcept {
+  [[nodiscard]] constexpr rll::library::load_hint&
+    operator&=(rll::library::load_hint& lhs, rll::library::load_hint const rhs) noexcept {
     lhs = lhs & rhs;
     return lhs;
   }
 
   /**
-   * @brief Assign bitwise xor operator for rolly::library::load_hint
+   * @brief Assign bitwise xor operator for rll::library::load_hint
    * @param lhs Left operand
    * @param rhs Right operand
    * @return Result of bitwise xor
-   * @relates rolly::library
+   * @relates rll::library
    */
-  [[nodiscard]] constexpr rolly::library::load_hint&
-    operator^=(rolly::library::load_hint& lhs, rolly::library::load_hint const rhs) noexcept {
+  [[nodiscard]] constexpr rll::library::load_hint&
+    operator^=(rll::library::load_hint& lhs, rll::library::load_hint const rhs) noexcept {
     lhs = lhs ^ rhs;
     return lhs;
   }
-}  // namespace rolly
+}  // namespace rll

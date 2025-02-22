@@ -1,9 +1,9 @@
 #pragma once
 
-#include "noncopyable.h"
-#include "nonmovable.h"
+#include <rll/traits/noncopyable.h>
+#include <rll/traits/nonmovable.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Disallows copy and move operations for a type.
    * @details Useful for types that are not meant to be copied or moved.
@@ -11,7 +11,7 @@ namespace rolly {
    * Example usage:
    *
    * @code {.cpp}
-   *    struct my_type : rolly::pin
+   *    struct my_type : rll::pin
    *    {
    *      // ...
    *    };
@@ -25,4 +25,4 @@ namespace rolly {
    */
   struct pin : noncopyable,
                nonmovable {};
-}  // namespace rolly
+}  // namespace rll

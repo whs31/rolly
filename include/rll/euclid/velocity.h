@@ -2,12 +2,12 @@
 
 #include <iostream>
 #include <fmt/format.h>
-#include "../math.h"
-#include "../contracts.h"
-#include "../concepts/num.h"
-#include "./stdint.h"
+#include <rll/math.h>
+#include <rll/contracts.h>
+#include <rll/stdint.h>
+#include <rll/concepts/num.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Measurement unit.
    */
@@ -20,14 +20,10 @@ namespace rolly {
 
   /**
    * @brief Newtype describing a velocity.
-   * @tparam T Number type. Must satisfy concept <tt>rolly::concepts::num</tt>. Default is
+   * @tparam T Number type. Must satisfy concept <tt>rll::concepts::num</tt>. Default is
    * <tt>f32</tt>.
    */
-#ifdef DOXYGEN
-  template <concepts::num T = f32>
-#else
-  template <___concept___(concepts::num) T = f32 ___sfinae_requirement___(is_num_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<is_num_v<T>>>
   struct velocity {
     /**
      * @brief Underlying number type.
@@ -85,7 +81,7 @@ namespace rolly {
         switch(u) {
           case velocity_unit::kmph: return "km/h";
           case velocity_unit::mps: return "m/s";
-          default: contracts::broken_precondition("Unknown velocity unit");
+          default: assert_broken_precondition("Unknown velocity unit");
         }
       };
       if constexpr(std::is_floating_point_v<T>)
@@ -103,7 +99,7 @@ namespace rolly {
       switch(u) {
         case velocity_unit::kmph: return this->kmph();
         case velocity_unit::mps: return this->mps();
-        default: contracts::broken_precondition("Unknown velocity unit");
+        default: assert_broken_precondition("Unknown velocity unit");
       }
     }
 
@@ -124,9 +120,9 @@ namespace rolly {
     /**
      * @brief Casts the velocity to another numeric type.
      * @tparam U Target numeric type.
-     * @return Casted velocity.
+     * @return Cast velocity.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity<U> cast() const {
       return velocity<U>(static_cast<U>(this->m_));
     }
@@ -159,7 +155,7 @@ namespace rolly {
       switch(u) {
         case velocity_unit::kmph: return from_kmph(value);
         case velocity_unit::mps: return from_mps(value);
-        default: contracts::broken_precondition("Unknown velocity unit");
+        default: assert_broken_precondition("Unknown velocity unit");
       }
     }
 
@@ -178,9 +174,9 @@ namespace rolly {
 
     /**
      * @brief Returns this numeric newtype as number in another numeric representation.
-     * @tparam U Number type. Must satisfy concept <tt>rolly::concepts::num</tt>.
+     * @tparam U Number type. Must satisfy concept <tt>rll::concepts::num</tt>.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr U as() const {
       return static_cast<U>(this->m_);
     }
@@ -243,7 +239,7 @@ namespace rolly {
     [[nodiscard]] constexpr explicit operator number_type() const { return this->m_; }
 
     /**
-     * @brief Compares this and <i>other</i> velocity with \ref rolly::math::approx_eq for
+     * @brief Compares this and <i>other</i> velocity with \ref rll::math::approx_eq for
      * equality.
      * @param other Other velocity.
      * @return <tt>true</tt> if both velocities are approximately equal, <tt>false</tt> otherwise.
@@ -257,7 +253,7 @@ namespace rolly {
     }
 
     /**
-     * @brief Compares this and <i>other</i> velocity with \ref rolly::math::approx_eq for
+     * @brief Compares this and <i>other</i> velocity with \ref rll::math::approx_eq for
      * inequality.
      * @param other Other velocity.
      * @return <tt>true</tt> if both velocities are not approximately equal, <tt>false</tt>
@@ -396,7 +392,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity operator*(U const& other) const {
       return angle(this->m_ * other);
     }
@@ -406,7 +402,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity operator/(U const& other) const {
       return angle(this->m_ / other);
     }
@@ -416,7 +412,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity operator+(U const& other) const {
       return angle(this->m_ + other);
     }
@@ -426,7 +422,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity operator-(U const& other) const {
       return angle(this->m_ - other);
     }
@@ -436,7 +432,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity& operator+=(U const& other) {
       this->m_ += other;
       return *this;
@@ -447,7 +443,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity& operator-=(U const& other) {
       this->m_ -= other;
       return *this;
@@ -458,7 +454,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity& operator*=(U const& other) {
       this->m_ *= other;
       return *this;
@@ -469,7 +465,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U ___sfinae_requirement___(is_num_v<U>)>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity& operator/=(U const& other) {
       this->m_ /= other;
       return *this;
@@ -483,18 +479,18 @@ namespace rolly {
    private:
     number_type m_;
   };
-}  // namespace rolly
+}  // namespace rll
 
 /**
- * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::velocity class.
+ * @brief Specialization of the `fmt::formatter` for the rll::velocity class.
  * @tparam T Number type.
- * @relates rolly::velocity
+ * @relates rll::velocity
  */
 template <typename T>
-struct fmt::formatter<rolly::velocity<T>> {
+struct fmt::formatter<rll::velocity<T>> {
   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }
 
-  auto format(rolly::velocity<T> const& val, format_context& ctx) const {
+  auto format(rll::velocity<T> const& val, format_context& ctx) const {
     fmt::format_to(ctx.out(), "{}", val.to_string());
     return ctx.out();
   }

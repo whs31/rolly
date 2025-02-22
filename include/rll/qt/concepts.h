@@ -1,16 +1,16 @@
 #pragma once
 
-#include "../global/definitions.h"
+#include <rll/global/definitions.h>
 
 #if defined(RLL_QT_CORE) || defined(RLL_DOC)
 #  include <qobject.h>
 #  include <type_traits>
-#  ifdef ___rolly_cxx20___
+#  if __cplusplus >= 202'002L
 #    include <concepts>
-#  endif  // ___rolly_cxx20___
+#  endif
 
-namespace rolly::concepts {
-#  if defined(___rolly_cxx20___) || defined(RLL_DOC)
+namespace rll {
+#  if __cplusplus >= 202'002L || defined(RLL_DOC)
   template <typename T>
   concept qobject = std::is_base_of_v<::QObject, T>;
 
@@ -19,9 +19,7 @@ namespace rolly::concepts {
     { T::staticMetaObject } -> std::convertible_to<::QMetaObject>;
   };
 #  endif
-}  // namespace rolly::concepts
 
-namespace rolly {
   template <typename T>
   struct is_qobject : std::integral_constant<bool, std::is_base_of_v<::QObject, T>> {};
 
@@ -36,5 +34,5 @@ namespace rolly {
 
   template <typename T>
   inline constexpr bool is_qgadget_v = is_qgadget<T>::value;
-}  // namespace rolly
+}  // namespace rll
 #endif

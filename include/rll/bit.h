@@ -2,8 +2,8 @@
 
 #include <array>
 #include <algorithm>
-#include "global.h"
-#include "concepts/num.h"
+#include <rll/global.h>
+#include <rll/concepts/num.h>
 
 // NOLINTBEGIN(*-reserved-identifier)
 #ifdef RLL_COMPILER_MSVC
@@ -23,7 +23,7 @@
 #endif
 // NOLINTEND(*-reserved-identifier)
 
-#if(__cplusplus >= 202'002L) && defined(__has_include)
+#if (__cplusplus >= 202'002L) && defined(__has_include)
 #  if __has_include(<bit>)
 #    define RLL_HAS_STD_ENDIAN
 #    include <bit>
@@ -46,9 +46,9 @@
 // GLIBC
 #  elif defined(__GLIBC__)
 #    include <endian.h>
-#    if(__BYTE_ORDER == __LITTLE_ENDIAN)
+#    if (__BYTE_ORDER == __LITTLE_ENDIAN)
 #      define RLL_ENDIAN RLL_LITTLE_ENDIAN
-#    elif(__BYTE_ORDER == __BIG_ENDIAN)
+#    elif (__BYTE_ORDER == __BIG_ENDIAN)
 #      define RLL_ENDIAN RLL_BIG_ENDIAN
 #    else
 #      error Unknown endianness detected. Needs to define RLL_ENDIAN
@@ -76,18 +76,14 @@ defined(__sparc__) || defined(__sparc) || defined(_MIPSEB)
 #  endif
 #endif
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Returns the number of 1 bits in the value.
    * @tparam T Type of the value. Must be an unsigned integral type.
    * @param x Value to count the number of 1 bits in.
    * @return The number of 1 bits in the value.
    */
-#ifdef DOXYGEN
-  template <std::integral T>
-#else
-  template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
   [[nodiscard]] constexpr int popcount(T x) noexcept {
     return __builtin_popcount(x);
   }
@@ -99,11 +95,7 @@ namespace rolly {
    * @return True if the value is an integral power of two, false otherwise.
    * @see is_pow2
    */
-#ifdef DOXYGEN
-  template <std::integral T>
-#else
-  template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
   [[nodiscard]] constexpr bool has_single_bit(T x) noexcept {
     return popcount(static_cast<unsigned>(x)) == 1;
   }
@@ -116,11 +108,7 @@ namespace rolly {
    * @return True if the value is an integral power of two, false otherwise.
    * @see has_single_bit
    */
-#ifdef DOXYGEN
-  template <std::integral T>
-#else
-  template <___concept___(std::integral) T ___sfinae_requirement___(std::is_integral_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
   [[nodiscard]] constexpr bool is_pow2(T x) noexcept {
     return x and not (x bitand (x - 1));
   }
@@ -131,11 +119,7 @@ namespace rolly {
    * @param x Value.
    * @return The next power of two of the value.
    */
-#ifdef DOXYGEN
-  template <std::unsigned_integral T>
-#else
-  template <___concept___(std::unsigned_integral) T ___sfinae_requirement___(std::is_unsigned_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<std::is_unsigned_v<T>>>
   [[nodiscard]] constexpr T bit_ceil(T x) noexcept {
     x--;
     x |= x >> 1;
@@ -227,11 +211,7 @@ namespace rolly {
    * @return Reversed value.
    * @version 2.1.32
    */
-#ifdef DOXYGEN
-  template <concepts::num T>
-#else
-  template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<is_num_v<T>>>
   [[nodiscard]] constexpr T byteswap(T x) noexcept {
     static_assert(
       std::has_unique_object_representations_v<T>,
@@ -239,7 +219,7 @@ namespace rolly {
     );
     auto value_repr = bit_cast<std::array<std::byte, sizeof(T)>>(x);
     std::reverse(std::begin(value_repr), std::end(value_repr));
-    return rolly::bit_cast<T>(value_repr);
+    return rll::bit_cast<T>(value_repr);
   }
 
   /**
@@ -250,11 +230,7 @@ namespace rolly {
    * @return Reversed value.
    * @version 2.1.32
    */
-#ifdef DOXYGEN
-  template <concepts::num T>
-#else
-  template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<is_num_v<T>>>
   [[nodiscard]] constexpr T to_big_endian(T x) noexcept {
     if constexpr(endian::native == endian::little)
       return byteswap(x);
@@ -270,15 +246,11 @@ namespace rolly {
    * @return Reversed value.
    * @version 2.1.32
    */
-#ifdef DOXYGEN
-  template <concepts::num T>
-#else
-  template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<is_num_v<T>>>
   [[nodiscard]] constexpr T to_little_endian(T x) noexcept {
     if constexpr(endian::native == endian::big)
       return byteswap(x);
     else
       return x;
   }
-}  // namespace rolly
+}  // namespace rll

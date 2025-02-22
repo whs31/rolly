@@ -4,38 +4,22 @@
 #include <string>
 #include <string_view>
 #include <vector>
-#include "global/export.h"
+#include <rll/global/export.h>
 
-namespace rolly {
-  [[nodiscard]]
-#ifndef DOXYGEN
-  RLL_API
+#ifdef _MSC_VER
+#  include <ciso646>
 #endif
-    std::vector<std::string> split(std::string const& input);
 
-  [[nodiscard]]
-#ifndef DOXYGEN
-  RLL_API
-#endif
-    std::vector<std::string> split(std::string_view input);
+namespace rll {
+  [[nodiscard]] RLL_API std::vector<std::string> split(std::string const& input);
 
-  [[nodiscard]]
-#ifndef DOXYGEN
-  RLL_API
-#endif
-    std::vector<std::string> split_by(std::string const& input, char delimiter);
+  [[nodiscard]] RLL_API std::vector<std::string> split(std::string_view input);
 
-  [[nodiscard]]
-#ifndef DOXYGEN
-  RLL_API
-#endif
-    std::vector<std::string> split_by(std::string_view input, char delimiter);
+  [[nodiscard]] RLL_API std::vector<std::string> split_by(std::string const& input, char delimiter);
 
-  [[nodiscard]]
-#ifndef DOXYGEN
-  RLL_API
-#endif
-    std::string to_lower(std::string_view input);
+  [[nodiscard]] RLL_API std::vector<std::string> split_by(std::string_view input, char delimiter);
+
+  [[nodiscard]] RLL_API std::string to_lower(std::string_view input);
 
   template <typename C>
   bool starts_with(std::basic_string<C> const& input, std::basic_string_view<C> sv) noexcept {
@@ -117,4 +101,4 @@ namespace rolly {
   }
 
   // NOLINTEND(*-owning-memory, *-pro-type-const-cast, *-no-malloc)
-}  // namespace rolly
+}  // namespace rll

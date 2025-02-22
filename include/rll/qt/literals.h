@@ -1,16 +1,16 @@
 #pragma once
 
-#include "../global/definitions.h"
+#include <rll/global/definitions.h>
 
 #if defined(RLL_QT_CORE) || defined(RLL_DOC)
 #  include <qstring.h>
 #  include <qurl.h>
 
-namespace rolly  // NOLINT(*-concat-nested-namespaces)
+namespace rll  // NOLINT(*-concat-nested-namespaces)
 {
   inline namespace literals {
     [[maybe_unused]] inline ::QString
-      operator""_qs(char16_t const* str, std::size_t size) noexcept {
+      operator""_qstr(char16_t const* str, std::size_t size) noexcept {
 #  if QT_VERSION_MAJOR < 6
       return ::QString::fromUtf16(str, static_cast<int>(size));
 #  else   // QT_VERSION_MAJOR
@@ -20,10 +20,11 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
 #  endif  // QT_VERSION_MAJOR
     }
 
-    [[maybe_unused]] inline ::QUrl operator""_qurl(char16_t const* str, std::size_t size) noexcept {
-      return {operator""_qs(str, size)};
+    [[maybe_unused]] inline ::QUrl
+      operator""_qurl(char16_t const* str, std::size_t const size) noexcept {
+      return {operator""_qstr(str, size)};
     }
   }  // namespace literals
-}  // namespace rolly
+}  // namespace rll
 
 #endif  // RLL_QT_CORE || RLL_DOC

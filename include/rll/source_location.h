@@ -2,14 +2,14 @@
 
 #include <fmt/format.h>
 #include <fmt/ostream.h>
-#include "global/definitions.h"
-#include "types/stdint.h"
+#include <rll/global/definitions.h>
+#include <rll/types/stdint.h>
 
-#if defined(RLL_COMPAT) && defined(_MSC_VER)
+#if defined(_MSC_VER)
 #  include <ciso646>
 #endif
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Provides information about the location of the current source file.
    * @details Class provides information about the location of the current source file.
@@ -18,12 +18,12 @@ namespace rolly {
    * @code {.cpp}
    * auto main() -> int {
    *   log::debug("I am called from {}, {}:{} in file {}!",
-   *     rolly::source_location::current().function_name(),
-   *     rolly::source_location::current().line(),
-   *     rolly::source_location::current().column(),
-   *     rolly::source_location::current().file_name()
+   *     rll::source_location::current().function_name(),
+   *     rll::source_location::current().line(),
+   *     rll::source_location::current().column(),
+   *     rll::source_location::current().file_name()
    *   );
-   *   fmt::println("I am called from {}", rolly::source_location::current());
+   *   fmt::println("I am called from {}", rll::source_location::current());
    * }
    * @endcode
    *
@@ -44,7 +44,7 @@ namespace rolly {
     /**
      * @brief Returns current source location.
      */
-    static ___consteval___ source_location current(
+    static constexpr source_location current(
 #ifndef RLL_DOC
 #  if not defined(__apple_build_version__) and defined(__clang__) and (__clang_major__ >= 9)
       char const* file = __builtin_FILE(),
@@ -146,12 +146,12 @@ namespace rolly {
   inline bool operator!=(source_location const& lhs, source_location const& rhs) noexcept {
     return not (lhs == rhs);
   }
-}  // namespace rolly
+}  // namespace rll
 
 /**
- * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::source_location
+ * @brief Specialization of the `fmt::formatter` for the @ref rll::source_location
  * class.
- * @relates rolly::source_location
+ * @relates rll::source_location
  */
 template <>
-struct [[maybe_unused]] fmt::formatter<rolly::source_location> : ostream_formatter {};
+struct [[maybe_unused]] fmt::formatter<rll::source_location> : ostream_formatter {};

@@ -5,32 +5,28 @@
 #include <tuple>
 #include <algorithm>
 #include <fmt/format.h>
-#include "../concepts/num.h"
-#include "./stdint.h"
+#include <rll/concepts/num.h>
+#include <rll/stdint.h>
 
 #if defined(RLL_QT_GUI)
 #  include <qsize.h>
 #endif
 
-namespace rolly {
-  template <___concept___(concepts::num) T>
+namespace rll {
+  template <typename T>
   class point2d;
 
-  template <___concept___(concepts::num) T>
+  template <typename T>
   class vector2d;
 
   /**
    * @brief A two-dimensional size2d tagged with a unit.
-   * @tparam T Number type. Must satisfy concept <tt>rolly::concepts::num</tt>. Default is \c f32.
-   * @see rolly::length
-   * @see rolly::point2d
-   * @see rolly::vector2d
+   * @tparam T Number type. Must satisfy concept <tt>rll::concepts::num</tt>. Default is \c f32.
+   * @see rll::length
+   * @see rll::point2d
+   * @see rll::vector2d
    */
-#ifdef DOXYGEN
-  template <concepts::num T = f32>
-#else
-  template <___concept___(concepts::num) T = f32>
-#endif
+  template <typename T = f32>
   struct size2d {
     /**
      * @brief Underlying number type.
@@ -211,7 +207,7 @@ namespace rolly {
      * @brief Linearly interpolate between this size2d and another size2d.
      * @details Example:
      * @code {.cpp}
-     * using rolly::size2d;
+     * using rll::size2d;
      * auto const from = size2d(0.0F, 10.0F);
      * auto const to = size2d(8.0F, -4.0F);
      * fmt::println("{}", from.lerp(to, -1.0F));
@@ -319,12 +315,9 @@ namespace rolly {
      * @brief Constructs new size2d from <tt>std::tuple</tt>.
      * @param other The other <tt>std::tuple</tt>.
      */
-#ifdef DOXYGEN
-    template <typename... Args>
-#else
-    template <typename... Args ___sfinae_requirement___(std::tuple_size_v<std::tuple<Args...>> == 2)>
-      ___requires___((std::tuple_size_v<std::tuple<Args...>> == 2))
-#endif
+    template <
+      typename... Args,
+      typename = std::enable_if_t<std::tuple_size_v<std::tuple<Args...>> == 2>>
     [[nodiscard]] static constexpr size2d from_tuple(std::tuple<Args...> const& other) {
       return {std::get<0>(other), std::get<1>(other)};
     }
@@ -334,12 +327,7 @@ namespace rolly {
      * @tparam N2 The size of the array. Must be equal to <tt>2</tt>.
      * @param other The other <tt>std::array</tt>.
      */
-#ifdef DOXYGEN
-    template <std::size_t N2>
-      requires(N2 == 2)
-#else
-    template <std::size_t N2 ___sfinae_requirement___(N2 == 2)> ___requires___((N2 == 2))
-#endif
+    template <std::size_t N2, typename = std::enable_if_t<N2 == 2>>
     [[nodiscard]] static constexpr size2d from_array(std::array<number_type, N2> const& other) {
       return {other[0], other[1]};
     }
@@ -348,7 +336,8 @@ namespace rolly {
      * @brief Constructs new size2d from <tt>std::pair</tt>.
      * @param other The other <tt>std::pair</tt>.
      */
-    [[nodiscard]] static constexpr size2d from_pair(std::pair<number_type, number_type> const& other
+    [[nodiscard]] static constexpr size2d from_pair(
+      std::pair<number_type, number_type> const& other
     ) {
       return {other.first, other.second};
     }
@@ -390,11 +379,11 @@ namespace rolly {
 
     /**
      * @brief Cast from one numeric representation to another, preserving the units.
-     * @tparam T2 New number type.
+     * @tparam U New number type.
      * @return The size2d with the new number type and the same value.
      */
-    template <___concept___(concepts::num) T2>
-    [[nodiscard]] constexpr size2d<T2> cast() const {
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
+    [[nodiscard]] constexpr size2d<U> cast() const {
       return {this->x_, this->y_};
     }
 
@@ -614,18 +603,18 @@ namespace rolly {
     number_type x_;  //< The underlying x-coordinate.
     number_type y_;  //< The underlying y-coordinate.
   };
-}  // namespace rolly
+}  // namespace rll
 
 /**
- * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::size2d class.
+ * @brief Specialization of the `fmt::formatter` for the rll::size2d class.
  * @tparam T Number type.
- * @relates rolly::size2d
+ * @relates rll::size2d
  */
 template <typename T>
-struct fmt::formatter<rolly::size2d<T>> {
+struct fmt::formatter<rll::size2d<T>> {
   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }
 
-  auto format(rolly::size2d<T> const& val, format_context& ctx) const {
+  auto format(rll::size2d<T> const& val, format_context& ctx) const {
     fmt::format_to(ctx.out(), "{}", val.to_string());
     return ctx.out();
   }
@@ -637,12 +626,12 @@ namespace std {
    * @tparam T Underlying type of the <tt>size2d</tt>.
    * @param b <tt>size2d</tt> to hash.
    * @return Hash value.
-   * @relates rolly::size2d
+   * @relates rll::size2d
    * @sa http://en.cppreference.com/w/cpp/utility/hash
    */
   template <typename T>
-  struct hash<rolly::size2d<T>> {
-    size_t operator()(rolly::size2d<T> const& b) const {
+  struct hash<rll::size2d<T>> {
+    size_t operator()(rll::size2d<T> const& b) const {
       return std::hash<T> {}(b.x()) xor std::hash<T> {}(b.y());
     }
   };

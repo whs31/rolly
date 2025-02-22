@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../global/definitions.h"
+#include <rll/global/definitions.h>
 #if defined(RLL_QT_CORE) || defined(RLL_DOC)
 #  include <qstring.h>
 #  include <fmt/core.h>
 
-namespace rolly {
+namespace rll {
   namespace qt {
     template <typename C>
     [[nodiscard]] inline ::QString from_std(std::basic_string_view<C> s) {
@@ -36,5 +36,5 @@ namespace rolly {
   [[nodiscard]] inline ::QString qformat(fmt::format_string<Args...> format, Args&&... args) {
     return qt::from_std<char>(fmt::format(format, std::forward<Args>(args)...));
   }
-}  // namespace rolly
+}  // namespace rll
 #endif

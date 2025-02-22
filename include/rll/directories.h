@@ -2,16 +2,16 @@
 
 #include <string>
 #include <string_view>
-#include "global/export.h"
-#include "global/version.h"
-#include "global/definitions.h"
-#include "types/stdint.h"
-#include "types/optional.h"
+#include <rll/global/export.h>
+#include <rll/global/version.h>
+#include <rll/global/definitions.h>
+#include <rll/stdint.h>
+#include <rll/optional.h>
 #ifndef Q_MOC_RUN
 #  include <filesystem>
 #endif
 
-namespace rolly {
+namespace rll {
   class dirs {
    public:
 #ifndef RLL_DOC
@@ -42,8 +42,8 @@ namespace rolly {
    *
    * For example if user named <i>Alice</i>, the following code:
    * @code {.cpp}
-   * using rolly::application_dirs;
-   * using enum rolly::application_dirs::dir;
+   * using rll::application_dirs;
+   * using enum rll::application_dirs::dir;
    *
    * auto dirs = application_dirs("com", "Foo Corp", "Bar App");
    * std::cout << dirs[config].string() << std::endl; // or std::cout << dirs.config_dir() <<
@@ -352,4 +352,4 @@ namespace rolly {
     optional<std::filesystem::path> runtime_dir_;
     optional<std::filesystem::path> state_dir_;
   };
-}  // namespace rolly
+}  // namespace rll

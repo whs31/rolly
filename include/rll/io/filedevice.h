@@ -2,12 +2,12 @@
 
 #include <utility>
 #include <fstream>
-#include "../types/result.h"
+#include <rll/types/result.h>
 #ifndef Q_MOC_RUN
 #  include <filesystem>
 #endif
 
-namespace rolly {
+namespace rll {
   /**
    * @brief IO-related functions and classes.
    */
@@ -27,7 +27,7 @@ namespace rolly {
 
       [[nodiscard]] std::filesystem::path const& path() const { return this->path_; }
 
-      [[nodiscard]] std::filesystem::path suffixed_path(std::string_view suffix) const {
+      [[nodiscard]] std::filesystem::path suffixed_path(std::string_view const suffix) const {
         auto copy = this->path_;
         return copy.concat(suffix);
       }
@@ -61,7 +61,8 @@ namespace rolly {
         return {(std::istreambuf_iterator<char>(handle)), std::istreambuf_iterator<char>()};
       }
 
-      [[nodiscard]] static result<std::string> try_read_from(std::filesystem::path const& path
+      [[nodiscard]] static result<std::string> try_read_from(
+        std::filesystem::path const& path
       ) noexcept {
         auto handle = std::ifstream(path);
         if(not handle.is_open())
@@ -111,4 +112,4 @@ namespace rolly {
       std::filesystem::path path_;
     };
   }  // namespace io
-}  // namespace rolly
+}  // namespace rll

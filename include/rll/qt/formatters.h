@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../global/definitions.h"
+#include <rll/global/definitions.h>
 
 #if defined(RLL_QT_CORE) || defined(RLL_DOC)
 #  include <qstring.h>
@@ -8,13 +8,13 @@
 #  include <fmt/core.h>
 #  include <fmt/format.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Qt-related types and functions.
    * @note Only available if Qt::Core is linked against the project.
    */
   namespace qt {}  // namespace qt
-}  // namespace rolly
+}  // namespace rll
 
 namespace fmt {
   /**

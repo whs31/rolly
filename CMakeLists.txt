@@ -5,7 +5,7 @@ include_guard(GLOBAL)
 project(rolly
   VERSION 2.4.0
   DESCRIPTION "Radar open-source library"
-  HOMEPAGE_URL "whs31.github.io/rolly" # todo
+  HOMEPAGE_URL "whs31.github.io/rolly"
   LANGUAGES C CXX
 )
 set(PROJECT_NAMESPACE ${PROJECT_NAME}::)
@@ -13,7 +13,7 @@ set(PROJECT_FULL_NAME ${PROJECT_NAMESPACE}${PROJECT_NAME})
 
 option(ROLLY_TESTS "Enable integration tests" OFF)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
-option(ROLLY_QT "Link with Qt" OFF)
+option(ROLLY_QT "Link with Qt" ON) # todo
 
 if ("${CMAKE_GENERATOR}" MATCHES "^Visual Studio")
   set(CMAKE_GENERATOR_PLATFORM "x64" CACHE STRING "" FORCE)
@@ -61,7 +61,7 @@ target_sources(${PROJECT_NAME}
   ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/library.cc
 
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/uuid.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc

@@ -10,9 +10,9 @@
 
 #pragma once
 
-#include "ipaddress/ipaddress.hpp"
+#include <ipaddress/ipaddress.hpp>
 
-namespace rolly {
+namespace rll {
   namespace net {
     using ipaddress::ipv4_address;
     using ipaddress::ipv4_network;
@@ -41,4 +41,4 @@ namespace rolly {
     using ipaddress::operator""_ipv6_net;
     using ipaddress::operator""_net;
   }  // namespace literals
-}  // namespace rolly
+}  // namespace rll

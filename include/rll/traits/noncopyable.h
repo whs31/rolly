@@ -1,12 +1,12 @@
 #pragma once
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Disallows copy operations for a type
    * @details Example usage:
    *
    * @code {.cpp}
-   *    class Test : rolly::noncopyable {}; // copy is not allowed for Test
+   *    class Test : rll::noncopyable {}; // copy is not allowed for Test
    *
    *    Test t1;
    *    Test t2(t1); // error
@@ -21,4 +21,4 @@ namespace rolly {
     noncopyable(noncopyable const&) = delete;
     noncopyable& operator=(noncopyable const&) = delete;
   };
-}  // namespace rolly
+}  // namespace rll

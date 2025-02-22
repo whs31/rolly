@@ -5,14 +5,10 @@
 #include <utility>
 #include <algorithm>
 #include <functional>
-#include "../contracts.h"
-#include "box.h"
-#ifdef ___rolly_cxx20___
-#  include <concepts>
-#endif
+#include <rll/contracts.h>
 
 // NOLINTBEGIN(*-explicit-constructor)
-namespace rolly {
+namespace rll {
   /**
    * @brief A smart pointer that holds a pointer to a value, but does not own it.
    * @details observer_ptr is a non-owning pointer, or observer. The observer stores a pointer to a
@@ -87,57 +83,18 @@ namespace rolly {
      * @tparam U Type of the other observer. Must be convertible to <tt>T*</tt>.
      * @param other Observer to construct from.
      */
-#ifndef DOXYGEN
-#  ifdef ___rolly_cxx20___
-    template <typename U>
-      requires std::is_convertible_v<U*, T*>
-#  else
     template <typename U, typename = std::enable_if_t<std::is_convertible<U*, T*>::value>>
-#  endif
-#else
-    template <typename U>
-#endif
     constexpr observer_ptr(observer_ptr<U> const& other) noexcept
-      : ptr_(other.get()) {
-    }
+      : ptr_(other.get()) {}
 
     /**
      * @brief Constructs an observer from a unique pointer.
      * @tparam U Underlying type of the unique pointer. Must be convertible to <tt>T*</tt>.
      * @param other Unique pointer to construct from.
      */
-#ifndef DOXYGEN
-#  ifdef ___rolly_cxx20___
-    template <typename U>
-      requires std::is_convertible_v<U*, T*>
-#  else
     template <typename U, typename = std::enable_if_t<std::is_convertible<U*, T*>::value>>
-#  endif
-#else
-    template <typename U>
-#endif
     constexpr observer_ptr(std::unique_ptr<U> const& other) noexcept
-      : ptr_(other.get()) {
-    }
-
-    /**
-     * @brief Constructs an observer from a box.
-     * @tparam U Type of the box. Must be convertible to <tt>T*</tt>.
-     * @param other Box to construct from.
-     */
-#ifndef DOXYGEN
-#  ifdef ___rolly_cxx20___
-    template <typename U>
-      requires std::is_convertible_v<U*, T*>
-#  else
-    template <typename U, typename = std::enable_if_t<std::is_convertible<U*, T*>::value>>
-#  endif
-#else
-    template <typename U>
-#endif
-    constexpr observer_ptr(box<U> const& other) noexcept
-      : ptr_(other.get()) {
-    }
+      : ptr_(other.get()) {}
 
     /**
      * @brief Returns the watched pointer.
@@ -165,7 +122,7 @@ namespace rolly {
      * @invariant The watched pointer is not <tt>nullptr</tt>.
      */
     [[nodiscard]] constexpr reference operator*() const noexcept {
-      contracts::precondition(this->ptr_ != nullptr, "Dereference of the null pointer");
+      assert_precondition(this->ptr_ != nullptr, "Dereference of the null pointer");
       return *this->ptr_;
     }
 
@@ -175,7 +132,7 @@ namespace rolly {
      * @invariant The watched pointer is not <tt>nullptr</tt>.
      */
     [[nodiscard]] constexpr pointer operator->() const noexcept {
-      contracts::precondition(this->ptr_ != nullptr, "Dereference of the null pointer");
+      assert_precondition(this->ptr_ != nullptr, "Dereference of the null pointer");
       return this->ptr_;
     }
 
@@ -250,7 +207,7 @@ namespace rolly {
   [[nodiscard]] constexpr observer_ptr<T> make_observer(T* ptr) noexcept {
     return observer_ptr<T>(ptr);
   }
-}  // namespace rolly
+}  // namespace rll
 
 namespace std {
   /**
@@ -258,21 +215,21 @@ namespace std {
    * @tparam T Type of the watched pointer
    * @param lhs First pointer
    * @param rhs Second pointer
-   * @relates rolly::observer_ptr
+   * @relates rll::observer_ptr
    */
   template <typename T>
-  void swap(rolly::observer_ptr<T>& lhs, rolly::observer_ptr<T>& rhs) noexcept {
+  void swap(rll::observer_ptr<T>& lhs, rll::observer_ptr<T>& rhs) noexcept {
     lhs.swap(rhs);
   }
 
   /**
    * @brief Hashes the @ref observer_ptr.
    * @tparam T Type of the watched pointer
-   * @relates rolly::observer_ptr
+   * @relates rll::observer_ptr
    */
   template <typename T>
-  struct hash<rolly::observer_ptr<T>> {
-    std::size_t operator()(rolly::observer_ptr<T> const& ptr) const noexcept {
+  struct hash<rll::observer_ptr<T>> {
+    std::size_t operator()(rll::observer_ptr<T> const& ptr) const noexcept {
       return std::hash<T*> {}(ptr.get());
     }
   };

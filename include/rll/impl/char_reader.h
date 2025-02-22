@@ -1,10 +1,10 @@
 #pragma once
 
 #include <stdexcept>
-#include "../../global/definitions.h"
-#include "../stdint.h"
+#include <rll/global/definitions.h>
+#include <rll/stdint.h>
 
-namespace rolly::detail {
+namespace rll::detail {
   template <typename T>
   struct char_reader;
 
@@ -262,4 +262,4 @@ namespace rolly::detail {
     next_char_or_error(T const*& it, T const* end, bool& error, u32& error_symbol) noexcept {
     return detail::char_reader<T>::next_or_error(it, end, error, error_symbol);
   }
-}  // namespace rolly::detail
+}  // namespace rll::detail

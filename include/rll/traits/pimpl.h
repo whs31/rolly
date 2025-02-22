@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../memory/propagate_const.h"
-#include "../memory/box.h"
+#include <memory>
+#include <rll/memory/propagate_const.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Pointer-to-implementation pattern trait.
    * @details Allows to use <b>Pimpl</b> pattern in custom types and classes.
@@ -11,7 +11,7 @@ namespace rolly {
    * Example declaration:
    *
    * @code {.cpp}
-   *    class TestPimpl : rolly::pin
+   *    class TestPimpl : rll::pin
    *    {
    *      public:
    *         TestPimpl() = default;
@@ -19,7 +19,7 @@ namespace rolly {
    *
    *      private:
    *        struct impl;
-   *        rolly::pimpl<struct impl> impl_;
+   *        rll::pimpl<struct impl> impl_;
    *    };
    *
    *    struct TestPimpl::impl
@@ -34,29 +34,24 @@ namespace rolly {
    * @tparam T Type to implement.
    */
   template <typename T>
-  using pimpl = propagate_const<box<T>>;
-}  // namespace rolly
+  using pimpl = propagate_const<std::unique_ptr<T>>;
+
+  template <typename T>
+  using shared_pimpl = propagate_const<std::shared_ptr<T>>;
+}  // namespace rll
 
 #define DECLARE_PRIVATE(classname)                                                            \
   struct classname## Private;                                                                 \
-  rolly::pimpl<classname## Private> m_d;                                                      \
-  [[nodiscard]] inline classname## Private const& d() const noexcept { return *this->m_d; }   \
-  [[nodiscard]] inline classname## Private& d() noexcept { return *this->m_d; }
+  rll::pimpl<classname## Private> impl;
 
 #define DECLARE_PRIVATE_AS(alias)                                                             \
   struct alias;                                                                               \
-  rolly::pimpl<alias> m_d;                                                                    \
-  [[nodiscard]] inline alias const& d() const noexcept { return *this->m_d; }                 \
-  [[nodiscard]] inline alias& d() noexcept { return *this->m_d; }
+  rll::pimpl<alias> impl;
 
-#define DECLARE_PRIVATE_UNIQUE_PTR(classname)                                                 \
+#define DECLARE_PRIVATE_SHARED(classname)                                                     \
   struct classname## Private;                                                                 \
-  std::unique_ptr<classname## Private> m_d;                                                   \
-  [[nodiscard]] inline classname## Private const& d() const noexcept { return *this->m_d; }   \
-  [[nodiscard]] inline classname## Private& d() noexcept { return *this->m_d; }
+  rll::shared_pimpl<classname## Private> impl;
 
-#define DECLARE_PRIVATE_UNIQUE_PTR_AS(alias)                                                  \
+#define DECLARE_PRIVATE_SHARED_AS(alias)                                                      \
   struct alias;                                                                               \
-  std::unique_ptr<alias> m_d;                                                                 \
-  [[nodiscard]] inline alias const& d() const noexcept { return *this->m_d; }                 \
-  [[nodiscard]] inline alias& d() noexcept { return *this->m_d; }
+  rll::shared_pimpl<alias> impl;

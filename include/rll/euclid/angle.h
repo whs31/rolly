@@ -2,11 +2,11 @@
 
 #include <iostream>
 #include <fmt/format.h>
-#include "../math.h"
-#include "../contracts.h"
-#include "../concepts/num.h"
+#include <rll/math.h>
+#include <rll/contracts.h>
+#include <rll/concepts/num.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Measurement unit of the angle.
    */
@@ -18,14 +18,9 @@ namespace rolly {
   /**
    * @brief Newtype describing an angle.
    * @details Stores an angle in radians.
-   * @tparam T Number type. Must satisfy concept <tt>rolly::concepts::num</tt>. Default is
-   * <tt>f32</tt>.
+   * @tparam T Number type. Must satisfy concept rolly::concepts::num. Default is f32.
    */
-#ifdef DOXYGEN
-  template <concepts::num T = f32>
-#else
-  template <___concept___(concepts::num) T = f32 ___sfinae_requirement___(is_num_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<is_num_v<T>>>
   struct angle {
     /**
      * @brief Underlying number type.
@@ -93,7 +88,7 @@ namespace rolly {
       switch(u) {
         case angle_unit::radians: return this->radians();
         case angle_unit::degrees: return this->degrees();
-        default: contracts::broken_precondition("Unknown unit");
+        default: assert_broken_precondition("Unknown unit");
       }
     }
 
@@ -154,7 +149,7 @@ namespace rolly {
      * @param t Interpolation factor
      * @return Interpolated angle
      */
-    [[nodiscard]] ___constexpr___ angle lerp(angle const& other, T t) const {
+    [[nodiscard]] angle lerp(angle const& other, T t) const {
       auto const res = *this + this->angle_to(other) * t;
       if constexpr(std::is_floating_point_v<T>)
         return angle::from_radians(std::round(res.radians() * 1000.0) / 1000.0);
@@ -173,9 +168,9 @@ namespace rolly {
     /**
      * @brief Casts the angle to another numeric type.
      * @tparam U Target numeric type.
-     * @return Casted angle.
+     * @return Cast angle.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr angle<U> cast() const {
       return angle<U>(static_cast<U>(this->m_));
     }
@@ -210,7 +205,7 @@ namespace rolly {
       switch(u) {
         case angle_unit::radians: return from_radians(value);
         case angle_unit::degrees: return from_degrees(value);
-        default: contracts::broken_precondition("Unknown unit");
+        default: assert_broken_precondition("Unknown unit");
       }
     }
 
@@ -256,9 +251,9 @@ namespace rolly {
 
     /**
      * @brief Returns this numeric newtype as number in another numeric representation.
-     * @tparam U Number type. Must satisfy concept <tt>rolly::concepts::num</tt>.
+     * @tparam U Number type. Must satisfy concept num.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr U as() const {
       return static_cast<U>(this->m_);
     }
@@ -281,32 +276,32 @@ namespace rolly {
     /**
      * @brief Returns the sine of this angle.
      */
-    [[nodiscard]] ___constexpr___ number_type sin() const { return std::sin(this->m_); }
+    [[nodiscard]] number_type sin() const { return std::sin(this->m_); }
 
     /**
      * @brief Returns the cosine of this angle.
      */
-    [[nodiscard]] ___constexpr___ number_type cos() const { return std::cos(this->m_); }
+    [[nodiscard]] number_type cos() const { return std::cos(this->m_); }
 
     /**
      * @brief Returns the tangent of this angle.
      */
-    [[nodiscard]] ___constexpr___ number_type tan() const { return std::tan(this->m_); }
+    [[nodiscard]] number_type tan() const { return std::tan(this->m_); }
 
     /**
      * @brief Returns the arc sine of this angle.
      */
-    [[nodiscard]] ___constexpr___ number_type asin() const { return std::asin(this->m_); }
+    [[nodiscard]] number_type asin() const { return std::asin(this->m_); }
 
     /**
      * @brief Returns the arc cosine of this angle.
      */
-    [[nodiscard]] ___constexpr___ number_type acos() const { return std::acos(this->m_); }
+    [[nodiscard]] number_type acos() const { return std::acos(this->m_); }
 
     /**
      * @brief Returns the arc tangent of this angle.
      */
-    [[nodiscard]] ___constexpr___ number_type atan() const { return std::atan(this->m_); }
+    [[nodiscard]] number_type atan() const { return std::atan(this->m_); }
 
     /**
      * @brief Increments the underlying value by 1.
@@ -500,7 +495,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr angle operator*(U const& other) const {
       return angle(this->m_ * other);
     }
@@ -510,7 +505,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr angle operator/(U const& other) const {
       return angle(this->m_ / other);
     }
@@ -520,7 +515,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr angle operator+(U const& other) const {
       return angle(this->m_ + other);
     }
@@ -530,7 +525,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr angle operator-(U const& other) const {
       return angle(this->m_ - other);
     }
@@ -540,7 +535,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr angle& operator+=(U const& other) {
       this->m_ += other;
       return *this;
@@ -551,7 +546,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr angle& operator-=(U const& other) {
       this->m_ -= other;
       return *this;
@@ -562,7 +557,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr angle& operator*=(U const& other) {
       this->m_ *= other;
       return *this;
@@ -573,7 +568,7 @@ namespace rolly {
      * @tparam U Right hand side numeric type.
      * @param other The other value.
      */
-    template <___concept___(concepts::num) U>
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr angle& operator/=(U const& other) {
       this->m_ /= other;
       return *this;
@@ -587,18 +582,18 @@ namespace rolly {
    private:
     number_type m_;
   };
-}  // namespace rolly
+}  // namespace rll
 
 /**
- * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::angle class.
+ * @brief Specialization of the `fmt::formatter` for the rll::angle class.
  * @tparam T Number type.
- * @relates rolly::angle
+ * @relates rll::angle
  */
 template <typename T>
-struct fmt::formatter<rolly::angle<T>> {
+struct fmt::formatter<rll::angle<T>> {
   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }
 
-  auto format(rolly::angle<T> const& val, format_context& ctx) const {
+  auto format(rll::angle<T> const& val, format_context& ctx) const {
     fmt::format_to(ctx.out(), "{}", val.to_string());
     return ctx.out();
   }

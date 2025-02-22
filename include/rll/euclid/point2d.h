@@ -5,29 +5,25 @@
 #include <tuple>
 #include <algorithm>
 #include <fmt/format.h>
-#include "../math.h"
-#include "../concepts/num.h"
-#include "../concepts/any_of.h"
-#include "./size2d.h"
-#include "./vector2d.h"
-#include "./stdint.h"
+#include <rll/math.h>
+#include <rll/stdint.h>
+#include <rll/concepts/num.h>
+#include <rll/concepts/any_of.h>
+#include <rll/euclid/size2d.h>
+#include <rll/euclid/vector2d.h>
 
 #if defined(RLL_QT_GUI)
 #  include <qpoint.h>
 #endif
 
-namespace rolly {
-#ifdef DOXYGEN
-  template <concepts::num T = f32>
-#else
-  template <___concept___(concepts::num) T = f32>
-#endif
+namespace rll {
+  template <typename T = f32>
   /**
    * @brief A two-dimensional point tagged with a unit.
    * @tparam T Number type. Must satisfy concept <tt>floppy::concepts::num</tt>. Default is \c
    * f32.
-   * @see rolly::size2d
-   * @see rolly::vector2d
+   * @see rll::size2d
+   * @see rll::vector2d
    */
   struct point2d {
     /**
@@ -89,11 +85,7 @@ namespace rolly {
      * @tparam F The type of function to apply.
      * @param fn The function to apply.
      */
-#ifdef DOXYGEN
-    template <std::invocable<number_type> F>
-#else
-    template <___concept___(std::invocable<number_type>) F>
-#endif
+    template <typename F, typename = std::enable_if_t<std::is_invocable_v<F, number_type>>>
     constexpr auto map(F&& fn) const {
       return point2d<decltype(fn(this->x_))>(fn(this->x_), fn(this->y_));
     }
@@ -105,12 +97,8 @@ namespace rolly {
      * @param fn The function to apply.
      */
     template <
-#ifdef ___rolly_cxx20___
-      std::invocable<number_type, number_type>
-#else
-      typename
-#endif
-        F>
+      typename F,
+      typename = std::enable_if_t<std::is_invocable_v<F, number_type, number_type>>>
     constexpr auto zip(point2d const& other, F&& fn) const {
       using result_type = decltype(fn(std::declval<number_type>(), std::declval<number_type>()));
       return point2d<result_type>(fn(this->x_, other.x()), fn(this->y_, other.y()));
@@ -175,21 +163,18 @@ namespace rolly {
      * @tparam Q The type of the divisor. Can be <tt>point2d</tt> or <tt>size2d</tt>.
      * @param other The divisor.
      * @return The quotient.
-     * @see rolly::math::rem_euclid, rolly::math::div_euclid
+     * @see rll::math::rem_euclid, rll::math::div_euclid
      * @see rem_euclid
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<point2d, size2d_type>
 #else
       typename
 #endif
         Q>
     [[nodiscard]] constexpr point2d div_euclid(Q const& other) const {
-      return point2d(
-        rolly::div_euclid(this->x_, other.x()),
-        rolly::div_euclid(this->y_, other.y())
-      );
+      return point2d(rll::div_euclid(this->x_, other.x()), rll::div_euclid(this->y_, other.y()));
     }
 
     /**
@@ -197,21 +182,18 @@ namespace rolly {
      * @tparam Q The type of the divisor. Can be <tt>point2d</tt> or <tt>size2d</tt>.
      * @param other The divisor.
      * @return The remainder.
-     * @see rolly::math::rem_euclid, rolly::math::div_euclid
+     * @see rll::math::rem_euclid, rll::math::div_euclid
      * @see div_euclid
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<point2d, size2d_type>
 #else
       typename
 #endif
         Q>
     [[nodiscard]] constexpr point2d rem_euclid(Q const& other) const {
-      return point2d(
-        rolly::rem_euclid(this->x_, other.x()),
-        rolly::rem_euclid(this->y_, other.y())
-      );
+      return point2d(rll::rem_euclid(this->x_, other.x()), rll::rem_euclid(this->y_, other.y()));
     }
 
     /**
@@ -253,7 +235,7 @@ namespace rolly {
      * @return The sum.
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<point2d, size2d_type, vector2d_type>
 #else
       typename
@@ -271,7 +253,7 @@ namespace rolly {
      * @return The difference.
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<point2d, size2d_type, vector2d_type>
 #else
       typename
@@ -337,7 +319,7 @@ namespace rolly {
      * @return The sum.
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<point2d, size2d_type, vector2d_type>
 #else
       typename
@@ -357,7 +339,7 @@ namespace rolly {
      * @return The difference.
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<point2d, size2d_type, vector2d_type>
 #else
       typename
@@ -461,7 +443,7 @@ namespace rolly {
      * @brief Linearly interpolate between this point2d and another point2d.
      * @details Example:
      * @code {.cpp}
-     * using rolly::point2d;
+     * using rll::point2d;
      * auto const from = point2d(0.0F, 10.0F);
      * auto const to = point2d(8.0F, -4.0F);
      * fmt::println("{}", from.lerp(to, -1.0F));
@@ -568,12 +550,9 @@ namespace rolly {
      * @brief Constructs new point2d from <tt>std::tuple</tt>.
      * @param other The other <tt>std::tuple</tt>.
      */
-#ifdef DOXYGEN
-    template <typename... Args>
-#else
-    template <typename... Args ___sfinae_requirement___(std::tuple_size_v<std::tuple<Args...>> == 2)>
-      ___requires___((std::tuple_size_v<std::tuple<Args...>> == 2))
-#endif
+    template <
+      typename... Args,
+      typename = std::enable_if_t<std::tuple_size_v<std::tuple<Args...>> == 2>>
     [[nodiscard]] static constexpr point2d from_tuple(std::tuple<Args...> const& other) {
       return {std::get<0>(other), std::get<1>(other)};
     }
@@ -583,12 +562,7 @@ namespace rolly {
      * @tparam N2 Size of the <tt>std::array</tt>. Must be equal to <tt>2</tt>.
      * @param other The other <tt>std::array</tt>.
      */
-#ifdef DOXYGEN
-    template <std::size_t N2>
-      requires(N2 == 2)
-#else
-    template <std::size_t N2 ___sfinae_requirement___(N2 == 2)> ___requires___((N2 == 2))
-#endif
+    template <std::size_t N2, typename = std::enable_if_t<N2 == 2>>
     [[nodiscard]] static constexpr point2d from_array(std::array<number_type, N2> const& other) {
       return {other[0], other[1]};
     }
@@ -686,18 +660,18 @@ namespace rolly {
     T x_;
     T y_;
   };
-}  // namespace rolly
+}  // namespace rll
 
 /**
- * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::point2d class.
+ * @brief Specialization of the `fmt::formatter` for the rll::point2d class.
  * @tparam T Number type.
- * @relates rolly::point2d
+ * @relates rll::point2d
  */
 template <typename T>
-struct fmt::formatter<rolly::point2d<T>> {
+struct fmt::formatter<rll::point2d<T>> {
   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }
 
-  auto format(rolly::point2d<T> const& val, format_context& ctx) const {
+  auto format(rll::point2d<T> const& val, format_context& ctx) const {
     fmt::format_to(ctx.out(), "{}", val.to_string());
     return ctx.out();
   }
@@ -709,12 +683,12 @@ namespace std {
    * @tparam T Underlying type of the <tt>point2d</tt>.
    * @param b <tt>point2d</tt> to hash.
    * @return Hash value.
-   * @relates rolly::point2d
+   * @relates rll::point2d
    * @sa http://en.cppreference.com/w/cpp/utility/hash
    */
   template <typename T>
-  struct hash<rolly::point2d<T>> {
-    size_t operator()(rolly::point2d<T> const& b) const {
+  struct hash<rll::point2d<T>> {
+    size_t operator()(rll::point2d<T> const& b) const {
       return std::hash<T> {}(b.x()) xor std::hash<T> {}(b.y());
     }
   };

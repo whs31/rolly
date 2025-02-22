@@ -1,9 +1,14 @@
 #pragma once
 
 #include <list>
-#include "formatters.h"
-#include "literals.h"
-#include "../types/optional.h"
+#include <rll/qt/formatters.h>
+#include <rll/qt/literals.h>
+#include <rll/types/optional.h>
+#include <rll/types/stdint.h>
+
+#ifdef _MSC_VER
+#  include <ciso646>
+#endif
 
 #if defined(RLL_QT_GUI) || defined(RLL_DOC)
 #  include <algorithm>
@@ -14,10 +19,10 @@
 #  include <qqml.h>
 #  include <qqmlengine.h>
 #  include <fmt/format.h>
-#  include <fmt/color.h>
-#  include "./registrable.h"
+#  include <rll/global/version.h>
+#  include <rll/qt/concepts.h>
 
-namespace rolly::qt::qml {
+namespace rll::qt::qml {
   namespace detail {
     enum class strip_kind : u8 {
       prefix_and_extension,
@@ -57,26 +62,12 @@ namespace rolly::qt::qml {
     explicit module(std::string name, version_type version = {1, 0, 0}) noexcept
       : name_(std::move(name))
       , version_(version) {
-      if constexpr(implicit_verbosity == verbosity::verbose) {
-        fmt::println(
-          "rolly::qt::qml: registering module {} v{}.{}",
-          fmt::styled(this->name_, fmt::fg(fmt::terminal_color::blue) | fmt::emphasis::bold),
-          fmt::styled(this->version_.major, fmt::fg(fmt::terminal_color::cyan)),
-          fmt::styled(this->version_.minor, fmt::fg(fmt::terminal_color::cyan))
-        );
-        ::qmlRegisterModule(this->name_.c_str(), this->version_.major, this->version_.minor);
-      }
+      ::qmlRegisterModule(this->name_.c_str(), this->version_.major, this->version_.minor);
     }
 
-    template <___concept___(std::derived_from<::QObject>)
-                T ___sfinae_requirement___((std::is_base_of_v<::QObject, T>))>
+    template <typename T, typename = std::enable_if_t<std::is_base_of_v<::QObject, T>>>
     module& component(optional<std::string_view> name = nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
-      if constexpr(implicit_verbosity == verbosity::verbose)
-        fmt::println(
-          "rolly::qt::qml: \tregistering type {} (qobject)",
-          fmt::styled(component_name, fmt::fg(fmt::terminal_color::green) | fmt::emphasis::bold)
-        );
       ::qmlRegisterType<T>(
         this->name_.c_str(),
         this->version_.major,
@@ -86,14 +77,9 @@ namespace rolly::qt::qml {
       return *this;
     }
 
-    template <___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v<T>)>
+    template <typename T, typename = std::enable_if_t<std::is_base_of_v<::QObject, T>>>
     module& singleton(T* instance, optional<std::string_view> name = nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
-      if constexpr(implicit_verbosity == verbosity::verbose)
-        fmt::println(
-          "rolly::qt::qml: \tregistering singleton type {} (instance)",
-          fmt::styled(component_name, fmt::fg(fmt::terminal_color::magenta) | fmt::emphasis::bold)
-        );
       ::qmlRegisterSingletonInstance(
         this->name_.c_str(),
         this->version_.major,
@@ -104,17 +90,9 @@ namespace rolly::qt::qml {
       return *this;
     }
 
-    template <___concept___(concepts::qobject) T ___sfinae_requirement___(is_qobject_v<T>)>
+    template <typename T, typename = std::enable_if_t<std::is_base_of_v<::QObject, T>>>
     module& singleton(optional<std::string_view> name = nullopt) {
       auto const component_name = module::demangle_class_name<T>(name);
-      if constexpr(implicit_verbosity == verbosity::verbose)
-        fmt::println(
-          "rolly::qt::qml: \tregistering singleton type {}",
-          fmt::styled(
-            component_name,
-            fmt::fg(fmt::terminal_color::bright_magenta) | fmt::emphasis::bold
-          )
-        );
       ::qmlRegisterSingletonType<T>(
         this->name_.c_str(),
         this->version_.major,
@@ -127,12 +105,6 @@ namespace rolly::qt::qml {
 
     module& file(std::string_view url, optional<std::string_view> name = nullopt) {
       auto const component_name = module::demangle_file_url(url, name);
-      if constexpr(implicit_verbosity == verbosity::verbose)
-        fmt::println(
-          "rolly::qt::qml: \tregistering type {} from {}",
-          fmt::styled(component_name, fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold),
-          fmt::styled(url, fmt::emphasis::faint)
-        );
       ::qmlRegisterType(
         ::QUrl(url.data()),  // NOLINT(*-suspicious-stringview-data-usage)
         this->name_.c_str(),
@@ -143,7 +115,7 @@ namespace rolly::qt::qml {
       return *this;
     }
 
-    template <___concept___(concepts::qgadget) T ___sfinae_requirement___(is_qgadget_v<T>)>
+    template <typename T, typename = std::enable_if_t<is_qgadget_v<T>>>
     module& uncreatable(
       optional<std::string_view> name = nullopt,
       optional<std::string_view> reason = nullopt
@@ -154,15 +126,6 @@ namespace rolly::qt::qml {
           return fmt::format("Class \'{}\' is uncreatable", component_name);
         return std::string(reason.value());
       }();
-      if constexpr(implicit_verbosity == verbosity::verbose)
-        fmt::println(
-          "rolly::qt::qml: \tregistering uncreatable type {}, reason: {}",
-          fmt::styled(
-            component_name,
-            fmt::fg(fmt::terminal_color::bright_cyan) | fmt::emphasis::bold
-          ),
-          fmt::styled(reason_string, fmt::fg(fmt::terminal_color::cyan))
-        );
       ::qmlRegisterUncreatableType<T>(
         this->name_.c_str(),
         this->version_.major,
@@ -173,20 +136,8 @@ namespace rolly::qt::qml {
       return *this;
     }
 
-    module& push(registrable& r) {
-      r.register_in(*this);
-      return *this;
-    }
-
-    module& push_all(std::list<registrable>&& r) {
-      contracts::precondition(r.size() > 0);
-      for(auto& i : r)
-        i.register_in(*this);
-      return *this;
-    }
-
    private:
-    template <___concept___(concepts::qgadget) T ___sfinae_requirement___(is_qgadget_v<T>)>
+    template <typename T, typename = std::enable_if_t<is_qgadget_v<T>>>
     [[nodiscard]] static std::string demangle_class_name(optional<std::string_view> name) {
       if(name)
         return std::string(*name);
@@ -196,25 +147,14 @@ namespace rolly::qt::qml {
     }
 
     [[nodiscard]] static std::string
-      demangle_file_url(std::string_view url, optional<std::string_view> name) {
+      demangle_file_url(std::string_view const url, optional<std::string_view> name) {
       if(name)
         return std::string(*name);
-      try {
-        auto const res = detail::strip(url, detail::strip_kind::prefix_and_extension);
-        return res;
-      } catch(std::exception const& err) {
-        if constexpr(implicit_verbosity == verbosity::verbose)
-          fmt::println(
-            stderr,
-            "rolly::qt::qml: error during qml registration: {}",
-            fmt::styled(err.what(), fmt::fg(fmt::terminal_color::red) | fmt::emphasis::bold)
-          );
-        return "Unknown";
-      }
+      return detail::strip(url, detail::strip_kind::prefix_and_extension);
     }
 
     std::string name_;
     version_type version_;
   };
-}  // namespace rolly::qt::qml
+}  // namespace rll::qt::qml
 #endif  // defined(RLL_QT_GUI)

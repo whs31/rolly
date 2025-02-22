@@ -7,12 +7,12 @@
 #include <fmt/format.h>
 
 namespace {
-  using namespace rll::contracts;
+  using namespace rll;
   contract_violation_handler global_violation_handler =
     default_contract_violation_handler;  // NOLINT(*-avoid-non-const-global-variables)
 }  // namespace
 
-namespace rll::contracts {
+namespace rll {
   void default_contract_violation_handler(contract_violation const& violation) {
     auto type = [&violation]() -> std::string_view {
       switch(violation.type) {
@@ -57,15 +57,19 @@ namespace rll::contracts {
   }
 
   contract_violation detail::make_contract_violation(
-    contract_type type,
-    std::string_view message,
-    source_location location
+    contract_type const type,
+    std::string_view const message,
+    source_location const location
   ) {
     return {type, std::string(message), location};
   }
 
-  void detail::violate(contract_type type, std::string_view message, source_location location) {
+  void detail::violate(
+    contract_type const type,
+    std::string_view const message,
+    source_location const location
+  ) {
     ::violation_handler()(make_contract_violation(type, message, location));
     std::abort();
   }
-}  // namespace rll::contracts
+}  // namespace rll

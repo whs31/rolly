@@ -7,11 +7,11 @@
 #include <string>
 #include <string_view>
 #include <fmt/format.h>
-#include "../global.h"
-#include "./stdint.h"
-#include "rolly/global/definitions.h"
+#include <fmt/ostream.h>
+#include <rll/global.h>
+#include <rll/stdint.h>
 
-namespace rolly  // NOLINT(*-concat-nested-namespaces)
+namespace rll  // NOLINT(*-concat-nested-namespaces)
 {
 #ifndef DOXYGEN
   namespace detail {
@@ -26,7 +26,7 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
    * @details Based on std::array container.
    * @sa https://en.wikipedia.org/wiki/Globally_unique_identifier
    */
-  class RLL_API guid {
+  class RLL_API uuid {
    public:
     /**
      * @brief Length of the guid string representation in the form of
@@ -44,23 +44,23 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * @brief Creates an empty guid.
      * @see empty
      */
-    constexpr guid()
+    constexpr uuid()
       : bytes_ {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
 
-    ~guid() = default;
+    ~uuid() = default;
 
     /**
      * @brief Creates a guid from an array of bytes.
      * @param bytes Array of bytes.
      */
-    constexpr explicit guid(std::array<u8, 16> const& bytes)
+    constexpr explicit uuid(std::array<u8, 16> const& bytes)
       : bytes_ {bytes} {}
 
     /**
      * @brief Creates a <tt>guid</tt> from an array of <tt>std::byte</tt>.
      * @param bytes Array of <tt>std::byte</tt>.
      */
-    explicit guid(std::array<std::byte, 16> const& bytes);
+    explicit uuid(std::array<std::byte, 16> const& bytes);
 
     /**
      * @brief Creates a guid from a string.
@@ -72,15 +72,15 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * - Bytes must be separated by hyphens.
      * @param str String representation of the guid.
      */
-    constexpr explicit guid(std::string_view const str)
+    constexpr explicit uuid(std::string_view const str)
       : bytes_ {} {
-      if(str.size() != guid::short_guid_string_length
-         and str.size() != guid::long_guid_string_length)
+      if(str.size() != uuid::short_guid_string_length
+         and str.size() != uuid::long_guid_string_length)
         throw std::invalid_argument(
           "guid string initializer must have exactly 36 or 38 characters (see "
           "guid::short_guid_string_length and guid::long_guid_string_length)"
         );
-      auto const* data = (str.size() == guid::short_guid_string_length) ? str.data()
+      auto const* data = (str.size() == uuid::short_guid_string_length) ? str.data()
                                                                         : str.data() + 1;
       this->bytes_ =
         {detail::_d(data, 0),
@@ -101,17 +101,16 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
          detail::_d(data, 34)};
     }
 
-    guid(guid const&) = default;
-    guid(guid&&) = default;
-    guid& operator=(guid const&) = default;
-    guid& operator=(guid&&) = default;
+    uuid(uuid const&) = default;
+    uuid(uuid&&) = default;
+    uuid& operator=(uuid const&) = default;
+    uuid& operator=(uuid&&) = default;
 
     /**
      * @brief Checks whether the guid is valid or not.
      * @return `true` if the guid is valid, `false` otherwise.
-     * @note This function is `constexpr` in C++20 and above.
      */
-    [[nodiscard]] ___constexpr___ bool valid() const noexcept { return *this != guid::empty(); }
+    [[nodiscard]] bool valid() const noexcept { return *this != uuid::empty(); }
 
     /**
      * @brief Converts the guid to a string.
@@ -146,10 +145,8 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * @brief Checks whether the guid is valid or not.
      * @return `true` if the guid is valid, `false` otherwise.
      * @see valid
-     * @note This function is `constexpr` in C++20 and above.
      */
-    [[nodiscard]] ___constexpr___ operator bool(
-    ) const noexcept {  // NOLINT(*-explicit-constructor)
+    [[nodiscard]] operator bool() const noexcept {  // NOLINT(*-explicit-constructor)
       return this->valid();
     }
 
@@ -157,9 +154,8 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * @brief Checks whether two guids are equal or not.
      * @param other Other guid.
      * @return `true` if the guids are equal, `false` otherwise.
-     * @note This function is `constexpr` in C++20 and above.
      */
-    [[nodiscard]] ___constexpr___ bool operator==(guid const& other) const noexcept {
+    [[nodiscard]] bool operator==(uuid const& other) const noexcept {
       return this->bytes() == other.bytes();
     }
 
@@ -167,20 +163,16 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * @brief Checks whether two guids are not equal.
      * @param other Other guid.
      * @return `true` if the guids are __not__ equal, `false` otherwise.
-     * @note This function is `constexpr` in C++20 and above.
      */
-    [[nodiscard]] ___constexpr___ bool operator!=(guid const& other) const noexcept {
-      return not (*this == other);
-    }
+    [[nodiscard]] bool operator!=(uuid const& other) const noexcept { return not (*this == other); }
 
     /**
      * @brief Array-like less comparator for guid.
      * @param lhs First guid.
      * @param rhs Second guid.
      * @return `true` if lhs is less than rhs, `false` otherwise.
-     * @note This function is `constexpr` in C++20 and above.
      */
-    friend ___constexpr___ bool operator<(guid const& lhs, guid const& rhs) noexcept {
+    friend bool operator<(uuid const& lhs, uuid const& rhs) noexcept {
       return lhs.bytes() < rhs.bytes();
     }
 
@@ -191,19 +183,19 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
      * @return Output stream
      * @see to_string
      */
-    RLL_API friend std::ostream& operator<<(std::ostream& os, guid const& guid);
+    RLL_API friend std::ostream& operator<<(std::ostream& os, uuid const& guid);
 
     /**
-     * @brief Creates an empty guid.
-     * @return New empty guid.
+     * @brief Creates an empty uuid.
+     * @return New empty uuid.
      */
-    [[nodiscard]] constexpr static guid empty() noexcept { return {}; }
+    [[nodiscard]] constexpr static uuid empty() noexcept { return {}; }
 
     /**
-     * @brief Creates a random guid
-     * @return New random guid.
+     * @brief Creates a random uuid
+     * @return New random uuid.
      */
-    [[nodiscard]] static guid random() noexcept;
+    [[nodiscard]] static uuid random() noexcept;
 
    private:
     std::array<u8, 16> bytes_;
@@ -211,12 +203,13 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
 
   inline namespace literals {
     /**
-     * @brief Literal operator for guid.
-     * @param str String representation of the guid.
-     * @return guid object.
+     * @brief Literal operator for the uuid.
+     * @param str String representation of the uuid.
+     * @return uuid object.
      */
-    constexpr inline guid operator""_guid(char const* str, [[maybe_unused]] std::size_t size) {
-      return guid(std::string_view(str, size));
+    constexpr inline uuid
+      operator""_guid(char const* str, [[maybe_unused]] std::size_t const size) {
+      return uuid(std::string_view(str, size));
     }
   }  // namespace literals
 
@@ -240,44 +233,39 @@ namespace rolly  // NOLINT(*-concat-nested-namespaces)
     };
   }  // namespace detail
 #endif
-}  // namespace rolly
+}  // namespace rll
 
 namespace std {
   /**
-   * @brief Swaps two <tt>guid</tt>s.
-   * @param a First <tt>guid</tt>.
-   * @param b Second <tt>guid</tt>.
+   * @brief Swaps two `uuid`s.
+   * @param a First uuid.
+   * @param b Second uuid.
    * @sa http://en.cppreference.com/w/cpp/memory/swap
-   * @relates rolly::guid
+   * @relates rll::uuid
    */
-  [[maybe_unused]] inline void swap(rolly::guid& a, rolly::guid& b) noexcept {
+  [[maybe_unused]] inline void swap(rll::uuid& a, rll::uuid& b) noexcept {
     std::swap(a.bytes_mut(), b.bytes_mut());
   }
 
   /**
-   * @brief Hashes a <tt>guid</tt>.
-   * @tparam T Underlying type of the <tt>hash</tt>.
-   * @param b <tt>guid</tt> to hash.
+   * @brief Hashes an `uuid`.
+   * @tparam T Underlying type of the `hash`.
+   * @param b `uuid` to hash.
    * @return Hash value.
-   * @relates rolly::guid
+   * @relates rll::uuid
    * @sa http://en.cppreference.com/w/cpp/utility/hash
    */
   template <>
-  struct [[maybe_unused]] hash<rolly::guid> {
-    [[nodiscard]] std::size_t operator()(rolly::guid const& b) const noexcept {
-      return rolly::detail::hash<rolly::u64, rolly::u64> {}(b.bytes()[0], b.bytes()[1]);
+  struct [[maybe_unused]] hash<rll::uuid> {
+    [[nodiscard]] std::size_t operator()(rll::uuid const& b) const noexcept {
+      return rll::detail::hash<rll::u64, rll::u64> {}(b.bytes()[0], b.bytes()[1]);
     }
   };
 }  // namespace std
 
 /**
- * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::guid class.
- * @relates rolly::guid
+ * @brief Specialization of the `fmt::formatter` for the rll::uuid class.
+ * @relates rll::uuid
  */
 template <>
-struct [[maybe_unused]] fmt::formatter<rolly::guid> : fmt::formatter<std::string_view> {
-  template <typename FormatContext>
-  auto format(rolly::guid const& v, FormatContext& ctx) const {
-    return fmt::format_to(ctx.out(), "{}", v.to_string());
-  }
-};
+struct [[maybe_unused]] fmt::formatter<rll::uuid> : ostream_formatter {};

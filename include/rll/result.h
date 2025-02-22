@@ -1,14 +1,14 @@
 #pragma once
 
-#include "../global/definitions.h"
 #include <exception>
 #include <functional>
 #include <type_traits>
 #include <utility>
 #include <variant>
 #include <fmt/format.h>
-#include "../contracts.h"
-#include "optional.h"
+#include <rll/global/definitions.h>
+#include <rll/contracts.h>
+#include <rll/optional.h>
 
 // NOLINTBEGIN(*-avoid-c-arrays, *-pro-type-union-access)
 
@@ -99,7 +99,7 @@ namespace tl {
 #    define TL_EXPECTED_11_CONSTEXPR constexpr
 #  endif
 
-namespace rolly {
+namespace rll {
   template <class T, class E>
   class expected;
 
@@ -2646,10 +2646,10 @@ namespace rolly {
   void swap(expected<T, E>& lhs, expected<T, E>& rhs) noexcept(noexcept(lhs.swap(rhs))) {
     lhs.swap(rhs);
   }
-}  // namespace rolly
+}  // namespace rll
 #endif
 
-namespace rolly {
+namespace rll {
   template <typename T = void>
   using result = expected<T, std::string>;
 
@@ -2691,6 +2691,6 @@ namespace rolly {
   }
 
   [[nodiscard]] inline result<> ok() { return {}; }
-}  // namespace rolly
+}  // namespace rll
 
 // NOLINTEND(*-avoid-c-arrays, *-pro-type-union-access)

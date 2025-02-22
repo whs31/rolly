@@ -6,13 +6,13 @@
 #include <iostream>
 #include <fmt/ostream.h>
 #include <stdexcept>
-#include "../bit.h"
-#include "../global/definitions.h"
-#include "./stdint.h"
-#include "./optional.h"
-#include "detail/char_reader.h"
+#include <rll/global/definitions.h>
+#include <rll/bit.h>
+#include <rll/stdint.h>
+#include <rll/optional.h>
+#include <rll/impl/char_reader.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief 128-bit unsigned integer.
    * @details u128 offers a comprehensive suite of operations and utilities for handling
@@ -964,8 +964,11 @@ namespace rolly {
     _Pragma("clang diagnostic push") _Pragma("clang diagnostic ignored \"-Wundefined-inline\"")
 #endif
       template <typename T>
-      [[nodiscard]] static constexpr ___inline___
-      optional<u128> str_to_uint128(T const* begin, T const* end, format fmt) noexcept {
+      [[nodiscard]] static constexpr ___inline___ optional<u128> str_to_uint128(
+        T const* begin,
+        T const* end,
+        format fmt
+      ) noexcept {
       switch(fmt) {
         case format::octal: return oct_str_to_uint128(begin, end);
         case format::hexadecimal: return hex_str_to_uint128(begin, end);
@@ -978,8 +981,10 @@ namespace rolly {
 #pragma warning(pop)
 
       template <typename T>
-      [[nodiscard]] static constexpr ___inline___
-      optional<u128> dec_str_to_uint128(T const* begin, T const* end) noexcept {
+      [[nodiscard]] static constexpr ___inline___ optional<u128> dec_str_to_uint128(
+        T const* begin,
+        T const* end
+      ) noexcept {
       bool error = false;
       u32 error_symbol = 0;
       u128 result = 0;
@@ -1257,38 +1262,38 @@ namespace rolly {
     return u128(lower) >= other;
   }
 
-}  // namespace rolly
+}  // namespace rll
 
 namespace std {
   template <>
-  struct hash<rolly::u128> {
-    [[nodiscard]] ___inline___ size_t operator()(rolly::u128 const& value) const noexcept {
+  struct hash<rll::u128> {
+    [[nodiscard]] ___inline___ size_t operator()(rll::u128 const& value) const noexcept {
       return value.hash();
     }
   };
 
-  constexpr ___inline___ void swap(rolly::u128& value1, rolly::u128& value2) noexcept {
+  constexpr ___inline___ void swap(rll::u128& value1, rll::u128& value2) noexcept {
     auto const tmp = value1;
     value1 = value2;
     value2 = tmp;
   }
 
-  [[nodiscard]] constexpr ___inline___ rolly::u128 abs(rolly::u128 const& value) noexcept {
+  [[nodiscard]] constexpr ___inline___ rll::u128 abs(rll::u128 const& value) noexcept {
     return value;
   }
 
-  [[nodiscard]] ___inline___ std::string to_string(rolly::u128 const& value) {
+  [[nodiscard]] ___inline___ std::string to_string(rll::u128 const& value) {
     return value.to_string();
   }
 
   template <typename T>
   ___inline___ std::basic_ostream<char, std::char_traits<T>>&
-    operator<<(std::basic_ostream<char, std::char_traits<T>>& stream, rolly::u128 const& value) {
-    auto fmt = rolly::u128::format::decimal;
+    operator<<(std::basic_ostream<char, std::char_traits<T>>& stream, rll::u128 const& value) {
+    auto fmt = rll::u128::format::decimal;
     if(stream.flags() & ios_base::hex)
-      fmt = rolly::u128::format::hexadecimal;
+      fmt = rll::u128::format::hexadecimal;
     else if(stream.flags() & ios_base::oct)
-      fmt = rolly::u128::format::octal;
+      fmt = rll::u128::format::octal;
 
     auto str = value.to_string(fmt);
     if(stream.flags() & ios_base::uppercase) {
@@ -1299,16 +1304,16 @@ namespace std {
 
   template <typename T>
   ___inline___ std::basic_istream<T, std::char_traits<T>>&
-    operator>>(std::basic_istream<T, std::char_traits<T>>& stream, rolly::u128& value) {
-    auto fmt = rolly::u128::format::decimal;
+    operator>>(std::basic_istream<T, std::char_traits<T>>& stream, rll::u128& value) {
+    auto fmt = rll::u128::format::decimal;
     if(stream.flags() & ios_base::hex)
-      fmt = rolly::u128::format::hexadecimal;
+      fmt = rll::u128::format::hexadecimal;
     else if(stream.flags() & ios_base::oct)
-      fmt = rolly::u128::format::octal;
+      fmt = rll::u128::format::octal;
 
     std::basic_string<T, std::char_traits<T>, std::allocator<T>> str;
     stream >> str;
-    auto const result = rolly::u128::from_string(str, fmt);
+    auto const result = rll::u128::from_string(str, fmt);
     if(result)
       value = result.value();
     else
@@ -1319,4 +1324,4 @@ namespace std {
 }  // namespace std
 
 template <>
-struct fmt::formatter<rolly::u128> : fmt::ostream_formatter {};
+struct fmt::formatter<rll::u128> : fmt::ostream_formatter {};

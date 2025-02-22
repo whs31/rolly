@@ -5,29 +5,25 @@
 #include <tuple>
 #include <algorithm>
 #include <fmt/format.h>
-#include "../concepts/num.h"
-#include "../concepts/any_of.h"
-#include "./size2d.h"
-#include "./stdint.h"
-#include "./angle.h"
+#include <rll/stdint.h>
+#include <rll/concepts/num.h>
+#include <rll/concepts/any_of.h>
+#include <rll/euclid/size2d.h>
+#include <rll/euclid/angle.h>
 
 #if defined(RLL_QT_GUI)
 #  include <qvector2d.h>
 #endif
 
-namespace rolly {
-  template <___concept___(concepts::num) T>
+namespace rll {
+  template <typename T>
   class point2d;
 
   /**
    * @brief A two-dimensional vector tagged with a unit.
-   * @tparam T Number type. Must satisfy concept <tt>rolly::concepts::num</tt>. Default is \c f32.
+   * @tparam T Number type. Must satisfy concept <tt>rll::concepts::num</tt>. Default is \c f32.
    */
-#ifdef DOXYGEN
-  template <concepts::num T = f32>
-#else
-  template <___concept___(concepts::num) T = f32>
-#endif
+  template <typename T = f32>
   struct vector2d {
     /**
      * @brief Underlying number type.
@@ -93,11 +89,7 @@ namespace rolly {
      * @tparam F The type of function to apply.
      * @param fn The function to apply.
      */
-#ifdef DOXYGEN
-    template <std::invocable<number_type> F>
-#else
-    template <___concept___(std::invocable<number_type>) F>
-#endif
+    template <typename F, typename = std::enable_if_t<std::is_invocable_v<F>>>
     constexpr auto map(F&& fn) const                            // NOLINT(*-trailing-return)
       -> std::enable_if_t<
         std::is_invocable_v<F, number_type>,
@@ -113,12 +105,8 @@ namespace rolly {
      * @param fn The function to apply.
      */
     template <
-#ifdef ___rolly_cxx20___
-      std::invocable<number_type, number_type>
-#else
-      typename
-#endif
-        F>
+      typename F,
+      typename = std::enable_if_t<std::is_invocable_v<F, number_type, number_type>>>
     constexpr auto zip(vector2d const& other, F&& fn) const {
       using result_type = decltype(fn(std::declval<number_type>(), std::declval<number_type>()));
       return vector2d<result_type>(fn(this->x_, other.x()), fn(this->y_, other.y()));
@@ -246,7 +234,7 @@ namespace rolly {
      * @brief Linearly interpolate between this vector2d and another vector2d.
      * @details Example:
      * @code {.cpp}
-     * using rolly::vector2d;
+     * using rll::vector2d;
      * auto const from = vector2d(0.0F, 10.0F);
      * auto const to = vector2d(8.0F, -4.0F);
      * fmt::println("{}", from.lerp(to, -1.0F));
@@ -375,12 +363,9 @@ namespace rolly {
      * @brief Constructs new vector2d from <tt>std::tuple</tt>.
      * @param other The other <tt>std::tuple</tt>.
      */
-#ifdef DOXYGEN
-    template <typename... Args>
-#else
-    template <typename... Args ___sfinae_requirement___(std::tuple_size_v<std::tuple<Args...>> == 2)>
-      ___requires___((std::tuple_size_v<std::tuple<Args...>> == 2))
-#endif
+    template <
+      typename... Args,
+      typename = std::enable_if_t<std::tuple_size_v<std::tuple<Args...>> == 2>>
     [[nodiscard]] static constexpr vector2d from_tuple(std::tuple<Args...> const& other) {
       return {std::get<0>(other), std::get<1>(other)};
     }
@@ -390,12 +375,7 @@ namespace rolly {
      * @tparam N2 The size of the <tt>std::array</tt>. Must be equal to <tt>2</tt>.
      * @param other The other <tt>std::array</tt>.
      */
-#ifdef DOXYGEN
-    template <std::size_t N2>
-      requires(N2 == 2)
-#else
-    template <std::size_t N2 ___sfinae_requirement___(N2 == 2)> ___requires___((N2 == 2))
-#endif
+    template <std::size_t N2, typename = std::enable_if_t<N2 == 2>>
     [[nodiscard]] static constexpr vector2d from_array(std::array<number_type, N2> const& other) {
       return {other[0], other[1]};
     }
@@ -467,11 +447,11 @@ namespace rolly {
 
     /**
      * @brief Cast from one numeric representation to another, preserving the units.
-     * @tparam T2 New number type.
+     * @tparam U New number type.
      * @return The vector2d with the new number type and the same value.
      */
-    template <___concept___(concepts::num) T2>
-    [[nodiscard]] constexpr vector2d<T2> cast() const {
+    template <typename U, typename = std::enable_if_t<is_num_v<T>>>
+    [[nodiscard]] constexpr vector2d<U> cast() const {
       return {this->x_, this->y_};
     }
 
@@ -550,7 +530,7 @@ namespace rolly {
      * @return The sum.
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<vector2d, size2d_type>
 #else
       typename
@@ -578,7 +558,7 @@ namespace rolly {
      * @return The difference.
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<vector2d, size2d_type>
 #else
       typename
@@ -614,7 +594,7 @@ namespace rolly {
      * @return The sum.
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<vector2d, size2d_type>
 #else
       typename
@@ -634,7 +614,7 @@ namespace rolly {
      * @return The difference.
      */
     template <
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       concepts::any_of<vector2d, size2d_type>
 #else
       typename
@@ -701,18 +681,18 @@ namespace rolly {
     T x_;
     T y_;
   };
-}  // namespace rolly
+}  // namespace rll
 
 /**
- * @brief Specialization of the <code>fmt::formatter</code> for the @ref rolly::vector2d class.
+ * @brief Specialization of the `fmt::formatter` for the rll::vector2d class.
  * @tparam T Number type.
- * @relates rolly::vector2d
+ * @relates rll::vector2d
  */
 template <typename T>
-struct fmt::formatter<rolly::vector2d<T>> {
+struct fmt::formatter<rll::vector2d<T>> {
   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }
 
-  auto format(rolly::vector2d<T> const& val, format_context& ctx) const {
+  auto format(rll::vector2d<T> const& val, format_context& ctx) const {
     fmt::format_to(ctx.out(), "{}", val.to_string());
     return ctx.out();
   }
@@ -724,12 +704,12 @@ namespace std {
    * @tparam T Underlying type of the <tt>vector2d</tt>.
    * @param b <tt>vector2d</tt> to hash.
    * @return Hash value.
-   * @relates rolly::vector2d
+   * @relates rll::vector2d
    * @sa http://en.cppreference.com/w/cpp/utility/hash
    */
   template <typename T>
-  struct hash<rolly::vector2d<T>> {
-    size_t operator()(rolly::vector2d<T> const& b) const {
+  struct hash<rll::vector2d<T>> {
+    size_t operator()(rll::vector2d<T> const& b) const {
       return std::hash<T> {}(b.x()) xor std::hash<T> {}(b.y());
     }
   };

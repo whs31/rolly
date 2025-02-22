@@ -1,15 +1,15 @@
 #pragma once
 
-#include "global/definitions.h"
+#include <rll/global/definitions.h>
 
 // NOLINTBEGIN
 #  include <spdlog/spdlog.h>
 
-namespace rolly {
+namespace rll {
   [[nodiscard]] inline spdlog::logger& logger() { return *spdlog::default_logger(); }
 
   [[nodiscard]] inline spdlog::logger& logger(std::string_view const name) {
     return *spdlog::get(name.data());
   }
-}  // namespace rolly
+}  // namespace rll
 // NOLINTEND

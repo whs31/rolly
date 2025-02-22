@@ -1,12 +1,12 @@
 #pragma once
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Disallows move operations for a type
    * @details Example usage:
    *
    * @code {.cpp}
-   *    class Test : rolly::nonmovable {}; // move is not allowed for Test
+   *    class Test : rll::nonmovable {}; // move is not allowed for Test
    *
    *    Test t1;
    *    Test t2(std::move(t1)); // error
@@ -21,4 +21,4 @@ namespace rolly {
     nonmovable(nonmovable&&) noexcept = delete;
     nonmovable& operator=(nonmovable&&) noexcept = delete;
   };
-}  // namespace rolly
+}  // namespace rll

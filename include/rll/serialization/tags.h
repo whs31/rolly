@@ -1,13 +1,13 @@
 #pragma once
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Functions and types related to serialization and deserialization.
    */
   namespace serialization {}  // namespace serialization
-}  // namespace rolly
+}  // namespace rll
 
-namespace rolly::serialization {
+namespace rll::serialization {
   /**
    * @brief Serialization tags.
    */
@@ -30,4 +30,4 @@ namespace rolly::serialization {
 
     struct generic {};
   }  // namespace format
-}  // namespace rolly::serialization
+}  // namespace rll::serialization

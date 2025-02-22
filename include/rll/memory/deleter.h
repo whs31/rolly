@@ -1,6 +1,6 @@
 #pragma once
 
-namespace rolly {
+namespace rll {
   template <typename R, typename T, R (*F)(T)>
   struct deleter {
     template <typename U>
@@ -8,4 +8,4 @@ namespace rolly {
       (*F)(ref);
     }
   };
-}  // namespace rolly
+}  // namespace rll

@@ -86,36 +86,36 @@ namespace rll {
   };
 
   library::library(std::filesystem::path path, library::load_hint hints)
-    : m_d(std::make_unique<library_private>(std::move(path), hints)) {}
+    : impl(std::make_unique<library_private>(std::move(path), hints)) {}
 
   library::library(library&&) = default;
   library& library::operator=(library&&) = default;
   library::~library() = default;
 
-  std::filesystem::path const& library::path() const { return d().path; }
+  std::filesystem::path const& library::path() const { return impl->path; }
 
-  std::string library::filename() const { return d().path.filename().string(); }
+  std::string library::filename() const { return impl->path.filename().string(); }
 
-  library::load_hint library::load_hints() const { return d().hints; }
+  library::load_hint library::load_hints() const { return impl->hints; }
 
-  bool library::loaded() const { return d().handle.load(std::memory_order_relaxed); }
+  bool library::loaded() const { return impl->handle.load(std::memory_order_relaxed); }
 
   result<> library::load() noexcept {
-    if(not this->m_d)
+    if(not impl)
       return error("library d_ptr is null");
-    return d().load();
+    return impl->load();
   }
 
   result<> library::unload() noexcept {
-    if(not this->m_d)
+    if(not impl)
       return error("library d_ptr is null");
-    return d().unload();
+    return impl->unload();
   }
 
   result<library::function_pointer_type> library::resolve(std::string_view const symbol) noexcept {
-    if(not this->m_d)
+    if(not impl)
       return error("library d_ptr is null");
-    return d().resolve(symbol);
+    return impl->resolve(symbol);
   }
 
   bool library::is_library(std::filesystem::path const& path) {

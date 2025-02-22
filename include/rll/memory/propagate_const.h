@@ -1,10 +1,10 @@
 #pragma once
 
 #include <utility>
-#include "../concepts/ptr.h"
+#include <rll/concepts/ptr.h>
 
-namespace rolly {
-  template <___concept___(concepts::smart_ptr) T>
+namespace rll {
+  template <typename T>
   class propagate_const : public T {
    public:
     using T::operator=;
@@ -35,4 +35,4 @@ namespace rolly {
       return T::operator bool();
     }
   };
-}  // namespace rolly
+}  // namespace rll

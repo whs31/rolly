@@ -2,23 +2,21 @@
 
 #include <limits>
 #include <type_traits>
-#include "global.h"
-#include "concepts/num.h"
+#include <rll/global.h>
+#include <rll/concepts/num.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Number numeric constants.
    */
   namespace numbers {}  // namespace numbers
-}  // namespace rolly
+}  // namespace rll
 
-namespace rolly::numbers {
-  template <___concept___(std::floating_point)
-              T ___sfinae_requirement___(std::is_floating_point_v<T>)>
+namespace rll::numbers {
+  template <typename T, typename = std::enable_if_t<std::is_floating_point_v<T>>>
   inline constexpr T pi_v = 3.141592653589793238462643383279502884;  // NOLINT(*-use-std-numbers)
 
-  template <___concept___(std::floating_point)
-              T ___sfinae_requirement___(std::is_floating_point_v<T>)>
+  template <typename T, typename = std::enable_if_t<std::is_floating_point_v<T>>>
   inline constexpr T e_v = 2.718281828459045235360287471352662497;   // NOLINT(*-use-std-numbers)
 
   /**
@@ -33,4 +31,4 @@ namespace rolly::numbers {
    * @details Represented as 32-bit floating point number.
    */
   inline constexpr auto e = e_v<float>;
-}  // namespace rolly::numbers
+}  // namespace rll::numbers

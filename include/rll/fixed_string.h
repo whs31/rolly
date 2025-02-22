@@ -2,11 +2,11 @@
 
 #include <array>
 #include <string>
-#include "../global/definitions.h"
-#include "./stdint.h"
-#include "detail/char_reader.h"
+#include <rll/global/definitions.h>
+#include <rll/stdint.h>
+#include <rll/impl/char_reader.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Fixed size string class.
    * @details fixed_string is a template class that encapsulates a string of a fixed number of
@@ -580,4 +580,4 @@ namespace rolly {
   template <std::size_t N>
   fixed_string(char32_t const (&)[N]) -> fixed_string<N - 1>;
   fixed_string() -> fixed_string<0>;
-}  // namespace rolly
+}  // namespace rll

@@ -2,9 +2,9 @@
 
 #include <type_traits>
 #include <utility>
-#include "concepts/enum.h"
+#include <rll/concepts/enum.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Informs the compiler that the current location is unreachable.
    * @details If the compiler can prove that the current location is unreachable, it is free to
@@ -24,7 +24,7 @@ namespace rolly {
    *     case Color::Red: return "red";
    *     case Color::Green: return "green";
    *     case Color::Blue: return "blue";
-   *     default: rolly::unreachable();
+   *     default: rll::unreachable();
    *   }
    * }
    * @endcode
@@ -48,172 +48,24 @@ namespace rolly {
    * @return The underlying value of the enumeration.
    * @see https://en.cppreference.com/w/cpp/utility/to_underlying
    */
-  template <___concept___(concepts::enum_) T ___sfinae_requirement___(std::is_enum_v<T>)>
+  template <typename T, typename = std::enable_if_t<std::is_enum_v<T>>>
   constexpr auto to_underlying(T t) noexcept {
     return static_cast<std::underlying_type_t<T>>(t);
   }
-
-  /**
-   * @brief Generic bitwise <b>or</b> operator for enum types.
-   * @details Requires opt-ins <code>enable_bitwise_or</code> or <code>enum_flag</code> to be
-   * defined for the enum type.
-   *
-   * Example:
-   * @code {.cpp}
-   * enum class Example {
-   *   A = 1,
-   *   B = 2,
-   *   C = 4
-   * };
-   *
-   * // opt-in bitwise or
-   * void consteval enable_bitwise_or(Example);
-   *
-   * // alternatively, opt-in all operators
-   * void consteval enum_flag(Example);
-   *
-   * auto value = Example::A | Example::B;
-   * @endcode
-   * @tparam T Enum type
-   * @param lhs Left operand
-   * @param rhs Right operand
-   * @return Result of bitwise or operation
-   */
-  template <typename T>
-#ifdef ___rolly_cxx20___
-    requires(
-      std::is_enum_v<T> and requires(T e) { enable_bitwise_or(e); }
-      or requires(T e) { enum_flag(e); }
-    )
-#endif  // ___rolly_cxx20___
-  constexpr T operator|(T const lhs, T const rhs) noexcept {
-    return static_cast<T>(to_underlying(lhs) | to_underlying(rhs));
-  }
-
-  /**
-   * @brief Generic bitwise <b>and</b> operator for enum types.
-   * @details Requires opt-ins <code>enable_bitwise_and</code> or <code>enum_flag</code> to be
-   * defined for the enum type.
-   *
-   * Example:
-   * @code {.cpp}
-   * enum class Example {
-   *   A = 1,
-   *   B = 2,
-   *   C = 4
-   * };
-   *
-   * // opt-in bitwise and
-   * void consteval enable_bitwise_and(Example);
-   *
-   * // alternatively, opt-in all operators
-   * void consteval enum_flag(Example);
-   *
-   * auto value = Example::A & Example::B;
-   * @endcode
-   * @tparam T Enum type
-   * @param lhs Left operand
-   * @param rhs Right operand
-   * @return Result of bitwise and operation
-   */
-  template <typename T>
-#ifdef ___rolly_cxx20___
-    requires(
-      std::is_enum_v<T> and requires(T e) { enable_bitwise_and(e); }
-      or requires(T e) { enum_flag(e); }
-    )
-#endif  // ___rolly_cxx20___
-  constexpr T operator&(T const lhs, T const rhs) noexcept {
-    return static_cast<T>(to_underlying(lhs) & to_underlying(rhs));
-  }
-
-  /**
-   * @brief Generic bitwise <b>xor</b> operator for enum types.
-   * @details Requires opt-ins <code>enable_bitwise_xor</code> or <code>enum_flag</code> to be
-   * defined for the enum type.
-   *
-   * Example:
-   * @code {.cpp}
-   * enum class Example {
-   *   A = 1,
-   *   B = 2,
-   *   C = 4
-   * };
-   *
-   * // opt-in bitwise or
-   * void consteval enable_bitwise_xor(Example);
-   *
-   * // alternatively, opt-in all operators
-   * void consteval enum_flag(Example);
-   *
-   * auto value = Example::A ^ Example::B;
-   * @endcode
-   * @tparam T Enum type
-   * @param lhs Left operand
-   * @param rhs Right operand
-   * @return Result of bitwise xor operation
-   */
-  template <typename T>
-#ifdef ___rolly_cxx20___
-    requires(
-      std::is_enum_v<T> and requires(T e) { enable_bitwise_xor(e); }
-      or requires(T e) { enum_flag(e); }
-    )
-#endif  // ___rolly_cxx20___
-  constexpr T operator^(T const lhs, T const rhs) noexcept {
-    return static_cast<T>(to_underlying(lhs) ^ to_underlying(rhs));
-  }
-
-  /**
-   * @brief Generic bitwise <b>not</b> operator for enum types.
-   * @details Requires opt-ins <code>enable_bitwise_not</code> or <code>enum_flag</code> to be
-   * defined for the enum type.
-   *
-   * Example:
-   * @code {.cpp}
-   * enum class Example {
-   *   A = 1,
-   *   B = 2,
-   *   C = 4
-   * };
-   *
-   * // opt-in bitwise not
-   * void consteval enable_bitwise_not(Example);
-   *
-   * // alternatively, opt-in all operators
-   * void consteval enum_flag(Example);
-   *
-   * auto value = ~Example::A;
-   * @endcode
-   * @tparam T Enum type
-   * @param lhs Left operand
-   * @param rhs Right operand
-   * @return Result of bitwise not operation
-   */
-  template <typename T>
-#ifdef ___rolly_cxx20___
-    requires(
-      std::is_enum_v<T> and requires(T e) { enable_bitwise_not(e); }
-      or requires(T e) { enum_flag(e); }
-    )
-#endif  // ___rolly_cxx20___
-  constexpr T operator~(T const value) noexcept {
-    return static_cast<T>(~to_underlying(value));
-  }
-}  // namespace rolly
+}  // namespace rll
 
 #define DECLARE_ENUM_FLAG(E)                                                              \
   [[nodiscard]] constexpr E operator|(E const lhs, E const rhs) noexcept {                \
-    return static_cast<E>(rolly::to_underlying(lhs) | rolly::to_underlying(rhs));         \
+    return static_cast<E>(rll::to_underlying(lhs) | rll::to_underlying(rhs));             \
   }                                                                                       \
   [[nodiscard]] constexpr E operator&(E const lhs, E const rhs) noexcept {                \
-    return static_cast<E>(rolly::to_underlying(lhs) & rolly::to_underlying(rhs));         \
+    return static_cast<E>(rll::to_underlying(lhs) & rll::to_underlying(rhs));             \
   }                                                                                       \
   [[nodiscard]] constexpr E operator^(E const lhs, E const rhs) noexcept {                \
-    return static_cast<E>(rolly::to_underlying(lhs) ^ rolly::to_underlying(rhs));         \
+    return static_cast<E>(rll::to_underlying(lhs) ^ rll::to_underlying(rhs));             \
   }                                                                                       \
   [[nodiscard]] constexpr E operator~(E const value) noexcept {                           \
-    return static_cast<E>(~rolly::to_underlying(value));                                  \
+    return static_cast<E>(~rll::to_underlying(value));                                    \
   }                                                                                       \
   [[nodiscard]] constexpr E& operator|=(E& lhs, E const rhs) noexcept {                   \
     lhs = lhs | rhs;                                                                      \

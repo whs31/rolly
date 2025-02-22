@@ -2,17 +2,17 @@
 
 #include <string>
 #include <typeinfo>
-#include "global/export.h"
-#include "global/definitions.h"
+#include <rll/global/export.h>
+#include <rll/global/definitions.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Runtime type information-related functions and classes.
    */
   namespace rtti {}  // namespace rtti
-}  // namespace rolly
+}  // namespace rll
 
-namespace rolly::rtti {
+namespace rll::rtti {
   /**
    * @brief Demangles C++ type name from string.
    * @details Confirmed support on:
@@ -43,7 +43,7 @@ namespace rolly::rtti {
    *
    * Example usage:
    * @code {.cpp}
-   * using namespace rolly::rtti;
+   * using namespace rll::rtti;
    *
    * int main() {
    *   std::cout << type_name<int>(); // prints: 'int'
@@ -58,4 +58,4 @@ namespace rolly::rtti {
   [[nodiscard]] std::string type_name() {
     return demangle(typeid(T).name());
   }
-}  // namespace rolly::rtti
+}  // namespace rll::rtti

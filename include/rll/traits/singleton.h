@@ -1,17 +1,17 @@
 #pragma once
 
-#include "pin.h"
+#include <rll/traits/pin.h>
 
-namespace rolly {
+namespace rll {
   /**
    * @brief Singleton pattern trait.
    * @details Allows to use <b>Singleton</b> pattern in custom types and classes.
    * Example declaration:
    *
    * @code {.cpp}
-   * class TestSingleton : public rolly::singleton<TestSingleton>
+   * class TestSingleton : public rll::singleton<TestSingleton>
    * {
-   *   friend struct rolly::singleton<TestSingleton>;
+   *   friend struct rll::singleton<TestSingleton>;
    *
    *  public:
    *   ~TestSingleton() = default;
@@ -68,4 +68,4 @@ namespace rolly {
 
     singleton() = default;
   };
-}  // namespace rolly
+}  // namespace rll

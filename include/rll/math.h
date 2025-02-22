@@ -1,22 +1,17 @@
 #pragma once
 
 #include <cmath>
-#include "types/stdint.h"
-#include "numbers.h"
+#include <rll/stdint.h>
+#include <rll/numbers.h>
 
-namespace rolly {
+namespace rll {
   /**
-   * @brief Rounds <tt>val</tt> down to the nearest integer.
-   * @details This is a <tt>constexpr</tt> version of <tt>std::floor</tt>.
+   * @brief Rounds `val` down to the nearest integer.
+   * @details This is a `constexpr` version of std::floor.
    * @tparam T Number type. Must be a floating point type.
    * @param val Number to round.
    */
-#ifdef DOXYGEN
-  template <std::floating_point T>
-#else
-  template <___concept___(std::floating_point)
-              T ___sfinae_requirement___(std::is_floating_point_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<std::is_floating_point_v<T>>>
   [[nodiscard]] constexpr inline T floor(T val) {
     auto const val_int = static_cast<i64>(val);
     auto const fval_int = static_cast<T>(val_int);
@@ -110,12 +105,7 @@ namespace rolly {
    * @return Radian value.
    * @see to_degrees
    */
-#ifdef DOXYGEN
-  template <concepts::num T>
-#else
-  template <___concept___(concepts::num)
-              T ___sfinae_requirement___(is_num_v<T>)>  // NOLINT(*-use-constraints)
-#endif
+  template <typename T, typename = std::enable_if_t<is_num_v<T>>>
   [[nodiscard]] constexpr T to_radians(T degrees) noexcept {
     return degrees * numbers::pi_v<T> / static_cast<T>(180.0);
   }
@@ -127,25 +117,19 @@ namespace rolly {
    * @return Degree value.
    * @see to_radians
    */
-#ifdef DOXYGEN
-  template <concepts::num T>
-#else
-  template <___concept___(concepts::num)
-              T ___sfinae_requirement___(is_num_v<T>)>  // NOLINT(*-use-constraints)
-#endif
+  template <typename T, typename = std::enable_if_t<is_num_v<T>>>
   [[nodiscard]] constexpr T to_degrees(T radians) noexcept {
     return radians * static_cast<T>(180.0) / numbers::pi_v<T>;
   }
 
   /**
    * @brief Returns true if numbers are approximately equal within given epsilon.
-   * @details Compares floating point values using formula <tt>|a - b| <= epsilon *
-   * epsilon_factor</tt>.
+   * @details Compares floating point values using formula `|a - b| <= epsilon * epsilon_factor`.
    * @tparam T Number type
    * @param a First number
    * @param b Second number
    * @param epsilon Epsilon factor for comparison. Default is
-   * <tt>std::numeric_limits<T>::epsilon()</tt>.
+   * `std::numeric_limits<T>::epsilon()`.
    * @return True if numbers are approximately equal within given epsilon.
    * @see is_null
    */
@@ -159,12 +143,10 @@ namespace rolly {
 
   /**
    * @brief Returns true if number is approximately zero within given epsilon.
-   * @details Compares floating point values using formula <tt>|a| <= epsilon *
-   * epsilon_factor</tt>.
+   * @details Compares floating point values using formula `|a| <= epsilon * epsilon_factor`
    * @tparam T Number type
    * @param a Number
-   * @param epsilon Epsilon factor for comparison. Default is
-   * <tt>std::numeric_limits<T>::epsilon()</tt>.
+   * @param epsilon Epsilon factor for comparison. Default is `std::numeric_limits<T>::epsilon()`.
    * @return True if number is zero within given epsilon.
    * @see approx_eq
    */
@@ -174,15 +156,11 @@ namespace rolly {
   }
 
   /**
-   * @brief Calculates Euclidean division, the matching method for <b>rem_euclid</b>.
+   * @brief Calculates Euclidean division, the matching method for rem_euclid().
    * @param a Dividend
    * @param b Divisor
    */
-#ifdef DOXYGEN
-  template <concepts::num T>
-#else
-  template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<is_num_v<T>>>
   [[nodiscard]] T div_euclid(T a, T b) {
     auto const q = std::trunc(a / b);
     if constexpr(std::is_floating_point_v<T>) {
@@ -196,15 +174,11 @@ namespace rolly {
   }
 
   /**
-   * @brief Calculates the least nonnegative remainder of <tt>self (mod rhs)</tt>.
+   * @brief Calculates the least nonnegative remainder of `self (mod rhs)`.
    * @param a Dividend
    * @param b Divisor
    */
-#ifdef DOXYGEN
-  template <concepts::num T>
-#else
-  template <___concept___(concepts::num) T ___sfinae_requirement___(is_num_v<T>)>
-#endif
+  template <typename T, typename = std::enable_if_t<is_num_v<T>>>
   [[nodiscard]] T rem_euclid(T a, T b) {
     if constexpr(std::is_floating_point_v<T>) {
       auto const r = std::fmod(a, b);
@@ -214,4 +188,4 @@ namespace rolly {
       return r < 0 ? r + std::abs(b) : r;
     }
   }
-}  // namespace rolly
+}  // namespace rll

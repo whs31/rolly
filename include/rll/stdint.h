@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <type_traits>
 
-namespace rolly {
+namespace rll {
   using u8 = std::uint8_t;                        ///< 8-bit unsigned integer
   using u16 = std::uint16_t;                      ///< 16-bit unsigned integer
   using u32 = std::uint32_t;                      ///< 32-bit unsigned integer
@@ -39,45 +39,45 @@ namespace rolly {
     /**
      * @brief Literal operator for @ref u8.
      */
-    constexpr u8 operator""_u8(ulonglong value) { return static_cast<u8>(value); }
+    constexpr u8 operator""_u8(ulonglong const value) { return static_cast<u8>(value); }
 
     /**
      * @brief Literal operator for @ref u16.
      */
-    constexpr u16 operator""_u16(ulonglong value) { return static_cast<u16>(value); }
+    constexpr u16 operator""_u16(ulonglong const value) { return static_cast<u16>(value); }
 
     /**
      * @brief Literal operator for @ref u32.
      */
-    constexpr u32 operator""_u32(ulonglong value) { return static_cast<u32>(value); }
+    constexpr u32 operator""_u32(ulonglong const value) { return static_cast<u32>(value); }
 
     /**
      * @brief Literal operator for @ref u64.
      */
-    constexpr u64 operator""_u64(ulonglong value) { return static_cast<u64>(value); }
+    constexpr u64 operator""_u64(ulonglong const value) { return static_cast<u64>(value); }
 
     /**
      * @brief Literal operator for @ref i8.
      */
-    constexpr i8 operator""_i8(ulonglong value) { return static_cast<i8>(value); }
+    constexpr i8 operator""_i8(ulonglong const value) { return static_cast<i8>(value); }
 
     /**
      * @brief Literal operator for @ref i16.
      */
-    constexpr i16 operator""_i16(ulonglong value) { return static_cast<i16>(value); }
+    constexpr i16 operator""_i16(ulonglong const value) { return static_cast<i16>(value); }
 
     /**
      * @brief Literal operator for @ref i32.
      */
-    constexpr i32 operator""_i32(ulonglong value) { return static_cast<i32>(value); }
+    constexpr i32 operator""_i32(ulonglong const value) { return static_cast<i32>(value); }
 
     /**
      * @brief Literal operator for @ref i64.
      */
-    constexpr i64 operator""_i64(ulonglong value) { return static_cast<i64>(value); }
+    constexpr i64 operator""_i64(ulonglong const value) { return static_cast<i64>(value); }
 
     /**
-     * @brief Literal operator for <code>std::ptrdiff_t</code>.
+     * @brief Literal operator for std::ptrdiff_t.
      */
     constexpr std::ptrdiff_t operator""_ptrdiff(ulonglong value) {
       return static_cast<std::ptrdiff_t>(value);
@@ -86,13 +86,11 @@ namespace rolly {
     // NOLINTBEGIN(*-pro-type-reinterpret-cast, *-no-int-to-ptr)
 
     /**
-     * @brief Literal operator for <code>void*</code>.
+     * @brief Literal operator for `void*`.
      * @note This operator is not constexpr.
      */
-    inline void* operator""_pvoid(unsigned long long value) {
-      return reinterpret_cast<void*>(value);
-    }
+    inline void* operator""_pvoid(ulonglong const value) { return reinterpret_cast<void*>(value); }
 
     // NOLINTEND(*-pro-type-reinterpret-cast, *-no-int-to-ptr)
   }  // namespace literals
-}  // namespace rolly
+}  // namespace rll
