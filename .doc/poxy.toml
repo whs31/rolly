@@ -31,6 +31,7 @@ paths = ['images']
 '___sfinae_requirement___(...)' = ''
 'RLL_API' = ''
 '___requires___(...)' = ''
+'___inline___' = 'inline'
 # 'TOML_ABI_NAMESPACE_START(...)'       = 'static_assert(true)'
 # 'TOML_ABI_NAMESPACE_BOOL(...)'        = 'static_assert(true)'
 

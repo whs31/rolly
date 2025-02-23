@@ -108,7 +108,7 @@ namespace rll {
      * setting it as the lower part of the u128 value.
      * @param[in] lower The unsigned integer to initialize the u128 instance with.
      */
-    constexpr ___inline___ u128(ulonglong lower) noexcept
+    constexpr ___inline___ u128(ulonglong const lower) noexcept
       : lower_(static_cast<u64>(lower)) {}
 
     /**
@@ -117,7 +117,7 @@ namespace rll {
      * setting it as the lower part of the u128 value.
      * @param[in] lower The unsigned integer to initialize the u128 instance with.
      */
-    constexpr ___inline___ u128(unsigned long lower) noexcept
+    constexpr ___inline___ u128(unsigned long const lower) noexcept
       : u128(static_cast<ulonglong>(lower)) {}
 
     /**
@@ -126,7 +126,7 @@ namespace rll {
      * setting it as the lower part of the u128 value.
      * @param[in] lower The unsigned integer to initialize the u128 instance with.
      */
-    constexpr ___inline___ u128(unsigned int lower) noexcept
+    constexpr ___inline___ u128(unsigned int const lower) noexcept
       : u128(static_cast<ulonglong>(lower)) {}
 
     /**
@@ -135,7 +135,7 @@ namespace rll {
      * setting it as the lower part of the u128 value.
      * @param[in] lower The unsigned integer to initialize the u128 instance with.
      */
-    constexpr ___inline___ u128(unsigned short lower) noexcept
+    constexpr ___inline___ u128(unsigned short const lower) noexcept
       : u128(static_cast<ulonglong>(lower)) {}
 
     /**
@@ -145,7 +145,7 @@ namespace rll {
      * part.
      * @param[in] lower The signed integer to initialize the u128 instance with.
      */
-    constexpr ___inline___ u128(long long lower) noexcept
+    constexpr ___inline___ u128(long long const lower) noexcept
 #if RLL_ENDIAN == RLL_BIG_ENDIAN
       : upper_(static_cast<u64>(static_cast<i64>(lower) >> 63))
       , lower_(static_cast<u64>(lower))
@@ -163,7 +163,7 @@ namespace rll {
      * part.
      * @param[in] lower The signed integer to initialize the u128 instance with.
      */
-    constexpr ___inline___ u128(long lower) noexcept
+    constexpr ___inline___ u128(long const lower) noexcept
       : u128(static_cast<long long>(lower)) {}
 
     /**
@@ -173,7 +173,7 @@ namespace rll {
      * part.
      * @param[in] lower The signed integer to initialize the u128 instance with.
      */
-    constexpr ___inline___ u128(int lower) noexcept
+    constexpr ___inline___ u128(int const lower) noexcept
       : u128(static_cast<long long>(lower)) {}
 
     /**
@@ -183,7 +183,7 @@ namespace rll {
      * part.
      * @param[in] lower The signed integer to initialize the u128 instance with.
      */
-    constexpr ___inline___ u128(short lower) noexcept
+    constexpr ___inline___ u128(short const lower) noexcept
       : u128(static_cast<long long>(lower)) {}
 
     /**
@@ -193,7 +193,7 @@ namespace rll {
      * implicit conversions.
      * @param[in] value The floating-point value to convert.
      */
-    ___inline___ explicit u128(double value) noexcept {
+    ___inline___ explicit u128(double const value) noexcept {
       auto const result = from_double(value);
       this->upper_ = result.upper_;
       this->lower_ = result.lower_;

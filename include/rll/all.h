@@ -3,6 +3,7 @@
 #include <rll/bit.h>
 #include <rll/concepts.h>
 #include <rll/contracts.h>
+#include <rll/crypto.h>
 #include <rll/directories.h>
 #include <rll/fixed_string.h>
 #include <rll/functional.h>
