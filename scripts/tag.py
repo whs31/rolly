@@ -11,8 +11,8 @@ except ModuleNotFoundError:
     def colored(text, color=None):
         return text
 
-VERSION_INCLUDE_PATH = os.path.join("include", "rolly", "global", "version_definitions.h")
-VERSION_MACRO_PREFIX = "ROLLY"
+VERSION_INCLUDE_PATH = os.path.join("include", "rll", "global", "version_definitions.h")
+VERSION_MACRO_PREFIX = "RLL"
 
 
 def find_executable(name: str):

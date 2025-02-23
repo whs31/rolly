@@ -1,10 +1,10 @@
-#include <rolly/string_util.h>
+#include <rll/string_util.h>
 
 #include <algorithm>
 #include <iterator>
 #include <sstream>
 
-namespace rolly {
+namespace rll {
   std::vector<std::string> split(std::string const& input) {
     auto buffer = std::istringstream(input);
     return {std::istream_iterator<std::string>(buffer), std::istream_iterator<std::string>()};
@@ -34,4 +34,4 @@ namespace rolly {
     std::transform(str.begin(), str.end(), str.begin(), ::tolower);
     return str;
   }
-}  // namespace rolly
+}  // namespace rll

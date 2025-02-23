@@ -1,11 +1,11 @@
-#include <rolly/library.h>
+#include <rll/library.h>
 #include <catch2/catch_all.hpp>
 
-using namespace rolly;
+using namespace rll;
 
 TEST_CASE("Library") {
   SECTION("Is Library") {
-#if defined(ROLLY_OS_WINDOWS)
+#if defined(RLL_OS_WINDOWS)
     REQUIRE(library::is_library("opengl32.dll"));
     REQUIRE(library::is_library("libGL.DLL"));
     REQUIRE(not library::is_library("libGL.so"));

@@ -1,4 +1,4 @@
-#include <rolly/types.h>
+#include <rll/all.h>
 
 #include <sstream>
 #include <type_traits>
@@ -9,7 +9,7 @@
 #include <catch2/catch_all.hpp>
 #include <catch2/catch_test_macros.hpp>
 
-using namespace rolly;
+using namespace rll;
 using Catch::Matchers::WithinRel;
 using Catch::Matchers::WithinAbs;
 
@@ -920,20 +920,20 @@ TEST_CASE("Types", "[types]") {
 
   SECTION("GUID", "[types.guid]") {
     SECTION("Random") {
-      auto const r1 = guid::random();
-      auto const r2 = guid::random();
-      auto const r3 = guid::random();
+      auto const r1 = uuid::random();
+      auto const r2 = uuid::random();
+      auto const r3 = uuid::random();
 
       REQUIRE(r1 != r2);
       REQUIRE(r1 != r3);
       REQUIRE(r2 != r3);
     }
 
-    auto const s1 = guid("7bcd757f-5b10-4f9b-af69-1a1f226f3b3e");
-    auto const s2 = guid("16d1bd03-09a5-47d3-944b-5e326fd52d27");
-    auto const s3 = guid("fdaba646-e07e-49de-9529-4499a5580c75");
-    auto const s4 = guid("7bcd757f-5b10-4f9b-af69-1a1f226f3b3e");
-    auto const s5 = guid("7bcd757f-5b10-4f9b-af69-1a1f226f3b31");
+    auto const s1 = uuid("7bcd757f-5b10-4f9b-af69-1a1f226f3b3e");
+    auto const s2 = uuid("16d1bd03-09a5-47d3-944b-5e326fd52d27");
+    auto const s3 = uuid("fdaba646-e07e-49de-9529-4499a5580c75");
+    auto const s4 = uuid("7bcd757f-5b10-4f9b-af69-1a1f226f3b3e");
+    auto const s5 = uuid("7bcd757f-5b10-4f9b-af69-1a1f226f3b31");
 
     SECTION("Compare") {
       REQUIRE(s1 == s4);
@@ -953,14 +953,14 @@ TEST_CASE("Types", "[types]") {
 
     SECTION("Format") { REQUIRE(fmt::format("{}", s1) == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"); }
 
-    SECTION("ParseFail") { REQUIRE_THROWS(guid("7bcd757f-5b10-4f9b-af69-1a1f226f3baskdfmsadf3e")); }
+    SECTION("ParseFail") { REQUIRE_THROWS(uuid("7bcd757f-5b10-4f9b-af69-1a1f226f3baskdfmsadf3e")); }
 
-    SECTION("Literal") { REQUIRE(s1 == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"_guid); }
+    SECTION("Literal") { REQUIRE(s1 == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"_uuid); }
 
     SECTION("Constexpr") {
-      auto constexpr u = "{7bcd757f-5b10-4f9b-af69-1a1f226f3b3e}"_guid;
+      auto constexpr u = "{7bcd757f-5b10-4f9b-af69-1a1f226f3b3e}"_uuid;
 
-#ifdef ___rolly_cxx20___
+#ifdef ___rll_cxx20___
       STATIC_REQUIRE(u.valid());
       STATIC_REQUIRE(u == "7bcd757f-5b10-4f9b-af69-1a1f226f3b3e"_guid);
 #endif
@@ -2035,7 +2035,7 @@ TEST_CASE("Types", "[types]") {
 
   SECTION("Angle", "[types.angle]") {
     SECTION("Wrap") {
-      auto constexpr PI = rolly::numbers::pi_v<f32>;
+      auto constexpr PI = rll::numbers::pi_v<f32>;
       auto constexpr FRAC_PI_2 = PI / 2.0F;
 
       REQUIRE(angle<f32>::from_radians(0.0).positive() == angle<f32>::zero());
@@ -2224,7 +2224,7 @@ TEST_CASE("Types", "[types]") {
       REQUIRE(p.div_euclid(-s) == point2d(-1.0, -2.0));
     }
 
-#if defined(ROLLY_QT_CORE)
+#if defined(RLL_QT_CORE)
     SECTION("ToQPoint") {
       constexpr auto p = point2d(1.0, 2.0);
 
@@ -2368,7 +2368,7 @@ TEST_CASE("Types", "[types]") {
       REQUIRE_FALSE(c);
     }
 
-#if defined(ROLLY_QT_CORE)
+#if defined(RLL_QT_CORE)
     SECTION("ToQSize") {
       REQUIRE(size2d(1.0, 2.0).to_qsize() == QSize(1, 2));
       REQUIRE(size2d(0.0, 0.0).to_qsize() == QSize(0, 0));

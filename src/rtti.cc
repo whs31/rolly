@@ -1,11 +1,11 @@
-#include <rolly/rtti.h>
-#include <rolly/global/platform_definitions.h>
+#include <rll/rtti.h>
+#include <rll/global/platform_definitions.h>
 
-#if defined(ROLLY_COMPILER_GNU) || (defined(ROLLY_COMPILER_CLANG) && __has_include(<cxxabi.h>))
-#  define ROLLY_USING_CXXABI
+#if defined(RLL_COMPILER_GNU) || (defined(RLL_COMPILER_CLANG) && __has_include(<cxxabi.h>))
+#  define RLL_USING_CXXABI
 #endif
 
-#ifdef ROLLY_USING_CXXABI
+#ifdef RLL_USING_CXXABI
 #  include <cstdlib>
 #  include <memory>
 #  include <cxxabi.h>
@@ -20,9 +20,9 @@ using std::unique_ptr;
 using std::array;
 #endif
 
-namespace rolly::rtti {
+namespace rll::rtti {
   std::string demangle(char const* name) {
-#ifdef ROLLY_USING_CXXABI
+#ifdef RLL_USING_CXXABI
     auto status = -4;
     unique_ptr<char, void (*)(void*)> const
       res {::abi::__cxa_demangle(name, nullptr, nullptr, &status), std::free};
@@ -35,4 +35,4 @@ namespace rolly::rtti {
            : name;
 #endif
   }
-}  // namespace rolly::rtti
+}  // namespace rll::rtti

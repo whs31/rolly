@@ -1,7 +1,7 @@
-#include <rolly/bit.h>
+#include <rll/bit.h>
 #include <catch2/catch_all.hpp>
 
-using namespace rolly;
+using namespace rll;
 
 TEST_CASE("Bit", "[bit]") {
   SECTION("Is power of two") {

@@ -1,7 +1,7 @@
 #include "guid.h"
 
-#ifdef ROLLY_OS_ANDROID
-namespace rolly::oslayer::android {
+#ifdef RLL_OS_ANDROID
+namespace rll::oslayer::android {
   guid_info info;
 
   guid_info guid_info::from_env(JNIEnv* env) const {
@@ -20,5 +20,5 @@ namespace rolly::oslayer::android {
   }
 
   void init_jni(JNIEnv* env) { info = guid_info::from_env(env); }
-}  // namespace rolly::oslayer::android
-#endif  // ROLLY_OS_ANDROID
+}  // namespace rll::oslayer::android
+#endif  // RLL_OS_ANDROID

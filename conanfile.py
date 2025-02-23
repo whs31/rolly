@@ -7,7 +7,7 @@ from conan.tools.files import rmdir, copy
 
 class RollyRecipe(ConanFile):
     name = "rolly"
-    version = "2.3.0"
+    version = "2.4.0"
     description = "Radar open-source library"
     author = "whs31 <whs31@github.io>"
     topics = ("coreutils", "utility")
@@ -16,14 +16,12 @@ class RollyRecipe(ConanFile):
     options = {
         "shared": [True, False],
         "test": [True, False],
-        "compat": [True, False],
         "export": [True, False],
         "export_folder_name": ["ANY"]
     }
     default_options = {
         "shared": True,
         "test": False,
-        "compat": False,
         "export": False,
         "export_folder_name": "export"
     }
@@ -53,6 +51,7 @@ class RollyRecipe(ConanFile):
 
     def configure(self):
         self.options["fmt/*"].shared = self.options.shared
+        self.options["spdlog/*"].shared = self.options.shared
 
     def generate(self):
         deps = CMakeDeps(self)
@@ -60,7 +59,6 @@ class RollyRecipe(ConanFile):
         tc = CMakeToolchain(self)
         tc.cache_variables["BUILD_SHARED_LIBS"] = self.options.shared
         tc.cache_variables["ROLLY_TESTS"] = self.options.test
-        tc.cache_variables["ROLLY_COMPAT"] = self.options.compat
         tc.generate()
 
         if self.options.export:

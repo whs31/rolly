@@ -1,7 +1,7 @@
-#include <rolly/memory.h>
+#include <rll/memory.h>
 #include <catch2/catch_all.hpp>
 
-using namespace rolly;
+using namespace rll;
 
 struct A {
   virtual ~A() {}
@@ -93,25 +93,6 @@ TEST_CASE("Memory", "[memory]") {
 
       auto obs = observer_ptr<int>(ptr);
       REQUIRE(obs.ref() == 42);
-    }
-
-    SECTION("FromBox") {
-      box<int> const ptr = make_box<int>(42);
-      REQUIRE(ptr.ref() == 42);
-
-      auto obs = observer_ptr<int>(ptr);
-      REQUIRE(obs.ref() == 42);
-    }
-  }
-
-  SECTION("Box") {
-    SECTION("Downcast") {
-      auto b = make_box<B>();
-      REQUIRE(b.ref().name() == "B");
-
-      auto a = b.downcast<A>();
-      REQUIRE(a.has_value());
-      REQUIRE(a.value().name() == "B");
     }
   }
 }

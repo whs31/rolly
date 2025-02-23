@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.3.0
+  VERSION 2.4.0
   DESCRIPTION "Radar open-source library"
-  HOMEPAGE_URL "whs31.github.io/rolly" # todo
+  HOMEPAGE_URL "whs31.github.io/rolly"
   LANGUAGES C CXX
 )
 set(PROJECT_NAMESPACE ${PROJECT_NAME}::)
@@ -13,7 +13,6 @@ set(PROJECT_FULL_NAME ${PROJECT_NAMESPACE}${PROJECT_NAME})
 
 option(ROLLY_TESTS "Enable integration tests" OFF)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
-option(ROLLY_COMPAT "Enable C++17 compatibility mode" OFF)
 option(ROLLY_QT "Link with Qt" OFF)
 
 if ("${CMAKE_GENERATOR}" MATCHES "^Visual Studio")
@@ -23,12 +22,6 @@ endif ()
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-if (ROLLY_COMPAT)
-  set(ROLLY_CXX_STANDARD 17)
-else ()
-  set(ROLLY_CXX_STANDARD 20)
-endif ()
 
 message(STATUS "[${PROJECT_FULL_NAME}] c++ standard: ${ROLLY_CXX_STANDARD}")
 
@@ -54,7 +47,7 @@ add_library(${PROJECT_NAME})
 add_library(${PROJECT_FULL_NAME} ALIAS ${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
-  CXX_STANDARD ${ROLLY_CXX_STANDARD}
+  CXX_STANDARD 17
   CXX_STANDARD_REQUIRED ON
   CXX_EXTENSIONS OFF
   POSITION_INDEPENDENT_CODE ON
@@ -68,7 +61,10 @@ target_sources(${PROJECT_NAME}
   ${CMAKE_CURRENT_SOURCE_DIR}/src/string_util.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/library.cc
 
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/types/guid.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/uuid.cc
+
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/crypto/md5.cc
+
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/linux/dirs.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/win/known_folder.cc
   ${CMAKE_CURRENT_SOURCE_DIR}/src/oslayer/android/guid.cc
@@ -119,10 +115,6 @@ else ()
   target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_STATIC_LIBRARY=1)
 endif ()
 
-if (ROLLY_COMPAT)
-  target_compile_definitions(${PROJECT_NAME} PUBLIC -DROLLY_COMPAT=1)
-endif ()
-
 target_compile_options(${PROJECT_NAME} PRIVATE
   $<$<CXX_COMPILER_ID:GNU>:-Wno-deprecated-declarations>
   $<$<CXX_COMPILER_ID:Clang>:-Wno-deprecated-declarations>
@@ -150,15 +142,6 @@ endif ()
 message(STATUS "[${PROJECT_FULL_NAME}] tests status: ${ROLLY_TESTS}")
 message(STATUS "[${PROJECT_FULL_NAME}] installing ${PROJECT_NAME} in namespace ${PROJECT_NAMESPACE}")
 include(GNUInstallDirs)
-include(GenerateExportHeader)
-include(CMakePackageConfigHelpers)
-message(STATUS "[${PROJECT_FULL_NAME}] installing in prefix: ${CMAKE_INSTALL_PREFIX}")
-
-set(PROJECT_CONFIG_FILE_IN "${CMAKE_CURRENT_SOURCE_DIR}/cmake/${PROJECT_NAME}-config.cmake.in")
-set(PROJECT_CONFIG_FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake")
-set(CONFIG_TARGETS_FILE "${PROJECT_NAME}-config-targets.cmake")
-set(CONFIG_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake")
-set(INSTALL_EXPORT_DESTINATION_DIR "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
 
 install(TARGETS ${PROJECT_NAME}
   EXPORT ${PROJECT_NAME}
@@ -168,16 +151,7 @@ install(TARGETS ${PROJECT_NAME}
   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
-install(DIRECTORY $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/rolly> $<INSTALL_INTERFACE:include/rolly> ; DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-export(TARGETS ${PROJECT_NAME} NAMESPACE ${PROJECT_NAMESPACE} FILE "${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_TARGETS_FILE}")
-install(EXPORT ${PROJECT_NAME}
-  DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR}
-  NAMESPACE ${PROJECT_NAMESPACE}
-  FILE ${CONFIG_TARGETS_FILE}
-)
-configure_package_config_file(${PROJECT_CONFIG_FILE_IN} ${PROJECT_CONFIG_FILE} INSTALL_DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR})
-write_basic_package_version_file(${CONFIG_VERSION_FILE} COMPATIBILITY AnyNewerVersion)
-install(FILES ${PROJECT_CONFIG_FILE} ${CONFIG_VERSION_FILE} DESTINATION ${INSTALL_EXPORT_DESTINATION_DIR})
+install(DIRECTORY $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/rll> $<INSTALL_INTERFACE:include/rll> ; DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 # -- misc --
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -192,5 +166,4 @@ endif ()
 
 message(STATUS "[${PROJECT_FULL_NAME}] configuring ${PROJECT_NAME} done!")
 unset(ROLLY_TESTS CACHE)
-unset(ROLLY_COMPAT CACHE)
 unset(ROLLY_QT CACHE)
