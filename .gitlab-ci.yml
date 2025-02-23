@@ -23,40 +23,14 @@ build:alse:
     paths:
       - build/Release
 
-build:alse-c++17:
-  stage: build
-  extends: .build_extend
-  script:
-    - rm -rf build
-    - conan build . -b "missing" -o "$CONAN_PACKAGE_NAME/*:compat=True" --profile gcc
-
 test:alse:
   stage: test
   allow_failure: true
   extends: .tests_catch2_extend
 
-test:alse-c++17:
-  tags: [ alse ]
-  stage: test
-  allow_failure: true
-  needs:
-    - job: build:alse-c++17
-  script:
-    - rm -rf ./build
-    - conan build . -b "missing" -o "rolly/*:test=True" -o "rolly/*:compat=True" --profile gcc
-    - ./build/Release/tests/rolly-test --reporter JUnit::out=test_detail.xml --reporter console::out=-::colour-mode=ansi
-  artifacts:
-    reports:
-      junit:
-        - test_detail.xml
-
 publish:alse:
   stage: deploy
   extends: .publish_extend
-
-deploy:alse:
-  stage: deploy
-  extends: .deploy_library_extend
 
 documentation:
   tags: [ dev-utils ]
