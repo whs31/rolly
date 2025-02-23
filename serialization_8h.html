@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/serialization.h file | Rolly Radar core library</title>
+  <title>rll/serialization.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span>serialization.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="dir_745525cd4fc4efbd9885e3cf3588e3bb.html">rll</a>/</span>serialization.h <span class="m-thin">file</span>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -66,8 +66,7 @@
               Reference
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#func-members">Functions</a></li>
-                <li><a href="#define-members">Defines</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
               </ul>
             </li>
           </ul>
@@ -75,50 +74,41 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
-            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
-            <dt>namespace <a class="m-doc" href="namespacerolly_1_1serialization.html">rolly::serialization</a></dt>
-            <dd>Functions and types related to serialization and deserialization.</dd>
+            <dt>namespace <a class="m-doc" href="namespacerll.html">rll</a></dt>
+            <dd>Contract-programming related functions and classes.</dd>
           </dl>
         </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename F</span>, <span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename C = char</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly_1_1serialization.html#a7b7494fa47f66cea76e3b9b2c911e680">deserialize</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>basic_string</a>&lt;C&gt; const&amp; str) →  T <span class="m-label m-flat m-danger">deleted</span></span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename F</span>, <span class="m-doc-template-param">typename C = char</span>, <span class="m-doc-template-param">typename = void</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrll_1_1serializer.html">rll::serializer</a>
             </dt>
             <dd></dd>
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename F</span>, <span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename C = char</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly_1_1serialization.html#a83222b838bce80751be7901c7a113854">serialize</a>(</span><span class="m-doc-wrap">T const&amp; value) →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>basic_string</a>&lt;C&gt; <span class="m-label m-flat m-danger">deleted</span></span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename F</span>, <span class="m-doc-template-param">typename R</span>, <span class="m-doc-template-param">typename C = char</span>, <span class="m-doc-template-param">typename = void</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrll_1_1partial__serializer.html">rll::partial_serializer</a>
             </dt>
             <dd></dd>
-          </dl>
-        </section>
-        <section id="define-members">
-          <h2><a href="#define-members">Defines</a></h2>
-          <dl class="m-doc">
-            <dt id="a45328292d81adebd33fb5a1ad0c7d0d3">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a45328292d81adebd33fb5a1ad0c7d0d3">DECLARE_DESERIALIZABLE</a>(</span><span class="m-doc-wrap">T,
-              F)</span>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename</span>, <span class="m-doc-template-param">typename</span>, <span class="m-doc-template-param">typename = void</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrll_1_1is__serializable.html">rll::is_serializable</a>
             </dt>
             <dd></dd>
-            <dt id="ad034783d7387cf8886c38c439a22a6c2">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#ad034783d7387cf8886c38c439a22a6c2">DECLARE_DESERIALIZABLE_EXPORT</a>(</span><span class="m-doc-wrap">T,
-              F,
-              EXPORT_MACRO)</span>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename</span>, <span class="m-doc-template-param">typename</span>, <span class="m-doc-template-param">typename</span>, <span class="m-doc-template-param">typename = void</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrll_1_1is__partially__serializable.html">rll::is_partially_serializable</a>
             </dt>
             <dd></dd>
-            <dt id="adaa16f0244b24aeb2882aa99db4c2b1c">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#adaa16f0244b24aeb2882aa99db4c2b1c">DECLARE_SERIALIZABLE</a>(</span><span class="m-doc-wrap">T,
-              F)</span>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename F</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrll_1_1is__serializable_3_01_t_00_01_f_00_01std_1_1void__t_3_01decltype_07serializer_3_01_09b274941dde756e7684b74d76e188f0.html">rll::is_serializable&lt;T, F, std::void_t&lt;decltype(serializer&lt;T, F&gt;::serialize), decltype(serializer&lt;T, F&gt;::deserialize)&gt;&gt;</a>
             </dt>
             <dd></dd>
-            <dt id="a87870310500db9bd0b641b729b55fdb3">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a87870310500db9bd0b641b729b55fdb3">DECLARE_SERIALIZABLE_EXPORT</a>(</span><span class="m-doc-wrap">T,
-              F,
-              EXPORT_MACRO)</span>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename F</span>, <span class="m-doc-template-param">typename R</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrll_1_1is__partially__serializable_3_01_t_00_01_f_00_01_r_00_01std_1_1void__t_3_01decltypec6429267b4f91198b8eee42d84ad8bb2.html">rll::is_partially_serializable&lt;T, F, R, std::void_t&lt;decltype(partial_serializer&lt;T, F, R&gt;::serialize), decltype(partial_serializer&lt;T, F, R&gt;::deserialize)&gt;&gt;</a>
             </dt>
             <dd></dd>
           </dl>

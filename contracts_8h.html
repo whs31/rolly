@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/contracts.h file | Rolly Radar core library</title>
+  <title>rll/contracts.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span>contracts.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="dir_745525cd4fc4efbd9885e3cf3588e3bb.html">rll</a>/</span>contracts.h <span class="m-thin">file</span>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -70,6 +70,7 @@
                 <li><a href="#enum-members">Enums</a></li>
                 <li><a href="#typedef-members">Typedefs</a></li>
                 <li><a href="#func-members">Functions</a></li>
+                <li><a href="#define-members">Defines</a></li>
               </ul>
             </li>
           </ul>
@@ -77,21 +78,17 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
-            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
-            <dt>namespace <a class="m-doc" href="namespacerolly_1_1contracts.html">rolly::contracts</a></dt>
+            <dt>namespace <a class="m-doc" href="namespacerll.html">rll</a></dt>
             <dd>Contract-programming related functions and classes.</dd>
-            <dt>namespace <a class="m-doc" href="namespacerolly_1_1contracts_1_1detail.html">rolly::contracts::detail</a></dt>
+            <dt>namespace <a class="m-doc" href="namespacerll_1_1detail.html">rll::detail</a></dt>
             <dd>Contracts implementation details.</dd>
-            <dt>namespace <a class="m-doc" href="namespacerolly_1_1contracts_1_1audit.html">rolly::contracts::audit</a></dt>
-            <dd>Contracts that will be only executed in debug mode.</dd>
           </dl>
         </section>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              struct <a class="m-doc" href="structrolly_1_1contracts_1_1contract__violation.html">rolly::contracts::contract_violation</a>
+              struct <a class="m-doc" href="structrll_1_1contract__violation.html">rll::contract_violation</a>
             </dt>
             <dd>Contract violation data holder.</dd>
           </dl>
@@ -100,7 +97,7 @@
           <h2><a href="#enum-members">Enums</a></h2>
           <dl class="m-doc">
             <dt id="b5779b450d943370a9ca2190fd2f41484cb0f098464da4252b28ad70d89c0a0a">
-              <span class="m-doc-wrap-bumper">enum class <a class="m-doc" href="namespacerolly_1_1contracts.html#a94faa9011c072faef8bdbb697a59fdcc">contract_type</a>: signed char { </span><span class="m-doc-wrap"><a class="m-doc-self" href="#b5779b450d943370a9ca2190fd2f41484cb0f098464da4252b28ad70d89c0a0a">precondition</a>,
+              <span class="m-doc-wrap-bumper">enum class <a class="m-doc" href="namespacerll.html#a3dc5f6f22ccd024d77f7b00aeb9c82c9">contract_type</a>: signed char { </span><span class="m-doc-wrap"><a class="m-doc-self" href="#b5779b450d943370a9ca2190fd2f41484cb0f098464da4252b28ad70d89c0a0a">precondition</a>,
               <a class="m-doc-self" href="#b5779b450d943370a9ca2190fd2f41484cb0f098464da4252b28ad70d89c0a0a">postcondition</a>,
               <a class="m-doc-self" href="#b5779b450d943370a9ca2190fd2f41484cb0f098464da4252b28ad70d89c0a0a">invariant</a> }</span>
             </dt>
@@ -111,7 +108,7 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a class="m-doc" href="namespacerolly_1_1contracts.html#ac832de403e0fafc6b9dcf09f6e6f7594">contract_violation_handler</a> = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/functional/function.html" target="_blank">std::<wbr/>function</a>&lt;void(contract_violation const &amp;)&gt;
+              using <a class="m-doc" href="namespacerll.html#a15256aad57cade3792bb9278924d0d6f">contract_violation_handler</a> = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/functional/function.html" target="_blank">std::<wbr/>function</a>&lt;void(contract_violation const &amp;)&gt;
             </dt>
             <dd>Contract violation handler type.</dd>
           </dl>
@@ -120,91 +117,95 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts.html#a85522a06efdcca823d5c7119ebafb850">broken_invariant</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Broken invariant")</span>
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll.html#a6bff4209afff333c830016f365a3c9ba">broken_invariant</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> const message = "Broken invariant",
+              source_location const&amp; location = source_location::current())</span>
             </dt>
-            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_<wbr/>handler</a>) with a broken invariant violation.</dd>
+            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerll.html#a3ecbd5131e53fc49399c6c9531454c30">violation_<wbr/>handler</a>) with a broken invariant violation.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts_1_1audit.html#a90bd93c4cbe4a541b3398ee95ed17505">broken_invariant</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Broken invariant")</span>
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll.html#a178d0a82e673c1adaef5d0b025f9afa4">broken_postcondition</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> const message = "Broken postcondition",
+              source_location const&amp; location = source_location::current())</span>
             </dt>
-            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_<wbr/>handler</a>) with a broken invariant violation.</dd>
+            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerll.html#a3ecbd5131e53fc49399c6c9531454c30">violation_<wbr/>handler</a>) with a broken postcondition violation.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts.html#a4660f2a90742b97d33d90f3dfd4ee812">broken_postcondition</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Broken postcondition")</span>
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll.html#a715064ab7e82b110c21fcd766f6b47bc">broken_precondition</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> const message = "Broken precondition",
+              source_location const&amp; location = source_location::current())</span>
             </dt>
-            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_<wbr/>handler</a>) with a broken postcondition violation.</dd>
+            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerll.html#a3ecbd5131e53fc49399c6c9531454c30">violation_<wbr/>handler</a>) with a broken precondition violation.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts_1_1audit.html#a040c855daee4842d4c0caefd701b6607">broken_postcondition</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Broken postcondition")</span>
-            </dt>
-            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_<wbr/>handler</a>) with a broken postcondition violation.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts.html#ab1f48107fb7de5e343fb595d41219bfa">broken_precondition</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Broken precondition")</span>
-            </dt>
-            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_<wbr/>handler</a>) with a broken precondition violation.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts_1_1audit.html#a5bf2bc45f46e47e578f2defd5d87b52a">broken_precondition</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Broken precondition")</span>
-            </dt>
-            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_<wbr/>handler</a>) with a broken precondition violation.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts.html#ab0bc120d0ba17557276c0082ec51e7b0">default_contract_violation_handler</a>(</span><span class="m-doc-wrap">contract_violation const&amp; violation)</span>
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll.html#a132e3bda8756f762bbdff0e651cb9ccc">default_contract_violation_handler</a>(</span><span class="m-doc-wrap">contract_violation const&amp; violation)</span>
             </dt>
             <dd>Default contract violation handler.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts.html#ad298c10384725ecb46aa64acbe8f7d07">invariant</a>(</span><span class="m-doc-wrap">bool expression,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Invariant violated")</span>
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll.html#a8a162989b8a9da4846f785610af1fd92">invariant</a>(</span><span class="m-doc-wrap">bool const expression,
+              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> const message = "Invariant violated",
+              source_location const&amp; location = source_location::current())</span>
             </dt>
             <dd>Checks if a given <em>invariant</em> expression is true and throws a contract violation if it is not.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts_1_1audit.html#a7e49ec735d033ca6f6da7652f78c4a30">invariant</a>(</span><span class="m-doc-wrap">bool expression,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Invariant violated")</span>
-            </dt>
-            <dd>Checks if a given <em>invariant</em> expression is true and throws a contract violation if it is not.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly_1_1contracts_1_1detail.html#a85609edb0083695bff46154dd637729f">make_contract_violation</a>(</span><span class="m-doc-wrap">contract_type type,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll_1_1detail.html#ad2b84c89bf924070f1baca614f71e96e">make_contract_violation</a>(</span><span class="m-doc-wrap">contract_type type,
               <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message,
               source_location location = source_location::current()) →  contract_violation</span>
             </dt>
             <dd>Creates a contract violation data structure from current location in the source code.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts.html#adfba2187b8f7e9795c0fb5ec669a15a9">not_implemented</a>(</span><span class="m-doc-wrap">)</span>
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll.html#aa4725f65eea24a7e7dab185e48279623">not_implemented</a>(</span><span class="m-doc-wrap">source_location const&amp; location = source_location::current())</span>
             </dt>
-            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_<wbr/>handler</a>) with a broken invariant violation.</dd>
+            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerll.html#a3ecbd5131e53fc49399c6c9531454c30">violation_<wbr/>handler</a>) with a broken invariant violation.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts_1_1audit.html#a123d98f0454da1fde978fa21ec6dd5e4">not_implemented</a>(</span><span class="m-doc-wrap">)</span>
-            </dt>
-            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_<wbr/>handler</a>) with a broken invariant violation.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts.html#a6fc741e9082a3b9384dfd50c1b36e64b">postcondition</a>(</span><span class="m-doc-wrap">bool expression,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Postcondition violated")</span>
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll.html#a26f2f4e3c6031080180574b8cd0b5c3a">postcondition</a>(</span><span class="m-doc-wrap">bool const expression,
+              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> const message = "Postcondition violated",
+              source_location const&amp; location = source_location::current())</span>
             </dt>
             <dd>Checks if a given <em>postcondition</em> expression is true and throws a contract violation if it is not.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts_1_1audit.html#a9cf84ba57be583af6f5a3972047d8416">postcondition</a>(</span><span class="m-doc-wrap">bool expression,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Postcondition violated")</span>
-            </dt>
-            <dd>Checks if a given <em>postcondition</em> expression is true and throws a contract violation if it is not.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts.html#aa8946f97218fccab5c3252ded10a82dd">precondition</a>(</span><span class="m-doc-wrap">bool expression,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Precondition violated")</span>
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll.html#a7be69e17bcc1ef595aba0c7b9c670e99">precondition</a>(</span><span class="m-doc-wrap">bool const expression,
+              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> const message = "Precondition violated",
+              source_location const&amp; location = source_location::current())</span>
             </dt>
             <dd>Checks if a given <em>precondition</em> expression is true and throws a contract violation if it is not.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts_1_1audit.html#a6c79fd5607d45e582936442da6e322f4">precondition</a>(</span><span class="m-doc-wrap">bool expression,
-              <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message = "Precondition violated")</span>
-            </dt>
-            <dd>Checks if a given <em>precondition</em> expression is true and throws a contract violation if it is not.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly_1_1contracts.html#ad4881604e9bfa8b79bcb9c1e23f1e7af">set_violation_handler</a>(</span><span class="m-doc-wrap">contract_violation_handler handler) →  contract_violation_handler</span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a11bc7516c86518a712da9d66bea0a6d3">set_violation_handler</a>(</span><span class="m-doc-wrap">contract_violation_handler handler) →  contract_violation_handler</span>
             </dt>
             <dd>Sets the global contract violation handler and returns the old one.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly_1_1contracts_1_1detail.html#a51d1323752d48a6e020de21fbda1e7f5">violate</a>(</span><span class="m-doc-wrap">contract_type type,
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll_1_1detail.html#a2274f95f096f984744d37a4852e4fb82">violate</a>(</span><span class="m-doc-wrap">contract_type type,
               <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> message,
-              source_location location = source_location::current())</span>
+              source_location const&amp; location = source_location::current())</span>
             </dt>
-            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_<wbr/>handler</a>) with the violation data from current location in the source code.</dd>
+            <dd>Invokes the global contract violation handler (see <a class="m-doc" href="namespacerll.html#a3ecbd5131e53fc49399c6c9531454c30">violation_<wbr/>handler</a>) with the violation data from current location in the source code.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly_1_1contracts.html#a403bfcd53f388183802f697dc691d19e">violation_handler</a>(</span><span class="m-doc-wrap">) →  contract_violation_handler&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a3ecbd5131e53fc49399c6c9531454c30">violation_handler</a>(</span><span class="m-doc-wrap">) →  contract_violation_handler&amp;</span>
             </dt>
             <dd>Returns the current global contract violation handler.</dd>
+          </dl>
+        </section>
+        <section id="define-members">
+          <h2><a href="#define-members">Defines</a></h2>
+          <dl class="m-doc">
+            <dt id="aa9bcba8574af5560711e5ecabe7b6700">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#aa9bcba8574af5560711e5ecabe7b6700">assert_broken_invariant</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd></dd>
+            <dt id="a6ab677a87bb77dd1a05d46565ee66801">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a6ab677a87bb77dd1a05d46565ee66801">assert_broken_precondition</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd></dd>
+            <dt id="a9cbb2f1eebbe45103362957088f15c5a">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a9cbb2f1eebbe45103362957088f15c5a">assert_invariant</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd></dd>
+            <dt id="a671b3a7464abd32cfa86e0ee43c87cfa">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a671b3a7464abd32cfa86e0ee43c87cfa">assert_not_implemented</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd></dd>
+            <dt id="adcfc2e0c1622d3069d05e95bcf09d9d0">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#adcfc2e0c1622d3069d05e95bcf09d9d0">assert_postcondition</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd></dd>
+            <dt id="a269cead70f13e4ed003b315f857cfbdc">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a269cead70f13e4ed003b315f857cfbdc">assert_precondition</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd></dd>
           </dl>
         </section>
       </div>

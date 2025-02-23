@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/types/result.h file | Rolly Radar core library</title>
+  <title>rll/result.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span><span class="m-breadcrumb"><a href="dir_69c40b2d5627d47a18ef9ba4da954b85.html">types</a>/</span>result.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="dir_745525cd4fc4efbd9885e3cf3588e3bb.html">rll</a>/</span>result.h <span class="m-thin">file</span>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -75,8 +75,8 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
-            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
+            <dt>namespace <a class="m-doc" href="namespacerll.html">rll</a></dt>
+            <dd>Contract-programming related functions and classes.</dd>
           </dl>
         </section>
         <section id="typedef-members">
@@ -84,7 +84,7 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T = void</span></span>&gt;</div>
-              using <a class="m-doc" href="namespacerolly.html#a0255dc22318d076cc83f8bf30c2e80e5">result</a> = expected&lt;T, <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a>&gt;
+              using <a class="m-doc" href="namespacerll.html#a180b6c7999980ef9862de8890b3cae6f">result</a> = expected&lt;T, <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a>&gt;
             </dt>
             <dd></dd>
           </dl>
@@ -94,17 +94,17 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename... Args</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a62fc8b0dee98bc134a2868b52f3fb403">error</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> format,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#aa24fbb6493fb1c68a84c57f8edf0df78">error</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> format,
               Args &amp;&amp; ... args) →  unexpected&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/decay.html" target="_blank">std::<wbr/>decay_t</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a>&gt;&gt;</span>
             </dt>
             <dd>Generates an unexpected error object with a formatted error message.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a300227c1d5e43dae509454ea6b4e31f3">ok</a>(</span><span class="m-doc-wrap">T&amp;&amp; t) →  expected&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/decay.html" target="_blank">std::<wbr/>decay_t</a>&lt;T&gt;, <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a19b6b29c0b55bd54027a7299fbb4f749">ok</a>(</span><span class="m-doc-wrap">T&amp;&amp; t) →  expected&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/decay.html" target="_blank">std::<wbr/>decay_t</a>&lt;T&gt;, <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a>&gt;</span>
             </dt>
             <dd>Wrap a value in an expected.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#aae0ceaba6f444e0342ed34963f4a4f73">ok</a>(</span><span class="m-doc-wrap">) →  result</span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ab0e045b626d9d7cf87ed1aa698259118">ok</a>(</span><span class="m-doc-wrap">) →  result</span>
             </dt>
             <dd></dd>
           </dl>

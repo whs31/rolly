@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/types/optional.h file | Rolly Radar core library</title>
+  <title>rll/optional.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span><span class="m-breadcrumb"><a href="dir_69c40b2d5627d47a18ef9ba4da954b85.html">types</a>/</span>optional.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="dir_745525cd4fc4efbd9885e3cf3588e3bb.html">rll</a>/</span>optional.h <span class="m-thin">file</span>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -77,33 +77,33 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
-            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
+            <dt>namespace <a class="m-doc" href="namespacerll.html">rll</a></dt>
+            <dd>Contract-programming related functions and classes.</dd>
           </dl>
         </section>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              struct <a class="m-doc" href="structrolly_1_1nullopt__t.html">rolly::nullopt_t</a>
+              struct <a class="m-doc" href="structrll_1_1nullopt__t.html">rll::nullopt_t</a>
             </dt>
             <dd>A tag type to represent an empty optional.</dd>
             <dt>
-              struct <a class="m-doc" href="structrolly_1_1nullopt__t_1_1do__not__use.html">rolly::nullopt_t::do_not_use</a>
+              struct <a class="m-doc" href="structrll_1_1nullopt__t_1_1do__not__use.html">rll::nullopt_t::do_not_use</a>
             </dt>
             <dd></dd>
             <dt>
-              class <a class="m-doc" href="classrolly_1_1bad__optional__access.html">rolly::bad_optional_access</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              class <a class="m-doc" href="classrolly_1_1optional.html">rolly::optional</a>
+              class <a class="m-doc" href="classrll_1_1bad__optional__access.html">rll::bad_optional_access</a>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              class <a class="m-doc" href="classrolly_1_1optional_3_01_t_01_6_01_4.html">rolly::optional&lt;T&amp;&gt;</a>
+              class <a class="m-doc" href="classrll_1_1optional.html">rll::optional</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
+              class <a class="m-doc" href="classrll_1_1optional_3_01_t_01_6_01_4.html">rll::optional&lt;T&amp;&gt;</a>
             </dt>
             <dd></dd>
           </dl>
@@ -113,213 +113,213 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">class T = detail::i_am_secret</span>, <span class="m-doc-template-param">class U</span>, <span class="m-doc-template-param">class Ret = detail::conditional_t&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_same.html" target="_blank">std::<wbr/>is_same</a>&lt;T, detail::i_am_secret&gt;::value, detail::decay_t&lt;U&gt;, T&gt;</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a6426d9249abc7390ee229f132039b15f">make_optional</a>(</span><span class="m-doc-wrap">U&amp;&amp; v) →  optional&lt;Ret&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a7dc8631a5b5c41fa83c9877261f24f4b">make_optional</a>(</span><span class="m-doc-wrap">U&amp;&amp; v) →  optional&lt;Ret&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class... Args</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#af8a1887a22a4090274dcaa16b64f6e4d">make_optional</a>(</span><span class="m-doc-wrap">Args &amp;&amp; ... args) →  optional&lt;T&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ad410a0e05b7621b22e9478873d51157f">make_optional</a>(</span><span class="m-doc-wrap">Args &amp;&amp; ... args) →  optional&lt;T&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span>, <span class="m-doc-template-param">class... Args</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#acffb69392cf1b07eeaf1ac6b7c206d10">make_optional</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/initializer_list.html" target="_blank">std::<wbr/>initializer_list</a>&lt;U&gt; il,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ae65f8f3c7ad36d7d5739d1c790becea4">make_optional</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/initializer_list.html" target="_blank">std::<wbr/>initializer_list</a>&lt;U&gt; il,
               Args &amp;&amp; ... args) →  optional&lt;T&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#aaeabd0a43849c96e6a189456e64a9e80">operator!=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a8370664b5bbad1b6381cb9edafff7837">operator!=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               optional&lt;U&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a2835f5e825e9642a4ab30e9b80da8832">operator!=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ae69bcd266c182151f04d54b7e74c7b75">operator!=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               nullopt_t) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a137e7622b0b5826d767aa21b10bf8a4c">operator!=</a>(</span><span class="m-doc-wrap">nullopt_t,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#af26d67eee717102a4845a9a5efee7e74">operator!=</a>(</span><span class="m-doc-wrap">nullopt_t,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a443a871c46e6e084799f9c8973d9e51f">operator!=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a9376e9bb203be84b12d38ed2199e0c92">operator!=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               U const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a584bd404eee977379de223dc0647e348">operator!=</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a0f6f7a5d7731439bf15f3830e57722a9">operator!=</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#aa200248ad0ba62c49766a7f23f0ab244">operator&lt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a2c48fb6a600c8d74e896f6ca478238c6">operator&lt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               optional&lt;U&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ac4d264d4fa3093b68a6fbc5d8b864beb">operator&lt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp;,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a03266f07d8deafa524f1df3f6350e374">operator&lt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp;,
               nullopt_t) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#acb7364ea0a1e0438ae84214ced329b4d">operator&lt;</a>(</span><span class="m-doc-wrap">nullopt_t,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a9ff251fe02ae34d11055ef96a271dd20">operator&lt;</a>(</span><span class="m-doc-wrap">nullopt_t,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#acc1d8d195c6b5a3493d65e34a9b82e2d">operator&lt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a6dda171e64251b24c31441cac2e75ac0">operator&lt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               U const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a640100316b3156a07377038175c5e9e2">operator&lt;</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#aa84746156b4110d1bd314530ae9c83d6">operator&lt;</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#aeb7fb289dc87f67607f0f9cd76de2fba">operator&lt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a78865e20aefef4ba07bf33b8d721a0d8">operator&lt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               optional&lt;U&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a17605135b9c4fbe2d0d006d5cb0cb0df">operator&lt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ae9cc5a4db53306f13a59f9875b671edc">operator&lt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               nullopt_t) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#aeb5122e9a208a1d01d21b87705dd8219">operator&lt;=</a>(</span><span class="m-doc-wrap">nullopt_t,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a2cbe98b2937ed37e1e9f235140067f1d">operator&lt;=</a>(</span><span class="m-doc-wrap">nullopt_t,
               optional&lt;T&gt; const&amp;) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a2829a36208a02c6a07fbb3bf7ea98cde">operator&lt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a5db46a024140c5d3a475a6fce9e030a4">operator&lt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               U const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ab70c8e8c4439a8be3e5be7b11a880ddc">operator&lt;=</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a2bf6cd32aa5d13480df9e7ec65f4332f">operator&lt;=</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ae42bed75bde5f4d4e4c715b00c5cdec5">operator==</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a0d05f1fba4b2a406b9b601ae2ca01d52">operator==</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               optional&lt;U&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd><a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Compare" target="_blank">Compares</a> two optional objects.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a43e660efbbd21846c0099fd98d7e7974">operator==</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ac00eba714d8403879fdcb28a411bff26">operator==</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               nullopt_t) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd><a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Compare" target="_blank">Compares</a> an optional to a <code>nullopt</code></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a65f34be32d65e60a6ae72cb06481d041">operator==</a>(</span><span class="m-doc-wrap">nullopt_t,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a80e8931aac15efa0150608e1d6dc1015">operator==</a>(</span><span class="m-doc-wrap">nullopt_t,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#acb3873114fe93ce619a39084b59b2a2f">operator==</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a38b2a9adecd48d3993dfdc8dd33ad923">operator==</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               U const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd><a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Compare" target="_blank">Compares</a> the optional with a value.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#adce9e5a2185ca737f529b12e7b115255">operator==</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#abc921952949e364846600a2e942dba2d">operator==</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a198e1526e34437f608e39bf6b3b77f28">operator&gt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#afbf02ab88de8ee51076df7049a054bad">operator&gt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               optional&lt;U&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ad9721a2da6cd3210b3d12cfba5a02b9d">operator&gt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ac938e5316b0f426c847d8c60d05b5c4d">operator&gt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               nullopt_t) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#aee4d261d62ca7e4c397b061c3345ffc0">operator&gt;</a>(</span><span class="m-doc-wrap">nullopt_t,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ab225f6d5c3a6174ba21ede5eaa2b95b9">operator&gt;</a>(</span><span class="m-doc-wrap">nullopt_t,
               optional&lt;T&gt; const&amp;) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a8a7913965e6fbab14332eb19133451f3">operator&gt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a33363ed76243e8cc4c8521b9b2862c55">operator&gt;</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               U const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a436961c16e6e95f486b0ed58d9a221bf">operator&gt;</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#adfd9636d2c90eff87bc1c9bcb5f384ab">operator&gt;</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#aa469315a3b3d370d5b2e586cb681b11d">operator&gt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a181b4dd8d202f0f908b5d94d53df2a9b">operator&gt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               optional&lt;U&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ab95b1dc683d04c96118a1b6e13862827">operator&gt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp;,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a42d4f2085dc71e1e690233e55de501d8">operator&gt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp;,
               nullopt_t) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ac32dbce08b465c015066197343543a66">operator&gt;=</a>(</span><span class="m-doc-wrap">nullopt_t,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a71baba00689328e8d49cebcfdbb51d4d">operator&gt;=</a>(</span><span class="m-doc-wrap">nullopt_t,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a1b3470d1556c16994c691b0a7af7ee48">operator&gt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a0e86c302bec0a5620046855e198160ad">operator&gt;=</a>(</span><span class="m-doc-wrap">optional&lt;T&gt; const&amp; lhs,
               U const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">class U</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#acbd31892e6da85b55b99c07bf005b112">operator&gt;=</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a62d2c5380a6dca67cd41d87fa3c59c96">operator&gt;=</a>(</span><span class="m-doc-wrap">U const&amp; lhs,
               optional&lt;T&gt; const&amp; rhs) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">class T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper"><a class="m-doc" href="namespacerolly.html#a963e15012f92afbdc50c51baa8d70f3e">optional</a>(</span><span class="m-doc-wrap">T) →  optional&lt; T &gt;</span>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="namespacerll.html#a10df8864bcef3663b7348d3e7c426c08">optional</a>(</span><span class="m-doc-wrap">T) →  optional&lt; T &gt;</span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ab3c3aa3451b0e2483b02fd9410936dba">some</a>(</span><span class="m-doc-wrap">T&amp;&amp; t) →  optional&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/decay.html" target="_blank">std::<wbr/>decay_t</a>&lt;T&gt;&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a32bf03f2bb704bfd54de129253923853">some</a>(</span><span class="m-doc-wrap">T&amp;&amp; t) →  optional&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/decay.html" target="_blank">std::<wbr/>decay_t</a>&lt;T&gt;&gt;</span>
             </dt>
             <dd>Wrap a value in an optional.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">class T</span>, <span class="m-doc-template-param">detail::enable_if_t&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_move_constructible.html" target="_blank">std::<wbr/>is_move_constructible</a>&lt;T&gt;::value&gt;* = nullptr</span>, <span class="m-doc-template-param">detail::enable_if_t&lt;detail::is_swappable&lt;T&gt;::value&gt;* = nullptr</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerolly.html#ad0cdea02ac170e2603b7a4491036b298">swap</a>(</span><span class="m-doc-wrap">optional&lt;T&gt;&amp; lhs,
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="namespacerll.html#a2ce23df53de6a3afe449b2a68d618baa">swap</a>(</span><span class="m-doc-wrap">optional&lt;T&gt;&amp; lhs,
               optional&lt;T&gt;&amp; rhs) <span class="m-label m-flat m-success">noexcept(…)</span></span>
             </dt>
             <dd></dd>
@@ -329,11 +329,11 @@
           <h2><a href="#var-members">Variables</a></h2>
           <dl class="m-doc">
             <dt>
-              static nullopt_t <a class="m-doc" href="namespacerolly.html#a52442befb776e7bb1f7f40547bca6645">nullopt</a> <span class="m-label m-flat m-primary">constexpr</span>
+              static nullopt_t <a class="m-doc" href="namespacerll.html#a1752b78bc88b1ac21f26a0cf2ead7016">nullopt</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
             <dd>Represents an empty optional.</dd>
             <dt>
-              auto <a class="m-doc" href="namespacerolly.html#a60e11bee7c8ed7a1dbe199720957b62e">none</a> <span class="m-label m-flat m-primary">constexpr</span>
+              auto <a class="m-doc" href="namespacerll.html#ad3c2d18231988879a7668919336b77d5">none</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
             <dd>Wrap an empty value in an optional.</dd>
           </dl>

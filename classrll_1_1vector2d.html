@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <title>rll::vector2d struct | Rolly Radar core library</title>
+  <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#22272e" name="theme-color"/>
+  <link href="poxy/poxy.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+  <script src="poxy/poxy.js"></script>
+  <script>initialize_theme("dark");</script>
+  <meta content="Rolly" name="twitter:title"/>
+  <meta content="Rolly" property="og:title"/>
+  <meta content="Rolly" itemprop="name"/>
+  <meta content="Dmitry Riazantsev &lt;riazantsev.dl@edu.spbstu.ru&gt;" name="author"/>
+  <meta content="Dmitry Riazantsev &lt;riazantsev.dl@edu.spbstu.ru&gt;" property="article:author"/>
+  <meta content="Radar core library" name="description"/>
+  <meta content="Radar core library" name="twitter:description"/>
+  <meta content="Radar core library" property="og:description"/>
+  <meta content="Radar core library" itemprop="description"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="Poxy v0.19.4" name="generator"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
+</head>
+<body class="poxy-has-toc">
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a class="m-col-t-8 m-col-m-none m-left-m" href="index.html" id="m-navbar-brand"><svg class="poxy-injected-svg" fill="none" height="140" id="poxy-injected-svg-0" version="1.1" viewBox="0 0 140 140" width="140" xmlns="http://www.w3.org/2000/svg"><path d="M0 66C0 29.5492 29.5492 0 66 0H73.9111C110.362 0 139.911 29.5492 139.911 66V140H66C29.5492 140 0 110.451 0 74V66Z" fill="#416275"></path><path d="M103.153 112.504L107.377 111.48C108.742 111.48 109.425 112.163 109.425 113.528C109.34 115.747 108.188 117.709 105.969 119.416C103.836 121.208 101.404 122.104 98.673 122.104C95.9423 122.104 93.7663 120.781 92.145 118.136C89.841 114.296 87.665 107.427 85.617 97.528C84.6783 92.7493 83.569 88.824 82.289 85.752C79.985 86.52 77.553 86.904 74.993 86.904C72.433 86.904 70.1717 86.392 68.209 85.368C66.3317 84.2587 65.393 82.936 65.393 81.4C65.5637 77.4747 68.721 75.512 74.865 75.512C77.8517 75.512 81.0517 76.8347 84.465 79.48C89.7557 75.4693 92.401 69.88 92.401 62.712C92.401 58.4453 91.5903 54.6907 89.969 51.448C88.3477 48.12 86.2143 45.5173 83.569 43.64C78.3637 39.9707 72.561 38.136 66.161 38.136C65.9903 40.0133 65.6917 43 65.265 47.096C64.4117 55.6293 63.8997 62.2427 63.729 66.936L63.345 87.16C63.345 102.691 60.273 110.456 54.129 110.456C50.2037 110.456 48.241 108.792 48.241 105.464C48.241 104.611 48.7957 103.16 49.905 101.112C51.0997 99.064 51.953 96.7173 52.465 94.072C52.977 91.3413 53.5317 83.448 54.129 70.392C54.7263 57.2507 55.537 46.9253 56.561 39.416C52.0383 40.696 48.3263 42.6587 45.425 45.304C42.609 47.9493 41.201 51.064 41.201 54.648C41.201 56.696 40.7317 58.36 39.793 59.64C38.8543 60.8347 37.7023 61.432 36.337 61.432C33.8623 61.432 32.625 60.1093 32.625 57.464C32.625 51.4907 35.0143 46.584 39.793 42.744C44.657 38.8187 50.6303 36.0027 57.713 34.296C59.4197 28.5787 61.809 25.72 64.881 25.72C66.0757 25.72 66.673 27.0853 66.673 29.816C66.673 30.4133 66.5877 31.48 66.417 33.016C67.3557 32.8453 69.1477 32.76 71.793 32.76C74.4383 32.76 77.425 33.144 80.753 33.912C84.081 34.68 87.409 36.0027 90.737 37.88C94.1503 39.672 96.881 42.4453 98.929 46.2C100.977 49.8693 102.001 54.1787 102.001 59.128C102.001 64.0773 100.721 68.6853 98.161 72.952C95.601 77.2187 92.273 80.632 88.177 83.192C91.0783 86.776 93.3397 91.1707 94.961 96.376C96.6677 101.581 98.2463 105.549 99.697 108.28C101.148 111.096 102.3 112.504 103.153 112.504ZM70.641 79.864C70.641 80.5467 71.2383 81.144 72.433 81.656C73.6277 82.168 74.865 82.424 76.145 82.424C77.5103 82.424 78.7477 82.2107 79.857 81.784C78.1503 79.8213 76.1877 78.84 73.969 78.84C71.7503 78.84 70.641 79.1813 70.641 79.864Z" fill="#F6C67C"></path></svg>Rolly <span class="m-thin">Radar core library</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a class="m-doc-search-icon" href="#search" onclick="return showSearch()" title="Search"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z" id="m-doc-search-icon-path"></path>
+        </svg></a>
+        <a href="#navigation" id="m-navbar-show" title="Show navigation"></a>
+        <a href="#" id="m-navbar-hide" title="Hide navigation"></a>
+      </div>
+      <div class="m-col-t-12 m-show-m m-col-m-none m-right-m" id="m-navbar-collapse">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a class="poxy-icon repo github poxy-external" href="https://github.com/whs31/rolly" target="_blank" title="View on GitHub"><svg id="poxy-icon-repo" version="1.1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M25,1.23a24.37,24.37,0,0,0-7.7,47.5C18.51,49,19,48.2,19,47.56s0-2.12,0-4.15c-6.78,1.47-8.21-3.27-8.21-3.27C9.61,37.33,8,36.58,8,36.58c-2.21-1.51.17-1.48.17-1.48a5.12,5.12,0,0,1,3.73,2.51c2.17,3.72,5.7,2.65,7.09,2a5.25,5.25,0,0,1,1.55-3.26c-5.41-.61-11.1-2.7-11.1-12A9.41,9.41,0,0,1,12,17.79a8.75,8.75,0,0,1,.24-6.45s2-.66,6.7,2.49a23.1,23.1,0,0,1,12.2,0c4.66-3.15,6.7-2.49,6.7-2.49A8.75,8.75,0,0,1,38,17.79a9.41,9.41,0,0,1,2.51,6.54c0,9.36-5.7,11.42-11.13,12a5.83,5.83,0,0,1,1.65,4.51c0,3.26,0,5.89,0,6.69,0,.65.44,1.41,1.68,1.17A24.38,24.38,0,0,0,25,1.23Z" fill="currentColor"></path></svg></a></li>
+            <li><a class="poxy-icon theme" href="javascript:void(null);" id="poxy-theme-switch" onclick="toggle_theme(); return false;" role="button" title="Toggle dark and light themes"><svg id="poxy-theme-switch-img" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="185.6708" cy="183.8122" fill="currentColor" r="65.625"></circle><path d="M185.6708,87.5622a13.1256,13.1256,0,0,0,13.125-13.125V52.5622a13.125,13.125,0,1,0-26.25,0v21.875A13.1257,13.1257,0,0,0,185.6708,87.5622Z" fill="currentColor"></path><path d="M99.051,115.7519a13.1236,13.1236,0,1,0,18.56-18.56L102.1442,81.726a13.1236,13.1236,0,0,0-18.5595,18.56Z" fill="currentColor"></path><path d="M89.4208,183.8122a13.1257,13.1257,0,0,0-13.125-13.125H54.4208a13.125,13.125,0,0,0,0,26.25h21.875A13.1256,13.1256,0,0,0,89.4208,183.8122Z" fill="currentColor"></path><path d="M99.051,251.8725,83.5847,267.3431a13.1236,13.1236,0,1,0,18.56,18.56l15.4663-15.4706a13.1236,13.1236,0,1,0-18.5595-18.56Z" fill="currentColor"></path><path d="M185.6708,280.0622a13.1258,13.1258,0,0,0-13.125,13.125v21.875a13.125,13.125,0,0,0,26.25,0v-21.875A13.1257,13.1257,0,0,0,185.6708,280.0622Z" fill="currentColor"></path><path d="M272.2907,251.8725a13.1236,13.1236,0,1,0-18.56,18.56l15.4663,15.4706a13.1236,13.1236,0,1,0,18.56-18.56Z" fill="currentColor"></path><path d="M330.0458,183.8122a13.1257,13.1257,0,0,0-13.125-13.125h-21.875a13.125,13.125,0,0,0,0,26.25h21.875A13.1256,13.1256,0,0,0,330.0458,183.8122Z" fill="currentColor"></path><path d="M263.0109,119.5971a13.0824,13.0824,0,0,0,9.28-3.8452l15.4663-15.4663a13.1236,13.1236,0,1,0-18.56-18.56L253.7312,97.1923a13.125,13.125,0,0,0,9.28,22.4048Z" fill="currentColor"></path><path d="M456.9379,401.6714a63.97,63.97,0,0,1-14.9963,7.2055c-19.6448,6.5283-41.8787,2.9566-58.1439-9.8523a68.9311,68.9311,0,0,1-10.835-10.8339c-12.8088-16.2663-16.3806-38.5-9.8523-58.1471a63.8444,63.8444,0,0,1,7.2077-14.9931,8.8036,8.8036,0,0,0-10.1172-13.3034,87.5188,87.5188,0,1,0,110.0372,110.04A8.8,8.8,0,0,0,456.9379,401.6714Z" fill="currentColor"></path></svg></a></li>
+            <li class="m-show-m"><a class="m-doc-search-icon" href="#search" onclick="return showSearch()" title="Search"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path"></use>
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vector2d_8h.html">&lt;rll/euclid/vector2d.h&gt;</a></div>
+          <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T = <a class="m-doc" href="namespacerll.html#a8b47b5056ce733d55fff4e9dc6cb4bd8">f32</a></span></span>&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacerll.html">rll</a>::<wbr/></span>vector2d <span class="m-thin">struct</span>
+        </h1>
+        <p>A two-dimensional vector tagged with a unit.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>Number type. Must satisfy concept <code>rll::concepts::num</code>. Default is <code>f32</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+        <nav class="m-block m-default poxy-toc" id="poxy-toc">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="adc1b2c4a52cfa19c35ef6f466be921d6">
+              using <a class="m-doc-self" href="#adc1b2c4a52cfa19c35ef6f466be921d6">angle_type</a> = <a class="m-doc" href="structrll_1_1angle.html">angle</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt;
+            </dt>
+            <dd>Associated angle type.</dd>
+            <dt id="a746297d5df5da1f02bd179be59aee21d">
+              using <a class="m-doc-self" href="#a746297d5df5da1f02bd179be59aee21d">number_type</a> = T
+            </dt>
+            <dd>Underlying number type.</dd>
+            <dt id="aef78cfe21e01ac32b5d14d38b417accf">
+              using <a class="m-doc-self" href="#aef78cfe21e01ac32b5d14d38b417accf">point2d_type</a> = <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt;
+            </dt>
+            <dd>Associated <a class="m-doc" href="structrll_1_1point2d.html">point2d</a> type.</dd>
+            <dt id="a214d4aa106e95d27c9d8dec7add0dce7">
+              using <a class="m-doc-self" href="#a214d4aa106e95d27c9d8dec7add0dce7">size2d_type</a> = <a class="m-doc" href="structrll_1_1size2d.html">size2d</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt;
+            </dt>
+            <dd>Associated <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> type.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a> N2</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;N2 == 2&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="#a3818afc39f22344b4472ad7a1a06d02a">from_array</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/container/array.html" target="_blank">std::<wbr/>array</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>, N2&gt; const&amp; other) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> from <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/container/array.html" target="_blank">std::<wbr/>array</a></code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="#a01dc67c52c11f93483156bad68557f8f">from_pair</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/pair.html" target="_blank">std::<wbr/>pair</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt; const&amp; other) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> from <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/pair.html" target="_blank">std::<wbr/>pair</a></code>.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename... Args</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple/tuple_size.html" target="_blank">std::<wbr/>tuple_size_v</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple.html" target="_blank">std::<wbr/>tuple</a>&lt;Args...&gt;&gt; == 2&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="#aee441b515f1848d11f256b659edd618b">from_tuple</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple.html" target="_blank">std::<wbr/>tuple</a>&lt;Args...&gt; const&amp; other) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> from <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple.html" target="_blank">std::<wbr/>tuple</a></code>.</dd>
+            <dt id="abcda2cb046547b6abe4c14932670bd96">
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc-self" href="#abcda2cb046547b6abe4c14932670bd96">one</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new vector with all values set to one.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="#a944ee063a0996db635d8ae60dd9549b6">splat</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> value) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>, setting all components to the same value.</dd>
+            <dt id="a337e0722636df72618ca9a196e5f09f8">
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc-self" href="#a337e0722636df72618ca9a196e5f09f8">zero</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>The same as <em>origin</em>.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a4dae0866fa56faeed7b2fcda7151cd17">operator bool</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>true</code> if underlying values is both not <code>0</code> and not <code>NaN</code> or <code>Infinity</code> in case of floating point.</dd>
+            <dt id="a87cc8cbb9e249a07490473fc92596940">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a87cc8cbb9e249a07490473fc92596940">vector2d</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new vector with zero coordinates.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#aa5bcf0b207b0b0ab1a1324dc9c77700c">vector2d</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> x,
+              <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> y) <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new vector from given scalar values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a2d40e83961567171e341d7231666859b">vector2d</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> value) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new vector, setting all components to the same value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#aa4db296e007377f524e5ebbd7ac6c2ae">vector2d</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a214d4aa106e95d27c9d8dec7add0dce7">size2d_<wbr/>type</a> const&amp; other) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new vector from <a class="m-doc" href="structrll_1_1size2d.html">size2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a7c683a63cdbc1a1ebd39ae03bb9f701e">vector2d</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrll_1_1point2d.html">point2d</a>&lt;T&gt; const&amp; other) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Constructs new vector from <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a782444810610a8ee7a39be598b6b81e0">abs</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the absolute value of each component.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a827fc330055774c4c7937690bd5243e9">angle_to</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const →  <a class="m-doc" href="#adc1b2c4a52cfa19c35ef6f466be921d6">angle_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the signed angle between this vector and another vector.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a23a17a3b3b32a11fd52108489f0352c8">angle_to_x_axis</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#adc1b2c4a52cfa19c35ef6f466be921d6">angle_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the signed angle between this vector and the x axis.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename U</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;is_num_v&lt;T&gt;&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aec57ce317e6bb5f23ec3e23880bcc18e">cast</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&lt;U&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Cast from one numeric representation to another, preserving the units.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a29c204238c53c436b213839b1e07e2d5">ceil</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Rounds each component to the smallest integer equal or greater than the original value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a7edce223f5e4c8e8d16fea016141a87a">clamp</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; start,
+              <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; end) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> each component of which clamped by corresponding components of start and end.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a29e5dda7c7e8e146c025062b514cd68d">cross</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const →  <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the norm of the cross product of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a824f93b50d9c1381646b89261ab751ac">cross</a>(</span><span class="m-doc-wrap">T const&amp; other) const →  <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the norm of the cross product of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ad4f8571aa8880ff3aa644dcf2963048a">dot</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const →  <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns dot product of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aaaaa710f2f4843ad2272cec308d51f16">floor</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Rounds each component to the largest integer equal or less than the original value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a288abf028ef701704000d498fbfeabf8">inverted</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns inverted <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt id="ac8c91d9f7aad1009c5af0e7348fb828b">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ac8c91d9f7aad1009c5af0e7348fb828b">is_finite</a>(</span><span class="m-doc-wrap">) const →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns true if all members are finite.</dd>
+            <dt id="aa26814d252e2392ac93aa173dcd589c1">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#aa26814d252e2392ac93aa173dcd589c1">is_positive</a>(</span><span class="m-doc-wrap">) const →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns true if all members are positive.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a61a6283a53a6d648e93b3987e3964e7b">length_scalar</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns this vector3d's length as scalar value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a3d31562cdce62b5d35ab40832b94b18d">length_squared</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns this vector3d's length squared.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a8ddc89d4f67678c198d0cf67371bd6a8">lerp</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other,
+              <a class="m-doc" href="namespacerll.html#a8b47b5056ce733d55fff4e9dc6cb4bd8">f32</a> t) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Linearly interpolate between this <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename F</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_invocable.html" target="_blank">std::<wbr/>is_invocable_v</a>&lt;F, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt;&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ad2f36d70d486867de7e41ee266a85e00">map</a>(</span><span class="m-doc-wrap">F&amp;&amp; fn) &gt; &gt; -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Applies the function <strong>fn</strong> to each component of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a2be1fa9289455af6f68362636b833cef">max</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the largest x and y values of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#af895fdde24d03ecc44798f91280d4629">min</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the smallest x and y values of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ad88d490efa8c0e431f4a5bb7cd2751e7">normalized</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the vector with length normalized.</dd>
+            <dt id="a0f7216f45a0973ac6299c908c4215f86">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a0f7216f45a0973ac6299c908c4215f86">operator!</a>(</span><span class="m-doc-wrap">) const →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>false</code> if underlying values is both not <code>0</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a957bfe5048a09d4573d183ce08c8bbaf">operator!=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>true</code> if the vector is not equal to the other vector.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a3552ec7b09b697820feb2eed9394a684">operator*</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Multiplies vector by a scalar.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a9bedc4ca51e2b083989163ac67a10191">operator*=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Multiplication assignment operator.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a8ca2a9f8f4fce46ad9839f6197d2eab0">operator+</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns an unchanged copy of this vector.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Q</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aad158a7632b202fa95b529c8dea56826">operator+</a>(</span><span class="m-doc-wrap">Q const&amp; other) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Adds vector and either <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>, <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> or <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Q</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a96a77e7815154eabc0c53137a4dcf391">operator+=</a>(</span><span class="m-doc-wrap">Q const&amp; other) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Adds vector and either <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>, <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> or <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ac6bcdc45c33d0f67b5ed06176126361c">operator-</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns a negated copy of this vector.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Q</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a96e7570f95cf17911244c87858518d52">operator-</a>(</span><span class="m-doc-wrap">Q const&amp; other) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Subtracts vector and either <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>, <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> or <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Q</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a81846ecb0a736abf9809714572c95c12">operator-=</a>(</span><span class="m-doc-wrap">Q const&amp; other) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Subtracts vector and either <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>, <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> or <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a4213daa1f16ddd673d836478c42a22e6">operator/</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Divides vector by a scalar.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a250420e605b439e90e0ca78c8507e8c8">operator/=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Division assignment operator.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aaa882fe707b5e174e7eb8a06589a4040">operator==</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns <code>true</code> if the vector is equal to the other vector.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a027bb6d91ea29bac3b92d8f1cc86f4d2">project</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns this vector projected onto another vector.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a8e6b1f806afa2ff4ed55094b9f83a5cd">reflected</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; normal) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns a reflection vector using an incident ray and a surface normal.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ad009f8b4bdce2d8274c6b875c7f2c92a">round</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Rounds each component to the nearest integer value.</dd>
+            <dt id="a85d090fa8beec633c5d008d06d67e977">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a85d090fa8beec633c5d008d06d67e977">to_array</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/container/array.html" target="_blank">std::<wbr/>array</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>, 2&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into an array of two values.</dd>
+            <dt id="ada58d3b0ee009ef2fee1a3a7e2b0f563">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ada58d3b0ee009ef2fee1a3a7e2b0f563">to_f32</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into <code>f32</code> <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt id="aaf4fb562a2b05ab8548ccffc091793e8">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#aaf4fb562a2b05ab8548ccffc091793e8">to_f64</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&lt;<a class="m-doc" href="namespacerll.html#a2d475501a0684be1bb17cc0c806d40c3">f64</a>&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into <code>f64</code> <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt id="a00ae84607c777c9a2384ca3ddd9fd4dc">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a00ae84607c777c9a2384ca3ddd9fd4dc">to_i32</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&lt;<a class="m-doc" href="namespacerll.html#a835989a950485cae2072fff3188edaca">i32</a>&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into <code>i32</code> <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt id="a82dd7d43ac8a237367e8ebfdf05ccd0b">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a82dd7d43ac8a237367e8ebfdf05ccd0b">to_i64</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&lt;<a class="m-doc" href="namespacerll.html#a1339f8d58e0d66f36063a12a3d75b28e">i64</a>&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into <code>i64</code> <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt id="a222670f8d5ebda13e067a35a341ccc62">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a222670f8d5ebda13e067a35a341ccc62">to_isize</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&lt;<a class="m-doc" href="namespacerll.html#a63076edb18854492a45c0d74cd356f2f">isize</a>&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into <code>isize</code> <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt id="a37d515eab109a663b3e2c7c27c488bb2">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a37d515eab109a663b3e2c7c27c488bb2">to_pair</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/pair.html" target="_blank">std::<wbr/>pair</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into a pair of two values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a658760926cefcf13747ca4d10724a230">to_point2d</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#aef78cfe21e01ac32b5d14d38b417accf">point2d_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts this vector to a <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a6722e7fb807bfbd6086cdc2c87b25424">to_size2d</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a214d4aa106e95d27c9d8dec7add0dce7">size2d_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts this vector to a <a class="m-doc" href="structrll_1_1size2d.html">size2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aaed3558430dd2270ed9a64faafd5146a">to_string</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a></span>
+            </dt>
+            <dd>Returns string representation of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt id="a20d578548d70d1c266c26014475ea0a1">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a20d578548d70d1c266c26014475ea0a1">to_tuple</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple.html" target="_blank">std::<wbr/>tuple</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into a tuple of two values.</dd>
+            <dt id="a3873523fdc497123d09ab0ffa133c0ea">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a3873523fdc497123d09ab0ffa133c0ea">to_u32</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&lt;<a class="m-doc" href="namespacerll.html#ae66d90946f5af06c985b3dd77d786041">u32</a>&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into <code>u32</code> <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt id="a96bf7727e6dded5104ce7e521ec5809c">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a96bf7727e6dded5104ce7e521ec5809c">to_u64</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&lt;<a class="m-doc" href="namespacerll.html#a0990f1edc722e4e33e6f52019fce4733">u64</a>&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into <code>u64</code> <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt id="a252e97c239f5acf207bfc7e65955346d">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a252e97c239f5acf207bfc7e65955346d">to_usize</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&lt;<a class="m-doc" href="namespacerll.html#ac8efd086c004f51c0493b51ce67e3c70">usize</a>&gt; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Casts into <code>usize</code> <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#afac6b615d33848fafbc465d8bca9c492">x</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the x-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> as scalar value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a4c50ebe5f301db3d4be74f434af3bb21">x_mut</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns mutable reference to the x-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> as scalar value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#abc5c9d24b7f92bbf2df6708882402fb3">y</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns the y-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> as scalar value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aa0cc2951b567228c627fbeea868fd20a">y_mut</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Returns mutable reference to the y-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> as scalar value.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename F</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_invocable.html" target="_blank">std::<wbr/>is_invocable_v</a>&lt;F, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt;&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a108603638276e9d04dcb93f8994ff211">zip</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other,
+              F&amp;&amp; fn) const →  auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>Applies the function <strong>fn</strong> to each component of this <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> and the other <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a3818afc39f22344b4472ad7a1a06d02a"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+                <br/>
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a> N2</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;N2 == 2&gt;</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a3818afc39f22344b4472ad7a1a06d02a">from_array</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/container/array.html" target="_blank">std::<wbr/>array</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>, N2&gt; const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs new <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> from <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/container/array.html" target="_blank">std::<wbr/>array</a></code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">N2</td>
+                  <td>The size of the <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/container/array.html" target="_blank">std::<wbr/>array</a></code>. Must be equal to <code>2</code>.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/container/array.html" target="_blank">std::<wbr/>array</a></code>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a01dc67c52c11f93483156bad68557f8f"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper">static <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a01dc67c52c11f93483156bad68557f8f">from_pair</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/pair.html" target="_blank">std::<wbr/>pair</a>&lt;<a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt; const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs new <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> from <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/pair.html" target="_blank">std::<wbr/>pair</a></code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/pair.html" target="_blank">std::<wbr/>pair</a></code>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aee441b515f1848d11f256b659edd618b"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+                <br/>
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename... Args</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple/tuple_size.html" target="_blank">std::<wbr/>tuple_size_v</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple.html" target="_blank">std::<wbr/>tuple</a>&lt;Args...&gt;&gt; == 2&gt;</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aee441b515f1848d11f256b659edd618b">from_tuple</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple.html" target="_blank">std::<wbr/>tuple</a>&lt;Args...&gt; const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs new <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> from <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple.html" target="_blank">std::<wbr/>tuple</a></code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <code><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/utility/tuple.html" target="_blank">std::<wbr/>tuple</a></code>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a944ee063a0996db635d8ae60dd9549b6"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper">static <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a944ee063a0996db635d8ae60dd9549b6">splat</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> value) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs new <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>, setting all components to the same value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>The value to set all components to.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4dae0866fa56faeed7b2fcda7151cd17"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a4dae0866fa56faeed7b2fcda7151cd17">operator bool</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-info">explicit</span>  <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>true</code> if underlying values is both not <code>0</code> and not <code>NaN</code> or <code>Infinity</code> in case of floating point.</p>
+<aside class="m-note m-info"><h4>Note</h4><p>Also returns <code>false</code> if underlying values is <code>NaN</code> or <code>Infinity</code> in case of floating point.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="aa5bcf0b207b0b0ab1a1324dc9c77700c"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aa5bcf0b207b0b0ab1a1324dc9c77700c">vector2d</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> x,
+              <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> y) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs new vector from given scalar values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">x</td>
+                  <td>The x-coordinate.</td>
+                </tr>
+                <tr>
+                  <td>y</td>
+                  <td>The y-coordinate.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2d40e83961567171e341d7231666859b"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a2d40e83961567171e341d7231666859b">vector2d</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> value) <span class="m-label m-info">explicit</span>  <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs new vector, setting all components to the same value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>The value to set all components to.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa4db296e007377f524e5ebbd7ac6c2ae"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aa4db296e007377f524e5ebbd7ac6c2ae">vector2d</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a214d4aa106e95d27c9d8dec7add0dce7">size2d_<wbr/>type</a> const&amp; other) <span class="m-label m-info">explicit</span>  <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs new vector from <a class="m-doc" href="structrll_1_1size2d.html">size2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <a class="m-doc" href="structrll_1_1size2d.html">size2d</a>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a7c683a63cdbc1a1ebd39ae03bb9f701e"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a7c683a63cdbc1a1ebd39ae03bb9f701e">vector2d</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrll_1_1point2d.html">point2d</a>&lt;T&gt; const&amp; other) <span class="m-label m-info">explicit</span>  <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Constructs new vector from <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a782444810610a8ee7a39be598b6b81e0"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a782444810610a8ee7a39be598b6b81e0">abs</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the absolute value of each component.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The absolute value of each component.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a827fc330055774c4c7937690bd5243e9"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#adc1b2c4a52cfa19c35ef6f466be921d6">angle_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a827fc330055774c4c7937690bd5243e9">angle_to</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the signed angle between this vector and another vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other vector.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The signed angle between this vector and the other vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a23a17a3b3b32a11fd52108489f0352c8"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#adc1b2c4a52cfa19c35ef6f466be921d6">angle_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a23a17a3b3b32a11fd52108489f0352c8">angle_to_x_axis</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the signed angle between this vector and the x axis.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The signed angle between this vector and the x axis.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Positive values counted counterclockwise, where 0 is <code>+x</code> axis, and <code>PI/2</code> is <code>+y</code> axis.</p>
+          </div></section>
+          <section class="m-doc-details" id="aec57ce317e6bb5f23ec3e23880bcc18e"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+                <br/>
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename U</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;is_num_v&lt;T&gt;&gt;</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&lt;U&gt; <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aec57ce317e6bb5f23ec3e23880bcc18e">cast</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Cast from one numeric representation to another, preserving the units.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">U</td>
+                  <td>New number type.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> with the new number type and the same value.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a29c204238c53c436b213839b1e07e2d5"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a29c204238c53c436b213839b1e07e2d5">ceil</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Rounds each component to the smallest integer equal or greater than the original value.</p>
+<p>This behavior is preserved for negative values (unlike the basic cast).</p>
+          </div></section>
+          <section class="m-doc-details" id="a7edce223f5e4c8e8d16fea016141a87a"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a7edce223f5e4c8e8d16fea016141a87a">clamp</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; start,
+              <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; end) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> each component of which clamped by corresponding components of start and end.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">start</td>
+                  <td>The start <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+                <tr>
+                  <td>end</td>
+                  <td>The end <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The clamped <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a29e5dda7c7e8e146c025062b514cd68d"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a29e5dda7c7e8e146c025062b514cd68d">cross</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the norm of the cross product of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The norm of the cross product of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Cross product is defined as <code>[x1, y1] x [x2, y2] = x1 * y2 - y1 * x2</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a824f93b50d9c1381646b89261ab751ac"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a824f93b50d9c1381646b89261ab751ac">cross</a>(</span><span class="m-doc-wrap">T const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the norm of the cross product of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The norm of the cross product of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Cross product is defined as <code>[x1, y1] x [x2, y2] = x1 * y2 - y1 * x2</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad4f8571aa8880ff3aa644dcf2963048a"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad4f8571aa8880ff3aa644dcf2963048a">dot</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns dot product of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The dot product of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aaaaa710f2f4843ad2272cec308d51f16"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aaaaa710f2f4843ad2272cec308d51f16">floor</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Rounds each component to the largest integer equal or less than the original value.</p>
+<p>This behavior is preserved for negative values (unlike the basic cast).</p>
+          </div></section>
+          <section class="m-doc-details" id="a288abf028ef701704000d498fbfeabf8"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a288abf028ef701704000d498fbfeabf8">inverted</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns inverted <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Inverted <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a61a6283a53a6d648e93b3987e3964e7b"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a61a6283a53a6d648e93b3987e3964e7b">length_scalar</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns this vector3d's length as scalar value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The length of this vector3d.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3d31562cdce62b5d35ab40832b94b18d"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a3d31562cdce62b5d35ab40832b94b18d">length_squared</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns this vector3d's length squared.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The length squared of this vector3d.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8ddc89d4f67678c198d0cf67371bd6a8"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a8ddc89d4f67678c198d0cf67371bd6a8">lerp</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other,
+              <a class="m-doc" href="namespacerll.html#a8b47b5056ce733d55fff4e9dc6cb4bd8">f32</a> t) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Linearly interpolate between this <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+                <tr>
+                  <td>t</td>
+                  <td>Interpolation factor.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The interpolated <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Example:</p><pre class="m-code"><span class="k">using</span> <span class="nn">rll</span><span class="o">::</span><span class="nc">vector2d</span><span class="p">;</span>
+<span class="k">auto</span> <span class="k">const</span> <span class="n">from</span> <span class="o">=</span> <span class="nf">vector2d</span><span class="p">(</span><span class="mf">0.0F</span><span class="p">,</span> <span class="mf">10.0F</span><span class="p">);</span>
+<span class="k">auto</span> <span class="k">const</span> <span class="n">to</span> <span class="o">=</span> <span class="nf">vector2d</span><span class="p">(</span><span class="mf">8.0F</span><span class="p">,</span> <span class="mf">-4.0F</span><span class="p">);</span>
+<span class="nn">fmt</span><span class="o">::</span><span class="nf">println</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">from</span><span class="p">.</span><span class="nf">lerp</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="mf">-1.0F</span><span class="p">));</span>
+<span class="nn">fmt</span><span class="o">::</span><span class="nf">println</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">from</span><span class="p">.</span><span class="nf">lerp</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="mf">0.0F</span><span class="p">));</span>
+<span class="nn">fmt</span><span class="o">::</span><span class="nf">println</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">from</span><span class="p">.</span><span class="nf">lerp</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="mf">0.5F</span><span class="p">));</span>
+<span class="nn">fmt</span><span class="o">::</span><span class="nf">println</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">from</span><span class="p">.</span><span class="nf">lerp</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="mf">1.0F</span><span class="p">));</span>
+<span class="nn">fmt</span><span class="o">::</span><span class="nf">println</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">from</span><span class="p">.</span><span class="nf">lerp</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="mf">2.0F</span><span class="p">));</span></pre><p>Output:</p><pre class="m-console"><span class="go">[-8.0, 24.0]</span>
+<span class="go">[0.0, 10.0]</span>
+<span class="go">[4.0, 3.0]</span>
+<span class="go">[8.0, -4.0]</span>
+<span class="go">[16.0, -18.0]</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="ad2f36d70d486867de7e41ee266a85e00"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+                <br/>
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename F</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_invocable.html" target="_blank">std::<wbr/>is_invocable_v</a>&lt;F, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt;&gt;</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad2f36d70d486867de7e41ee266a85e00">map</a>(</span><span class="m-doc-wrap">F&amp;&amp; fn) &gt; &gt; <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Applies the function <strong>fn</strong> to each component of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">F</td>
+                  <td>The type of function to apply.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>fn</td>
+                  <td>The function to apply.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2be1fa9289455af6f68362636b833cef"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a2be1fa9289455af6f68362636b833cef">max</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the largest x and y values of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> with the largest x and y values.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af895fdde24d03ecc44798f91280d4629"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#af895fdde24d03ecc44798f91280d4629">min</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the smallest x and y values of this and another <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> with the smallest x and y values.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad88d490efa8c0e431f4a5bb7cd2751e7"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad88d490efa8c0e431f4a5bb7cd2751e7">normalized</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the vector with length normalized.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The normalized vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a957bfe5048a09d4573d183ce08c8bbaf"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a957bfe5048a09d4573d183ce08c8bbaf">operator!=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>true</code> if the vector is not equal to the other vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other vector.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if the vector is not equal to the other vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3552ec7b09b697820feb2eed9394a684"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a3552ec7b09b697820feb2eed9394a684">operator*</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Multiplies vector by a scalar.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The multiplier.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The result of multiplication.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9bedc4ca51e2b083989163ac67a10191"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&amp; <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a9bedc4ca51e2b083989163ac67a10191">operator*=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Multiplication assignment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Scalar value.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8ca2a9f8f4fce46ad9839f6197d2eab0"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a8ca2a9f8f4fce46ad9839f6197d2eab0">operator+</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns an unchanged copy of this vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>An unchanged copy of this vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aad158a7632b202fa95b529c8dea56826"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+                <br/>
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Q</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aad158a7632b202fa95b529c8dea56826">operator+</a>(</span><span class="m-doc-wrap">Q const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Adds vector and either <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>, <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> or <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">Q</td>
+                  <td>The type of the summand. Can be <code><a class="m-doc" href="structrll_1_1point2d.html">point2d</a></code>, <code><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a></code> or <code><a class="m-doc" href="structrll_1_1size2d.html">size2d</a></code>.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The summand.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The sum.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a96a77e7815154eabc0c53137a4dcf391"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+                <br/>
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Q</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&amp; <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a96a77e7815154eabc0c53137a4dcf391">operator+=</a>(</span><span class="m-doc-wrap">Q const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Adds vector and either <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>, <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> or <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">Q</td>
+                  <td>The type of the summand. Can be <code><a class="m-doc" href="structrll_1_1point2d.html">point2d</a></code>, <code><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a></code> or <code><a class="m-doc" href="structrll_1_1size2d.html">size2d</a></code>.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The summand.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The sum.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac6bcdc45c33d0f67b5ed06176126361c"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ac6bcdc45c33d0f67b5ed06176126361c">operator-</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns a negated copy of this vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A negated copy of this vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a96e7570f95cf17911244c87858518d52"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+                <br/>
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Q</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a96e7570f95cf17911244c87858518d52">operator-</a>(</span><span class="m-doc-wrap">Q const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Subtracts vector and either <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>, <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> or <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">Q</td>
+                  <td>The type of the subtrahend. Can be <code><a class="m-doc" href="structrll_1_1point2d.html">point2d</a></code>, <code><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a></code> or <code><a class="m-doc" href="structrll_1_1size2d.html">size2d</a></code>.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The subtrahend.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The difference.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a81846ecb0a736abf9809714572c95c12"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+                <br/>
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename Q</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&amp; <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a81846ecb0a736abf9809714572c95c12">operator-=</a>(</span><span class="m-doc-wrap">Q const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Subtracts vector and either <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>, <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> or <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">Q</td>
+                  <td>The type of the subtrahend. Can be <code><a class="m-doc" href="structrll_1_1point2d.html">point2d</a></code>, <code><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a></code> or <code><a class="m-doc" href="structrll_1_1size2d.html">size2d</a></code>.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The subtrahend.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The difference.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4213daa1f16ddd673d836478c42a22e6"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a4213daa1f16ddd673d836478c42a22e6">operator/</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Divides vector by a scalar.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The divisor.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The result of division.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a250420e605b439e90e0ca78c8507e8c8"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>&amp; <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a250420e605b439e90e0ca78c8507e8c8">operator/=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> const&amp; other) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Division assignment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Scalar value.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aaa882fe707b5e174e7eb8a06589a4040"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aaa882fe707b5e174e7eb8a06589a4040">operator==</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns <code>true</code> if the vector is equal to the other vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other vector.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if the vector is equal to the other vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a027bb6d91ea29bac3b92d8f1cc86f4d2"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a027bb6d91ea29bac3b92d8f1cc86f4d2">project</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns this vector projected onto another vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other vector.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The projection of this vector onto the other vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-danger"><h4>Warning</h4><p>Projecting onto a zero vector will result in a division by zero.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a8e6b1f806afa2ff4ed55094b9f83a5cd"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a8e6b1f806afa2ff4ed55094b9f83a5cd">reflected</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; normal) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns a reflection vector using an incident ray and a surface normal.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">normal</td>
+                  <td>The surface normal.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The reflection vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad009f8b4bdce2d8274c6b875c7f2c92a"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad009f8b4bdce2d8274c6b875c7f2c92a">round</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Rounds each component to the nearest integer value.</p>
+<p>This behavior is preserved for negative values (unlike the basic cast).</p>
+          </div></section>
+          <section class="m-doc-details" id="a658760926cefcf13747ca4d10724a230"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#aef78cfe21e01ac32b5d14d38b417accf">point2d_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a658760926cefcf13747ca4d10724a230">to_point2d</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Casts this vector to a <a class="m-doc" href="structrll_1_1point2d.html">point2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The <a class="m-doc" href="structrll_1_1point2d.html">point2d</a> representation of this vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a6722e7fb807bfbd6086cdc2c87b25424"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a214d4aa106e95d27c9d8dec7add0dce7">size2d_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a6722e7fb807bfbd6086cdc2c87b25424">to_size2d</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Casts this vector to a <a class="m-doc" href="structrll_1_1size2d.html">size2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The <a class="m-doc" href="structrll_1_1size2d.html">size2d</a> representation of this vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aaed3558430dd2270ed9a64faafd5146a"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aaed3558430dd2270ed9a64faafd5146a">to_string</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns string representation of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>String representation of the object.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Size is represented as it's numeric values. If the underlying number type is floating <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>, it is rounded to two decimal places.</p><aside class="m-note m-info"><h4>Note</h4><p>Due to limitations of the language, units are not displayed.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="afac6b615d33848fafbc465d8bca9c492"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#afac6b615d33848fafbc465d8bca9c492">x</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the x-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> as scalar value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The x-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4c50ebe5f301db3d4be74f434af3bb21"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&amp; <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a4c50ebe5f301db3d4be74f434af3bb21">x_mut</a>(</span><span class="m-doc-wrap">) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns mutable reference to the x-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> as scalar value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Mutable reference to the x-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="abc5c9d24b7f92bbf2df6708882402fb3"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a> <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#abc5c9d24b7f92bbf2df6708882402fb3">y</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns the y-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> as scalar value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The y-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa0cc2951b567228c627fbeea868fd20a"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&amp; <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aa0cc2951b567228c627fbeea868fd20a">y_mut</a>(</span><span class="m-doc-wrap">) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Returns mutable reference to the y-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> as scalar value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Mutable reference to the y-coordinate of the <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a108603638276e9d04dcb93f8994ff211"><div>
+            <h3>
+              <div class="m-doc-template">
+                <span class="m-doc-template-parent">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</span>
+                <br/>
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename F</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_invocable.html" target="_blank">std::<wbr/>is_invocable_v</a>&lt;F, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>, <a class="m-doc" href="#a746297d5df5da1f02bd179be59aee21d">number_<wbr/>type</a>&gt;&gt;</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto <span class="m-doc-details-prefix">rll::vector2d::</span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a108603638276e9d04dcb93f8994ff211">zip</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> const&amp; other,
+              F&amp;&amp; fn) const <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>Applies the function <strong>fn</strong> to each component of this <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> and the other <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">F</td>
+                  <td>The type of function to apply.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>other</td>
+                  <td>The other <a class="m-doc" href="classrll_1_1vector2d.html">vector2d</a> to apply.</td>
+                </tr>
+                <tr>
+                  <td>fn</td>
+                  <td>The function to apply.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">…</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input autocomplete="off" autofocus="autofocus" disabled="disabled" id="search-input" name="q" placeholder="Loading …" spellcheck="false" type="search"/>
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div class="m-text m-dim m-text-center" id="search-help">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">↓</span>
+            / <span class="m-label m-dim">↑</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div class="m-text m-warning m-text-center" id="search-notfound">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script><script>install_mcss_search_shim();</script>
+<script async="async" src="searchdata-v2.js"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        
+<a class="poxy-external" href="https://github.com/whs31/rolly" target="_blank">GitHub</a>
+• <a class="poxy-external" href="https://github.com/whs31/rolly/issues" target="_blank">Report an issue</a>
+• <a class="poxy-external" href="https://github.com/whs31/rolly/blob/main/LICENSE" target="_blank">License</a>
+• <a download="" href="Rolly.tagfile.xml" target="_blank" type="text/xml">Doxygen tagfile</a>
+<br/><br/>
+Site generated using <a class="poxy-external" href="https://github.com/marzer/poxy/" target="_blank">Poxy</a>
+
+      </div>
+    </div>
+  </div>
+</nav></footer>
+
+
+</body></html>

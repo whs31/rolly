@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/math.h file | Rolly Radar core library</title>
+  <title>rll/math.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span>math.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="dir_745525cd4fc4efbd9885e3cf3588e3bb.html">rll</a>/</span>math.h <span class="m-thin">file</span>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -74,8 +74,8 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
-            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
+            <dt>namespace <a class="m-doc" href="namespacerll.html">rll</a></dt>
+            <dd>Contract-programming related functions and classes.</dd>
           </dl>
         </section>
         <section id="func-members">
@@ -83,76 +83,76 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a3c24df2ef8c96d19b8d27cd38bcbd1f4">abs</a>(</span><span class="m-doc-wrap">T const&amp; v) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ae4c4d4607b5e6e102526c34e7e1da28c">abs</a>(</span><span class="m-doc-wrap">T const&amp; v) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Returns the absolute value of a number.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a67b25e22f418563e062c7b135dafb712">approx_eq</a>(</span><span class="m-doc-wrap">T a,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a3b664eeb777e744d28a934fbbfe7fb9d">approx_eq</a>(</span><span class="m-doc-wrap">T a,
               T b,
               T epsilon = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/numeric_limits.html" target="_blank">std::<wbr/>numeric_limits</a>&lt;T&gt;::epsilon()) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Returns true if numbers are approximately equal within given epsilon.</dd>
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">concepts::num T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a36212a27eae72633e6e688b36c625cac">div_euclid</a>(</span><span class="m-doc-wrap">T a,
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;is_num_v&lt;T&gt;&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a3609f72bf9b34e19aa946b3818906083">div_euclid</a>(</span><span class="m-doc-wrap">T a,
               T b) →  T</span>
             </dt>
-            <dd>Calculates Euclidean division, the matching method for <strong>rem_euclid</strong>.</dd>
+            <dd>Calculates Euclidean division, the matching method for <a class="m-doc" href="namespacerll.html#a361c57dccc4d77581f9b1683da801ca8">rem_<wbr/>euclid()</a>.</dd>
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">std::floating_point T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ad2f11653a1f9c5790c68c9bff6736fe9">floor</a>(</span><span class="m-doc-wrap">T val) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_floating_point.html" target="_blank">std::<wbr/>is_floating_point_v</a>&lt;T&gt;&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#abff8f8d67c3c82aeaf5dfd3b22e1e04c">floor</a>(</span><span class="m-doc-wrap">T val) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Rounds <code>val</code> down to the nearest integer.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#ab3895bc21fa85a50d1501f4f9a08668b">fmod</a>(</span><span class="m-doc-wrap">f32 const x,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a3314ef5d9f30d6306ac8e9405e46c32b">fmod</a>(</span><span class="m-doc-wrap">f32 const x,
               f32 const y) →  f32 <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Returns the remainder of the division of x by y.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#aefe004fcb2934d477d73fc646fdf1f07">is_null</a>(</span><span class="m-doc-wrap">T a,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a133e146ce941ab21cc48ef4fee67fbf2">is_null</a>(</span><span class="m-doc-wrap">T a,
               T epsilon = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/numeric_limits.html" target="_blank">std::<wbr/>numeric_limits</a>&lt;T&gt;::epsilon()) →  bool <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Returns true if number is approximately zero within given epsilon.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a56f6504ee90c3400cb30a212859dad6e">max</a>(</span><span class="m-doc-wrap">T&amp;&amp; v) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a74d83336c78fa897694e02f6a7ab23be">max</a>(</span><span class="m-doc-wrap">T&amp;&amp; v) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Returns the maximum of a single value.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename... Args</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a646a733c4a45d90162dd0f797ebce7a7">max</a>(</span><span class="m-doc-wrap">T const&amp; v1,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a3804030738de270b4c36908fc3c52fed">max</a>(</span><span class="m-doc-wrap">T const&amp; v1,
               T const&amp; v2,
               Args const&amp;... args) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Returns the maximum value among the provided arguments.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a5b98624b673f093ec94d6c9d704e6c88">min</a>(</span><span class="m-doc-wrap">T&amp;&amp; v) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#af4eabce8da597789894742e0ff1c5f9c">min</a>(</span><span class="m-doc-wrap">T&amp;&amp; v) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Returns the minimum of a single value.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename... Args</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a68311854e6306529fd83069a4be0f4c7">min</a>(</span><span class="m-doc-wrap">T const&amp; v1,
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a73e8a914948362c1b3ed4a8ef798251c">min</a>(</span><span class="m-doc-wrap">T const&amp; v1,
               T const&amp; v2,
               Args const&amp;... args) →  T <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>Returns the minimum value among the provided arguments.</dd>
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">concepts::num T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#af816d94e9bd5fba1c8aee7025fa2f7db">rem_euclid</a>(</span><span class="m-doc-wrap">T a,
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;is_num_v&lt;T&gt;&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#a361c57dccc4d77581f9b1683da801ca8">rem_euclid</a>(</span><span class="m-doc-wrap">T a,
               T b) →  T</span>
             </dt>
             <dd>Calculates the least nonnegative remainder of <code>self (mod rhs)</code>.</dd>
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">concepts::num T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#afc9186a6c457254e3f39fbbff6955acd">to_degrees</a>(</span><span class="m-doc-wrap">T radians) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;is_num_v&lt;T&gt;&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#ab82688d5b3bb345e4e13785b71a82ef3">to_degrees</a>(</span><span class="m-doc-wrap">T radians) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Converts radians to degrees.</dd>
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">concepts::num T</span></span>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerolly.html#a59a0a4901ad339f067edc6802cd6a873">to_radians</a>(</span><span class="m-doc-wrap">T degrees) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;is_num_v&lt;T&gt;&gt;</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll.html#af201b16ebb83772c80cbf0be2cc66f9f">to_radians</a>(</span><span class="m-doc-wrap">T degrees) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Converts degrees to radians.</dd>
           </dl>

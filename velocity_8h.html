@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rolly/types/velocity.h file | Rolly Radar core library</title>
+  <title>rll/euclid/velocity.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_df826c2d1deda9f9df05c390aabb7079.html">rolly</a>/</span><span class="m-breadcrumb"><a href="dir_69c40b2d5627d47a18ef9ba4da954b85.html">types</a>/</span>velocity.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="dir_745525cd4fc4efbd9885e3cf3588e3bb.html">rll</a>/</span><span class="m-breadcrumb"><a href="dir_5964566c2301352c64bc17dc34b699d3.html">euclid</a>/</span>velocity.h <span class="m-thin">file</span>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -75,30 +75,30 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a class="m-doc" href="namespacerolly.html">rolly</a></dt>
-            <dd>Main namespace for the <strong>rolly</strong> library.</dd>
+            <dt>namespace <a class="m-doc" href="namespacerll.html">rll</a></dt>
+            <dd>Contract-programming related functions and classes.</dd>
           </dl>
         </section>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">concepts::num T = <a class="m-doc" href="namespacerolly.html#a152324f2b6dcec1fadbd8031305f32ae">f32</a></span></span>&gt;</div>
-              struct <a class="m-doc" href="structrolly_1_1velocity.html">rolly::velocity</a>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if_t</a>&lt;is_num_v&lt;T&gt;&gt;</span></span>&gt;</div>
+              struct <a class="m-doc" href="structrll_1_1velocity.html">rll::velocity</a>
             </dt>
             <dd>Newtype describing a velocity.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              struct <a class="m-doc" href="structfmt_1_1formatter_3_01rolly_1_1velocity_3_01_t_01_4_01_4.html">fmt::formatter&lt;rolly::velocity&lt;T&gt;&gt;</a>
+              struct <a class="m-doc" href="structfmt_1_1formatter_3_01rll_1_1velocity_3_01_t_01_4_01_4.html">fmt::formatter&lt;rll::velocity&lt;T&gt;&gt;</a>
             </dt>
-            <dd>Specialization of the <code><a class="m-doc poxy-injected poxy-external" href="https://fmt.dev/latest/api.html" target="_blank">fmt::formatter</a></code> for the <a class="m-doc" href="structrolly_1_1velocity.html">rolly::<wbr/>velocity</a> class.</dd>
+            <dd>Specialization of the <code><a class="m-doc poxy-injected poxy-external" href="https://fmt.dev/latest/api.html" target="_blank">fmt::formatter</a></code> for the <a class="m-doc" href="structrll_1_1velocity.html">rll::<wbr/>velocity</a> class.</dd>
           </dl>
         </section>
         <section id="enum-members">
           <h2><a href="#enum-members">Enums</a></h2>
           <dl class="m-doc">
             <dt id="790950486d2f69691e585ce49cac03b86661eb323dac7a72345a5b4ab27c501a">
-              <span class="m-doc-wrap-bumper">enum class <a class="m-doc" href="namespacerolly.html#ac7a89eba9cc9436bf76cec90caae83dd">velocity_unit</a>: char { </span><span class="m-doc-wrap"><a class="m-doc-self" href="#790950486d2f69691e585ce49cac03b86661eb323dac7a72345a5b4ab27c501a">kmph</a> = 0,
+              <span class="m-doc-wrap-bumper">enum class <a class="m-doc" href="namespacerll.html#ae7665e1a7ebe58b4542b175bf601581f">velocity_unit</a>: char { </span><span class="m-doc-wrap"><a class="m-doc-self" href="#790950486d2f69691e585ce49cac03b86661eb323dac7a72345a5b4ab27c501a">kmph</a> = 0,
               <a class="m-doc-self" href="#790950486d2f69691e585ce49cac03b86661eb323dac7a72345a5b4ab27c501a">mps</a> = 1,
               <a class="m-doc-self" href="#790950486d2f69691e585ce49cac03b86661eb323dac7a72345a5b4ab27c501a">kilometers_per_hour</a> = kmph,
               <a class="m-doc-self" href="#790950486d2f69691e585ce49cac03b86661eb323dac7a72345a5b4ab27c501a">meters_per_second</a> = mps }</span>

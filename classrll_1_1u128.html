@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <title>rll::u128 class | Rolly Radar core library</title>
+  <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#22272e" name="theme-color"/>
+  <link href="poxy/poxy.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+  <script src="poxy/poxy.js"></script>
+  <script>initialize_theme("dark");</script>
+  <meta content="Rolly" name="twitter:title"/>
+  <meta content="Rolly" property="og:title"/>
+  <meta content="Rolly" itemprop="name"/>
+  <meta content="Dmitry Riazantsev &lt;riazantsev.dl@edu.spbstu.ru&gt;" name="author"/>
+  <meta content="Dmitry Riazantsev &lt;riazantsev.dl@edu.spbstu.ru&gt;" property="article:author"/>
+  <meta content="Radar core library" name="description"/>
+  <meta content="Radar core library" name="twitter:description"/>
+  <meta content="Radar core library" property="og:description"/>
+  <meta content="Radar core library" itemprop="description"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="Poxy v0.19.4" name="generator"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
+</head>
+<body class="poxy-has-toc">
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a class="m-col-t-8 m-col-m-none m-left-m" href="index.html" id="m-navbar-brand"><svg class="poxy-injected-svg" fill="none" height="140" id="poxy-injected-svg-0" version="1.1" viewBox="0 0 140 140" width="140" xmlns="http://www.w3.org/2000/svg"><path d="M0 66C0 29.5492 29.5492 0 66 0H73.9111C110.362 0 139.911 29.5492 139.911 66V140H66C29.5492 140 0 110.451 0 74V66Z" fill="#416275"></path><path d="M103.153 112.504L107.377 111.48C108.742 111.48 109.425 112.163 109.425 113.528C109.34 115.747 108.188 117.709 105.969 119.416C103.836 121.208 101.404 122.104 98.673 122.104C95.9423 122.104 93.7663 120.781 92.145 118.136C89.841 114.296 87.665 107.427 85.617 97.528C84.6783 92.7493 83.569 88.824 82.289 85.752C79.985 86.52 77.553 86.904 74.993 86.904C72.433 86.904 70.1717 86.392 68.209 85.368C66.3317 84.2587 65.393 82.936 65.393 81.4C65.5637 77.4747 68.721 75.512 74.865 75.512C77.8517 75.512 81.0517 76.8347 84.465 79.48C89.7557 75.4693 92.401 69.88 92.401 62.712C92.401 58.4453 91.5903 54.6907 89.969 51.448C88.3477 48.12 86.2143 45.5173 83.569 43.64C78.3637 39.9707 72.561 38.136 66.161 38.136C65.9903 40.0133 65.6917 43 65.265 47.096C64.4117 55.6293 63.8997 62.2427 63.729 66.936L63.345 87.16C63.345 102.691 60.273 110.456 54.129 110.456C50.2037 110.456 48.241 108.792 48.241 105.464C48.241 104.611 48.7957 103.16 49.905 101.112C51.0997 99.064 51.953 96.7173 52.465 94.072C52.977 91.3413 53.5317 83.448 54.129 70.392C54.7263 57.2507 55.537 46.9253 56.561 39.416C52.0383 40.696 48.3263 42.6587 45.425 45.304C42.609 47.9493 41.201 51.064 41.201 54.648C41.201 56.696 40.7317 58.36 39.793 59.64C38.8543 60.8347 37.7023 61.432 36.337 61.432C33.8623 61.432 32.625 60.1093 32.625 57.464C32.625 51.4907 35.0143 46.584 39.793 42.744C44.657 38.8187 50.6303 36.0027 57.713 34.296C59.4197 28.5787 61.809 25.72 64.881 25.72C66.0757 25.72 66.673 27.0853 66.673 29.816C66.673 30.4133 66.5877 31.48 66.417 33.016C67.3557 32.8453 69.1477 32.76 71.793 32.76C74.4383 32.76 77.425 33.144 80.753 33.912C84.081 34.68 87.409 36.0027 90.737 37.88C94.1503 39.672 96.881 42.4453 98.929 46.2C100.977 49.8693 102.001 54.1787 102.001 59.128C102.001 64.0773 100.721 68.6853 98.161 72.952C95.601 77.2187 92.273 80.632 88.177 83.192C91.0783 86.776 93.3397 91.1707 94.961 96.376C96.6677 101.581 98.2463 105.549 99.697 108.28C101.148 111.096 102.3 112.504 103.153 112.504ZM70.641 79.864C70.641 80.5467 71.2383 81.144 72.433 81.656C73.6277 82.168 74.865 82.424 76.145 82.424C77.5103 82.424 78.7477 82.2107 79.857 81.784C78.1503 79.8213 76.1877 78.84 73.969 78.84C71.7503 78.84 70.641 79.1813 70.641 79.864Z" fill="#F6C67C"></path></svg>Rolly <span class="m-thin">Radar core library</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a class="m-doc-search-icon" href="#search" onclick="return showSearch()" title="Search"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z" id="m-doc-search-icon-path"></path>
+        </svg></a>
+        <a href="#navigation" id="m-navbar-show" title="Show navigation"></a>
+        <a href="#" id="m-navbar-hide" title="Hide navigation"></a>
+      </div>
+      <div class="m-col-t-12 m-show-m m-col-m-none m-right-m" id="m-navbar-collapse">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a class="poxy-icon repo github poxy-external" href="https://github.com/whs31/rolly" target="_blank" title="View on GitHub"><svg id="poxy-icon-repo" version="1.1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M25,1.23a24.37,24.37,0,0,0-7.7,47.5C18.51,49,19,48.2,19,47.56s0-2.12,0-4.15c-6.78,1.47-8.21-3.27-8.21-3.27C9.61,37.33,8,36.58,8,36.58c-2.21-1.51.17-1.48.17-1.48a5.12,5.12,0,0,1,3.73,2.51c2.17,3.72,5.7,2.65,7.09,2a5.25,5.25,0,0,1,1.55-3.26c-5.41-.61-11.1-2.7-11.1-12A9.41,9.41,0,0,1,12,17.79a8.75,8.75,0,0,1,.24-6.45s2-.66,6.7,2.49a23.1,23.1,0,0,1,12.2,0c4.66-3.15,6.7-2.49,6.7-2.49A8.75,8.75,0,0,1,38,17.79a9.41,9.41,0,0,1,2.51,6.54c0,9.36-5.7,11.42-11.13,12a5.83,5.83,0,0,1,1.65,4.51c0,3.26,0,5.89,0,6.69,0,.65.44,1.41,1.68,1.17A24.38,24.38,0,0,0,25,1.23Z" fill="currentColor"></path></svg></a></li>
+            <li><a class="poxy-icon theme" href="javascript:void(null);" id="poxy-theme-switch" onclick="toggle_theme(); return false;" role="button" title="Toggle dark and light themes"><svg id="poxy-theme-switch-img" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="185.6708" cy="183.8122" fill="currentColor" r="65.625"></circle><path d="M185.6708,87.5622a13.1256,13.1256,0,0,0,13.125-13.125V52.5622a13.125,13.125,0,1,0-26.25,0v21.875A13.1257,13.1257,0,0,0,185.6708,87.5622Z" fill="currentColor"></path><path d="M99.051,115.7519a13.1236,13.1236,0,1,0,18.56-18.56L102.1442,81.726a13.1236,13.1236,0,0,0-18.5595,18.56Z" fill="currentColor"></path><path d="M89.4208,183.8122a13.1257,13.1257,0,0,0-13.125-13.125H54.4208a13.125,13.125,0,0,0,0,26.25h21.875A13.1256,13.1256,0,0,0,89.4208,183.8122Z" fill="currentColor"></path><path d="M99.051,251.8725,83.5847,267.3431a13.1236,13.1236,0,1,0,18.56,18.56l15.4663-15.4706a13.1236,13.1236,0,1,0-18.5595-18.56Z" fill="currentColor"></path><path d="M185.6708,280.0622a13.1258,13.1258,0,0,0-13.125,13.125v21.875a13.125,13.125,0,0,0,26.25,0v-21.875A13.1257,13.1257,0,0,0,185.6708,280.0622Z" fill="currentColor"></path><path d="M272.2907,251.8725a13.1236,13.1236,0,1,0-18.56,18.56l15.4663,15.4706a13.1236,13.1236,0,1,0,18.56-18.56Z" fill="currentColor"></path><path d="M330.0458,183.8122a13.1257,13.1257,0,0,0-13.125-13.125h-21.875a13.125,13.125,0,0,0,0,26.25h21.875A13.1256,13.1256,0,0,0,330.0458,183.8122Z" fill="currentColor"></path><path d="M263.0109,119.5971a13.0824,13.0824,0,0,0,9.28-3.8452l15.4663-15.4663a13.1236,13.1236,0,1,0-18.56-18.56L253.7312,97.1923a13.125,13.125,0,0,0,9.28,22.4048Z" fill="currentColor"></path><path d="M456.9379,401.6714a63.97,63.97,0,0,1-14.9963,7.2055c-19.6448,6.5283-41.8787,2.9566-58.1439-9.8523a68.9311,68.9311,0,0,1-10.835-10.8339c-12.8088-16.2663-16.3806-38.5-9.8523-58.1471a63.8444,63.8444,0,0,1,7.2077-14.9931,8.8036,8.8036,0,0,0-10.1172-13.3034,87.5188,87.5188,0,1,0,110.0372,110.04A8.8,8.8,0,0,0,456.9379,401.6714Z" fill="currentColor"></path></svg></a></li>
+            <li class="m-show-m"><a class="m-doc-search-icon" href="#search" onclick="return showSearch()" title="Search"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path"></use>
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacerll.html">rll</a>::<wbr/></span>u128 <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="u128_8h.html">&lt;rll/u128.h&gt;</a></div>
+        </h1>
+        <p>128-bit unsigned integer.</p>
+        <nav class="m-block m-default poxy-toc" id="poxy-toc">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p><a class="m-doc" href="classrll_1_1u128.html">u128</a> offers a comprehensive suite of operations and utilities for handling 128-bit unsigned integers. It supports basic arithmetic operations, bitwise logic, comparison operators, and specialized functions for advanced integer manipulation. The class is optimized for both space and time efficiency, ensuring minimal overhead and maximum performance.</p><p>The design of <a class="m-doc" href="classrll_1_1u128.html">u128</a> is focused on ease of use and integration. It provides constructors for seamless conversion from built-in integer types, as well as explicit methods for converting to and from other numeric representations. The class also includes support for standard library features like hashing and optional values, enhancing its utility in a wide range of programming scenarios.</p><p>The implementation is based on algorithms from the .NET <code>UInt128</code> structure, ensuring reliable and efficient operations.</p><aside class="m-note m-default"><h4>See also</h4><p><a class="poxy-external" href="https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/UInt128.cs" target="_blank">UInt128</a> .NET Implementation.</p></aside>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4">format</a> { </span><span class="m-doc-wrap"><a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f">decimal</a> = 0,
+              <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4a34d0e21ea08f041727cd3c62f02535e3">octal</a>,
+              <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4a2c34788af99f9ca074434e362d584d54">hexadecimal</a> }</span>
+            </dt>
+            <dd>String formats available for <a class="m-doc" href="classrll_1_1u128.html">u128</a>.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="#aaddf30487e58e6bdec483745e730f964">from_string</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a> const&amp; str,
+              <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4">format</a> fmt = <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f">format::<wbr/>decimal</a>) →  <a class="m-doc" href="classrll_1_1optional.html">optional</a>&lt;<a class="m-doc" href="classrll_1_1u128.html">u128</a>&gt; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Parses a string to a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/types/size_t" target="_blank">size_t</a> N</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="#aa3840f8561e55f6213ba921fa3968080">from_string</a>(</span><span class="m-doc-wrap">T const (&amp;str)[N],
+              <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4">format</a> fmt = <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f">format::<wbr/>decimal</a>) →  <a class="m-doc" href="classrll_1_1optional.html">optional</a>&lt;<a class="m-doc" href="classrll_1_1u128.html">u128</a>&gt; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Parses a string to a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a4df4f0bf9cbd0bc5bcb96f02e406ec4e">operator bool</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Checks if the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value is non-zero.</dd>
+            <dt id="a0ee286f28dc8fe65f32dcd3b4c0a29e2">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a0ee286f28dc8fe65f32dcd3b4c0a29e2">operator char</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ac4a1807b2666c4c72945db2e69d2725b">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ac4a1807b2666c4c72945db2e69d2725b">operator double</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="aec985ab6034e549fec5960c5631c667f">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aec985ab6034e549fec5960c5631c667f">operator float</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a47384cfeb7b48ec297150b6305785e99">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a47384cfeb7b48ec297150b6305785e99">operator int</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a4fb07c666149a391a902c864c2ef3840">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a4fb07c666149a391a902c864c2ef3840">operator long</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a9a19eeeed257fc4e719d489f27576b58">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a9a19eeeed257fc4e719d489f27576b58">operator long double</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a40e19225f2fcf0ec54f1a0a1cca91745">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a40e19225f2fcf0ec54f1a0a1cca91745">operator long long</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ae4fb70e515266236131c4cb37ea1821a">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ae4fb70e515266236131c4cb37ea1821a">operator short</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a6d46f4fc7f1156763ea3b5873a09658e">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a6d46f4fc7f1156763ea3b5873a09658e">operator signed char</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a47fa17a0e9ed1e8b09f5740520070ec7">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a47fa17a0e9ed1e8b09f5740520070ec7">operator ulonglong</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a2f9e391bea26fd8f95793efc9754c681">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a2f9e391bea26fd8f95793efc9754c681">operator unsigned char</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="abb9594cba04753b628a50862cc18853e">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#abb9594cba04753b628a50862cc18853e">operator unsigned int</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a737fa8d29b40fa1115b69343bfeea93d">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a737fa8d29b40fa1115b69343bfeea93d">operator unsigned long</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ad4ef0324d520595e1309d05de0274627">
+              <span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad4ef0324d520595e1309d05de0274627">operator unsigned short</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a50c31275a1e9955c0043e56d3516a5df">u128</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Default constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a3abaac2998413f750bbbb73d2171f4a6">u128</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Copy constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a893fcd8d0feaa11d7aeb4ce0443838ad">u128</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp;&amp; other) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a485df443dfa5d49463fbfb24f578b800">u128</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="namespacerll.html#a0990f1edc722e4e33e6f52019fce4733">u64</a> upper,
+              <a class="m-doc" href="namespacerll.html#a0990f1edc722e4e33e6f52019fce4733">u64</a> lower) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from upper and lower parts.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#adfd94ca94d2f6a347872ed1282ae6caf">u128</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="namespacerll.html#ab0d2074a65c11665a924b42cf49675f1">ulonglong</a> const lower) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs an <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from an unsigned integer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#ae3eccddbe598ccb12f07d24677dae3c6">u128</a>(</span><span class="m-doc-wrap">unsigned long const lower) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from an unsigned integer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a0521b323cf5c3682e2ba479cfa075cbe">u128</a>(</span><span class="m-doc-wrap">unsigned int const lower) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from an unsigned integer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#ac985e2ff40f0a1ba5cb3f34fa3a0d6af">u128</a>(</span><span class="m-doc-wrap">unsigned short const lower) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from an unsigned integer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a3ddce0eaf7a65a522be461f058ec3e66">u128</a>(</span><span class="m-doc-wrap">long long const lower) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a signed integer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a51ac2d0856c263ae938c0ecf81de5520">u128</a>(</span><span class="m-doc-wrap">long const lower) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a signed integer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a0b88c59225e81b970201915294cf9fcb">u128</a>(</span><span class="m-doc-wrap">int const lower) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a signed integer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#ab3eb6ffb8f9753d8284e700c9df82fb7">u128</a>(</span><span class="m-doc-wrap">short const lower) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a signed integer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#ad62c893685b79e1a60750bd1f451d5b8">u128</a>(</span><span class="m-doc-wrap">double const value) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a floating-point value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a675c40171ee9b580e9c7842e99587406">u128</a>(</span><span class="m-doc-wrap">long double value) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a floating-point value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="#a82113163a56092a25bc11f191048dc54">u128</a>(</span><span class="m-doc-wrap">float value) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a floating-point value.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="af9137bb24e704706a9785f36110db079">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#af9137bb24e704706a9785f36110db079">hash</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/size_t.html" target="_blank">std::<wbr/>size_t</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Computes the hash value of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a0b0d6608d164f8d58f3c9c302dbc8a5f">lower</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="namespacerll.html#a0990f1edc722e4e33e6f52019fce4733">u64</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Retrieves the lower 64 bits of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</dd>
+            <dt id="ad87ab6905427770930b5e38949fa30a6">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ad87ab6905427770930b5e38949fa30a6">operator!</a>(</span><span class="m-doc-wrap">) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a300f106e105b569709c4866903fabfa9">operator!=</a>(</span><span class="m-doc-wrap">T lower) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Inequality operator with an integral type.</dd>
+            <dt id="a8708261c705499bde14ab8383c03c1ce">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a8708261c705499bde14ab8383c03c1ce">operator!=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="aee6cb901ca873137aef54c97acafbe42">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#aee6cb901ca873137aef54c97acafbe42">operator%</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a62a95235cf5fe906485b3bf7efeb2a89">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a62a95235cf5fe906485b3bf7efeb2a89">operator%=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a78308dd5193d2ebab52c31d87547d597">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a78308dd5193d2ebab52c31d87547d597">operator&amp;</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a27af348e9d14a21c6e01dff0dcdc9196">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a27af348e9d14a21c6e01dff0dcdc9196">operator&amp;&amp;</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="acddd2a4f8be1758174d4f3f7b0520c7f">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#acddd2a4f8be1758174d4f3f7b0520c7f">operator&amp;=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="aacef65e20a599b62f1f4f6fcf518d91d">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#aacef65e20a599b62f1f4f6fcf518d91d">operator*</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ac288aaac264528d3926fa5ca65453b92">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ac288aaac264528d3926fa5ca65453b92">operator*=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a98f6b4e05fcb5b5571ef4577398c6199">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a98f6b4e05fcb5b5571ef4577398c6199">operator+</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a7a08133ecdc0701b639ed17930dc1e8c">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a7a08133ecdc0701b639ed17930dc1e8c">operator+</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a58a7bf0550ff4561866769ae3c0ae148">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a58a7bf0550ff4561866769ae3c0ae148">operator++</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a2d4409eb3601a50ef0dbe40da6be064f">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a2d4409eb3601a50ef0dbe40da6be064f">operator++</a>(</span><span class="m-doc-wrap">int) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a413884a6bdde03014c709b2e36976c11">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a413884a6bdde03014c709b2e36976c11">operator+=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a8ee780e41fa0eef101fd26b69120c9b2">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a8ee780e41fa0eef101fd26b69120c9b2">operator-</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a59642e84954df5abc25b394c430d46a8">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a59642e84954df5abc25b394c430d46a8">operator-</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a9b2eac9a1784ac63353078d732c54b88">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a9b2eac9a1784ac63353078d732c54b88">operator--</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a6c42bcfdd52eb619e8351fc089294923">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a6c42bcfdd52eb619e8351fc089294923">operator--</a>(</span><span class="m-doc-wrap">int) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="aed8e08db7866a56445d7b70c7c082eff">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#aed8e08db7866a56445d7b70c7c082eff">operator-=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="acc71c9109cc2834e869ad627684dc214">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#acc71c9109cc2834e869ad627684dc214">operator/</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="abd21ba421e4c1866394de376e25aec58">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#abd21ba421e4c1866394de376e25aec58">operator/=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ab80c4447d743a9384fa310d4580b1810">operator&lt;</a>(</span><span class="m-doc-wrap">T lower) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Less than operator with an integral type.</dd>
+            <dt id="a8eeb8529ff5c0878428ea92c641a9b20">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a8eeb8529ff5c0878428ea92c641a9b20">operator&lt;</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ad53a53a940974abb173ebff0a9b1fc51">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">T shift) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Bitwise left shift operator with an integral type.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aee24372dc5296622bc3dacc8dab9843b">operator&lt;&lt;=</a>(</span><span class="m-doc-wrap">T shift) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Bitwise left shift assignment operator.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#aef67610f6497dcbe8d303f266635e5f1">operator&lt;=</a>(</span><span class="m-doc-wrap">T lower) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Less than or equal to operator with an integral type.</dd>
+            <dt id="a69ca6c98852cfe0e43531505946e7e1c">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a69ca6c98852cfe0e43531505946e7e1c">operator&lt;=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a8623f62f14a068430a114bfefc5643b8">operator=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Assignment operator.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#abaac97124df4b285b02dec459319594b">operator=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp;&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move assignment operator.</dd>
+            <dt id="ac723d05110590bbfcfa2c88cbe458dd9">
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ac723d05110590bbfcfa2c88cbe458dd9">operator==</a>(</span><span class="m-doc-wrap">T lower) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="acefe956ef001aa22d9a22c48605b119f">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#acefe956ef001aa22d9a22c48605b119f">operator==</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#afa584913f5b58a0de91de31bd28d52e6">operator&gt;</a>(</span><span class="m-doc-wrap">T lower) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Greater than operator with an integral type.</dd>
+            <dt id="af0d8c3d9e775cd4b41be2cda6173927a">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#af0d8c3d9e775cd4b41be2cda6173927a">operator&gt;</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#afd6cd81f34e5f7af73a1cc0db7ce3fe0">operator&gt;=</a>(</span><span class="m-doc-wrap">T lower) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Greater than or equal to operator with an integral type.</dd>
+            <dt id="a4d7999aed5fa019eb944ce97e505cd52">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a4d7999aed5fa019eb944ce97e505cd52">operator&gt;=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a1f54c093290b971254ceca9ca5d1727e">operator&gt;&gt;</a>(</span><span class="m-doc-wrap">T shift) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Bitwise right shift operator with an integral type.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a0b654a5bc13370439d76f2890fdf5abd">operator&gt;&gt;=</a>(</span><span class="m-doc-wrap">T shift) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Bitwise right shift assignment operator.</dd>
+            <dt id="ae62e68ad00ec50d96701b23de606917d">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#ae62e68ad00ec50d96701b23de606917d">operator^</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="aaa7ba52e3fd37feba02d86c0fcc282c1">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#aaa7ba52e3fd37feba02d86c0fcc282c1">operator^=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a3a325b9d1f0013274d1b4e76d1812d38">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a3a325b9d1f0013274d1b4e76d1812d38">operator|</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a3078aec13ab416606037395c2fc70f3a">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#a3078aec13ab416606037395c2fc70f3a">operator|=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) →  <a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="afa381bc38c7898d1cac9d4955d913d48">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#afa381bc38c7898d1cac9d4955d913d48">operator||</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) const →  bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="affe632c43df77a698d83ea8b54c09979">
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc-self" href="#affe632c43df77a698d83ea8b54c09979">operator~</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a class="m-doc" href="#a246892574e97772d7ba7cd40e007d45b">swap</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; other) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Swaps the values of two <a class="m-doc" href="classrll_1_1u128.html">u128</a> instances.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a00ed4575c0e05a3296994b4e4fab3bf9">to_string</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4">format</a> fmt = <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f">format::<wbr/>decimal</a>) const →  <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a></span>
+            </dt>
+            <dd>Converts the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value to a string representation.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#ad2abdf47fad79968511ddda3cf6af734">upper</a>(</span><span class="m-doc-wrap">) const →  <a class="m-doc" href="namespacerll.html#a0990f1edc722e4e33e6f52019fce4733">u64</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Retrieves the upper 64 bits of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a3859168a16727f06dbaeeb86bd5ff6a4"><div>
+            <h3>
+              enum class <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span><a class="m-doc-self" href="#a3859168a16727f06dbaeeb86bd5ff6a4">format</a>
+            </h3>
+            <p>String formats available for <a class="m-doc" href="classrll_1_1u128.html">u128</a>.</p>
+<p>This enumeration defines the possible string representations of <a class="m-doc" href="classrll_1_1u128.html">u128</a> values. It allows users to specify the desired format when converting <a class="m-doc" href="classrll_1_1u128.html">u128</a> instances to strings.</p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a class="m-doc-self" href="#a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f" id="a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f">decimal</a></td>
+                  <td>
+                  <p>Represents the number in decimal format. <em>This is the default format.</em></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a class="m-doc-self" href="#a3859168a16727f06dbaeeb86bd5ff6a4a34d0e21ea08f041727cd3c62f02535e3" id="a3859168a16727f06dbaeeb86bd5ff6a4a34d0e21ea08f041727cd3c62f02535e3">octal</a></td>
+                  <td>
+                  <p>Represents the number in octal format.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a class="m-doc-self" href="#a3859168a16727f06dbaeeb86bd5ff6a4a2c34788af99f9ca074434e362d584d54" id="a3859168a16727f06dbaeeb86bd5ff6a4a2c34788af99f9ca074434e362d584d54">hexadecimal</a></td>
+                  <td>
+                  <p>Represents the number in hexadecimal format.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aaddf30487e58e6bdec483745e730f964"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a class="m-doc" href="classrll_1_1optional.html">optional</a>&lt;<a class="m-doc" href="classrll_1_1u128.html">u128</a>&gt; <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aaddf30487e58e6bdec483745e730f964">from_string</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a> const&amp; str,
+              <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4">format</a> fmt = <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f">format::<wbr/>decimal</a>) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Parses a string to a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">str <span class="m-label m-flat m-info">in</span></td>
+                  <td>The input string to parse.</td>
+                </tr>
+                <tr>
+                  <td>fmt <span class="m-label m-flat m-info">in</span></td>
+                  <td>The string format to interpret the input string (<em>defaults to decimal</em>).</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>An optional containing the parsed <a class="m-doc" href="classrll_1_1u128.html">u128</a> value if successful, otherwise an empty optional.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Attempts to parse a given string as a <a class="m-doc" href="classrll_1_1u128.html">u128</a> value in the specified format. If the parsing is successful, it returns an optional containing the parsed <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa3840f8561e55f6213ba921fa3968080"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param"><a class="m-doc poxy-injected poxy-external poxy-cppreference" href="https://en.cppreference.com/w/cpp/types/size_t" target="_blank">size_t</a> N</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static <a class="m-doc" href="classrll_1_1optional.html">optional</a>&lt;<a class="m-doc" href="classrll_1_1u128.html">u128</a>&gt; <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aa3840f8561e55f6213ba921fa3968080">from_string</a>(</span><span class="m-doc-wrap">T const (&amp;str)[N],
+              <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4">format</a> fmt = <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f">format::<wbr/>decimal</a>) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Parses a string to a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>The character type of the array.</td>
+                </tr>
+                <tr>
+                  <td>N</td>
+                  <td>The size of the character array.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>str <span class="m-label m-flat m-info">in</span></td>
+                  <td>The input string to parse.</td>
+                </tr>
+                <tr>
+                  <td>fmt <span class="m-label m-flat m-info">in</span></td>
+                  <td>The string format to interpret the input string (<em>defaults to decimal</em>).</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>An optional containing the parsed <a class="m-doc" href="classrll_1_1u128.html">u128</a> value if successful, otherwise an empty optional.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This static method attempts to parse a given string as a <a class="m-doc" href="classrll_1_1u128.html">u128</a> value in the specified format. If the parsing is successful, it returns an optional containing the parsed <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4df4f0bf9cbd0bc5bcb96f02e406ec4e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a4df4f0bf9cbd0bc5bcb96f02e406ec4e">operator bool</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-info">explicit</span>  <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Checks if the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value is non-zero.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><code>true</code> if the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value is non-zero, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This method allows <a class="m-doc" href="classrll_1_1u128.html">u128</a> instances to be contextually converted to a boolean to check for non-zero values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a50c31275a1e9955c0043e56d3516a5df"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a50c31275a1e9955c0043e56d3516a5df">u128</a>(</span><span class="m-doc-wrap">) <span class="m-label m-info">defaulted</span> <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Default constructor.</p>
+<p>Constructs a new <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with default values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3abaac2998413f750bbbb73d2171f4a6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a3abaac2998413f750bbbb73d2171f4a6">u128</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) <span class="m-label m-info">defaulted</span> <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Copy constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance to copy.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Constructs a new <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance by copying the value from another instance.</p>
+          </div></section>
+          <section class="m-doc-details" id="a893fcd8d0feaa11d7aeb4ce0443838ad"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a893fcd8d0feaa11d7aeb4ce0443838ad">u128</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp;&amp; other) <span class="m-label m-info">defaulted</span> <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Move constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other <span class="m-label m-flat m-danger">in/out</span></td>
+                  <td>The <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance to move.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Constructs a new <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance by moving the value from another instance.</p>
+          </div></section>
+          <section class="m-doc-details" id="a485df443dfa5d49463fbfb24f578b800"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a485df443dfa5d49463fbfb24f578b800">u128</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="namespacerll.html#a0990f1edc722e4e33e6f52019fce4733">u64</a> upper,
+              <a class="m-doc" href="namespacerll.html#a0990f1edc722e4e33e6f52019fce4733">u64</a> lower) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from upper and lower parts.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">upper <span class="m-label m-flat m-info">in</span></td>
+                  <td>The upper 64 bits of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</td>
+                </tr>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The lower 64 bits of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance using separate upper and lower 64-bit integers.</p>
+          </div></section>
+          <section class="m-doc-details" id="adfd94ca94d2f6a347872ed1282ae6caf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#adfd94ca94d2f6a347872ed1282ae6caf">u128</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="namespacerll.html#ab0d2074a65c11665a924b42cf49675f1">ulonglong</a> const lower) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs an <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from an unsigned integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The unsigned integer to initialize the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance using an unsigned integer, setting it as the lower part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae3eccddbe598ccb12f07d24677dae3c6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ae3eccddbe598ccb12f07d24677dae3c6">u128</a>(</span><span class="m-doc-wrap">unsigned long const lower) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from an unsigned integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The unsigned integer to initialize the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance using an unsigned integer, setting it as the lower part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0521b323cf5c3682e2ba479cfa075cbe"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a0521b323cf5c3682e2ba479cfa075cbe">u128</a>(</span><span class="m-doc-wrap">unsigned int const lower) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from an unsigned integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The unsigned integer to initialize the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance using an unsigned integer, setting it as the lower part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac985e2ff40f0a1ba5cb3f34fa3a0d6af"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ac985e2ff40f0a1ba5cb3f34fa3a0d6af">u128</a>(</span><span class="m-doc-wrap">unsigned short const lower) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from an unsigned integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The unsigned integer to initialize the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance using an unsigned integer, setting it as the lower part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3ddce0eaf7a65a522be461f058ec3e66"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a3ddce0eaf7a65a522be461f058ec3e66">u128</a>(</span><span class="m-doc-wrap">long long const lower) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a signed integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The signed integer to initialize the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance using a signed integer, setting it as the lower part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value and extending the sign to the upper part.</p>
+          </div></section>
+          <section class="m-doc-details" id="a51ac2d0856c263ae938c0ecf81de5520"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a51ac2d0856c263ae938c0ecf81de5520">u128</a>(</span><span class="m-doc-wrap">long const lower) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a signed integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The signed integer to initialize the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance using a signed integer, setting it as the lower part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value and extending the sign to the upper part.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0b88c59225e81b970201915294cf9fcb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a0b88c59225e81b970201915294cf9fcb">u128</a>(</span><span class="m-doc-wrap">int const lower) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a signed integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The signed integer to initialize the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance using a signed integer, setting it as the lower part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value and extending the sign to the upper part.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab3eb6ffb8f9753d8284e700c9df82fb7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ab3eb6ffb8f9753d8284e700c9df82fb7">u128</a>(</span><span class="m-doc-wrap">short const lower) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a signed integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The signed integer to initialize the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance using a signed integer, setting it as the lower part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value and extending the sign to the upper part.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad62c893685b79e1a60750bd1f451d5b8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad62c893685b79e1a60750bd1f451d5b8">u128</a>(</span><span class="m-doc-wrap">double const value) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a floating-point value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The floating-point value to convert.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance by converting a floating-point value to its 128-bit unsigned integer representation. The conversion is explicit to prevent unintended implicit conversions.</p>
+          </div></section>
+          <section class="m-doc-details" id="a675c40171ee9b580e9c7842e99587406"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a675c40171ee9b580e9c7842e99587406">u128</a>(</span><span class="m-doc-wrap">long double value) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a floating-point value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The floating-point value to convert.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance by converting a floating-point value to its 128-bit unsigned integer representation. The conversion is explicit to prevent unintended implicit conversions.</p>
+          </div></section>
+          <section class="m-doc-details" id="a82113163a56092a25bc11f191048dc54"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a82113163a56092a25bc11f191048dc54">u128</a>(</span><span class="m-doc-wrap">float value) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Constructs a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance from a floating-point value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value <span class="m-label m-flat m-info">in</span></td>
+                  <td>The floating-point value to convert.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor initializes a <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance by converting a floating-point value to its 128-bit unsigned integer representation. The conversion is explicit to prevent unintended implicit conversions.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0b0d6608d164f8d58f3c9c302dbc8a5f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="namespacerll.html#a0990f1edc722e4e33e6f52019fce4733">u64</a> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a0b0d6608d164f8d58f3c9c302dbc8a5f">lower</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Retrieves the lower 64 bits of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The lower 64 bits as a u64.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This method returns the lower part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance, allowing access to the least significant bits.</p>
+          </div></section>
+          <section class="m-doc-details" id="a300f106e105b569709c4866903fabfa9"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a300f106e105b569709c4866903fabfa9">operator!=</a>(</span><span class="m-doc-wrap">T lower) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Inequality operator with an integral type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type to compare with.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integral value to compare with.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if this instance is not equal to the integral value, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab80c4447d743a9384fa310d4580b1810"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ab80c4447d743a9384fa310d4580b1810">operator&lt;</a>(</span><span class="m-doc-wrap">T lower) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Less than operator with an integral type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type to compare with.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integral value to compare with.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if this instance is less than the integral value, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Checks if the value of this instance is lexicographically less than the provided integral value.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad53a53a940974abb173ebff0a9b1fc51"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad53a53a940974abb173ebff0a9b1fc51">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">T shift) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Bitwise left shift operator with an integral type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type representing the number of places to shift.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>shift <span class="m-label m-flat m-info">in</span></td>
+                  <td>The number of bits to shift to the left.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>A new <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance representing the result of the left shift operation.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Shifts the bits of this instance to the left by the specified number of places and returns a new <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with the result.</p>
+          </div></section>
+          <section class="m-doc-details" id="aee24372dc5296622bc3dacc8dab9843b"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aee24372dc5296622bc3dacc8dab9843b">operator&lt;&lt;=</a>(</span><span class="m-doc-wrap">T shift) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Bitwise left shift assignment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type representing the number of places to shift.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>shift <span class="m-label m-flat m-info">in</span></td>
+                  <td>The number of bits to shift to the left.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>A reference to this instance after the shift operation.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Shifts the bits of this instance to the left by the specified number of places and assigns the result to this instance.</p>
+          </div></section>
+          <section class="m-doc-details" id="aef67610f6497dcbe8d303f266635e5f1"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#aef67610f6497dcbe8d303f266635e5f1">operator&lt;=</a>(</span><span class="m-doc-wrap">T lower) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Less than or equal to operator with an integral type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type to compare with.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integral value to compare with.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if this instance is less than or equal to the integral value, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Checks if the value of this instance is lexicographically less than or equal to the provided integral value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8623f62f14a068430a114bfefc5643b8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a8623f62f14a068430a114bfefc5643b8">operator=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a> const&amp; other) <span class="m-label m-info">defaulted</span> <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Assignment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other <span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance to assign from.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>A reference to the assigned <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Assigns the value of one <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance to another.</p>
+          </div></section>
+          <section class="m-doc-details" id="abaac97124df4b285b02dec459319594b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#abaac97124df4b285b02dec459319594b">operator=</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp;&amp; other) <span class="m-label m-info">defaulted</span> <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Move assignment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other <span class="m-label m-flat m-danger">in/out</span></td>
+                  <td>The <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance to move from.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>A reference to the moved <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Moves the value of one <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance to another.</p>
+          </div></section>
+          <section class="m-doc-details" id="afa584913f5b58a0de91de31bd28d52e6"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#afa584913f5b58a0de91de31bd28d52e6">operator&gt;</a>(</span><span class="m-doc-wrap">T lower) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Greater than operator with an integral type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type to compare with.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integral value to compare with.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if this instance is greater than the integral value, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Checks if the value of this instance is lexicographically greater than the provided integral value.</p>
+          </div></section>
+          <section class="m-doc-details" id="afd6cd81f34e5f7af73a1cc0db7ce3fe0"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#afd6cd81f34e5f7af73a1cc0db7ce3fe0">operator&gt;=</a>(</span><span class="m-doc-wrap">T lower) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Greater than or equal to operator with an integral type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type to compare with.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>lower <span class="m-label m-flat m-info">in</span></td>
+                  <td>The integral value to compare with.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if this instance is greater than or equal to the integral value, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Checks if the value of this instance is lexicographically greater than or equal to the provided integral value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1f54c093290b971254ceca9ca5d1727e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1u128.html">u128</a> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a1f54c093290b971254ceca9ca5d1727e">operator&gt;&gt;</a>(</span><span class="m-doc-wrap">T shift) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Bitwise right shift operator with an integral type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type representing the number of places to shift.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>shift <span class="m-label m-flat m-info">in</span></td>
+                  <td>The number of bits to shift to the right.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>A new <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance representing the result of the right shift operation.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Shifts the bits of this instance to the right by the specified number of places and returns a new <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance with the result.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0b654a5bc13370439d76f2890fdf5abd"><div>
+            <h3>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename = typename <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/enable_if.html" target="_blank">std::<wbr/>enable_if</a>&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/types/is_integral.html" target="_blank">std::<wbr/>is_integral</a>&lt;T&gt;::value, T&gt;::type</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a0b654a5bc13370439d76f2890fdf5abd">operator&gt;&gt;=</a>(</span><span class="m-doc-wrap">T shift) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Bitwise right shift assignment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>An integral type representing the number of places to shift.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>shift <span class="m-label m-flat m-info">in</span></td>
+                  <td>The number of bits to shift to the right.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>A reference to this instance after the shift operation.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Shifts the bits of this instance to the right by the specified number of places and assigns the result to this instance.</p>
+          </div></section>
+          <section class="m-doc-details" id="a246892574e97772d7ba7cd40e007d45b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a246892574e97772d7ba7cd40e007d45b">swap</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="classrll_1_1u128.html">u128</a>&amp; other) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Swaps the values of two <a class="m-doc" href="classrll_1_1u128.html">u128</a> instances.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other <span class="m-label m-flat m-danger">in/out</span></td>
+                  <td>The other <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance to swap with.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a00ed4575c0e05a3296994b4e4fab3bf9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a00ed4575c0e05a3296994b4e4fab3bf9">to_string</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4">format</a> fmt = <a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f">format::<wbr/>decimal</a>) const</span></span>
+            </h3>
+            <p>Converts the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value to a string representation.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">fmt <span class="m-label m-flat m-info">in</span></td>
+                  <td>The format to use for the conversion, with <code><a class="m-doc" href="#a3859168a16727f06dbaeeb86bd5ff6a4abdaa3c20a3e3851599514f7c6be5f62f">format::<wbr/>decimal</a></code> as the default.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>A <a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string.html" target="_blank">std::<wbr/>string</a> holding the converted value.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Supports decimal, octal, and hexadecimal formats.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad2abdf47fad79968511ddda3cf6af734"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a class="m-doc" href="namespacerll.html#a0990f1edc722e4e33e6f52019fce4733">u64</a> <span class="m-doc-details-prefix">rll::<wbr/>u128::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#ad2abdf47fad79968511ddda3cf6af734">upper</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Retrieves the upper 64 bits of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The upper 64 bits as a u64.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This method returns the upper part of the <a class="m-doc" href="classrll_1_1u128.html">u128</a> instance, allowing access to the most significant bits.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">…</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input autocomplete="off" autofocus="autofocus" disabled="disabled" id="search-input" name="q" placeholder="Loading …" spellcheck="false" type="search"/>
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div class="m-text m-dim m-text-center" id="search-help">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">↓</span>
+            / <span class="m-label m-dim">↑</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div class="m-text m-warning m-text-center" id="search-notfound">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script><script>install_mcss_search_shim();</script>
+<script async="async" src="searchdata-v2.js"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        
+<a class="poxy-external" href="https://github.com/whs31/rolly" target="_blank">GitHub</a>
+• <a class="poxy-external" href="https://github.com/whs31/rolly/issues" target="_blank">Report an issue</a>
+• <a class="poxy-external" href="https://github.com/whs31/rolly/blob/main/LICENSE" target="_blank">License</a>
+• <a download="" href="Rolly.tagfile.xml" target="_blank" type="text/xml">Doxygen tagfile</a>
+<br/><br/>
+Site generated using <a class="poxy-external" href="https://github.com/marzer/poxy/" target="_blank">Poxy</a>
+
+      </div>
+    </div>
+  </div>
+</nav></footer>
+
+
+</body></html>
