@@ -2,6 +2,7 @@
 
 #include <array>
 #include <algorithm>
+#include <cstdint>
 #include <rll/global.h>
 #include <rll/concepts/num.h>
 
@@ -23,7 +24,7 @@
 #endif
 // NOLINTEND(*-reserved-identifier)
 
-#if (__cplusplus >= 202'002L) && defined(__has_include)
+#if(__cplusplus >= 202'002L) && defined(__has_include)
 #  if __has_include(<bit>)
 #    define RLL_HAS_STD_ENDIAN
 #    include <bit>
@@ -46,9 +47,9 @@
 // GLIBC
 #  elif defined(__GLIBC__)
 #    include <endian.h>
-#    if (__BYTE_ORDER == __LITTLE_ENDIAN)
+#    if(__BYTE_ORDER == __LITTLE_ENDIAN)
 #      define RLL_ENDIAN RLL_LITTLE_ENDIAN
-#    elif (__BYTE_ORDER == __BIG_ENDIAN)
+#    elif(__BYTE_ORDER == __BIG_ENDIAN)
 #      define RLL_ENDIAN RLL_BIG_ENDIAN
 #    else
 #      error Unknown endianness detected. Needs to define RLL_ENDIAN
@@ -220,6 +221,29 @@ namespace rll {
     auto value_repr = bit_cast<std::array<std::byte, sizeof(T)>>(x);
     std::reverse(std::begin(value_repr), std::end(value_repr));
     return rll::bit_cast<T>(value_repr);
+  }
+
+  /**
+   * @brief Reverses the byte order of the value without checking for unique object representations.
+   * @tparam T Type of the value. Must be a numeric type.
+   * @param x Value.
+   * @return Reversed value.
+   * @version 2.4.2
+   * @sa byteswap
+   */
+  template <typename T>
+  [[nodiscard]] T byteswap_unchecked(T u) noexcept {
+    static_assert(std::numeric_limits<unsigned char>::digits == 8, "unsigned char is not 8 bits");
+
+    union {
+      T u;
+      std::uint8_t c[sizeof(T)];  // NOLINT(*-avoid-c-arrays)
+    } source {}, dest {};
+
+    source.u = u;
+    for(auto k = static_cast<std::size_t>(0); k < sizeof(T); k++)
+      dest.c[k] = source.c[sizeof(T) - k - 1];
+    return dest.u;
   }
 
   /**

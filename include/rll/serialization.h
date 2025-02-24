@@ -12,9 +12,8 @@
 namespace rll {
   template <typename T, typename F, typename C = char, typename = void>
   struct serializer {
-    [[nodiscard]] static result<> serialize(T const& value, std::basic_ostream<char, F>& stream) =
-      delete;
-    [[nodiscard]] static result<T> deserialize(std::basic_istream<char, F>& stream) = delete;
+    [[nodiscard]] static result<> serialize(T const& value, std::basic_ostream<C>& stream) = delete;
+    [[nodiscard]] static result<T> deserialize(std::basic_istream<C>& stream) = delete;
   };
 
   template <typename T, typename F, typename R, typename C = char, typename = void>
