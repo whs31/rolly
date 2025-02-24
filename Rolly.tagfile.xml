@@ -225,7 +225,7 @@
     <filename>md5_8h.html</filename>
     <includes id="stdint_8h" name="stdint.h" local="no" import="no" module="no" objc="no">rll/stdint.h</includes>
     <includes id="uuid_8h" name="uuid.h" local="no" import="no" module="no" objc="no">rll/uuid.h</includes>
-    <includes id="pimpl_8h" name="pimpl.h" local="no" import="no" module="no" objc="no">rll/traits/pimpl.h</includes>
+    <includes id="traits_2pimpl_8h" name="pimpl.h" local="no" import="no" module="no" objc="no">rll/traits/pimpl.h</includes>
     <includes id="basic__hasher_8h" name="basic_hasher.h" local="no" import="no" module="no" objc="no">rll/crypto/basic_hasher.h</includes>
     <class kind="class">rll::crypto::md5</class>
     <namespace>rll</namespace>
@@ -847,7 +847,7 @@
     <path>rll/</path>
     <filename>library_8h.html</filename>
     <includes id="export_8h" name="export.h" local="no" import="no" module="no" objc="no">rll/global/export.h</includes>
-    <includes id="pimpl_8h" name="pimpl.h" local="no" import="no" module="no" objc="no">rll/traits/pimpl.h</includes>
+    <includes id="traits_2pimpl_8h" name="pimpl.h" local="no" import="no" module="no" objc="no">rll/traits/pimpl.h</includes>
     <includes id="result_8h" name="result.h" local="no" import="no" module="no" objc="no">rll/result.h</includes>
     <includes id="utility_8h" name="utility.h" local="no" import="no" module="no" objc="no">rll/utility.h</includes>
     <class kind="class">rll::library</class>
@@ -977,6 +977,47 @@
     </member>
   </compound>
   <compound kind="file">
+    <name>pimpl.h</name>
+    <path>rll/</path>
+    <filename>pimpl_8h.html</filename>
+    <includes id="traits_2pimpl_8h" name="pimpl.h" local="no" import="no" module="no" objc="no">rll/traits/pimpl.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>pimpl.h</name>
+    <path>rll/traits/</path>
+    <filename>traits_2pimpl_8h.html</filename>
+    <includes id="propagate__const_8h" name="propagate_const.h" local="no" import="no" module="no" objc="no">rll/memory/propagate_const.h</includes>
+    <namespace>rll</namespace>
+    <member kind="define">
+      <type>#define</type>
+      <name>DECLARE_PRIVATE</name>
+      <anchorfile>traits_2pimpl_8h.html</anchorfile>
+      <anchor>a9c6048a4c390e63349e43ea83ed07c12</anchor>
+      <arglist>(classname)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DECLARE_PRIVATE_AS</name>
+      <anchorfile>traits_2pimpl_8h.html</anchorfile>
+      <anchor>a296a83a502b0aa9b389cdd3f0c3974c9</anchor>
+      <arglist>(alias)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DECLARE_PRIVATE_SHARED</name>
+      <anchorfile>traits_2pimpl_8h.html</anchorfile>
+      <anchor>abd00b55c9b0f221b8224344400a68355</anchor>
+      <arglist>(classname)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DECLARE_PRIVATE_SHARED_AS</name>
+      <anchorfile>traits_2pimpl_8h.html</anchorfile>
+      <anchor>ae4fda04d021c9d96ee6a6cf029f35dbd</anchor>
+      <arglist>(alias)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
     <name>qt.h</name>
     <path>rll/</path>
     <filename>qt_8h.html</filename>
@@ -1103,7 +1144,7 @@
     <filename>traits_8h.html</filename>
     <includes id="noncopyable_8h" name="noncopyable.h" local="no" import="no" module="no" objc="no">rll/traits/noncopyable.h</includes>
     <includes id="nonmovable_8h" name="nonmovable.h" local="no" import="no" module="no" objc="no">rll/traits/nonmovable.h</includes>
-    <includes id="pimpl_8h" name="pimpl.h" local="no" import="no" module="no" objc="no">rll/traits/pimpl.h</includes>
+    <includes id="traits_2pimpl_8h" name="pimpl.h" local="no" import="no" module="no" objc="no">rll/traits/pimpl.h</includes>
     <includes id="pin_8h" name="pin.h" local="no" import="no" module="no" objc="no">rll/traits/pin.h</includes>
     <includes id="singleton_8h" name="singleton.h" local="no" import="no" module="no" objc="no">rll/traits/singleton.h</includes>
   </compound>
@@ -1120,41 +1161,6 @@
     <filename>nonmovable_8h.html</filename>
     <class kind="struct">rll::nonmovable</class>
     <namespace>rll</namespace>
-  </compound>
-  <compound kind="file">
-    <name>pimpl.h</name>
-    <path>rll/traits/</path>
-    <filename>pimpl_8h.html</filename>
-    <includes id="propagate__const_8h" name="propagate_const.h" local="no" import="no" module="no" objc="no">rll/memory/propagate_const.h</includes>
-    <namespace>rll</namespace>
-    <member kind="define">
-      <type>#define</type>
-      <name>DECLARE_PRIVATE</name>
-      <anchorfile>pimpl_8h.html</anchorfile>
-      <anchor>a9c6048a4c390e63349e43ea83ed07c12</anchor>
-      <arglist>(classname)</arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>DECLARE_PRIVATE_AS</name>
-      <anchorfile>pimpl_8h.html</anchorfile>
-      <anchor>a296a83a502b0aa9b389cdd3f0c3974c9</anchor>
-      <arglist>(alias)</arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>DECLARE_PRIVATE_SHARED</name>
-      <anchorfile>pimpl_8h.html</anchorfile>
-      <anchor>abd00b55c9b0f221b8224344400a68355</anchor>
-      <arglist>(classname)</arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>DECLARE_PRIVATE_SHARED_AS</name>
-      <anchorfile>pimpl_8h.html</anchorfile>
-      <anchor>ae4fda04d021c9d96ee6a6cf029f35dbd</anchor>
-      <arglist>(alias)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>pin.h</name>
@@ -6141,15 +6147,15 @@
       <type>static result</type>
       <name>serialize</name>
       <anchorfile>structrll_1_1serializer.html</anchorfile>
-      <anchor>ac7fda6dcd9ac9de11e84e5fcdf3a11bf</anchor>
-      <arglist>(T const &amp;value, std::basic_ostream&lt; char, F &gt; &amp;stream)=delete</arglist>
+      <anchor>abc819d675661859414d97c6629d68eda</anchor>
+      <arglist>(T const &amp;value, std::basic_ostream&lt; C &gt; &amp;stream)=delete</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static result&lt; T &gt;</type>
       <name>deserialize</name>
       <anchorfile>structrll_1_1serializer.html</anchorfile>
-      <anchor>a8bf87ba2627586f96972e24873c3097d</anchor>
-      <arglist>(std::basic_istream&lt; char, F &gt; &amp;stream)=delete</arglist>
+      <anchor>a7a7c10e97cb10233874d86eb84133469</anchor>
+      <arglist>(std::basic_istream&lt; C &gt; &amp;stream)=delete</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -9022,6 +9028,13 @@
       <anchorfile>namespacerll.html</anchorfile>
       <anchor>a8fbaf929355163bc3ca9609ed5c8576d</anchor>
       <arglist>(T x) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>byteswap_unchecked</name>
+      <anchorfile>namespacerll.html</anchorfile>
+      <anchor>a4c43e3da670fb7410b026a2641d9fff6</anchor>
+      <arglist>(T u) noexcept</arglist>
     </member>
     <member kind="function">
       <type>constexpr T</type>

@@ -318,20 +318,15 @@
           <h2><a href="#nested-concepts">Concepts</a></h2>
           <dl class="m-doc">
             <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1lockable.html">lockable</a>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename Duration</span>, <span class="m-doc-template-param">typename TimePoint</span></span>&gt;</div>
+              concept <a class="m-doc" href="conceptrll_1_1shared__timed__mutex.html">shared_timed_mutex</a>
             </dt>
-            <dd><a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a> concept.</dd>
+            <dd>Shared timed mutex concept.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1mutex.html">mutex</a>
+              concept <a class="m-doc" href="conceptrll_1_1c__ptr.html">c_ptr</a>
             </dt>
-            <dd>Mutex concept.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1basic__lockable.html">basic_lockable</a>
-            </dt>
-            <dd>Basic lockable concept.</dd>
+            <dd>Raw pointer concept.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
               concept <a class="m-doc" href="conceptrll_1_1ptr__like.html">ptr_like</a>
@@ -339,9 +334,14 @@
             <dd>Concept that is true if T is a pointer or smart pointer.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1num.html">num</a>
+              concept <a class="m-doc" href="conceptrll_1_1mutex.html">mutex</a>
             </dt>
-            <dd>Concept that is true if T is a number.</dd>
+            <dd>Mutex concept.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              concept <a class="m-doc" href="conceptrll_1_1shared__mutex.html">shared_mutex</a>
+            </dt>
+            <dd>Shared mutex concept.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
               concept <a class="m-doc" href="conceptrll_1_1shared__lockable.html">shared_lockable</a>
@@ -349,19 +349,14 @@
             <dd>Shared lockable concept.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1ptr.html">ptr</a>
+              concept <a class="m-doc" href="conceptrll_1_1smart__ptr.html">smart_ptr</a>
             </dt>
-            <dd>Pointer concept.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename Duration</span>, <span class="m-doc-template-param">typename TimePoint</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1shared__timed__mutex.html">shared_timed_mutex</a>
-            </dt>
-            <dd>Shared timed mutex concept.</dd>
+            <dd>Smart pointer concept.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1standard__copyable__and__movable.html">standard_copyable_and_movable</a>
+              concept <a class="m-doc" href="conceptrll_1_1enum__.html">enum_</a>
             </dt>
-            <dd>Concept that is true if T is a standard copyable and movable type.</dd>
+            <dd>Concept that is true if T is an enum type.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename Duration</span>, <span class="m-doc-template-param">typename TimePoint</span></span>&gt;</div>
               concept <a class="m-doc" href="conceptrll_1_1timed__mutex.html">timed_mutex</a>
@@ -373,30 +368,35 @@
             </dt>
             <dd>Shared timed lockable concept.</dd>
             <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              concept <a class="m-doc" href="conceptrll_1_1num.html">num</a>
+            </dt>
+            <dd>Concept that is true if T is a number.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              concept <a class="m-doc" href="conceptrll_1_1basic__lockable.html">basic_lockable</a>
+            </dt>
+            <dd>Basic lockable concept.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              concept <a class="m-doc" href="conceptrll_1_1standard__copyable__and__movable.html">standard_copyable_and_movable</a>
+            </dt>
+            <dd>Concept that is true if T is a standard copyable and movable type.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              concept <a class="m-doc" href="conceptrll_1_1ptr.html">ptr</a>
+            </dt>
+            <dd>Pointer concept.</dd>
+            <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params m-doc-template-long"><span class="m-doc-template-param">typename T</span>, <span class="m-doc-template-param">typename Duration</span>, <span class="m-doc-template-param">typename TimePoint</span></span>&gt;</div>
               concept <a class="m-doc" href="conceptrll_1_1timed__lockable.html">timed_lockable</a>
             </dt>
             <dd>Timed lockable concept.</dd>
             <dt>
               <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1c__ptr.html">c_ptr</a>
+              concept <a class="m-doc" href="conceptrll_1_1lockable.html">lockable</a>
             </dt>
-            <dd>Raw pointer concept.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1shared__mutex.html">shared_mutex</a>
-            </dt>
-            <dd>Shared mutex concept.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1smart__ptr.html">smart_ptr</a>
-            </dt>
-            <dd>Smart pointer concept.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              concept <a class="m-doc" href="conceptrll_1_1enum__.html">enum_</a>
-            </dt>
-            <dd>Concept that is true if T is an enum type.</dd>
+            <dd><a class="m-doc poxy-injected poxy-external poxy-cppreference poxy-named-requirement" href="https://en.cppreference.com/w/cpp/named_req/Lockable" target="_blank">Lockable</a> concept.</dd>
           </dl>
         </section>
         <section id="enum-members">
@@ -613,6 +613,11 @@
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a8fbaf929355163bc3ca9609ed5c8576d">byteswap</a>(</span><span class="m-doc-wrap">T x) →  T <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Reverses the byte order of the value.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="#a4c43e3da670fb7410b026a2641d9fff6">byteswap_unchecked</a>(</span><span class="m-doc-wrap">T u) →  T <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Reverses the byte order of the value without checking for unique object representations.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a class="m-doc" href="namespacerll_1_1comparators.html#a0a8697d7af6f831b4495c57d71550a34">compare</a>(</span><span class="m-doc-wrap"><a class="m-doc" href="structrll_1_1version.html">version</a> const&amp; lhs,
               <a class="m-doc" href="structrll_1_1version.html">version</a> const&amp; rhs,
@@ -1729,7 +1734,7 @@
           </div></section>
           <section class="m-doc-details" id="a0c9aceb722b117f89569de6ec614d05b"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="pimpl_8h.html">&lt;rll/traits/pimpl.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="traits_2pimpl_8h.html">&lt;rll/traits/pimpl.h&gt;</a></div>
               <div class="m-doc-template">
                 template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;
               </div>
@@ -1800,7 +1805,7 @@
           </div></section>
           <section class="m-doc-details" id="a4b449b84c39c894ec863b2e71648a428"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="pimpl_8h.html">&lt;rll/traits/pimpl.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="traits_2pimpl_8h.html">&lt;rll/traits/pimpl.h&gt;</a></div>
               <div class="m-doc-template">
                 template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;
               </div>
@@ -2150,6 +2155,34 @@
               </tfoot>
             </table>
 <p>This is the backport of <code>std::byteswap</code>.</p><aside class="m-note m-default"><h4>Version</h4><p>2.1.32</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a4c43e3da670fb7410b026a2641d9fff6"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="bit_8h.html">&lt;rll/bit.h&gt;</a></div>
+              <div class="m-doc-template">
+                template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T <span class="m-doc-details-prefix">rll::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a4c43e3da670fb7410b026a2641d9fff6">byteswap_unchecked</a>(</span><span class="m-doc-wrap">T u) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Reverses the byte order of the value without checking for unique object representations.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the value. Must be a numeric type.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reversed value.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-default"><h4>Version</h4><p>2.4.2</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a class="m-doc" href="#a8fbaf929355163bc3ca9609ed5c8576d">byteswap</a></p></aside>
           </div></section>
           <section class="m-doc-details" id="a132e3bda8756f762bbdff0e651cb9ccc"><div>
             <h3>

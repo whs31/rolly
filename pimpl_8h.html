@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rll/traits/pimpl.h file | Rolly Radar core library</title>
+  <title>rll/pimpl.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -21,7 +21,7 @@
   <meta content="Poxy v0.19.4" name="generator"/>
   <meta content="strict-origin-when-cross-origin" name="referrer"/>
 </head>
-<body class="poxy-has-toc">
+<body>
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
@@ -56,65 +56,9 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_745525cd4fc4efbd9885e3cf3588e3bb.html">rll</a>/</span><span class="m-breadcrumb"><a href="dir_6393862413a7840a43e6acd29121b01f.html">traits</a>/</span>pimpl.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="dir_745525cd4fc4efbd9885e3cf3588e3bb.html">rll</a>/</span>pimpl.h <span class="m-thin">file</span>
         </h1>
         <p></p>
-        <nav class="m-block m-default poxy-toc" id="poxy-toc">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#typedef-members">Typedefs</a></li>
-                <li><a href="#define-members">Defines</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
-          <dl class="m-doc">
-            <dt>namespace <a class="m-doc" href="namespacerll.html">rll</a></dt>
-            <dd>Contract-programming related functions and classes.</dd>
-          </dl>
-        </section>
-        <section id="typedef-members">
-          <h2><a href="#typedef-members">Typedefs</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              using <a class="m-doc" href="namespacerll.html#a0c9aceb722b117f89569de6ec614d05b">pimpl</a> = propagate_const&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" target="_blank">std::<wbr/>unique_ptr</a>&lt;T&gt;&gt;
-            </dt>
-            <dd>Pointer-to-implementation pattern trait.</dd>
-            <dt>
-              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
-              using <a class="m-doc" href="namespacerll.html#a4b449b84c39c894ec863b2e71648a428">shared_pimpl</a> = propagate_const&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html" target="_blank">std::<wbr/>shared_ptr</a>&lt;T&gt;&gt;
-            </dt>
-            <dd></dd>
-          </dl>
-        </section>
-        <section id="define-members">
-          <h2><a href="#define-members">Defines</a></h2>
-          <dl class="m-doc">
-            <dt id="a9c6048a4c390e63349e43ea83ed07c12">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a9c6048a4c390e63349e43ea83ed07c12">DECLARE_PRIVATE</a>(</span><span class="m-doc-wrap">classname)</span>
-            </dt>
-            <dd></dd>
-            <dt id="a296a83a502b0aa9b389cdd3f0c3974c9">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a296a83a502b0aa9b389cdd3f0c3974c9">DECLARE_PRIVATE_AS</a>(</span><span class="m-doc-wrap">alias)</span>
-            </dt>
-            <dd></dd>
-            <dt id="abd00b55c9b0f221b8224344400a68355">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#abd00b55c9b0f221b8224344400a68355">DECLARE_PRIVATE_SHARED</a>(</span><span class="m-doc-wrap">classname)</span>
-            </dt>
-            <dd></dd>
-            <dt id="ae4fda04d021c9d96ee6a6cf029f35dbd">
-              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#ae4fda04d021c9d96ee6a6cf029f35dbd">DECLARE_PRIVATE_SHARED_AS</a>(</span><span class="m-doc-wrap">alias)</span>
-            </dt>
-            <dd></dd>
-          </dl>
-        </section>
       </div>
     </div>
   </div>

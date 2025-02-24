@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>rll/ directory | Rolly Radar core library</title>
+  <title>rll/traits/pimpl.h file | Rolly Radar core library</title>
   <link href="favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#22272e" name="theme-color"/>
@@ -56,7 +56,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          rll<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          <span class="m-breadcrumb"><a href="dir_745525cd4fc4efbd9885e3cf3588e3bb.html">rll</a>/</span><span class="m-breadcrumb"><a href="dir_6393862413a7840a43e6acd29121b01f.html">traits</a>/</span>pimpl.h <span class="m-thin">file</span>
         </h1>
         <p></p>
         <nav class="m-block m-default poxy-toc" id="poxy-toc">
@@ -65,107 +65,53 @@
             <li>
               Reference
               <ul>
-                <li><a href="#subdirs">Directories</a></li>
-                <li><a href="#files">Files</a></li>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#define-members">Defines</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="subdirs">
-          <h2><a href="#subdirs">Directories</a></h2>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>directory <a class="m-doc" href="dir_2392f308285e357fb97baaf0d14036bd.html">concepts</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_b203a7bf87114dd54a90fa4d0ee296b4.html">crypto</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_5964566c2301352c64bc17dc34b699d3.html">euclid</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_b25d6aa23a624f05090bd48967222620.html">functional</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_7cd538df4f395f9d3fe203b9d19ecf55.html">global</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_b7b2cbeedd843361d7617398365203c2.html">impl</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_64a9ecc9ce8bdfb19e8de693620456fc.html">io</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_407243c5c5dcfaf19c007fdfda5e6055.html">memory</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_1bd8015feda08109323b79cc13581f83.html">net</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_2ab47032f7a3cf9104bb0313e66a2ad0.html">qt</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_a9c7ce4c5e2d9bc177214321721784ec.html">serialization</a>/</dt>
-            <dd></dd>
-            <dt>directory <a class="m-doc" href="dir_6393862413a7840a43e6acd29121b01f.html">traits</a>/</dt>
+            <dt>namespace <a class="m-doc" href="namespacerll.html">rll</a></dt>
+            <dd>Contract-programming related functions and classes.</dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              using <a class="m-doc" href="namespacerll.html#a0c9aceb722b117f89569de6ec614d05b">pimpl</a> = propagate_const&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" target="_blank">std::<wbr/>unique_ptr</a>&lt;T&gt;&gt;
+            </dt>
+            <dd>Pointer-to-implementation pattern trait.</dd>
+            <dt>
+              <div class="m-doc-template">template &lt;<span class="m-doc-template-params"><span class="m-doc-template-param">typename T</span></span>&gt;</div>
+              using <a class="m-doc" href="namespacerll.html#a4b449b84c39c894ec863b2e71648a428">shared_pimpl</a> = propagate_const&lt;<a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html" target="_blank">std::<wbr/>shared_ptr</a>&lt;T&gt;&gt;
+            </dt>
             <dd></dd>
           </dl>
         </section>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+        <section id="define-members">
+          <h2><a href="#define-members">Defines</a></h2>
           <dl class="m-doc">
-            <dt>file <a class="m-doc" href="all_8h.html">all.h</a></dt>
+            <dt id="a9c6048a4c390e63349e43ea83ed07c12">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a9c6048a4c390e63349e43ea83ed07c12">DECLARE_PRIVATE</a>(</span><span class="m-doc-wrap">classname)</span>
+            </dt>
             <dd></dd>
-            <dt>file <a class="m-doc" href="bit_8h.html">bit.h</a></dt>
+            <dt id="a296a83a502b0aa9b389cdd3f0c3974c9">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#a296a83a502b0aa9b389cdd3f0c3974c9">DECLARE_PRIVATE_AS</a>(</span><span class="m-doc-wrap">alias)</span>
+            </dt>
             <dd></dd>
-            <dt>file <a class="m-doc" href="concepts_8h.html">concepts.h</a></dt>
+            <dt id="abd00b55c9b0f221b8224344400a68355">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#abd00b55c9b0f221b8224344400a68355">DECLARE_PRIVATE_SHARED</a>(</span><span class="m-doc-wrap">classname)</span>
+            </dt>
             <dd></dd>
-            <dt>file <a class="m-doc" href="config_8h.html">config.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="contracts_8h.html">contracts.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="crypto_8h.html">crypto.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="directories_8h.html">directories.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="euclid_8h.html">euclid.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="fixed__string_8h.html">fixed_string.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="functional_8h.html">functional.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="global_8h.html">global.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="library_8h.html">library.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="log_8h.html">log.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="math_8h.html">math.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="memory_8h.html">memory.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="net_8h.html">net.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="numbers_8h.html">numbers.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="optional_8h.html">optional.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="pimpl_8h.html">pimpl.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="qt_8h.html">qt.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="result_8h.html">result.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="rtti_8h.html">rtti.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="savefile_8h.html">savefile.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="serialization_8h.html">serialization.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="source__location_8h.html">source_location.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="stdint_8h.html">stdint.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="string__util_8h.html">string_util.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="traits_8h.html">traits.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="type__traits_8h.html">type_traits.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="u128_8h.html">u128.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="utility_8h.html">utility.h</a></dt>
-            <dd></dd>
-            <dt>file <a class="m-doc" href="uuid_8h.html">uuid.h</a></dt>
+            <dt id="ae4fda04d021c9d96ee6a6cf029f35dbd">
+              <span class="m-doc-wrap-bumper">#define <a class="m-doc-self" href="#ae4fda04d021c9d96ee6a6cf029f35dbd">DECLARE_PRIVATE_SHARED_AS</a>(</span><span class="m-doc-wrap">alias)</span>
+            </dt>
             <dd></dd>
           </dl>
         </section>
