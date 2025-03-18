@@ -100,6 +100,10 @@
               <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="#a7f9e44b2a637d1ffed69698019f09b72">random</a>(</span><span class="m-doc-wrap">) →  <a class="m-doc" href="classrll_1_1uuid.html">uuid</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Creates a random uuid.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a class="m-doc" href="#a5fec8d21cf24e923a56fba454142ca9b">try_parse</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> str) →  <a class="m-doc" href="namespacerll.html#a180b6c7999980ef9862de8890b3cae6f">result</a>&lt;<a class="m-doc" href="classrll_1_1uuid.html">uuid</a>&gt; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Tries to parse a guid from a string representation.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -221,6 +225,29 @@
                 <tr>
                   <th style="width: 1%">Returns</th>
                   <td>New random uuid.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5fec8d21cf24e923a56fba454142ca9b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a class="m-doc" href="namespacerll.html#a180b6c7999980ef9862de8890b3cae6f">result</a>&lt;<a class="m-doc" href="classrll_1_1uuid.html">uuid</a>&gt; <span class="m-doc-details-prefix">rll::<wbr/>uuid::<wbr/></span></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a class="m-doc-self" href="#a5fec8d21cf24e923a56fba454142ca9b">try_parse</a>(</span><span class="m-doc-wrap"><a class="m-doc-external poxy-cppreference poxy-external" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html" target="_blank">std::<wbr/>string_view</a> str) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Tries to parse a guid from a string representation.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">str</td>
+                  <td>String representation of the guid.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Parsed guid if successful, error otherwise.</td>
                 </tr>
               </tfoot>
             </table>

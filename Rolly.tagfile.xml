@@ -1221,6 +1221,7 @@
     <filename>uuid_8h.html</filename>
     <includes id="global_8h" name="global.h" local="no" import="no" module="no" objc="no">rll/global.h</includes>
     <includes id="stdint_8h" name="stdint.h" local="no" import="no" module="no" objc="no">rll/stdint.h</includes>
+    <includes id="result_8h" name="result.h" local="no" import="no" module="no" objc="no">rll/result.h</includes>
     <class kind="class">rll::uuid</class>
     <class kind="struct">fmt::formatter&lt; rll::uuid &gt;</class>
     <namespace>rll</namespace>
@@ -7521,6 +7522,13 @@
       <anchorfile>classrll_1_1uuid.html</anchorfile>
       <anchor>a7f9e44b2a637d1ffed69698019f09b72</anchor>
       <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static result&lt; uuid &gt;</type>
+      <name>try_parse</name>
+      <anchorfile>classrll_1_1uuid.html</anchorfile>
+      <anchor>a5fec8d21cf24e923a56fba454142ca9b</anchor>
+      <arglist>(std::string_view str) noexcept</arglist>
     </member>
     <member kind="variable" static="yes">
       <type>static constexpr auto</type>
