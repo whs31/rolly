@@ -15,7 +15,7 @@
 #      define _ARM_
 #    endif  // __amd64__
 #  endif    // _MSC_VER
-#  include <Shlobj.h>
+#  include <shlobj.h>
 
 namespace rll::oslayer::win {
   [[nodiscard]] std::filesystem::path known_folder_path(::KNOWNFOLDERID id);
