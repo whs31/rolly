@@ -394,7 +394,7 @@ namespace rll {
      */
     template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity operator*(U const& other) const {
-      return angle(this->m_ * other);
+      return velocity(this->m_ * other);
     }
 
     /**
@@ -404,7 +404,7 @@ namespace rll {
      */
     template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity operator/(U const& other) const {
-      return angle(this->m_ / other);
+      return velocity(this->m_ / other);
     }
 
     /**
@@ -414,7 +414,7 @@ namespace rll {
      */
     template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity operator+(U const& other) const {
-      return angle(this->m_ + other);
+      return velocity(this->m_ + other);
     }
 
     /**
@@ -424,7 +424,7 @@ namespace rll {
      */
     template <typename U, typename = std::enable_if_t<is_num_v<T>>>
     [[nodiscard]] constexpr velocity operator-(U const& other) const {
-      return angle(this->m_ - other);
+      return velocity(this->m_ - other);
     }
 
     /**

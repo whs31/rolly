@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 include_guard(GLOBAL)
 
 project(rolly
-  VERSION 2.4.2
+  VERSION 2.4.5
   DESCRIPTION "Radar open-source library"
   HOMEPAGE_URL "whs31.github.io/rolly"
   LANGUAGES C CXX
@@ -120,17 +120,6 @@ target_compile_options(${PROJECT_NAME} PRIVATE
   $<$<CXX_COMPILER_ID:Clang>:-Wno-deprecated-declarations>
   $<$<CXX_COMPILER_ID:MSVC>:/wd4996>
 )
-
-if (NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Debug)
-endif ()
-
-if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
-  message(STATUS "[${PROJECT_FULL_NAME}] adding compiler flags: -Wall -Wextra -Wpedantic -Werror")
-  target_compile_options(${PROJECT_NAME} PRIVATE
-    $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wpedantic>
-  )
-endif ()
 
 if (ROLLY_TESTS)
   enable_testing()

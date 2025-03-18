@@ -10,6 +10,7 @@
 #include <fmt/ostream.h>
 #include <rll/global.h>
 #include <rll/stdint.h>
+#include <rll/result.h>
 
 namespace rll  // NOLINT(*-concat-nested-namespaces)
 {
@@ -77,8 +78,8 @@ namespace rll  // NOLINT(*-concat-nested-namespaces)
       if(str.size() != uuid::short_guid_string_length
          and str.size() != uuid::long_guid_string_length)
         throw std::invalid_argument(
-          "guid string initializer must have exactly 36 or 38 characters (see "
-          "guid::short_guid_string_length and guid::long_guid_string_length)"
+          "uuid string initializer must have exactly 36 or 38 characters (see "
+          "uuid::short_guid_string_length and uuid::long_guid_string_length)"
         );
       auto const* data = (str.size() == uuid::short_guid_string_length) ? str.data()
                                                                         : str.data() + 1;
@@ -197,6 +198,13 @@ namespace rll  // NOLINT(*-concat-nested-namespaces)
      */
     [[nodiscard]] static uuid random() noexcept;
 
+    /**
+     * @brief Tries to parse a guid from a string representation.
+     * @param str String representation of the guid.
+     * @return Parsed guid if successful, error otherwise.
+     */
+    [[nodiscard]] static result<uuid> try_parse(std::string_view str) noexcept;
+
    private:
     std::array<u8, 16> bytes_;
   };
@@ -250,7 +258,6 @@ namespace std {
 
   /**
    * @brief Hashes an `uuid`.
-   * @tparam T Underlying type of the `hash`.
    * @param b `uuid` to hash.
    * @return Hash value.
    * @relates rll::uuid

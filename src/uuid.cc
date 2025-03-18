@@ -96,6 +96,14 @@ namespace rll {
 #endif  // RLL_OS_LINUX
   }
 
+  result<uuid> uuid::try_parse(std::string_view str) noexcept {
+    try {
+      return uuid(str);
+    } catch (std::exception const& e) {
+      return error("rll::uuid::try_parse: {}", e.what());
+    }
+  }
+
   u64 uuid::to_u64() const noexcept {
     return detail::hash<rll::u64, rll::u64> {}(bytes()[0], bytes()[1]);
   }

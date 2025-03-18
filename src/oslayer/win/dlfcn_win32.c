@@ -62,7 +62,7 @@ typedef ULONG ULONG_PTR;
 #endif
 
 #ifdef _MSC_VER
-#  if _MSC_VER >= 1'000
+#  if _MSC_VER >= 1000
 /* https://docs.microsoft.com/en-us/cpp/intrinsics/returnaddress */
 #    pragma intrinsic(_ReturnAddress)
 #  else
@@ -88,7 +88,7 @@ __declspec(naked) static void* _ReturnAddress(void) { __asm mov eax, [ebp + 4] _
 #  define DLFCN_WIN32_EXPORTS
 #endif
 
-#if defined(_MSC_VER) && _MSC_VER >= 1'300
+#if defined(_MSC_VER) && _MSC_VER >= 1300
 /* https://docs.microsoft.com/en-us/cpp/cpp/noinline */
 #  define DLFCN_NOINLINE __declspec( noinline )
 #elif defined(__GNUC__) && ((__GNUC__ > 3) || (__GNUC__ == 3 && __GNUC_MINOR__ >= 1))
@@ -178,7 +178,7 @@ static void local_rem(HMODULE hModule) {
  * MSDN says the buffer cannot be larger than 64K bytes, so we set it to
  * the limit.
  */
-static char error_buffer[65'535];
+static char error_buffer[65535];
 static BOOL error_occurred;
 
 static void save_err_str(char const* str, DWORD dwMessageId) {
